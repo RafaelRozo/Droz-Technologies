@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droz Technologies - Custom Web & Mobile App Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1e1b4b;
+            background-image: radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.2) 0%, rgba(79, 70, 229, 0) 30%);
+        }
+        .cta-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
+        }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Droz<span class="text-indigo-600">Tech</span></a>
+            <a href="#contact" class="hidden lg:block bg-indigo-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-indigo-700 cta-button">Bring Your Idea to Life</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white pt-24 pb-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+                    Have an Idea? We Have the Engineering.<br>Let's Build Your Application.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    We are a team of architects, engineers, and designers who specialize in turning ambitious ideas into scalable, market-ready web and mobile applications.
+                </p>
+                <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samsonai-droztechnologies/custom-web-mobile-app'}); return false;" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-indigo-700 cta-button">See Our Work</a>
+            </div>
+        </section>
+
+        <!-- Our Philosophy Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">We Build More Than Apps—We Build Partnerships</h2>
+                    <p class="text-lg text-gray-600 mt-4">Our development process is founded on a deep understanding of your business goals. We work as an extension of your team, ensuring that every line of code serves a strategic purpose and every feature delivers value to your users.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Showcase Section -->
+        <section id="projects" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Portfolio of Innovation</h2>
+                    <p class="text-lg text-gray-600 mt-4">From proprietary AI platforms to complex marketplaces, our work showcases our ability to tackle diverse and ambitious software challenges.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- AI & Therapy Project -->
+                    <div class="bg-indigo-50 p-8 rounded-2xl project-card lg:col-span-2 border-2 border-indigo-200">
+                        <h3 class="text-2xl font-bold mb-3">Project Chimera: The Future of Mental Wellness</h3>
+                        <span class="text-sm font-bold text-indigo-600 uppercase">IN-PROGRESS R&D INITIATIVE</span>
+                        <p class="text-gray-600 mt-2">Our largest and most ambitious project to date is a groundbreaking study into the intersection of AI and therapy. In partnership with leading researchers, we are developing a platform to understand how artificial intelligence can support mental wellness professionals, analyze therapeutic patterns, and ultimately, help create more effective and accessible mental health solutions. This project represents our commitment to pushing the boundaries of what technology can achieve for human well-being.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl project-card flex flex-col">
+                        <h3 class="text-2xl font-bold mb-3">Samson-AI</h3>
+                        <span class="text-sm font-bold text-indigo-600 uppercase">PROPRIETARY AI PLATFORM</span>
+                        <p class="text-gray-600 mt-2 flex-grow">Our in-house generative AI ad software. Samson-AI creates, manages, and optimizes entire ad campaigns for platforms like Meta, Google, and LinkedIn, turning strategic goals into high-performing creative at scale.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl project-card flex flex-col">
+                        <h3 class="text-2xl font-bold mb-3">Taskr</h3>
+                        <span class="text-sm font-bold text-indigo-600 uppercase">TWO-SIDED MARKETPLACE</span>
+                        <p class="text-gray-600 mt-2 flex-grow">We built Taskr from the ground up, a complex platform connecting users with everyday tasks to a network of individual providers and professional service companies, complete with scheduling, payments, and reviews.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Process Section -->
+        <section class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold">Our Blueprint for Success</h2>
+                    <p class="text-lg text-gray-300 mt-4">We follow a structured, transparent process to take your project from a simple idea to a fully deployed, scalable application.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <ol class="space-y-8 relative border-l-2 border-gray-700">
+                        <li class="ml-6"><span class="absolute flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full -left-4 font-bold">1</span><h3 class="text-xl font-bold ml-4">Discovery & Strategy</h3><p class="text-gray-400 ml-4">We dive deep into your business goals, target users, and market landscape to define a clear product roadmap and technical architecture.</p></li>
+                        <li class="ml-6"><span class="absolute flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full -left-4 font-bold">2</span><h3 class="text-xl font-bold ml-4">UI/UX Design & Prototyping</h3><p class="text-gray-400 ml-4">Our design team creates intuitive, user-centric interfaces and interactive prototypes so you can see and feel your app before development begins.</p></li>
+                        <li class="ml-6"><span class="absolute flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full -left-4 font-bold">3</span><h3 class="text-xl font-bold ml-4">Agile Development</h3><p class="text-gray-400 ml-4">We build your application in iterative sprints, allowing for regular feedback, flexibility, and a focus on delivering core features first.</p></li>
+                        <li class="ml-6"><span class="absolute flex items-center justify-center w-8 h-8 bg-indigo-600 rounded-full -left-4 font-bold">4</span><h3 class="text-xl font-bold ml-4">Deployment & Scaling</h3><p class="text-gray-400 ml-4">We handle the full deployment process and build your application on a scalable cloud infrastructure designed to grow with your user base.</p></li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Let's Build Your Next Application</h2>
+                    <p class="text-lg text-gray-600 mt-4 mb-8">Have an idea for a web or mobile app? Schedule a call with our technical architects to explore the possibilities.</p>
+                    <form action="#" method="POST" class="space-y-6 text-left">
+                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email Address</label><input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="company" class="block text-sm font-medium text-gray-700">Company Name</label><input type="text" name="company" id="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="project_description" class="block text-sm font-medium text-gray-700">Briefly Describe Your App Idea</label><textarea id="project_description" name="project_description" rows="4" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea></div>
+                        <div><button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 cta-button">Schedule a Scoping Call</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-bold text-xl mb-2">Droz<span class="text-indigo-500">Tech</span></p>
+            <p>&copy; 2024 Droz Technologies. Engineering Growth Systems.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

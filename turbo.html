@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droz Technologies - Turbo Generator Alignment & Balancing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1f2937;
+            background-image: radial-gradient(circle at 20% 80%, rgba(5, 150, 105, 0.15) 0%, rgba(5, 150, 105, 0) 30%);
+        }
+        .cta-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3), 0 4px 6px -2px rgba(5, 150, 105, 0.2);
+        }
+        .consequence-card {
+            border-left-width: 4px;
+            border-color: #ef4444;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Droz<span class="text-emerald-600">Tech</span></a>
+            <a href="#contact" class="hidden lg:block bg-emerald-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-emerald-700 cta-button">Request a Consultation</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white pt-24 pb-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+                    In Power Generation,<br>Precision Isn't a Goal. It's a Prerequisite.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    Our highly specialized turbo generator services provide the micron-level precision required to ensure the reliability, efficiency, and safety of your most critical power generation assets.
+                </p>
+                <a href="#services" class="bg-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-emerald-700 cta-button">Explore Our Capabilities</a>
+            </div>
+        </section>
+
+        <!-- The Challenge Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div class="lg:pr-10">
+                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">The Unforgiving Environment of a Turbo Generator</h2>
+                        <p class="text-lg text-gray-600 mt-4">A turbo generator is a symphony of extreme forces. High speeds, immense temperatures, and massive rotational mass create an environment where even the slightest imperfection can lead to catastrophic failure. Maintaining the precise alignment and balance of these multi-ton rotors is one of the most demanding tasks in industrial maintenance.</p>
+                        <p class="text-lg text-gray-600 mt-4">This is not a task for generalists. It requires specialized equipment, years of experience, and an unwavering commitment to precision.</p>
+                    </div>
+                     <div class="text-center">
+                         <img src="https://placehold.co/500x350/e0e7ff/3730a3?text=Turbo+Generator+Rotor" alt="A large turbo generator rotor" class="rounded-2xl shadow-xl inline-block">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Specialized Turbo Generator Services</h2>
+                    <p class="text-lg text-gray-600 mt-4">We provide a complete solution for ensuring the mechanical integrity of your turbine and generator train.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-3">Precision Alignment</h3>
+                        <p class="text-gray-600">Using advanced laser trackers and optical alignment systems, we perform comprehensive alignment checks on the entire turbine-generator train. This includes bearing journal positioning, casing alignment, and diaphragm alignment, accounting for thermal growth to ensure perfect alignment under operating conditions.</p>
+                    </div>
+                    <div class="bg-gray-50 p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-3">High-Speed Dynamic Balancing</h3>
+                        <p class="text-gray-600">We perform multi-plane, high-speed dynamic balancing of turbo generator rotors to ISO standards. This process corrects for the minute imbalances that cause destructive vibrations at operational speeds, protecting bearings, seals, and the overall structural integrity of the machine.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consequences of Failure Section -->
+        <section class="py-20 bg-red-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-red-900">The Cost of Imperfection</h2>
+                    <p class="text-lg text-red-800 mt-4">In the context of a turbo generator, minor issues cascade into major failures with staggering financial consequences.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg consequence-card"><h3 class="text-xl font-bold mb-2">Forced Outages</h3><p>Unplanned downtime of a major power generation asset can result in revenue losses measured in the hundreds of thousands of dollars per day.</p></div>
+                    <div class="bg-white p-6 rounded-lg consequence-card"><h3 class="text-xl font-bold mb-2">Catastrophic Damage</h3><p>An unbalanced or misaligned rotor can lead to bearing wipes, blade rubs, seal failures, and in the worst cases, a thrown blade or complete rotor destruction.</p></div>
+                    <div class="bg-white p-6 rounded-lg consequence-card"><h3 class="text-xl font-bold mb-2">Reduced Efficiency</h3><p>Even minor issues increase vibration and friction, leading to a loss of efficiency that translates to significant fuel waste over time.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Expertise Section -->
+        <section class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-extrabold">Decades of High-Stakes Experience</h2>
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-4 mb-12">Our senior engineers and technicians have decades of experience working on critical power generation equipment with global leaders like **Westinghouse**. We have a deep understanding of OEM specifications and the precision required to work on these invaluable assets. When you partner with Droz Technologies, you are partnering with a team that has a proven track record in the most demanding industrial environments.</p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Request a Turbo Generator Service Consultation</h2>
+                    <p class="text-lg text-gray-600 mt-4 mb-8">Contact our senior engineering team to discuss your upcoming maintenance schedule or immediate service needs for your critical turbo generator assets.</p>
+                    <form action="#" method="POST" class="space-y-6 text-left">
+                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email Address</label><input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
+                        <div><label for="company" class="block text-sm font-medium text-gray-700">Company / Power Plant</label><input type="text" name="company" id="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
+                        <div><label for="service_needed" class="block text-sm font-medium text-gray-700">Service of Interest</label><select id="service_needed" name="service_needed" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"><option>Alignment Consultation</option><option>Balancing Consultation</option><option>Full Service Assessment</option></select></div>
+                        <div><button type="submit" class="w-full bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-emerald-700 cta-button">Request Consultation</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-bold text-xl mb-2">Droz<span class="text-emerald-500">Tech</span></p>
+            <p>&copy; 2024 Droz Technologies. Engineering Growth Systems.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

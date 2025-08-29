@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droz Technologies - Custom Booking Platforms for Spas & Clinics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #1e1b4b;
+            background-image: radial-gradient(circle at 80% 20%, rgba(79, 70, 229, 0.2) 0%, rgba(79, 70, 229, 0) 30%);
+        }
+        .cta-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -2px rgba(79, 70, 229, 0.2);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Droz<span class="text-indigo-600">Tech</span></a>
+            <a href="#contact" class="hidden lg:block bg-indigo-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-indigo-700 cta-button">Get a Custom Demo</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white pt-24 pb-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+                    Your Calendar Isn't Just a Schedule.<br>It's Your Revenue Engine.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    Generic booking tools leave money on the table. We build custom, intelligent booking platforms for spas, clinics, and service businesses that automate your workflow, reduce no-shows, and create a seamless client experience.
+                </p>
+                <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samsonai-droztechnologies/specialized-booking-platform-website-redesign'}); return false;"  class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-indigo-700 cta-button">See the Difference</a>
+            </div>
+        </section>
+
+        <!-- The Problem Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Why Off-the-Shelf Booking Software Fails</h2>
+                    <p class="text-lg text-gray-600 mt-4">Standard booking tools are built for everyone, which means they're perfect for no one. They lack the flexibility to handle the unique complexities of a high-touch service business, leading to lost revenue and administrative headaches.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200"><h3 class="text-2xl font-bold mb-3">Costly No-Shows</h3><p class="text-gray-600">Basic reminders aren't enough. Without intelligent follow-up sequences and automated deposit/cancellation policies, empty slots eat into your profits.</p></div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200"><h3 class="text-2xl font-bold mb-3">Administrative Overload</h3><p class="text-gray-600">Your team spends hours manually confirming appointments, handling rescheduling requests, and answering repetitive questions instead of focusing on clients.</p></div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200"><h3 class="text-2xl font-bold mb-3">Fragmented Client Experience</h3><p class="text-gray-600">A clunky, non-branded booking process creates friction and undermines the premium experience you provide in person.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features & Benefits Section -->
+        <section id="features" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">A Booking Platform Engineered for Your Business</h2>
+                    <p class="text-lg text-gray-600 mt-4">We build platforms with the specific features service businesses need to thrive.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Intelligent Appointment Automation</h3><p class="text-gray-600">Automated multi-channel reminders (SMS & Email), follow-ups, and re-booking prompts that dramatically reduce no-shows and increase client lifetime value.</p></div>
+                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Dynamic Pricing & Deposits</h3><p class="text-gray-600">Implement custom rules for deposits, cancellation fees, and dynamic pricing for peak hours, all handled automatically by the platform.</p></div>
+                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Seamless Staff & Resource Management</h3><p class="text-gray-600">Complex scheduling made simple. Manage multiple staff members, rooms, and pieces of equipment to prevent double-bookings and maximize utilization.</p></div>
+                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Integrated Client Profiles</h3><p class="text-gray-600">Every client gets a profile with their appointment history, preferences, and notes, allowing your team to provide a truly personalized service.</p></div>
+                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Custom Branding & Experience</h3><p class="text-gray-600">The platform is fully branded to your business, providing a cohesive and professional experience from the first click to the final follow-up.</p></div>
+                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Secure Online Payments</h3><p class="text-gray-600">Integrate with your preferred payment gateway to handle deposits and full payments securely and automatically.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Study Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="bg-indigo-600 text-white p-12 rounded-2xl grid lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <span class="text-sm font-bold uppercase tracking-widest opacity-80">Case Study</span>
+                        <h2 class="text-4xl font-bold mt-2 mb-4">Red Oaks Marketing Group</h2>
+                        <p class="text-lg opacity-90">Red Oaks was struggling with a high volume of manual booking tasks that consumed their team's time and led to scheduling errors. We designed and installed a custom appointment booking system integrated with automated client onboarding and follow-up sequences. The new platform put their growth on autopilot.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-6 text-center">
+                        <div>
+                            <p class="text-5xl font-extrabold">40%</p>
+                            <p class="font-semibold">Projected Increase in Client Capacity</p>
+                        </div>
+                        <div>
+                            <p class="text-5xl font-extrabold">15+</p>
+                            <p class="font-semibold">Hours Saved Per Week in Admin Tasks</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Stop Managing Your Calendar. Start Growing Your Business.</h2>
+                    <p class="text-lg text-gray-600 mt-4 mb-8">Schedule a demo to see how a custom booking platform can transform your operations and boost your bottom line.</p>
+                    <form action="https://formspree.io/f/xyzdynob" method="POST"  class="space-y-6 text-left">
+                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email Address</label><input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="company" class="block text-sm font-medium text-gray-700">Business Name (Spa, Clinic, etc.)</label><input type="text" name="company" id="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 cta-button">Request a Custom Demo</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-bold text-xl mb-2">Droz<span class="text-indigo-500">Tech</span></p>
+            <p>&copy; 2024 Droz Technologies. Engineering Growth Systems.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
