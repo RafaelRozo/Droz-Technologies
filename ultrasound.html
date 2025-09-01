@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Droz Technologies - Advanced Ultrasound Analysis</title>
+    <link rel="icon" type="image/x-icon" href="./assets/droztechnologies.ico">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,15 +14,15 @@
             font-family: 'Inter', sans-serif;
         }
         .hero-bg {
-            background-color: #1f2937;
-            background-image: radial-gradient(circle at 20% 80%, rgba(5, 150, 105, 0.15) 0%, rgba(5, 150, 105, 0) 30%);
+            background-color: #111827;
+            background-image: radial-gradient(circle at 30% 70%, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0) 30%);
         }
         .cta-button {
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .cta-button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(5, 150, 105, 0.3), 0 4px 6px -2px rgba(5, 150, 105, 0.2);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
         }
         .problem-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -37,7 +38,7 @@
     <!-- Header -->
      <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900" id="refreshLink">Droz<span class="text-blue-600">Tech</span></a>
+            <a href="index.html" class="text-2xl font-bold text-gray-900">Droz<span class="text-blue-600">Tech</span></a>
             <div class="hidden lg:flex items-center space-x-8">
                 <a href="solutions.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Client Solutions</a>
                 <a href="case.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Case Studies</a>
@@ -69,7 +70,7 @@
                 <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
                     Our advanced ultrasound analysis services detect high-frequency sounds of friction, turbulence, and electrical faults that are inaudible to the human ear, allowing us to pinpoint costly failures before they happen.
                 </p>
-                <a href="#problems" class="bg-emerald-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-emerald-700 cta-button">What We Detect</a>
+                <a href="#problems" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-indigo-700 cta-button">What We Detect</a>
             </div>
         </section>
 
@@ -152,12 +153,12 @@
                 <div class="max-w-xl mx-auto text-center">
                     <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Schedule an Ultrasound Scan</h2>
                     <p class="text-lg text-gray-600 mt-4 mb-8">Start uncovering hidden costs and risks in your facility. Contact our engineering team to schedule a comprehensive ultrasound analysis.</p>
-                    <form action="#" method="POST" class="space-y-6 text-left">
-                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
-                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email Address</label><input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
-                        <div><label for="company" class="block text-sm font-medium text-gray-700">Company Name</label><input type="text" name="company" id="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
-                        <div><label for="facility_type" class="block text-sm font-medium text-gray-700">Type of Facility (e.g., Manufacturing Plant, Power Station)</label><input type="text" name="facility_type" id="facility_type" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-emerald-500 focus:border-emerald-500"></div>
-                        <div><button type="submit" class="w-full bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-emerald-700 cta-button">Request Service</button></div>
+                    <form action="https://formspree.io/f/xyzdynob" method="POST" class="space-y-6 text-left">
+                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email Address</label><input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="company" class="block text-sm font-medium text-gray-700">Company Name</label><input type="text" name="company" id="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="facility_type" class="block text-sm font-medium text-gray-700">Type of Facility (e.g., Manufacturing Plant, Power Station)</label><input type="text" name="facility_type" id="facility_type" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 cta-button">Request Service</button></div>
                     </form>
                 </div>
             </div>
@@ -166,8 +167,8 @@
 
     <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-6 py-8 text-center">
-            <p class="font-bold text-xl mb-2">Droz<span class="text-emerald-500">Tech</span></p>
-            <p>&copy; 2024 Droz Technologies. Engineering Growth Systems.</p>
+            <p class="font-bold text-xl mb-2">Droz<span class="text-indigo-500">Tech</span></p>
+            <p>&copy; 2025 Droz Technologies. Engineering Growth Systems.</p>
         </div>
     </footer>
 

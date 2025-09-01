@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droz Technologies - Predictive Maintenance & Industrial Services</title>
+    <link rel="icon" type="image/x-icon" href="./assets/droztechnologies.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #111827;
+            background-image: radial-gradient(circle at 30% 70%, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0) 30%);
+        }
+        .cta-button {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
+        }
+        .service-card, .partner-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover, .partner-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-900">Droz<span class="text-blue-600">Tech</span></a>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="solutions.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Client Solutions</a>
+                <a href="case.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Case Studies</a>
+                <a href="https://samson-ai.com" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Samson-AI</a>
+                <a href="whyus.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Why Us</a>
+            </div>
+            <a href="solutions.html" class="hidden lg:block bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 cta-button">Partner With Us</a>
+            <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
+             <a href="solutions.html" class="block py-2 text-gray-600 hover:text-blue-600">Client Solutions</a>
+             <a href="case.html" class="block py-2 text-gray-600 hover:text-blue-600">Case Studies</a>
+             <a href="https://samson-ai.com" class="block py-2 text-gray-600 hover:text-blue-600">Samson-AI</a>
+             <a href="whyus.html" class="block py-2 text-gray-600 hover:text-blue-600">Why Us</a>
+             <a href="solutions.html" class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-lg hover:bg-blue-700">Partner With Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white pt-24 pb-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
+                    Precision in Motion.<br>Profit in Uptime.
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    For over 20 years, we have been the trusted partner for industrial leaders, providing advanced predictive maintenance services that prevent catastrophic failures and protect your bottom line.
+                </p>
+                <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samsonai-droztechnologies/general-inquiry'}); return false;" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-indigo-700 cta-button">Explore Our Core Services</a>
+            </div>
+        </section>
+
+        <!-- Trusted By Section -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h3 class="text-center text-sm font-bold text-gray-500 uppercase tracking-widest mb-8">Trusted by Industrial Leaders Across the Americas</h3>
+                <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
+                    <img src="https://placehold.co/140x60/f0f0f0/999999?text=Westinghouse" alt="Westinghouse Logo" class="h-10 opacity-80 hover:opacity-100 transition-opacity duration-300" onerror="this.onerror=null;this.src='https://placehold.co/140x60/f0f0f0/cccccc?text=Westinghouse';">
+                    <img src="https://placehold.co/140x60/f0f0f0/999999?text=Unilever" alt="Unilever Logo" class="h-10 opacity-80 hover:opacity-100 transition-opacity duration-300" onerror="this.onerror=null;this.src='https://placehold.co/140x60/f0f0f0/cccccc?text=Unilever';">
+                    <img src="https://placehold.co/140x60/f0f0f0/999999?text=Holcim" alt="Holcim Logo" class="h-10 opacity-80 hover:opacity-100 transition-opacity duration-300" onerror="this.onerror=null;this.src='https://placehold.co/140x60/f0f0f0/cccccc?text=Holcim';">
+                    <img src="https://placehold.co/140x60/f0f0f0/999999?text=PDVSA" alt="PDVSA Logo" class="h-12 opacity-80 hover:opacity-100 transition-opacity duration-300" onerror="this.onerror=null;this.src='https://placehold.co/140x60/f0f0f0/cccccc?text=PDVSA';">
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Services Section -->
+        <section id="services" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Our Predictive Maintenance Services</h2>
+                    <p class="text-lg text-gray-600 mt-4">We deploy a suite of advanced diagnostic technologies to identify and correct machinery issues long before they lead to costly downtime.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <a href="laser.html" class="bg-gray-50 p-8 rounded-2xl service-card"><h3 class="text-2xl font-bold mb-3">Laser Alignment</h3><p class="text-gray-600">Utilizing state-of-the-art laser systems, we correct shaft misalignments to reduce bearing wear, decrease energy consumption, and extend the life of your rotating equipment.</p></a>
+                    <a href="ultrasound.html" class="bg-gray-50 p-8 rounded-2xl service-card"><h3 class="text-2xl font-bold mb-3">Ultrasound Analysis</h3><p class="text-gray-600">Our technicians use high-frequency ultrasound detectors to identify issues like bearing faults, steam trap failures, and compressed air leaks that are inaudible to the human ear.</p></a>
+                    <a href="vibrational.html" class="bg-gray-50 p-8 rounded-2xl service-card"><h3 class="text-2xl font-bold mb-3">Vibrational Analysis</h3><p class="text-gray-600">By analyzing the unique vibration signature of your machinery, we can pinpoint developing faults such as imbalance, resonance, and gear defects with incredible accuracy.</p></a>
+                    <a href="dynamic.html" class="bg-gray-50 p-8 rounded-2xl service-card"><h3 class="text-2xl font-bold mb-3">Dynamic Balancing of Rotors</h3><p class="text-gray-600">We perform on-site dynamic balancing of rotors, fans, and other rotating components to eliminate destructive vibrations, improve efficiency, and ensure operational safety.</p></a>
+                    <a href="generator.html" class="bg-gray-50 p-8 rounded-2xl service-card lg:col-span-2"><h3 class="text-2xl font-bold mb-3">Alignment & Balancing of Turbo Generators</h3><p class="text-gray-600">A highly specialized service for the power generation sector. We provide precision alignment and balancing for critical turbo generators, ensuring optimal performance and preventing high-impact failures.</p></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Partners Section -->
+        <section class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Proven Partnerships in Critical Industries</h2>
+                    <p class="text-lg text-gray-600 mt-4">Our experience is defined by the high-stakes environments where we operate and the trust we've earned from global leaders.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 partner-card">
+                        <h3 class="text-2xl font-bold mb-3">Power Generation & Heavy Manufacturing</h3>
+                        <p class="text-gray-600">Working with partners like **Westinghouse USA** and **Holcim**, we've applied our most precise services, including turbo generator balancing and laser alignment, to machinery where failure is not an option.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 partner-card">
+                        <h3 class="text-2xl font-bold mb-3">Oil & Gas</h3>
+                        <p class="text-gray-600">Our teams have extensive experience ensuring the reliability of critical assets for major players like **PDVSA Venezuela** and multiple **Canadian Oil companies**, performing vibrational analysis and dynamic balancing on pumps, compressors, and turbines.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 partner-card">
+                        <h3 class="text-2xl font-bold mb-3">Food & Nutrients</h3>
+                        <p class="text-gray-600">For global leaders like **Unilever**, our focus is on maintaining the integrity and uptime of production lines. Our non-intrusive techniques like ultrasound analysis ensure product quality and operational efficiency.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-2xl border border-gray-200 partner-card">
+                        <h3 class="text-2xl font-bold mb-3">Pulp & Paper</h3>
+                        <p class="text-gray-600">We understand the unique challenges of the pulp and paper industry, providing essential laser alignment for rollers and vibrational analysis for presses to prevent costly tears and production halts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries Served Section -->
+        <section class="py-20 bg-gray-900 text-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-extrabold">Deep Expertise Across Demanding Industries</h2>
+                    <p class="text-lg text-gray-300 mt-2">We understand the unique operational challenges of your sector.</p>
+                </div>
+                <div class="flex flex-wrap justify-center items-center gap-4 text-center font-medium">
+                    <span class="bg-gray-800 px-6 py-3 rounded-full">Oil & Gas</span>
+                    <span class="bg-gray-800 px-6 py-3 rounded-full">Pulp & Paper</span>
+                    <span class="bg-gray-800 px-6 py-3 rounded-full">Food & Nutrients</span>
+                    <span class="bg-gray-800 px-6 py-3 rounded-full">Power Generation</span>
+                    <span class="bg-gray-800 px-6 py-3 rounded-full">Manufacturing</span>
+                    <span class="bg-gray-800 px-6 py-3 rounded-full">Cement & Aggregates</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Request a Machinery Health Assessment</h2>
+                    <p class="text-lg text-gray-600 mt-4 mb-8">Contact our engineering team to discuss your operational challenges and schedule a comprehensive assessment of your critical equipment.</p>
+                    <form action="https://formspree.io/f/xyzdynob" method="POST" class="space-y-6 text-left">
+                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email Address</label><input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="company" class="block text-sm font-medium text-gray-700">Company Name</label><input type="text" name="company" id="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
+                        <div><label for="service_needed" class="block text-sm font-medium text-gray-700">Service of Interest</label><select id="service_needed" name="service_needed" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"><option>General Assessment</option><option>Laser Alignment</option><option>Ultrasound Analysis</option><option>Vibrational Analysis</option><option>Dynamic Balancing</option><option>Turbo Generator Services</option></select></div>
+                        <div><button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 cta-button">Submit Request</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p class="font-bold text-xl mb-2">Droz<span class="text-indigo-500">Tech</span></p>
+            <p>&copy; 2025 Droz Technologies. Engineering Growth Systems.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
