@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing & Growth — Droz Technologies</title>
+    <meta name="description" content="Revenue systems, not ad campaigns. Performance marketing, SEO infrastructure, and the Samson-AI advertising automation platform.">
+    <link rel="icon" type="image/x-icon" href="./assets/droztechnologies.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #faf9f6; --bg-warm: #f3f1ec; --text: #1a1a1a; --text-muted: #6b6b6b;
+            --text-light: #999; --accent: #c23d2a; --border: #e0ddd6; --border-light: #eceae4; --white: #fff;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .serif { font-family: 'Instrument Serif', Georgia, serif; }
+        h1, h2, h3, h4 { line-height: 1.1; font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        a { color: inherit; }
+
+        /* Nav */
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+        .nav-logo img { height: 32px; }
+        .nav-logo span { font-weight: 600; font-size: 16px; letter-spacing: -0.02em; }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text); }
+        .nav-contact { padding: 8px 20px; border: 1.5px solid var(--text); color: var(--text) !important; transition: background 0.2s, color 0.2s; }
+        .nav-contact:hover { background: var(--text); color: var(--bg) !important; }
+        .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; }
+        .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 32px 24px; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; font-size: 24px; font-family: 'Instrument Serif', serif; color: var(--text); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--border-light); }
+
+        /* Page Hero */
+        .page-hero { padding: 100px 0 80px; border-bottom: 1px solid var(--border); }
+        .page-hero-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 24px; }
+        .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.03em; max-width: 700px; margin-bottom: 24px; }
+        .page-hero p { font-size: 18px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+        /* Services List */
+        .services { padding: 80px 0; }
+        .service-item { display: grid; grid-template-columns: 280px 1fr; gap: 48px; padding: 48px 0; border-bottom: 1px solid var(--border-light); }
+        .service-item:first-child { border-top: 1px solid var(--border-light); }
+        .service-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); font-weight: 500; padding-top: 4px; }
+        .service-content h3 { font-family: 'Instrument Serif', serif; font-size: 28px; margin-bottom: 12px; }
+        .service-content p { font-size: 16px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+        /* Samson Section */
+        .samson { padding: 100px 0; background: var(--text); color: var(--bg); }
+        .samson-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .samson h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 20px; }
+        .samson p { font-size: 16px; line-height: 1.7; color: #999; margin-bottom: 16px; max-width: 480px; }
+        .samson-link { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; color: var(--bg); text-decoration: none; border-bottom: 1.5px solid rgba(250,249,246,0.3); padding-bottom: 4px; transition: border-color 0.2s; margin-top: 16px; }
+        .samson-link:hover { border-color: var(--bg); }
+        .samson-features { display: flex; flex-direction: column; gap: 24px; }
+        .samson-feature { padding: 24px; border: 1px solid rgba(255,255,255,0.1); }
+        .samson-feature h4 { font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--bg); }
+        .samson-feature p { font-size: 14px; color: #888; margin: 0; }
+
+        /* CTA */
+        .cta { padding: 100px 0; text-align: center; }
+        .cta h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
+        .cta p { font-size: 17px; color: var(--text-muted); margin-bottom: 32px; }
+        .cta-btn { display: inline-block; padding: 14px 36px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 15px; font-weight: 500; transition: background 0.2s; }
+        .cta-btn:hover { background: var(--accent); }
+
+        /* Footer */
+        .footer { padding: 48px 0; border-top: 1px solid var(--border); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+        .footer-left { font-size: 13px; color: var(--text-light); }
+        .footer-links { display: flex; gap: 24px; list-style: none; }
+        .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+
+        @media (max-width: 900px) {
+            .service-item { grid-template-columns: 1fr; gap: 12px; }
+            .samson-grid { grid-template-columns: 1fr; gap: 48px; }
+            .nav-links { display: none; }
+            .nav-mobile-btn { display: block; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-logo"><img src="./assets/droz.webp" alt="Droz"><span>Droz Technologies</span></a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#divisions">Divisions</a></li>
+                    <li><a href="./droz-connect.html">Droz Connect</a></li>
+                    <li><a href="/#contact" class="nav-contact">Get in touch</a></li>
+                </ul>
+                <button class="nav-mobile-btn" onclick="document.getElementById('mm').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mm">
+        <a href="/">Home</a><a href="/#divisions">Divisions</a><a href="./droz-connect.html">Droz Connect</a><a href="/#contact">Contact</a>
+    </div>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="page-hero-label">Division 01</div>
+            <h1 class="serif">Digital Marketing &amp; Growth Systems</h1>
+            <p>Not an agency. A revenue infrastructure team. We build marketing systems that generate, track, and compound growth — then automate them.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="service-item">
+                <div class="service-label">Performance Marketing</div>
+                <div class="service-content">
+                    <h3 class="serif">Paid acquisition that scales</h3>
+                    <p>Meta Ads, Google Ads, TikTok — managed with a systems approach. We build creative testing matrices, audience segmentation, and automated optimization loops. Not "boost post and pray."</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-label">SEO Infrastructure</div>
+                <div class="service-content">
+                    <h3 class="serif">Organic traffic as a compounding asset</h3>
+                    <p>Technical SEO, content architecture, and topical authority mapping. Built so every article, page, and blog post compounds over time. We also optimize for AI engines — GEO and AEO alongside traditional search.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-label">Conversion Engineering</div>
+                <div class="service-content">
+                    <h3 class="serif">Turn traffic into revenue</h3>
+                    <p>Landing page design, A/B testing frameworks, funnel optimization, and CRO audits. We treat conversion as engineering, not guesswork — every change is measured, every decision is data-driven.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-label">Marketing Automation</div>
+                <div class="service-content">
+                    <h3 class="serif">Systems that run without you</h3>
+                    <p>Email sequences, lead scoring, CRM integration, and workflow automation. We build the machine so you can focus on closing, not chasing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="samson">
+        <div class="container">
+            <div class="samson-grid">
+                <div>
+                    <h2 class="serif">Samson-AI</h2>
+                    <p>Our proprietary AI advertising platform. Samson scrapes your website, generates ad creative, launches campaigns across Meta and Google, and optimizes your spend around the clock.</p>
+                    <p>Used by SMBs and agencies who want results without the overhead of a media buyer.</p>
+                    <a href="https://samson-ai.com" target="_blank" class="samson-link">Visit samson-ai.com →</a>
+                </div>
+                <div class="samson-features">
+                    <div class="samson-feature">
+                        <h4>5-5-5 Testing Matrix</h4>
+                        <p>5 angles × 5 creatives × 5 audiences tested simultaneously. Find winners fast.</p>
+                    </div>
+                    <div class="samson-feature">
+                        <h4>Overdrive Mode</h4>
+                        <p>Auto-scales winning ads and swaps creatives before audience fatigue sets in.</p>
+                    </div>
+                    <div class="samson-feature">
+                        <h4>AI Creative Generation</h4>
+                        <p>Copy, images, and video generated from your website content. No agency needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2 class="serif">Ready to build your growth system?</h2>
+            <p>Tell us about your business. We'll tell you where the revenue is hiding.</p>
+            <a href="/#contact" class="cta-btn">Start a conversation</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-left">© 2026 Droz Technologies. Toronto, Canada.</div>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="./droz-connect.html">Droz Connect</a></li>
+                    <li><a href="https://samson-ai.com" target="_blank">Samson-AI</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droz Technologies — Enterprise Automation & Revenue Infrastructure</title>
+    <meta name="description" content="Three divisions. One mission. We engineer revenue infrastructure across digital marketing, predictive maintenance, and AI automation for industry leaders.">
+    <link rel="icon" type="image/x-icon" href="./assets/droztechnologies.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'slate-950': '#0a0f1a',
+              'slate-925': '#0f1629',
+              'brand': { 50:'#eff6ff', 100:'#dbeafe', 200:'#bfdbfe', 300:'#93c5fd', 400:'#60a5fa', 500:'#3b82f6', 600:'#2563eb', 700:'#1d4ed8' },
+              'mint': { 400:'#34d399', 500:'#10b981', 600:'#059669' },
+              'signal': { 400:'#fbbf24', 500:'#f59e0b' }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', 'sans-serif'],
+              mono: ['JetBrains Mono', 'monospace']
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* === Micro-interactions & Animations === */
+      @keyframes fade-up { from { opacity:0; transform:translateY(32px) } to { opacity:1; transform:translateY(0) } }
+      @keyframes fade-in { from { opacity:0 } to { opacity:1 } }
+      @keyframes pulse-slow { 0%,100%{ opacity:.4 } 50%{ opacity:.7 } }
+      @keyframes grid-drift { from { background-position: 0 0 } to { background-position: 40px 40px } }
+      @keyframes count-up { from { opacity:0; transform:translateY(8px) } to { opacity:1; transform:translateY(0) } }
+
+      .animate-fade-up { animation: fade-up .7s cubic-bezier(.22,1,.36,1) both }
+      .animate-fade-in { animation: fade-in .6s ease both }
+      .delay-100 { animation-delay:.1s } .delay-200 { animation-delay:.2s }
+      .delay-300 { animation-delay:.3s } .delay-400 { animation-delay:.4s }
+      .delay-500 { animation-delay:.5s } .delay-600 { animation-delay:.6s }
+
+      /* Intersection observer driven */
+      [data-reveal] { opacity:0; transform:translateY(28px); transition: opacity .7s cubic-bezier(.22,1,.36,1), transform .7s cubic-bezier(.22,1,.36,1) }
+      [data-reveal].visible { opacity:1; transform:translateY(0) }
+
+      /* Grid background pattern */
+      .grid-bg {
+        background-image:
+          linear-gradient(rgba(59,130,246,.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59,130,246,.04) 1px, transparent 1px);
+        background-size: 60px 60px;
+      }
+      .grid-bg-animate { animation: grid-drift 12s linear infinite }
+
+      /* Gradient mesh hero */
+      .hero-mesh {
+        background:
+          radial-gradient(ellipse 80% 60% at 20% 80%, rgba(59,130,246,.15), transparent),
+          radial-gradient(ellipse 60% 50% at 80% 20%, rgba(16,185,129,.08), transparent),
+          radial-gradient(ellipse 50% 40% at 50% 50%, rgba(99,102,241,.06), transparent);
+      }
+
+      /* Triptych cards */
+      .triptych-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease;
+      }
+      .triptych-card::before {
+        content:'';
+        position:absolute; inset:0;
+        background: linear-gradient(135deg, transparent 60%, rgba(59,130,246,.06));
+        opacity:0; transition: opacity .4s ease;
+      }
+      .triptych-card:hover { transform: translateY(-6px); box-shadow: 0 25px 60px -12px rgba(0,0,0,.35) }
+      .triptych-card:hover::before { opacity:1 }
+      .triptych-card .card-arrow { transform:translateX(0); transition:transform .3s ease }
+      .triptych-card:hover .card-arrow { transform:translateX(6px) }
+
+      /* Accent bar on card top */
+      .accent-bar { height:3px; width:48px; border-radius:2px; transition: width .4s ease }
+      .triptych-card:hover .accent-bar { width:80px }
+
+      /* Logo bar grayscale */
+      .logo-item { filter:grayscale(1) brightness(1.8); opacity:.5; transition: all .3s ease }
+      .logo-item:hover { filter:grayscale(0) brightness(1); opacity:1 }
+
+      /* Stats counter effect */
+      .stat-value { font-variant-numeric: tabular-nums }
+
+      /* Division showcase cards */
+      .division-card {
+        transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease;
+        position:relative; overflow:hidden;
+      }
+      .division-card::after {
+        content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+        transform:scaleX(0); transform-origin:left; transition:transform .4s ease;
+      }
+      .division-card:hover { transform:translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,.2) }
+      .division-card:hover::after { transform:scaleX(1) }
+      .division-card.digital::after { background: linear-gradient(90deg,#3b82f6,#8b5cf6) }
+      .division-card.physical::after { background: linear-gradient(90deg,#10b981,#34d399) }
+      .division-card.intelligent::after { background: linear-gradient(90deg,#f59e0b,#f97316) }
+
+      /* Mega menu */
+      .mega-menu { opacity:0; visibility:hidden; transform:translateY(-4px); transition: all .25s ease; pointer-events:none }
+      .nav-trigger:hover .mega-menu,
+      .mega-menu:hover { opacity:1; visibility:visible; transform:translateY(0); pointer-events:auto }
+
+      /* Mobile menu */
+      .mobile-drawer { transform:translateX(100%); transition: transform .35s cubic-bezier(.22,1,.36,1) }
+      .mobile-drawer.open { transform:translateX(0) }
+      .mobile-overlay { opacity:0; visibility:hidden; transition: all .3s ease }
+      .mobile-overlay.open { opacity:1; visibility:visible }
+
+      /* Button hover */
+      .btn-primary { transition: all .25s ease; position:relative; overflow:hidden }
+      .btn-primary::after {
+        content:''; position:absolute; inset:0;
+        background:linear-gradient(135deg, rgba(255,255,255,.1), transparent);
+        opacity:0; transition:opacity .25s ease;
+      }
+      .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 24px -4px rgba(59,130,246,.4) }
+      .btn-primary:hover::after { opacity:1 }
+
+      .btn-ghost { transition: all .25s ease }
+      .btn-ghost:hover { background:rgba(255,255,255,.08); transform:translateY(-1px) }
+
+      /* Scroll progress indicator */
+      #scroll-progress {
+        position:fixed; top:0; left:0; height:2px; background:linear-gradient(90deg,#3b82f6,#10b981);
+        z-index:100; transform-origin:left; transform:scaleX(0); transition:none;
+      }
+    </style>
+</head>
+<body class="bg-slate-950 text-gray-100 font-sans antialiased">
+  <div id="scroll-progress"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="fixed top-0 inset-x-0 z-50 transition-all duration-300" id="site-header">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <nav class="flex items-center justify-between h-16 lg:h-[72px]">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 shrink-0">
+          <img src="./assets/droz.webp" alt="Droz Technologies" class="h-8 lg:h-9 w-auto">
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden lg:flex items-center gap-1">
+          <!-- Solutions dropdown -->
+          <div class="nav-trigger relative">
+            <button class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition flex items-center gap-1">
+              Solutions
+              <svg class="w-3.5 h-3.5 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 pt-2">
+              <div class="bg-slate-900/95 backdrop-blur-xl border border-white/5 rounded-xl shadow-2xl p-6 w-[580px] grid grid-cols-2 gap-6">
+                <div>
+                  <span class="text-[11px] font-semibold text-brand-400 uppercase tracking-widest mb-3 block">By Division</span>
+                  <a href="digital-revenue.html" class="group flex gap-3 p-2.5 rounded-lg hover:bg-white/5 transition">
+                    <div class="w-9 h-9 rounded-lg bg-brand-500/10 flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+                    <div><p class="text-sm font-semibold text-white group-hover:text-brand-300 transition">Digital Revenue</p><p class="text-xs text-gray-500 mt-0.5">Marketing infrastructure & growth systems</p></div>
+                  </a>
+                  <a href="physical-revenue.html" class="group flex gap-3 p-2.5 rounded-lg hover:bg-white/5 transition">
+                    <div class="w-9 h-9 rounded-lg bg-mint-500/10 flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.573-1.066z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                    <div><p class="text-sm font-semibold text-white group-hover:text-mint-400 transition">Physical Revenue</p><p class="text-xs text-gray-500 mt-0.5">Predictive maintenance & asset protection</p></div>
+                  </a>
+                  <a href="intelligent-revenue.html" class="group flex gap-3 p-2.5 rounded-lg hover:bg-white/5 transition">
+                    <div class="w-9 h-9 rounded-lg bg-signal-400/10 flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+                    <div><p class="text-sm font-semibold text-white group-hover:text-signal-400 transition">Intelligent Revenue</p><p class="text-xs text-gray-500 mt-0.5">Custom AI & software automation</p></div>
+                  </a>
+                </div>
+                <div>
+                  <span class="text-[11px] font-semibold text-brand-400 uppercase tracking-widest mb-3 block">Platform</span>
+                  <a href="droz-connect.html" class="group flex gap-3 p-2.5 rounded-lg hover:bg-white/5 transition">
+                    <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg></div>
+                    <div><p class="text-sm font-semibold text-white group-hover:text-purple-300 transition">Droz Connect</p><p class="text-xs text-gray-500 mt-0.5">Appointment confirmation SaaS</p></div>
+                  </a>
+                  <a href="https://samson-ai.com" target="_blank" class="group flex gap-3 p-2.5 rounded-lg hover:bg-white/5 transition">
+                    <div class="w-9 h-9 rounded-lg bg-brand-500/10 flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                    <div><p class="text-sm font-semibold text-white group-hover:text-brand-300 transition">Samson-AI <span class="text-[10px] text-gray-600 ml-1">&#8599;</span></p><p class="text-xs text-gray-500 mt-0.5">AI-powered ad automation platform</p></div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <a href="case.html" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition">Case Studies</a>
+          <a href="whyus.html" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition">Why Droz</a>
+          <a href="#contact" class="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition">Contact</a>
+        </div>
+
+        <!-- CTA + Mobile toggle -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden lg:inline-flex items-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-2.5 rounded-lg btn-primary">
+            Partner With Us
+          </a>
+          <button id="mobile-toggle" class="lg:hidden p-2 text-gray-400 hover:text-white transition" aria-label="Open menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-overlay" class="mobile-overlay fixed inset-0 bg-black/60 backdrop-blur-sm z-[60]" onclick="closeMobile()"></div>
+  <div id="mobile-drawer" class="mobile-drawer fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-slate-925 border-l border-white/5 z-[70] flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-white/5">
+      <span class="text-sm font-semibold text-white">Menu</span>
+      <button onclick="closeMobile()" class="p-1 text-gray-400 hover:text-white"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    </div>
+    <nav class="flex-1 p-5 space-y-1 overflow-y-auto">
+      <span class="text-[10px] font-bold text-brand-400 uppercase tracking-widest px-3 pb-2 block">Solutions</span>
+      <a href="digital-revenue.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition text-sm font-medium">Digital Revenue Infrastructure</a>
+      <a href="physical-revenue.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition text-sm font-medium">Physical Revenue Infrastructure</a>
+      <a href="intelligent-revenue.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition text-sm font-medium">Intelligent Revenue Infrastructure</a>
+      <div class="h-px bg-white/5 my-3"></div>
+      <span class="text-[10px] font-bold text-brand-400 uppercase tracking-widest px-3 pb-2 block">Platform</span>
+      <a href="droz-connect.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition text-sm font-medium">Droz Connect</a>
+      <a href="https://samson-ai.com" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition text-sm font-medium">Samson-AI &#8599;</a>
+      <div class="h-px bg-white/5 my-3"></div>
+      <a href="case.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition text-sm font-medium">Case Studies</a>
+      <a href="whyus.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-white/5 transition text-sm font-medium">Why Droz</a>
+    </nav>
+    <div class="p-5 border-t border-white/5">
+      <a href="#contact" onclick="closeMobile()" class="block text-center bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-5 py-3 rounded-lg transition">Partner With Us</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="relative min-h-[92vh] flex items-center overflow-hidden">
+      <!-- Background layers -->
+      <div class="absolute inset-0 bg-slate-950"></div>
+      <div class="absolute inset-0 hero-mesh"></div>
+      <div class="absolute inset-0 grid-bg opacity-40"></div>
+
+      <!-- Floating ambient elements -->
+      <div class="absolute top-1/4 left-[10%] w-72 h-72 bg-brand-500/5 rounded-full blur-[80px] animate-pulse" style="animation-duration:6s"></div>
+      <div class="absolute bottom-1/4 right-[15%] w-56 h-56 bg-mint-500/5 rounded-full blur-[60px] animate-pulse" style="animation-duration:8s;animation-delay:2s"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-8 pt-28 pb-20 lg:pt-32 lg:pb-28 w-full">
+        <div class="max-w-4xl">
+          <!-- Overline -->
+          <div class="animate-fade-up inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-mint-500 animate-pulse"></span>
+            <span class="text-xs font-medium text-gray-400 tracking-wide">Three Divisions. One Mission.</span>
+          </div>
+
+          <!-- H1 -->
+          <h1 class="animate-fade-up delay-100 text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-6xl font-black leading-[1.08] tracking-tight">
+            We Engineer<br>
+            <span class="bg-gradient-to-r from-brand-400 via-brand-300 to-mint-400 bg-clip-text text-transparent">Revenue Infrastructure</span>
+          </h1>
+
+          <!-- Subhead -->
+          <p class="animate-fade-up delay-200 mt-6 text-lg lg:text-xl text-gray-400 leading-relaxed max-w-2xl">
+            Unbreakable systems that generate, protect, and optimize revenue. From AI-powered marketing to predictive maintenance for billion-dollar assets.
+          </p>
+
+          <!-- CTAs -->
+          <div class="animate-fade-up delay-300 mt-10 flex flex-col sm:flex-row gap-4">
+            <a href="#triptych" class="btn-primary inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold px-7 py-3.5 rounded-lg">
+              Explore Solutions
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <a href="#contact" class="btn-ghost inline-flex items-center justify-center gap-2 border border-white/10 text-gray-300 hover:text-white text-sm font-semibold px-7 py-3.5 rounded-lg">
+              Partner With Us
+              <svg class="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+
+          <!-- Stats row -->
+          <div class="animate-fade-up delay-500 mt-16 grid grid-cols-3 gap-8 max-w-lg">
+            <div>
+              <div class="stat-value text-2xl lg:text-3xl font-extrabold text-white">20+</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium">Years Industrial Experience</div>
+            </div>
+            <div>
+              <div class="stat-value text-2xl lg:text-3xl font-extrabold text-white">3</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium">Specialized Divisions</div>
+            </div>
+            <div>
+              <div class="stat-value text-2xl lg:text-3xl font-extrabold text-white">6</div>
+              <div class="text-xs text-gray-500 mt-1 font-medium">Fortune 500 Clients</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CLIENT TRUST BAR ========== -->
+    <section class="relative border-y border-white/5 bg-slate-950/80 backdrop-blur-sm py-10">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <p class="text-[11px] font-semibold text-gray-600 uppercase tracking-[.2em] text-center mb-8">Trusted By Industry Leaders</p>
+        <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6">
+          <img src="https://res.cloudinary.com/dtbhgbbch/image/upload/v1756754484/Screenshot_2025-09-01_at_2.46.31_PM-removebg-preview_e2atki.png" alt="Westinghouse" class="logo-item h-8 w-auto">
+          <img src="https://res.cloudinary.com/dtbhgbbch/image/upload/v1756754488/Screenshot_2025-09-01_at_3.12.18_PM-removebg-preview_x85ayz.png" alt="Holcim" class="logo-item h-8 w-auto">
+          <img src="https://res.cloudinary.com/dtbhgbbch/image/upload/v1756754487/Screenshot_2025-09-01_at_2.48.51_PM-removebg-preview_ps0nfh.png" alt="PDVSA" class="logo-item h-8 w-auto">
+          <img src="https://res.cloudinary.com/dtbhgbbch/image/upload/v1756754491/Screenshot_2025-09-01_at_3.12.42_PM-removebg-preview_szohyj.png" alt="Unilever" class="logo-item h-8 w-auto">
+          <img src="https://res.cloudinary.com/dtbhgbbch/image/upload/v1756754492/Screenshot_2025-09-01_at_3.13.03_PM-removebg-preview_ufxm96.png" alt="Lafarge" class="logo-item h-8 w-auto">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TRIPTYCH GATEWAY ========== -->
+    <section id="triptych" class="relative py-24 lg:py-32">
+      <div class="absolute inset-0 bg-slate-950"></div>
+      <div class="absolute inset-0 grid-bg opacity-20"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="text-center mb-16" data-reveal>
+          <p class="text-[11px] font-semibold text-brand-400 uppercase tracking-[.2em] mb-3">Revenue Infrastructure</p>
+          <h2 class="text-3xl lg:text-4xl font-extrabold text-white leading-tight">Who Are You Building For?</h2>
+          <p class="mt-4 text-gray-400 max-w-xl mx-auto">Three divisions engineered for the people who make decisions. Find yours.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-6 lg:gap-5">
+          <!-- CMO / Marketing Leader -->
+          <a href="digital-revenue.html" class="triptych-card group bg-slate-925 border border-white/5 rounded-2xl p-8 lg:p-10 flex flex-col" data-reveal>
+            <div class="accent-bar bg-brand-500 mb-6"></div>
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+            <span class="text-[10px] font-bold text-brand-400 uppercase tracking-[.15em]">For the CMO</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">Maximize Revenue</h3>
+            <p class="text-sm text-gray-400 leading-relaxed flex-1">Engineer systematic growth through AI-powered marketing infrastructure. Stop managing campaigns. Start building revenue machines.</p>
+            <ul class="mt-6 space-y-2.5">
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Full-funnel growth systems</li>
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Samson-AI powered campaigns</li>
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-brand-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Revenue attribution & analytics</li>
+            </ul>
+            <div class="mt-8 flex items-center gap-2 text-sm font-semibold text-brand-400">
+              Explore Digital Revenue <svg class="w-4 h-4 card-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+          </a>
+
+          <!-- Plant Manager / Ops Leader -->
+          <a href="physical-revenue.html" class="triptych-card group bg-slate-925 border border-white/5 rounded-2xl p-8 lg:p-10 flex flex-col" data-reveal>
+            <div class="accent-bar bg-mint-500 mb-6"></div>
+            <div class="w-12 h-12 rounded-xl bg-mint-500/10 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <span class="text-[10px] font-bold text-mint-400 uppercase tracking-[.15em]">For the Plant Manager</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">Protect Revenue</h3>
+            <p class="text-sm text-gray-400 leading-relaxed flex-1">20+ years preventing million-dollar failures. Predictive maintenance and asset optimization for the infrastructure that powers your revenue.</p>
+            <ul class="mt-6 space-y-2.5">
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-mint-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Vibration & ultrasound analysis</li>
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-mint-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Turbo generator repair</li>
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-mint-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>24/7 emergency response</li>
+            </ul>
+            <div class="mt-8 flex items-center gap-2 text-sm font-semibold text-mint-400">
+              Explore Physical Revenue <svg class="w-4 h-4 card-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+          </a>
+
+          <!-- CTO / Tech Leader -->
+          <a href="intelligent-revenue.html" class="triptych-card group bg-slate-925 border border-white/5 rounded-2xl p-8 lg:p-10 flex flex-col" data-reveal>
+            <div class="accent-bar bg-signal-400 mb-6"></div>
+            <div class="w-12 h-12 rounded-xl bg-signal-400/10 flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-signal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <span class="text-[10px] font-bold text-signal-400 uppercase tracking-[.15em]">For the CTO</span>
+            <h3 class="text-xl font-bold text-white mt-2 mb-3">Automate Revenue</h3>
+            <p class="text-sm text-gray-400 leading-relaxed flex-1">Custom AI and software systems that eliminate manual operations. Your business shouldn't adapt to software -- software should adapt to your business.</p>
+            <ul class="mt-6 space-y-2.5">
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-signal-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>Custom web & mobile apps</li>
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-signal-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>AI workflow automation</li>
+              <li class="flex items-center gap-2 text-sm text-gray-500"><svg class="w-3.5 h-3.5 text-signal-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>API integrations & data pipelines</li>
+            </ul>
+            <div class="mt-8 flex items-center gap-2 text-sm font-semibold text-signal-400">
+              Explore Intelligent Revenue <svg class="w-4 h-4 card-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== DROZ CONNECT FEATURE ========== -->
+    <section class="relative py-24 lg:py-32 overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-925 to-slate-950"></div>
+      <div class="absolute inset-0 hero-mesh opacity-50"></div>
+
+      <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div data-reveal>
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 mb-6">
+              <span class="text-xs font-semibold text-purple-400">New Platform</span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+              Stop Losing $50,000 a Year to<br>
+              <span class="text-purple-400">Unconfirmed Appointments</span>
+            </h2>
+            <p class="mt-5 text-gray-400 leading-relaxed text-lg">
+              Droz Connect is the revenue protection platform for high-value practices. Automated SMS, email, and AI voice call confirmations that fill your calendar and protect your bottom line.
+            </p>
+            <ul class="mt-8 space-y-3">
+              <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg></div><span class="text-sm text-gray-300"><strong class="text-white">2-Way Calendar Sync</strong> -- Updates your EHR/CRM in real time</span></li>
+              <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg></div><span class="text-sm text-gray-300"><strong class="text-white">Multi-Channel Pursuit</strong> -- Text, email, then AI voice call escalation</span></li>
+              <li class="flex items-start gap-3"><div class="w-6 h-6 rounded-full bg-purple-500/10 flex items-center justify-center shrink-0 mt-0.5"><svg class="w-3.5 h-3.5 text-purple-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg></div><span class="text-sm text-gray-300"><strong class="text-white">Instant Re-Booking</strong> -- Waitlist fills cancelled slots in minutes</span></li>
+            </ul>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="droz-connect.html" class="btn-primary inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold px-7 py-3.5 rounded-lg">
+                Calculate Your Revenue Risk
+              </a>
+              <a href="droz-connect.html" class="btn-ghost inline-flex items-center justify-center gap-2 border border-white/10 text-gray-300 hover:text-white text-sm font-semibold px-7 py-3.5 rounded-lg">
+                Learn More
+              </a>
+            </div>
+          </div>
+
+          <!-- Revenue Dashboard Mockup -->
+          <div class="relative" data-reveal>
+            <div class="bg-slate-900 border border-white/5 rounded-2xl p-6 shadow-2xl">
+              <div class="flex items-center gap-2 mb-5">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+                <span class="ml-2 text-[11px] text-gray-600 font-mono">droz-connect-dashboard</span>
+              </div>
+              <div class="grid grid-cols-3 gap-3 mb-5">
+                <div class="bg-slate-950 rounded-xl p-4 border border-white/5">
+                  <p class="text-[10px] text-gray-600 uppercase tracking-wider font-semibold">Revenue Protected</p>
+                  <p class="text-2xl font-extrabold text-mint-400 mt-1">$4,500</p>
+                  <p class="text-[10px] text-mint-500 mt-1">+18% vs last month</p>
+                </div>
+                <div class="bg-slate-950 rounded-xl p-4 border border-white/5">
+                  <p class="text-[10px] text-gray-600 uppercase tracking-wider font-semibold">Confirmations</p>
+                  <p class="text-2xl font-extrabold text-white mt-1">94%</p>
+                  <p class="text-[10px] text-brand-400 mt-1">247 of 263 appts</p>
+                </div>
+                <div class="bg-slate-950 rounded-xl p-4 border border-white/5">
+                  <p class="text-[10px] text-gray-600 uppercase tracking-wider font-semibold">Re-Booked</p>
+                  <p class="text-2xl font-extrabold text-purple-400 mt-1">12</p>
+                  <p class="text-[10px] text-gray-500 mt-1">From cancellations</p>
+                </div>
+              </div>
+              <div class="bg-slate-950 rounded-xl p-4 border border-white/5">
+                <div class="flex items-center justify-between mb-3">
+                  <p class="text-[10px] text-gray-600 uppercase tracking-wider font-semibold">Weekly Confirmation Rate</p>
+                  <p class="text-[10px] font-mono text-gray-600">Feb 2026</p>
+                </div>
+                <!-- Mini chart bars -->
+                <div class="flex items-end gap-1.5 h-16">
+                  <div class="flex-1 bg-brand-500/30 rounded-t" style="height:60%"></div>
+                  <div class="flex-1 bg-brand-500/40 rounded-t" style="height:75%"></div>
+                  <div class="flex-1 bg-brand-500/50 rounded-t" style="height:85%"></div>
+                  <div class="flex-1 bg-brand-500/60 rounded-t" style="height:70%"></div>
+                  <div class="flex-1 bg-brand-500/70 rounded-t" style="height:90%"></div>
+                  <div class="flex-1 bg-brand-500/80 rounded-t" style="height:95%"></div>
+                  <div class="flex-1 bg-mint-500 rounded-t" style="height:94%"></div>
+                </div>
+                <div class="flex justify-between mt-2">
+                  <span class="text-[9px] text-gray-700 font-mono">Mon</span>
+                  <span class="text-[9px] text-gray-700 font-mono">Tue</span>
+                  <span class="text-[9px] text-gray-700 font-mono">Wed</span>
+                  <span class="text-[9px] text-gray-700 font-mono">Thu</span>
+                  <span class="text-[9px] text-gray-700 font-mono">Fri</span>
+                  <span class="text-[9px] text-gray-700 font-mono">Sat</span>
+                  <span class="text-[9px] text-gray-600 font-mono font-bold">Today</span>
+                </div>
+              </div>
+            </div>
+            <!-- Ambient glow behind card -->
+            <div class="absolute -inset-4 bg-purple-500/5 rounded-3xl blur-2xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SAMSON-AI SECTION ========== -->
+    <section class="relative py-24 lg:py-32 border-t border-white/5">
+      <div class="absolute inset-0 bg-slate-950"></div>
+      <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Features -->
+          <div data-reveal>
+            <p class="text-[11px] font-semibold text-brand-400 uppercase tracking-[.2em] mb-3">Our Proprietary Technology</p>
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-white leading-tight">The Engine: Samson-AI</h2>
+            <p class="mt-5 text-gray-400 leading-relaxed">
+              The analytical brain behind our marketing infrastructure. Samson-AI doesn't guess -- it predicts winning creatives, uncovers hidden audiences, and scales budgets with ruthless efficiency.
+            </p>
+            <div class="mt-8 space-y-4">
+              <div class="flex gap-4 p-4 rounded-xl bg-white/[.02] border border-white/5 hover:border-brand-500/20 transition">
+                <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg></div>
+                <div><p class="text-sm font-semibold text-white">Predictive Creative Engine</p><p class="text-xs text-gray-500 mt-0.5">Generates ad copy and visuals engineered for conversion before a dollar is spent.</p></div>
+              </div>
+              <div class="flex gap-4 p-4 rounded-xl bg-white/[.02] border border-white/5 hover:border-brand-500/20 transition">
+                <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                <div><p class="text-sm font-semibold text-white">Audience Intelligence</p><p class="text-xs text-gray-500 mt-0.5">Discovers profitable customer segments your competitors don't know exist.</p></div>
+              </div>
+              <div class="flex gap-4 p-4 rounded-xl bg-white/[.02] border border-white/5 hover:border-brand-500/20 transition">
+                <div class="w-10 h-10 rounded-lg bg-brand-500/10 flex items-center justify-center shrink-0"><svg class="w-5 h-5 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                <div><p class="text-sm font-semibold text-white">Automated Scaling</p><p class="text-xs text-gray-500 mt-0.5">Intelligently reallocates budget to winning creatives in real time. No human lag.</p></div>
+              </div>
+            </div>
+            <div class="mt-8">
+              <a href="https://samson-ai.com" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300 transition">
+                Explore Samson-AI <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Code/Terminal mockup -->
+          <div class="relative" data-reveal>
+            <div class="bg-slate-900 border border-white/5 rounded-2xl overflow-hidden shadow-2xl">
+              <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-slate-950/50">
+                <div class="w-2.5 h-2.5 rounded-full bg-red-500/70"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></div>
+                <div class="w-2.5 h-2.5 rounded-full bg-green-500/70"></div>
+                <span class="ml-2 text-[11px] text-gray-600 font-mono">samson-ai://campaign-optimizer</span>
+              </div>
+              <div class="p-5 font-mono text-xs leading-6">
+                <p><span class="text-gray-600">01</span> <span class="text-purple-400">const</span> campaign = <span class="text-mint-400">Samson</span>.<span class="text-brand-300">optimize</span>({</p>
+                <p><span class="text-gray-600">02</span>   budget: <span class="text-signal-400">15_000</span>,</p>
+                <p><span class="text-gray-600">03</span>   objective: <span class="text-mint-400">'revenue_max'</span>,</p>
+                <p><span class="text-gray-600">04</span>   creatives: <span class="text-signal-400">25</span>, <span class="text-gray-600">// 5x5 matrix</span></p>
+                <p><span class="text-gray-600">05</span>   audiences: <span class="text-purple-400">await</span> <span class="text-brand-300">discoverSegments</span>(),</p>
+                <p><span class="text-gray-600">06</span>   mode: <span class="text-mint-400">'overdrive'</span></p>
+                <p><span class="text-gray-600">07</span> });</p>
+                <p class="mt-3"><span class="text-gray-600">09</span> <span class="text-gray-600">// Real-time scaling</span></p>
+                <p><span class="text-gray-600">10</span> campaign.<span class="text-brand-300">on</span>(<span class="text-mint-400">'winner_detected'</span>, (ad) => {</p>
+                <p><span class="text-gray-600">11</span>   ad.<span class="text-brand-300">scaleBudget</span>(<span class="text-signal-400">2.5</span>);</p>
+                <p><span class="text-gray-600">12</span>   ad.<span class="text-brand-300">swapCreative</span>(<span class="text-mint-400">'before_fatigue'</span>);</p>
+                <p><span class="text-gray-600">13</span> });</p>
+                <p class="mt-3"><span class="text-gray-600">15</span> <span class="text-gray-500">// Output: ROAS 4.2x in 72 hours</span></p>
+                <p><span class="text-gray-600">16</span> <span class="text-gray-500">// Revenue generated: $63,000</span></p>
+              </div>
+            </div>
+            <div class="absolute -inset-4 bg-brand-500/5 rounded-3xl blur-2xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY DROZ / AUTHORITY ========== -->
+    <section class="relative py-24 lg:py-32 border-t border-white/5">
+      <div class="absolute inset-0 bg-slate-950"></div>
+      <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="text-center mb-16" data-reveal>
+          <h2 class="text-3xl lg:text-4xl font-extrabold text-white">Why Choose a Corporation Over an Agency?</h2>
+          <p class="mt-4 text-gray-400 max-w-2xl mx-auto">Our marketers understand engineering. Our engineers understand business. Our developers build tools for both. 20+ years of cross-disciplinary expertise in one entity.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-reveal>
+          <div class="bg-slate-925 border border-white/5 rounded-xl p-6 text-center">
+            <div class="text-3xl font-extrabold text-brand-400 stat-value">20+</div>
+            <p class="text-sm text-gray-400 mt-2 font-medium">Years of Industrial & Enterprise Experience</p>
+          </div>
+          <div class="bg-slate-925 border border-white/5 rounded-xl p-6 text-center">
+            <div class="text-3xl font-extrabold text-mint-400 stat-value">$2B+</div>
+            <p class="text-sm text-gray-400 mt-2 font-medium">In Client Assets Under Management</p>
+          </div>
+          <div class="bg-slate-925 border border-white/5 rounded-xl p-6 text-center">
+            <div class="text-3xl font-extrabold text-signal-400 stat-value">99.2%</div>
+            <p class="text-sm text-gray-400 mt-2 font-medium">Uptime Across Industrial Clients</p>
+          </div>
+          <div class="bg-slate-925 border border-white/5 rounded-xl p-6 text-center">
+            <div class="text-3xl font-extrabold text-purple-400 stat-value">3</div>
+            <p class="text-sm text-gray-400 mt-2 font-medium">Proprietary Technology Platforms</p>
+          </div>
+        </div>
+
+        <!-- Technology partners -->
+        <div class="mt-16 text-center" data-reveal>
+          <p class="text-[11px] font-semibold text-gray-600 uppercase tracking-[.2em] mb-6">Technology & Platform Partners</p>
+          <div class="flex flex-wrap justify-center items-center gap-6 text-sm font-medium text-gray-600">
+            <span class="px-4 py-2 rounded-lg border border-white/5 bg-white/[.02]">Microsoft</span>
+            <span class="px-4 py-2 rounded-lg border border-white/5 bg-white/[.02]">Google Cloud</span>
+            <span class="px-4 py-2 rounded-lg border border-white/5 bg-white/[.02]">Twilio</span>
+            <span class="px-4 py-2 rounded-lg border border-white/5 bg-white/[.02]">Meta</span>
+            <span class="px-4 py-2 rounded-lg border border-white/5 bg-white/[.02]">Anthropic</span>
+            <span class="px-4 py-2 rounded-lg border border-white/5 bg-white/[.02]">AWS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="relative py-24 lg:py-32 border-t border-white/5">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-925"></div>
+      <div class="relative z-10 mx-auto max-w-2xl px-5 lg:px-8">
+        <div class="text-center mb-12" data-reveal>
+          <h2 class="text-3xl lg:text-4xl font-extrabold text-white">Let's Engineer Your Revenue Infrastructure</h2>
+          <p class="mt-4 text-gray-400">We're selective about our partnerships. If you're a leader at an established company ready for systems, not services -- let's talk.</p>
+        </div>
+        <form action="https://formspree.io/f/xyzdynob" method="POST" class="space-y-5" data-reveal>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Full Name</label>
+              <input type="text" name="name" id="name" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-white/10 text-white text-sm placeholder-gray-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 outline-none transition" placeholder="John Doe">
+            </div>
+            <div>
+              <label for="email" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Email Address</label>
+              <input type="email" name="email" id="email" required class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-white/10 text-white text-sm placeholder-gray-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 outline-none transition" placeholder="john@company.com">
+            </div>
+          </div>
+          <div>
+            <label for="company" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Company & Role</label>
+            <input type="text" name="company" id="company" class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-white/10 text-white text-sm placeholder-gray-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 outline-none transition" placeholder="Acme Inc, VP Operations">
+          </div>
+          <div>
+            <label for="message" class="block text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Tell Us About Your Goals</label>
+            <textarea name="message" id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-950 border border-white/10 text-white text-sm placeholder-gray-600 focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 outline-none transition resize-none" placeholder="What systems do you need? What problems are you solving?"></textarea>
+          </div>
+          <button type="submit" class="w-full btn-primary bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3.5 rounded-lg text-sm">
+            Request a Partnership Call
+          </button>
+          <p class="text-center text-xs text-gray-600">We respond to all qualified inquiries within 24 hours.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="border-t border-white/5 bg-slate-950">
+    <div class="mx-auto max-w-7xl px-5 lg:px-8 py-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div>
+          <img src="./assets/droz.webp" alt="Droz Technologies" class="h-7 w-auto mb-4">
+          <p class="text-sm text-gray-600 leading-relaxed">Enterprise Automation & Revenue Infrastructure. Three divisions, one mission.</p>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Solutions</h4>
+          <ul class="space-y-2.5">
+            <li><a href="digital-revenue.html" class="text-sm text-gray-500 hover:text-white transition">Digital Revenue</a></li>
+            <li><a href="physical-revenue.html" class="text-sm text-gray-500 hover:text-white transition">Physical Revenue</a></li>
+            <li><a href="intelligent-revenue.html" class="text-sm text-gray-500 hover:text-white transition">Intelligent Revenue</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Platform</h4>
+          <ul class="space-y-2.5">
+            <li><a href="droz-connect.html" class="text-sm text-gray-500 hover:text-white transition">Droz Connect</a></li>
+            <li><a href="https://samson-ai.com" class="text-sm text-gray-500 hover:text-white transition">Samson-AI</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">Company</h4>
+          <ul class="space-y-2.5">
+            <li><a href="whyus.html" class="text-sm text-gray-500 hover:text-white transition">Why Droz</a></li>
+            <li><a href="case.html" class="text-sm text-gray-500 hover:text-white transition">Case Studies</a></li>
+            <li><a href="#contact" class="text-sm text-gray-500 hover:text-white transition">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-6 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-gray-700">&copy; 2026 Droz Technologies. All rights reserved.</p>
+        <p class="text-xs text-gray-700">Engineering Revenue Infrastructure Since 2003</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const progress = h.scrollTop / (h.scrollHeight - h.clientHeight);
+      document.getElementById('scroll-progress').style.transform = `scaleX(${progress})`;
+    });
+
+    // Header background on scroll
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        header.classList.add('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+      } else {
+        header.classList.remove('bg-slate-950/80', 'backdrop-blur-xl', 'border-b', 'border-white/5');
+      }
+    });
+
+    // Mobile menu
+    const overlay = document.getElementById('mobile-overlay');
+    const drawer = document.getElementById('mobile-drawer');
+    document.getElementById('mobile-toggle').addEventListener('click', () => {
+      overlay.classList.add('open');
+      drawer.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    function closeMobile() {
+      overlay.classList.remove('open');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    // Intersection observer for reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
