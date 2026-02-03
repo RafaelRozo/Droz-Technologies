@@ -1,295 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Droz Technologies - Custom Software & AI Solutions</title>
+    <title>Custom Software & AI Solutions — Droz Technologies</title>
+    <meta name="description" content="Bespoke applications, AI automation, and SaaS products built for specific business problems. Custom web platforms and intelligent workflow automation.">
     <link rel="icon" type="image/x-icon" href="./assets/droztechnologies.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .hero-bg {
-            background-color: #111827;
-            background-image: radial-gradient(circle at 30% 70%, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0) 30%);
-        }
-
-        .cta-button {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
-        }
-
-        .service-card,
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .service-card:hover,
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root { --bg: #faf9f6; --bg-warm: #f3f1ec; --text: #1a1a1a; --text-muted: #6b6b6b; --text-light: #999; --accent: #c23d2a; --border: #e0ddd6; --border-light: #eceae4; --white: #fff; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .serif { font-family: 'Instrument Serif', Georgia, serif; }
+        h1, h2, h3, h4 { line-height: 1.1; font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+        .nav-logo img { height: 32px; }
+        .nav-logo span { font-weight: 600; font-size: 16px; letter-spacing: -0.02em; }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; }
+        .nav-contact { padding: 8px 20px; border: 1.5px solid var(--text); color: var(--text) !important; }
+        .page-hero { padding: 100px 0 80px; }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; }
+        .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.03em; line-height: 0.95; margin-bottom: 24px; }
+        .page-hero h1 em { font-style: italic; color: var(--accent); }
+        .hero-right p { font-size: 18px; line-height: 1.7; color: var(--text-muted); margin-bottom: 32px; }
+        .hero-cta { display: inline-block; padding: 14px 32px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 15px; font-weight: 500; }
+        .contact { padding: 100px 0; background: var(--bg-warm); }
+        .contact-header { text-align: center; margin-bottom: 48px; }
+        .contact-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 16px; }
+        .contact-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        .form-field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+        .form-field input, .form-field textarea { width: 100%; padding: 12px 16px; font-size: 15px; border: 1px solid var(--border); background: var(--white); outline: none; }
+        .form-field textarea { resize: vertical; min-height: 100px; }
+        .form-submit { font-size: 16px; font-weight: 500; padding: 16px 32px; background: var(--text); color: var(--bg); border: none; cursor: pointer; align-self: start; }
+        .footer { padding: 48px 0; border-top: 1px solid var(--border); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+        .footer-left { font-size: 13px; color: var(--text-light); }
+        .footer-links { display: flex; gap: 24px; list-style: none; }
+        .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; }
     </style>
 </head>
-
-<body class="bg-white text-gray-800">
-
-    <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" id="refreshLink">
-                <img src="./assets/droz.webp" alt="Logo de DrozTech" style="width: 30rem; height: auto;">
-            </a>
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="solutions.html"
-                    class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Client Solutions</a>
-                <a href="case.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Case
-                    Studies</a>
-                <a href="https://samson-ai.com"
-                    class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Samson-AI</a>
-                <a href="whyus.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Why
-                    Us</a>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-logo"><img src="./assets/droz.webp" alt="Droz"><span>Droz Technologies</span></a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#divisions">Divisions</a></li>
+                    <li><a href="./droz-connect.html">Droz Connect</a></li>
+                    <li><a href="#contact" class="nav-contact">Get in touch</a></li>
+                </ul>
             </div>
-            <a href="solutions.html"
-                class="hidden lg:block bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 cta-button">Partner
-                With Us</a>
-            <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
-                </svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
-            <a href="solutions.html" class="block py-2 text-gray-600 hover:text-blue-600">Client Solutions</a>
-            <a href="case.html" class="block py-2 text-gray-600 hover:text-blue-600">Case Studies</a>
-            <a href="https://samson-ai.com" class="block py-2 text-gray-600 hover:text-blue-600">Samson-AI</a>
-            <a href="whyus.html" class="block py-2 text-gray-600 hover:text-blue-600">Why Us</a>
-            <a href="solutions.html"
-                class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-lg hover:bg-blue-700">Partner
-                With Us</a>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-bg text-white pt-24 pb-32">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
-                    Your Business Has Unique Challenges.<br>Your Software Should Be a Unique Solution.
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-                    Off-the-shelf software forces you to adapt your processes. We build custom applications, platforms,
-                    and AI-driven systems that are engineered to fit your exact workflows, creating efficiency and a
-                    powerful competitive advantage.
-                </p>
-                <a href="#"
-                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samsonai-droztechnologies/general-inquiry'}); return false;"
-                    class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-indigo-700 cta-button">Explore
-                    Our Capabilities</a>
-            </div>
-        </section>
-
-        <!-- Core Services Section -->
-        <section id="services" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">From Concept to Code: Our Core
-                        Capabilities</h2>
-                    <p class="text-lg text-gray-600 mt-4">We are a full-service development partner, capable of handling
-                        every aspect of your project's lifecycle.</p>
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <h1 class="serif">Custom Software &<br><em>AI Solutions</em></h1>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <a href="webandmobile.html" class="bg-white p-8 rounded-2xl border border-gray-200 service-card">
-                        <h3 class="text-2xl font-bold mb-3">Custom Web & Mobile Apps</h3>
-                        <p class="text-gray-600">We design and build bespoke applications from the ground up, tailored
-                            to solve your specific business problems and provide an intuitive experience for your users.
-                        </p>
-                    </a>
-                    <a href="booking.html" class="bg-white p-8 rounded-2xl border border-gray-200 service-card">
-                        <h3 class="text-2xl font-bold mb-3">Specialized Booking Platforms</h3>
-                        <p class="text-gray-600">We have deep expertise in creating complex booking and scheduling
-                            platforms for service-based businesses like spas, clinics, and professional services firms.
-                        </p>
-                    </a>
-                    <a href="aipowered.html" class="bg-white p-8 rounded-2xl border border-gray-200 service-card">
-                        <h3 class="text-2xl font-bold mb-3">AI-Powered Efficiency Systems</h3>
-                        <p class="text-gray-600">We leverage AI to build intelligent systems that automate repetitive
-                            tasks, optimize complex workflows, and provide data-driven insights to your team.</p>
-                    </a>
+                <div class="hero-right">
+                    <p>Bespoke applications, AI automation, and SaaS products built for specific business problems. From appointment confirmation systems to full-stack web platforms and intelligent workflow automation.</p>
+                    <a href="#contact" class="hero-cta">Discuss Your Project</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Project Showcase Section -->
-        <section class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">From Vision to Reality: Our Work in
-                        Action</h2>
-                    <p class="text-lg text-gray-600 mt-4">We don't just build software—we build businesses. Here are a
-                        few examples of how we've translated complex challenges into powerful software solutions.</p>
-                </div>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-8 rounded-2xl project-card flex flex-col">
-                        <h3 class="text-2xl font-bold mb-3">Samson-AI</h3>
-                        <span class="text-sm font-bold text-indigo-600 uppercase">PROPRIETARY AI PLATFORM</span>
-                        <p class="text-gray-600 mt-2 flex-grow">Our in-house generative AI ad software. Samson-AI
-                            creates, manages, and optimizes entire ad campaigns for platforms like Meta, Google, and
-                            LinkedIn, turning strategic goals into high-performing creative at scale.</p>
-                        <div class="mt-4 pt-4 border-t border-gray-200">
-                            <p class="text-sm font-bold text-gray-800">Expected Growth:</p>
-                            <p class="text-lg font-semibold text-indigo-600">Projected to power over $50M in client ad
-                                spend by 2026.</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-2xl project-card flex flex-col">
-                        <h3 class="text-2xl font-bold mb-3">Taskr</h3>
-                        <span class="text-sm font-bold text-indigo-600 uppercase">TWO-SIDED MARKETPLACE</span>
-                        <p class="text-gray-600 mt-2 flex-grow">We built Taskr from the ground up, a complex platform
-                            connecting users with everyday tasks to a network of individual providers and professional
-                            service companies, complete with scheduling, payments, and reviews.</p>
-                        <div class="mt-4 pt-4 border-t border-gray-200">
-                            <p class="text-sm font-bold text-gray-800">Expected Growth:</p>
-                            <p class="text-lg font-semibold text-indigo-600">On track to facilitate over 1 million tasks
-                                by 2026.</p>
-                        </div>
-                    </div>
-                    <div class="bg-gray-50 p-8 rounded-2xl project-card flex flex-col">
-                        <h3 class="text-2xl font-bold mb-3">Red Oaks Marketing Group</h3>
-                        <span class="text-sm font-bold text-indigo-600 uppercase">SYSTEMS AUTOMATION</span>
-                        <p class="text-gray-600 mt-2 flex-grow">We designed and installed a custom appointment booking
-                            system integrated with automated client onboarding and follow-up sequences, dramatically
-                            boosting their team's productivity, efficiency, and overall client ROI.</p>
-                        <div class="mt-4 pt-4 border-t border-gray-200">
-                            <p class="text-sm font-bold text-gray-800">Expected Growth:</p>
-                            <p class="text-lg font-semibold text-indigo-600">Projected 40% increase in client capacity
-                                by 2026.</p>
-                        </div>
-                    </div>
-                </div>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="serif">Build Your Custom Solution</h2>
+                <p>Tell us about your business challenge. We'll design and build a custom software solution that fits your exact needs.</p>
             </div>
-        </section>
-
-        <!-- AI Implementation Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="lg:pr-10">
-                        <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Leverage AI to Automate & Optimize
-                        </h2>
-                        <p class="text-lg text-gray-600 mt-4">Artificial intelligence is more than a buzzword—it's a
-                            powerful tool for creating tangible business value. We specialize in practical AI
-                            implementation that delivers immediate ROI.</p>
-                        <ul class="mt-6 space-y-4">
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full mr-4"><svg
-                                        class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M4 4v5h5M20 20v-5h-5M4 20L20 4"></path>
-                                    </svg></div>
-                                <div>
-                                    <h4 class="font-bold text-lg">Workflow Automation</h4>
-                                    <p class="text-gray-600">We analyze your business processes and build AI agents to
-                                        automate data entry, customer support inquiries, report generation, and other
-                                        time-consuming tasks.</p>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full mr-4"><svg
-                                        class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor"
-                                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M12 6V3m0 18v-3">
-                                        </path>
-                                    </svg></div>
-                                <div>
-                                    <h4 class="font-bold text-lg">Intelligent Efficiency Systems</h4>
-                                    <p class="text-gray-600">From optimizing logistics routes to predicting inventory
-                                        needs, we create systems that use data to make your operations smarter, faster,
-                                        and more cost-effective.</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="text-center">
-                        <video class="w-full h-auto rounded-2xl shadow-xl inline-block"
-                            src="https://res.cloudinary.com/dtbhgbbch/video/upload/v1756823554/Untitled_design_2_uqfsbz.mp4"
-                            autoplay muted loop playsinline controls></video>
-                    </div>
+            <form class="contact-form" action="https://formspree.io/f/xyzdynob" method="POST">
+                <div class="form-field">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-            </div>
-        </section>
-
-        <!-- Consulting Section -->
-        <section class="py-20 bg-gray-900 text-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold">Beyond Code: Your Strategic Technology Partner</h2>
-                <p class="text-lg text-gray-300 max-w-3xl mx-auto mt-4 mb-12">Building software is only half the battle.
-                    We provide high-level technology consulting to ensure your investment is strategic, future-proof,
-                    and perfectly aligned with your business goals. Whether you're a startup defining your MVP or an
-                    enterprise planning a digital transformation, our team provides the guidance you need to make the
-                    right decisions.</p>
-            </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section id="contact" class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="max-w-xl mx-auto text-center">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Let's Scope Your Project</h2>
-                    <p class="text-lg text-gray-600 mt-4 mb-8">Tell us about your vision. Our team is ready to help you
-                        translate your ideas into a powerful, effective software solution.</p>
-                    <form action="https://formspree.io/f/xyzdynob" method="POST" class="space-y-6 text-left">
-                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input
-                                type="text" name="name" id="name"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        </div>
-                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email
-                                Address</label><input type="email" name="email" id="email"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        </div>
-                        <div><label for="company" class="block text-sm font-medium text-gray-700">Company
-                                Name</label><input type="text" name="company" id="company"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
-                        </div>
-                        <div><label for="project_description" class="block text-sm font-medium text-gray-700">Briefly
-                                Describe Your Project or Goal</label><textarea id="project_description"
-                                name="project_description" rows="4"
-                                class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
-                        </div>
-                        <div><button type="submit"
-                                class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 cta-button">Request
-                                a Scoping Call</button></div>
-                    </form>
+                <div class="form-field">
+                    <label for="email">Work Email Address</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-            </div>
-        </section>
-    </main>
+                <div class="form-field">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" required>
+                </div>
+                <div class="form-field">
+                    <label for="project_description">Project Description</label>
+                    <textarea id="project_description" name="project_description" placeholder="Describe your software needs or business challenge..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Start Custom Project</button>
+            </form>
+        </div>
+    </section>
 
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p class="font-bold text-xl mb-2">Droz<span class="text-indigo-500">Tech</span></p>
-            <p>&copy; 2025 Droz Technologies. Engineering Growth Systems.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-left">© 2026 Droz Technologies. Toronto, Canada.</div>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="./droz-connect.html">Droz Connect</a></li>
+                    <li><a href="https://samson-ai.com" target="_blank">Samson-AI</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
-
 </body>
-
 </html>

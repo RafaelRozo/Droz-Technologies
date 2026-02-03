@@ -3,167 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Droz Technologies - Custom Booking Platforms for Spas & Clinics</title>
+    <title>Custom Booking Platforms for Spas & Clinics — Droz Technologies</title>
+    <meta name="description" content="Custom booking platforms for spas and clinics. Appointment scheduling, client management, and automated confirmations built specifically for healthcare and wellness businesses.">
     <link rel="icon" type="image/x-icon" href="./assets/droztechnologies.ico">
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .hero-bg {
-            background-color: #111827;
-            background-image: radial-gradient(circle at 30% 70%, rgba(37, 99, 235, 0.2) 0%, rgba(37, 99, 235, 0) 30%);
-        }
-        .cta-button {
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .cta-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3), 0 4px 6px -2px rgba(59, 130, 246, 0.2);
-        }
-        .feature-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; } :root { --bg: #faf9f6; --bg-warm: #f3f1ec; --text: #1a1a1a; --text-muted: #6b6b6b; --text-light: #999; --accent: #c23d2a; --border: #e0ddd6; --border-light: #eceae4; --white: #fff; } html { scroll-behavior: smooth; } body { font-family: 'Outfit', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; } .serif { font-family: 'Instrument Serif', Georgia, serif; } h1, h2, h3, h4 { line-height: 1.1; font-weight: 400; } .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; } .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); } .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; } .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); } .nav-logo img { height: 32px; } .nav-logo span { font-weight: 600; font-size: 16px; letter-spacing: -0.02em; } .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; } .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; } .nav-contact { padding: 8px 20px; border: 1.5px solid var(--text); color: var(--text) !important; } .page-hero { padding: 100px 0 80px; } .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; } .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.03em; line-height: 0.95; margin-bottom: 24px; } .page-hero h1 em { font-style: italic; color: var(--accent); } .hero-right p { font-size: 18px; line-height: 1.7; color: var(--text-muted); margin-bottom: 32px; } .hero-cta { display: inline-block; padding: 14px 32px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 15px; font-weight: 500; } .contact { padding: 100px 0; background: var(--bg-warm); } .contact-header { text-align: center; margin-bottom: 48px; } .contact-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 16px; } .contact-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; } .form-field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; } .form-field input, .form-field textarea { width: 100%; padding: 12px 16px; font-size: 15px; border: 1px solid var(--border); background: var(--white); outline: none; } .form-field textarea { resize: vertical; min-height: 100px; } .form-submit { font-size: 16px; font-weight: 500; padding: 16px 32px; background: var(--text); color: var(--bg); border: none; cursor: pointer; align-self: start; } .footer { padding: 48px 0; border-top: 1px solid var(--border); } .footer-inner { display: flex; justify-content: space-between; align-items: center; } .footer-left { font-size: 13px; color: var(--text-light); } .footer-links { display: flex; gap: 24px; list-style: none; } .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; }</style>
 </head>
-<body class="bg-white text-gray-800">
-
-    <!-- Header -->
-     <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" id="refreshLink">
-                <img src="./assets/droz.webp" alt="Logo de DrozTech" style="width: 30rem; height: auto;">
-            </a>
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="solutions.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Client Solutions</a>
-                <a href="case.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Case Studies</a>
-                <a href="https://samson-ai.com" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Samson-AI</a>
-                <a href="whyus.html" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Why Us</a>
+<body>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-logo"><img src="./assets/droz.webp" alt="Droz"><span>Droz Technologies</span></a>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#divisions">Divisions</a></li>
+                    <li><a href="./droz-connect.html">Droz Connect</a></li>
+                    <li><a href="#contact" class="nav-contact">Get in touch</a></li>
+                </ul>
             </div>
-            <a href="solutions.html" class="hidden lg:block bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 cta-button">Partner With Us</a>
-            <button id="mobile-menu-button" class="lg:hidden text-gray-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
-             <a href="solutions.html" class="block py-2 text-gray-600 hover:text-blue-600">Client Solutions</a>
-             <a href="case.html" class="block py-2 text-gray-600 hover:text-blue-600">Case Studies</a>
-             <a href="https://samson-ai.com" class="block py-2 text-gray-600 hover:text-blue-600">Samson-AI</a>
-             <a href="whyus.html" class="block py-2 text-gray-600 hover:text-blue-600">Why Us</a>
-             <a href="solutions.html" class="block mt-2 bg-blue-600 text-white text-center px-5 py-2 rounded-lg hover:bg-blue-700">Partner With Us</a>
         </div>
-    </header>
+    </nav>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero-bg text-white pt-24 pb-32">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-black leading-tight mb-6">
-                    Your Calendar Isn't Just a Schedule.<br>It's Your Revenue Engine.
-                </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
-                    Generic booking tools leave money on the table. We build custom, intelligent booking platforms for spas, clinics, and service businesses that automate your workflow, reduce no-shows, and create a seamless client experience.
-                </p>
-                <a href="#" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/samsonai-droztechnologies/specialized-booking-platform-website-redesign'}); return false;"  class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-indigo-700 cta-button">See the Difference</a>
-            </div>
-        </section>
-
-        <!-- The Problem Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Why Off-the-Shelf Booking Software Fails</h2>
-                    <p class="text-lg text-gray-600 mt-4">Standard booking tools are built for everyone, which means they're perfect for no one. They lack the flexibility to handle the unique complexities of a high-touch service business, leading to lost revenue and administrative headaches.</p>
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <h1 class="serif">Custom <em>Booking</em><br>Platforms</h1>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-8 rounded-2xl border border-gray-200"><h3 class="text-2xl font-bold mb-3">Costly No-Shows</h3><p class="text-gray-600">Basic reminders aren't enough. Without intelligent follow-up sequences and automated deposit/cancellation policies, empty slots eat into your profits.</p></div>
-                    <div class="bg-white p-8 rounded-2xl border border-gray-200"><h3 class="text-2xl font-bold mb-3">Administrative Overload</h3><p class="text-gray-600">Your team spends hours manually confirming appointments, handling rescheduling requests, and answering repetitive questions instead of focusing on clients.</p></div>
-                    <div class="bg-white p-8 rounded-2xl border border-gray-200"><h3 class="text-2xl font-bold mb-3">Fragmented Client Experience</h3><p class="text-gray-600">A clunky, non-branded booking process creates friction and undermines the premium experience you provide in person.</p></div>
+                <div class="hero-right">
+                    <p>Specialized booking platforms for spas, clinics, and wellness centers. Appointment scheduling, client management, automated confirmations, and revenue protection built for healthcare businesses.</p>
+                    <a href="#contact" class="hero-cta">Build Your Platform</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Features & Benefits Section -->
-        <section id="features" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16 max-w-3xl mx-auto">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">A Booking Platform Engineered for Your Business</h2>
-                    <p class="text-lg text-gray-600 mt-4">We build platforms with the specific features service businesses need to thrive.</p>
-                </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Intelligent Appointment Automation</h3><p class="text-gray-600">Automated multi-channel reminders (SMS & Email), follow-ups, and re-booking prompts that dramatically reduce no-shows and increase client lifetime value.</p></div>
-                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Dynamic Pricing & Deposits</h3><p class="text-gray-600">Implement custom rules for deposits, cancellation fees, and dynamic pricing for peak hours, all handled automatically by the platform.</p></div>
-                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Seamless Staff & Resource Management</h3><p class="text-gray-600">Complex scheduling made simple. Manage multiple staff members, rooms, and pieces of equipment to prevent double-bookings and maximize utilization.</p></div>
-                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Integrated Client Profiles</h3><p class="text-gray-600">Every client gets a profile with their appointment history, preferences, and notes, allowing your team to provide a truly personalized service.</p></div>
-                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Custom Branding & Experience</h3><p class="text-gray-600">The platform is fully branded to your business, providing a cohesive and professional experience from the first click to the final follow-up.</p></div>
-                    <div class="bg-gray-50 p-8 rounded-2xl feature-card"><h3 class="text-2xl font-bold mb-3">Secure Online Payments</h3><p class="text-gray-600">Integrate with your preferred payment gateway to handle deposits and full payments securely and automatically.</p></div>
-                </div>
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="serif">Streamline Your Bookings</h2>
+                <p>Custom booking solutions that reduce no-shows, manage appointments, and grow your wellness business.</p>
             </div>
-        </section>
-
-        <!-- Case Study Section -->
-        <section class="py-20 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <div class="bg-indigo-600 text-white p-12 rounded-2xl grid lg:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <span class="text-sm font-bold uppercase tracking-widest opacity-80">Case Study</span>
-                        <h2 class="text-4xl font-bold mt-2 mb-4">Red Oaks Marketing Group</h2>
-                        <p class="text-lg opacity-90">Red Oaks was struggling with a high volume of manual booking tasks that consumed their team's time and led to scheduling errors. We designed and installed a custom appointment booking system integrated with automated client onboarding and follow-up sequences. The new platform put their growth on autopilot.</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-6 text-center">
-                        <div>
-                            <p class="text-5xl font-extrabold">40%</p>
-                            <p class="font-semibold">Projected Increase in Client Capacity</p>
-                        </div>
-                        <div>
-                            <p class="text-5xl font-extrabold">15+</p>
-                            <p class="font-semibold">Hours Saved Per Week in Admin Tasks</p>
-                        </div>
-                    </div>
+            <form class="contact-form" action="https://formspree.io/f/xyzdynob" method="POST">
+                <div class="form-field">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-            </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section id="contact" class="py-20 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-xl mx-auto text-center">
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900">Stop Managing Your Calendar. Start Growing Your Business.</h2>
-                    <p class="text-lg text-gray-600 mt-4 mb-8">Schedule a demo to see how a custom booking platform can transform your operations and boost your bottom line.</p>
-                    <form action="https://formspree.io/f/xyzdynob" method="POST"  class="space-y-6 text-left">
-                        <div><label for="name" class="block text-sm font-medium text-gray-700">Full Name</label><input type="text" name="name" id="name" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
-                        <div><label for="email" class="block text-sm font-medium text-gray-700">Work Email Address</label><input type="email" name="email" id="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
-                        <div><label for="company" class="block text-sm font-medium text-gray-700">Business Name (Spa, Clinic, etc.)</label><input type="text" name="company" id="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></div>
-                        <div><button type="submit" class="w-full bg-indigo-600 text-white px-6 py-3 rounded-lg font-semibold text-lg hover:bg-indigo-700 cta-button">Request a Custom Demo</button></div>
-                    </form>
+                <div class="form-field">
+                    <label for="email">Work Email Address</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-            </div>
-        </section>
-    </main>
+                <div class="form-field">
+                    <label for="business_name">Business Name</label>
+                    <input type="text" id="business_name" name="business_name" required>
+                </div>
+                <div class="form-field">
+                    <label for="booking_needs">Booking Requirements</label>
+                    <textarea id="booking_needs" name="booking_needs" placeholder="Describe your appointment scheduling needs..."></textarea>
+                </div>
+                <button type="submit" class="form-submit">Build Booking Platform</button>
+            </form>
+        </div>
+    </section>
 
-    <footer class="bg-gray-900 text-white">
-        <div class="container mx-auto px-6 py-8 text-center">
-            <p class="font-bold text-xl mb-2">Droz<span class="text-indigo-500">Tech</span></p>
-            <p>&copy; 2025 Droz Technologies. Engineering Growth Systems.</p>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-left">© 2026 Droz Technologies. Toronto, Canada.</div>
+                <ul class="footer-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="./droz-connect.html">Droz Connect</a></li>
+                    <li><a href="https://samson-ai.com" target="_blank">Samson-AI</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
-
-    <script>
-        document.getElementById('refreshLink').addEventListener('click', function (e) {
-            e.preventDefault(); // Previene el comportamiento por defecto del enlace
-            window.location.reload(); // Refresca la página actual
-        });
-    </script>
-
 </body>
 </html>
