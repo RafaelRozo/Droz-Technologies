@@ -9,62 +9,282 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; } :root { --bg: #faf9f6; --bg-warm: #f3f1ec; --text: #1a1a1a; --text-muted: #6b6b6b; --text-light: #999; --accent: #c23d2a; --border: #e0ddd6; --border-light: #eceae4; --white: #fff; } html { scroll-behavior: smooth; } body { font-family: 'Outfit', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; } .serif { font-family: 'Instrument Serif', Georgia, serif; } h1, h2, h3, h4 { line-height: 1.1; font-weight: 400; } .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; } .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); } .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; } .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); } .nav-logo img { height: 32px; } .nav-logo span { font-weight: 600; font-size: 16px; letter-spacing: -0.02em; } .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; } .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; } .nav-contact { padding: 8px 20px; border: 1.5px solid var(--text); color: var(--text) !important; } .page-hero { padding: 100px 0 80px; } .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; } .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.03em; line-height: 0.95; margin-bottom: 24px; } .page-hero h1 em { font-style: italic; color: var(--accent); } .hero-right p { font-size: 18px; line-height: 1.7; color: var(--text-muted); margin-bottom: 32px; } .hero-cta { display: inline-block; padding: 14px 32px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 15px; font-weight: 500; } .contact { padding: 100px 0; background: var(--bg-warm); } .contact-header { text-align: center; margin-bottom: 48px; } .contact-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 16px; } .contact-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; } .form-field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; } .form-field input, .form-field textarea { width: 100%; padding: 12px 16px; font-size: 15px; border: 1px solid var(--border); background: var(--white); outline: none; } .form-field textarea { resize: vertical; min-height: 100px; } .form-submit { font-size: 16px; font-weight: 500; padding: 16px 32px; background: var(--text); color: var(--bg); border: none; cursor: pointer; align-self: start; } .footer { padding: 48px 0; border-top: 1px solid var(--border); } .footer-inner { display: flex; justify-content: space-between; align-items: center; } .footer-left { font-size: 13px; color: var(--text-light); } .footer-links { display: flex; gap: 24px; list-style: none; } .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; }</style>
+    <style>
+        /* === Reset & Base === */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #faf9f6; --bg-warm: #f3f1ec; --text: #1a1a1a; --text-muted: #6b6b6b;
+            --text-light: #999; --accent: #c23d2a; --accent-hover: #a83222;
+            --border: #e0ddd6; --border-light: #eceae4; --white: #ffffff;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; font-weight: 400; -webkit-font-smoothing: antialiased; }
+        .serif { font-family: 'Instrument Serif', Georgia, serif; }
+        h1, h2, h3, h4 { line-height: 1.1; font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        a { color: inherit; }
+
+        /* === Navigation === */
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+        .nav-logo img { height: 32px; width: auto; }
+        .nav-logo span { font-weight: 600; font-size: 16px; letter-spacing: -0.02em; }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text); }
+        .nav-contact { font-size: 14px; font-weight: 500; color: var(--text) !important; padding: 8px 20px; border: 1.5px solid var(--text); transition: background 0.2s, color 0.2s; }
+        .nav-contact:hover { background: var(--text); color: var(--bg) !important; }
+        .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
+        .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 32px 24px; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; font-size: 24px; font-family: 'Instrument Serif', serif; color: var(--text); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--border-light); }
+
+        /* === Breadcrumb === */
+        .breadcrumb { padding: 20px 0; border-bottom: 1px solid var(--border-light); }
+        .breadcrumb-inner { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-light); }
+        .breadcrumb-inner a { text-decoration: none; color: var(--text-muted); transition: color 0.2s; }
+        .breadcrumb-inner a:hover { color: var(--text); }
+        .breadcrumb-inner .sep { color: var(--border); }
+        .breadcrumb-inner .current { color: var(--text); font-weight: 500; }
+
+        /* === Page Hero === */
+        .page-hero { padding: 100px 0 80px; border-bottom: 1px solid var(--border); }
+        .page-hero-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 24px; }
+        .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.03em; max-width: 740px; margin-bottom: 24px; }
+        .page-hero h1 em { font-style: italic; color: var(--accent); }
+        .page-hero p { font-size: 18px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+        /* === Features === */
+        .features { padding: 100px 0; }
+        .features-header { margin-bottom: 64px; }
+        .features-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; }
+        .feature-item { display: grid; grid-template-columns: 280px 1fr; gap: 48px; padding: 48px 0; border-bottom: 1px solid var(--border-light); }
+        .feature-item:first-of-type { border-top: 1px solid var(--border-light); }
+        .feature-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); font-weight: 500; padding-top: 4px; }
+        .feature-content h3 { font-family: 'Instrument Serif', serif; font-size: 28px; margin-bottom: 12px; }
+        .feature-content p { font-size: 16px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+        /* === Benefits === */
+        .benefits { padding: 100px 0; background: var(--bg-warm); }
+        .benefits h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 48px; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .benefit-card { padding: 32px; background: var(--white); border: 1px solid var(--border-light); }
+        .benefit-card h4 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .benefit-card p { font-size: 14px; line-height: 1.6; color: var(--text-muted); }
+
+        /* === CTA === */
+        .cta { padding: 100px 0; text-align: center; border-top: 1px solid var(--border); }
+        .cta h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); margin-bottom: 16px; }
+        .cta p { font-size: 17px; color: var(--text-muted); margin-bottom: 32px; max-width: 540px; margin-left: auto; margin-right: auto; }
+        .cta-btn { display: inline-block; padding: 14px 36px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 15px; font-weight: 500; transition: background 0.2s; }
+        .cta-btn:hover { background: var(--accent); }
+
+        /* === Contact === */
+        .contact { padding: 100px 0; background: var(--bg-warm); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .contact h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 24px; }
+        .contact-info p { font-size: 17px; line-height: 1.7; color: var(--text-muted); margin-bottom: 40px; max-width: 440px; }
+        .contact-detail { margin-bottom: 16px; }
+        .contact-detail-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 4px; }
+        .contact-detail a, .contact-detail span { font-size: 16px; color: var(--text); text-decoration: none; }
+        .contact-detail a:hover { color: var(--accent); }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .form-field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+        .form-field input, .form-field textarea, .form-field select { width: 100%; padding: 12px 16px; font-family: 'Outfit', sans-serif; font-size: 15px; border: 1px solid var(--border); background: var(--white); color: var(--text); outline: none; transition: border-color 0.2s; }
+        .form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-color: var(--text); }
+        .form-field textarea { resize: vertical; min-height: 120px; }
+        .form-submit { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 32px; background: var(--text); color: var(--bg); border: none; cursor: pointer; transition: background 0.2s; align-self: start; }
+        .form-submit:hover { background: var(--accent); }
+
+        /* === Footer === */
+        .footer { padding: 48px 0; border-top: 1px solid var(--border); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+        .footer-left { font-size: 13px; color: var(--text-light); }
+        .footer-links { display: flex; gap: 24px; list-style: none; }
+        .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+
+        /* === Responsive === */
+        @media (max-width: 900px) {
+            .page-hero { padding: 80px 0 60px; }
+            .feature-item { grid-template-columns: 1fr; gap: 12px; }
+            .benefits-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+            .form-row { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+            .nav-mobile-btn { display: block; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition-duration: 0.01ms !important; }
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
         <div class="container">
             <div class="nav-inner">
-                <a href="/" class="nav-logo"><img src="./assets/droz.webp" alt="Droz"><span>Droz Technologies</span></a>
+                <a href="/" class="nav-logo">
+                    <img src="./assets/droz.webp" alt="Droz Technologies">
+                    <span>Droz Technologies</span>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#divisions">Divisions</a></li>
+                    <li><a href="./index.html#divisions">Divisions</a></li>
+                    <li><a href="./index.html#work">Work</a></li>
+                    <li><a href="./case.html">Case Studies</a></li>
+                    <li><a href="./whyus.html">Why Us</a></li>
                     <li><a href="./droz-connect.html">Droz Connect</a></li>
-                    <li><a href="#contact" class="nav-contact">Get in touch</a></li>
+                    <li><a href="./index.html#contact" class="nav-contact">Get in touch</a></li>
                 </ul>
+                <button class="nav-mobile-btn" onclick="document.getElementById('mm').classList.toggle('open')" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </nav>
+    <div class="mobile-menu" id="mm">
+        <a href="./index.html#divisions">Divisions</a>
+        <a href="./index.html#work">Work</a>
+        <a href="./case.html">Case Studies</a>
+        <a href="./whyus.html">Why Us</a>
+        <a href="./droz-connect.html">Droz Connect</a>
+        <a href="./index.html#contact">Contact</a>
+    </div>
 
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <a href="./index.html">Home</a>
+                <span class="sep">→</span>
+                <a href="./index.html#divisions">Solutions</a>
+                <span class="sep">→</span>
+                <span class="current">Custom Booking Platforms</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Page Hero -->
     <section class="page-hero">
         <div class="container">
-            <div class="hero-grid">
-                <div>
-                    <h1 class="serif">Custom <em>Booking</em><br>Platforms</h1>
+            <div class="page-hero-label">Division 03 — Software</div>
+            <h1 class="serif">Custom <em>Booking</em> Platforms for Spas &amp; Clinics</h1>
+            <p>Specialized booking platforms for spas, clinics, and wellness centers. Appointment scheduling, client management, automated confirmations, and revenue protection built for healthcare businesses.</p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-header">
+                <h2 class="serif">Platform capabilities</h2>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-label">Scheduling</div>
+                <div class="feature-content">
+                    <h3 class="serif">Intelligent appointment scheduling</h3>
+                    <p>Smart booking engine that handles complex scheduling requirements — multiple practitioners, service durations, room assignments, and buffer times between appointments.</p>
                 </div>
-                <div class="hero-right">
-                    <p>Specialized booking platforms for spas, clinics, and wellness centers. Appointment scheduling, client management, automated confirmations, and revenue protection built for healthcare businesses.</p>
-                    <a href="#contact" class="hero-cta">Build Your Platform</a>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-label">Client Management</div>
+                <div class="feature-content">
+                    <h3 class="serif">Complete client profiles</h3>
+                    <p>Unified client records with appointment history, preferences, treatment notes, and communication logs. Everything your front desk and practitioners need in one place.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-label">Confirmations</div>
+                <div class="feature-content">
+                    <h3 class="serif">Automated confirmation &amp; reminders</h3>
+                    <p>Multi-channel automated reminders via SMS, email, and voice calls. Reduce no-shows by up to 67% with intelligent confirmation sequences powered by Droz Connect.</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <div class="feature-label">Revenue</div>
+                <div class="feature-content">
+                    <h3 class="serif">Revenue protection &amp; recovery</h3>
+                    <p>Deposit collection, cancellation policies, and waitlist management that protect your revenue. Automatically fill cancelled slots from your waitlist to maximize utilization.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="serif">Built for wellness businesses</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h4>HIPAA-Ready</h4>
+                    <p>Built with healthcare compliance in mind. Secure data handling for clinics and medical spas.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Multi-Location</h4>
+                    <p>Manage multiple locations from a single dashboard with location-specific scheduling rules.</p>
+                </div>
+                <div class="benefit-card">
+                    <h4>Custom Branding</h4>
+                    <p>Your booking platform, your brand. Fully customized to match your spa or clinic's identity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="serif">Streamline your bookings</h2>
+            <p>Custom booking solutions that reduce no-shows, manage appointments, and grow your wellness business.</p>
+            <a href="#contact" class="cta-btn">Build Your Platform</a>
+        </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-header">
-                <h2 class="serif">Streamline Your Bookings</h2>
-                <p>Custom booking solutions that reduce no-shows, manage appointments, and grow your wellness business.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="serif">Let's build your platform</h2>
+                    <p>Tell us about your spa or clinic and we'll design a booking platform that fits your workflow perfectly.</p>
+                    <div class="contact-detail">
+                        <div class="contact-detail-label">Email</div>
+                        <a href="mailto:info@droztechnologies.com">info@droztechnologies.com</a>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-label">Location</div>
+                        <span>Toronto, Canada</span>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/xyzdynob" method="POST">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="business_name">Business Name</label>
+                            <input type="text" id="business_name" name="business_name" required>
+                        </div>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Work Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="booking_needs">Booking Requirements</label>
+                        <textarea id="booking_needs" name="booking_needs" placeholder="Describe your appointment scheduling needs..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Build Booking Platform</button>
+                </form>
             </div>
-            <form class="contact-form" action="https://formspree.io/f/xyzdynob" method="POST">
-                <div class="form-field">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-field">
-                    <label for="email">Work Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-field">
-                    <label for="business_name">Business Name</label>
-                    <input type="text" id="business_name" name="business_name" required>
-                </div>
-                <div class="form-field">
-                    <label for="booking_needs">Booking Requirements</label>
-                    <textarea id="booking_needs" name="booking_needs" placeholder="Describe your appointment scheduling needs..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">Build Booking Platform</button>
-            </form>
         </div>
     </section>
 
@@ -73,9 +293,10 @@
             <div class="footer-inner">
                 <div class="footer-left">© 2026 Droz Technologies. Toronto, Canada.</div>
                 <ul class="footer-links">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="./index.html#divisions">Divisions</a></li>
                     <li><a href="./droz-connect.html">Droz Connect</a></li>
                     <li><a href="https://samson-ai.com" target="_blank">Samson-AI</a></li>
+                    <li><a href="./index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>

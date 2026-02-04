@@ -9,32 +9,217 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; } :root { --bg: #faf9f6; --bg-warm: #f3f1ec; --text: #1a1a1a; --text-muted: #6b6b6b; --text-light: #999; --accent: #c23d2a; --border: #e0ddd6; --border-light: #eceae4; --white: #fff; } html { scroll-behavior: smooth; } body { font-family: 'Outfit', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; } .serif { font-family: 'Instrument Serif', Georgia, serif; } h1, h2, h3, h4 { line-height: 1.1; font-weight: 400; } .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; } .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.9); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); } .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; } .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); } .nav-logo img { height: 32px; } .nav-logo span { font-weight: 600; font-size: 16px; letter-spacing: -0.02em; } .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; } .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; } .nav-contact { padding: 8px 20px; border: 1.5px solid var(--text); color: var(--text) !important; } .page-hero { padding: 100px 0 80px; } .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: end; } .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.03em; line-height: 0.95; margin-bottom: 24px; } .page-hero h1 em { font-style: italic; color: var(--accent); } .hero-right p { font-size: 18px; line-height: 1.7; color: var(--text-muted); margin-bottom: 32px; } .hero-cta { display: inline-block; padding: 14px 32px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 15px; font-weight: 500; } .contact { padding: 100px 0; background: var(--bg-warm); } .contact-header { text-align: center; margin-bottom: 48px; } .contact-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 16px; } .contact-form { max-width: 500px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; } .form-field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; } .form-field input, .form-field textarea { width: 100%; padding: 12px 16px; font-size: 15px; border: 1px solid var(--border); background: var(--white); outline: none; } .form-field textarea { resize: vertical; min-height: 100px; } .form-submit { font-size: 16px; font-weight: 500; padding: 16px 32px; background: var(--text); color: var(--bg); border: none; cursor: pointer; align-self: start; } .footer { padding: 48px 0; border-top: 1px solid var(--border); } .footer-inner { display: flex; justify-content: space-between; align-items: center; } .footer-left { font-size: 13px; color: var(--text-light); } .footer-links { display: flex; gap: 24px; list-style: none; } .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; }</style>
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #faf9f6; --bg-warm: #f3f1ec; --text: #1a1a1a; --text-muted: #6b6b6b;
+            --text-light: #999; --accent: #c23d2a; --accent-hover: #a83222; --border: #e0ddd6; --border-light: #eceae4; --white: #fff;
+        }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Outfit', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+        .serif { font-family: 'Instrument Serif', Georgia, serif; }
+        h1, h2, h3, h4 { line-height: 1.1; font-weight: 400; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        a { color: inherit; }
+
+        /* Nav */
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border-light); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); }
+        .nav-logo img { height: 32px; }
+        .nav-logo span { font-weight: 600; font-size: 16px; letter-spacing: -0.02em; }
+        .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--text-muted); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text); }
+        .nav-contact { padding: 8px 20px; border: 1.5px solid var(--text); color: var(--text) !important; transition: background 0.2s, color 0.2s; }
+        .nav-contact:hover { background: var(--text); color: var(--bg) !important; }
+        .nav-mobile-btn { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+        .nav-mobile-btn span { display: block; width: 24px; height: 2px; background: var(--text); margin: 5px 0; transition: 0.3s; }
+        .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; bottom: 0; background: var(--bg); z-index: 99; padding: 32px 24px; }
+        .mobile-menu.open { display: block; }
+        .mobile-menu a { display: block; font-size: 24px; font-family: 'Instrument Serif', serif; color: var(--text); text-decoration: none; padding: 16px 0; border-bottom: 1px solid var(--border-light); }
+
+        /* Breadcrumb */
+        .breadcrumb { padding: 20px 0; }
+        .breadcrumb-inner { display: flex; align-items: center; gap: 0; font-size: 13px; }
+        .breadcrumb a { color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--text); }
+        .breadcrumb .sep { margin: 0 10px; color: var(--text-light); }
+        .breadcrumb .current { color: var(--text-muted); }
+
+        /* Page Hero */
+        .page-hero { padding: 60px 0 80px; border-bottom: 1px solid var(--border); }
+        .page-hero-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 24px; }
+        .page-hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(40px, 5vw, 64px); letter-spacing: -0.03em; max-width: 740px; margin-bottom: 24px; }
+        .page-hero h1 em { font-style: italic; color: var(--accent); }
+        .page-hero p { font-size: 18px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+        /* Back Link */
+        .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-muted); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+        .back-link:hover { color: var(--accent); }
+
+        /* Services */
+        .services { padding: 80px 0; }
+        .services-header { margin-bottom: 64px; }
+        .services-header h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; }
+        .service-item { display: grid; grid-template-columns: 280px 1fr; gap: 48px; padding: 48px 0; border-bottom: 1px solid var(--border-light); }
+        .service-item:first-of-type { border-top: 1px solid var(--border-light); }
+        .service-label { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); font-weight: 500; padding-top: 4px; }
+        .service-content h3 { font-family: 'Instrument Serif', serif; font-size: 28px; margin-bottom: 12px; }
+        .service-content p { font-size: 16px; line-height: 1.7; color: var(--text-muted); max-width: 560px; }
+
+        /* Engagement Model */
+        .engagement { padding: 100px 0; background: var(--text); color: var(--bg); }
+        .engagement-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+        .engagement h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 20px; }
+        .engagement h2 em { font-style: italic; color: var(--accent); }
+        .engagement p { font-size: 16px; line-height: 1.7; color: #999; margin-bottom: 16px; max-width: 480px; }
+        .engagement-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+        .engagement-stat { padding: 32px; border: 1px solid rgba(255,255,255,0.1); }
+        .engagement-stat-value { font-family: 'Instrument Serif', serif; font-size: 40px; color: var(--bg); line-height: 1; margin-bottom: 8px; }
+        .engagement-stat-label { font-size: 14px; color: #777; }
+
+        /* Contact */
+        .contact { padding: 100px 0; background: var(--bg-warm); }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+        .contact h2 { font-family: 'Instrument Serif', serif; font-size: clamp(36px, 4vw, 52px); letter-spacing: -0.02em; margin-bottom: 24px; }
+        .contact-info p { font-size: 17px; line-height: 1.7; color: var(--text-muted); margin-bottom: 40px; max-width: 440px; }
+        .contact-detail { margin-bottom: 16px; }
+        .contact-detail-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-light); margin-bottom: 4px; }
+        .contact-detail span { font-size: 16px; color: var(--text); }
+        .contact-form { display: flex; flex-direction: column; gap: 20px; }
+        .form-field label { display: block; font-size: 13px; font-weight: 500; color: var(--text-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+        .form-field input, .form-field textarea { width: 100%; padding: 12px 16px; font-family: 'Outfit', sans-serif; font-size: 15px; border: 1px solid var(--border); background: var(--white); color: var(--text); outline: none; transition: border-color 0.2s; }
+        .form-field input:focus, .form-field textarea:focus { border-color: var(--text); }
+        .form-field textarea { resize: vertical; min-height: 120px; }
+        .form-submit { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 500; padding: 14px 32px; background: var(--text); color: var(--bg); border: none; cursor: pointer; transition: background 0.2s; align-self: start; }
+        .form-submit:hover { background: var(--accent); }
+
+        /* Footer */
+        .footer { padding: 48px 0; border-top: 1px solid var(--border); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; }
+        .footer-left { font-size: 13px; color: var(--text-light); }
+        .footer-links { display: flex; gap: 24px; list-style: none; }
+        .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text); }
+
+        @media (max-width: 900px) {
+            .service-item { grid-template-columns: 1fr; gap: 12px; }
+            .engagement-grid { grid-template-columns: 1fr; gap: 48px; }
+            .engagement-stats { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+            .nav-links { display: none; }
+            .nav-mobile-btn { display: block; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition-duration: 0.01ms !important; }
+        }
+    </style>
 </head>
 <body>
     <nav class="nav">
         <div class="container">
             <div class="nav-inner">
-                <a href="/" class="nav-logo"><img src="./assets/droz.webp" alt="Droz"><span>Droz Technologies</span></a>
+                <a href="/" class="nav-logo">
+                    <img src="./assets/droz.webp" alt="Droz Technologies">
+                    <span>Droz Technologies</span>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/#divisions">Divisions</a></li>
+                    <li><a href="./index.html#divisions">Divisions</a></li>
+                    <li><a href="./index.html#work">Work</a></li>
                     <li><a href="./droz-connect.html">Droz Connect</a></li>
-                    <li><a href="#contact" class="nav-contact">Get in touch</a></li>
+                    <li><a href="./index.html#contact" class="nav-contact">Get in touch</a></li>
                 </ul>
+                <button class="nav-mobile-btn" onclick="toggleMobile()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </nav>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="./index.html#divisions">Divisions</a>
+        <a href="./index.html#work">Work</a>
+        <a href="./droz-connect.html">Droz Connect</a>
+        <a href="./index.html#contact">Contact</a>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-inner">
+                <a href="./index.html">Home</a>
+                <span class="sep">→</span>
+                <a href="./digital-revenue.html">Digital Marketing &amp; Growth</a>
+                <span class="sep">→</span>
+                <span class="current">AI Consulting</span>
+            </div>
+        </div>
+    </div>
 
     <section class="page-hero">
         <div class="container">
-            <div class="hero-grid">
-                <div>
-                    <h1 class="serif">Niche AI Consulting<br>for <em>Industry Titans</em></h1>
+            <a href="./digital-revenue.html" class="back-link">← Back to Digital Marketing &amp; Growth</a>
+            <div class="page-hero-label">For Titans ($1B+)</div>
+            <h1 class="serif">Niche AI Consulting for <em>Industry Titans</em></h1>
+            <p>Strategic AI consulting for billion-dollar enterprises. We solve high-level problems that large systems and agency partners are too slow to see, using proprietary Samson-AI technology.</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="services-header">
+                <h2 class="serif">What we deliver</h2>
+            </div>
+
+            <div class="service-item">
+                <div class="service-label">Market Entry</div>
+                <div class="service-content">
+                    <h3 class="serif">Market entry de-risking</h3>
+                    <p>Analyzing new markets for hidden opportunities and threats using our Samson-AI platform. We identify whitespace competitors can't see, giving you a data-driven advantage before committing resources.</p>
                 </div>
-                <div class="hero-right">
-                    <p>Strategic AI consulting for billion-dollar enterprises. We solve high-level problems that large systems and agency partners are too slow to see, using proprietary Samson-AI technology.</p>
-                    <a href="#contact" class="hero-cta">Start AI Engagement</a>
+            </div>
+            <div class="service-item">
+                <div class="service-label">Competitive Intel</div>
+                <div class="service-content">
+                    <h3 class="serif">Competitive intelligence at scale</h3>
+                    <p>Uncovering blind spots in your competitors' strategies. Our AI scans thousands of data points across channels to surface patterns and vulnerabilities that traditional research misses entirely.</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-label">Strategic AI</div>
+                <div class="service-content">
+                    <h3 class="serif">Custom AI implementations</h3>
+                    <p>Project-based solutions tailored to your specific strategic challenges. We deploy custom machine learning models and AI workflows that integrate with your existing enterprise systems.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="engagement">
+        <div class="container">
+            <div class="engagement-grid">
+                <div>
+                    <h2 class="serif">Project-based <em>engagements</em></h2>
+                    <p>We engage on a project basis to solve high-level strategic problems your large-scale systems and agency partners are too slow to see.</p>
+                    <p>Each engagement begins with a paid pilot project, allowing both sides to validate fit and demonstrate measurable value before scaling.</p>
+                </div>
+                <div class="engagement-stats">
+                    <div class="engagement-stat">
+                        <div class="engagement-stat-value serif">$25K+</div>
+                        <div class="engagement-stat-label">Pilot project minimum</div>
+                    </div>
+                    <div class="engagement-stat">
+                        <div class="engagement-stat-value serif">$1B+</div>
+                        <div class="engagement-stat-label">Client revenue threshold</div>
+                    </div>
+                    <div class="engagement-stat">
+                        <div class="engagement-stat-value serif">8–12</div>
+                        <div class="engagement-stat-label">Week pilot timeline</div>
+                    </div>
+                    <div class="engagement-stat">
+                        <div class="engagement-stat-value serif">100%</div>
+                        <div class="engagement-stat-label">Custom solutions</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -42,29 +227,39 @@
 
     <section id="contact" class="contact">
         <div class="container">
-            <div class="contact-header">
-                <h2 class="serif">Strategic AI for Enterprise Leaders</h2>
-                <p>Custom AI consulting engagements starting at $25K+. Project-based solutions for market entry, competitive intelligence, and strategic advantages.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="serif">Strategic AI for Enterprise Leaders</h2>
+                    <p>Custom AI consulting engagements starting at $25K+. Project-based solutions for market entry, competitive intelligence, and strategic advantages.</p>
+                    <div class="contact-detail">
+                        <div class="contact-detail-label">Engagement type</div>
+                        <span>Project-based, paid pilot</span>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-detail-label">Minimum revenue</div>
+                        <span>$1B+ annual revenue</span>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/xyzdynob" method="POST">
+                    <div class="form-field">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Work Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="company">Company Name</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    <div class="form-field">
+                        <label for="strategic_challenge">Strategic Challenge</label>
+                        <textarea id="strategic_challenge" name="strategic_challenge" placeholder="Describe your high-level AI consulting needs..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Discuss AI Strategy</button>
+                </form>
             </div>
-            <form class="contact-form" action="https://formspree.io/f/xyzdynob" method="POST">
-                <div class="form-field">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-field">
-                    <label for="email">Work Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-field">
-                    <label for="company">Company Name</label>
-                    <input type="text" id="company" name="company" required>
-                </div>
-                <div class="form-field">
-                    <label for="strategic_challenge">Strategic Challenge</label>
-                    <textarea id="strategic_challenge" name="strategic_challenge" placeholder="Describe your high-level AI consulting needs..."></textarea>
-                </div>
-                <button type="submit" class="form-submit">Discuss AI Strategy</button>
-            </form>
         </div>
     </section>
 
@@ -73,12 +268,19 @@
             <div class="footer-inner">
                 <div class="footer-left">© 2026 Droz Technologies. Toronto, Canada.</div>
                 <ul class="footer-links">
-                    <li><a href="/">Home</a></li>
+                    <li><a href="./index.html#divisions">Divisions</a></li>
                     <li><a href="./droz-connect.html">Droz Connect</a></li>
                     <li><a href="https://samson-ai.com" target="_blank">Samson-AI</a></li>
+                    <li><a href="./index.html#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMobile() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+    </script>
 </body>
 </html>

@@ -69,6 +69,16 @@
         .product-link { font-size: 14px; font-weight: 500; color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
         .product-link:hover { border-color: var(--accent); }
 
+        /* Sub-pages */
+        .sub-pages { padding: 100px 0; }
+        .sub-pages h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 48px; }
+        .sub-page-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        a.sub-page-card { display: block; padding: 40px; background: var(--white); border: 1px solid var(--border-light); text-decoration: none; color: inherit; transition: border-color 0.3s; }
+        a.sub-page-card:hover { border-color: var(--border); }
+        .sub-page-card h3 { font-family: 'Instrument Serif', serif; font-size: 24px; margin-bottom: 10px; }
+        .sub-page-card p { font-size: 15px; line-height: 1.7; color: var(--text-muted); margin-bottom: 16px; }
+        .sub-page-arrow { font-size: 14px; font-weight: 500; color: var(--accent); }
+
         /* Process */
         .process { padding: 100px 0; }
         .process h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px, 4vw, 48px); letter-spacing: -0.02em; margin-bottom: 48px; }
@@ -96,6 +106,7 @@
         @media (max-width: 900px) {
             .service-item { grid-template-columns: 1fr; gap: 12px; }
             .product-grid { grid-template-columns: 1fr; }
+            .sub-page-grid { grid-template-columns: 1fr; }
             .process-grid { grid-template-columns: 1fr 1fr; }
             .nav-links { display: none; }
             .nav-mobile-btn { display: block; }
@@ -181,6 +192,34 @@
                     <h3 class="serif">Make your systems talk to each other</h3>
                     <p>CRM to ERP, payment gateway to accounting, scheduling system to notification platform. We connect disparate systems into unified workflows, eliminating manual data entry and reducing errors.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sub-pages">
+        <div class="container">
+            <h2 class="serif">Explore our offerings</h2>
+            <div class="sub-page-grid">
+                <a href="./custom.html" class="sub-page-card">
+                    <h3 class="serif">Custom Software &amp; AI Solutions</h3>
+                    <p>Bespoke applications, AI automation, and SaaS products built for specific business problems.</p>
+                    <span class="sub-page-arrow">Learn more →</span>
+                </a>
+                <a href="./webandmobile.html" class="sub-page-card">
+                    <h3 class="serif">Web &amp; Mobile App Development</h3>
+                    <p>Full-stack web and mobile applications with responsive, user-centered design.</p>
+                    <span class="sub-page-arrow">Learn more →</span>
+                </a>
+                <a href="./aipowered.html" class="sub-page-card">
+                    <h3 class="serif">AI-Powered Efficiency Systems</h3>
+                    <p>Intelligent automations that learn, adapt, and optimize your business processes.</p>
+                    <span class="sub-page-arrow">Learn more →</span>
+                </a>
+                <a href="./ai-systems.html" class="sub-page-card">
+                    <h3 class="serif">AI Systems Blueprints</h3>
+                    <p>Comprehensive AI system design and implementation strategies for your business.</p>
+                    <span class="sub-page-arrow">Learn more →</span>
+                </a>
             </div>
         </div>
     </section>
