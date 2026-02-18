@@ -113,6 +113,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         /* === Responsive === */
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -180,6 +188,14 @@
                     <p>Our advanced vibrational analysis services translate the unique vibration signature of your machinery into actionable intelligence, allowing us to pinpoint developing faults with incredible accuracy long before they become catastrophic failures.</p>
                     <a href="#detection" class="hero-cta">What We Detect</a>
                 </div>
+            </div>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/services/vibrational/hero-vibration-closeup.webp" type="image/webp">
+                    <img src="./assets/images/services/vibrational/hero-vibration-closeup.jpg"
+                         alt="Extreme close-up of vibration sensor attached to a bearing housing with warm industrial lighting"
+                         class="img-section img-placeholder" loading="eager" width="1200" height="900">
+                </picture>
             </div>
         </div>
     </section>

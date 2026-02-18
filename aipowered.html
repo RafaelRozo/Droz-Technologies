@@ -84,6 +84,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         @media (max-width: 900px) {
             .nav-links { display: none; }
             .nav-mobile-btn { display: block; }
@@ -131,6 +139,14 @@
             <h1 class="serif">AI-Powered <em>Efficiency</em> Systems</h1>
             <p>Transform your workflows with intelligent automations. AI-powered efficiency systems that learn, adapt, and optimize your business processes for maximum productivity.</p>
             <a href="#contact" class="hero-cta">Automate Your Business</a>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/ai-systems/hero-neural-abstract.webp" type="image/webp">
+                    <img src="./assets/images/ai-systems/hero-neural-abstract.jpg"
+                         alt="Abstract interconnected nodes as warm copper circles connected by thin red lines on cream background — Swiss design influenced"
+                         class="img-section img-placeholder" loading="eager" width="1200" height="900">
+                </picture>
+            </div>
         </div>
     </section>
 

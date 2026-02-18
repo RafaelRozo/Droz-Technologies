@@ -103,6 +103,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         @media (max-width: 900px) {
             .service-item { grid-template-columns: 1fr; gap: 12px; }
             .product-grid { grid-template-columns: 1fr; }
@@ -141,6 +149,14 @@
             <div class="page-hero-label">Division 03</div>
             <h1 class="serif">Custom Software &amp; AI Solutions</h1>
             <p>We build the thing you can't buy off the shelf. Web applications, AI automation, and SaaS products designed around specific business problems.</p>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/custom-software/hero-strategy-whiteboard.webp" type="image/webp">
+                    <img src="./assets/images/custom-software/hero-strategy-whiteboard.jpg"
+                         alt="Small team around a whiteboard with system architecture diagrams in a bright office with natural light"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
+            </div>
         </div>
     </section>
 

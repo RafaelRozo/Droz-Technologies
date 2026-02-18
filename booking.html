@@ -107,6 +107,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         /* === Responsive === */
         @media (max-width: 900px) {
             .page-hero { padding: 80px 0 60px; }
@@ -173,6 +181,14 @@
             <div class="page-hero-label">Division 03 — Software</div>
             <h1 class="serif">Custom <em>Booking</em> Platforms for Spas &amp; Clinics</h1>
             <p>Specialized booking platforms for spas, clinics, and wellness centers. Appointment scheduling, client management, automated confirmations, and revenue protection built for healthcare businesses.</p>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/booking/hero-consultation.webp" type="image/webp">
+                    <img src="./assets/images/booking/hero-consultation.jpg"
+                         alt="Two people at a table in a bright minimal office having a warm consultation conversation"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
+            </div>
         </div>
     </section>
 

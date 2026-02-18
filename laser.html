@@ -105,6 +105,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         /* === Responsive === */
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -168,6 +176,14 @@
                     <p>Our precision laser alignment services correct microscopic inaccuracies in your machinery to prevent catastrophic failures, reduce energy waste, and maximize the lifespan of your critical assets.</p>
                     <a href="#benefits" class="hero-cta">See the Financial Benefits</a>
                 </div>
+            </div>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/services/laser/hero-laser-alignment.webp" type="image/webp">
+                    <img src="./assets/images/services/laser/hero-laser-alignment.jpg"
+                         alt="Dramatic shot of laser alignment being performed on a large pump coupling with red laser beam visible"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
             </div>
         </div>
     </section>

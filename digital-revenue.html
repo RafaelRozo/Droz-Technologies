@@ -80,6 +80,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         @media (max-width: 900px) {
             .service-item { grid-template-columns: 1fr; gap: 12px; }
             .samson-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -113,6 +121,14 @@
             <div class="page-hero-label">Division 01</div>
             <h1 class="serif">Digital Marketing &amp; Growth Systems</h1>
             <p>Not an agency. A revenue infrastructure team. We build marketing systems that generate, track, and compound growth — then automate them.</p>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/digital-marketing/hero-growth-session.webp" type="image/webp">
+                    <img src="./assets/images/digital-marketing/hero-growth-session.jpg"
+                         alt="Professionals reviewing growth analytics with warm natural lighting — strategic digital marketing session"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
+            </div>
         </div>
     </section>
 

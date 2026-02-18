@@ -99,6 +99,14 @@
         .footer-links { display: flex; gap: 24px; list-style: none; }
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
             .services-grid { grid-template-columns: 1fr; }
@@ -163,6 +171,14 @@
                     <p>For over 20 years, we have been the trusted partner for industrial leaders, providing advanced predictive maintenance services that prevent catastrophic failures and protect your bottom line.</p>
                     <a href="#services" class="hero-cta">Explore Our Core Services</a>
                 </div>
+            </div>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/services/generator/hero-generator-rotor.webp" type="image/webp">
+                    <img src="./assets/images/services/generator/hero-generator-rotor.jpg"
+                         alt="Partially disassembled generator rotor in a service bay with copper windings visible and technicians inspecting"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
             </div>
         </div>
     </section>

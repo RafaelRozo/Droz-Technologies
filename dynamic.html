@@ -106,6 +106,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         /* === Responsive === */
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -169,6 +177,14 @@
                     <p>Our on-site dynamic balancing services eliminate destructive vibrations from rotors, fans, and rotating components, improving efficiency, reducing maintenance costs, and preventing catastrophic failures.</p>
                     <a href="#services" class="hero-cta">Our Balancing Services</a>
                 </div>
+            </div>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/services/dynamic/hero-balancing.webp" type="image/webp">
+                    <img src="./assets/images/services/dynamic/hero-balancing.jpg"
+                         alt="Large industrial fan impeller being balanced on a balancing machine with technician making precise adjustments"
+                         class="img-section img-placeholder" loading="eager" width="1200" height="900">
+                </picture>
             </div>
         </div>
     </section>

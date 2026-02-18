@@ -103,6 +103,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         @media (max-width: 900px) {
             .service-item { grid-template-columns: 1fr; gap: 12px; }
             .engagement-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -162,6 +170,14 @@
             <div class="page-hero-label">For Titans ($1B+)</div>
             <h1 class="serif">Niche AI Consulting for <em>Industry Titans</em></h1>
             <p>Strategic AI consulting for billion-dollar enterprises. We solve high-level problems that large systems and agency partners are too slow to see, using proprietary Samson-AI technology.</p>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/marketing/consulting/hero-boardroom.webp" type="image/webp">
+                    <img src="./assets/images/marketing/consulting/hero-boardroom.jpg"
+                         alt="Boardroom presentation with natural light, professional but relaxed atmosphere with warm wood table"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
+            </div>
         </div>
     </section>
 

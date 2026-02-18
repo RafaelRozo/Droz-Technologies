@@ -94,6 +94,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         @media (max-width: 900px) {
             .exp-grid { grid-template-columns: repeat(2, 1fr); }
             .service-item { grid-template-columns: 1fr; gap: 12px; }
@@ -141,6 +149,14 @@
             <div class="page-hero-label">Division 02</div>
             <h1 class="serif">Predictive Maintenance &amp; Industrial Engineering</h1>
             <p>Two decades of keeping rotating equipment alive. From turbine generators to production lines, we diagnose problems before they become shutdowns.</p>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/predictive-maintenance/hero-turbo-generator.webp" type="image/webp">
+                    <img src="./assets/images/predictive-maintenance/hero-turbo-generator.jpg"
+                         alt="Massive turbo generator being serviced in an industrial cathedral with high ceilings and natural light"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
+            </div>
         </div>
     </section>
 

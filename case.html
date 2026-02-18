@@ -112,6 +112,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         /* === Responsive === */
         @media (max-width: 900px) {
             .page-hero { padding: 80px 0 60px; }
@@ -184,6 +192,14 @@
             <div class="page-hero-label">Proven Results</div>
             <h1 class="serif">Case Studies & <em>Proven</em> Results</h1>
             <p>Real results from real clients across our three divisions. From 7-figure marketing transformations to preventing millions in industrial downtime.</p>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/case-studies/hero-industrial.webp" type="image/webp">
+                    <img src="./assets/images/case-studies/hero-industrial.jpg"
+                         alt="Industrial facility with precision engineering equipment at golden hour — scale and expertise"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
+            </div>
         </div>
     </section>
 
@@ -241,6 +257,14 @@
             <div class="case-item">
                 <div class="case-label">Industrial Services</div>
                 <div class="case-content">
+                    <div class="img-container" style="margin-bottom: 16px;">
+                        <picture>
+                            <source srcset="./assets/images/case-studies/westinghouse.webp" type="image/webp">
+                            <img src="./assets/images/case-studies/westinghouse.jpg"
+                                 alt="Massive power generation equipment installation with crane operations and precision engineering"
+                                 class="img-section img-placeholder" loading="lazy" width="1200" height="900">
+                        </picture>
+                    </div>
                     <h3 class="serif">Westinghouse Power Generation</h3>
                     <p>20+ years of turbo generator diagnostics and predictive maintenance programs for power generation facilities across multiple plant sites.</p>
                     <div class="case-stats">

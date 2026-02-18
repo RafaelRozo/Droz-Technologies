@@ -126,6 +126,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; gap: 40px; }
             .challenge-header { grid-template-columns: 1fr; gap: 24px; }
@@ -195,6 +203,14 @@
                     <p>You've built a successful enterprise. But the middle ground is the most dangerous. We partner with mid-market leaders to solve your most complex challenge: outmaneuvering agile startups without losing your established authority.</p>
                     <a href="#contact" class="hero-cta">Discover Our Partnership Model</a>
                 </div>
+            </div>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/marketing/midmarket/hero-modern-office.webp" type="image/webp">
+                    <img src="./assets/images/marketing/midmarket/hero-modern-office.jpg"
+                         alt="Modern office building lobby with glass, concrete, and natural light flooding in"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
+                </picture>
             </div>
         </div>
     </section>

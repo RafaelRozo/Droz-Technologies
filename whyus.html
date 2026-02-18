@@ -112,6 +112,14 @@
         .footer-links a { font-size: 13px; color: var(--text-light); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text); }
 
+        /* === Image Placeholders === */
+        .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
+        .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
+        .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-container { overflow: hidden; margin-bottom: 32px; }
+        .hero-image-container { margin-top: 48px; overflow: hidden; }
+
         /* === Responsive === */
         @media (max-width: 900px) {
             .page-hero { padding: 80px 0 60px; }
@@ -182,6 +190,14 @@
             <div class="page-hero-label">The Advantage</div>
             <h1 class="serif">The Droz Tech <em>Advantage</em></h1>
             <p>Two decades of experience across three specialized divisions. We don't just deliver solutions — we deliver results that matter to your bottom line.</p>
+            <div class="hero-image-container">
+                <picture>
+                    <source srcset="./assets/images/about/hero-team-portrait.webp" type="image/webp">
+                    <img src="./assets/images/about/hero-team-portrait.jpg"
+                         alt="Editorial group portrait of professionals in a bright space with mix of business casual and safety vest"
+                         class="img-hero img-placeholder" loading="eager" width="1920" height="1080" style="aspect-ratio: 3/2;">
+                </picture>
+            </div>
         </div>
     </section>
 
