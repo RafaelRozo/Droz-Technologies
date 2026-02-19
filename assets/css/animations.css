@@ -1,0 +1,151 @@
+/* === Droz Technologies — Animations ===
+   Swiss Typography + Editorial aesthetic
+   GPU-accelerated: transforms & opacity only
+   ======================================== */
+
+/* === Loading State === */
+body {
+    opacity: 0;
+}
+body.loaded {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+/* === Scroll Reveal === */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+[data-animate].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for grouped items */
+[data-animate-delay="1"] { transition-delay: 0.1s; }
+[data-animate-delay="2"] { transition-delay: 0.2s; }
+[data-animate-delay="3"] { transition-delay: 0.3s; }
+[data-animate-delay="4"] { transition-delay: 0.4s; }
+[data-animate-delay="5"] { transition-delay: 0.5s; }
+
+/* === Hero Text Animation === */
+.hero-animate {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.hero-animate.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hero-animate[data-hero-delay="1"] { transition-delay: 0.15s; }
+.hero-animate[data-hero-delay="2"] { transition-delay: 0.3s; }
+.hero-animate[data-hero-delay="3"] { transition-delay: 0.45s; }
+
+/* === Subtle Parallax === */
+.parallax-hero {
+    will-change: transform;
+}
+
+/* === Number Counter === */
+[data-counter] {
+    /* handled by JS */
+}
+
+/* === Hover Micro-interactions === */
+
+/* Cards: subtle lift + shadow */
+.work-card,
+.connect-stat,
+.division-item {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out, background 0.3s ease-out;
+}
+
+.work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.connect-stat:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Buttons: slight scale */
+.form-submit,
+.nav-contact,
+.btn,
+.cta-btn,
+a[class*="btn"],
+button[type="submit"] {
+    transition: transform 0.2s ease-out, background 0.2s ease-out, color 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.form-submit:hover,
+.btn:hover,
+.cta-btn:hover,
+a[class*="btn"]:hover,
+button[type="submit"]:hover {
+    transform: scale(1.02);
+}
+
+/* Nav links: underline slides in from left */
+.nav-links a:not(.nav-contact) {
+    position: relative;
+}
+
+.nav-links a:not(.nav-contact)::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: currentColor;
+    transition: width 0.3s ease-out;
+}
+
+.nav-links a:not(.nav-contact):hover::after {
+    width: 100%;
+}
+
+/* Footer links: same underline */
+.footer-links a {
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.3s ease-out;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+/* === Reduced Motion === */
+@media (prefers-reduced-motion: reduce) {
+    body { opacity: 1 !important; }
+    [data-animate],
+    .hero-animate {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .work-card:hover,
+    .connect-stat:hover {
+        transform: none !important;
+    }
+}
