@@ -713,33 +713,13 @@
             .connect-stats { grid-template-columns: 1fr; }
         }
 
-        /* === Rotating Text === */
-        .rotating-text-wrapper {
-            display: inline-block;
-            overflow: visible;
-            vertical-align: baseline;
-            position: relative;
-        }
-        .rotating-text {
-            display: inline-block;
-            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .rotating-text.fade-out {
-            opacity: 0;
-            transform: translateY(-0.3em);
-        }
-        .rotating-text.fade-in-prepare {
-            opacity: 0;
-            transform: translateY(0.3em);
-            transition: none;
-        }
+        /* Rotating text styles in animations.css */
 
         /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 transition-duration: 0.01ms !important;
             }
-            .rotating-text { transition: none !important; }
         }
     </style>
     <link rel="stylesheet" href="./assets/css/animations.css">
@@ -780,11 +760,18 @@
     </div>
 
     <!-- Hero -->
-    <section class="hero">
-        <div class="container">
+    <section class="hero" style="position:relative;overflow:hidden;">
+        <div class="hero-bg-mesh"></div>
+        <div class="hero-grain"></div>
+        <div class="hero-shapes">
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+            <div class="hero-shape"></div>
+        </div>
+        <div class="container" style="position:relative;z-index:2;">
             <div class="hero-grid">
-                <div>
-                    <h1 class="serif">We keep<br>the machines<br><span class="rotating-text-wrapper"><em class="rotating-text">running</em></span></h1>
+                <div class="hero-parallax">
+                    <h1 class="serif"><span class="hero-line">We keep</span><span class="hero-line">the machines</span><span class="hero-line"><span class="rotating-text-wrapper"><em class="rotating-text">running</em></span></span></h1>
                 </div>
                 <div class="hero-right">
                     <p>
@@ -1071,27 +1058,7 @@
                 document.getElementById('mobileMenu').classList.remove('open');
             }
         });
-        // === Rotating Text ===
-        (function() {
-            var words = ['running', 'growing', 'protected', 'intelligent', 'connected'];
-            var el = document.querySelector('.rotating-text');
-            if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            var idx = 0;
-            setInterval(function() {
-                el.classList.add('fade-out');
-                setTimeout(function() {
-                    idx = (idx + 1) % words.length;
-                    el.textContent = words[idx];
-                    el.classList.remove('fade-out');
-                    el.classList.add('fade-in-prepare');
-                    requestAnimationFrame(function() {
-                        requestAnimationFrame(function() {
-                            el.classList.remove('fade-in-prepare');
-                        });
-                    });
-                }, 500);
-            }, 3000);
-        })();
+        // Rotating text handled by animations.js
     </script>
     <script src="./assets/js/animations.js"></script>
 </body>
