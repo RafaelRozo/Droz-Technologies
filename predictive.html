@@ -117,7 +117,8 @@
         .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
         .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
         .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
-        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); }
+        .img-hero, .img-section, .img-card { max-width: 100%; height: auto; }
         .img-container { overflow: hidden; margin-bottom: 32px; }
         .hero-image-container { margin-top: 48px; overflow: hidden; }
 
@@ -193,12 +194,9 @@
             <h1 class="serif">AI-Powered <em>Predictive</em> Maintenance</h1>
             <p>Custom machine learning solutions for equipment reliability and failure prediction. We combine 20+ years of industrial experience with cutting-edge AI to solve complex maintenance challenges.</p>
             <div class="hero-image-container">
-                <picture>
-                    <source srcset="./assets/images/predictive-maintenance/hero-vibration-sensor.webp" type="image/webp">
                     <img src="./assets/images/predictive-maintenance/hero-vibration-sensor.jpg"
                          alt="Hands placing a vibration sensor on industrial rotating equipment with dramatic side lighting and warm amber tones"
                          class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
-                </picture>
             </div>
         </div>
     </section>

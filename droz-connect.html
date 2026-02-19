@@ -417,7 +417,8 @@
         .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
         .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
         .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
-        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); }
+        .img-hero, .img-section, .img-card { max-width: 100%; height: auto; }
         .img-container { overflow: hidden; margin-bottom: 32px; }
         .hero-image-container { margin-top: 48px; overflow: hidden; }
 
@@ -495,12 +496,9 @@
                 </div>
             </div>
             <div class="hero-image-container">
-                <picture>
-                    <source srcset="./assets/images/droz-connect/hero-revenue-protection.webp" type="image/webp">
                     <img src="./assets/images/droz-connect/hero-revenue-protection.jpg"
                          alt="Business owner reviewing financial reports at a clean desk with warm morning light through blinds"
                          class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
-                </picture>
             </div>
         </div>
     </section>
@@ -686,48 +684,36 @@
             <div class="industries-grid">
                 <div class="industry-card">
                     <div class="img-container" style="margin-bottom: 16px;">
-                        <picture>
-                            <source srcset="./assets/images/droz-connect/medical-office.webp" type="image/webp">
                             <img src="./assets/images/droz-connect/medical-office.jpg"
                                  alt="Modern medical reception desk with white and cream tones, natural light"
                                  class="img-section img-placeholder" loading="lazy" width="1200" height="900">
-                        </picture>
                     </div>
                     <h3 class="serif">Medical</h3>
                     <p>Physician offices, specialists, urgent care. HIPAA compliant. BAA included.</p>
                 </div>
                 <div class="industry-card">
                     <div class="img-container" style="margin-bottom: 16px;">
-                        <picture>
-                            <source srcset="./assets/images/droz-connect/dental-practice.webp" type="image/webp">
                             <img src="./assets/images/droz-connect/dental-practice.jpg"
                                  alt="Dental office storefront at golden hour with clean signage and warm light inside"
                                  class="img-section img-placeholder" loading="lazy" width="1200" height="900">
-                        </picture>
                     </div>
                     <h3 class="serif">Dental</h3>
                     <p>Hygiene, restorative, ortho. Integrates with Dentrix, Open Dental, Eaglesoft.</p>
                 </div>
                 <div class="industry-card">
                     <div class="img-container" style="margin-bottom: 16px;">
-                        <picture>
-                            <source srcset="./assets/images/droz-connect/law-firm.webp" type="image/webp">
                             <img src="./assets/images/droz-connect/law-firm.jpg"
                                  alt="Law books on wooden shelves with desk, legal papers, and warm desk lamp"
                                  class="img-section img-placeholder" loading="lazy" width="1200" height="900">
-                        </picture>
                     </div>
                     <h3 class="serif">Legal</h3>
                     <p>Consultations, depositions, court prep. Works with Clio and practice management systems.</p>
                 </div>
                 <div class="industry-card">
                     <div class="img-container" style="margin-bottom: 16px;">
-                        <picture>
-                            <source srcset="./assets/images/droz-connect/salon-spa.webp" type="image/webp">
                             <img src="./assets/images/droz-connect/salon-spa.jpg"
                                  alt="Salon interior with styling chairs, mirrors, natural light and modern-minimal wood accents"
                                  class="img-section img-placeholder" loading="lazy" width="1200" height="900">
-                        </picture>
                     </div>
                     <h3 class="serif">Salon &amp; Spa</h3>
                     <p>Hair, aesthetics, wellness. Connects with booking platforms you already use.</p>

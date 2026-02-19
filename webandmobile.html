@@ -88,7 +88,8 @@
         .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
         .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
         .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
-        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); }
+        .img-hero, .img-section, .img-card { max-width: 100%; height: auto; }
         .img-container { overflow: hidden; margin-bottom: 32px; }
         .hero-image-container { margin-top: 48px; overflow: hidden; }
 
@@ -141,12 +142,9 @@
             <p>Full-stack web and mobile app development. Responsive design, native mobile applications, and progressive web apps built with modern technologies and user-centered design principles.</p>
             <a href="#contact" class="hero-cta">Start Your App</a>
             <div class="hero-image-container">
-                <picture>
-                    <source srcset="./assets/images/custom-software/hero-mobile-testing.webp" type="image/webp">
                     <img src="./assets/images/custom-software/hero-mobile-testing.jpg"
                          alt="Close-up of hands holding a smartphone displaying a clean minimal app interface with laptop blurred in background"
                          class="img-section img-placeholder" loading="eager" width="1200" height="900">
-                </picture>
             </div>
         </div>
     </section>

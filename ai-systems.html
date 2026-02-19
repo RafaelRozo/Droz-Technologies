@@ -88,7 +88,8 @@
         .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
         .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
         .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
-        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); }
+        .img-hero, .img-section, .img-card { max-width: 100%; height: auto; }
         .img-container { overflow: hidden; margin-bottom: 32px; }
         .hero-image-container { margin-top: 48px; overflow: hidden; }
 
@@ -141,12 +142,9 @@
             <p>Intelligent automation and workflow optimization blueprints. Custom artificial intelligence solutions designed to enhance business processes and drive operational efficiency.</p>
             <a href="#contact" class="hero-cta">Design AI Blueprint</a>
             <div class="hero-image-container">
-                <picture>
-                    <source srcset="./assets/images/ai-systems/hero-ai-workspace.webp" type="image/webp">
                     <img src="./assets/images/ai-systems/hero-ai-workspace.jpg"
                          alt="Developer desk with dual monitors showing data visualizations and code, warm desk lamp light mixed with screen glow"
                          class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
-                </picture>
             </div>
         </div>
     </section>

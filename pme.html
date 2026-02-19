@@ -103,7 +103,8 @@
         .img-hero { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 2px; }
         .img-section { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 2px; }
         .img-card { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 2px; }
-        .img-placeholder { background: var(--bg-warm, #f3f1ec); border: 1px dashed var(--border, #e0ddd6); display: flex; align-items: center; justify-content: center; color: var(--text-light, #999); font-size: 14px; font-family: 'Outfit', sans-serif; }
+        .img-placeholder { background: var(--bg-warm, #f3f1ec); }
+        .img-hero, .img-section, .img-card { max-width: 100%; height: auto; }
         .img-container { overflow: hidden; margin-bottom: 32px; }
         .hero-image-container { margin-top: 48px; overflow: hidden; }
 
@@ -174,12 +175,9 @@
                 </div>
             </div>
             <div class="hero-image-container">
-                <picture>
-                    <source srcset="./assets/images/services/generator/hero-generator-rotor.webp" type="image/webp">
                     <img src="./assets/images/services/generator/hero-generator-rotor.jpg"
                          alt="Partially disassembled generator rotor in a service bay with copper windings visible and technicians inspecting"
                          class="img-hero img-placeholder" loading="eager" width="1920" height="1080">
-                </picture>
             </div>
         </div>
     </section>
