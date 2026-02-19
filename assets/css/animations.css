@@ -135,6 +135,111 @@ button[type="submit"]:hover {
     width: 100%;
 }
 
+/* === Enhanced Card Hover === */
+.work-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.connect-stat:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* === Division Slide-in === */
+.division-item[data-animate="slide-left"] {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.division-item[data-animate="slide-right"] {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.division-item[data-animate="slide-left"].is-visible,
+.division-item[data-animate="slide-right"].is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* === Client Logo Float === */
+@keyframes clientFloat {
+    0%, 100% { transform: translateY(0); opacity: 0.35; }
+    50% { transform: translateY(-3px); opacity: 0.5; }
+}
+.client-name {
+    animation: clientFloat 4s ease-in-out infinite;
+}
+.client-name:nth-child(2) { animation-delay: 0.5s; }
+.client-name:nth-child(3) { animation-delay: 1s; }
+.client-name:nth-child(4) { animation-delay: 1.5s; }
+.client-name:nth-child(5) { animation-delay: 2s; }
+.client-name:nth-child(6) { animation-delay: 2.5s; }
+
+/* === Section Heading Clip Reveal === */
+[data-animate="clip-reveal"] {
+    clip-path: inset(0 100% 0 0);
+    opacity: 1;
+    transform: none;
+    transition: clip-path 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-animate="clip-reveal"].is-visible {
+    clip-path: inset(0 0% 0 0);
+    opacity: 1;
+    transform: none;
+}
+
+/* === Ken Burns on Images === */
+.ken-burns {
+    transition: transform 6s ease-out;
+    will-change: transform;
+}
+.ken-burns.is-visible {
+    transform: scale(1.05);
+}
+
+/* === Nav Contact Gradient Border === */
+.nav-contact {
+    position: relative;
+    background-clip: padding-box;
+}
+.nav-contact::before {
+    content: '';
+    position: absolute;
+    inset: -1.5px;
+    background: linear-gradient(135deg, var(--text, #1a1a1a), var(--accent, #c23d2a), var(--text, #1a1a1a));
+    background-size: 200% 200%;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+.nav-contact:hover::before {
+    opacity: 1;
+    animation: gradientShift 2s ease infinite;
+}
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* === Stats Bounce === */
+@keyframes statBounce {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.08); }
+    70% { transform: scale(0.97); }
+    100% { transform: scale(1); }
+}
+.stat-bounce {
+    animation: statBounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* === Parallax Hero === */
+.parallax-hero {
+    will-change: transform;
+    transition: transform 0.1s linear;
+}
+
 /* === Reduced Motion === */
 @media (prefers-reduced-motion: reduce) {
     body { opacity: 1 !important; }
@@ -148,4 +253,10 @@ button[type="submit"]:hover {
     .connect-stat:hover {
         transform: none !important;
     }
+    .client-name { animation: none !important; }
+    .ken-burns, .ken-burns.is-visible { transform: none !important; transition: none !important; }
+    [data-animate="clip-reveal"] { clip-path: none !important; transition: none !important; }
+    .stat-bounce { animation: none !important; }
+    .division-item[data-animate="slide-left"],
+    .division-item[data-animate="slide-right"] { opacity: 1 !important; transform: none !important; transition: none !important; }
 }

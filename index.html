@@ -705,11 +705,34 @@
             .connect-stats { grid-template-columns: 1fr; }
         }
 
+        /* === Rotating Text === */
+        .rotating-text-wrapper {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+            height: 1.05em;
+            position: relative;
+        }
+        .rotating-text {
+            display: inline-block;
+            transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .rotating-text.fade-out {
+            opacity: 0;
+            transform: translateY(-0.3em);
+        }
+        .rotating-text.fade-in-prepare {
+            opacity: 0;
+            transform: translateY(0.3em);
+            transition: none;
+        }
+
         /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after {
                 transition-duration: 0.01ms !important;
             }
+            .rotating-text { transition: none !important; }
         }
     </style>
     <link rel="stylesheet" href="./assets/css/animations.css">
@@ -722,7 +745,6 @@
             <div class="nav-inner">
                 <a href="/" class="nav-logo">
                     <img src="./assets/droz.webp" alt="Droz Technologies">
-                    <span>Droz Technologies</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#divisions">Divisions</a></li>
@@ -753,7 +775,7 @@
         <div class="container">
             <div class="hero-grid">
                 <div>
-                    <h1 class="serif">We keep<br>the machines<br><em>running</em></h1>
+                    <h1 class="serif">We keep<br>the machines<br><span class="rotating-text-wrapper"><em class="rotating-text">running</em></span></h1>
                 </div>
                 <div class="hero-right">
                     <p>
@@ -798,8 +820,8 @@
                 <span class="client-name">KELLOGG'S</span>
             </div>
             <div class="img-container" style="margin-top: 40px;">
-                    <img src="./assets/images/homepage/trust-industrial-cathedral.jpg"
-                         alt="Power generation turbine hall with massive machinery and natural light from high windows — industrial scale and precision"
+                    <img src="./assets/images/predictive-maintenance/hero-vibration-sensor.jpg"
+                         alt="Vibration sensor mounted on bearing housing — precision engineering for predictive maintenance"
                          class="img-section img-placeholder"
                          loading="lazy"
                          width="1200" height="900"
@@ -1039,6 +1061,27 @@
                 document.getElementById('mobileMenu').classList.remove('open');
             }
         });
+        // === Rotating Text ===
+        (function() {
+            var words = ['running', 'growing', 'protected', 'intelligent', 'connected'];
+            var el = document.querySelector('.rotating-text');
+            if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var idx = 0;
+            setInterval(function() {
+                el.classList.add('fade-out');
+                setTimeout(function() {
+                    idx = (idx + 1) % words.length;
+                    el.textContent = words[idx];
+                    el.classList.remove('fade-out');
+                    el.classList.add('fade-in-prepare');
+                    requestAnimationFrame(function() {
+                        requestAnimationFrame(function() {
+                            el.classList.remove('fade-in-prepare');
+                        });
+                    });
+                }, 500);
+            }, 3000);
+        })();
     </script>
     <script src="./assets/js/animations.js"></script>
 </body>

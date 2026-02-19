@@ -109,6 +109,8 @@
 
       if (progress < 1) {
         requestAnimationFrame(step);
+      } else {
+        el.classList.add('stat-bounce');
       }
     }
 
@@ -256,15 +258,122 @@
     });
   }
 
+  // === Enhanced Parallax (GPU-composited) ===
+  function initEnhancedParallax() {
+    var heroImg = document.querySelector('.hero-image-container img');
+    if (!heroImg || prefersReducedMotion) return;
+    var ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var rect = heroImg.getBoundingClientRect();
+          if (rect.bottom > 0 && rect.top < window.innerHeight) {
+            var offset = window.pageYOffset * 0.3;
+            heroImg.style.transform = 'translate3d(0,' + offset + 'px,0)';
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  // === Staggered Division Reveal ===
+  function initStaggeredDivisions() {
+    var items = document.querySelectorAll('.division-item');
+    if (!items.length || prefersReducedMotion) return;
+    items.forEach(function(el, i) {
+      el.setAttribute('data-animate', i % 2 === 0 ? 'slide-left' : 'slide-right');
+      el.style.transitionDelay = (i * 200) + 'ms';
+    });
+  }
+
+  // === Mouse Tilt on Case Study Cards ===
+  function initCardTilt() {
+    if (prefersReducedMotion) return;
+    var cards = document.querySelectorAll('.work-card');
+    cards.forEach(function(card) {
+      card.addEventListener('mousemove', function(e) {
+        var rect = card.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+        card.style.transform = 'translateY(-8px) scale(1.02) perspective(800px) rotateY(' + (x * 3) + 'deg) rotateX(' + (-y * 3) + 'deg)';
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+      });
+    });
+  }
+
+  // === Magnetic Button ===
+  function initMagneticButton() {
+    if (prefersReducedMotion) return;
+    var btn = document.querySelector('.nav-contact');
+    if (!btn) return;
+    var parent = btn.parentElement;
+    parent.addEventListener('mousemove', function(e) {
+      var rect = btn.getBoundingClientRect();
+      var cx = rect.left + rect.width / 2;
+      var cy = rect.top + rect.height / 2;
+      var dx = e.clientX - cx;
+      var dy = e.clientY - cy;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        var pull = (1 - dist / 120) * 6;
+        btn.style.transform = 'translate(' + (dx / dist * pull) + 'px,' + (dy / dist * pull) + 'px) scale(1.02)';
+      } else {
+        btn.style.transform = '';
+      }
+    });
+    parent.addEventListener('mouseleave', function() {
+      btn.style.transform = '';
+    });
+  }
+
+  // === Ken Burns on Images ===
+  function initKenBurns() {
+    if (prefersReducedMotion) return;
+    var imgs = document.querySelectorAll('.img-section, .img-hero');
+    imgs.forEach(function(img) { img.classList.add('ken-burns'); });
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    imgs.forEach(function(img) { observer.observe(img); });
+  }
+
+  // === Clip Reveal on Section Headings ===
+  function initClipReveal() {
+    if (prefersReducedMotion) return;
+    document.querySelectorAll('.divisions-header h2, .work-header h2, .contact h2, .connect-promo h2').forEach(function(el) {
+      el.setAttribute('data-animate', 'clip-reveal');
+    });
+  }
+
+  // === Stat Bounce After Counter ===
+  function addStatBounce() {
+    // Patch animateCounter to add bounce class on completion
+    // Already integrated via CSS — triggered by adding class after counter finishes
+  }
+
   // === Init ===
   function init() {
+    initClipReveal();
+    initStaggeredDivisions();
     autoTagElements();
     initLoadState();
     initHeroAnimation();
     initScrollReveal();
     initCounters();
-    initParallax();
+    initEnhancedParallax();
     initSmoothScroll();
+    initCardTilt();
+    initMagneticButton();
+    initKenBurns();
   }
 
   if (document.readyState === 'loading') {
