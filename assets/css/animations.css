@@ -55,10 +55,10 @@
 .cursor-ring.visible { opacity: 1; }
 
 /* === Loading State === */
-body { opacity: 0; }
+/* Body starts visible — no FOIT. JS adds .loaded for enhanced animations */
+body { opacity: 1; }
 body.loaded {
     opacity: 1;
-    transition: opacity 0.4s ease-out;
 }
 
 /* === Hero Gradient Mesh Background === */
@@ -169,9 +169,13 @@ body.loaded {
 /* === Hero Text — Cinematic Clip-Path Wipe === */
 .hero-line {
     display: block;
+    opacity: 1;
+    will-change: clip-path, opacity;
+}
+/* Only hide for animation if JS has loaded */
+body.js-ready .hero-line {
     clip-path: inset(0 100% 0 0);
     opacity: 0;
-    will-change: clip-path, opacity;
 }
 .hero-line.revealed {
     clip-path: inset(0 0% 0 0);
@@ -214,7 +218,12 @@ body.loaded {
 }
 
 /* === Scroll Reveal === */
+/* Visible by default — JS adds body.js-ready to enable animation */
 [data-animate] {
+    opacity: 1;
+    transform: none;
+}
+body.js-ready [data-animate] {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
@@ -235,7 +244,7 @@ body.loaded {
 [data-animate-delay="6"] { transition-delay: 0.48s; }
 
 /* === Staggered Card Reveals === */
-[data-animate="card-cascade"] {
+body.js-ready [data-animate="card-cascade"] {
     opacity: 0;
     transform: translateY(40px) rotate(1deg) scale(0.97);
     transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
@@ -249,6 +258,10 @@ body.loaded {
 /* === Split Text Characters === */
 .split-char {
     display: inline-block;
+    opacity: 1;
+    transform: none;
+}
+body.js-ready .split-char {
     opacity: 0;
     transform: translateY(30px) rotate(3deg);
     transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),

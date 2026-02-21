@@ -73,6 +73,7 @@
   // === Page Load ===
   function initLoadState() {
     requestAnimationFrame(function () {
+      document.body.classList.add('js-ready');
       document.body.classList.add('loaded');
     });
   }
