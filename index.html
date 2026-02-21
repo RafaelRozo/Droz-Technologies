@@ -16,7 +16,8 @@
     <link rel="icon" type="image/x-icon" href="./assets/droztechnologies.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="theme-color" content="#ffffff">
     <style>
         /* === Reset & Base === */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -175,7 +176,7 @@
 
         /* === Hero === */
         .hero {
-            padding: 120px 0 80px;
+            padding: 140px 0 100px;
         }
 
         .hero-grid {
@@ -265,7 +266,7 @@
             font-weight: 600;
             color: var(--text);
             opacity: 0.35;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.08em;
             white-space: nowrap;
             transition: opacity 0.2s;
         }
@@ -274,7 +275,7 @@
 
         /* === Divisions === */
         .divisions {
-            padding: 120px 0;
+            padding: 140px 0;
         }
 
         .divisions-header {
@@ -303,7 +304,7 @@
             grid-template-columns: 200px 1fr;
             gap: 0;
             border-top: 1px solid var(--border);
-            padding: 48px 0;
+            padding: 64px 0;
             text-decoration: none;
             color: inherit;
             transition: background 0.3s;
@@ -322,7 +323,8 @@
 
         .division-number {
             font-family: 'Instrument Serif', serif;
-            font-size: 14px;
+            font-size: 48px;
+            font-weight: 300;
             color: var(--text-light);
             padding-top: 4px;
         }
@@ -373,7 +375,7 @@
 
         /* === Featured Work === */
         .work {
-            padding: 80px 0 120px;
+            padding: 120px 0 140px;
         }
 
         .work-header {
@@ -396,10 +398,14 @@
             background: var(--white);
             border: 1px solid var(--border-light);
             padding: 48px;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, transform 0.3s ease-out, box-shadow 0.3s ease-out;
         }
 
-        .work-card:hover { border-color: var(--border); }
+        .work-card:hover { 
+            border-color: var(--border); 
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+        }
 
         .work-card-label {
             font-size: 12px;
@@ -437,7 +443,7 @@
 
         /* === Droz Connect Promo === */
         .connect-promo {
-            padding: 120px 0;
+            padding: 140px 0;
             background: var(--text);
             color: var(--bg);
         }
@@ -511,7 +517,7 @@
 
         /* === Contact === */
         .contact {
-            padding: 120px 0;
+            padding: 140px 0;
         }
 
         .contact-grid {
@@ -722,7 +728,7 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="./assets/css/animations.css">
+    <link rel="stylesheet" href="./assets/css/animations.css" media="print" onload="this.media='all'">
 </head>
 <body>
 
@@ -1060,6 +1066,6 @@
         });
         // Rotating text handled by animations.js
     </script>
-    <script src="./assets/js/animations.js"></script>
+    <script src="./assets/js/animations.js" defer></script>
 </body>
 </html>
