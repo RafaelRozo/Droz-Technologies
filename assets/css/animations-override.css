@@ -1,0 +1,7 @@
+/* Override: Force all content visible regardless of animation state */
+body, body.loaded, body.js-ready { opacity: 1 !important; }
+.hero-line, body.js-ready .hero-line { opacity: 1 !important; clip-path: none !important; }
+[data-animate], body.js-ready [data-animate] { opacity: 1 !important; transform: none !important; }
+[data-animate="card-cascade"], body.js-ready [data-animate="card-cascade"] { opacity: 1 !important; transform: none !important; }
+.split-char, body.js-ready .split-char { opacity: 1 !important; transform: none !important; }
+.rotating-text { opacity: 1 !important; transform: none !important; }
