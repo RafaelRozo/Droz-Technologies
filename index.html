@@ -375,6 +375,123 @@
             color: var(--accent);
         }
 
+        /* === MOOV.AI-style Division Sections === */
+        .division-section {
+            padding: 100px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .division-section--alt {
+            background: var(--bg-warm);
+        }
+
+        .division-section__header {
+            display: flex;
+            align-items: flex-start;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+
+        .division-section__number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 64px;
+            font-weight: 200;
+            color: var(--accent);
+            line-height: 1;
+            letter-spacing: -0.02em;
+            flex-shrink: 0;
+        }
+
+        .division-section__title {
+            font-size: clamp(28px, 3vw, 40px);
+            margin-bottom: 8px;
+        }
+
+        .division-section__subtitle {
+            font-size: 18px;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .division-section__desc {
+            font-size: 17px;
+            line-height: 1.8;
+            color: var(--text-muted);
+            max-width: 800px;
+            margin-bottom: 48px;
+        }
+
+        .division-section__cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 32px;
+        }
+
+        .division-section__cards--half {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 600px;
+        }
+
+        .division-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
+            background: var(--white);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .division-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+
+        .division-card h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .division-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .division-section__clients {
+            font-size: 14px;
+            color: var(--text-light);
+            letter-spacing: 0.03em;
+            margin-bottom: 16px;
+        }
+
+        .division-section__clients span {
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .division-section__link {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        .division-section__link:hover {
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .division-section { padding: 64px 0; }
+            .division-section__header { flex-direction: column; gap: 16px; }
+            .division-section__number { font-size: 48px; }
+            .division-section__cards { grid-template-columns: 1fr; }
+            .division-section__cards--half { grid-template-columns: 1fr; }
+        }
+
         /* === Featured Work === */
         .work {
             padding: 120px 0 140px;
@@ -839,53 +956,102 @@
         <div class="container">
             <div class="divisions-header">
                 <h2 class="serif">Three divisions,<br>one company</h2>
-                <p>Each division is a standalone capability. Together they give our clients a single partner for digital growth, physical asset reliability, and custom technology.</p>
+                <p>Each division is a standalone capability. Together they give our clients a single partner for custom technology, physical asset reliability, and digital growth.</p>
             </div>
+        </div>
+    </section>
 
-            <a href="./intelligent-revenue.html" class="division-item">
-                <div class="division-number">01</div>
-                <div class="division-content">
-                    <h3 class="serif">Custom Software &amp; AI</h3>
-                    <p>Bespoke applications, AI automation, and SaaS products built for specific business problems. From appointment confirmation systems (Droz Connect) to full-stack web platforms and intelligent workflow automation.</p>
-                    <div class="division-tags">
-                        <span class="division-tag">Web &amp; Mobile Apps</span>
-                        <span class="division-tag">AI Automation</span>
-                        <span class="division-tag">Droz Connect</span>
-                        <span class="division-tag">SaaS</span>
-                    </div>
+    <!-- Division 01: Software & AI -->
+    <section class="division-section" data-animate>
+        <div class="container">
+            <div class="division-section__header">
+                <div class="division-section__number">01</div>
+                <div>
+                    <h3 class="serif division-section__title">Custom Software &amp; AI</h3>
+                    <p class="division-section__subtitle">Intelligent systems that solve real business problems.</p>
                 </div>
-                <div class="division-arrow">→</div>
-            </a>
+            </div>
+            <p class="division-section__desc">We build custom applications, AI automation platforms, and SaaS products that transform how industrial companies operate. Our team combines 20+ years of industrial expertise with cutting-edge AI technology.</p>
+            <div class="division-section__cards">
+                <div class="division-card">
+                    <h4>Custom Software Development</h4>
+                    <p>Web applications, mobile apps, and enterprise systems built with modern technology stacks.</p>
+                </div>
+                <div class="division-card">
+                    <h4>AI Automation Platforms</h4>
+                    <p>Intelligent workflows, document processing, and business automation powered by advanced AI.</p>
+                </div>
+                <div class="division-card">
+                    <h4>Samson-AI Product Suite</h4>
+                    <p>Proprietary AI advertising automation that manages campaigns, optimizes spend, and generates creative 24/7.</p>
+                </div>
+                <div class="division-card">
+                    <h4>System Integrations</h4>
+                    <p>Connect existing systems, automate data flows, and build seamless digital experiences.</p>
+                </div>
+            </div>
+            <a href="./intelligent-revenue.html" class="division-section__link">Learn more →</a>
+        </div>
+    </section>
 
-            <a href="./physical-revenue.html" class="division-item">
-                <div class="division-number">02</div>
-                <div class="division-content">
-                    <h3 class="serif">Predictive Maintenance &amp; Engineering</h3>
-                    <p>Industrial reliability services built on two decades of field work. Vibrational analysis, laser alignment, dynamic balancing, ultrasound testing, and turbo generator repair across power generation, oil &amp; gas, cement, and food manufacturing.</p>
-                    <div class="division-tags">
-                        <span class="division-tag">Vibration Analysis</span>
-                        <span class="division-tag">Laser Alignment</span>
-                        <span class="division-tag">Turbo Generators</span>
-                        <span class="division-tag">Ultrasound</span>
-                    </div>
+    <!-- Division 02: Predictive Maintenance -->
+    <section class="division-section division-section--alt" data-animate>
+        <div class="container">
+            <div class="division-section__header">
+                <div class="division-section__number">02</div>
+                <div>
+                    <h3 class="serif division-section__title">Predictive Maintenance &amp; Engineering</h3>
+                    <p class="division-section__subtitle">Prevent failures before they happen.</p>
                 </div>
-                <div class="division-arrow">→</div>
-            </a>
+            </div>
+            <p class="division-section__desc">Our predictive maintenance solutions use IoT sensors, data analytics, and machine learning to extend asset lifecycles. Two decades of field experience in power generation, manufacturing, and process industries.</p>
+            <div class="division-section__cards">
+                <div class="division-card">
+                    <h4>Vibration Analysis</h4>
+                    <p>Advanced diagnostics for rotating machinery, early fault detection, and condition monitoring.</p>
+                </div>
+                <div class="division-card">
+                    <h4>Precision Alignment</h4>
+                    <p>Laser alignment services for pumps, compressors, and coupled machinery systems.</p>
+                </div>
+                <div class="division-card">
+                    <h4>Dynamic Balancing</h4>
+                    <p>On-site and shop balancing for rotors, fans, and high-speed industrial equipment.</p>
+                </div>
+                <div class="division-card">
+                    <h4>Comprehensive Diagnostics</h4>
+                    <p>Ultrasound, thermography, and NDT services for complete asset health assessment.</p>
+                </div>
+            </div>
+            <div class="division-section__clients">
+                <span>Clients:</span> Westinghouse · Holcim · PDVSA · Unilever · Lafarge · Kellogg's
+            </div>
+            <a href="./physical-revenue.html" class="division-section__link">Learn more →</a>
+        </div>
+    </section>
 
-            <a href="./digital-revenue.html" class="division-item">
-                <div class="division-number">03</div>
-                <div class="division-content">
-                    <h3 class="serif">Digital Marketing &amp; Growth</h3>
-                    <p>Revenue systems for businesses that need more than an agency. Performance marketing, SEO infrastructure, conversion engineering, and our proprietary Samson-AI platform for automated ad management.</p>
-                    <div class="division-tags">
-                        <span class="division-tag">Performance Marketing</span>
-                        <span class="division-tag">SEO</span>
-                        <span class="division-tag">Samson-AI</span>
-                        <span class="division-tag">Conversion</span>
-                    </div>
+    <!-- Division 03: Digital Growth -->
+    <section class="division-section" data-animate>
+        <div class="container">
+            <div class="division-section__header">
+                <div class="division-section__number">03</div>
+                <div>
+                    <h3 class="serif division-section__title">Digital Marketing &amp; Growth</h3>
+                    <p class="division-section__subtitle">Scale your digital transformation.</p>
                 </div>
-                <div class="division-arrow">→</div>
-            </a>
+            </div>
+            <p class="division-section__desc">Strategic digital marketing for businesses ready to scale. We help industrial companies embrace digital transformation through performance marketing, conversion optimization, and our Samson-AI platform.</p>
+            <div class="division-section__cards division-section__cards--half">
+                <div class="division-card">
+                    <h4>Performance Marketing</h4>
+                    <p>Data-driven campaigns across Google Ads, Meta, and other platforms with measurable ROI.</p>
+                </div>
+                <div class="division-card">
+                    <h4>Growth Strategy</h4>
+                    <p>End-to-end digital growth strategy and execution for industrial companies.</p>
+                </div>
+            </div>
+            <a href="./digital-revenue.html" class="division-section__link">Learn more →</a>
         </div>
     </section>
 
