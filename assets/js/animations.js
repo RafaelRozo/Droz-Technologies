@@ -433,19 +433,20 @@
 
   // === Auto-Tag Elements ===
   function autoTagElements() {
-    // Section headings — split text for premium reveals
-    document.querySelectorAll('.divisions-header h2, .work-header h2').forEach(function (el) {
+    /* Disabled: split-text hides headings until observer fires — causes blank headlines */
+    /* document.querySelectorAll('.divisions-header h2, .work-header h2').forEach(function (el) {
       if (!el.hasAttribute('data-split-text') && !el.hasAttribute('data-animate')) {
         el.setAttribute('data-split-text', '');
       }
-    });
+    }); */
 
     // Clip reveal on other headings
-    document.querySelectorAll('.contact h2, .connect-promo h2').forEach(function (el) {
+    /* Disabled: these headings should be visible immediately, not animation-gated */
+    /* document.querySelectorAll('.contact h2, .connect-promo h2').forEach(function (el) {
       if (!el.hasAttribute('data-animate')) {
         el.setAttribute('data-animate', 'clip-reveal');
       }
-    });
+    }); */
 
     // Image containers — add image reveal
     document.querySelectorAll('.img-container').forEach(function (el) {
