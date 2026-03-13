@@ -368,34 +368,92 @@
       max-width: 500px;
       margin: 2.5rem auto 0;
     }
-    .form-container input,
+    .form-container input[type="text"],
+    .form-container input[type="email"],
+    .form-container input[type="tel"],
+    .form-container input[type="date"],
     .form-container select,
     .form-container textarea {
       width: 100%;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      padding: 0.9rem 1rem;
+      margin-bottom: 0.75rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
       color: var(--text);
       font-family: 'Inter', sans-serif;
       font-size: 0.9rem;
+    }
+    .form-container select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23a0a0a0' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+      cursor: pointer;
+    }
+    .form-container select option {
+      background: #1a1a1a;
+      color: var(--text);
     }
     .form-container input::placeholder,
     .form-container textarea::placeholder {
       color: var(--text-muted);
     }
     .form-container input:focus,
+    .form-container select:focus,
     .form-container textarea:focus {
       outline: none;
       border-color: var(--gold);
+      background: rgba(255,255,255,0.08);
     }
-    .form-container button {
+    .form-container button[type="submit"] {
       width: 100%;
+      margin-top: 0.5rem;
     }
     .form-privacy {
       margin-top: 1rem;
       font-size: 0.75rem;
       color: var(--text-muted);
+    }
+    .form-section-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin: 0.75rem 0 0.5rem;
+      letter-spacing: 0.5px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .form-check-group {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 0.75rem;
+      padding: 0.6rem 0;
+    }
+    .form-check-group label,
+    .form-check-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .form-check-item {
+      padding: 0.6rem 0;
+      margin-bottom: 0.25rem;
+    }
+    .form-container input[type="radio"],
+    .form-container input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--gold);
+      margin: 0;
+      cursor: pointer;
+      flex-shrink: 0;
     }
     
     /* ── MAP ── */
@@ -854,27 +912,26 @@
     <div class="form-container">
       <form id="lead-form">
         <input type="hidden" name="property" value="5361 Bromley Road, Burlington (Appleby), Ontario L7L3G6">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        
+        <div class="form-row">
           <input type="text" name="first_name" placeholder="First Name *" required>
           <input type="text" name="last_name" placeholder="Last Name *" required>
         </div>
-        <div style="margin:1rem 0 0.5rem; font-size:0.85rem; color:var(--text-muted);">Preferred method of contact *</div>
-        <div style="display:flex; gap:1.5rem; margin-bottom:1rem;">
-          <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
-            <input type="radio" name="contact_method" value="Email" checked style="accent-color:var(--gold);"> Email
-          </label>
-          <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
-            <input type="radio" name="contact_method" value="Phone" style="accent-color:var(--gold);"> Phone
-          </label>
-          <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
-            <input type="radio" name="contact_method" value="Text" style="accent-color:var(--gold);"> Text
-          </label>
+        
+        <p class="form-section-label">Preferred method of contact *</p>
+        <div class="form-check-group">
+          <label><input type="radio" name="contact_method" value="Email" checked> Email</label>
+          <label><input type="radio" name="contact_method" value="Phone"> Phone</label>
+          <label><input type="radio" name="contact_method" value="Text"> Text</label>
         </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+        
+        <div class="form-row">
           <input type="email" name="email" placeholder="Email *" required>
           <input type="tel" name="phone" placeholder="Phone Number *" required>
         </div>
-        <textarea name="message" rows="3" placeholder="I would appreciate more information about 5361 Bromley Road, Burlington (Appleby), Ontario L7L3G6.&#10;&#10;Add your questions here."></textarea>
+        
+        <textarea name="message" rows="3" placeholder="I would appreciate more information about 5361 Bromley Road, Burlington."></textarea>
+        
         <select name="plan_next_6_months">
           <option value="" disabled selected>In the next 6 months do you plan to:</option>
           <option value="buy">Buy a home</option>
@@ -882,13 +939,16 @@
           <option value="buy_and_sell">Buy and sell a home</option>
           <option value="not_sure">Not sure</option>
         </select>
-        <div style="margin:1rem 0 0.5rem; font-size:0.85rem; color:var(--text-muted);">Information to help the listing agent respond:</div>
-        <label style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.75rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
-          <input type="checkbox" name="book_showing" value="yes" checked style="accent-color:var(--gold); margin-top:2px;">
+        
+        <p class="form-section-label">Information to help the listing agent respond</p>
+        
+        <label class="form-check-item">
+          <input type="checkbox" name="book_showing" value="yes" checked>
           <span>I wish to book a showing</span>
         </label>
-        <div id="showing-times" style="margin-bottom:1rem;">
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.5rem;">
+        
+        <div id="showing-times" style="margin-bottom:0.75rem;">
+          <div class="form-row">
             <input type="date" name="showing_date_1" style="color-scheme:dark;">
             <select name="showing_time_1">
               <option value="" disabled selected>Any Time</option>
@@ -898,15 +958,18 @@
             </select>
           </div>
         </div>
-        <label style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
-          <input type="checkbox" name="has_realtor" value="yes" style="accent-color:var(--gold);">
+        
+        <label class="form-check-item">
+          <input type="checkbox" name="has_realtor" value="yes">
           <span>I am currently working with a REALTOR®</span>
         </label>
-        <input type="text" name="realtor_name" id="realtor-name-field" placeholder="First and Last Name of my REALTOR®" style="display:none; margin-bottom:0.75rem;">
-        <label style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
-          <input type="checkbox" name="pre_approved" value="yes" style="accent-color:var(--gold);">
+        <input type="text" name="realtor_name" id="realtor-name-field" placeholder="First and Last Name of my REALTOR®" style="display:none;">
+        
+        <label class="form-check-item">
+          <input type="checkbox" name="pre_approved" value="yes">
           <span>I have been pre-approved for a mortgage</span>
         </label>
+        
         <button type="submit" class="btn-primary" id="submit-btn">Request Showing</button>
         <p class="form-privacy">Your information is kept private and shared only with the listing agent.</p>
       </form>
