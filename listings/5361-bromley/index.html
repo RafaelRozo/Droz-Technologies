@@ -900,35 +900,110 @@
     </div>
   </section>
 
+  <!-- VIDEO TOUR -->
+  <section id="video" style="background: var(--darker);">
+    <div class="section-tag reveal">Video Tour</div>
+    <h2 class="section-title reveal">Walk Through The Home</h2>
+    <div class="reveal" style="max-width: 800px; margin: 2rem auto 0;">
+      <video controls playsinline preload="metadata" poster="images/photo-01.jpg" style="width:100%; border-radius: 4px; aspect-ratio: 9/16; max-height: 70vh; object-fit: contain; background: #000;">
+        <source src="images/reel.mov" type="video/quicktime">
+        <source src="images/reel.mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
   <!-- GALLERY -->
-  <section id="gallery" style="background: var(--darker);">
+  <section id="gallery">
     <div class="section-tag reveal">Gallery</div>
-    <h2 class="section-title reveal">See Every Detail</h2>
+    <h2 class="section-title reveal">See Every Detail — 48 Photos</h2>
+    
+    <!-- Exterior (10 photos) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 2rem 0 1rem;">Exterior & Curb Appeal</p>
     <div class="gallery-grid reveal-scale">
-      <img src="images/photo-01.jpg" alt="Exterior" onclick="openLightbox(0)" loading="lazy">
-      <img src="images/photo-04.jpg" alt="Front View" onclick="openLightbox(1)" loading="lazy">
-      <img src="images/photo-05.jpg" alt="Entry" onclick="openLightbox(2)" loading="lazy">
-      <img src="images/photo-11.jpg" alt="Living Room" onclick="openLightbox(3)" loading="lazy">
-      <img src="images/photo-13.jpg" alt="Media Wall" onclick="openLightbox(4)" loading="lazy">
-      <img src="images/photo-14.jpg" alt="Kitchen" onclick="openLightbox(5)" loading="lazy">
-      <img src="images/photo-15.jpg" alt="Kitchen Detail" onclick="openLightbox(6)" loading="lazy">
-      <img src="images/photo-25.jpg" alt="Bathroom" onclick="openLightbox(7)" loading="lazy">
-      <img src="images/photo-18.jpg" alt="Bedroom" onclick="openLightbox(8)" loading="lazy">
-      <img src="images/photo-16.jpg" alt="Staircase" onclick="openLightbox(9)" loading="lazy">
-      <img src="images/photo-30.jpg" alt="Lower Level" onclick="openLightbox(10)" loading="lazy">
-      <img src="images/photo-32.jpg" alt="Lower Level Kitchen" onclick="openLightbox(11)" loading="lazy">
-      <img src="images/photo-42.jpg" alt="Spa Bathroom" onclick="openLightbox(12)" loading="lazy">
-      <img src="images/photo-41.jpg" alt="Wine Display" onclick="openLightbox(13)" loading="lazy">
-      <img src="images/photo-47.jpg" alt="Freestanding Tub" onclick="openLightbox(14)" loading="lazy">
-      <img src="images/photo-44.jpg" alt="Rain Shower" onclick="openLightbox(15)" loading="lazy">
-      <img src="images/photo-45.jpg" alt="Detail" onclick="openLightbox(16)" loading="lazy">
-      <img src="images/photo-46.jpg" alt="Detail" onclick="openLightbox(17)" loading="lazy">
-      <img src="images/photo-43.jpg" alt="Detail" onclick="openLightbox(18)" loading="lazy">
-      <img src="images/photo-17.jpg" alt="Detail" onclick="openLightbox(19)" loading="lazy">
-      <img src="images/photo-29.jpg" alt="Detail" onclick="openLightbox(20)" loading="lazy">
-      <img src="images/photo-24.jpg" alt="Detail" onclick="openLightbox(21)" loading="lazy">
-      <img src="images/photo-33.jpg" alt="Detail" onclick="openLightbox(22)" loading="lazy">
-      <img src="images/photo-48.jpg" alt="Detail" onclick="openLightbox(23)" loading="lazy">
+      <img src="images/photo-01.jpg" alt="Exterior - Front" onclick="openLightbox(0)" loading="lazy">
+      <img src="images/photo-02.jpg" alt="Exterior - Angled Right" onclick="openLightbox(1)" loading="lazy">
+      <img src="images/photo-03.jpg" alt="Exterior - Angled Left" onclick="openLightbox(2)" loading="lazy">
+      <img src="images/photo-04.jpg" alt="Exterior - Facade Detail" onclick="openLightbox(3)" loading="lazy">
+      <img src="images/photo-05.jpg" alt="Front Entry" onclick="openLightbox(4)" loading="lazy">
+      <img src="images/photo-06.jpg" alt="Garage & Patio" onclick="openLightbox(5)" loading="lazy">
+      <img src="images/photo-07.jpg" alt="Backyard Side" onclick="openLightbox(6)" loading="lazy">
+      <img src="images/photo-08.jpg" alt="Backyard" onclick="openLightbox(7)" loading="lazy">
+      <img src="images/photo-09.jpg" alt="Side Yard" onclick="openLightbox(8)" loading="lazy">
+      <img src="images/photo-10.jpg" alt="Street View" onclick="openLightbox(9)" loading="lazy">
+    </div>
+
+    <!-- Main Floor Living (7 photos) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 3rem 0 1rem;">Main Floor Living</p>
+    <div class="gallery-grid reveal-scale">
+      <img src="images/photo-11.jpg" alt="Living & Dining" onclick="openLightbox(10)" loading="lazy">
+      <img src="images/photo-12.jpg" alt="Living Room Angle 2" onclick="openLightbox(11)" loading="lazy">
+      <img src="images/photo-13.jpg" alt="Media Wall" onclick="openLightbox(12)" loading="lazy">
+      <img src="images/photo-17.jpg" alt="Open Concept View" onclick="openLightbox(13)" loading="lazy">
+      <img src="images/photo-16.jpg" alt="Entry & Staircase" onclick="openLightbox(14)" loading="lazy">
+      <img src="images/photo-21.jpg" alt="Hallway" onclick="openLightbox(15)" loading="lazy">
+      <img src="images/photo-24.jpg" alt="Kitchen & Entry" onclick="openLightbox(16)" loading="lazy">
+    </div>
+
+    <!-- Kitchen (2 photos) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 3rem 0 1rem;">Designer Chef's Kitchen</p>
+    <div class="gallery-grid reveal-scale">
+      <img src="images/photo-14.jpg" alt="Kitchen" onclick="openLightbox(17)" loading="lazy">
+      <img src="images/photo-15.jpg" alt="Kitchen Reverse" onclick="openLightbox(18)" loading="lazy">
+    </div>
+
+    <!-- Bedrooms Main (6 photos) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 3rem 0 1rem;">Main Floor Bedrooms</p>
+    <div class="gallery-grid reveal-scale">
+      <img src="images/photo-18.jpg" alt="Primary Bedroom" onclick="openLightbox(19)" loading="lazy">
+      <img src="images/photo-19.jpg" alt="Primary Bedroom Angle 2" onclick="openLightbox(20)" loading="lazy">
+      <img src="images/photo-20.jpg" alt="Walk-In Closet" onclick="openLightbox(21)" loading="lazy">
+      <img src="images/photo-22.jpg" alt="Guest Bedroom" onclick="openLightbox(22)" loading="lazy">
+      <img src="images/photo-23.jpg" alt="Guest Bedroom Angle 2" onclick="openLightbox(23)" loading="lazy">
+      <img src="images/photo-27.jpg" alt="Bedroom 3" onclick="openLightbox(24)" loading="lazy">
+      <img src="images/photo-28.jpg" alt="Bedroom 3 Angle 2" onclick="openLightbox(25)" loading="lazy">
+    </div>
+
+    <!-- Main Bath (2 photos) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 3rem 0 1rem;">Main Floor Bathroom</p>
+    <div class="gallery-grid reveal-scale">
+      <img src="images/photo-25.jpg" alt="Main Bathroom" onclick="openLightbox(26)" loading="lazy">
+      <img src="images/photo-26.jpg" alt="Main Bathroom Angle 2" onclick="openLightbox(27)" loading="lazy">
+    </div>
+
+    <!-- Lower Level (12 photos) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 3rem 0 1rem;">Lower Level Suite</p>
+    <div class="gallery-grid reveal-scale">
+      <img src="images/photo-30.jpg" alt="Lower Level Living" onclick="openLightbox(28)" loading="lazy">
+      <img src="images/photo-31.jpg" alt="Lower Media Wall" onclick="openLightbox(29)" loading="lazy">
+      <img src="images/photo-33.jpg" alt="Lower Recreation Wide" onclick="openLightbox(30)" loading="lazy">
+      <img src="images/photo-34.jpg" alt="Lower Dining Nook" onclick="openLightbox(31)" loading="lazy">
+      <img src="images/photo-35.jpg" alt="Fireplace & Stove" onclick="openLightbox(32)" loading="lazy">
+      <img src="images/photo-40.jpg" alt="Lower Reverse View" onclick="openLightbox(33)" loading="lazy">
+      <img src="images/photo-32.jpg" alt="Lower Kitchen" onclick="openLightbox(34)" loading="lazy">
+      <img src="images/photo-29.jpg" alt="Laundry Room" onclick="openLightbox(35)" loading="lazy">
+      <img src="images/photo-36.jpg" alt="Lower Bedroom" onclick="openLightbox(36)" loading="lazy">
+      <img src="images/photo-37.jpg" alt="Lower Bedroom Closet" onclick="openLightbox(37)" loading="lazy">
+      <img src="images/photo-38.jpg" alt="Walk-In Closet Lower" onclick="openLightbox(38)" loading="lazy">
+      <img src="images/photo-39.jpg" alt="Lower Bedroom to Living" onclick="openLightbox(39)" loading="lazy">
+    </div>
+
+    <!-- Spa Bathroom (7 photos) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 3rem 0 1rem;">$70,000 Spa Bathroom</p>
+    <div class="gallery-grid reveal-scale">
+      <img src="images/photo-42.jpg" alt="Spa Vanity & Tub" onclick="openLightbox(40)" loading="lazy">
+      <img src="images/photo-41.jpg" alt="Wine Display" onclick="openLightbox(41)" loading="lazy">
+      <img src="images/photo-43.jpg" alt="Spa Full Length" onclick="openLightbox(42)" loading="lazy">
+      <img src="images/photo-44.jpg" alt="Rain Shower & Toilet" onclick="openLightbox(43)" loading="lazy">
+      <img src="images/photo-45.jpg" alt="Rain Shower Detail" onclick="openLightbox(44)" loading="lazy">
+      <img src="images/photo-46.jpg" alt="Shower Reverse" onclick="openLightbox(45)" loading="lazy">
+      <img src="images/photo-47.jpg" alt="Freestanding Tub" onclick="openLightbox(46)" loading="lazy">
+    </div>
+
+    <!-- Garage (1 photo) -->
+    <p class="reveal" style="color:var(--gold); font-size:0.7rem; letter-spacing:3px; text-transform:uppercase; margin: 3rem 0 1rem;">Garage</p>
+    <div class="gallery-grid reveal-scale">
+      <img src="images/photo-48.jpg" alt="Two-Car Garage" onclick="openLightbox(47)" loading="lazy">
     </div>
   </section>
 
@@ -1264,30 +1339,22 @@
   <script>
     // Gallery images for lightbox
     const galleryImages = [
-      'images/photo-01.jpg',
-      'images/photo-04.jpg',
-      'images/photo-05.jpg',
-      'images/photo-11.jpg',
-      'images/photo-13.jpg',
-      'images/photo-14.jpg',
-      'images/photo-15.jpg',
-      'images/photo-25.jpg',
-      'images/photo-18.jpg',
-      'images/photo-16.jpg',
-      'images/photo-30.jpg',
-      'images/photo-32.jpg',
-      'images/photo-42.jpg',
-      'images/photo-41.jpg',
-      'images/photo-47.jpg',
-      'images/photo-44.jpg',
-      'images/photo-45.jpg',
-      'images/photo-46.jpg',
-      'images/photo-43.jpg',
-      'images/photo-17.jpg',
-      'images/photo-29.jpg',
-      'images/photo-24.jpg',
-      'images/photo-33.jpg',
-      'images/photo-48.jpg'
+      'images/photo-01.jpg','images/photo-02.jpg','images/photo-03.jpg',
+      'images/photo-04.jpg','images/photo-05.jpg','images/photo-06.jpg',
+      'images/photo-07.jpg','images/photo-08.jpg','images/photo-09.jpg',
+      'images/photo-10.jpg','images/photo-11.jpg','images/photo-12.jpg',
+      'images/photo-13.jpg','images/photo-17.jpg','images/photo-16.jpg',
+      'images/photo-21.jpg','images/photo-24.jpg','images/photo-14.jpg',
+      'images/photo-15.jpg','images/photo-18.jpg','images/photo-19.jpg',
+      'images/photo-20.jpg','images/photo-22.jpg','images/photo-23.jpg',
+      'images/photo-27.jpg','images/photo-28.jpg','images/photo-25.jpg',
+      'images/photo-26.jpg','images/photo-30.jpg','images/photo-31.jpg',
+      'images/photo-33.jpg','images/photo-34.jpg','images/photo-35.jpg',
+      'images/photo-40.jpg','images/photo-32.jpg','images/photo-29.jpg',
+      'images/photo-36.jpg','images/photo-37.jpg','images/photo-38.jpg',
+      'images/photo-39.jpg','images/photo-42.jpg','images/photo-41.jpg',
+      'images/photo-43.jpg','images/photo-44.jpg','images/photo-45.jpg',
+      'images/photo-46.jpg','images/photo-47.jpg','images/photo-48.jpg'
     ];
     let currentIndex = 0;
 
