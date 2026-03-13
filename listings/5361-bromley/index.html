@@ -853,25 +853,60 @@
     
     <div class="form-container">
       <form id="lead-form">
-        <input type="hidden" name="property" value="5361 Bromley Road, Burlington">
-        <input type="text" name="name" placeholder="Full Name *" required>
-        <input type="email" name="email" placeholder="Email Address *" required>
-        <input type="tel" name="phone" placeholder="Phone Number *" required>
-        <select name="buyer_type">
-          <option value="" disabled selected>I'm looking to...</option>
-          <option value="primary">Buy as primary residence</option>
-          <option value="investment">Buy as investment property</option>
-          <option value="family">Extended family / in-law living</option>
-          <option value="agent">I'm a buyer's agent</option>
+        <input type="hidden" name="property" value="5361 Bromley Road, Burlington (Appleby), Ontario L7L3G6">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <input type="text" name="first_name" placeholder="First Name *" required>
+          <input type="text" name="last_name" placeholder="Last Name *" required>
+        </div>
+        <div style="margin:1rem 0 0.5rem; font-size:0.85rem; color:var(--text-muted);">Preferred method of contact *</div>
+        <div style="display:flex; gap:1.5rem; margin-bottom:1rem;">
+          <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
+            <input type="radio" name="contact_method" value="Email" checked style="accent-color:var(--gold);"> Email
+          </label>
+          <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
+            <input type="radio" name="contact_method" value="Phone" style="accent-color:var(--gold);"> Phone
+          </label>
+          <label style="display:flex; align-items:center; gap:0.4rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
+            <input type="radio" name="contact_method" value="Text" style="accent-color:var(--gold);"> Text
+          </label>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+          <input type="email" name="email" placeholder="Email *" required>
+          <input type="tel" name="phone" placeholder="Phone Number *" required>
+        </div>
+        <textarea name="message" rows="3" placeholder="I would appreciate more information about 5361 Bromley Road, Burlington (Appleby), Ontario L7L3G6.&#10;&#10;Add your questions here."></textarea>
+        <select name="plan_next_6_months">
+          <option value="" disabled selected>In the next 6 months do you plan to:</option>
+          <option value="buy">Buy a home</option>
+          <option value="sell">Sell a home</option>
+          <option value="buy_and_sell">Buy and sell a home</option>
+          <option value="not_sure">Not sure</option>
         </select>
-        <select name="timeline">
-          <option value="" disabled selected>Purchase timeline</option>
-          <option value="asap">Ready to buy now</option>
-          <option value="30days">Within 30 days</option>
-          <option value="60days">Within 60 days</option>
-          <option value="exploring">Just exploring</option>
-        </select>
-        <textarea name="message" rows="3" placeholder="Questions or preferred showing times (optional)"></textarea>
+        <div style="margin:1rem 0 0.5rem; font-size:0.85rem; color:var(--text-muted);">Information to help the listing agent respond:</div>
+        <label style="display:flex; align-items:flex-start; gap:0.5rem; margin-bottom:0.75rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
+          <input type="checkbox" name="book_showing" value="yes" checked style="accent-color:var(--gold); margin-top:2px;">
+          <span>I wish to book a showing</span>
+        </label>
+        <div id="showing-times" style="margin-bottom:1rem;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-bottom:0.5rem;">
+            <input type="date" name="showing_date_1" style="color-scheme:dark;">
+            <select name="showing_time_1">
+              <option value="" disabled selected>Any Time</option>
+              <option value="morning">Morning (9-12)</option>
+              <option value="afternoon">Afternoon (12-5)</option>
+              <option value="evening">Evening (5-8)</option>
+            </select>
+          </div>
+        </div>
+        <label style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
+          <input type="checkbox" name="has_realtor" value="yes" style="accent-color:var(--gold);">
+          <span>I am currently working with a REALTOR®</span>
+        </label>
+        <input type="text" name="realtor_name" id="realtor-name-field" placeholder="First and Last Name of my REALTOR®" style="display:none; margin-bottom:0.75rem;">
+        <label style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.75rem; font-size:0.85rem; color:var(--text); cursor:pointer;">
+          <input type="checkbox" name="pre_approved" value="yes" style="accent-color:var(--gold);">
+          <span>I have been pre-approved for a mortgage</span>
+        </label>
         <button type="submit" class="btn-primary" id="submit-btn">Request Showing</button>
         <p class="form-privacy">Your information is kept private and shared only with the listing agent.</p>
       </form>
@@ -1028,6 +1063,11 @@
         form.style.display = 'none';
         document.getElementById('form-success').style.display = 'block';
       }
+    });
+
+    // Toggle realtor name field
+    document.querySelector('input[name="has_realtor"]').addEventListener('change', function() {
+      document.getElementById('realtor-name-field').style.display = this.checked ? 'block' : 'none';
     });
 
     // Track form engagement (for Advantage+ optimization)
