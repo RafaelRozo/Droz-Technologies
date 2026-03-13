@@ -1,0 +1,2 @@
+timestamp,first_name,last_name,email,phone,contact_method,buyer_intent,has_realtor,message,source,notified
+2026-03-13T03:14:31.519740,Test,Lead,test@example.com,905-555-0000,Email,Buy a home,No,Test submission,landing_page,no

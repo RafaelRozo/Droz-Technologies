@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-03-13T03:14:31.519740",
+  "first_name": "Test",
+  "last_name": "Lead",
+  "email": "test@example.com",
+  "phone": "905-555-0000",
+  "contact_method": "Email",
+  "buyer_intent": "Buy a home",
+  "has_realtor": "No",
+  "message": "Test submission",
+  "source": "landing_page"
+}
