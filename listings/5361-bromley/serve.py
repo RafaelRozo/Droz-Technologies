@@ -8,7 +8,7 @@ import os
 # Import the leads server
 sys.path.insert(0, os.path.dirname(__file__))
 import importlib
-leads_mod = importlib.import_module("leads-server")
+leads_mod = importlib.import_module("leads_server")
 
 app = FastAPI()
 
