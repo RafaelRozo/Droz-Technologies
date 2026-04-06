@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import useIsMobile from "@/lib/useIsMobile";
 import {
   TextReveal,
   MagneticButton,
@@ -247,6 +248,7 @@ function buildAccordionItems(positions: Position[]) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function CareersClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
 
@@ -496,7 +498,7 @@ export default function CareersClient() {
               zIndex: 1,
               maxWidth: 860,
               margin: "0 auto",
-              padding: "48px 56px",
+              padding: isMobile ? "32px 24px" : "48px 56px",
               background: "rgba(255,255,255,0.012)",
               border: "1px solid rgba(255,255,255,0.07)",
               borderRadius: 20,
@@ -594,8 +596,8 @@ export default function CareersClient() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 2fr",
-                gap: 80,
+                gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
+                gap: isMobile ? 24 : 80,
                 alignItems: "start",
               }}
             >

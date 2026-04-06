@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   StaggerGrid,
@@ -281,11 +282,12 @@ const precisionStats = [
 ];
 
 function PrecisionMetrics() {
+  const isMobile = useIsMobile();
   return (
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
+        gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)",
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
@@ -337,6 +339,7 @@ function PrecisionMetrics() {
 
 /* ─── Page ─── */
 export default function ManufacturingClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
   const division = t.divisionsGrid[3];
@@ -387,7 +390,7 @@ export default function ManufacturingClient() {
       {/* Problem Section — enters from left */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 0% 50%, ${ACCENT}, transparent 60%)`,
@@ -396,8 +399,8 @@ export default function ManufacturingClient() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 80,
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: isMobile ? 24 : 80,
             alignItems: "center",
           }}
         >
@@ -512,7 +515,7 @@ export default function ManufacturingClient() {
       {/* Only We */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -572,7 +575,7 @@ export default function ManufacturingClient() {
       {/* ═══════ The Droz Advantage ═══════ */}
       <section style={{
         background: "#0d0d0d",
-        padding: "120px 48px",
+        padding: isMobile ? "48px 20px" : "120px 48px",
         position: "relative",
       }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -600,7 +603,7 @@ export default function ManufacturingClient() {
           }}>
             We build the hardware. But we also build the software that reads it, the AI that learns from it, and the maintenance programs that depend on it. One vendor for the full lifecycle.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
               { name: "Predictive Maintenance", desc: "Our instruments in the field, our engineers reading the data — a PM program that already knows your equipment.", href: "/divisions/predictive-maintenance" },
               { name: "Software Development", desc: "Custom platforms built to ingest and visualize data from our instruments without middleware headaches.", href: "/divisions/software-development" },
@@ -631,7 +634,7 @@ export default function ManufacturingClient() {
       <SectionDivider />
 
       {/* Production Capabilities */}
-      <section style={{ padding: "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "48px 20px" : "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ marginBottom: 56 }}>
           <p
             style={{
@@ -673,7 +676,7 @@ export default function ManufacturingClient() {
       {/* Gear visualization */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 50% 50%, ${ACCENT}, transparent 60%)`,
@@ -749,7 +752,7 @@ export default function ManufacturingClient() {
             zIndex: 2,
             maxWidth: 1200,
             margin: "0 auto",
-            padding: "120px 48px",
+            padding: isMobile ? "48px 20px" : "120px 48px",
             textAlign: "center",
           }}
         >
@@ -834,7 +837,7 @@ export default function ManufacturingClient() {
       {/* CTA */}
       <section
         style={{
-          padding: "120px 48px",
+          padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

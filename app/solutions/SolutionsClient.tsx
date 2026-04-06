@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   TextReveal,
@@ -287,6 +288,7 @@ function DivisionCard({ name, slug, painPoint, solution, cta }: Division) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function SolutionsClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
 
@@ -351,8 +353,8 @@ export default function SolutionsClient() {
               maxWidth: 1280,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "1fr 2fr",
-              gap: 80,
+              gridTemplateColumns: isMobile ? "1fr" : "1fr 2fr",
+              gap: isMobile ? 24 : 80,
               alignItems: "center",
             }}
           >
@@ -420,7 +422,7 @@ export default function SolutionsClient() {
             >
               <div
                 style={{
-                  padding: "48px 48px",
+                  padding: isMobile ? "32px 24px" : "48px 48px",
                   background: "rgba(255,255,255,0.015)",
                   border: "1px solid rgba(255,255,255,0.07)",
                   borderRadius: 20,
@@ -562,8 +564,8 @@ export default function SolutionsClient() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1.6fr",
-                gap: 80,
+                gridTemplateColumns: isMobile ? "1fr" : "1fr 1.6fr",
+                gap: isMobile ? 24 : 80,
                 alignItems: "start",
               }}
             >

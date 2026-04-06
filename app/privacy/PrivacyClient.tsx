@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import { TextReveal, SectionDivider } from "@/components/animations";
 import { useLocale } from "@/lib/LocaleContext";
@@ -41,6 +42,7 @@ interface PolicySectionProps {
 function PolicySection({ heading, children, index }: PolicySectionProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref as React.RefObject<Element>, { once: true, margin: "-60px" });
+  const isMobile = useIsMobile();
 
   return (
     <motion.div
@@ -54,8 +56,8 @@ function PolicySection({ heading, children, index }: PolicySectionProps) {
       }}
       style={{
         display: "grid",
-        gridTemplateColumns: "200px 1fr",
-        gap: 48,
+        gridTemplateColumns: isMobile ? "1fr" : "200px 1fr",
+        gap: isMobile ? 16 : 48,
         alignItems: "start",
         padding: "48px 0",
       }}
@@ -395,6 +397,7 @@ function getPrivacyContent(locale: string): PolicyContent {
 
 /* ─── Page ─── */
 export default function PrivacyClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
   const content = getPrivacyContent(locale);

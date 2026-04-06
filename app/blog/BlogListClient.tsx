@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import type { BlogPost } from "@/lib/blog";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import BlogCard from "@/components/blog/BlogCard";
 
@@ -20,6 +21,7 @@ const FILTERS = [
 ];
 
 export default function BlogListClient({ posts }: BlogListClientProps) {
+  const isMobile = useIsMobile();
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filtered =
@@ -35,7 +37,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
         pill="Knowledge Base"
       />
 
-      <section style={{ background: "#0a0a0a", padding: "64px 48px 120px" }}>
+      <section style={{ background: "#0a0a0a", padding: isMobile ? "32px 20px 80px" : "64px 48px 120px" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           {/* Filter pills */}
           <div
@@ -126,7 +128,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
+                gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)",
                 gap: 28,
               }}
             >

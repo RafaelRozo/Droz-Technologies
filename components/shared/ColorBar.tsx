@@ -2,6 +2,7 @@
 
 import { CSSProperties } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import useIsMobile from "@/lib/useIsMobile";
 
 interface ColorBarProps {
   accentColor?: string;
@@ -11,6 +12,7 @@ interface ColorBarProps {
 export default function ColorBar({
   accentColor = "rgba(255,255,255,0.08)",
 }: ColorBarProps) {
+  const isMobile = useIsMobile();
   // Track scroll progress of the entire page (no target = window)
   const { scrollYProgress } = useScroll();
 
@@ -49,36 +51,38 @@ export default function ColorBar({
         }}
       />
 
-      {/* ── Left bar track ── */}
-      <div
-        style={{
-          position: "fixed",
-          left: 0,
-          top: 0,
-          bottom: 0,
-          width: 3,
-          zIndex: 55,
-          background: "rgba(255,255,255,0.04)",
-          pointerEvents: "none",
-          overflow: "hidden",
-        }}
-      >
-        {/*
-          Lit segment: a motion.div whose top/bottom are driven by scroll.
-          It sits inside the overflow-hidden track so it is naturally clipped.
-        */}
-        <motion.div
+      {/* ── Left bar track — hidden on mobile ── */}
+      {!isMobile && (
+        <div
           style={{
-            position: "absolute",
+            position: "fixed",
             left: 0,
-            right: 0,
-            top: litTop,
-            bottom: litBottom,
-            background: `linear-gradient(180deg, transparent 0%, ${accentColor} 20%, ${accentColor} 80%, transparent 100%)`,
-            willChange: "top, bottom",
+            top: 0,
+            bottom: 0,
+            width: 3,
+            zIndex: 55,
+            background: "rgba(255,255,255,0.04)",
+            pointerEvents: "none",
+            overflow: "hidden",
           }}
-        />
-      </div>
+        >
+          {/*
+            Lit segment: a motion.div whose top/bottom are driven by scroll.
+            It sits inside the overflow-hidden track so it is naturally clipped.
+          */}
+          <motion.div
+            style={{
+              position: "absolute",
+              left: 0,
+              right: 0,
+              top: litTop,
+              bottom: litBottom,
+              background: `linear-gradient(180deg, transparent 0%, ${accentColor} 20%, ${accentColor} 80%, transparent 100%)`,
+              willChange: "top, bottom",
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 }

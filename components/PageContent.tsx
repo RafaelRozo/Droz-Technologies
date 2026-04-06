@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useCallback, useEffect } from "react";
+import useIsMobile from "@/lib/useIsMobile";
 import {
   motion,
   useInView,
@@ -399,6 +400,7 @@ export default function PageContent() {
   const t = getTexts(locale);
   const n = t.narrative;
   const divisions = t.divisionsGrid;
+  const isMobile = useIsMobile();
 
   // Cycling subtitle text
   const subtitlePhrases = [
@@ -439,7 +441,7 @@ export default function PageContent() {
         background: "#0a0a0a",
         position: "relative",
         overflow: "hidden",
-        padding: "160px 48px",
+        padding: isMobile ? "100px 20px 64px" : "160px 48px",
       }}>
         <GradientMeshBg blobCount={3} opacity={0.02} />
         <div style={{ position: "relative", zIndex: 1, maxWidth: 1200, margin: "0 auto", width: "100%" }}>
@@ -475,7 +477,7 @@ export default function PageContent() {
                 lineHeight: 1.4,
                 maxWidth: 600,
                 margin: "0 auto",
-                height: "2.8em",
+                height: isMobile ? "2em" : "2.8em",
                 overflow: "hidden",
                 position: "relative",
               }}
@@ -527,7 +529,7 @@ export default function PageContent() {
           </motion.div>
 
           {/* 5 Division thumbnails */}
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(5, 1fr)", gap: 16 }}>
             {divisions.map((div, i) => (
               <motion.a
                 key={div.slug}
@@ -601,16 +603,18 @@ export default function PageContent() {
             style={{ marginTop: 64 }}
           >
             <div style={{
-              display: "flex", alignItems: "center", gap: 8,
+              display: "flex", flexDirection: isMobile ? "column" : "row", alignItems: isMobile ? "flex-start" : "center", gap: isMobile ? 16 : 8,
               borderTop: "1px solid rgba(255,255,255,0.04)",
               paddingTop: 32,
             }}>
               <p style={{
                 fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 400,
                 color: "rgba(255,255,255,0.3)", letterSpacing: "0.08em", textTransform: "uppercase",
-                whiteSpace: "nowrap", flexShrink: 0, paddingRight: 24,
-                borderRight: "1px solid rgba(255,255,255,0.06)",
-                marginRight: 24,
+                whiteSpace: "nowrap", flexShrink: 0, paddingRight: isMobile ? 0 : 24,
+                borderRight: isMobile ? "none" : "1px solid rgba(255,255,255,0.06)",
+                borderBottom: isMobile ? "1px solid rgba(255,255,255,0.06)" : "none",
+                paddingBottom: isMobile ? 12 : 0,
+                marginRight: isMobile ? 0 : 24,
               }}>
                 Trusted by
               </p>
@@ -648,15 +652,15 @@ export default function PageContent() {
       {/* ═══════ 2. PROBLEM ═══════ */}
       <section style={{
         background: "#0a0a0a",
-        padding: "160px 48px",
+        padding: isMobile ? "64px 20px" : "160px 48px",
         position: "relative",
         overflow: "hidden",
       }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
           <div style={{
             display: "grid",
-            gridTemplateColumns: "3fr 2fr",
-            gap: 80,
+            gridTemplateColumns: isMobile ? "1fr" : "3fr 2fr",
+            gap: isMobile ? 32 : 80,
             alignItems: "center",
           }}>
             {/* Left: problem text — enters from LEFT */}
@@ -778,7 +782,7 @@ export default function PageContent() {
       {/* ═══════ 4. THE GUIDE ═══════ */}
       <section style={{
         background: "#0a0a0a",
-        padding: "200px 48px",
+        padding: isMobile ? "80px 20px" : "200px 48px",
         position: "relative",
         overflow: "hidden",
       }}>
@@ -802,7 +806,7 @@ export default function PageContent() {
       {/* ═══════ 5. THE PLAN ═══════ */}
       <section style={{
         background: "#0a0a0a",
-        padding: "80px 48px 120px",
+        padding: isMobile ? "48px 20px 64px" : "80px 48px 120px",
         position: "relative",
       }}>
         <div style={{ height: 1, background: "linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.05) 50%, transparent 90%)", marginBottom: 80 }} />
@@ -828,8 +832,8 @@ export default function PageContent() {
 
           <div style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 60,
+            gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
+            gap: isMobile ? 32 : 60,
           }}>
             {n.plan.steps.map((step, i) => {
               const dirs: Array<"left" | "center" | "right"> = ["left", "center", "right"];
@@ -863,11 +867,11 @@ export default function PageContent() {
       {/* ═══════ 6. SOCIAL PROOF ═══════ */}
       <section style={{
         background: "#0f0f0f",
-        padding: "120px 0 80px",
+        padding: isMobile ? "64px 0 40px" : "120px 0 80px",
         overflow: "hidden",
         borderTop: "1px solid rgba(255,255,255,0.04)",
       }}>
-        <div style={{ padding: "0 48px", marginBottom: 64 }}>
+        <div style={{ padding: isMobile ? "0 20px" : "0 48px", marginBottom: 64 }}>
           <TestimonialCard
             quote={n.testimonial.quote}
             name={n.testimonial.name}
@@ -905,7 +909,7 @@ export default function PageContent() {
       {/* ═══════ 9. ONLY WE ═══════ */}
       <section style={{
         background: "#0a0a0a",
-        padding: "200px 48px",
+        padding: isMobile ? "80px 20px" : "200px 48px",
         position: "relative",
         overflow: "hidden",
       }}>
@@ -942,7 +946,7 @@ export default function PageContent() {
       <CorridorScene scrollProgress={corridorProgress} />
       <div id="divisions" ref={divisionsRef}>
         {/* Header */}
-        <section style={{ padding: "140px 48px 60px", background: "rgba(15,15,15,0.92)", textAlign: "center" }}>
+        <section style={{ padding: isMobile ? "80px 20px 40px" : "140px 48px 60px", background: "rgba(15,15,15,0.92)", textAlign: "center" }}>
           <motion.p
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }} viewport={{ once: true }}
@@ -977,15 +981,15 @@ export default function PageContent() {
           return (
             <section key={div.name} style={{
               position: "relative", overflow: "hidden",
-              minHeight: "75vh", padding: "100px 48px",
+              minHeight: isMobile ? "auto" : "75vh", padding: isMobile ? "60px 20px" : "100px 48px",
               background: i % 2 === 0 ? "rgba(10,10,10,0.92)" : "rgba(15,15,15,0.92)",
             }}>
               {BgDecor && <div aria-hidden="true"><BgDecor /></div>}
 
               <div style={{
                 maxWidth: 1200, margin: "0 auto",
-                display: "grid", gridTemplateColumns: "1fr 1fr",
-                gap: 80, alignItems: "center",
+                display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+                gap: isMobile ? 40 : 80, alignItems: "center",
                 position: "relative", zIndex: 2,
               }}>
                 {/* Text content */}
@@ -994,7 +998,7 @@ export default function PageContent() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true, margin: "-80px" }}
-                  style={{ order: fromRight ? 1 : 0 }}
+                  style={{ order: isMobile ? 0 : (fromRight ? 1 : 0) }}
                 >
                   <span style={PILL}>{num} &mdash; Division</span>
                   <h3 style={{
@@ -1049,7 +1053,7 @@ export default function PageContent() {
                   whileInView={{ opacity: 1, x: 0, scale: 1 }}
                   transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                   viewport={{ once: true, margin: "-80px" }}
-                  style={{ order: fromRight ? 0 : 1 }}
+                  style={{ order: isMobile ? 1 : (fromRight ? 0 : 1) }}
                 >
                   <SpotlightCard style={{ borderRadius: 20, overflow: "hidden", boxShadow: CARD_SHADOW, background: "#111" }}>
                     <div style={{ padding: "48px 40px", minHeight: 420, position: "relative", overflow: "hidden" }}>
@@ -1072,7 +1076,7 @@ export default function PageContent() {
       </div>
 
       {/* ═══════ 11. SOLUTIONS (Bento) ═══════ */}
-      <section id="solutions" style={{ background: "#0a0a0a", padding: "140px 48px" }}>
+      <section id="solutions" style={{ background: "#0a0a0a", padding: isMobile ? "64px 20px" : "140px 48px" }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <motion.p
             initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}
@@ -1087,7 +1091,7 @@ export default function PageContent() {
           <BlurFade delay={0.2} as="p" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 16, color: "rgba(255,255,255,0.5)", lineHeight: 1.6, maxWidth: 520, margin: "0 auto 60px", textAlign: "center" }}>
             {t.solutions.subtitle}
           </BlurFade>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(6, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(6, 1fr)", gap: 16 }}>
             {t.solutions.items.map((item, i) => {
               const span = i < 2 ? 3 : 2;
               return (
@@ -1098,7 +1102,7 @@ export default function PageContent() {
                   transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   viewport={{ once: true }}
                   style={{
-                    gridColumn: `span ${span}`, borderRadius: 20,
+                    gridColumn: isMobile ? "span 1" : `span ${span}`, borderRadius: 20,
                     padding: i < 2 ? "44px 40px" : "36px 32px", background: "#111",
                     position: "relative", overflow: "hidden", cursor: "default",
                     border: "1px solid rgba(255,255,255,0.06)",
@@ -1198,7 +1202,7 @@ export default function PageContent() {
       </section>
 
       {/* ═══════ 13. CTA STRIP ═══════ */}
-      <section style={{ background: "#0a0a0a", padding: "140px 48px", textAlign: "center", position: "relative" }}>
+      <section style={{ background: "#0a0a0a", padding: isMobile ? "64px 20px" : "140px 48px", textAlign: "center", position: "relative" }}>
         <GradientMeshBg blobCount={2} opacity={0.02} />
         <div style={{ position: "relative", zIndex: 1 }}>
           <motion.h2
@@ -1238,7 +1242,7 @@ export default function PageContent() {
       </section>
 
       {/* ═══════ 14. CONTACT ═══════ */}
-      <section id="contact" style={{ background: "#0a0a0a", padding: "160px 48px", position: "relative" }}>
+      <section id="contact" style={{ background: "#0a0a0a", padding: isMobile ? "64px 20px" : "160px 48px", position: "relative" }}>
         <div style={{ position: "absolute", top: "30%", left: "50%", transform: "translateX(-50%)", width: 500, height: 400, background: "radial-gradient(ellipse, rgba(255,255,255,0.015) 0%, transparent 70%)", pointerEvents: "none" }} />
         <div style={{ maxWidth: 620, margin: "0 auto", position: "relative" }}>
           <div style={{ textAlign: "center", marginBottom: 50 }}>
@@ -1289,7 +1293,7 @@ export default function PageContent() {
             viewport={{ once: true }}
             style={{ display: "flex", flexDirection: "column", gap: 14 }}
           >
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14 }}>
               <FloatingInput label={t.contact.form.name} name="name" />
               <FloatingInput label={t.contact.form.email} type="email" name="email" />
             </div>

@@ -2,3 +2,12 @@ node_modules/
 .next/
 out/
 .env.local
+
+# Source frame sequences (too large for git)
+bulldozer to robot arm sequence/
+chip to bulldozer sequence/
+generator to chip sequence/
+robot arm to ai apps sequence/
+hero section redesign/
+bad formatting/
+desing inspo/

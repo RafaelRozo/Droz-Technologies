@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   StaggerGrid,
@@ -300,11 +301,12 @@ interface StatItem {
 }
 
 function StatsRow({ stats }: { stats: StatItem[] }) {
+  const isMobile = useIsMobile();
   return (
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: `repeat(${stats.length}, 1fr)`,
+        gridTemplateColumns: isMobile ? "1fr 1fr" : `repeat(${stats.length}, 1fr)`,
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
@@ -352,6 +354,7 @@ function StatsRow({ stats }: { stats: StatItem[] }) {
 
 /* ─── Page ─── */
 export default function ConstructionClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
   const division = t.divisionsGrid[2];
@@ -417,7 +420,7 @@ export default function ConstructionClient() {
       {/* Problem Section — enters from left */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 0% 50%, ${ACCENT}, transparent 60%)`,
@@ -426,8 +429,8 @@ export default function ConstructionClient() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 80,
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: isMobile ? 24 : 80,
             alignItems: "center",
           }}
         >
@@ -542,7 +545,7 @@ export default function ConstructionClient() {
       {/* Only We */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -602,7 +605,7 @@ export default function ConstructionClient() {
       {/* ═══════ The Droz Advantage ═══════ */}
       <section style={{
         background: "#0d0d0d",
-        padding: "120px 48px",
+        padding: isMobile ? "48px 20px" : "120px 48px",
         position: "relative",
       }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -630,7 +633,7 @@ export default function ConstructionClient() {
           }}>
             The sensors in your walls generate data. We can build the software to analyze it, manufacture the instruments to extend it, and deploy the AI to optimize it. But only if you need it.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
               { name: "Predictive Maintenance", desc: "Continuous monitoring programs for your building's mechanical and electrical systems — before the 2 AM call.", href: "/divisions/predictive-maintenance" },
               { name: "Software Development", desc: "Custom platforms that read your building data and turn it into decisions your facilities team can act on.", href: "/divisions/software-development" },
@@ -661,7 +664,7 @@ export default function ConstructionClient() {
       <SectionDivider />
 
       {/* Capabilities Grid */}
-      <section style={{ padding: "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "48px 20px" : "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ marginBottom: 56 }}>
           <p
             style={{
@@ -703,7 +706,7 @@ export default function ConstructionClient() {
       {/* Blueprint section */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 50% 50%, ${ACCENT}, transparent 60%)`,
@@ -779,7 +782,7 @@ export default function ConstructionClient() {
             zIndex: 2,
             maxWidth: 1200,
             margin: "0 auto",
-            padding: "120px 48px",
+            padding: isMobile ? "48px 20px" : "120px 48px",
             textAlign: "center",
           }}
         >
@@ -866,7 +869,7 @@ export default function ConstructionClient() {
       {/* CTA */}
       <section
         style={{
-          padding: "120px 48px",
+          padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

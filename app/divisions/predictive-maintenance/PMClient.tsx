@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   StaggerGrid,
@@ -36,6 +37,7 @@ const graphPaperStyle: React.CSSProperties = {
 function WaveformSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef as React.RefObject<Element>, { once: true, margin: "-100px" });
+  const isMobile = useIsMobile();
 
   const width = 1000;
   const height = 120;
@@ -52,7 +54,7 @@ function WaveformSection() {
     <div
       ref={containerRef}
       style={{
-        padding: "120px 48px",
+        padding: isMobile ? "48px 20px" : "120px 48px",
         background: `radial-gradient(ellipse at 60% 50%, ${ACCENT}, transparent 70%), #0a0a0a`,
         display: "flex",
         flexDirection: "column",
@@ -289,11 +291,12 @@ interface Metric {
 }
 
 function MetricBar({ metrics }: { metrics: Metric[] }) {
+  const isMobile = useIsMobile();
   return (
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: `repeat(${metrics.length}, 1fr)`,
+        gridTemplateColumns: isMobile ? "1fr 1fr" : `repeat(${metrics.length}, 1fr)`,
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
@@ -341,6 +344,7 @@ function MetricBar({ metrics }: { metrics: Metric[] }) {
 
 /* ─── Page ─── */
 export default function PMClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
   const division = t.divisionsGrid[0];
@@ -410,7 +414,7 @@ export default function PMClient() {
       {/* Problem Section — enters from left */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 0% 50%, ${ACCENT}, transparent 60%)`,
@@ -419,8 +423,8 @@ export default function PMClient() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 80,
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: isMobile ? 24 : 80,
             alignItems: "center",
           }}
         >
@@ -535,7 +539,7 @@ export default function PMClient() {
       {/* Only We — centered, Instrument Serif italic, large */}
       <section
         style={{
-          padding: "160px 48px",
+          padding: isMobile ? "64px 20px" : "160px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -593,7 +597,7 @@ export default function PMClient() {
       {/* ═══════ The Droz Advantage ═══════ */}
       <section style={{
         background: "#0d0d0d",
-        padding: "120px 48px",
+        padding: isMobile ? "48px 20px" : "120px 48px",
         position: "relative",
       }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -621,7 +625,7 @@ export default function PMClient() {
           }}>
             Most PM providers hand you a report. We can build the custom software that turns your vibration data into automated decisions, or deploy AI models that predict failures before your analysts spot the pattern.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
               { name: "Software Development", desc: "Custom dashboards and enterprise platforms that consume your sensor data in real time.", href: "/divisions/software-development" },
               { name: "Intelligent Construction", desc: "Predictive maintenance programs for building systems — HVAC, elevators, and electrical infrastructure.", href: "/divisions/intelligent-construction" },
@@ -652,7 +656,7 @@ export default function PMClient() {
       <SectionDivider />
 
       {/* Capabilities — outcomes framed */}
-      <section style={{ padding: "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "48px 20px" : "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ marginBottom: 56 }}>
           <p
             style={{
@@ -747,7 +751,7 @@ export default function PMClient() {
       {/* CTA */}
       <section
         style={{
-          padding: "120px 48px",
+          padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

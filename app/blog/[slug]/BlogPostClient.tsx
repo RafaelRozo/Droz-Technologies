@@ -2,6 +2,7 @@
 
 import type { BlogPost } from "@/lib/blog";
 import { BlurFade, MagneticButton } from "@/components/animations";
+import useIsMobile from "@/lib/useIsMobile";
 import BlogContent from "@/components/blog/BlogContent";
 import BlogCard from "@/components/blog/BlogCard";
 
@@ -44,6 +45,7 @@ export default function BlogPostClient({
   prevPost,
   nextPost,
 }: BlogPostClientProps) {
+  const isMobile = useIsMobile();
   const accentColor =
     DIVISION_COLORS[post.division] ?? "rgba(255,255,255,0.4)";
   const divisionLabel =
@@ -70,7 +72,7 @@ export default function BlogPostClient({
               style={{
                 maxWidth: 1100,
                 margin: "0 auto",
-                padding: "0 48px",
+                padding: isMobile ? "0 20px" : "0 48px",
               }}
             >
               <div
@@ -102,7 +104,7 @@ export default function BlogPostClient({
           style={{
             maxWidth: 780,
             margin: "0 auto",
-            padding: "52px 48px 0",
+            padding: isMobile ? "32px 20px 0" : "52px 48px 0",
           }}
         >
           {/* Division pill */}
@@ -292,7 +294,7 @@ export default function BlogPostClient({
       <section
         style={{
           background: "#0a0a0a",
-          padding: "0 48px 100px",
+          padding: isMobile ? "0 20px 60px" : "0 48px 100px",
         }}
       >
         <BlurFade delay={0.1} once>
@@ -305,7 +307,7 @@ export default function BlogPostClient({
         <section
           style={{
             background: "#0a0a0a",
-            padding: "0 48px 80px",
+            padding: isMobile ? "0 20px 48px" : "0 48px 80px",
           }}
         >
           <div
@@ -344,7 +346,7 @@ export default function BlogPostClient({
           background: "#0f0f0f",
           borderTop: "1px solid rgba(255,255,255,0.06)",
           borderBottom: "1px solid rgba(255,255,255,0.06)",
-          padding: "80px 48px",
+          padding: isMobile ? "48px 20px" : "80px 48px",
           textAlign: "center",
         }}
       >
@@ -386,7 +388,7 @@ export default function BlogPostClient({
         <section
           style={{
             background: "#0a0a0a",
-            padding: "80px 48px",
+            padding: isMobile ? "48px 20px" : "80px 48px",
           }}
         >
           <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -405,7 +407,7 @@ export default function BlogPostClient({
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: `repeat(${Math.min(related.length, 3)}, 1fr)`,
+                gridTemplateColumns: isMobile ? "1fr" : `repeat(${Math.min(related.length, 3)}, 1fr)`,
                 gap: 24,
               }}
             >
@@ -424,7 +426,7 @@ export default function BlogPostClient({
           style={{
             borderTop: "1px solid rgba(255,255,255,0.06)",
             background: "#0a0a0a",
-            padding: "48px 48px 80px",
+            padding: isMobile ? "32px 20px 48px" : "48px 48px 80px",
           }}
         >
           <div
@@ -432,7 +434,7 @@ export default function BlogPostClient({
               maxWidth: 1200,
               margin: "0 auto",
               display: "grid",
-              gridTemplateColumns: "1fr 1fr",
+              gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
               gap: 24,
             }}
           >

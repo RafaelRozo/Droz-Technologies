@@ -1,5 +1,7 @@
 "use client";
 
+import useIsMobile from "@/lib/useIsMobile";
+
 const LOGOS = [
   { name: "Westinghouse", src: "/images/logos/westinghouse.png" },
   { name: "Holcim", src: "/images/logos/holcim.png" },
@@ -21,8 +23,10 @@ export default function LogoMarquee({
   direction = "left",
   style,
 }: LogoMarqueeProps) {
+  const isMobile = useIsMobile();
   const doubled = [...LOGOS, ...LOGOS];
   const animName = direction === "left" ? "marquee-left" : "marquee-right";
+  const fadeWidth = isMobile ? 60 : 120;
 
   return (
     <div
@@ -34,9 +38,9 @@ export default function LogoMarquee({
       }}
     >
       {/* Left fade */}
-      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 120, zIndex: 2, background: "linear-gradient(90deg, #0a0a0a, transparent)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: fadeWidth, zIndex: 2, background: "linear-gradient(90deg, #0a0a0a, transparent)", pointerEvents: "none" }} />
       {/* Right fade */}
-      <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 120, zIndex: 2, background: "linear-gradient(270deg, #0a0a0a, transparent)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: fadeWidth, zIndex: 2, background: "linear-gradient(270deg, #0a0a0a, transparent)", pointerEvents: "none" }} />
 
       <div
         style={{
@@ -51,7 +55,7 @@ export default function LogoMarquee({
             key={`${logo.name}-${i}`}
             style={{
               flexShrink: 0,
-              padding: "0 40px",
+              padding: isMobile ? "0 20px" : "0 40px",
               display: "flex",
               alignItems: "center",
             }}
@@ -60,7 +64,7 @@ export default function LogoMarquee({
               src={logo.src}
               alt={logo.name}
               style={{
-                height: 30,
+                height: isMobile ? 20 : 30,
                 opacity: 0.45,
                 filter: "grayscale(1) brightness(1.8)",
                 transition: "opacity 0.3s ease, filter 0.3s ease",

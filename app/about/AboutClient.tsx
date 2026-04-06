@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   TextReveal,
@@ -206,6 +207,7 @@ function StatBlock({ target, suffix = "", label }: StatBlockProps) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function AboutClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
 
@@ -346,8 +348,8 @@ export default function AboutClient() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1.4fr",
-                gap: 80,
+                gridTemplateColumns: isMobile ? "1fr" : "1fr 1.4fr",
+                gap: isMobile ? 24 : 80,
                 alignItems: "start",
               }}
             >

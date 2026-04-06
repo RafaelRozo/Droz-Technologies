@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   StaggerGrid,
@@ -296,11 +297,12 @@ interface Metric {
 }
 
 function MetricBar({ metrics }: { metrics: Metric[] }) {
+  const isMobile = useIsMobile();
   return (
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: `repeat(${metrics.length}, 1fr)`,
+        gridTemplateColumns: isMobile ? "1fr 1fr" : `repeat(${metrics.length}, 1fr)`,
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
@@ -348,6 +350,7 @@ function MetricBar({ metrics }: { metrics: Metric[] }) {
 
 /* ─── Page ─── */
 export default function SoftwareClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
   const division = t.divisionsGrid[1];
@@ -447,7 +450,7 @@ export default function SoftwareClient() {
       {/* Problem Section — enters from left */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 0% 50%, ${ACCENT}, transparent 60%)`,
@@ -456,8 +459,8 @@ export default function SoftwareClient() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 80,
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: isMobile ? 24 : 80,
             alignItems: "center",
           }}
         >
@@ -572,7 +575,7 @@ export default function SoftwareClient() {
       {/* Only We */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -631,7 +634,7 @@ export default function SoftwareClient() {
       {/* ═══════ The Droz Advantage ═══════ */}
       <section style={{
         background: "#0d0d0d",
-        padding: "120px 48px",
+        padding: isMobile ? "48px 20px" : "120px 48px",
         position: "relative",
       }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -659,7 +662,7 @@ export default function SoftwareClient() {
           }}>
             When your enterprise platform needs to ingest sensor data, control building systems, or feed AI models — we don't hand you off to a partner. We walk down the hall.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
               { name: "Predictive Maintenance", desc: "Sensor data flowing directly into your dashboard — no CSV exports, no manual ingestion.", href: "/divisions/predictive-maintenance" },
               { name: "Intelligent Construction", desc: "Building IoT and BMS systems with APIs your platform can read and act on.", href: "/divisions/intelligent-construction" },
@@ -690,7 +693,7 @@ export default function SoftwareClient() {
       <SectionDivider />
 
       {/* Process Section */}
-      <section style={{ padding: "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "48px 20px" : "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 80 }}>
           <p
             style={{
@@ -726,7 +729,7 @@ export default function SoftwareClient() {
       <SectionDivider />
 
       {/* Tech Capabilities */}
-      <section style={{ padding: "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "48px 20px" : "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ marginBottom: 56 }}>
           <p
             style={{
@@ -768,7 +771,7 @@ export default function SoftwareClient() {
       {/* Terminal showcase */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 50% 100%, ${ACCENT}, transparent 60%)`,
@@ -844,7 +847,7 @@ export default function SoftwareClient() {
             zIndex: 2,
             maxWidth: 1200,
             margin: "0 auto",
-            padding: "120px 48px",
+            padding: isMobile ? "48px 20px" : "120px 48px",
             textAlign: "center",
           }}
         >
@@ -923,7 +926,7 @@ export default function SoftwareClient() {
       {/* CTA */}
       <section
         style={{
-          padding: "120px 48px",
+          padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

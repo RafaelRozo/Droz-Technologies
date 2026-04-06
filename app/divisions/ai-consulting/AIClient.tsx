@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   StaggerGrid,
@@ -314,6 +315,7 @@ function AICapCard({ item }: { item: AICapItem }) {
 
 /* ─── Metrics Row ─── */
 function MetricsRow() {
+  const isMobile = useIsMobile();
   const stats = [
     { value: 200, suffix: "+", label: "Models in Production" },
     { value: 96, suffix: ".5%", label: "Avg Accuracy" },
@@ -325,7 +327,7 @@ function MetricsRow() {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "repeat(4, 1fr)",
+        gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)",
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
       }}
@@ -373,6 +375,7 @@ function MetricsRow() {
 
 /* ─── Page ─── */
 export default function AIClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
   const division = t.divisionsGrid[4];
@@ -461,7 +464,7 @@ export default function AIClient() {
       {/* Problem Section — enters from left */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 0% 50%, ${ACCENT}, transparent 60%)`,
@@ -470,8 +473,8 @@ export default function AIClient() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 80,
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: isMobile ? 24 : 80,
             alignItems: "center",
           }}
         >
@@ -585,7 +588,7 @@ export default function AIClient() {
       {/* Only We */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -645,7 +648,7 @@ export default function AIClient() {
       {/* ═══════ The Droz Advantage ═══════ */}
       <section style={{
         background: "#0d0d0d",
-        padding: "120px 48px",
+        padding: isMobile ? "48px 20px" : "120px 48px",
         position: "relative",
       }}>
         <div style={{ maxWidth: 1100, margin: "0 auto" }}>
@@ -673,7 +676,7 @@ export default function AIClient() {
           }}>
             Most AI consultancies build models on clean data and hope for the best. We have divisions that generate the industrial data, build the software platforms, instrument the buildings, and maintain the equipment. Your AI model gets context nobody else can provide.
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
               { name: "Predictive Maintenance", desc: "20 years of failure data from real industrial equipment — the training set your anomaly model has always needed.", href: "/divisions/predictive-maintenance" },
               { name: "Software Development", desc: "The enterprise platforms that serve your model's predictions to the people who need to act on them.", href: "/divisions/software-development" },
@@ -706,7 +709,7 @@ export default function AIClient() {
       {/* Neural Network visualization */}
       <section
         style={{
-          padding: "100px 48px",
+          padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
           margin: "0 auto",
           background: `radial-gradient(ellipse at 50% 50%, ${ACCENT}, transparent 60%)`,
@@ -782,7 +785,7 @@ export default function AIClient() {
             zIndex: 2,
             maxWidth: 1200,
             margin: "0 auto",
-            padding: "120px 48px",
+            padding: isMobile ? "48px 20px" : "120px 48px",
             textAlign: "center",
           }}
         >
@@ -837,7 +840,7 @@ export default function AIClient() {
       <SectionDivider />
 
       {/* AI Capabilities */}
-      <section style={{ padding: "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "48px 20px" : "100px 48px", maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ marginBottom: 56 }}>
           <p
             style={{
@@ -899,7 +902,7 @@ export default function AIClient() {
       <SectionDivider />
 
       {/* Process Accordion */}
-      <section style={{ padding: "100px 48px", maxWidth: 800, margin: "0 auto" }}>
+      <section style={{ padding: isMobile ? "48px 20px" : "100px 48px", maxWidth: 800, margin: "0 auto" }}>
         <div style={{ marginBottom: 56 }}>
           <p
             style={{
@@ -950,7 +953,7 @@ export default function AIClient() {
       {/* CTA */}
       <section
         style={{
-          padding: "120px 48px",
+          padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

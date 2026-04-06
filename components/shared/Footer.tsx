@@ -3,14 +3,16 @@
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
 import { TextScramble } from "@/components/animations";
+import useIsMobile from "@/lib/useIsMobile";
 
 export default function Footer() {
   const { locale } = useLocale();
   const t = getTexts(locale);
+  const isMobile = useIsMobile();
 
   return (
-    <footer aria-label="Site footer" style={{ background: "#0a0a0a", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 48px 48px" }}>
-      <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 60, marginBottom: 48 }}>
+    <footer aria-label="Site footer" style={{ background: "#0a0a0a", borderTop: "1px solid rgba(255,255,255,0.06)", padding: isMobile ? "48px 20px 32px" : "80px 48px 48px" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 1fr", gap: isMobile ? 32 : 60, marginBottom: 48 }}>
         <div>
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.75rem", color: "#fff", fontWeight: 400, marginBottom: 4 }}>
             <TextScramble duration={1.2}>Droz</TextScramble>

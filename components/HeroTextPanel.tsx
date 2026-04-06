@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import useIsMobile from "@/lib/useIsMobile";
 
 interface HeroTextPanelProps {
   title: string[];
@@ -11,6 +12,7 @@ interface HeroTextPanelProps {
 
 const HeroTextPanel = React.forwardRef<HTMLDivElement, HeroTextPanelProps>(
   ({ title, subtitle, buttons, objectLabel }, ref) => {
+    const isMobile = useIsMobile();
     return (
       <div
         ref={ref}
@@ -35,7 +37,7 @@ const HeroTextPanel = React.forwardRef<HTMLDivElement, HeroTextPanelProps>(
             position: "absolute",
             top: 0,
             left: 0,
-            width: "55%",
+            width: isMobile ? "90%" : "55%",
             height: "100%",
             background:
               "linear-gradient(90deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.35) 60%, transparent 100%)",

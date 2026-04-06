@@ -2,6 +2,7 @@
 
 import { useState, useRef, useCallback, FormEvent } from "react";
 import { motion, useInView } from "framer-motion";
+import useIsMobile from "@/lib/useIsMobile";
 import PageHero from "@/components/shared/PageHero";
 import {
   MagneticButton,
@@ -182,6 +183,7 @@ interface FormState {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function ContactClient() {
+  const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
 
@@ -448,10 +450,10 @@ export default function ContactClient() {
           style={{
             maxWidth: 1280,
             margin: "0 auto",
-            padding: "120px 6% 160px",
+            padding: isMobile ? "48px 20px" : "120px 6% 160px",
             display: "grid",
-            gridTemplateColumns: "1fr 1.5fr",
-            gap: 80,
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1.5fr",
+            gap: isMobile ? 32 : 80,
             alignItems: "start",
           }}
         >
@@ -737,7 +739,7 @@ export default function ContactClient() {
                   <div
                     style={{
                       display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
+                      gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
                       gap: 16,
                     }}
                   >
