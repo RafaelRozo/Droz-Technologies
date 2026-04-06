@@ -2,6 +2,7 @@
 
 import { useRef, CSSProperties, RefObject } from "react";
 import { motion, useInView } from "framer-motion";
+import useIsMobile from "@/lib/useIsMobile";
 
 interface SplitRevealProps {
   beforeTitle: string;
@@ -25,6 +26,7 @@ export default function SplitReveal({
     once: true,
     margin: "-80px",
   });
+  const isMobile = useIsMobile();
 
   return (
     <section
@@ -38,8 +40,8 @@ export default function SplitReveal({
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "1fr 3px 1fr",
-          minHeight: "60vh",
+          gridTemplateColumns: isMobile ? "1fr" : "1fr 3px 1fr",
+          minHeight: isMobile ? "auto" : "60vh",
           position: "relative",
         }}
       >
@@ -47,11 +49,11 @@ export default function SplitReveal({
         <div
           style={{
             background: "#0a0a0a",
-            padding: "80px 56px",
+            padding: isMobile ? "40px 24px" : "80px 56px",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            gap: 32,
+            gap: isMobile ? 20 : 32,
           }}
         >
           {/* Label pill */}
@@ -115,11 +117,11 @@ export default function SplitReveal({
           </ul>
         </div>
 
-        {/* ── Center: vertical divider line ── */}
+        {/* ── Center: vertical divider line (hidden on mobile) ── */}
         <div
           style={{
             position: "relative",
-            display: "flex",
+            display: isMobile ? "none" : "flex",
             justifyContent: "center",
             overflow: "hidden",
           }}
@@ -151,25 +153,26 @@ export default function SplitReveal({
 
         {/* ── Right: "After" column — clips in on scroll ── */}
         <motion.div
-          initial={{ clipPath: "inset(0 100% 0 0)" }}
+          initial={isMobile ? { opacity: 0, y: 20 } : { clipPath: "inset(0 100% 0 0)" }}
           animate={
             isInView
-              ? { clipPath: "inset(0 0% 0 0)" }
-              : { clipPath: "inset(0 100% 0 0)" }
+              ? isMobile ? { opacity: 1, y: 0 } : { clipPath: "inset(0 0% 0 0)" }
+              : isMobile ? { opacity: 0, y: 20 } : { clipPath: "inset(0 100% 0 0)" }
           }
-          transition={{ duration: 1.2, ease: EASE, delay: 0.15 }}
+          transition={{ duration: isMobile ? 0.6 : 1.2, ease: EASE, delay: 0.15 }}
           style={{
             background: "#111111",
             overflow: "hidden",
+            borderRadius: isMobile ? 16 : 0,
           }}
         >
           <div
             style={{
-              padding: "80px 56px",
+              padding: isMobile ? "40px 24px" : "80px 56px",
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              gap: 32,
+              gap: isMobile ? 20 : 32,
               height: "100%",
             }}
           >
