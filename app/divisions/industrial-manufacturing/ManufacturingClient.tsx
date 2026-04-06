@@ -274,15 +274,14 @@ function ProdCard({ item }: { item: ProdItem }) {
 }
 
 /* ─── Precision Metrics ─── */
-const precisionStats = [
-  { display: "2,400/hr", counter: true, value: 2400, suffix: "/hr", label: "Units Throughput" },
-  { display: "±0.001mm", counter: false, value: 0, suffix: "", label: "Precision Tolerance" },
-  { display: "99.7%", counter: false, value: 0, suffix: "", label: "Uptime" },
-  { display: "5,000+", counter: true, value: 5000, suffix: "+", label: "Instruments Shipped" },
-];
-
-function PrecisionMetrics() {
+function PrecisionMetrics({ locale }: { locale: string }) {
   const isMobile = useIsMobile();
+  const precisionStats = [
+    { display: "2,400/hr", counter: true, value: 2400, suffix: "/hr", label: locale === "fr" ? "Débit Unitaire" : locale === "es" ? "Capacidad por Hora" : "Units Throughput" },
+    { display: "±0.001mm", counter: false, value: 0, suffix: "", label: locale === "fr" ? "Tolérance de Précision" : locale === "es" ? "Tolerancia de Precisión" : "Precision Tolerance" },
+    { display: "99.7%", counter: false, value: 0, suffix: "", label: locale === "fr" ? "Disponibilité" : locale === "es" ? "Disponibilidad" : "Uptime" },
+    { display: "5,000+", counter: true, value: 5000, suffix: "+", label: locale === "fr" ? "Instruments Livrés" : locale === "es" ? "Instrumentos Entregados" : "Instruments Shipped" },
+  ];
   return (
     <div
       style={{
@@ -349,20 +348,36 @@ export default function ManufacturingClient() {
 
   const capabilities: ProdItem[] = [
     {
-      title: "Vibration Equipment — Field-Hardened",
-      desc: "Portable and online vibration analyzers built by engineers who've used them in petrochemical plants, cement mills, and turbine halls. Not designed for a lab. Tested in the field.",
+      title: locale === "fr" ? "Équipements de Vibration — Durcis sur le Terrain" : locale === "es" ? "Equipos de Vibración — Probados en Campo" : "Vibration Equipment — Field-Hardened",
+      desc: locale === "fr"
+        ? "Analyseurs de vibrations portables et en ligne conçus par des ingénieurs qui les ont utilisés dans des usines pétrochimiques, des cimenteries et des salles de turbines. Pas conçus pour un laboratoire. Testés sur le terrain."
+        : locale === "es"
+        ? "Analizadores de vibración portátiles y en línea construidos por ingenieros que los han usado en plantas petroquímicas, fábricas de cemento y salas de turbinas. No diseñados para un laboratorio. Probados en el campo."
+        : "Portable and online vibration analyzers built by engineers who've used them in petrochemical plants, cement mills, and turbine halls. Not designed for a lab. Tested in the field.",
     },
     {
-      title: "Laser Alignment — Sub-Micron Certainty",
-      desc: "Multi-axis shaft and geometric alignment instruments with wireless data transfer. We calibrated these in our own lab. We've aligned over 500 machines with them. We know what the specs mean in practice.",
+      title: locale === "fr" ? "Alignement Laser — Certitude Sub-Micronique" : locale === "es" ? "Alineación Láser — Certeza Sub-Micrométrica" : "Laser Alignment — Sub-Micron Certainty",
+      desc: locale === "fr"
+        ? "Instruments d'alignement d'arbres et géométrique multi-axes avec transfert de données sans fil. Nous les avons calibrés dans notre propre laboratoire. Nous avons aligné plus de 500 machines avec eux. Nous savons ce que les spécifications signifient en pratique."
+        : locale === "es"
+        ? "Instrumentos de alineación de ejes y geométrica multi-eje con transferencia de datos inalámbrica. Los calibramos en nuestro propio laboratorio. Hemos alineado más de 500 máquinas con ellos. Sabemos lo que las especificaciones significan en la práctica."
+        : "Multi-axis shaft and geometric alignment instruments with wireless data transfer. We calibrated these in our own lab. We've aligned over 500 machines with them. We know what the specs mean in practice.",
     },
     {
-      title: "Thermography Equipment — See the Invisible",
-      desc: "High-resolution thermal imaging cameras calibrated for industrial environments. Because a 2-degree hotspot in a switchgear panel at 3 AM is the difference between a controlled shutdown and a fire.",
+      title: locale === "fr" ? "Équipements de Thermographie — Voyez l'Invisible" : locale === "es" ? "Equipos de Termografía — Vea lo Invisible" : "Thermography Equipment — See the Invisible",
+      desc: locale === "fr"
+        ? "Caméras d'imagerie thermique haute résolution calibrées pour les environnements industriels. Parce qu'un point chaud de 2 degrés dans un tableau de commande à 3h du matin fait la différence entre un arrêt contrôlé et un incendie."
+        : locale === "es"
+        ? "Cámaras de imagen térmica de alta resolución calibradas para entornos industriales. Porque un punto caliente de 2 grados en un tablero eléctrico a las 3 AM es la diferencia entre un paro controlado y un incendio."
+        : "High-resolution thermal imaging cameras calibrated for industrial environments. Because a 2-degree hotspot in a switchgear panel at 3 AM is the difference between a controlled shutdown and a fire.",
     },
     {
-      title: "Precision Balancing — Zero Tolerance",
-      desc: "Field and shop balancing machines for rotors, fans, impellers, and turbines to ISO 1940 Grade G0.4. We operate these machines in our own maintenance division — they have to be right.",
+      title: locale === "fr" ? "Équilibrage de Précision — Tolérance Zéro" : locale === "es" ? "Balanceo de Precisión — Tolerancia Cero" : "Precision Balancing — Zero Tolerance",
+      desc: locale === "fr"
+        ? "Machines d'équilibrage en place et en atelier pour rotors, ventilateurs, turbines et turbines selon ISO 1940 Grade G0.4. Nous exploitons ces machines dans notre propre division de maintenance — elles doivent être justes."
+        : locale === "es"
+        ? "Máquinas de balanceo en campo y en taller para rotores, ventiladores, impulsores y turbinas según ISO 1940 Grado G0.4. Operamos estas máquinas en nuestra propia división de mantenimiento — tienen que ser precisas."
+        : "Field and shop balancing machines for rotors, fans, impellers, and turbines to ISO 1940 Grade G0.4. We operate these machines in our own maintenance division — they have to be right.",
     },
   ];
 
@@ -371,7 +386,13 @@ export default function ManufacturingClient() {
       {/* Hero */}
       <PageHero
         title={division.name}
-        subtitle="Your precision instruments were calibrated by a vendor who's never used them in the field."
+        subtitle={
+          locale === "fr"
+            ? "Vos instruments de précision ont été calibrés par un fournisseur qui ne les a jamais utilisés sur le terrain."
+            : locale === "es"
+            ? "Sus instrumentos de precisión fueron calibrados por un proveedor que nunca los ha usado en el campo."
+            : "Your precision instruments were calibrated by a vendor who's never used them in the field."
+        }
         pill="04 — Division"
         showMesh
       />
@@ -381,7 +402,11 @@ export default function ManufacturingClient() {
       {/* Velocity ticker */}
       <div style={{ padding: "24px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
         <ScrollVelocityText baseVelocity={-0.2}>
-          Vibration Equipment — Laser Alignment — Thermography — Rotor Balancing — Precision Instruments — ISO 1940
+          {locale === "fr"
+            ? "Équipements de Vibration — Alignement Laser — Thermographie — Équilibrage de Rotor — Instruments de Précision — ISO 1940"
+            : locale === "es"
+            ? "Equipos de Vibración — Alineación Láser — Termografía — Balanceo de Rotor — Instrumentos de Precisión — ISO 1940"
+            : "Vibration Equipment — Laser Alignment — Thermography — Rotor Balancing — Precision Instruments — ISO 1940"}
         </ScrollVelocityText>
       </div>
 
@@ -421,7 +446,7 @@ export default function ManufacturingClient() {
                 marginBottom: 20,
               }}
             >
-              The Problem
+              {locale === "fr" ? "Le Problème" : locale === "es" ? "El Problema" : "The Problem"}
             </p>
             <BlurFade delay={0.1} blur="10px" duration={0.7} as="div">
             <h2
@@ -436,7 +461,11 @@ export default function ManufacturingClient() {
                 marginBottom: 24,
               }}
             >
-              You're buying equipment from companies that have never operated it.
+              {locale === "fr"
+                ? "Vous achetez des équipements à des entreprises qui ne les ont jamais utilisés."
+                : locale === "es"
+                ? "Está comprando equipos a empresas que nunca los han operado."
+                : "You're buying equipment from companies that have never operated it."}
             </h2>
             </BlurFade>
             <p
@@ -449,9 +478,11 @@ export default function ManufacturingClient() {
                 marginBottom: 20,
               }}
             >
-              Their specs are theoretical. Your tolerances are real. The instrument that reads
-              ±0.001mm on the datasheet gives you ±0.015mm when your technician is measuring a
-              250-pound impeller at 40°C in a plant that's been running since 1998.
+              {locale === "fr"
+                ? "Leurs spécifications sont théoriques. Vos tolérances sont réelles. L'instrument qui affiche ±0,001mm sur la fiche technique vous donne ±0,015mm quand votre technicien mesure une turbine de 115 kg à 40°C dans une usine qui fonctionne depuis 1998."
+                : locale === "es"
+                ? "Sus especificaciones son teóricas. Sus tolerancias son reales. El instrumento que marca ±0,001mm en la ficha técnica le da ±0,015mm cuando su técnico está midiendo un impulsor de 115 kg a 40°C en una planta que lleva funcionando desde 1998."
+                : "Their specs are theoretical. Your tolerances are real. The instrument that reads ±0.001mm on the datasheet gives you ±0.015mm when your technician is measuring a 250-pound impeller at 40°C in a plant that's been running since 1998."}
             </p>
             <p
               style={{
@@ -462,16 +493,27 @@ export default function ManufacturingClient() {
                 lineHeight: 1.75,
               }}
             >
-              Vendor support means a ticket. You get a callback in 72 hours. Meanwhile, your
-              production line is down and your shift manager is on the phone with procurement
-              trying to find a calibration tech.
+              {locale === "fr"
+                ? "Le support fournisseur, c'est un ticket. Vous recevez un rappel en 72 heures. Entre-temps, votre ligne de production est arrêtée et votre chef d'équipe est au téléphone avec les achats pour trouver un technicien de calibration."
+                : locale === "es"
+                ? "El soporte del proveedor es un ticket. Recibe una devolución de llamada en 72 horas. Mientras tanto, su línea de producción está parada y su jefe de turno está al teléfono con compras intentando encontrar un técnico de calibración."
+                : "Vendor support means a ticket. You get a callback in 72 hours. Meanwhile, your production line is down and your shift manager is on the phone with procurement trying to find a calibration tech."}
             </p>
           </motion.div>
           <div>
             {[
-              { stat: "±0.001mm", label: "the gap between spec and reality in harsh field conditions" },
-              { stat: "72 hrs", label: "average vendor response time when your line is down" },
-              { stat: "60%", label: "of instrument failures attributed to improper application" },
+              {
+                stat: "±0.001mm",
+                label: locale === "fr" ? "l'écart entre la fiche technique et la réalité en conditions difficiles" : locale === "es" ? "la brecha entre la ficha técnica y la realidad en condiciones severas de campo" : "the gap between spec and reality in harsh field conditions",
+              },
+              {
+                stat: "72 hrs",
+                label: locale === "fr" ? "temps de réponse moyen du fournisseur quand votre ligne est arrêtée" : locale === "es" ? "tiempo de respuesta promedio del proveedor cuando su línea está parada" : "average vendor response time when your line is down",
+              },
+              {
+                stat: "60%",
+                label: locale === "fr" ? "des défaillances d'instruments attribuées à une mauvaise application" : locale === "es" ? "de las fallas de instrumentos atribuidas a una aplicación incorrecta" : "of instrument failures attributed to improper application",
+              },
             ].map(({ stat, label }) => (
               <div
                 key={stat}
@@ -534,7 +576,7 @@ export default function ManufacturingClient() {
             color: "rgba(255,255,255,0.25)",
           }}
         >
-          Why Only Droz
+          {locale === "fr" ? "Pourquoi Uniquement Droz" : locale === "es" ? "Por Qué Solo Droz" : "Why Only Droz"}
         </p>
         <BlurFade delay={0.2} blur="10px" duration={0.7} as="div">
         <TextReveal
@@ -551,7 +593,11 @@ export default function ManufacturingClient() {
             lineHeight: 1.2,
           }}
         >
-          We manufacture the instruments other companies just resell. Every unit calibrated in our own lab. Every tolerance verified by engineers who use these tools in the field every week. Nobody else controls that chain.
+          {locale === "fr"
+            ? "Nous fabriquons les instruments que d'autres entreprises revendent simplement. Chaque unité calibrée dans notre propre laboratoire. Chaque tolérance vérifiée par des ingénieurs qui utilisent ces outils sur le terrain chaque semaine. Personne d'autre ne contrôle cette chaîne."
+            : locale === "es"
+            ? "Fabricamos los instrumentos que otras empresas simplemente revenden. Cada unidad calibrada en nuestro propio laboratorio. Cada tolerancia verificada por ingenieros que usan estas herramientas en el campo cada semana. Nadie más controla esa cadena."
+            : "We manufacture the instruments other companies just resell. Every unit calibrated in our own lab. Every tolerance verified by engineers who use these tools in the field every week. Nobody else controls that chain."}
         </TextReveal>
         </BlurFade>
         <p
@@ -565,8 +611,11 @@ export default function ManufacturingClient() {
             marginTop: 8,
           }}
         >
-          When a Westinghouse engineer reports a reading that doesn't make sense, we don't raise
-          a support ticket. We send the engineer who designed that measurement protocol.
+          {locale === "fr"
+            ? "Quand un ingénieur de Westinghouse signale une lecture qui n'a pas de sens, nous ne soumettons pas un ticket de support. Nous envoyons l'ingénieur qui a conçu ce protocole de mesure."
+            : locale === "es"
+            ? "Cuando un ingeniero de Westinghouse reporta una lectura que no tiene sentido, no abrimos un ticket de soporte. Enviamos al ingeniero que diseñó ese protocolo de medición."
+            : "When a Westinghouse engineer reports a reading that doesn't make sense, we don't raise a support ticket. We send the engineer who designed that measurement protocol."}
         </p>
       </section>
 
@@ -585,7 +634,7 @@ export default function ManufacturingClient() {
               letterSpacing: "0.12em", textTransform: "uppercase",
               color: "rgba(255,255,255,0.3)", marginBottom: 20,
             }}>
-              Part of Something Bigger
+              {locale === "fr" ? "Partie d'un Tout Plus Grand" : locale === "es" ? "Parte de Algo Mayor" : "Part of Something Bigger"}
             </p>
           </BlurFade>
           <BlurFade delay={0.2} as="h2">
@@ -594,21 +643,45 @@ export default function ManufacturingClient() {
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)", color: "#fff", fontWeight: 400,
               lineHeight: 1.3, maxWidth: 700, marginBottom: 24,
             }}>
-              Our instruments are just the beginning.
+              {locale === "fr"
+                ? "Nos instruments ne sont que le début."
+                : locale === "es"
+                ? "Nuestros instrumentos son solo el comienzo."
+                : "Our instruments are just the beginning."}
             </h2>
           </BlurFade>
           <p style={{
             fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 16,
             color: "rgba(255,255,255,0.55)", lineHeight: 1.7, maxWidth: 640, marginBottom: 40,
           }}>
-            We build the hardware. But we also build the software that reads it, the AI that learns from it, and the maintenance programs that depend on it. One vendor for the full lifecycle.
+            {locale === "fr"
+              ? "Nous construisons le matériel. Mais nous construisons aussi le logiciel qui le lit, l'IA qui apprend de lui et les programmes de maintenance qui en dépendent. Un seul fournisseur pour le cycle de vie complet."
+              : locale === "es"
+              ? "Construimos el hardware. Pero también construimos el software que lo lee, la IA que aprende de él y los programas de mantenimiento que dependen de él. Un solo proveedor para el ciclo de vida completo."
+              : "We build the hardware. But we also build the software that reads it, the AI that learns from it, and the maintenance programs that depend on it. One vendor for the full lifecycle."}
           </p>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
-              { name: "Predictive Maintenance", desc: "Our instruments in the field, our engineers reading the data — a PM program that already knows your equipment.", href: "/divisions/predictive-maintenance" },
-              { name: "Software Development", desc: "Custom platforms built to ingest and visualize data from our instruments without middleware headaches.", href: "/divisions/software-development" },
-              { name: "Intelligent Construction", desc: "Sensors and instruments deployed inside buildings and infrastructure — connected to your BMS from day one.", href: "/divisions/intelligent-construction" },
-              { name: "AI Consulting", desc: "Models trained on the data our instruments generate — because the training set is only as good as the hardware behind it.", href: "/divisions/ai-consulting" },
+              {
+                name: locale === "fr" ? "Maintenance Prédictive" : locale === "es" ? "Mantenimiento Predictivo" : "Predictive Maintenance",
+                desc: locale === "fr" ? "Nos instruments sur le terrain, nos ingénieurs qui lisent les données — un programme de MP qui connaît déjà votre équipement." : locale === "es" ? "Nuestros instrumentos en el campo, nuestros ingenieros leyendo los datos — un programa de MP que ya conoce su equipo." : "Our instruments in the field, our engineers reading the data — a PM program that already knows your equipment.",
+                href: "/divisions/predictive-maintenance",
+              },
+              {
+                name: locale === "fr" ? "Développement Logiciel" : locale === "es" ? "Desarrollo de Software" : "Software Development",
+                desc: locale === "fr" ? "Plateformes personnalisées construites pour ingérer et visualiser les données de nos instruments sans maux de tête middleware." : locale === "es" ? "Plataformas personalizadas construidas para ingerir y visualizar datos de nuestros instrumentos sin dolores de cabeza de middleware." : "Custom platforms built to ingest and visualize data from our instruments without middleware headaches.",
+                href: "/divisions/software-development",
+              },
+              {
+                name: locale === "fr" ? "Construction Intelligente" : locale === "es" ? "Construcción Inteligente" : "Intelligent Construction",
+                desc: locale === "fr" ? "Capteurs et instruments déployés dans les bâtiments et infrastructures — connectés à votre GTC dès le premier jour." : locale === "es" ? "Sensores e instrumentos desplegados dentro de edificios e infraestructura — conectados a su BMS desde el primer día." : "Sensors and instruments deployed inside buildings and infrastructure — connected to your BMS from day one.",
+                href: "/divisions/intelligent-construction",
+              },
+              {
+                name: locale === "fr" ? "Conseil en IA" : locale === "es" ? "Consultoría de IA" : "AI Consulting",
+                desc: locale === "fr" ? "Modèles entraînés sur les données que génèrent nos instruments — parce que l'ensemble d'entraînement n'est bon que si le matériel derrière l'est aussi." : locale === "es" ? "Modelos entrenados con los datos que generan nuestros instrumentos — porque el conjunto de entrenamiento es tan bueno como el hardware detrás de él." : "Models trained on the data our instruments generate — because the training set is only as good as the hardware behind it.",
+                href: "/divisions/ai-consulting",
+              },
             ].map((d, i) => (
               <motion.a key={d.name} href={d.href}
                 initial={{ opacity: 0, y: 20 }}
@@ -647,7 +720,7 @@ export default function ManufacturingClient() {
               marginBottom: 16,
             }}
           >
-            What We Manufacture
+            {locale === "fr" ? "Ce que Nous Fabriquons" : locale === "es" ? "Lo que Fabricamos" : "What We Manufacture"}
           </p>
           <TextReveal
             as="h2"
@@ -661,7 +734,7 @@ export default function ManufacturingClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            Instruments That Perform When It Counts
+            {locale === "fr" ? "Instruments qui Performent quand Ça Compte" : locale === "es" ? "Instrumentos que Rinden Cuando Importa" : "Instruments That Perform When It Counts"}
           </TextReveal>
         </div>
         <StaggerGrid columns={2} gap={20}>
@@ -694,7 +767,7 @@ export default function ManufacturingClient() {
               marginBottom: 16,
             }}
           >
-            Mechanical Precision
+            {locale === "fr" ? "Précision Mécanique" : locale === "es" ? "Precisión Mecánica" : "Mechanical Precision"}
           </p>
           <TextReveal
             as="h2"
@@ -708,7 +781,7 @@ export default function ManufacturingClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            Where Thousandths of a Millimetre Determine the Outcome
+            {locale === "fr" ? "Là où les Millièmes de Millimètre Déterminent le Résultat" : locale === "es" ? "Donde las Milésimas de Milímetro Determinan el Resultado" : "Where Thousandths of a Millimetre Determine the Outcome"}
           </TextReveal>
           <p
             style={{
@@ -721,8 +794,11 @@ export default function ManufacturingClient() {
               lineHeight: 1.7,
             }}
           >
-            Every instrument we manufacture is calibrated against traceable references and
-            validated in the same conditions where it will be used. Not a lab. Your conditions.
+            {locale === "fr"
+              ? "Chaque instrument que nous fabriquons est calibré par rapport à des références traçables et validé dans les mêmes conditions où il sera utilisé. Pas un laboratoire. Vos conditions."
+              : locale === "es"
+              ? "Cada instrumento que fabricamos está calibrado contra referencias trazables y validado en las mismas condiciones donde se usará. No un laboratorio. Sus condiciones."
+              : "Every instrument we manufacture is calibrated against traceable references and validated in the same conditions where it will be used. Not a lab. Your conditions."}
           </p>
         </div>
         <GearVisualization />
@@ -767,7 +843,7 @@ export default function ManufacturingClient() {
               marginBottom: 20,
             }}
           >
-            Precision at Scale
+            {locale === "fr" ? "Précision à l'Échelle" : locale === "es" ? "Precisión a Escala" : "Precision at Scale"}
           </p>
           <TextReveal
             as="h2"
@@ -784,7 +860,7 @@ export default function ManufacturingClient() {
               lineHeight: 1.2,
             }}
           >
-            CNC tolerance held to the thousandth, every run.
+            {locale === "fr" ? "Tolérance CNC tenue au millième, à chaque passe." : locale === "es" ? "Tolerancia CNC mantenida al milésimo, en cada pasada." : "CNC tolerance held to the thousandth, every run."}
           </TextReveal>
           <p
             style={{
@@ -797,8 +873,11 @@ export default function ManufacturingClient() {
               lineHeight: 1.7,
             }}
           >
-            Instruments manufactured, calibrated, and validated in the same industrial conditions
-            where they will be used — not a controlled lab environment.
+            {locale === "fr"
+              ? "Instruments fabriqués, calibrés et validés dans les mêmes conditions industrielles où ils seront utilisés — pas un environnement de laboratoire contrôlé."
+              : locale === "es"
+              ? "Instrumentos fabricados, calibrados y validados en las mismas condiciones industriales donde se usarán — no en un entorno de laboratorio controlado."
+              : "Instruments manufactured, calibrated, and validated in the same industrial conditions where they will be used — not a controlled lab environment."}
           </p>
         </div>
       </section>
@@ -819,10 +898,10 @@ export default function ManufacturingClient() {
               marginBottom: 24,
             }}
           >
-            Performance — In the Field
+            {locale === "fr" ? "Performance — Sur le Terrain" : locale === "es" ? "Rendimiento — En el Campo" : "Performance — In the Field"}
           </p>
         </div>
-        <PrecisionMetrics />
+        <PrecisionMetrics locale={locale} />
       </section>
 
       <SectionDivider />
@@ -859,7 +938,11 @@ export default function ManufacturingClient() {
             maxWidth: 640,
           }}
         >
-          If your instruments aren't performing in the field, the specs don't matter.
+          {locale === "fr"
+            ? "Si vos instruments ne performent pas sur le terrain, les spécifications n'ont aucune importance."
+            : locale === "es"
+            ? "Si sus instrumentos no rinden en el campo, las especificaciones no importan."
+            : "If your instruments aren't performing in the field, the specs don't matter."}
         </TextReveal>
         </BlurFade>
         <p
@@ -872,15 +955,18 @@ export default function ManufacturingClient() {
             lineHeight: 1.7,
           }}
         >
-          Trusted by Westinghouse, Holcim, and Siemens Energy. Industrial-grade instruments
-          engineered and validated by the engineers who use them every day.
+          {locale === "fr"
+            ? "Approuvé par Westinghouse, Holcim et Siemens Energy. Instruments industriels conçus et validés par les ingénieurs qui les utilisent chaque jour."
+            : locale === "es"
+            ? "Confiado por Westinghouse, Holcim y Siemens Energy. Instrumentos de grado industrial diseñados y validados por los ingenieros que los usan todos los días."
+            : "Trusted by Westinghouse, Holcim, and Siemens Energy. Industrial-grade instruments engineered and validated by the engineers who use them every day."}
         </p>
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
           <MagneticButton as="a" href="/contact">
-            Scale Precision
+            {locale === "fr" ? "Scalez la Précision" : locale === "es" ? "Escale la Precisión" : "Scale Precision"}
           </MagneticButton>
           <MagneticButton as="a" href="/contact">
-            Start Free Trial
+            {locale === "fr" ? "Essai Gratuit" : locale === "es" ? "Prueba Gratuita" : "Start Free Trial"}
           </MagneticButton>
         </div>
       </section>

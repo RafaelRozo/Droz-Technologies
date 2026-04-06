@@ -31,12 +31,7 @@ interface Division {
 
 // ─── Stats ────────────────────────────────────────────────────────────────────
 
-const STATS: { target: number; suffix: string; prefix: string; label: string }[] = [
-  { target: 100, suffix: "+", prefix: "", label: "Solutions Delivered" },
-  { target: 12,  suffix: "",  prefix: "", label: "Industries Served"   },
-  { target: 6,   suffix: "",  prefix: "", label: "Countries Active"    },
-  { target: 95,  suffix: "%", prefix: "", label: "Client Retention"    },
-];
+// STATS are built inside the component to access locale — see below
 
 // ─── Solution card ────────────────────────────────────────────────────────────
 
@@ -292,6 +287,53 @@ export default function SolutionsClient() {
   const { locale } = useLocale();
   const t = getTexts(locale);
 
+  const STATS: { target: number; suffix: string; prefix: string; label: string }[] = [
+    {
+      target: 100,
+      suffix: "+",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Solutions livrées"
+          : locale === "es"
+            ? "Soluciones entregadas"
+            : "Solutions Delivered",
+    },
+    {
+      target: 12,
+      suffix: "",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Industries desservies"
+          : locale === "es"
+            ? "Industrias atendidas"
+            : "Industries Served",
+    },
+    {
+      target: 6,
+      suffix: "",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Pays actifs"
+          : locale === "es"
+            ? "Países activos"
+            : "Countries Active",
+    },
+    {
+      target: 95,
+      suffix: "%",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Rétention clients"
+          : locale === "es"
+            ? "Retención de clientes"
+            : "Client Retention",
+    },
+  ];
+
   const divisions: Division[] = t.divisionsGrid.map((d) => ({
     name: d.name,
     slug: d.slug,
@@ -546,7 +588,11 @@ export default function SolutionsClient() {
           }}
         >
           <ScrollVelocityText baseVelocity={-0.6}>
-            Predictive Analytics · Enterprise Software · Industrial IoT · AI Integration · Digital Twins · Automation Systems · Running. Measured. Proven.
+            {locale === "fr"
+              ? "Analytique prédictive · Logiciels d'entreprise · IoT industriel · Intégration IA · Jumeaux numériques · Systèmes d'automatisation · En production. Mesuré. Prouvé."
+              : locale === "es"
+                ? "Analítica predictiva · Software empresarial · IoT industrial · Integración de IA · Gemelos digitales · Sistemas de automatización · En producción. Medido. Comprobado."
+                : "Predictive Analytics · Enterprise Software · Industrial IoT · AI Integration · Digital Twins · Automation Systems · Running. Measured. Proven."}
           </ScrollVelocityText>
         </div>
 

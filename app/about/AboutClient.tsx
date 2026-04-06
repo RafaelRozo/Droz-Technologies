@@ -473,7 +473,11 @@ export default function AboutClient() {
           }}
         >
           <ScrollVelocityText baseVelocity={-0.55}>
-            Venezuela · Canada · 20+ Years · Factory Floor First · Five Divisions · One Standard · Faith · Grit · Precision
+            {locale === "fr"
+              ? "Venezuela · Canada · 20+ ans · Le terrain avant tout · Cinq divisions · Un seul standard · Foi · Détermination · Précision"
+              : locale === "es"
+                ? "Venezuela · Canadá · 20+ años · El campo primero · Cinco divisiones · Un solo estándar · Fe · Garra · Precisión"
+                : "Venezuela · Canada · 20+ Years · Factory Floor First · Five Divisions · One Standard · Faith · Grit · Precision"}
           </ScrollVelocityText>
         </div>
 

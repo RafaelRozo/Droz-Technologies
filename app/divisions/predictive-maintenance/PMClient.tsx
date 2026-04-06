@@ -38,6 +38,7 @@ function WaveformSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(containerRef as React.RefObject<Element>, { once: true, margin: "-100px" });
   const isMobile = useIsMobile();
+  const { locale } = useLocale();
 
   const width = 1000;
   const height = 120;
@@ -75,7 +76,7 @@ function WaveformSection() {
           letterSpacing: "-0.02em",
         }}
       >
-        Failures Detected Before They Happen
+        {locale === "fr" ? "Pannes Détectées Avant qu'Elles Se Produisent" : locale === "es" ? "Fallas Detectadas Antes de que Ocurran" : "Failures Detected Before They Happen"}
       </TextReveal>
       <p
         style={{
@@ -88,8 +89,11 @@ function WaveformSection() {
           lineHeight: 1.7,
         }}
       >
-        Continuous vibration and frequency analysis captures fault signatures weeks before a bearing fails,
-        a shaft misaligns, or an imbalance destroys a turbine.
+        {locale === "fr"
+          ? "L'analyse continue des vibrations et des fréquences capture les signatures de défauts des semaines avant qu'un palier cède, qu'un arbre se désaligne ou qu'un déséquilibre détruise une turbine."
+          : locale === "es"
+          ? "El análisis continuo de vibraciones y frecuencias captura firmas de fallas semanas antes de que un rodamiento falle, un eje se desalinee o un desequilibrio destruya una turbina."
+          : "Continuous vibration and frequency analysis captures fault signatures weeks before a bearing fails, a shaft misaligns, or an imbalance destroys a turbine."}
       </p>
       <div
         style={{
@@ -171,9 +175,9 @@ function WaveformSection() {
         </svg>
         <div style={{ display: "flex", justifyContent: "flex-end", marginTop: 12, gap: 20 }}>
           {[
-            { color: "rgba(255,255,255,0.7)", label: "Live Signal" },
-            { color: "rgba(255,255,255,0.3)", label: "Baseline" },
-            { color: "rgba(255,255,255,0.25)", label: "Alert Threshold" },
+            { color: "rgba(255,255,255,0.7)", label: locale === "fr" ? "Signal en Direct" : locale === "es" ? "Señal en Vivo" : "Live Signal" },
+            { color: "rgba(255,255,255,0.3)", label: locale === "fr" ? "Référence" : locale === "es" ? "Referencia" : "Baseline" },
+            { color: "rgba(255,255,255,0.25)", label: locale === "fr" ? "Seuil d'Alerte" : locale === "es" ? "Umbral de Alerta" : "Alert Threshold" },
           ].map(({ color, label }) => (
             <div key={label} style={{ display: "flex", alignItems: "center", gap: 6 }}>
               <div style={{ width: 20, height: 1.5, background: color }} />
@@ -354,40 +358,56 @@ export default function PMClient() {
 
   const capabilities: CapabilityItem[] = [
     {
-      title: "Vibration Analysis — Stop Guessing",
-      desc: "High-frequency FFT analysis that catches bearing faults, imbalance, and misalignment before they trigger alarms. Your tech leaves. The data doesn't.",
+      title: locale === "fr" ? "Analyse Vibratoire — Fini les Suppositions" : locale === "es" ? "Análisis de Vibración — Sin Más Suposiciones" : "Vibration Analysis — Stop Guessing",
+      desc: locale === "fr"
+        ? "Analyse FFT haute fréquence qui détecte les défauts de roulements, les déséquilibres et les désalignements avant qu'ils déclenchent des alarmes. Votre technicien part à la retraite. Les données, elles, restent."
+        : locale === "es"
+        ? "Análisis FFT de alta frecuencia que detecta fallas de rodamientos, desequilibrios y desalineaciones antes de que activen alarmas. Su técnico se jubila. Los datos no."
+        : "High-frequency FFT analysis that catches bearing faults, imbalance, and misalignment before they trigger alarms. Your tech leaves. The data doesn't.",
       metric: 99,
       metricSuffix: ".7%",
-      metricLabel: "Detection Rate",
+      metricLabel: locale === "fr" ? "Taux de Détection" : locale === "es" ? "Tasa de Detección" : "Detection Rate",
     },
     {
-      title: "Laser Alignment — Zero Rework",
-      desc: "Sub-micron precision shaft and geometric alignment for turbines, pumps, motors, and compressors. Misalignment is the #1 cause of bearing failure. We eliminate it.",
+      title: locale === "fr" ? "Alignement Laser — Zéro Reprise" : locale === "es" ? "Alineación Láser — Cero Retrabajos" : "Laser Alignment — Zero Rework",
+      desc: locale === "fr"
+        ? "Alignement d'arbres et géométrique sub-micronique pour turbines, pompes, moteurs et compresseurs. Le désalignement est la première cause de défaillance des roulements. Nous l'éliminons."
+        : locale === "es"
+        ? "Alineación de ejes y geométrica sub-micrométrica para turbinas, bombas, motores y compresores. El desalineamiento es la causa número 1 de falla de rodamientos. Lo eliminamos."
+        : "Sub-micron precision shaft and geometric alignment for turbines, pumps, motors, and compressors. Misalignment is the #1 cause of bearing failure. We eliminate it.",
       metric: 500,
       metricSuffix: "+",
-      metricLabel: "Machines Aligned",
+      metricLabel: locale === "fr" ? "Machines Alignées" : locale === "es" ? "Máquinas Alineadas" : "Machines Aligned",
     },
     {
-      title: "Thermography — See What's Hidden",
-      desc: "Infrared imaging that finds hotspots in electrical systems and mechanical components weeks before they escalate. The failure was always there — you just couldn't see it.",
+      title: locale === "fr" ? "Thermographie — Voyez ce qui Est Caché" : locale === "es" ? "Termografía — Vea lo que Está Oculto" : "Thermography — See What's Hidden",
+      desc: locale === "fr"
+        ? "Imagerie infrarouge qui détecte les points chauds dans les systèmes électriques et les composants mécaniques des semaines avant qu'ils s'aggravent. La panne était toujours là — vous ne pouviez tout simplement pas la voir."
+        : locale === "es"
+        ? "Imágenes infrarrojas que detectan puntos calientes en sistemas eléctricos y componentes mecánicos semanas antes de que escalen. La falla siempre estuvo ahí — simplemente no podía verla."
+        : "Infrared imaging that finds hotspots in electrical systems and mechanical components weeks before they escalate. The failure was always there — you just couldn't see it.",
       metric: 45,
       metricSuffix: "%",
-      metricLabel: "Downtime Reduction",
+      metricLabel: locale === "fr" ? "Réduction des Arrêts" : locale === "es" ? "Reducción de Paros" : "Downtime Reduction",
     },
     {
-      title: "Rotor Balancing — Precision at Speed",
-      desc: "In-situ and shop balancing of fans, turbines, and impellers to ISO 1940 spec. Because vibration at 3,600 RPM doesn't forgive imprecision.",
+      title: locale === "fr" ? "Équilibrage de Rotor — Précision à Pleine Vitesse" : locale === "es" ? "Balanceo de Rotor — Precisión a Máxima Velocidad" : "Rotor Balancing — Precision at Speed",
+      desc: locale === "fr"
+        ? "Équilibrage en place et en atelier de ventilateurs, turbines et turbines selon la norme ISO 1940. Parce que les vibrations à 3 600 tr/min ne pardonnent pas l'imprécision."
+        : locale === "es"
+        ? "Balanceo en sitio y en taller de ventiladores, turbinas e impulsores según norma ISO 1940. Porque la vibración a 3.600 RPM no perdona la imprecisión."
+        : "In-situ and shop balancing of fans, turbines, and impellers to ISO 1940 spec. Because vibration at 3,600 RPM doesn't forgive imprecision.",
       metric: 20,
       metricSuffix: "+",
-      metricLabel: "Years in the Field",
+      metricLabel: locale === "fr" ? "Ans d'Expérience Terrain" : locale === "es" ? "Años en el Campo" : "Years in the Field",
     },
   ];
 
   const displayMetrics: Metric[] = [
-    { value: 340, suffix: "+", prefix: "", label: "Failures Predicted" },
-    { value: 2, suffix: ".1M", prefix: "$", label: "Downtime Prevented" },
-    { value: 89, suffix: " days", prefix: "", label: "Time to ROI" },
-    { value: 12000, suffix: "+", prefix: "", label: "Assets Monitored" },
+    { value: 340, suffix: "+", prefix: "", label: locale === "fr" ? "Pannes Prédites" : locale === "es" ? "Fallas Predichas" : "Failures Predicted" },
+    { value: 2, suffix: ".1M", prefix: "$", label: locale === "fr" ? "Arrêts Évités" : locale === "es" ? "Paros Evitados" : "Downtime Prevented" },
+    { value: 89, suffix: " days", prefix: "", label: locale === "fr" ? "Délai de Retour sur Investissement" : locale === "es" ? "Tiempo al ROI" : "Time to ROI" },
+    { value: 12000, suffix: "+", prefix: "", label: locale === "fr" ? "Actifs Surveillés" : locale === "es" ? "Activos Monitoreados" : "Assets Monitored" },
   ];
 
   return (
@@ -395,7 +415,13 @@ export default function PMClient() {
       {/* Hero */}
       <PageHero
         title={division.name}
-        subtitle="Your best maintenance tech retires in 8 months. That knowledge has never been documented."
+        subtitle={
+          locale === "fr"
+            ? "Votre meilleur technicien de maintenance prend sa retraite dans 8 mois. Ce savoir-faire n'a jamais été documenté."
+            : locale === "es"
+            ? "Su mejor técnico de mantenimiento se jubila en 8 meses. Ese conocimiento nunca fue documentado."
+            : "Your best maintenance tech retires in 8 months. That knowledge has never been documented."
+        }
         pill="01 — Division"
         showMesh
       />
@@ -405,7 +431,11 @@ export default function PMClient() {
       {/* Scroll velocity ticker */}
       <div style={{ padding: "24px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
         <ScrollVelocityText baseVelocity={-0.2}>
-          Vibration Analysis — Laser Alignment — Thermography — Rotor Balancing — Predictive AI — Fault Detection
+          {locale === "fr"
+            ? "Analyse Vibratoire — Alignement Laser — Thermographie — Équilibrage — IA Prédictive — Détection de Défauts"
+            : locale === "es"
+            ? "Análisis de Vibración — Alineación Láser — Termografía — Balanceo de Rotor — IA Predictiva — Detección de Fallas"
+            : "Vibration Analysis — Laser Alignment — Thermography — Rotor Balancing — Predictive AI — Fault Detection"}
         </ScrollVelocityText>
       </div>
 
@@ -445,7 +475,7 @@ export default function PMClient() {
                 marginBottom: 20,
               }}
             >
-              The Problem
+              {locale === "fr" ? "Le Problème" : locale === "es" ? "El Problema" : "The Problem"}
             </p>
             <BlurFade delay={0.1} blur="10px" duration={0.7} as="div">
             <h2
@@ -460,7 +490,11 @@ export default function PMClient() {
                 marginBottom: 24,
               }}
             >
-              You're running a $50M operation on the intuition of three people.
+              {locale === "fr"
+                ? "Vous gérez une opération de 50 M$ sur l'intuition de trois personnes."
+                : locale === "es"
+                ? "Está operando una planta de $50 M con la intuición de tres personas."
+                : "You're running a $50M operation on the intuition of three people."}
             </h2>
             </BlurFade>
             <p
@@ -473,9 +507,11 @@ export default function PMClient() {
                 marginBottom: 20,
               }}
             >
-              When they leave, decades of diagnostic expertise walks out the door. Your CMMS has
-              work orders. It doesn't have pattern recognition. It doesn't know that your #3 pump
-              always runs hot before the coupling fails. They knew. Now they're gone.
+              {locale === "fr"
+                ? "Quand ils partent, des décennies d'expertise en diagnostic s'en vont avec eux. Votre GMAO a des ordres de travail. Elle n'a pas de reconnaissance de tendances. Elle ne sait pas que votre pompe n°3 surchauffe toujours avant que l'accouplement lâche. Eux, ils le savaient. Maintenant, ils sont partis."
+                : locale === "es"
+                ? "Cuando se van, décadas de experiencia en diagnóstico se van con ellos. Su CMMS tiene órdenes de trabajo. No tiene reconocimiento de patrones. No sabe que su bomba N°3 siempre se calienta antes de que el acoplamiento falle. Ellos sí lo sabían. Ahora ya no están."
+                : "When they leave, decades of diagnostic expertise walks out the door. Your CMMS has work orders. It doesn't have pattern recognition. It doesn't know that your #3 pump always runs hot before the coupling fails. They knew. Now they're gone."}
             </p>
             <p
               style={{
@@ -486,15 +522,27 @@ export default function PMClient() {
                 lineHeight: 1.75,
               }}
             >
-              Your planned maintenance program catches what's scheduled. Predictive maintenance
-              catches what's actually happening — in real time, before it costs you a shift.
+              {locale === "fr"
+                ? "Votre programme de maintenance planifiée détecte ce qui est prévu. La maintenance prédictive détecte ce qui se passe réellement — en temps réel, avant que ça vous coûte un quart de production."
+                : locale === "es"
+                ? "Su programa de mantenimiento planificado detecta lo que está programado. El mantenimiento predictivo detecta lo que está ocurriendo en realidad — en tiempo real, antes de que le cueste un turno."
+                : "Your planned maintenance program catches what's scheduled. Predictive maintenance catches what's actually happening — in real time, before it costs you a shift."}
             </p>
           </motion.div>
           <div>
             {[
-              { stat: "78%", label: "of industrial failures are not age-related" },
-              { stat: "3x", label: "cost of emergency vs. planned repair" },
-              { stat: "6 weeks", label: "average notice before a predictable failure" },
+              {
+                stat: "78%",
+                label: locale === "fr" ? "des défaillances industrielles ne sont pas liées à l'âge" : locale === "es" ? "de las fallas industriales no están relacionadas con la edad" : "of industrial failures are not age-related",
+              },
+              {
+                stat: "3x",
+                label: locale === "fr" ? "le coût d'une réparation d'urgence vs. planifiée" : locale === "es" ? "el costo de una reparación de emergencia vs. planificada" : "cost of emergency vs. planned repair",
+              },
+              {
+                stat: "6 weeks",
+                label: locale === "fr" ? "de préavis moyen avant une défaillance prévisible" : locale === "es" ? "de aviso promedio antes de una falla predecible" : "average notice before a predictable failure",
+              },
             ].map(({ stat, label }) => (
               <div
                 key={stat}
@@ -557,7 +605,7 @@ export default function PMClient() {
             color: "rgba(255,255,255,0.25)",
           }}
         >
-          Why Only Droz
+          {locale === "fr" ? "Pourquoi Uniquement Droz" : locale === "es" ? "Por Qué Solo Droz" : "Why Only Droz"}
         </p>
         <BlurFade delay={0.2} blur="10px" duration={0.7} as="div">
         <TextReveal
@@ -574,7 +622,11 @@ export default function PMClient() {
             lineHeight: 1.2,
           }}
         >
-          We've been diagnosing equipment failures by ear since 2004. We turned that into software. Nobody else has 20 years of field data AND the engineering team to build the AI that learns from it.
+          {locale === "fr"
+            ? "Nous diagnostiquons les défaillances d'équipements à l'oreille depuis 2004. Nous avons transformé ça en logiciel. Personne d'autre n'a 20 ans de données terrain ET l'équipe d'ingénieurs pour construire l'IA qui apprend de ces données."
+            : locale === "es"
+            ? "Llevamos diagnosticando fallas de equipos de oído desde 2004. Lo convertimos en software. Nadie más tiene 20 años de datos de campo Y el equipo de ingeniería para construir la IA que aprende de ellos."
+            : "We've been diagnosing equipment failures by ear since 2004. We turned that into software. Nobody else has 20 years of field data AND the engineering team to build the AI that learns from it."}
         </TextReveal>
         </BlurFade>
         <p
@@ -588,7 +640,11 @@ export default function PMClient() {
             marginTop: 12,
           }}
         >
-          Other vendors sell software. We sold consulting first — to Westinghouse, Holcim, PDVSA — before we ever wrote a line of ML code. That difference is in every model we deploy.
+          {locale === "fr"
+            ? "D'autres fournisseurs vendent des logiciels. Nous, nous vendions du conseil en premier — à Westinghouse, Holcim, PDVSA — avant d'écrire la moindre ligne de code ML. Cette différence est présente dans chaque modèle que nous déployons."
+            : locale === "es"
+            ? "Otros proveedores venden software. Nosotros vendíamos consultoría primero — a Westinghouse, Holcim, PDVSA — antes de escribir una sola línea de código ML. Esa diferencia está en cada modelo que desplegamos."
+            : "Other vendors sell software. We sold consulting first — to Westinghouse, Holcim, PDVSA — before we ever wrote a line of ML code. That difference is in every model we deploy."}
         </p>
       </section>
 
@@ -607,7 +663,7 @@ export default function PMClient() {
               letterSpacing: "0.12em", textTransform: "uppercase",
               color: "rgba(255,255,255,0.3)", marginBottom: 20,
             }}>
-              Part of Something Bigger
+              {locale === "fr" ? "Partie d'un Tout Plus Grand" : locale === "es" ? "Parte de Algo Mayor" : "Part of Something Bigger"}
             </p>
           </BlurFade>
           <BlurFade delay={0.2} as="h2">
@@ -616,21 +672,61 @@ export default function PMClient() {
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)", color: "#fff", fontWeight: 400,
               lineHeight: 1.3, maxWidth: 700, marginBottom: 24,
             }}>
-              The data your sensors collect doesn't have to stop at a CSV.
+              {locale === "fr"
+                ? "Les données collectées par vos capteurs n'ont pas à s'arrêter à un fichier CSV."
+                : locale === "es"
+                ? "Los datos que recopilan sus sensores no tienen por qué quedarse en un CSV."
+                : "The data your sensors collect doesn't have to stop at a CSV."}
             </h2>
           </BlurFade>
           <p style={{
             fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 16,
             color: "rgba(255,255,255,0.55)", lineHeight: 1.7, maxWidth: 640, marginBottom: 40,
           }}>
-            Most PM providers hand you a report. We can build the custom software that turns your vibration data into automated decisions, or deploy AI models that predict failures before your analysts spot the pattern.
+            {locale === "fr"
+              ? "La plupart des fournisseurs de MP vous remettent un rapport. Nous pouvons construire le logiciel sur mesure qui transforme vos données de vibration en décisions automatisées, ou déployer des modèles d'IA qui prédisent les pannes avant que vos analystes ne repèrent la tendance."
+              : locale === "es"
+              ? "La mayoría de los proveedores de MP le entregan un informe. Nosotros podemos construir el software personalizado que convierte sus datos de vibración en decisiones automatizadas, o desplegar modelos de IA que predicen fallas antes de que sus analistas detecten el patrón."
+              : "Most PM providers hand you a report. We can build the custom software that turns your vibration data into automated decisions, or deploy AI models that predict failures before your analysts spot the pattern."}
           </p>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
-              { name: "Software Development", desc: "Custom dashboards and enterprise platforms that consume your sensor data in real time.", href: "/divisions/software-development" },
-              { name: "Intelligent Construction", desc: "Predictive maintenance programs for building systems — HVAC, elevators, and electrical infrastructure.", href: "/divisions/intelligent-construction" },
-              { name: "Industrial Manufacturing", desc: "The instruments that collect the vibration and alignment data your program runs on.", href: "/divisions/industrial-manufacturing" },
-              { name: "AI Consulting", desc: "ML models trained on your historical failure data to push detection further ahead of the curve.", href: "/divisions/ai-consulting" },
+              {
+                name: locale === "fr" ? "Développement Logiciel" : locale === "es" ? "Desarrollo de Software" : "Software Development",
+                desc: locale === "fr"
+                  ? "Tableaux de bord personnalisés et plateformes d'entreprise qui consomment vos données de capteurs en temps réel."
+                  : locale === "es"
+                  ? "Paneles personalizados y plataformas empresariales que consumen sus datos de sensores en tiempo real."
+                  : "Custom dashboards and enterprise platforms that consume your sensor data in real time.",
+                href: "/divisions/software-development",
+              },
+              {
+                name: locale === "fr" ? "Construction Intelligente" : locale === "es" ? "Construcción Inteligente" : "Intelligent Construction",
+                desc: locale === "fr"
+                  ? "Programmes de maintenance prédictive pour les systèmes de bâtiment — CVC, ascenseurs et infrastructure électrique."
+                  : locale === "es"
+                  ? "Programas de mantenimiento predictivo para sistemas de edificios — climatización, ascensores e infraestructura eléctrica."
+                  : "Predictive maintenance programs for building systems — HVAC, elevators, and electrical infrastructure.",
+                href: "/divisions/intelligent-construction",
+              },
+              {
+                name: locale === "fr" ? "Fabrication Industrielle" : locale === "es" ? "Manufactura Industrial" : "Industrial Manufacturing",
+                desc: locale === "fr"
+                  ? "Les instruments qui collectent les données de vibration et d'alignement sur lesquelles repose votre programme."
+                  : locale === "es"
+                  ? "Los instrumentos que recopilan los datos de vibración y alineación en los que se basa su programa."
+                  : "The instruments that collect the vibration and alignment data your program runs on.",
+                href: "/divisions/industrial-manufacturing",
+              },
+              {
+                name: locale === "fr" ? "Conseil en IA" : locale === "es" ? "Consultoría de IA" : "AI Consulting",
+                desc: locale === "fr"
+                  ? "Modèles ML entraînés sur vos données historiques de défaillance pour repousser la détection encore plus tôt."
+                  : locale === "es"
+                  ? "Modelos de ML entrenados con sus datos históricos de fallas para adelantar aún más la detección."
+                  : "ML models trained on your historical failure data to push detection further ahead of the curve.",
+                href: "/divisions/ai-consulting",
+              },
             ].map((d, i) => (
               <motion.a key={d.name} href={d.href}
                 initial={{ opacity: 0, y: 20 }}
@@ -669,7 +765,7 @@ export default function PMClient() {
               marginBottom: 16,
             }}
           >
-            What You Get
+            {locale === "fr" ? "Ce que Vous Obtenez" : locale === "es" ? "Lo que Usted Obtiene" : "What You Get"}
           </p>
           <TextReveal
             as="h2"
@@ -683,7 +779,7 @@ export default function PMClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            Diagnostics That Drive Decisions
+            {locale === "fr" ? "Des Diagnostics qui Orientent les Décisions" : locale === "es" ? "Diagnósticos que Impulsan Decisiones" : "Diagnostics That Drive Decisions"}
           </TextReveal>
         </div>
         <StaggerGrid columns={2} gap={20}>
@@ -711,7 +807,7 @@ export default function PMClient() {
               paddingBottom: 24,
             }}
           >
-            Results — Not Promises
+            {locale === "fr" ? "Résultats — Pas des Promesses" : locale === "es" ? "Resultados — No Promesas" : "Results — Not Promises"}
           </p>
         </div>
         <MetricBar metrics={displayMetrics} />
@@ -773,7 +869,11 @@ export default function PMClient() {
             maxWidth: 640,
           }}
         >
-          Your next failure is already in the data.
+          {locale === "fr"
+            ? "Votre prochaine panne est déjà dans les données."
+            : locale === "es"
+            ? "Su próxima falla ya está en los datos."
+            : "Your next failure is already in the data."}
         </TextReveal>
         </BlurFade>
         <p
@@ -786,12 +886,15 @@ export default function PMClient() {
             lineHeight: 1.7,
           }}
         >
-          Our engineers will assess your assets, identify your highest-risk equipment,
-          and design a program that starts returning value in under 90 days.
+          {locale === "fr"
+            ? "Nos ingénieurs évalueront vos actifs, identifieront vos équipements les plus à risque et concevront un programme qui commence à générer de la valeur en moins de 90 jours."
+            : locale === "es"
+            ? "Nuestros ingenieros evaluarán sus activos, identificarán sus equipos de mayor riesgo y diseñarán un programa que comience a generar valor en menos de 90 días."
+            : "Our engineers will assess your assets, identify your highest-risk equipment, and design a program that starts returning value in under 90 days."}
         </p>
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", alignItems: "center" }}>
           <MagneticButton as="a" href="/contact">
-            Predict the Unpredictable
+            {locale === "fr" ? "Prédire l'Imprévisible" : locale === "es" ? "Prediga lo Impredecible" : "Predict the Unpredictable"}
           </MagneticButton>
           <a
             href="/contact"
@@ -812,7 +915,7 @@ export default function PMClient() {
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)"; e.currentTarget.style.color = "rgba(255,255,255,0.7)"; e.currentTarget.style.background = "transparent"; }}
           >
-            Start Free Trial
+            {locale === "fr" ? "Évaluation Gratuite" : locale === "es" ? "Evaluación Gratuita" : "Start Free Trial"}
           </a>
         </div>
       </section>

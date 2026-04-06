@@ -364,36 +364,60 @@ export default function ConstructionClient() {
 
   const capabilities: CapItem[] = [
     {
-      title: "Smart Systems That Outlast the Installer",
-      desc: "Integrated BAS platforms connecting HVAC, lighting, access control, and energy — documented and maintained by the same team that built them. No proprietary lock-in.",
+      title: locale === "fr" ? "Systèmes Intelligents qui Survivent à l'Installateur" : locale === "es" ? "Sistemas Inteligentes que Sobreviven al Instalador" : "Smart Systems That Outlast the Installer",
+      desc: locale === "fr"
+        ? "Plateformes BAS intégrées connectant CVC, éclairage, contrôle d'accès et énergie — documentées et maintenues par la même équipe qui les a construites. Aucun verrouillage propriétaire."
+        : locale === "es"
+        ? "Plataformas BAS integradas que conectan climatización, iluminación, control de acceso y energía — documentadas y mantenidas por el mismo equipo que las construyó. Sin dependencia de proveedores propietarios."
+        : "Integrated BAS platforms connecting HVAC, lighting, access control, and energy — documented and maintained by the same team that built them. No proprietary lock-in.",
     },
     {
-      title: "BIM That Guides Construction, Not Just Design",
-      desc: "BIM workflows from design through construction and facility management, with clash detection and 4D scheduling. The model doesn't sit in a folder — it runs the project.",
+      title: locale === "fr" ? "BIM qui Guide la Construction, pas Seulement la Conception" : locale === "es" ? "BIM que Guía la Construcción, no Solo el Diseño" : "BIM That Guides Construction, Not Just Design",
+      desc: locale === "fr"
+        ? "Flux de travail BIM de la conception à la gestion des installations, avec détection de conflits et planification 4D. Le modèle ne reste pas dans un dossier — il pilote le projet."
+        : locale === "es"
+        ? "Flujos de trabajo BIM desde el diseño hasta la gestión de instalaciones, con detección de interferencias y programación 4D. El modelo no se queda en una carpeta — dirige el proyecto."
+        : "BIM workflows from design through construction and facility management, with clash detection and 4D scheduling. The model doesn't sit in a folder — it runs the project.",
     },
     {
-      title: "IoT Networks That Actually Report",
-      desc: "Distributed sensor arrays for structural health, environmental quality, occupancy, and predictive maintenance. Real-time dashboards your team can act on — not alerts they ignore.",
+      title: locale === "fr" ? "Réseaux IoT qui Rapportent Vraiment" : locale === "es" ? "Redes IoT que Realmente Reportan" : "IoT Networks That Actually Report",
+      desc: locale === "fr"
+        ? "Réseaux de capteurs distribués pour la santé structurelle, la qualité environnementale, l'occupation et la maintenance prédictive. Tableaux de bord en temps réel sur lesquels votre équipe peut agir — pas des alertes ignorées."
+        : locale === "es"
+        ? "Redes de sensores distribuidos para salud estructural, calidad ambiental, ocupación y mantenimiento predictivo. Paneles en tiempo real sobre los que su equipo puede actuar — no alertas que ignoran."
+        : "Distributed sensor arrays for structural health, environmental quality, occupancy, and predictive maintenance. Real-time dashboards your team can act on — not alerts they ignore.",
     },
     {
-      title: "Energy Cuts That Show Up on the Bill",
-      desc: "AI-driven energy management that reduces consumption 20–40% through demand forecasting and dynamic load balancing. We guarantee the reduction — not just the system.",
+      title: locale === "fr" ? "Économies d'Énergie Visibles sur la Facture" : locale === "es" ? "Ahorros de Energía que Aparecen en la Factura" : "Energy Cuts That Show Up on the Bill",
+      desc: locale === "fr"
+        ? "Gestion énergétique pilotée par l'IA qui réduit la consommation de 20 à 40% grâce à la prévision de la demande et l'équilibrage de charge dynamique. Nous garantissons la réduction — pas seulement le système."
+        : locale === "es"
+        ? "Gestión energética impulsada por IA que reduce el consumo en un 20–40% mediante pronóstico de demanda y balanceo dinámico de carga. Garantizamos la reducción — no solo el sistema."
+        : "AI-driven energy management that reduces consumption 20–40% through demand forecasting and dynamic load balancing. We guarantee the reduction — not just the system.",
     },
     {
-      title: "Safety That Doesn't Rely on Compliance",
-      desc: "Computer vision and wearable systems detecting PPE violations, unsafe proximity, and hazardous conditions in real time. Before the incident, not after the report.",
+      title: locale === "fr" ? "Sécurité qui ne Repose pas sur la Conformité" : locale === "es" ? "Seguridad que no Depende del Cumplimiento Normativo" : "Safety That Doesn't Rely on Compliance",
+      desc: locale === "fr"
+        ? "Vision par ordinateur et systèmes portables détectant les violations d'EPI, les proximités dangereuses et les conditions hazardeuses en temps réel. Avant l'incident, pas après le rapport."
+        : locale === "es"
+        ? "Visión artificial y sistemas portátiles que detectan violaciones de EPP, proximidad peligrosa y condiciones de riesgo en tiempo real. Antes del incidente, no después del informe."
+        : "Computer vision and wearable systems detecting PPE violations, unsafe proximity, and hazardous conditions in real time. Before the incident, not after the report.",
     },
     {
-      title: "Quality Control at Every Stage",
-      desc: "Automated inspection with photogrammetry, drone surveys, and AI defect detection against BIM specs. Defects caught on-site cost 1/100th of defects caught post-occupancy.",
+      title: locale === "fr" ? "Contrôle Qualité à Chaque Étape" : locale === "es" ? "Control de Calidad en Cada Etapa" : "Quality Control at Every Stage",
+      desc: locale === "fr"
+        ? "Inspection automatisée avec photogrammétrie, relevés par drone et détection de défauts IA selon les spécifications BIM. Les défauts détectés sur site coûtent 1/100e des défauts détectés après occupation."
+        : locale === "es"
+        ? "Inspección automatizada con fotogrametría, levantamientos con drones y detección de defectos por IA según especificaciones BIM. Los defectos detectados en obra cuestan 1/100 de los detectados post-ocupación."
+        : "Automated inspection with photogrammetry, drone surveys, and AI defect detection against BIM specs. Defects caught on-site cost 1/100th of defects caught post-occupancy.",
     },
   ];
 
   const stats: StatItem[] = [
-    { value: 150, suffix: "+", label: "Projects Completed" },
-    { value: 35, suffix: "%", label: "Energy Reduced" },
-    { value: 98, suffix: "%", label: "On-Time Delivery" },
-    { value: 2, suffix: "M+", label: "Sqm Instrumented" },
+    { value: 150, suffix: "+", label: locale === "fr" ? "Projets Réalisés" : locale === "es" ? "Proyectos Completados" : "Projects Completed" },
+    { value: 35, suffix: "%", label: locale === "fr" ? "Énergie Réduite" : locale === "es" ? "Energía Reducida" : "Energy Reduced" },
+    { value: 98, suffix: "%", label: locale === "fr" ? "Livraison à Temps" : locale === "es" ? "Entrega a Tiempo" : "On-Time Delivery" },
+    { value: 2, suffix: "M+", label: locale === "fr" ? "m² Instrumentés" : locale === "es" ? "m² Instrumentados" : "Sqm Instrumented" },
   ];
 
   return (
@@ -401,7 +425,13 @@ export default function ConstructionClient() {
       {/* Hero */}
       <PageHero
         title={division.name}
-        subtitle="Your building was designed in 2005. Energy costs have tripled. Your BMS still can't talk to your HVAC."
+        subtitle={
+          locale === "fr"
+            ? "Votre bâtiment a été conçu en 2005. Les coûts énergétiques ont triplé. Votre GTC ne communique toujours pas avec votre CVC."
+            : locale === "es"
+            ? "Su edificio fue diseñado en 2005. Los costos de energía se han triplicado. Su BMS todavía no puede comunicarse con su climatización."
+            : "Your building was designed in 2005. Energy costs have tripled. Your BMS still can't talk to your HVAC."
+        }
         pill="03 — Division"
         showMesh
       />
@@ -411,7 +441,11 @@ export default function ConstructionClient() {
       {/* Velocity ticker */}
       <div style={{ padding: "24px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
         <ScrollVelocityText baseVelocity={-0.2}>
-          Smart Building — BIM Integration — IoT Sensors — Energy Optimization — Safety Monitoring — Quality Control
+          {locale === "fr"
+            ? "Bâtiment Intelligent — Intégration BIM — Capteurs IoT — Optimisation Énergétique — Surveillance Sécurité — Contrôle Qualité"
+            : locale === "es"
+            ? "Edificio Inteligente — Integración BIM — Sensores IoT — Optimización Energética — Monitoreo de Seguridad — Control de Calidad"
+            : "Smart Building — BIM Integration — IoT Sensors — Energy Optimization — Safety Monitoring — Quality Control"}
         </ScrollVelocityText>
       </div>
 
@@ -451,7 +485,7 @@ export default function ConstructionClient() {
                 marginBottom: 20,
               }}
             >
-              The Problem
+              {locale === "fr" ? "Le Problème" : locale === "es" ? "El Problema" : "The Problem"}
             </p>
             <BlurFade delay={0.1} blur="10px" duration={0.7} as="div">
             <h2
@@ -466,7 +500,11 @@ export default function ConstructionClient() {
                 marginBottom: 24,
               }}
             >
-              Every contractor promises "smart buildings." Then they leave and nobody can update the firmware.
+              {locale === "fr"
+                ? "Chaque entrepreneur promet des \"bâtiments intelligents\". Puis ils partent et personne ne peut mettre à jour le firmware."
+                : locale === "es"
+                ? "Cada contratista promete \"edificios inteligentes\". Luego se van y nadie puede actualizar el firmware."
+                : "Every contractor promises \"smart buildings.\" Then they leave and nobody can update the firmware."}
             </h2>
             </BlurFade>
             <p
@@ -479,9 +517,11 @@ export default function ConstructionClient() {
                 marginBottom: 20,
               }}
             >
-              You bought sensors from one vendor, a dashboard from another, and a BMS from a third. They
-              don't talk to each other. Your energy manager exports CSV files at the end of every month
-              and nobody looks at them.
+              {locale === "fr"
+                ? "Vous avez acheté des capteurs d'un fournisseur, un tableau de bord d'un autre et un GTC d'un troisième. Ils ne communiquent pas entre eux. Votre gestionnaire d'énergie exporte des fichiers CSV à la fin de chaque mois et personne ne les regarde."
+                : locale === "es"
+                ? "Compró sensores de un proveedor, un panel de otro y un BMS de un tercero. No se comunican entre sí. Su gerente de energía exporta archivos CSV al final de cada mes y nadie los mira."
+                : "You bought sensors from one vendor, a dashboard from another, and a BMS from a third. They don't talk to each other. Your energy manager exports CSV files at the end of every month and nobody looks at them."}
             </p>
             <p
               style={{
@@ -492,16 +532,27 @@ export default function ConstructionClient() {
                 lineHeight: 1.75,
               }}
             >
-              When the HVAC fails at 2 AM, you get a call — not an alert. When energy costs spike,
-              you review invoices — not real-time data. Your building has the hardware for intelligence.
-              It just doesn't have the software to act on it.
+              {locale === "fr"
+                ? "Quand la climatisation tombe en panne à 2h du matin, vous recevez un appel — pas une alerte. Quand les coûts d'énergie explosent, vous examinez les factures — pas les données en temps réel. Votre bâtiment a le matériel pour être intelligent. Il lui manque juste le logiciel pour agir."
+                : locale === "es"
+                ? "Cuando la climatización falla a las 2 AM, recibe una llamada — no una alerta. Cuando los costos de energía se disparan, revisa facturas — no datos en tiempo real. Su edificio tiene el hardware para ser inteligente. Solo le falta el software para actuar."
+                : "When the HVAC fails at 2 AM, you get a call — not an alert. When energy costs spike, you review invoices — not real-time data. Your building has the hardware for intelligence. It just doesn't have the software to act on it."}
             </p>
           </motion.div>
           <div>
             {[
-              { stat: "30%", label: "of energy wasted in commercial buildings with legacy BMS" },
-              { stat: "5 vendors", label: "average number of contractors in a 'smart' building project" },
-              { stat: "$2.4M", label: "average cost of a post-occupancy defect per commercial project" },
+              {
+                stat: "30%",
+                label: locale === "fr" ? "d'énergie gaspillée dans les bâtiments commerciaux avec un ancien GTC" : locale === "es" ? "de energía desperdiciada en edificios comerciales con BMS obsoleto" : "of energy wasted in commercial buildings with legacy BMS",
+              },
+              {
+                stat: "5 vendors",
+                label: locale === "fr" ? "nombre moyen d'entrepreneurs dans un projet de bâtiment 'intelligent'" : locale === "es" ? "número promedio de contratistas en un proyecto de edificio 'inteligente'" : "average number of contractors in a 'smart' building project",
+              },
+              {
+                stat: "$2.4M",
+                label: locale === "fr" ? "coût moyen d'un défaut post-occupation par projet commercial" : locale === "es" ? "costo promedio de un defecto post-ocupación por proyecto comercial" : "average cost of a post-occupancy defect per commercial project",
+              },
             ].map(({ stat, label }) => (
               <div
                 key={stat}
@@ -564,7 +615,7 @@ export default function ConstructionClient() {
             color: "rgba(255,255,255,0.25)",
           }}
         >
-          Why Only Droz
+          {locale === "fr" ? "Pourquoi Uniquement Droz" : locale === "es" ? "Por Qué Solo Droz" : "Why Only Droz"}
         </p>
         <BlurFade delay={0.2} blur="10px" duration={0.7} as="div">
         <TextReveal
@@ -581,7 +632,11 @@ export default function ConstructionClient() {
             lineHeight: 1.2,
           }}
         >
-          We don't just install smart systems. We understand building science — thermal bridging, façade performance, energy modeling. The technology is the easy part. Knowing where to put it is what takes experience.
+          {locale === "fr"
+            ? "Nous n'installons pas seulement des systèmes intelligents. Nous comprenons la physique du bâtiment — ponts thermiques, performance de façade, modélisation énergétique. La technologie est la partie facile. Savoir où la mettre, c'est ce qui demande de l'expérience."
+            : locale === "es"
+            ? "No solo instalamos sistemas inteligentes. Entendemos la ciencia del edificio — puentes térmicos, rendimiento de fachada, modelado energético. La tecnología es la parte fácil. Saber dónde colocarla es lo que requiere experiencia."
+            : "We don't just install smart systems. We understand building science — thermal bridging, façade performance, energy modeling. The technology is the easy part. Knowing where to put it is what takes experience."}
         </TextReveal>
         </BlurFade>
         <p
@@ -595,8 +650,11 @@ export default function ConstructionClient() {
             marginTop: 8,
           }}
         >
-          When something doesn't work at 2 AM, there's one number to call. A team that understands
-          the building, not just the product they sold you.
+          {locale === "fr"
+            ? "Quand quelque chose ne fonctionne pas à 2h du matin, il y a un seul numéro à appeler. Une équipe qui comprend le bâtiment, pas seulement le produit qu'elle vous a vendu."
+            : locale === "es"
+            ? "Cuando algo no funciona a las 2 AM, hay un solo número al que llamar. Un equipo que entiende el edificio, no solo el producto que le vendió."
+            : "When something doesn't work at 2 AM, there's one number to call. A team that understands the building, not just the product they sold you."}
         </p>
       </section>
 
@@ -615,7 +673,7 @@ export default function ConstructionClient() {
               letterSpacing: "0.12em", textTransform: "uppercase",
               color: "rgba(255,255,255,0.3)", marginBottom: 20,
             }}>
-              Part of Something Bigger
+              {locale === "fr" ? "Partie d'un Tout Plus Grand" : locale === "es" ? "Parte de Algo Mayor" : "Part of Something Bigger"}
             </p>
           </BlurFade>
           <BlurFade delay={0.2} as="h2">
@@ -624,21 +682,45 @@ export default function ConstructionClient() {
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)", color: "#fff", fontWeight: 400,
               lineHeight: 1.3, maxWidth: 700, marginBottom: 24,
             }}>
-              A smart building is only as smart as its ecosystem.
+              {locale === "fr"
+                ? "Un bâtiment intelligent n'est intelligent que comme son écosystème."
+                : locale === "es"
+                ? "Un edificio inteligente es tan inteligente como su ecosistema."
+                : "A smart building is only as smart as its ecosystem."}
             </h2>
           </BlurFade>
           <p style={{
             fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 16,
             color: "rgba(255,255,255,0.55)", lineHeight: 1.7, maxWidth: 640, marginBottom: 40,
           }}>
-            The sensors in your walls generate data. We can build the software to analyze it, manufacture the instruments to extend it, and deploy the AI to optimize it. But only if you need it.
+            {locale === "fr"
+              ? "Les capteurs dans vos murs génèrent des données. Nous pouvons construire le logiciel pour les analyser, fabriquer les instruments pour les étendre et déployer l'IA pour les optimiser. Mais seulement si vous en avez besoin."
+              : locale === "es"
+              ? "Los sensores en sus paredes generan datos. Podemos construir el software para analizarlos, fabricar los instrumentos para extenderlos y desplegar la IA para optimizarlos. Pero solo si lo necesita."
+              : "The sensors in your walls generate data. We can build the software to analyze it, manufacture the instruments to extend it, and deploy the AI to optimize it. But only if you need it."}
           </p>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
-              { name: "Predictive Maintenance", desc: "Continuous monitoring programs for your building's mechanical and electrical systems — before the 2 AM call.", href: "/divisions/predictive-maintenance" },
-              { name: "Software Development", desc: "Custom platforms that read your building data and turn it into decisions your facilities team can act on.", href: "/divisions/software-development" },
-              { name: "Industrial Manufacturing", desc: "Precision sensors and instruments purpose-built for structural and environmental monitoring.", href: "/divisions/industrial-manufacturing" },
-              { name: "AI Consulting", desc: "Demand forecasting and anomaly detection models trained on your building's actual energy and occupancy patterns.", href: "/divisions/ai-consulting" },
+              {
+                name: locale === "fr" ? "Maintenance Prédictive" : locale === "es" ? "Mantenimiento Predictivo" : "Predictive Maintenance",
+                desc: locale === "fr" ? "Programmes de surveillance continue pour les systèmes mécaniques et électriques de votre bâtiment — avant l'appel à 2h du matin." : locale === "es" ? "Programas de monitoreo continuo para los sistemas mecánicos y eléctricos de su edificio — antes de la llamada a las 2 AM." : "Continuous monitoring programs for your building's mechanical and electrical systems — before the 2 AM call.",
+                href: "/divisions/predictive-maintenance",
+              },
+              {
+                name: locale === "fr" ? "Développement Logiciel" : locale === "es" ? "Desarrollo de Software" : "Software Development",
+                desc: locale === "fr" ? "Plateformes personnalisées qui lisent les données de votre bâtiment et les transforment en décisions sur lesquelles votre équipe peut agir." : locale === "es" ? "Plataformas personalizadas que leen los datos de su edificio y los convierten en decisiones sobre las que su equipo de instalaciones puede actuar." : "Custom platforms that read your building data and turn it into decisions your facilities team can act on.",
+                href: "/divisions/software-development",
+              },
+              {
+                name: locale === "fr" ? "Fabrication Industrielle" : locale === "es" ? "Manufactura Industrial" : "Industrial Manufacturing",
+                desc: locale === "fr" ? "Capteurs et instruments de précision conçus spécifiquement pour la surveillance structurelle et environnementale." : locale === "es" ? "Sensores e instrumentos de precisión construidos específicamente para monitoreo estructural y ambiental." : "Precision sensors and instruments purpose-built for structural and environmental monitoring.",
+                href: "/divisions/industrial-manufacturing",
+              },
+              {
+                name: locale === "fr" ? "Conseil en IA" : locale === "es" ? "Consultoría de IA" : "AI Consulting",
+                desc: locale === "fr" ? "Modèles de prévision de la demande et de détection d'anomalies entraînés sur les patterns réels d'énergie et d'occupation de votre bâtiment." : locale === "es" ? "Modelos de pronóstico de demanda y detección de anomalías entrenados con los patrones reales de energía y ocupación de su edificio." : "Demand forecasting and anomaly detection models trained on your building's actual energy and occupancy patterns.",
+                href: "/divisions/ai-consulting",
+              },
             ].map((d, i) => (
               <motion.a key={d.name} href={d.href}
                 initial={{ opacity: 0, y: 20 }}
@@ -677,7 +759,7 @@ export default function ConstructionClient() {
               marginBottom: 16,
             }}
           >
-            What We Deliver
+            {locale === "fr" ? "Ce que Nous Livrons" : locale === "es" ? "Lo que Entregamos" : "What We Deliver"}
           </p>
           <TextReveal
             as="h2"
@@ -691,7 +773,7 @@ export default function ConstructionClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            Buildings That Get Smarter Over Time
+            {locale === "fr" ? "Des Bâtiments qui Deviennent Plus Intelligents avec le Temps" : locale === "es" ? "Edificios que se Vuelven más Inteligentes con el Tiempo" : "Buildings That Get Smarter Over Time"}
           </TextReveal>
         </div>
         <StaggerGrid columns={3} gap={20}>
@@ -724,7 +806,7 @@ export default function ConstructionClient() {
               marginBottom: 16,
             }}
           >
-            Technical Documentation
+            {locale === "fr" ? "Documentation Technique" : locale === "es" ? "Documentación Técnica" : "Technical Documentation"}
           </p>
           <TextReveal
             as="h2"
@@ -738,7 +820,7 @@ export default function ConstructionClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            Every System, Documented to Last
+            {locale === "fr" ? "Chaque Système, Documenté pour Durer" : locale === "es" ? "Cada Sistema, Documentado para Durar" : "Every System, Documented to Last"}
           </TextReveal>
           <p
             style={{
@@ -751,8 +833,11 @@ export default function ConstructionClient() {
               lineHeight: 1.7,
             }}
           >
-            We hand over the firmware, the schemas, and the runbooks. Your facility team can
-            update, extend, and maintain — without calling us first.
+            {locale === "fr"
+              ? "Nous remettons le firmware, les schémas et les runbooks. Votre équipe de facility management peut mettre à jour, étendre et maintenir — sans nous appeler d'abord."
+              : locale === "es"
+              ? "Entregamos el firmware, los esquemas y los runbooks. Su equipo de instalaciones puede actualizar, extender y mantener — sin llamarnos primero."
+              : "We hand over the firmware, the schemas, and the runbooks. Your facility team can update, extend, and maintain — without calling us first."}
           </p>
         </div>
         <BlueprintBuilding />
@@ -797,7 +882,7 @@ export default function ConstructionClient() {
               marginBottom: 20,
             }}
           >
-            Construction in Action
+            {locale === "fr" ? "Construction en Action" : locale === "es" ? "Construcción en Acción" : "Construction in Action"}
           </p>
           <TextReveal
             as="h2"
@@ -814,7 +899,7 @@ export default function ConstructionClient() {
               lineHeight: 1.2,
             }}
           >
-            Precision engineering from the ground up.
+            {locale === "fr" ? "Ingénierie de précision depuis les fondations." : locale === "es" ? "Ingeniería de precisión desde los cimientos." : "Precision engineering from the ground up."}
           </TextReveal>
           <p
             style={{
@@ -827,8 +912,11 @@ export default function ConstructionClient() {
               lineHeight: 1.7,
             }}
           >
-            Real-time BIM clash detection, 4D scheduling, and AI-guided quality inspection
-            active from groundbreak through handover.
+            {locale === "fr"
+              ? "Détection de conflits BIM en temps réel, planification 4D et inspection qualité guidée par IA — actifs du premier coup de pelle jusqu'à la remise des clés."
+              : locale === "es"
+              ? "Detección de interferencias BIM en tiempo real, programación 4D e inspección de calidad guiada por IA — activos desde el inicio de obra hasta la entrega."
+              : "Real-time BIM clash detection, 4D scheduling, and AI-guided quality inspection active from groundbreak through handover."}
           </p>
         </div>
       </section>
@@ -849,7 +937,7 @@ export default function ConstructionClient() {
               marginBottom: 24,
             }}
           >
-            Results — Not Renders
+            {locale === "fr" ? "Résultats — Pas des Rendus" : locale === "es" ? "Resultados — No Renders" : "Results — Not Renders"}
           </p>
         </div>
         <StatsRow stats={stats} />
@@ -891,7 +979,11 @@ export default function ConstructionClient() {
             maxWidth: 640,
           }}
         >
-          Your building is already generating data. You just can't read it yet.
+          {locale === "fr"
+            ? "Votre bâtiment génère déjà des données. Vous ne pouvez tout simplement pas encore les lire."
+            : locale === "es"
+            ? "Su edificio ya está generando datos. Simplemente todavía no puede leerlos."
+            : "Your building is already generating data. You just can't read it yet."}
         </TextReveal>
         </BlurFade>
         <p
@@ -904,15 +996,18 @@ export default function ConstructionClient() {
             lineHeight: 1.7,
           }}
         >
-          One integration audit. We'll show you exactly what your existing systems are missing
-          and what 35% energy reduction looks like for your specific building.
+          {locale === "fr"
+            ? "Un audit d'intégration. Nous vous montrerons exactement ce que vos systèmes actuels manquent et à quoi ressemble une réduction d'énergie de 35% pour votre bâtiment spécifique."
+            : locale === "es"
+            ? "Una auditoría de integración. Le mostraremos exactamente qué les falta a sus sistemas actuales y cómo se ve una reducción del 35% en energía para su edificio específico."
+            : "One integration audit. We'll show you exactly what your existing systems are missing and what 35% energy reduction looks like for your specific building."}
         </p>
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
           <MagneticButton as="a" href="/contact">
-            Build Smarter
+            {locale === "fr" ? "Construisez Plus Intelligent" : locale === "es" ? "Construya Más Inteligente" : "Build Smarter"}
           </MagneticButton>
           <MagneticButton as="a" href="/contact">
-            Start Free Trial
+            {locale === "fr" ? "Essai Gratuit" : locale === "es" ? "Prueba Gratuita" : "Start Free Trial"}
           </MagneticButton>
         </div>
       </section>

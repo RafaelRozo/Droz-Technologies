@@ -361,69 +361,113 @@ export default function SoftwareClient() {
   const processSteps: ProcessStep[] = [
     {
       number: "01",
-      title: "Discovery — We Map the Real Problem",
-      desc: "Not a Zoom call with your IT manager. We talk to the people who actually use the system — finance, ops, field teams — and map every friction point. We define success criteria in business outcomes, not feature lists.",
+      title: locale === "fr" ? "Découverte — Nous Cartographions le Vrai Problème" : locale === "es" ? "Descubrimiento — Mapeamos el Problema Real" : "Discovery — We Map the Real Problem",
+      desc: locale === "fr"
+        ? "Pas un appel Zoom avec votre responsable informatique. Nous parlons aux personnes qui utilisent réellement le système — finance, opérations, équipes terrain — et nous cartographions chaque point de friction. Nous définissons les critères de succès en résultats business, pas en listes de fonctionnalités."
+        : locale === "es"
+        ? "No una llamada con su gerente de TI. Hablamos con las personas que realmente usan el sistema — finanzas, operaciones, equipos de campo — y mapeamos cada punto de fricción. Definimos los criterios de éxito en resultados de negocio, no en listas de funcionalidades."
+        : "Not a Zoom call with your IT manager. We talk to the people who actually use the system — finance, ops, field teams — and map every friction point. We define success criteria in business outcomes, not feature lists.",
     },
     {
       number: "02",
-      title: "Architecture — Built for Your Stack",
-      desc: "System architecture designed around your existing infrastructure. No rip-and-replace. We document every decision so your team owns it long after we're done.",
+      title: locale === "fr" ? "Architecture — Conçue pour Votre Infrastructure" : locale === "es" ? "Arquitectura — Diseñada para Su Stack" : "Architecture — Built for Your Stack",
+      desc: locale === "fr"
+        ? "Architecture système conçue autour de votre infrastructure existante. Aucun remplacement forcé. Nous documentons chaque décision pour que votre équipe en soit propriétaire bien après notre départ."
+        : locale === "es"
+        ? "Arquitectura de sistema diseñada en torno a su infraestructura existente. Sin reemplazos forzados. Documentamos cada decisión para que su equipo la tenga bajo control mucho después de que terminemos."
+        : "System architecture designed around your existing infrastructure. No rip-and-replace. We document every decision so your team owns it long after we're done.",
     },
     {
       number: "03",
-      title: "Development — Shipped in Weeks",
-      desc: "Agile sprints with weekly deliverables your stakeholders can actually use. Clean, typed, tested code — not a 60-slide deck about what we're about to build.",
+      title: locale === "fr" ? "Développement — Livré en Semaines" : locale === "es" ? "Desarrollo — Entregado en Semanas" : "Development — Shipped in Weeks",
+      desc: locale === "fr"
+        ? "Sprints agiles avec des livrables hebdomadaires que vos parties prenantes peuvent réellement utiliser. Un code propre, typé et testé — pas un diaporama de 60 slides sur ce qu'on va construire."
+        : locale === "es"
+        ? "Sprints ágiles con entregables semanales que sus interesados pueden usar de verdad. Código limpio, tipado y probado — no una presentación de 60 diapositivas sobre lo que vamos a construir."
+        : "Agile sprints with weekly deliverables your stakeholders can actually use. Clean, typed, tested code — not a 60-slide deck about what we're about to build.",
     },
     {
       number: "04",
-      title: "Testing — Breaking It Before You Do",
-      desc: "Automated unit, integration, and E2E test suites. We simulate your worst production scenarios in staging so they don't happen live.",
+      title: locale === "fr" ? "Tests — On le Casse Avant Vous" : locale === "es" ? "Pruebas — Lo Rompemos Antes que Usted" : "Testing — Breaking It Before You Do",
+      desc: locale === "fr"
+        ? "Suites de tests automatisés unitaires, d'intégration et E2E. Nous simulons vos pires scénarios de production en staging pour qu'ils n'arrivent pas en direct."
+        : locale === "es"
+        ? "Suites de pruebas automatizadas unitarias, de integración y E2E. Simulamos sus peores escenarios de producción en staging para que no ocurran en vivo."
+        : "Automated unit, integration, and E2E test suites. We simulate your worst production scenarios in staging so they don't happen live.",
     },
     {
       number: "05",
-      title: "Deployment — Zero Excuses Uptime",
-      desc: "CI/CD pipelines, zero-downtime deployments, and 24/7 monitoring. We don't hand off and disappear. We stay until the SLA is bulletproof.",
+      title: locale === "fr" ? "Déploiement — Disponibilité Sans Excuses" : locale === "es" ? "Despliegue — Disponibilidad Sin Excusas" : "Deployment — Zero Excuses Uptime",
+      desc: locale === "fr"
+        ? "Pipelines CI/CD, déploiements sans interruption et surveillance 24h/24. Nous ne livrons pas et ne disparaissons pas. Nous restons jusqu'à ce que le SLA soit blindé."
+        : locale === "es"
+        ? "Pipelines CI/CD, despliegues sin tiempo de inactividad y monitoreo 24/7. No entregamos y desaparecemos. Nos quedamos hasta que el SLA sea a prueba de balas."
+        : "CI/CD pipelines, zero-downtime deployments, and 24/7 monitoring. We don't hand off and disappear. We stay until the SLA is bulletproof.",
     },
   ];
 
   const techItems: TechItem[] = [
     {
-      label: "Frontend That Stakeholders Actually Use",
-      desc: "Reactive UIs built for how your teams actually work — field reporting, executive dashboards, high-volume data entry. Not designed for a product demo.",
+      label: locale === "fr" ? "Frontend que Vos Équipes Utilisent Vraiment" : locale === "es" ? "Frontend que Sus Equipos Realmente Usan" : "Frontend That Stakeholders Actually Use",
+      desc: locale === "fr"
+        ? "Interfaces réactives conçues pour la façon dont vos équipes travaillent réellement — rapports terrain, tableaux de bord exécutifs, saisie de données à fort volume. Pas conçues pour une démo produit."
+        : locale === "es"
+        ? "Interfaces reactivas construidas para la forma en que sus equipos realmente trabajan — reportes de campo, paneles ejecutivos, ingreso masivo de datos. No diseñadas para una demo de producto."
+        : "Reactive UIs built for how your teams actually work — field reporting, executive dashboards, high-volume data entry. Not designed for a product demo.",
       tags: ["React", "Next.js", "TypeScript", "Tailwind"],
     },
     {
-      label: "Backend That Handles Your Load",
-      desc: "Scalable APIs and event-driven architectures tested against your actual data volume — not synthetic benchmarks. Government-grade security baked in from day one.",
+      label: locale === "fr" ? "Backend qui Gère Votre Charge" : locale === "es" ? "Backend que Soporta Su Carga" : "Backend That Handles Your Load",
+      desc: locale === "fr"
+        ? "API évolutives et architectures événementielles testées sur votre volume de données réel — pas des benchmarks synthétiques. Sécurité de niveau gouvernemental intégrée dès le premier jour."
+        : locale === "es"
+        ? "APIs escalables y arquitecturas orientadas a eventos probadas contra su volumen de datos real — no benchmarks sintéticos. Seguridad de grado gubernamental incorporada desde el primer día."
+        : "Scalable APIs and event-driven architectures tested against your actual data volume — not synthetic benchmarks. Government-grade security baked in from day one.",
       tags: ["Node.js", "Go", "PostgreSQL", "Redis"],
     },
     {
-      label: "Mobile That Works Offline",
-      desc: "Cross-platform apps with local sync for teams that can't always rely on connectivity. Your people get the data they need regardless of network conditions.",
+      label: locale === "fr" ? "Mobile qui Fonctionne Hors Ligne" : locale === "es" ? "Mobile que Funciona Sin Conexión" : "Mobile That Works Offline",
+      desc: locale === "fr"
+        ? "Applications multiplateformes avec synchronisation locale pour les équipes qui ne peuvent pas toujours compter sur la connectivité. Vos équipes accèdent aux données dont elles ont besoin, quelle que soit la connexion."
+        : locale === "es"
+        ? "Aplicaciones multiplataforma con sincronización local para equipos que no siempre pueden depender de la conectividad. Su personal obtiene los datos que necesita independientemente de las condiciones de red."
+        : "Cross-platform apps with local sync for teams that can't always rely on connectivity. Your people get the data they need regardless of network conditions.",
       tags: ["React Native", "Expo", "Swift", "Kotlin"],
     },
     {
-      label: "Cloud That Costs Less Over Time",
-      desc: "Multi-cloud infrastructure with auto-scaling and cost optimization baked in from day one. Not retrofitted after your first AWS bill.",
+      label: locale === "fr" ? "Cloud qui Coûte Moins avec le Temps" : locale === "es" ? "Nube que Cuesta Menos con el Tiempo" : "Cloud That Costs Less Over Time",
+      desc: locale === "fr"
+        ? "Infrastructure multi-cloud avec mise à l'échelle automatique et optimisation des coûts intégrés dès le premier jour. Pas retrofittée après votre première facture AWS."
+        : locale === "es"
+        ? "Infraestructura multi-nube con auto-escalado y optimización de costos incorporados desde el primer día. No añadida después de su primera factura de AWS."
+        : "Multi-cloud infrastructure with auto-scaling and cost optimization baked in from day one. Not retrofitted after your first AWS bill.",
       tags: ["AWS", "GCP", "Azure", "Terraform"],
     },
     {
-      label: "DevOps That Ships, Not Stalls",
-      desc: "Automated pipelines from commit to production with full observability. Your team merges. The platform handles the rest.",
+      label: locale === "fr" ? "DevOps qui Livre, pas qui Bloque" : locale === "es" ? "DevOps que Entrega, no que Frena" : "DevOps That Ships, Not Stalls",
+      desc: locale === "fr"
+        ? "Pipelines automatisés du commit à la production avec une observabilité complète. Votre équipe fait des merges. La plateforme gère le reste."
+        : locale === "es"
+        ? "Pipelines automatizados de commit a producción con observabilidad completa. Su equipo hace merges. La plataforma se encarga del resto."
+        : "Automated pipelines from commit to production with full observability. Your team merges. The platform handles the rest.",
       tags: ["Docker", "Kubernetes", "GitHub Actions", "Grafana"],
     },
     {
-      label: "AI That Works on Your Data",
-      desc: "Model training and inference built for messy, real-world enterprise data — not cleaned-up demo datasets. Automation that actually reduces headcount, not just headaches.",
+      label: locale === "fr" ? "IA qui Fonctionne sur Vos Données" : locale === "es" ? "IA que Funciona con Sus Datos" : "AI That Works on Your Data",
+      desc: locale === "fr"
+        ? "Entraînement et inférence de modèles conçus pour des données d'entreprise réelles et désordonnées — pas des ensembles de données de démonstration nettoyés. Une automatisation qui réduit vraiment la charge de travail."
+        : locale === "es"
+        ? "Entrenamiento e inferencia de modelos construidos para datos empresariales reales y desordenados — no conjuntos de datos de demo limpios. Automatización que realmente reduce la carga operativa."
+        : "Model training and inference built for messy, real-world enterprise data — not cleaned-up demo datasets. Automation that actually reduces headcount, not just headaches.",
       tags: ["PyTorch", "OpenAI", "LangChain", "MLflow"],
     },
   ];
 
   const displayMetrics: Metric[] = [
-    { value: 40, suffix: "+", prefix: "", label: "Platforms Shipped" },
-    { value: 99, suffix: ".99%", prefix: "", label: "Uptime" },
-    { value: 4, suffix: " weeks", prefix: "", label: "Avg Deploy Time" },
-    { value: 12, suffix: "", prefix: "", label: "Govt Contracts" },
+    { value: 40, suffix: "+", prefix: "", label: locale === "fr" ? "Plateformes Livrées" : locale === "es" ? "Plataformas Entregadas" : "Platforms Shipped" },
+    { value: 99, suffix: ".99%", prefix: "", label: locale === "fr" ? "Disponibilité" : locale === "es" ? "Disponibilidad" : "Uptime" },
+    { value: 4, suffix: " weeks", prefix: "", label: locale === "fr" ? "Délai Moyen de Livraison" : locale === "es" ? "Tiempo Promedio de Entrega" : "Avg Deploy Time" },
+    { value: 12, suffix: "", prefix: "", label: locale === "fr" ? "Contrats Gouvernementaux" : locale === "es" ? "Contratos Gubernamentales" : "Govt Contracts" },
   ];
 
   return (
@@ -431,7 +475,13 @@ export default function SoftwareClient() {
       {/* Hero */}
       <PageHero
         title={division.name}
-        subtitle="Your last software project took 18 months. It still can't generate the report your CFO needs."
+        subtitle={
+          locale === "fr"
+            ? "Votre dernier projet logiciel a pris 18 mois. Il ne peut toujours pas générer le rapport dont votre DG a besoin."
+            : locale === "es"
+            ? "Su último proyecto de software tardó 18 meses. Todavía no puede generar el informe que su CFO necesita."
+            : "Your last software project took 18 months. It still can't generate the report your CFO needs."
+        }
         pill="02 — Division"
         showMesh
       />
@@ -481,7 +531,7 @@ export default function SoftwareClient() {
                 marginBottom: 20,
               }}
             >
-              The Problem
+              {locale === "fr" ? "Le Problème" : locale === "es" ? "El Problema" : "The Problem"}
             </p>
             <BlurFade delay={0.1} blur="10px" duration={0.7} as="div">
             <h2
@@ -496,7 +546,7 @@ export default function SoftwareClient() {
                 marginBottom: 24,
               }}
             >
-              You've been sold roadmaps, not results.
+              {locale === "fr" ? "On vous a vendu des feuilles de route, pas des résultats." : locale === "es" ? "Le han vendido hojas de ruta, no resultados." : "You've been sold roadmaps, not results."}
             </h2>
             </BlurFade>
             <p
@@ -509,9 +559,11 @@ export default function SoftwareClient() {
                 marginBottom: 20,
               }}
             >
-              Your last platform took 18 months and three vendors. It still can't generate the
-              report your CFO actually needs. The agency that built it has never talked to the
-              people who use it daily. They delivered a demo. Not a product.
+              {locale === "fr"
+                ? "Votre dernière plateforme a pris 18 mois et trois prestataires. Elle ne peut toujours pas générer le rapport dont votre DG a besoin. L'agence qui l'a construite n'a jamais parlé aux personnes qui l'utilisent quotidiennement. Ils ont livré une démo. Pas un produit."
+                : locale === "es"
+                ? "Su última plataforma tardó 18 meses y tres proveedores. Todavía no puede generar el informe que su CFO necesita realmente. La agencia que la construyó nunca habló con las personas que la usan a diario. Entregaron una demo. No un producto."
+                : "Your last platform took 18 months and three vendors. It still can't generate the report your CFO actually needs. The agency that built it has never talked to the people who use it daily. They delivered a demo. Not a product."}
             </p>
             <p
               style={{
@@ -522,16 +574,27 @@ export default function SoftwareClient() {
                 lineHeight: 1.75,
               }}
             >
-              Your finance team built a workaround in Excel. Your ops team screenshots data to send
-              it by email. And the feature your COO requested at launch is "on the roadmap" — Q4,
-              probably next year.
+              {locale === "fr"
+                ? "Votre équipe financière a créé un contournement dans Excel. Votre équipe opérationnelle fait des captures d'écran pour envoyer des données par e-mail. Et la fonctionnalité demandée par votre DG au lancement est \"dans la feuille de route\" — Q4, probablement l'année prochaine."
+                : locale === "es"
+                ? "Su equipo de finanzas construyó un workaround en Excel. Su equipo de operaciones hace capturas de pantalla para enviar datos por correo. Y la funcionalidad que pidió su COO en el lanzamiento está \"en la hoja de ruta\" — Q4, probablemente el próximo año."
+                : "Your finance team built a workaround in Excel. Your ops team screenshots data to send it by email. And the feature your COO requested at launch is \"on the roadmap\" — Q4, probably next year."}
             </p>
           </motion.div>
           <div>
             {[
-              { stat: "68%", label: "of software projects overrun their deadline" },
-              { stat: "1 in 6", label: "enterprise software projects are abandoned" },
-              { stat: "18 mo", label: "average time-to-value in industrial software" },
+              {
+                stat: "68%",
+                label: locale === "fr" ? "des projets logiciels dépassent leur délai" : locale === "es" ? "de los proyectos de software superan su plazo" : "of software projects overrun their deadline",
+              },
+              {
+                stat: "1 in 6",
+                label: locale === "fr" ? "projets logiciels d'entreprise sont abandonnés" : locale === "es" ? "proyectos de software empresarial son abandonados" : "enterprise software projects are abandoned",
+              },
+              {
+                stat: "18 mo",
+                label: locale === "fr" ? "délai moyen avant valeur dans le logiciel industriel" : locale === "es" ? "tiempo promedio al valor en software industrial" : "average time-to-value in industrial software",
+              },
             ].map(({ stat, label }) => (
               <div
                 key={stat}
@@ -594,7 +657,7 @@ export default function SoftwareClient() {
             color: "rgba(255,255,255,0.25)",
           }}
         >
-          Why Only Droz
+          {locale === "fr" ? "Pourquoi Uniquement Droz" : locale === "es" ? "Por Qué Solo Droz" : "Why Only Droz"}
         </p>
         <BlurFade delay={0.2} blur="10px" duration={0.7} as="div">
         <TextReveal
@@ -611,7 +674,11 @@ export default function SoftwareClient() {
             lineHeight: 1.2,
           }}
         >
-          We don't outsource. We don't offshore. Every line of code is written by senior engineers who ship to production, not to a staging server nobody checks. Government-grade security. Enterprise-scale reliability. Startup-speed delivery.
+          {locale === "fr"
+            ? "Nous n'externalisons pas. Nous ne délocali sons pas. Chaque ligne de code est écrite par des ingénieurs seniors qui livrent en production, pas vers un serveur de staging que personne ne vérifie. Sécurité de niveau gouvernemental. Fiabilité à l'échelle enterprise. Livraison à la vitesse d'une startup."
+            : locale === "es"
+            ? "No tercerizamos. No trasladamos trabajo al exterior. Cada línea de código la escriben ingenieros senior que entregan a producción, no a un servidor de staging que nadie revisa. Seguridad de grado gubernamental. Confiabilidad a escala empresarial. Velocidad de entrega de startup."
+            : "We don't outsource. We don't offshore. Every line of code is written by senior engineers who ship to production, not to a staging server nobody checks. Government-grade security. Enterprise-scale reliability. Startup-speed delivery."}
         </TextReveal>
         </BlurFade>
         <p
@@ -625,7 +692,11 @@ export default function SoftwareClient() {
             marginTop: 8,
           }}
         >
-          That's why our government clients trust us with critical infrastructure. Not because we gave a better demo — because we understood the problem before we opened a code editor.
+          {locale === "fr"
+            ? "C'est pourquoi nos clients gouvernementaux nous confient leur infrastructure critique. Pas parce que nous avons fait une meilleure démo — parce que nous avons compris le problème avant d'ouvrir un éditeur de code."
+            : locale === "es"
+            ? "Por eso nuestros clientes gubernamentales nos confían su infraestructura crítica. No porque dimos una mejor demo — sino porque entendimos el problema antes de abrir un editor de código."
+            : "That's why our government clients trust us with critical infrastructure. Not because we gave a better demo — because we understood the problem before we opened a code editor."}
         </p>
       </section>
 
@@ -644,7 +715,7 @@ export default function SoftwareClient() {
               letterSpacing: "0.12em", textTransform: "uppercase",
               color: "rgba(255,255,255,0.3)", marginBottom: 20,
             }}>
-              Part of Something Bigger
+              {locale === "fr" ? "Partie d'un Tout Plus Grand" : locale === "es" ? "Parte de Algo Mayor" : "Part of Something Bigger"}
             </p>
           </BlurFade>
           <BlurFade delay={0.2} as="h2">
@@ -653,21 +724,45 @@ export default function SoftwareClient() {
               fontSize: "clamp(1.8rem, 3vw, 2.5rem)", color: "#fff", fontWeight: 400,
               lineHeight: 1.3, maxWidth: 700, marginBottom: 24,
             }}>
-              Your software doesn't exist in a vacuum.
+              {locale === "fr"
+                ? "Votre logiciel n'existe pas dans le vide."
+                : locale === "es"
+                ? "Su software no existe en el vacío."
+                : "Your software doesn't exist in a vacuum."}
             </h2>
           </BlurFade>
           <p style={{
             fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 16,
             color: "rgba(255,255,255,0.55)", lineHeight: 1.7, maxWidth: 640, marginBottom: 40,
           }}>
-            When your enterprise platform needs to ingest sensor data, control building systems, or feed AI models — we don't hand you off to a partner. We walk down the hall.
+            {locale === "fr"
+              ? "Lorsque votre plateforme d'entreprise doit ingérer des données de capteurs, contrôler des systèmes de bâtiment ou alimenter des modèles d'IA — nous ne vous renvoyons pas vers un partenaire. Nous marchons dans le couloir."
+              : locale === "es"
+              ? "Cuando su plataforma empresarial necesita ingerir datos de sensores, controlar sistemas de edificios o alimentar modelos de IA — no lo remitimos a un socio. Caminamos por el pasillo."
+              : "When your enterprise platform needs to ingest sensor data, control building systems, or feed AI models — we don't hand you off to a partner. We walk down the hall."}
           </p>
           <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
             {[
-              { name: "Predictive Maintenance", desc: "Sensor data flowing directly into your dashboard — no CSV exports, no manual ingestion.", href: "/divisions/predictive-maintenance" },
-              { name: "Intelligent Construction", desc: "Building IoT and BMS systems with APIs your platform can read and act on.", href: "/divisions/intelligent-construction" },
-              { name: "Industrial Manufacturing", desc: "Instrument APIs and data protocols your software connects to on day one.", href: "/divisions/industrial-manufacturing" },
-              { name: "AI Consulting", desc: "ML models trained and deployed inside your product — not handed off as a separate service.", href: "/divisions/ai-consulting" },
+              {
+                name: locale === "fr" ? "Maintenance Prédictive" : locale === "es" ? "Mantenimiento Predictivo" : "Predictive Maintenance",
+                desc: locale === "fr" ? "Données de capteurs directement dans votre tableau de bord — sans exports CSV, sans ingestion manuelle." : locale === "es" ? "Datos de sensores fluyendo directamente a su panel — sin exportaciones CSV, sin ingestión manual." : "Sensor data flowing directly into your dashboard — no CSV exports, no manual ingestion.",
+                href: "/divisions/predictive-maintenance",
+              },
+              {
+                name: locale === "fr" ? "Construction Intelligente" : locale === "es" ? "Construcción Inteligente" : "Intelligent Construction",
+                desc: locale === "fr" ? "Systèmes IoT et BMS avec des API que votre plateforme peut lire et sur lesquelles elle peut agir." : locale === "es" ? "Sistemas IoT de edificios y BMS con APIs que su plataforma puede leer y sobre las que puede actuar." : "Building IoT and BMS systems with APIs your platform can read and act on.",
+                href: "/divisions/intelligent-construction",
+              },
+              {
+                name: locale === "fr" ? "Fabrication Industrielle" : locale === "es" ? "Manufactura Industrial" : "Industrial Manufacturing",
+                desc: locale === "fr" ? "API d'instruments et protocoles de données auxquels votre logiciel se connecte dès le premier jour." : locale === "es" ? "APIs de instrumentos y protocolos de datos a los que su software se conecta desde el primer día." : "Instrument APIs and data protocols your software connects to on day one.",
+                href: "/divisions/industrial-manufacturing",
+              },
+              {
+                name: locale === "fr" ? "Conseil en IA" : locale === "es" ? "Consultoría de IA" : "AI Consulting",
+                desc: locale === "fr" ? "Modèles ML entraînés et déployés dans votre produit — pas remis comme un service séparé." : locale === "es" ? "Modelos de ML entrenados y desplegados dentro de su producto — no entregados como un servicio separado." : "ML models trained and deployed inside your product — not handed off as a separate service.",
+                href: "/divisions/ai-consulting",
+              },
             ].map((d, i) => (
               <motion.a key={d.name} href={d.href}
                 initial={{ opacity: 0, y: 20 }}
@@ -706,7 +801,7 @@ export default function SoftwareClient() {
               marginBottom: 16,
             }}
           >
-            How We Ship
+            {locale === "fr" ? "Comment Nous Livrons" : locale === "es" ? "Cómo Entregamos" : "How We Ship"}
           </p>
           <TextReveal
             as="h2"
@@ -720,7 +815,7 @@ export default function SoftwareClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            From Kickoff to Production in Weeks
+            {locale === "fr" ? "Du Lancement à la Production en Quelques Semaines" : locale === "es" ? "Del Inicio a Producción en Semanas" : "From Kickoff to Production in Weeks"}
           </TextReveal>
         </div>
         <ProcessTimeline steps={processSteps} />
@@ -742,7 +837,7 @@ export default function SoftwareClient() {
               marginBottom: 16,
             }}
           >
-            What We Deliver
+            {locale === "fr" ? "Ce que Nous Livrons" : locale === "es" ? "Lo que Entregamos" : "What We Deliver"}
           </p>
           <TextReveal
             as="h2"
@@ -756,7 +851,7 @@ export default function SoftwareClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            Software Built for Enterprise and Government Scale
+            {locale === "fr" ? "Logiciels Conçus pour l'Entreprise et le Gouvernement" : locale === "es" ? "Software Construido para Escala Empresarial y Gubernamental" : "Software Built for Enterprise and Government Scale"}
           </TextReveal>
         </div>
         <StaggerGrid columns={3} gap={20}>
@@ -789,7 +884,7 @@ export default function SoftwareClient() {
               marginBottom: 16,
             }}
           >
-            Zero-Downtime Deployment
+            {locale === "fr" ? "Déploiement Sans Interruption" : locale === "es" ? "Despliegue Sin Tiempo de Inactividad" : "Zero-Downtime Deployment"}
           </p>
           <TextReveal
             as="h2"
@@ -803,7 +898,7 @@ export default function SoftwareClient() {
               letterSpacing: "-0.02em",
             }}
           >
-            Ship Faster — Without Breaking Production
+            {locale === "fr" ? "Livrez Plus Vite — Sans Casser la Production" : locale === "es" ? "Entregue Más Rápido — Sin Romper Producción" : "Ship Faster — Without Breaking Production"}
           </TextReveal>
           <p
             style={{
@@ -816,8 +911,11 @@ export default function SoftwareClient() {
               lineHeight: 1.7,
             }}
           >
-            Every project ships with automated CI/CD, health checks, and zero-downtime deployments.
-            Not as an add-on. As the baseline.
+            {locale === "fr"
+              ? "Chaque projet est livré avec CI/CD automatisé, vérifications de santé et déploiements sans interruption. Pas en option. En standard."
+              : locale === "es"
+              ? "Cada proyecto se entrega con CI/CD automatizado, comprobaciones de salud y despliegues sin tiempo de inactividad. No como un complemento. Como el estándar."
+              : "Every project ships with automated CI/CD, health checks, and zero-downtime deployments. Not as an add-on. As the baseline."}
           </p>
         </div>
         <TerminalShowcase />
@@ -862,7 +960,7 @@ export default function SoftwareClient() {
               marginBottom: 20,
             }}
           >
-            Infrastructure
+            {locale === "fr" ? "Infrastructure" : locale === "es" ? "Infraestructura" : "Infrastructure"}
           </p>
           <TextReveal
             as="h2"
@@ -879,7 +977,7 @@ export default function SoftwareClient() {
               lineHeight: 1.2,
             }}
           >
-            Data infrastructure built to survive your load.
+            {locale === "fr" ? "Infrastructure de données conçue pour survivre à votre charge." : locale === "es" ? "Infraestructura de datos construida para soportar su carga." : "Data infrastructure built to survive your load."}
           </TextReveal>
           <p
             style={{
@@ -892,8 +990,11 @@ export default function SoftwareClient() {
               lineHeight: 1.7,
             }}
           >
-            Horizontally scalable backends, event-driven pipelines, and multi-cloud deployments
-            designed for enterprise data volumes and government compliance requirements — not SaaS demos.
+            {locale === "fr"
+              ? "Backends évolutifs horizontalement, pipelines événementiels et déploiements multi-cloud conçus pour les volumes de données d'entreprise et les exigences de conformité gouvernementale — pas des démos SaaS."
+              : locale === "es"
+              ? "Backends escalables horizontalmente, pipelines orientados a eventos y despliegues multi-nube diseñados para volúmenes de datos empresariales y requisitos de cumplimiento gubernamental — no demos SaaS."
+              : "Horizontally scalable backends, event-driven pipelines, and multi-cloud deployments designed for enterprise data volumes and government compliance requirements — not SaaS demos."}
           </p>
         </div>
       </section>
@@ -915,7 +1016,7 @@ export default function SoftwareClient() {
               paddingBottom: 24,
             }}
           >
-            Results — Not Timelines
+            {locale === "fr" ? "Résultats — Pas des Délais" : locale === "es" ? "Resultados — No Plazos" : "Results — Not Timelines"}
           </p>
         </div>
         <MetricBar metrics={displayMetrics} />
@@ -948,7 +1049,11 @@ export default function SoftwareClient() {
             maxWidth: 640,
           }}
         >
-          You don't need another roadmap. You need software that works on Monday.
+          {locale === "fr"
+            ? "Vous n'avez pas besoin d'une autre feuille de route. Vous avez besoin d'un logiciel qui fonctionne lundi."
+            : locale === "es"
+            ? "No necesita otra hoja de ruta. Necesita software que funcione el lunes."
+            : "You don't need another roadmap. You need software that works on Monday."}
         </TextReveal>
         </BlurFade>
         <p
@@ -961,15 +1066,18 @@ export default function SoftwareClient() {
             lineHeight: 1.7,
           }}
         >
-          From government platforms to enterprise SaaS — we deliver production-grade software
-          with senior engineers on every line. In weeks, not quarters.
+          {locale === "fr"
+            ? "Des plateformes gouvernementales aux SaaS d'entreprise — nous livrons des logiciels de qualité production avec des ingénieurs seniors sur chaque ligne. En semaines, pas en trimestres."
+            : locale === "es"
+            ? "Desde plataformas gubernamentales hasta SaaS empresarial — entregamos software de grado producción con ingenieros senior en cada línea. En semanas, no en trimestres."
+            : "From government platforms to enterprise SaaS — we deliver production-grade software with senior engineers on every line. In weeks, not quarters."}
         </p>
         <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
           <MagneticButton as="a" href="/contact">
-            Ship Faster
+            {locale === "fr" ? "Livrez Plus Vite" : locale === "es" ? "Entregue Más Rápido" : "Ship Faster"}
           </MagneticButton>
           <MagneticButton as="a" href="/contact">
-            Start Free Trial
+            {locale === "fr" ? "Essai Gratuit" : locale === "es" ? "Prueba Gratuita" : "Start Free Trial"}
           </MagneticButton>
         </div>
       </section>

@@ -41,47 +41,7 @@ interface Position {
   content: string;
 }
 
-// ─── Static data ──────────────────────────────────────────────────────────────
-
-const BENEFIT_STATS: BenefitStat[] = [
-  { target: 80,  suffix: "+", prefix: "", label: "Team Members"    },
-  { target: 6,   suffix: "",  prefix: "", label: "Countries"       },
-  { target: 5,   suffix: "",  prefix: "", label: "Divisions"       },
-  { target: 30,  suffix: "+", prefix: "", label: "Projects / Year" },
-];
-
-const POSITIONS: Position[] = [
-  {
-    title: "Senior Software Engineer",
-    department: "Software Development",
-    content:
-      "Full-stack development with React, Node.js, and cloud infrastructure. You will architect scalable platforms, lead technical reviews, and mentor junior engineers across enterprise and government projects. You'll ship. Not roadmap.",
-  },
-  {
-    title: "AI / ML Engineer",
-    department: "AI Consulting",
-    content:
-      "Building predictive models and deploying ML pipelines in production — not in demos. You will work across computer vision, NLP, and time-series forecasting, bridging research and real industrial impact. ROI from month one.",
-  },
-  {
-    title: "Construction Project Manager",
-    department: "Intelligent Construction",
-    content:
-      "Leading smart building projects with IoT integration. You will coordinate multidisciplinary teams, manage stakeholders, and ensure the successful delivery of technology-driven construction upgrades. Buildings that actually perform.",
-  },
-  {
-    title: "Vibration Analyst",
-    department: "Predictive Maintenance",
-    content:
-      "Predictive maintenance and equipment diagnostics using laser alignment, rotor balancing, and thermography. You will reduce downtime for clients like Westinghouse, Holcim, and Unilever. The hands-on work that makes the software matter.",
-  },
-  {
-    title: "Business Development Manager",
-    department: "Corporate",
-    content:
-      "Growing our presence across new markets in North America, Latin America, and Europe. You will identify partnerships, build pipeline, and represent Droz Technologies at the executive level. You'll sell what we actually deliver.",
-  },
-];
+// BENEFIT_STATS and POSITIONS are locale-aware — built inside the component below
 
 // ─── Culture card ─────────────────────────────────────────────────────────────
 
@@ -251,6 +211,156 @@ export default function CareersClient() {
   const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
+
+  const BENEFIT_STATS: BenefitStat[] = [
+    {
+      target: 80,
+      suffix: "+",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Membres d'équipe"
+          : locale === "es"
+            ? "Miembros del equipo"
+            : "Team Members",
+    },
+    {
+      target: 6,
+      suffix: "",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Pays"
+          : locale === "es"
+            ? "Países"
+            : "Countries",
+    },
+    {
+      target: 5,
+      suffix: "",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Divisions"
+          : locale === "es"
+            ? "Divisiones"
+            : "Divisions",
+    },
+    {
+      target: 30,
+      suffix: "+",
+      prefix: "",
+      label:
+        locale === "fr"
+          ? "Projets / An"
+          : locale === "es"
+            ? "Proyectos / Año"
+            : "Projects / Year",
+    },
+  ];
+
+  const POSITIONS: Position[] = [
+    {
+      title:
+        locale === "fr"
+          ? "Ingénieur logiciel senior"
+          : locale === "es"
+            ? "Ingeniero de software senior"
+            : "Senior Software Engineer",
+      department:
+        locale === "fr"
+          ? "Développement logiciel"
+          : locale === "es"
+            ? "Desarrollo de software"
+            : "Software Development",
+      content:
+        locale === "fr"
+          ? "Développement full-stack avec React, Node.js et infrastructure cloud. Vous concevrez des plateformes évolutives, dirigerez des révisions techniques et encadrerez des ingénieurs juniors sur des projets d'entreprise et gouvernementaux. Vous livrerez. Pas des feuilles de route."
+          : locale === "es"
+            ? "Desarrollo full-stack con React, Node.js e infraestructura cloud. Usted diseñará plataformas escalables, liderará revisiones técnicas y mentorizará ingenieros junior en proyectos empresariales y gubernamentales. Usted entregará. No hojas de ruta."
+            : "Full-stack development with React, Node.js, and cloud infrastructure. You will architect scalable platforms, lead technical reviews, and mentor junior engineers across enterprise and government projects. You'll ship. Not roadmap.",
+    },
+    {
+      title:
+        locale === "fr"
+          ? "Ingénieur IA / ML"
+          : locale === "es"
+            ? "Ingeniero IA / ML"
+            : "AI / ML Engineer",
+      department:
+        locale === "fr"
+          ? "Conseil en IA"
+          : locale === "es"
+            ? "Consultoría de IA"
+            : "AI Consulting",
+      content:
+        locale === "fr"
+          ? "Construction de modèles prédictifs et déploiement de pipelines ML en production — pas en démo. Vous travaillerez en vision par ordinateur, NLP et prévisions de séries temporelles, en faisant le lien entre la recherche et l'impact industriel réel. ROI dès le premier mois."
+          : locale === "es"
+            ? "Construcción de modelos predictivos y despliegue de pipelines de ML en producción — no en demos. Usted trabajará en visión por computadora, NLP y pronóstico de series de tiempo, conectando la investigación con el impacto industrial real. ROI desde el primer mes."
+            : "Building predictive models and deploying ML pipelines in production — not in demos. You will work across computer vision, NLP, and time-series forecasting, bridging research and real industrial impact. ROI from month one.",
+    },
+    {
+      title:
+        locale === "fr"
+          ? "Gestionnaire de projet en construction"
+          : locale === "es"
+            ? "Gerente de proyecto en construcción"
+            : "Construction Project Manager",
+      department:
+        locale === "fr"
+          ? "Construction intelligente"
+          : locale === "es"
+            ? "Construcción inteligente"
+            : "Intelligent Construction",
+      content:
+        locale === "fr"
+          ? "Direction de projets de bâtiments intelligents avec intégration IoT. Vous coordonnerez des équipes multidisciplinaires, gérerez les parties prenantes et assurerez la livraison réussie de mises à niveau de construction pilotées par la technologie. Des bâtiments qui performent vraiment."
+          : locale === "es"
+            ? "Liderazgo de proyectos de edificios inteligentes con integración IoT. Usted coordinará equipos multidisciplinarios, gestionará partes interesadas y asegurará la entrega exitosa de actualizaciones de construcción impulsadas por tecnología. Edificios que realmente funcionan."
+            : "Leading smart building projects with IoT integration. You will coordinate multidisciplinary teams, manage stakeholders, and ensure the successful delivery of technology-driven construction upgrades. Buildings that actually perform.",
+    },
+    {
+      title:
+        locale === "fr"
+          ? "Analyste en vibrations"
+          : locale === "es"
+            ? "Analista de vibraciones"
+            : "Vibration Analyst",
+      department:
+        locale === "fr"
+          ? "Maintenance prédictive"
+          : locale === "es"
+            ? "Mantenimiento predictivo"
+            : "Predictive Maintenance",
+      content:
+        locale === "fr"
+          ? "Maintenance prédictive et diagnostic d'équipements par alignement laser, équilibrage de rotors et thermographie. Vous réduirez les temps d'arrêt pour des clients comme Westinghouse, Holcim et Unilever. Le travail concret qui donne tout son sens au logiciel."
+          : locale === "es"
+            ? "Mantenimiento predictivo y diagnóstico de equipos mediante alineación láser, balanceo de rotores y termografía. Usted reducirá el tiempo de inactividad para clientes como Westinghouse, Holcim y Unilever. El trabajo práctico que hace que el software importe."
+            : "Predictive maintenance and equipment diagnostics using laser alignment, rotor balancing, and thermography. You will reduce downtime for clients like Westinghouse, Holcim, and Unilever. The hands-on work that makes the software matter.",
+    },
+    {
+      title:
+        locale === "fr"
+          ? "Directeur du développement des affaires"
+          : locale === "es"
+            ? "Director de desarrollo de negocios"
+            : "Business Development Manager",
+      department:
+        locale === "fr"
+          ? "Corporatif"
+          : locale === "es"
+            ? "Corporativo"
+            : "Corporate",
+      content:
+        locale === "fr"
+          ? "Développement de notre présence sur de nouveaux marchés en Amérique du Nord, en Amérique latine et en Europe. Vous identifierez des partenariats, construirez un pipeline et représenterez Droz Technologies au niveau exécutif. Vous vendrez ce que nous livrons vraiment."
+          : locale === "es"
+            ? "Expansión de nuestra presencia en nuevos mercados de América del Norte, América Latina y Europa. Usted identificará asociaciones, construirá pipeline y representará a Droz Technologies a nivel ejecutivo. Usted venderá lo que realmente entregamos."
+            : "Growing our presence across new markets in North America, Latin America, and Europe. You will identify partnerships, build pipeline, and represent Droz Technologies at the executive level. You'll sell what we actually deliver.",
+    },
+  ];
 
   const accordionItems = buildAccordionItems(POSITIONS);
 
@@ -459,7 +569,11 @@ export default function CareersClient() {
           }}
         >
           <ScrollVelocityText baseVelocity={-0.5}>
-            We Show Up · We Ship · We Own It · We Grow · Factory Floor First · No Roadmaps · Faith · Grit · Precision
+            {locale === "fr"
+              ? "On se présente · On livre · On assume · On grandit · Le terrain avant tout · Pas de feuilles de route · Foi · Détermination · Précision"
+              : locale === "es"
+                ? "Nos presentamos · Entregamos · Nos hacemos responsables · Crecemos · El campo primero · Sin hojas de ruta · Fe · Garra · Precisión"
+                : "We Show Up · We Ship · We Own It · We Grow · Factory Floor First · No Roadmaps · Faith · Grit · Precision"}
           </ScrollVelocityText>
         </div>
 
