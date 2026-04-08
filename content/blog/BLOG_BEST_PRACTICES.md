@@ -227,3 +227,128 @@ Every post must have CTAs at these positions:
 - No perfectly balanced three-point arguments
 - Include one unexpected insight or contrarian take per post
 - Use second person ("your plant", "your team") not third person
+
+---
+
+## 15. GEO — GENERATIVE ENGINE OPTIMIZATION (For AI Search)
+
+AI search engines (ChatGPT, Gemini, Perplexity, Copilot) now cite content in their answers. Every post must be optimized for AI citation:
+
+**Direct Answer Blocks:**
+- Place a 40-60 word direct answer to the target query immediately after the first H2
+- This answer should be self-contained — an AI can extract it without context
+- 55% of AI Overview citations come from the first 30% of page content
+
+**Citation-Friendly Structure:**
+- Include specific statistics with sources (increases AI visibility by 40%)
+- Use numbered lists and comparison tables (AI prefers structured data)
+- Add FAQ sections that match real user prompts
+- Use evidence-dense writing with specific data points
+
+**Freshness Signals:**
+- Include the current year in the title or first paragraph
+- Update posts every 7-14 days when possible (citation decay starts after ~14 days)
+- Add "Last updated: [date]" to frontmatter
+
+**Schema Stacking:**
+- Every post gets BlogPosting + BreadcrumbList JSON-LD (automatic)
+- Add FAQPage schema for posts with FAQ sections
+- Add HowTo schema for tutorial/guide posts
+
+**Track GEO KPIs:**
+- Mention Rate: % of AI answers mentioning Droz
+- Citation Rate: % with clickable URLs to our content
+- Position: Where we appear in the AI-generated answer
+
+---
+
+## 16. AEO — ANSWER ENGINE OPTIMIZATION (For Featured Snippets)
+
+60% of Google searches now end without a click (answer shown on results page). Optimize for featured snippets:
+
+**Featured Snippet Targeting:**
+- Structure content for "paragraph snippets" (40-60 words answering the query)
+- Use "list snippets" format (numbered steps or bullet points)
+- Create "table snippets" (comparison tables with clear headers)
+- Target "People Also Ask" questions with H2/H3 headings
+
+**Answer Positioning:**
+- Place the direct answer within the first 150 words of the page
+- Follow with expansion, detail, and supporting evidence
+- Use the exact question as an H2, then answer it directly below
+
+**Question-Answer Format:**
+- Include 3-5 "People Also Ask" style questions as H2 or H3 headings
+- Answer each in 40-60 words, then expand
+- Use the format: "## What is [keyword]?" → concise answer → detailed explanation
+
+**E-E-A-T Signals:**
+- Experience: Include first-hand field experience ("In our 20 years...")
+- Expertise: Reference specific standards, certifications, regulations
+- Authority: Cite industry bodies (ISO, CSA, NRC, IRAP)
+- Trust: Include specific client results with named companies
+
+---
+
+## 17. ANTI-SLOP RULES (Stop AI-Generated Feel)
+
+From the Stop Slop framework — every post MUST follow these rules:
+
+**Remove filler:** Cut throat-clearing openers ("Here's the thing"), emphasis crutches ("Let that sink in"), all adverbs.
+
+**Break formulaic structures:** No binary contrasts ("Not X. But Y."), no dramatic fragmentation, no rhetorical setups.
+
+**Active voice always:** Every sentence needs a human subject performing an action. Name the actor.
+
+**Be specific:** Replace "significant savings" with "$180K per avoided shutdown." No lazy extremes.
+
+**Engage directly:** Use "you" over "people." Put readers in the scene.
+
+**Vary rhythm:** Mix sentence lengths. Prefer two-item lists over three. No em-dashes.
+
+**Trust readers:** State facts directly. No softening language or hand-holding justification.
+
+**Eliminate quotables:** Rewrite anything that sounds like a pull-quote or motivational poster.
+
+---
+
+## 18. OGILVY COPYWRITING PRINCIPLES (For Headlines & CTAs)
+
+**Headline formula:** Include the brand/topic + promise + benefit. Promise a specific benefit. 8-10 words for recall. Flag your audience by naming them.
+
+**Body copy:** Long copy sells more than short. Load with facts. Show, don't tell. Add helpful information unrelated to the pitch.
+
+**Positioning:** What does it do + who is it for? Psychological segmentation beats demographic targeting.
+
+**The Big Idea:** Every post needs one big, simple, memorable idea. Not several mediocre ones.
+
+---
+
+## 19. CONTENT STRATEGY FRAMEWORK
+
+**Searchable vs Shareable:**
+- Most posts should be SEARCHABLE (match search intent with keywords)
+- 1 in 5 posts should be SHAREABLE (novel insights, original data, contrarian takes)
+
+**Buyer Journey Mapping:**
+- Awareness: "what is...", "how to...", "guide to..."
+- Consideration: "best...", "vs...", "comparison..."
+- Decision: "pricing...", "reviews...", "demo..."
+
+**Hub and Spoke:**
+- Each division has 1 cornerstone "hub" post
+- 3-5 "spoke" posts link back to the hub
+- Hub posts link to all spokes
+- This builds topical authority for the division's primary keyword
+
+---
+
+## 20. POST QUALITY SCORING (Before Publishing)
+
+Rate each post 1-10 on these dimensions (must score 35+ out of 50 to publish):
+
+1. **Directness** — Does it get to the point without filler?
+2. **Specificity** — Does it use real numbers, names, standards?
+3. **Rhythm** — Does sentence length vary naturally?
+4. **Authority** — Does it demonstrate 20+ years of field experience?
+5. **Density** — Does every sentence add value (no padding)?

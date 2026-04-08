@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import type { BlogPost } from "@/lib/blog";
 
 const DIVISION_COLORS: Record<string, string> = {
@@ -73,16 +74,16 @@ export default function BlogCard({ post }: BlogCardProps) {
           borderRadius: "14px 14px 0 0",
           overflow: "hidden",
           background: "#141414",
+          isolation: "isolate",
         }}
       >
         {post.image ? (
-          <img
+          <Image
             src={post.image}
             alt={post.title}
-            loading="lazy"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
             style={{
-              width: "100%",
-              height: "100%",
               objectFit: "cover",
               display: "block",
               transform: hovered ? "scale(1.05)" : "scale(1)",

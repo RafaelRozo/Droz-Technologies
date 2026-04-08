@@ -58,28 +58,28 @@ const en: SiteText = {
       {
         title: ["Predictive", "Maintenance"],
         subtitle: "Vibration analysis, laser alignment, thermography, and rotor balancing. We diagnose equipment failures before they happen \u2014 20 years of field expertise turned into predictive technology.",
-        buttons: [{ label: "Learn More", href: "/divisions/predictive-maintenance" }, { label: "Talk to an Engineer", href: "/contact" }],
+        buttons: [{ label: "Explore Predictive Maintenance", href: "/divisions/predictive-maintenance" }, { label: "Talk to an Engineer", href: "/contact" }],
       },
       {
         title: ["Software", "Development"],
         subtitle: "Enterprise platforms, government contracts, and AI-powered automation. Built by engineers who\u2019ve operated the systems they\u2019re coding for. Production-grade from day one.",
-        buttons: [{ label: "Learn More", href: "/divisions/software-development" }, { label: "Talk to an Engineer", href: "/contact" }],
+        buttons: [{ label: "Explore Software Development", href: "/divisions/software-development" }, { label: "Talk to an Engineer", href: "/contact" }],
         objectLabel: "GOOGLE WILLOW PROCESSOR",
       },
       {
         title: ["Intelligent", "Construction"],
         subtitle: "Smart building upgrades, modern fa\u00E7ade systems, and IoT instrumentation. We don\u2019t just build structures \u2014 we make them intelligent, measurable, and efficient.",
-        buttons: [{ label: "Learn More", href: "/divisions/intelligent-construction" }, { label: "Talk to an Engineer", href: "/contact" }],
+        buttons: [{ label: "Explore Intelligent Construction", href: "/divisions/intelligent-construction" }, { label: "Talk to an Engineer", href: "/contact" }],
       },
       {
         title: ["Industrial", "Manufacturing"],
         subtitle: "We design and manufacture the vibration equipment, laser alignment systems, and thermography instruments we deploy in the field. Full chain, one company.",
-        buttons: [{ label: "Learn More", href: "/divisions/industrial-manufacturing" }, { label: "Talk to an Engineer", href: "/contact" }],
+        buttons: [{ label: "Explore Industrial Manufacturing", href: "/divisions/industrial-manufacturing" }, { label: "Talk to an Engineer", href: "/contact" }],
       },
       {
         title: ["AI", "Consulting"],
         subtitle: "From proof-of-concept to production in 90 days. Computer vision, predictive models, NLP, and edge AI \u2014 deployed and monitored by our engineers. Measurable ROI from month one.",
-        buttons: [{ label: "Learn More", href: "/divisions/ai-consulting" }, { label: "Talk to an Engineer", href: "/contact" }],
+        buttons: [{ label: "Explore AI Consulting", href: "/divisions/ai-consulting" }, { label: "Talk to an Engineer", href: "/contact" }],
       },
     ],
   },

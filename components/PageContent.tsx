@@ -10,6 +10,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
 import {
@@ -31,6 +32,16 @@ import {
 import LogoMarquee from "@/components/animations/LogoMarquee";
 
 const CorridorScene = dynamic(() => import("@/components/3d/CorridorScene"), { ssr: false });
+
+const LOGO_DIMS: Record<string, { w: number; h: number }> = {
+  westinghouse: { w: 570, h: 562 },
+  holcim: { w: 500, h: 304 },
+  pdvsa: { w: 796, h: 678 },
+  unilever: { w: 692, h: 688 },
+  "gov-canada": { w: 1576, h: 634 },
+  "siemens-energy": { w: 1400, h: 496 },
+  "schneider-electric": { w: 536, h: 228 },
+};
 
 /* ─── Cursor-tracking Spotlight Card (3D tilt + radial glow) ─── */
 function SpotlightCard({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
@@ -525,7 +536,7 @@ export default function PageContent() {
             viewport={{ once: true }}
             style={{ borderRadius: 20, overflow: "hidden", marginBottom: 40, maxHeight: 500 }}
           >
-            <img src="/images/team.png" alt="Droz Technologies team" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.6s" }} />
+            <Image src="/images/team.png" alt="Droz Technologies team" width={1200} height={896} sizes="(max-width: 768px) 100vw, 900px" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.6s" }} />
           </motion.div>
 
           {/* 5 Division thumbnails */}
@@ -563,11 +574,13 @@ export default function PageContent() {
                   e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)";
                 }}
               >
-                <img
+                <Image
                   src={`/images/divisions/${div.slug}.png`}
                   alt={div.name}
+                  fill
+                  sizes={isMobile ? "50vw" : "20vw"}
                   style={{
-                    width: "100%", height: "100%", objectFit: "cover", display: "block",
+                    objectFit: "cover", display: "block",
                     filter: "brightness(0.55)", transition: "transform 0.6s cubic-bezier(0.16,1,0.3,1), filter 0.4s ease",
                   }}
                 />
@@ -629,17 +642,18 @@ export default function PageContent() {
                   width: "max-content",
                 }}>
                   {[...["westinghouse", "holcim", "pdvsa", "unilever", "gov-canada", "siemens-energy", "schneider-electric"], ...["westinghouse", "holcim", "pdvsa", "unilever", "gov-canada", "siemens-energy", "schneider-electric"]].map((logo, i) => (
-                    <img
+                    <Image
                       key={`${logo}-${i}`}
                       src={`/images/logos/${logo}.png`}
                       alt={logo}
+                      width={LOGO_DIMS[logo].w} height={LOGO_DIMS[logo].h} sizes="60px"
                       style={{
-                        height: 24, flexShrink: 0,
+                        height: 24, width: "auto", flexShrink: 0,
                         opacity: 0.35, filter: "grayscale(1) brightness(2)",
                         transition: "opacity 0.4s ease, filter 0.4s ease",
                       }}
-                      onMouseEnter={e => { e.currentTarget.style.opacity = "0.85"; e.currentTarget.style.filter = "grayscale(0) brightness(1)"; }}
-                      onMouseLeave={e => { e.currentTarget.style.opacity = "0.35"; e.currentTarget.style.filter = "grayscale(1) brightness(2)"; }}
+                      onMouseEnter={e => { (e.target as HTMLImageElement).style.opacity = "0.85"; (e.target as HTMLImageElement).style.filter = "grayscale(0) brightness(1)"; }}
+                      onMouseLeave={e => { (e.target as HTMLImageElement).style.opacity = "0.35"; (e.target as HTMLImageElement).style.filter = "grayscale(1) brightness(2)"; }}
                     />
                   ))}
                 </div>
@@ -1177,10 +1191,11 @@ export default function PageContent() {
         }}>
           <InfiniteSlider speed={60} speedOnHover={20} gap={48}>
             {["westinghouse", "holcim", "pdvsa", "unilever", "gov-canada", "siemens-energy", "schneider-electric"].map(logo => (
-              <img key={logo} src={`/images/logos/${logo}.png`} alt={logo}
-                style={{ height: 28, flexShrink: 0, opacity: 0.4, filter: "grayscale(1) brightness(1.8)", transition: "opacity 0.3s, filter 0.3s" }}
-                onMouseEnter={e => { e.currentTarget.style.opacity = "0.85"; e.currentTarget.style.filter = "grayscale(0) brightness(1)"; }}
-                onMouseLeave={e => { e.currentTarget.style.opacity = "0.4"; e.currentTarget.style.filter = "grayscale(1) brightness(1.8)"; }}
+              <Image key={logo} src={`/images/logos/${logo}.png`} alt={logo}
+                width={LOGO_DIMS[logo].w} height={LOGO_DIMS[logo].h} sizes="80px"
+                style={{ height: 28, width: "auto", flexShrink: 0, opacity: 0.4, filter: "grayscale(1) brightness(1.8)", transition: "opacity 0.3s, filter 0.3s" }}
+                onMouseEnter={e => { (e.target as HTMLImageElement).style.opacity = "0.85"; (e.target as HTMLImageElement).style.filter = "grayscale(0) brightness(1)"; }}
+                onMouseLeave={e => { (e.target as HTMLImageElement).style.opacity = "0.4"; (e.target as HTMLImageElement).style.filter = "grayscale(1) brightness(1.8)"; }}
               />
             ))}
           </InfiniteSlider>
@@ -1191,10 +1206,11 @@ export default function PageContent() {
         }}>
           <InfiniteSlider speed={60} speedOnHover={20} gap={48} reverse>
             {["westinghouse", "holcim", "pdvsa", "unilever", "gov-canada", "siemens-energy", "schneider-electric"].map(logo => (
-              <img key={logo} src={`/images/logos/${logo}.png`} alt={logo}
-                style={{ height: 28, flexShrink: 0, opacity: 0.4, filter: "grayscale(1) brightness(1.8)", transition: "opacity 0.3s, filter 0.3s" }}
-                onMouseEnter={e => { e.currentTarget.style.opacity = "0.85"; e.currentTarget.style.filter = "grayscale(0) brightness(1)"; }}
-                onMouseLeave={e => { e.currentTarget.style.opacity = "0.4"; e.currentTarget.style.filter = "grayscale(1) brightness(1.8)"; }}
+              <Image key={logo} src={`/images/logos/${logo}.png`} alt={logo}
+                width={LOGO_DIMS[logo].w} height={LOGO_DIMS[logo].h} sizes="80px"
+                style={{ height: 28, width: "auto", flexShrink: 0, opacity: 0.4, filter: "grayscale(1) brightness(1.8)", transition: "opacity 0.3s, filter 0.3s" }}
+                onMouseEnter={e => { (e.target as HTMLImageElement).style.opacity = "0.85"; (e.target as HTMLImageElement).style.filter = "grayscale(0) brightness(1)"; }}
+                onMouseLeave={e => { (e.target as HTMLImageElement).style.opacity = "0.4"; (e.target as HTMLImageElement).style.filter = "grayscale(1) brightness(1.8)"; }}
               />
             ))}
           </InfiniteSlider>

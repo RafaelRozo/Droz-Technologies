@@ -1,15 +1,16 @@
 "use client";
 
 import useIsMobile from "@/lib/useIsMobile";
+import Image from "next/image";
 
 const LOGOS = [
-  { name: "Westinghouse", src: "/images/logos/westinghouse.png" },
-  { name: "Holcim", src: "/images/logos/holcim.png" },
-  { name: "PDVSA", src: "/images/logos/pdvsa.png" },
-  { name: "Unilever", src: "/images/logos/unilever.png" },
-  { name: "Government of Canada", src: "/images/logos/gov-canada.png" },
-  { name: "Siemens Energy", src: "/images/logos/siemens-energy.png" },
-  { name: "Schneider Electric", src: "/images/logos/schneider-electric.png" },
+  { name: "Westinghouse", src: "/images/logos/westinghouse.png", w: 570, h: 562 },
+  { name: "Holcim", src: "/images/logos/holcim.png", w: 500, h: 304 },
+  { name: "PDVSA", src: "/images/logos/pdvsa.png", w: 796, h: 678 },
+  { name: "Unilever", src: "/images/logos/unilever.png", w: 692, h: 688 },
+  { name: "Government of Canada", src: "/images/logos/gov-canada.png", w: 1576, h: 634 },
+  { name: "Siemens Energy", src: "/images/logos/siemens-energy.png", w: 1400, h: 496 },
+  { name: "Schneider Electric", src: "/images/logos/schneider-electric.png", w: 536, h: 228 },
 ];
 
 interface LogoMarqueeProps {
@@ -60,22 +61,26 @@ export default function LogoMarquee({
               alignItems: "center",
             }}
           >
-            <img
+            <Image
               src={logo.src}
               alt={logo.name}
+              width={logo.w}
+              height={logo.h}
+              sizes="80px"
               style={{
                 height: isMobile ? 20 : 30,
+                width: "auto",
                 opacity: 0.45,
                 filter: "grayscale(1) brightness(1.8)",
                 transition: "opacity 0.3s ease, filter 0.3s ease",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.opacity = "0.85";
-                e.currentTarget.style.filter = "grayscale(0) brightness(1)";
+                (e.target as HTMLImageElement).style.opacity = "0.85";
+                (e.target as HTMLImageElement).style.filter = "grayscale(0) brightness(1)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.opacity = "0.45";
-                e.currentTarget.style.filter = "grayscale(1) brightness(1.8)";
+                (e.target as HTMLImageElement).style.opacity = "0.45";
+                (e.target as HTMLImageElement).style.filter = "grayscale(1) brightness(1.8)";
               }}
             />
           </div>
