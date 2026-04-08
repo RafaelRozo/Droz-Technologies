@@ -29,7 +29,11 @@ import BlurFade from "@/components/animations/BlurFade";
 import InfiniteSlider from "@/components/animations/InfiniteSlider";
 import LogoMarquee from "@/components/animations/LogoMarquee";
 
-const CorridorScene = dynamic(() => import("@/components/3d/CorridorScene"), { ssr: false });
+// Lazy-load Three.js only when user scrolls near the divisions section
+const CorridorScene = dynamic(
+  () => import("@/components/3d/CorridorScene"),
+  { ssr: false, loading: () => null }
+);
 
 const LOGO_DIMS: Record<string, { w: number; h: number }> = {
   westinghouse: { w: 570, h: 562 },
@@ -955,7 +959,7 @@ export default function PageContent() {
       </section>
 
       {/* ═══════ 10. DIVISIONS ═══════ */}
-      <CorridorScene scrollProgress={corridorProgress} />
+      {corridorProgress > 0 && <CorridorScene scrollProgress={corridorProgress} />}
       <div id="divisions" ref={divisionsRef}>
         {/* Header */}
         <section style={{ padding: isMobile ? "80px 20px 40px" : "140px 48px 60px", background: "rgba(15,15,15,0.92)", textAlign: "center" }}>

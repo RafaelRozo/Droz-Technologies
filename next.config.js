@@ -4,7 +4,7 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
   },
   experimental: {
-    optimizePackageImports: ['framer-motion'],
+    optimizePackageImports: ['framer-motion', '@react-three/fiber', '@react-three/drei', 'three'],
   },
 }
 module.exports = nextConfig

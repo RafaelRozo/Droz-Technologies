@@ -60,7 +60,7 @@ export default function HeroScroller() {
     if (!ctx) return;
 
     const draw = (img: HTMLImageElement) => {
-      const dpr = window.devicePixelRatio || 1;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       const displayW = canvas.clientWidth;
       const displayH = canvas.clientHeight;
 
@@ -277,36 +277,11 @@ export default function HeroScroller() {
     [stepTransition, preloadTransition]
   );
 
-  // Initial setup — preload only first 30 frames, defer rest to idle
+  // Initial setup — draw poster only, defer ALL preloading until first scroll
+  const hasStartedPreload = useRef(false);
+
   useEffect(() => {
-    // Preload first 30 frames immediately for quick interaction
-    for (let i = 1; i <= 30; i++) {
-      const path = getFramePath(TRANSITIONS[0], i);
-      if (!frameCache.current.has(path)) {
-        const img = new window.Image();
-        img.src = path;
-        frameCache.current.set(path, img);
-      }
-    }
-
     drawFrame(getPosterPath(0));
-
-    // Preload remaining frames when browser is idle
-    const loadRemaining = () => {
-      for (let i = 31; i <= FRAME_COUNT; i++) {
-        const path = getFramePath(TRANSITIONS[0], i);
-        if (!frameCache.current.has(path)) {
-          const img = new window.Image();
-          img.src = path;
-          frameCache.current.set(path, img);
-        }
-      }
-    };
-    if ("requestIdleCallback" in window) {
-      (window as unknown as { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(loadRemaining);
-    } else {
-      setTimeout(loadRemaining, 2000);
-    }
 
     const firstPanel = textPanelRefs.current[0]?.current;
     if (firstPanel) {
@@ -314,6 +289,36 @@ export default function HeroScroller() {
       firstPanel.style.transform = "translateY(0)";
       firstPanel.style.pointerEvents = "auto";
     }
+
+    // Start preloading frames only after first scroll interaction
+    const onFirstScroll = () => {
+      if (hasStartedPreload.current) return;
+      hasStartedPreload.current = true;
+      window.removeEventListener("scroll", onFirstScroll);
+
+      // Preload first transition in batches to avoid flooding the network
+      let batch = 0;
+      const loadBatch = () => {
+        const start = batch * 30 + 1;
+        const end = Math.min(start + 29, FRAME_COUNT);
+        for (let i = start; i <= end; i++) {
+          const path = getFramePath(TRANSITIONS[0], i);
+          if (!frameCache.current.has(path)) {
+            const img = new window.Image();
+            img.src = path;
+            frameCache.current.set(path, img);
+          }
+        }
+        batch++;
+        if (start + 29 < FRAME_COUNT) {
+          setTimeout(loadBatch, 100);
+        }
+      };
+      loadBatch();
+    };
+
+    window.addEventListener("scroll", onFirstScroll, { passive: true, once: true });
+    return () => window.removeEventListener("scroll", onFirstScroll);
   }, [drawFrame]);
 
   // Canvas resize handler

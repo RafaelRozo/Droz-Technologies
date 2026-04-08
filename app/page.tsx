@@ -1,7 +1,12 @@
 import { Metadata } from "next";
 import dynamic from "next/dynamic";
-import HeroScroller from "@/components/HeroScroller";
 import JsonLd from "@/components/seo/JsonLd";
+import HeroPoster from "@/components/HeroPoster";
+
+const HeroScroller = dynamic(() => import("@/components/HeroScroller"), {
+  ssr: false,
+  loading: () => <HeroPoster />,
+});
 
 const PageContent = dynamic(() => import("@/components/PageContent"), { ssr: true });
 
