@@ -1,7 +1,9 @@
 import { Metadata } from "next";
+import dynamic from "next/dynamic";
 import HeroScroller from "@/components/HeroScroller";
-import PageContent from "@/components/PageContent";
 import JsonLd from "@/components/seo/JsonLd";
+
+const PageContent = dynamic(() => import("@/components/PageContent"), { ssr: true });
 
 export const metadata: Metadata = {
   title: "Industrial Technology & AI Solutions | Droz Technologies — Ontario",

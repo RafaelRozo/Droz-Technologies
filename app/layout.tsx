@@ -1,12 +1,30 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+import { Instrument_Serif, Outfit } from "next/font/google";
 import Providers from "@/components/Providers";
 import "./globals.css";
-import CursorSpotlight from "@/components/CursorSpotlight";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/shared/Footer";
-import ColorBar from "@/components/shared/ColorBar";
 import JsonLd from "@/components/seo/JsonLd";
+
+const CursorSpotlight = dynamic(() => import("@/components/CursorSpotlight"), { ssr: false });
+const ColorBar = dynamic(() => import("@/components/shared/ColorBar"), { ssr: false });
+const Footer = dynamic(() => import("@/components/shared/Footer"), { ssr: true });
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-serif",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-sans",
+});
 
 const BASE_URL = "https://droztechnologies.com";
 
@@ -75,14 +93,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${instrumentSerif.variable} ${outfit.variable}`}>
       <head>
         {/* Google Analytics — G-G3NER3MPW7 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-G3NER3MPW7"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -92,7 +110,7 @@ export default function RootLayout({
         </Script>
 
         {/* Meta (Facebook) Pixel — 1532229697701487 */}
-        <Script id="facebook-pixel" strategy="afterInteractive">
+        <Script id="facebook-pixel" strategy="lazyOnload">
           {`
             !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
             n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;

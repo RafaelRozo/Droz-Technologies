@@ -1,6 +1,7 @@
 "use client";
 
-import { TextReveal, GradientMeshBg } from "@/components/animations";
+import TextReveal from "@/components/animations/TextReveal";
+import GradientMeshBg from "@/components/animations/GradientMeshBg";
 
 interface PageHeroProps {
   title: string;

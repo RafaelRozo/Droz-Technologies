@@ -2,7 +2,7 @@
 
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
-import { TextScramble } from "@/components/animations";
+import TextScramble from "@/components/animations/TextScramble";
 import useIsMobile from "@/lib/useIsMobile";
 
 export default function Footer() {

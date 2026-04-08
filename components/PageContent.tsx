@@ -13,22 +13,20 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
-import {
-  TextScramble,
-  CounterSpring,
-  MagneticButton,
-  GradientMeshBg,
-  SectionDivider,
-  ScrollVelocityText,
-  TiltCard,
-  ImpactNumber,
-  SplitReveal,
-  FactStrip,
-  TestimonialCard,
-  PlanStep,
-  BlurFade,
-  InfiniteSlider,
-} from "@/components/animations";
+import TextScramble from "@/components/animations/TextScramble";
+import CounterSpring from "@/components/animations/CounterSpring";
+import MagneticButton from "@/components/animations/MagneticButton";
+import GradientMeshBg from "@/components/animations/GradientMeshBg";
+import SectionDivider from "@/components/animations/SectionDivider";
+import ScrollVelocityText from "@/components/animations/ScrollVelocityText";
+import TiltCard from "@/components/animations/TiltCard";
+import ImpactNumber from "@/components/animations/ImpactNumber";
+import SplitReveal from "@/components/animations/SplitReveal";
+import FactStrip from "@/components/animations/FactStrip";
+import TestimonialCard from "@/components/animations/TestimonialCard";
+import PlanStep from "@/components/animations/PlanStep";
+import BlurFade from "@/components/animations/BlurFade";
+import InfiniteSlider from "@/components/animations/InfiniteSlider";
 import LogoMarquee from "@/components/animations/LogoMarquee";
 
 const CorridorScene = dynamic(() => import("@/components/3d/CorridorScene"), { ssr: false });
@@ -536,7 +534,7 @@ export default function PageContent() {
             viewport={{ once: true }}
             style={{ borderRadius: 20, overflow: "hidden", marginBottom: 40, maxHeight: 500 }}
           >
-            <Image src="/images/team.png" alt="Droz Technologies team" width={1200} height={896} sizes="(max-width: 768px) 100vw, 900px" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.6s" }} />
+            <Image src="/images/team.png" alt="Droz Technologies team" width={1200} height={896} sizes="(max-width: 768px) 100vw, 900px" priority style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.6s" }} />
           </motion.div>
 
           {/* 5 Division thumbnails */}

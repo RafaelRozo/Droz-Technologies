@@ -277,11 +277,36 @@ export default function HeroScroller() {
     [stepTransition, preloadTransition]
   );
 
-  // Initial setup
+  // Initial setup — preload only first 30 frames, defer rest to idle
   useEffect(() => {
-    preloadTransition(TRANSITIONS[0]);
-    if (TRANSITIONS[1]) preloadTransition(TRANSITIONS[1]);
+    // Preload first 30 frames immediately for quick interaction
+    for (let i = 1; i <= 30; i++) {
+      const path = getFramePath(TRANSITIONS[0], i);
+      if (!frameCache.current.has(path)) {
+        const img = new window.Image();
+        img.src = path;
+        frameCache.current.set(path, img);
+      }
+    }
+
     drawFrame(getPosterPath(0));
+
+    // Preload remaining frames when browser is idle
+    const loadRemaining = () => {
+      for (let i = 31; i <= FRAME_COUNT; i++) {
+        const path = getFramePath(TRANSITIONS[0], i);
+        if (!frameCache.current.has(path)) {
+          const img = new window.Image();
+          img.src = path;
+          frameCache.current.set(path, img);
+        }
+      }
+    };
+    if ("requestIdleCallback" in window) {
+      (window as unknown as { requestIdleCallback: (cb: () => void) => void }).requestIdleCallback(loadRemaining);
+    } else {
+      setTimeout(loadRemaining, 2000);
+    }
 
     const firstPanel = textPanelRefs.current[0]?.current;
     if (firstPanel) {
@@ -289,7 +314,7 @@ export default function HeroScroller() {
       firstPanel.style.transform = "translateY(0)";
       firstPanel.style.pointerEvents = "auto";
     }
-  }, [preloadTransition, drawFrame]);
+  }, [drawFrame]);
 
   // Canvas resize handler
   useEffect(() => {
