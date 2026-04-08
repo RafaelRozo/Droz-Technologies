@@ -8,7 +8,7 @@ const HeroScroller = dynamic(() => import("@/components/HeroScroller"), {
   loading: () => <HeroPoster />,
 });
 
-const PageContent = dynamic(() => import("@/components/PageContent"), { ssr: true });
+const PageContent = dynamic(() => import("@/components/PageContent"), { ssr: false });
 
 export const metadata: Metadata = {
   title: "Industrial Technology & AI Solutions | Droz Technologies — Ontario",

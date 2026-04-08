@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 import { Instrument_Serif, Outfit } from "next/font/google";
 import Providers from "@/components/Providers";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 import JsonLd from "@/components/seo/JsonLd";
 
 const CursorSpotlight = dynamic(() => import("@/components/CursorSpotlight"), { ssr: false });
 const ColorBar = dynamic(() => import("@/components/shared/ColorBar"), { ssr: false });
-const Footer = dynamic(() => import("@/components/shared/Footer"), { ssr: true });
+const Footer = dynamic(() => import("@/components/shared/Footer"), { ssr: false });
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -21,7 +21,7 @@ const instrumentSerif = Instrument_Serif({
 
 const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500"],
   display: "swap",
   variable: "--font-sans",
 });
