@@ -793,9 +793,10 @@ export default function CareersClient() {
                     alignItems: "center",
                     gap: 8,
                     padding: "8px 16px",
-                    background: "#141414",
+                    background: "rgba(255,255,255,0.03)",
                     border: "1px solid rgba(255,255,255,0.06)",
                     borderRadius: 9999,
+                    boxShadow: "0 2px 8px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(255,255,255,0.01)",
                   }}
                 >
                   <span

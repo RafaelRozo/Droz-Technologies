@@ -65,28 +65,35 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                     padding: "8px 20px",
                     borderRadius: 9999,
                     border: active
-                      ? "1px solid rgba(255,255,255,0.5)"
-                      : "1px solid rgba(255,255,255,0.12)",
+                      ? "1px solid rgba(255,255,255,0.2)"
+                      : "1px solid rgba(255,255,255,0.08)",
                     background: active
                       ? "rgba(255,255,255,0.08)"
-                      : "transparent",
+                      : "rgba(255,255,255,0.02)",
                     color: active ? "#fff" : "rgba(255,255,255,0.45)",
                     cursor: "pointer",
+                    boxShadow: active
+                      ? "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -1px 0 rgba(255,255,255,0.02)"
+                      : "0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.04)",
                     transition:
-                      "border-color 0.25s ease, color 0.25s ease, background 0.25s ease",
+                      "all 0.25s cubic-bezier(0.16,1,0.3,1)",
                   }}
                   onMouseEnter={(e) => {
                     if (!active) {
                       const el = e.currentTarget;
-                      el.style.borderColor = "rgba(255,255,255,0.28)";
+                      el.style.borderColor = "rgba(255,255,255,0.18)";
                       el.style.color = "rgba(255,255,255,0.7)";
+                      el.style.background = "rgba(255,255,255,0.05)";
+                      el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!active) {
                       const el = e.currentTarget;
-                      el.style.borderColor = "rgba(255,255,255,0.12)";
+                      el.style.borderColor = "rgba(255,255,255,0.08)";
                       el.style.color = "rgba(255,255,255,0.45)";
+                      el.style.background = "rgba(255,255,255,0.02)";
+                      el.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.04)";
                     }
                   }}
                 >

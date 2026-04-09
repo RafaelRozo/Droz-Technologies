@@ -50,9 +50,9 @@ export default function Footer() {
               { label: locale === "fr" ? "Confidentialite" : locale === "es" ? "Privacidad" : "Privacy", href: "/privacy" },
             ].map((link) => (
               <li key={link.label} style={{ marginBottom: 14 }}>
-                <a href={link.href} className="link-slide" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.25s ease" }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#fff")}
-                  onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.5)")}>
+                <a href={link.href} className="link-slide" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", padding: "4px 10px", marginLeft: -10, borderRadius: 8, transition: "all 0.25s ease" }}
+                  onMouseEnter={(e) => { const el = e.target as HTMLElement; el.style.color = "#fff"; el.style.background = "rgba(255,255,255,0.04)"; el.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.06)"; }}
+                  onMouseLeave={(e) => { const el = e.target as HTMLElement; el.style.color = "rgba(255,255,255,0.5)"; el.style.background = "transparent"; el.style.boxShadow = "none"; }}>
                   {link.label}
                 </a>
               </li>
@@ -72,9 +72,9 @@ export default function Footer() {
               { name: t.divisionsGrid[4]?.name, href: "/divisions/ai-consulting" },
             ].map((div) => (
               <li key={div.name} style={{ marginBottom: 14 }}>
-                <a href={div.href} className="link-slide" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", transition: "color 0.25s ease" }}
-                  onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#fff")}
-                  onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.5)")}>
+                <a href={div.href} className="link-slide" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", padding: "4px 10px", marginLeft: -10, borderRadius: 8, transition: "all 0.25s ease" }}
+                  onMouseEnter={(e) => { const el = e.target as HTMLElement; el.style.color = "#fff"; el.style.background = "rgba(255,255,255,0.04)"; el.style.boxShadow = "inset 0 1px 0 rgba(255,255,255,0.06)"; }}
+                  onMouseLeave={(e) => { const el = e.target as HTMLElement; el.style.color = "rgba(255,255,255,0.5)"; el.style.background = "transparent"; el.style.boxShadow = "none"; }}>
                   {div.name}
                 </a>
               </li>
