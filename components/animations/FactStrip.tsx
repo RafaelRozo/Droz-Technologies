@@ -7,6 +7,8 @@ interface FactStripProps {
   number: string;
   text: string;
   delay?: number;
+  direction?: "left" | "right";
+  showSeparator?: boolean;
   style?: CSSProperties;
 }
 
@@ -14,12 +16,17 @@ export default function FactStrip({
   number,
   text,
   delay = 0,
+  direction = "right",
+  showSeparator = true,
   style,
 }: FactStripProps) {
+  const xOffset = direction === "right" ? 100 : -100;
+
   return (
+    <>
     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={{ opacity: 0, x: xOffset, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
       viewport={{ once: true, margin: "-40px" }}
       transition={{
         duration: 0.8,
@@ -78,5 +85,20 @@ export default function FactStrip({
         {text}
       </p>
     </motion.div>
+    {showSeparator && (
+      <motion.div
+        aria-hidden="true"
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 1, delay: delay + 0.2, ease: [0.16, 1, 0.3, 1] }}
+        style={{
+          height: 1,
+          background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent)",
+          transformOrigin: direction === "right" ? "left" : "right",
+        }}
+      />
+    )}
+    </>
   );
 }

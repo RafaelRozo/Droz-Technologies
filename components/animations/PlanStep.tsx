@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+import { planTimelineItemVariants } from "./PlanTimeline";
 
 type Direction = "left" | "center" | "right";
 
@@ -11,6 +12,8 @@ interface PlanStepProps {
   direction: Direction;
   isLast?: boolean;
   delay?: number;
+  /** When true, animation is driven by parent PlanTimeline variants */
+  controlled?: boolean;
 }
 
 const initialVariants: Record<Direction, { opacity: number; x?: number; y?: number }> = {
@@ -32,17 +35,21 @@ export default function PlanStep({
   direction,
   isLast = false,
   delay = 0,
+  controlled = false,
 }: PlanStepProps) {
+  // When controlled by PlanTimeline, use variant-driven animation
+  const motionProps = controlled
+    ? { variants: planTimelineItemVariants }
+    : {
+        initial: initialVariants[direction],
+        whileInView: animateVariants[direction],
+        viewport: { once: true, margin: "-60px" },
+        transition: { duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] },
+      };
+
   return (
     <motion.div
-      initial={initialVariants[direction]}
-      whileInView={animateVariants[direction]}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{
-        duration: 0.7,
-        delay,
-        ease: [0.16, 1, 0.3, 1],
-      }}
+      {...motionProps}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -50,9 +57,22 @@ export default function PlanStep({
         position: "relative",
       }}
     >
-      {/* Step number */}
-      <span
+      {/* Step number with clip-path reveal */}
+      <motion.span
         aria-hidden="true"
+        initial={controlled ? { clipPath: "inset(100% 0 0 0)" } : undefined}
+        whileInView={controlled ? undefined : undefined}
+        variants={
+          controlled
+            ? {
+                hidden: { clipPath: "inset(100% 0 0 0)" },
+                visible: {
+                  clipPath: "inset(0% 0 0 0)",
+                  transition: { type: "spring", stiffness: 80, damping: 12 },
+                },
+              }
+            : undefined
+        }
         style={{
           fontFamily: "'Instrument Serif', Georgia, serif",
           fontStyle: "italic",
@@ -63,10 +83,11 @@ export default function PlanStep({
           letterSpacing: "-0.04em",
           marginBottom: 12,
           userSelect: "none",
+          display: "block",
         }}
       >
         {String(number).padStart(2, "0")}
-      </span>
+      </motion.span>
 
       {/* Title */}
       <h3

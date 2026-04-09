@@ -28,6 +28,10 @@ import PlanStep from "@/components/animations/PlanStep";
 import BlurFade from "@/components/animations/BlurFade";
 import InfiniteSlider from "@/components/animations/InfiniteSlider";
 import LogoMarquee from "@/components/animations/LogoMarquee";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
+import PlanTimeline from "@/components/animations/PlanTimeline";
+import TestimonialColumns from "@/components/animations/TestimonialColumns";
 
 // Lazy-load Three.js only when user scrolls near the divisions section
 const CorridorScene = dynamic(
@@ -542,16 +546,22 @@ export default function PageContent() {
           </motion.div>
 
           {/* 5 Division thumbnails */}
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(5, 1fr)", gap: 16 }}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(5, 1fr)", gap: 16 }}
+          >
             {divisions.map((div, i) => (
               <motion.a
                 key={div.slug}
                 href={`/divisions/${div.slug}`}
-                initial={{ opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={{
+                  hidden: { opacity: 0, y: 28, filter: "blur(4px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { type: "spring", stiffness: 100, damping: 12 } },
+                }}
                 whileHover={{ y: -4, scale: 1.02 }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                viewport={{ once: true }}
                 style={{
                   textDecoration: "none",
                   position: "relative",
@@ -607,7 +617,7 @@ export default function PageContent() {
                 </div>
               </motion.a>
             ))}
-          </div>
+          </motion.div>
 
           {/* Client logos — premium cloud with fade edges */}
           <motion.div
@@ -711,11 +721,11 @@ export default function PageContent() {
               </p>
             </motion.div>
 
-            {/* Right: cost number — massive, enters from RIGHT */}
+            {/* Right: cost number — massive, materializes into focus */}
             <motion.div
-              initial={{ opacity: 0, x: 80 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+              initial={{ opacity: 0, scale: 0.85, filter: "blur(12px)" }}
+              whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
               viewport={{ once: true, margin: "-80px" }}
               style={{ textAlign: "right" }}
             >
@@ -788,6 +798,8 @@ export default function PageContent() {
               number={fact.number}
               text={fact.text}
               delay={i * 0.15}
+              direction={i % 2 === 0 ? "right" : "left"}
+              showSeparator={i < n.agitation.facts.length - 1}
             />
           ))}
         </div>
@@ -804,7 +816,12 @@ export default function PageContent() {
       }}>
         {/* The emptiness is deliberate. One idea. Maximum space. */}
         <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
-          <BlurFade delay={0.1} duration={0.8} blur="12px" as="h2" style={{
+          <VerticalCutReveal
+            as="h2"
+            delay={0.1}
+            staggerDuration={0.05}
+            spring={{ stiffness: 80, damping: 12 }}
+            style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
               fontStyle: "italic",
               fontSize: "clamp(2rem, 4vw, 3.5rem)",
@@ -812,10 +829,12 @@ export default function PageContent() {
               fontWeight: 400,
               lineHeight: 1.3,
               letterSpacing: "-0.02em",
+              justifyContent: "center",
             }}
           >
             {n.guide.headline}
-          </BlurFade>
+          </VerticalCutReveal>
+          <SectionDivider style={{ marginTop: 40 }} />
         </div>
       </section>
 
@@ -846,11 +865,7 @@ export default function PageContent() {
             How It Works
           </motion.p>
 
-          <div style={{
-            display: "grid",
-            gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
-            gap: isMobile ? 32 : 60,
-          }}>
+          <PlanTimeline>
             {n.plan.steps.map((step, i) => {
               const dirs: Array<"left" | "center" | "right"> = ["left", "center", "right"];
               return (
@@ -861,11 +876,11 @@ export default function PageContent() {
                   description={step.desc}
                   direction={dirs[i]}
                   isLast={i === n.plan.steps.length - 1}
-                  delay={i * 0.15}
+                  controlled
                 />
               );
             })}
-          </div>
+          </PlanTimeline>
 
           {/* CTA after Step 3 */}
           <motion.div
@@ -888,15 +903,15 @@ export default function PageContent() {
         borderTop: "1px solid rgba(255,255,255,0.04)",
       }}>
         <div style={{ padding: isMobile ? "0 20px" : "0 48px", marginBottom: 64 }}>
-          <TestimonialCard
-            quote={n.testimonial.quote}
-            name={n.testimonial.name}
-            title={n.testimonial.title}
-            company={n.testimonial.company}
-            metricValue={2.1}
-            metricSuffix="M"
-            metricPrefix="$"
-            metricLabel={n.testimonial.metricLabel}
+          <TestimonialColumns
+            testimonials={[
+              { quote: n.testimonial.quote, name: n.testimonial.name, role: `${n.testimonial.title}, ${n.testimonial.company}`, metric: "$2.1M", metricLabel: n.testimonial.metricLabel },
+              { quote: n.testimonial.quote, name: n.testimonial.name, role: `${n.testimonial.title}, ${n.testimonial.company}` },
+              { quote: n.testimonial.quote, name: n.testimonial.name, role: `${n.testimonial.title}, ${n.testimonial.company}`, metric: "$2.1M", metricLabel: n.testimonial.metricLabel },
+              { quote: n.testimonial.quote, name: n.testimonial.name, role: `${n.testimonial.title}, ${n.testimonial.company}` },
+              { quote: n.testimonial.quote, name: n.testimonial.name, role: `${n.testimonial.title}, ${n.testimonial.company}`, metric: "$2.1M", metricLabel: n.testimonial.metricLabel },
+              { quote: n.testimonial.quote, name: n.testimonial.name, role: `${n.testimonial.title}, ${n.testimonial.company}` },
+            ]}
           />
         </div>
 
@@ -942,7 +957,12 @@ export default function PageContent() {
         }} />
 
         <div style={{ maxWidth: 960, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <BlurFade delay={0.1} as="p" style={{
+          <VerticalCutReveal
+            as="p"
+            delay={0.1}
+            staggerDuration={0.04}
+            spring={{ stiffness: 80, damping: 12 }}
+            style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
               fontStyle: "italic",
               fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
@@ -950,11 +970,11 @@ export default function PageContent() {
               fontWeight: 400,
               lineHeight: 1.5,
               letterSpacing: "-0.02em",
-              textAlign: "center",
+              justifyContent: "center",
             }}
           >
             {n.onlyWe}
-          </BlurFade>
+          </VerticalCutReveal>
         </div>
       </section>
 
@@ -1107,16 +1127,23 @@ export default function PageContent() {
           <BlurFade delay={0.2} as="p" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 16, color: "rgba(255,255,255,0.5)", lineHeight: 1.6, maxWidth: 520, margin: "0 auto 60px", textAlign: "center" }}>
             {t.solutions.subtitle}
           </BlurFade>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(6, 1fr)", gap: 16 }}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(6, 1fr)", gap: 16 }}
+          >
             {t.solutions.items.map((item, i) => {
               const span = i < 2 ? 3 : 2;
               return (
                 <motion.div key={item.title}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={{ y: -3 }}
-                  transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
-                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0, y: 28, scale: 0.97, filter: "blur(4px)" },
+                    visible: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { type: "spring", stiffness: 100, damping: 12 } },
+                  }}
+                  whileHover={{ y: -4, boxShadow: "0 8px 32px rgba(0,0,0,0.4)" }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
                   style={{
                     gridColumn: isMobile ? "span 1" : `span ${span}`, borderRadius: 20,
                     padding: i < 2 ? "44px 40px" : "36px 32px", background: "#111",
@@ -1168,7 +1195,7 @@ export default function PageContent() {
                 </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -1220,20 +1247,32 @@ export default function PageContent() {
       </section>
 
       {/* ═══════ 13. CTA STRIP ═══════ */}
-      <section style={{ background: "#0a0a0a", padding: isMobile ? "64px 20px" : "140px 48px", textAlign: "center", position: "relative" }}>
+      <section style={{ background: "#0a0a0a", padding: isMobile ? "64px 20px" : "140px 48px", textAlign: "center", position: "relative", overflow: "hidden" }}>
+        <AnimatedGridBg gridSize={60} lineOpacity={0.03} sweepCount={3} sweepOpacity={0.04} />
         <GradientMeshBg blobCount={2} opacity={0.02} />
         <div style={{ position: "relative", zIndex: 1 }}>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}
-            style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "clamp(2rem, 3.5vw, 3rem)", color: "#fff", fontWeight: 400, lineHeight: 1.2, marginBottom: 56 }}
+          <VerticalCutReveal
+            as="h2"
+            delay={0.1}
+            staggerDuration={0.04}
+            spring={{ stiffness: 80, damping: 12 }}
+            style={{
+              fontFamily: "'Instrument Serif', Georgia, serif",
+              fontStyle: "italic",
+              fontSize: "clamp(2rem, 3.5vw, 3rem)",
+              color: "#fff",
+              fontWeight: 400,
+              lineHeight: 1.2,
+              marginBottom: 56,
+              justifyContent: "center",
+            }}
           >
             {n.finalCta.headline}
-          </motion.h2>
+          </VerticalCutReveal>
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.3 }}
             viewport={{ once: true }}
             style={{ display: "flex", gap: 16, justifyContent: "center", alignItems: "center", flexWrap: "wrap" }}
           >
@@ -1305,18 +1344,22 @@ export default function PageContent() {
                 alert("Network error. Please email ricardorozo@droztechnologies.com directly.");
               }
             }}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            initial="hidden"
+            whileInView="visible"
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.2 } } }}
             viewport={{ once: true }}
             style={{ display: "flex", flexDirection: "column", gap: 14 }}
           >
-            <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14 }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }} style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: 14 }}>
               <FloatingInput label={t.contact.form.name} name="name" />
               <FloatingInput label={t.contact.form.email} type="email" name="email" />
-            </div>
-            <FloatingInput label={t.contact.form.company} name="company" />
-            <FloatingInput label={t.contact.form.message} textarea name="message" />
+            </motion.div>
+            <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+              <FloatingInput label={t.contact.form.company} name="company" />
+            </motion.div>
+            <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+              <FloatingInput label={t.contact.form.message} textarea name="message" />
+            </motion.div>
             <div style={{ display: "flex", justifyContent: "center", marginTop: 16 }}>
               <button type="submit" style={{
                 position: "relative", padding: "14px 44px", borderRadius: 9999, fontSize: 15,

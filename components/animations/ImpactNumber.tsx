@@ -1,7 +1,7 @@
 "use client";
 
 import { CSSProperties } from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import CounterSpring from "@/components/animations/CounterSpring";
 
 interface ImpactNumberProps {
@@ -19,6 +19,8 @@ export default function ImpactNumber({
   subtitle,
   style,
 }: ImpactNumberProps) {
+  const prefersReduced = useReducedMotion();
+
   return (
     <section
       style={{
@@ -45,8 +47,36 @@ export default function ImpactNumber({
           flexDirection: "column",
           alignItems: "center",
           gap: 16,
+          position: "relative",
         }}
       >
+        {/* Subtle radial pulse behind number */}
+        <motion.div
+          aria-hidden="true"
+          animate={
+            prefersReduced
+              ? { scale: 1, opacity: 0.5 }
+              : { scale: [1, 1.15, 1], opacity: [0.5, 1, 0.5] }
+          }
+          transition={
+            prefersReduced
+              ? undefined
+              : { duration: 4, repeat: Infinity, ease: "easeInOut" }
+          }
+          style={{
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: 300,
+            height: 300,
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+
         {/* Giant number */}
         <CounterSpring
           target={target}

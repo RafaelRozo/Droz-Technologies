@@ -86,8 +86,11 @@ export default function SplitReveal({
 
           <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16 }}>
             {beforeItems.map((item, i) => (
-              <li
+              <motion.li
                 key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -10 }}
+                transition={{ delay: 0.1 * i + 0.3, duration: 0.4, ease: EASE }}
                 style={{
                   fontFamily: "'Outfit', sans-serif",
                   fontWeight: 300,
@@ -112,7 +115,7 @@ export default function SplitReveal({
                   }}
                 />
                 {item}
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
@@ -206,8 +209,11 @@ export default function SplitReveal({
 
             <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 16 }}>
               {afterItems.map((item, i) => (
-                <li
+                <motion.li
                   key={i}
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 10 }}
+                  transition={{ delay: 0.1 * i + 0.5, duration: 0.4, ease: EASE }}
                   style={{
                     fontFamily: "'Outfit', sans-serif",
                     fontWeight: 300,
@@ -233,7 +239,7 @@ export default function SplitReveal({
                     &#10003;
                   </span>
                   {item}
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>

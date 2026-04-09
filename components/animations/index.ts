@@ -24,3 +24,7 @@ export { default as TestimonialCard } from "./TestimonialCard";
 export { default as PlanStep } from "./PlanStep";
 export { default as BlurFade } from "./BlurFade";
 export { default as InfiniteSlider } from "./InfiniteSlider";
+export { default as VerticalCutReveal } from "./VerticalCutReveal";
+export { default as AnimatedGridBg } from "./AnimatedGridBg";
+export { default as PlanTimeline } from "./PlanTimeline";
+export { default as TestimonialColumns } from "./TestimonialColumns";
