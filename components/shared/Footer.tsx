@@ -82,8 +82,11 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <div style={{ maxWidth: 1100, margin: "0 auto", paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto", paddingTop: 24, borderTop: "1px solid rgba(255,255,255,0.06)", display: "flex", flexDirection: isMobile ? "column" : "row", justifyContent: "space-between", alignItems: isMobile ? "center" : "center", gap: isMobile ? 12 : 0 }}>
         <p style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", fontFamily: "'Outfit', sans-serif" }}>{t.footer.copyright}</p>
+        <p style={{ fontSize: 12, color: "rgba(255,255,255,0.3)", fontFamily: "'Outfit', sans-serif", fontWeight: 300, letterSpacing: "0.04em" }}>
+          Also known as Rozo Industries
+        </p>
         <a href="mailto:ricardorozo@droztechnologies.com" style={{ fontSize: 13, color: "rgba(255,255,255,0.55)", textDecoration: "none", fontFamily: "'Outfit', sans-serif", transition: "color 0.25s ease" }}
           onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#fff")}
           onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "rgba(255,255,255,0.55)")}>

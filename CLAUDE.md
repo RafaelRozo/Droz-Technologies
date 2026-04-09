@@ -54,14 +54,18 @@ components/
 - Commit with descriptive messages, no --no-verify
 - Never force push to main
 
-## 6. Slash Commands
+## 6. Worktrees
+- When creating a git worktree, add its directory to `.gitignore`
+- Copy any `.env` files from the main repo into the worktree
+
+## 7. Slash Commands
 - `/review` — Run design quality review on current page
 - `/build-check` — Verify build passes and bundle sizes
 
-## 7. MCP Servers
+## 8. MCP Servers
 - **magic** (21st.dev) — Use `mcp__magic__21st_magic_component_inspiration` for premium UI component patterns. Always adapt to our inline-style + monochrome palette, don't use Tailwind class-based patterns directly.
 
-## 8. Workflow Best Practices
+## 9. Workflow Best Practices
 - Start complex tasks in plan mode, invest in the plan
 - Use parallel agents (3-5) for independent work
 - After every correction, update THIS file so mistakes aren't repeated

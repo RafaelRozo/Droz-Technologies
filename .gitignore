@@ -3,6 +3,9 @@ node_modules/
 out/
 .env.local
 
+# Claude worktrees
+.claude/worktrees/
+
 # Source frame sequences (too large for git)
 bulldozer to robot arm sequence/
 chip to bulldozer sequence/
