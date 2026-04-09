@@ -16,6 +16,8 @@ import {
   ScrollVelocityText,
   BlurFade,
 } from "@/components/animations";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
 import dynamic from "next/dynamic";
 
 const CraneConstruction = dynamic(() => import("@/components/3d/CraneConstruction"), { ssr: false });
@@ -312,8 +314,12 @@ function StatsRow({ stats }: { stats: StatItem[] }) {
       }}
     >
       {stats.map((s, i) => (
-        <div
+        <motion.div
           key={i}
+          initial={{ opacity: 0, scale: 0.85, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-60px" }}
           style={{
             padding: "48px 32px",
             textAlign: "center",
@@ -346,7 +352,7 @@ function StatsRow({ stats }: { stats: StatItem[] }) {
           >
             {s.label}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -723,8 +729,8 @@ export default function ConstructionClient() {
               },
             ].map((d, i) => (
               <motion.a key={d.name} href={d.href}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
                 style={{
@@ -963,12 +969,13 @@ export default function ConstructionClient() {
           alignItems: "center",
           textAlign: "center",
           gap: 32,
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <BlurFade delay={0.15} blur="10px" duration={0.7} as="div">
-        <TextReveal
+        <AnimatedGridBg lineOpacity={0.03} sweepOpacity={0.04} />
+        <VerticalCutReveal
           as="h2"
-          mode="word"
           style={{
             fontFamily: "'Instrument Serif', Georgia, serif",
             fontStyle: "italic",
@@ -977,15 +984,18 @@ export default function ConstructionClient() {
             fontWeight: 400,
             letterSpacing: "-0.02em",
             maxWidth: 640,
+            position: "relative",
+            zIndex: 1,
           }}
+          staggerDuration={0.06}
+          delay={0.1}
         >
           {locale === "fr"
             ? "Votre bâtiment génère déjà des données. Vous ne pouvez tout simplement pas encore les lire."
             : locale === "es"
             ? "Su edificio ya está generando datos. Simplemente todavía no puede leerlos."
             : "Your building is already generating data. You just can't read it yet."}
-        </TextReveal>
-        </BlurFade>
+        </VerticalCutReveal>
         <p
           style={{
             fontFamily: "'Outfit', sans-serif",
@@ -994,6 +1004,8 @@ export default function ConstructionClient() {
             color: "rgba(255,255,255,0.4)",
             maxWidth: 440,
             lineHeight: 1.7,
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {locale === "fr"
@@ -1002,7 +1014,7 @@ export default function ConstructionClient() {
             ? "Una auditoría de integración. Le mostraremos exactamente qué les falta a sus sistemas actuales y cómo se ve una reducción del 35% en energía para su edificio específico."
             : "One integration audit. We'll show you exactly what your existing systems are missing and what 35% energy reduction looks like for your specific building."}
         </p>
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", position: "relative", zIndex: 1 }}>
           <MagneticButton as="a" href="/contact">
             {locale === "fr" ? "Construisez Plus Intelligent" : locale === "es" ? "Construya Más Inteligente" : "Build Smarter"}
           </MagneticButton>

@@ -13,6 +13,9 @@ import {
   PlanStep,
   BlurFade,
 } from "@/components/animations";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
+import PlanTimeline from "@/components/animations/PlanTimeline";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
 
@@ -394,12 +397,11 @@ export default function ContactClient() {
               </span>
             </div>
 
-            <BlurFade delay={0.1} blur="10px" duration={0.7} as="div">
-            <TextReveal
+            <VerticalCutReveal
               as="h2"
-              mode="word"
-              stagger={0.07}
-              duration={0.65}
+              delay={0.1}
+              staggerDuration={0.05}
+              spring={{ stiffness: 80, damping: 12 }}
               style={{
                 fontFamily: "'Instrument Serif', Georgia, serif",
                 fontStyle: "italic",
@@ -409,7 +411,6 @@ export default function ContactClient() {
                 lineHeight: 1.2,
                 letterSpacing: "-0.02em",
                 marginBottom: 64,
-                display: "block",
                 maxWidth: 700,
               }}
             >
@@ -418,16 +419,9 @@ export default function ContactClient() {
                 : locale === "es"
                   ? "Sin guión de ventas. Solo ingenieros honestos."
                   : "No sales script. Just honest engineers."}
-            </TextReveal>
-            </BlurFade>
+            </VerticalCutReveal>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))",
-                gap: 48,
-              }}
-            >
+            <PlanTimeline>
               {planSteps.map((step) => (
                 <PlanStep
                   key={step.number}
@@ -436,10 +430,10 @@ export default function ContactClient() {
                   description={step.description}
                   direction={step.direction}
                   isLast={step.number === planSteps.length}
-                  delay={step.delay}
+                  controlled
                 />
               ))}
-            </div>
+            </PlanTimeline>
           </div>
         </section>
 
@@ -460,8 +454,8 @@ export default function ContactClient() {
           {/* ── Left: company info ── */}
           <div ref={leftRef}>
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={leftInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+              animate={leftInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 24, filter: "blur(6px)" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ marginBottom: 48 }}
             >
@@ -510,8 +504,8 @@ export default function ContactClient() {
 
             {/* Contact info items */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={leftInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+              animate={leftInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 20, filter: "blur(6px)" }}
               transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
               style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 40 }}
             >
@@ -522,8 +516,8 @@ export default function ContactClient() {
 
             {/* Response time + division cards */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={leftInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 20, filter: "blur(6px)" }}
+              animate={leftInView ? { opacity: 1, y: 0, filter: "blur(0px)" } : { opacity: 0, y: 20, filter: "blur(6px)" }}
               transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
               style={{
                 display: "grid",
@@ -699,8 +693,17 @@ export default function ContactClient() {
                 </motion.div>
               ) : (
                 /* ── Form fields ── */
-                <form onSubmit={handleSubmit} aria-label="Contact form" noValidate style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-                  <div style={{ marginBottom: 8 }}>
+                <motion.form
+                  onSubmit={handleSubmit}
+                  aria-label="Contact form"
+                  noValidate
+                  initial="hidden"
+                  whileInView="visible"
+                  variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.2 } } }}
+                  viewport={{ once: true }}
+                  style={{ display: "flex", flexDirection: "column", gap: 20 }}
+                >
+                  <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }} style={{ marginBottom: 8 }}>
                     <h3
                       style={{
                         fontFamily: "'Instrument Serif', Georgia, serif",
@@ -734,15 +737,13 @@ export default function ContactClient() {
                           ? "No se requiere jerga. Hable como hablaría con su equipo."
                           : "No jargon required. Talk to us like you'd talk to your team."}
                     </p>
-                  </div>
+                  </motion.div>
 
-                  <div
-                    style={{
+                  <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }} style={{
                       display: "grid",
                       gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
                       gap: 16,
-                    }}
-                  >
+                    }}>
                     <FloatingInput
                       label={t.contact.form.name}
                       name="name"
@@ -758,23 +759,27 @@ export default function ContactClient() {
                       onChange={handleChange}
                       required
                     />
-                  </div>
+                  </motion.div>
 
-                  <FloatingInput
-                    label={t.contact.form.company}
-                    name="company"
-                    value={form.company}
-                    onChange={handleChange}
-                  />
+                  <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+                    <FloatingInput
+                      label={t.contact.form.company}
+                      name="company"
+                      value={form.company}
+                      onChange={handleChange}
+                    />
+                  </motion.div>
 
-                  <FloatingInput
-                    label={t.contact.form.message}
-                    textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    required
-                  />
+                  <motion.div variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}>
+                    <FloatingInput
+                      label={t.contact.form.message}
+                      textarea
+                      name="message"
+                      value={form.message}
+                      onChange={handleChange}
+                      required
+                    />
+                  </motion.div>
 
                   <div
                     style={{
@@ -841,7 +846,7 @@ export default function ContactClient() {
                         : t.contact.form.send}
                     </MagneticButton>
                   </div>
-                </form>
+                </motion.form>
               )}
             </motion.div>
           </div>
