@@ -2,7 +2,6 @@
 
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
-import TextScramble from "@/components/animations/TextScramble";
 import useIsMobile from "@/lib/useIsMobile";
 
 export default function Footer() {
@@ -15,7 +14,7 @@ export default function Footer() {
       <div style={{ maxWidth: 1100, margin: "0 auto", display: "grid", gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr 1fr", gap: isMobile ? 32 : 60, marginBottom: 48 }}>
         <div>
           <h2 style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "1.75rem", color: "#fff", fontWeight: 400, marginBottom: 4 }}>
-            <TextScramble duration={1.2}>Droz</TextScramble>
+            Droz
           </h2>
           <p style={{ fontFamily: "'Instrument Serif', Georgia, serif", fontStyle: "italic", fontSize: "0.95rem", color: "rgba(255,255,255,0.4)", fontWeight: 400, marginBottom: 4 }}>
             Droz Technologies

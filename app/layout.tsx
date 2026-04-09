@@ -4,12 +4,12 @@ import dynamic from "next/dynamic";
 import { Instrument_Serif, Outfit } from "next/font/google";
 import Providers from "@/components/Providers";
 import "./globals.css";
-const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
+import Navbar from "@/components/Navbar";
 import JsonLd from "@/components/seo/JsonLd";
 
 const CursorSpotlight = dynamic(() => import("@/components/CursorSpotlight"), { ssr: false });
 const ColorBar = dynamic(() => import("@/components/shared/ColorBar"), { ssr: false });
-const Footer = dynamic(() => import("@/components/shared/Footer"), { ssr: false });
+import Footer from "@/components/shared/Footer";
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -84,7 +84,10 @@ const ORG_SCHEMA = {
     availableLanguage: ["English", "French", "Spanish"],
   },
   knowsLanguage: ["en", "fr", "es"],
-  sameAs: [],
+  sameAs: [
+    "https://ca.linkedin.com/company/droztechnologies",
+    "https://github.com/RafaelRozo/Droz-Technologies",
+  ],
 };
 
 export default function RootLayout({

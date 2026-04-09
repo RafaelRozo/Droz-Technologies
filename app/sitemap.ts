@@ -20,18 +20,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/privacy`, lastModified: now, changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  let blogRoutes: MetadataRoute.Sitemap = [];
-  try {
-    const posts = getAllPosts("en");
-    blogRoutes = posts.map((post) => ({
-      url: `${base}/blog/${post.slug}`,
-      lastModified: post.date ? new Date(post.date) : now,
-      changeFrequency: "monthly" as const,
-      priority: post.featured ? 0.85 : 0.7,
-    }));
-  } catch {
-    // No posts yet — content directory may be empty during build
+  const blogRoutes: MetadataRoute.Sitemap = [];
+
+  // Include blog posts from all locales
+  for (const locale of ["en", "fr", "es"] as const) {
+    try {
+      const posts = getAllPosts(locale);
+      for (const post of posts) {
+        blogRoutes.push({
+          url: `${base}/blog/${post.slug}`,
+          lastModified: post.date ? new Date(post.date) : now,
+          changeFrequency: "monthly",
+          priority: post.featured ? 0.85 : 0.7,
+        });
+      }
+    } catch {
+      // Locale directory may not exist
+    }
   }
 
-  return [...staticRoutes, ...blogRoutes];
+  // Deduplicate by URL (same slug in multiple locales should appear once)
+  const seen = new Set<string>();
+  const uniqueBlogRoutes = blogRoutes.filter((route) => {
+    if (seen.has(route.url)) return false;
+    seen.add(route.url);
+    return true;
+  });
+
+  return [...staticRoutes, ...uniqueBlogRoutes];
 }
