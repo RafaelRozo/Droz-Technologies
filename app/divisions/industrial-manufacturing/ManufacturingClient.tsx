@@ -17,6 +17,8 @@ import {
   ScrollVelocityText,
   BlurFade,
 } from "@/components/animations";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
 import LogoMarquee from "@/components/animations/LogoMarquee";
 
 const PrecisionMachinery = dynamic(() => import("@/components/3d/PrecisionMachinery"), { ssr: false });
@@ -283,7 +285,14 @@ function PrecisionMetrics({ locale }: { locale: string }) {
     { display: "5,000+", counter: true, value: 5000, suffix: "+", label: locale === "fr" ? "Instruments Livrés" : locale === "es" ? "Instrumentos Entregados" : "Instruments Shipped" },
   ];
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-60px" }}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.12 } },
+      }}
       style={{
         display: "grid",
         gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)",
@@ -292,8 +301,17 @@ function PrecisionMetrics({ locale }: { locale: string }) {
       }}
     >
       {precisionStats.map((m, i) => (
-        <div
+        <motion.div
           key={i}
+          variants={{
+            hidden: { opacity: 0, scale: 0.85, filter: "blur(6px)" },
+            visible: {
+              opacity: 1,
+              scale: 1,
+              filter: "blur(0px)",
+              transition: { type: "spring", stiffness: 90, damping: 14 },
+            },
+          }}
           style={{
             padding: "48px 24px",
             textAlign: "center",
@@ -330,9 +348,9 @@ function PrecisionMetrics({ locale }: { locale: string }) {
           >
             {m.label}
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }
 
@@ -660,7 +678,16 @@ export default function ManufacturingClient() {
               ? "Construimos el hardware. Pero también construimos el software que lo lee, la IA que aprende de él y los programas de mantenimiento que dependen de él. Un solo proveedor para el ciclo de vida completo."
               : "We build the hardware. But we also build the software that reads it, the AI that learns from it, and the maintenance programs that depend on it. One vendor for the full lifecycle."}
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1 } },
+            }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}
+          >
             {[
               {
                 name: locale === "fr" ? "Maintenance Prédictive" : locale === "es" ? "Mantenimiento Predictivo" : "Predictive Maintenance",
@@ -682,12 +709,19 @@ export default function ManufacturingClient() {
                 desc: locale === "fr" ? "Modèles entraînés sur les données que génèrent nos instruments — parce que l'ensemble d'entraînement n'est bon que si le matériel derrière l'est aussi." : locale === "es" ? "Modelos entrenados con los datos que generan nuestros instrumentos — porque el conjunto de entrenamiento es tan bueno como el hardware detrás de él." : "Models trained on the data our instruments generate — because the training set is only as good as the hardware behind it.",
                 href: "/divisions/ai-consulting",
               },
-            ].map((d, i) => (
-              <motion.a key={d.name} href={d.href}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
+            ].map((d) => (
+              <motion.a
+                key={d.name}
+                href={d.href}
+                variants={{
+                  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    transition: { type: "spring", stiffness: 90, damping: 14 },
+                  },
+                }}
                 style={{
                   textDecoration: "none", padding: 24, borderRadius: 16,
                   background: "#111", border: "1px solid rgba(255,255,255,0.06)",
@@ -700,7 +734,7 @@ export default function ManufacturingClient() {
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>{d.desc}</p>
               </motion.a>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -737,11 +771,38 @@ export default function ManufacturingClient() {
             {locale === "fr" ? "Instruments qui Performent quand Ça Compte" : locale === "es" ? "Instrumentos que Rinden Cuando Importa" : "Instruments That Perform When It Counts"}
           </TextReveal>
         </div>
-        <StaggerGrid columns={2} gap={20}>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.13 } },
+          }}
+          style={{
+            display: "grid",
+            gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
+            gap: 20,
+          }}
+        >
           {capabilities.map((item) => (
-            <ProdCard key={item.title} item={item} />
+            <motion.div
+              key={item.title}
+              variants={{
+                hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  filter: "blur(0px)",
+                  transition: { type: "spring", stiffness: 80, damping: 14 },
+                },
+              }}
+              style={{ height: "100%" }}
+            >
+              <ProdCard item={item} />
+            </motion.div>
           ))}
-        </StaggerGrid>
+        </motion.div>
       </section>
 
       <SectionDivider />
@@ -916,6 +977,8 @@ export default function ManufacturingClient() {
       {/* CTA */}
       <section
         style={{
+          position: "relative",
+          overflow: "hidden",
           padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
@@ -924,10 +987,12 @@ export default function ManufacturingClient() {
           gap: 32,
         }}
       >
-        <BlurFade delay={0.15} blur="10px" duration={0.7} as="div">
-        <TextReveal
+        <AnimatedGridBg gridSize={72} lineOpacity={0.025} sweepOpacity={0.035} />
+        <VerticalCutReveal
           as="h2"
-          mode="word"
+          staggerDuration={0.055}
+          spring={{ stiffness: 80, damping: 13 }}
+          delay={0.1}
           style={{
             fontFamily: "'Instrument Serif', Georgia, serif",
             fontStyle: "italic",
@@ -936,6 +1001,8 @@ export default function ManufacturingClient() {
             fontWeight: 400,
             letterSpacing: "-0.02em",
             maxWidth: 640,
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {locale === "fr"
@@ -943,8 +1010,7 @@ export default function ManufacturingClient() {
             : locale === "es"
             ? "Si sus instrumentos no rinden en el campo, las especificaciones no importan."
             : "If your instruments aren't performing in the field, the specs don't matter."}
-        </TextReveal>
-        </BlurFade>
+        </VerticalCutReveal>
         <p
           style={{
             fontFamily: "'Outfit', sans-serif",
@@ -953,6 +1019,8 @@ export default function ManufacturingClient() {
             color: "rgba(255,255,255,0.4)",
             maxWidth: 440,
             lineHeight: 1.7,
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {locale === "fr"
@@ -961,7 +1029,7 @@ export default function ManufacturingClient() {
             ? "Confiado por Westinghouse, Holcim y Siemens Energy. Instrumentos de grado industrial diseñados y validados por los ingenieros que los usan todos los días."
             : "Trusted by Westinghouse, Holcim, and Siemens Energy. Industrial-grade instruments engineered and validated by the engineers who use them every day."}
         </p>
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", position: "relative", zIndex: 1 }}>
           <MagneticButton as="a" href="/contact">
             {locale === "fr" ? "Scalez la Précision" : locale === "es" ? "Escale la Precisión" : "Scale Precision"}
           </MagneticButton>

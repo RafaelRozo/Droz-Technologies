@@ -16,6 +16,8 @@ import {
   ScrollVelocityText,
   BlurFade,
 } from "@/components/animations";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
 import dynamic from "next/dynamic";
 
 const DataArchitecture = dynamic(() => import("@/components/3d/DataArchitecture"), { ssr: false });
@@ -308,8 +310,12 @@ function MetricBar({ metrics }: { metrics: Metric[] }) {
       }}
     >
       {metrics.map((m, i) => (
-        <div
+        <motion.div
           key={i}
+          initial={{ opacity: 0, scale: 0.85, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+          viewport={{ once: true, margin: "-40px" }}
           style={{
             padding: "40px 32px",
             borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
@@ -342,7 +348,7 @@ function MetricBar({ metrics }: { metrics: Metric[] }) {
           >
             {m.label}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -741,7 +747,16 @@ export default function SoftwareClient() {
               ? "Cuando su plataforma empresarial necesita ingerir datos de sensores, controlar sistemas de edificios o alimentar modelos de IA — no lo remitimos a un socio. Caminamos por el pasillo."
               : "When your enterprise platform needs to ingest sensor data, control building systems, or feed AI models — we don't hand you off to a partner. We walk down the hall."}
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
+          <motion.div
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}
+          >
             {[
               {
                 name: locale === "fr" ? "Maintenance Prédictive" : locale === "es" ? "Mantenimiento Predictivo" : "Predictive Maintenance",
@@ -765,10 +780,10 @@ export default function SoftwareClient() {
               },
             ].map((d, i) => (
               <motion.a key={d.name} href={d.href}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
+                variants={{
+                  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+                }}
                 style={{
                   textDecoration: "none", padding: 24, borderRadius: 16,
                   background: "#111", border: "1px solid rgba(255,255,255,0.06)",
@@ -781,7 +796,7 @@ export default function SoftwareClient() {
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>{d.desc}</p>
               </motion.a>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -864,7 +879,11 @@ export default function SoftwareClient() {
       <SectionDivider />
 
       {/* Terminal showcase */}
-      <section
+      <motion.section
+        initial={{ opacity: 0, filter: "blur(4px)" }}
+        whileInView={{ opacity: 1, filter: "blur(0px)" }}
+        transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true, margin: "-80px" }}
         style={{
           padding: isMobile ? "48px 20px" : "100px 48px",
           maxWidth: 1200,
@@ -919,7 +938,7 @@ export default function SoftwareClient() {
           </p>
         </div>
         <TerminalShowcase />
-      </section>
+      </motion.section>
 
       {/* DataArchitecture as full-section background behind a showcase band */}
       <section
@@ -1027,6 +1046,8 @@ export default function SoftwareClient() {
       {/* CTA */}
       <section
         style={{
+          position: "relative",
+          overflow: "hidden",
           padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
@@ -1035,10 +1056,9 @@ export default function SoftwareClient() {
           gap: 32,
         }}
       >
-        <BlurFade delay={0.15} blur="10px" duration={0.7} as="div">
-        <TextReveal
+        <AnimatedGridBg lineOpacity={0.04} sweepOpacity={0.05} />
+        <VerticalCutReveal
           as="h2"
-          mode="word"
           style={{
             fontFamily: "'Instrument Serif', Georgia, serif",
             fontStyle: "italic",
@@ -1047,15 +1067,18 @@ export default function SoftwareClient() {
             fontWeight: 400,
             letterSpacing: "-0.02em",
             maxWidth: 640,
+            position: "relative",
+            zIndex: 1,
           }}
+          staggerDuration={0.06}
+          spring={{ stiffness: 70, damping: 11 }}
         >
           {locale === "fr"
             ? "Vous n'avez pas besoin d'une autre feuille de route. Vous avez besoin d'un logiciel qui fonctionne lundi."
             : locale === "es"
             ? "No necesita otra hoja de ruta. Necesita software que funcione el lunes."
             : "You don't need another roadmap. You need software that works on Monday."}
-        </TextReveal>
-        </BlurFade>
+        </VerticalCutReveal>
         <p
           style={{
             fontFamily: "'Outfit', sans-serif",
@@ -1064,6 +1087,8 @@ export default function SoftwareClient() {
             color: "rgba(255,255,255,0.4)",
             maxWidth: 440,
             lineHeight: 1.7,
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {locale === "fr"
@@ -1072,7 +1097,7 @@ export default function SoftwareClient() {
             ? "Desde plataformas gubernamentales hasta SaaS empresarial — entregamos software de grado producción con ingenieros senior en cada línea. En semanas, no en trimestres."
             : "From government platforms to enterprise SaaS — we deliver production-grade software with senior engineers on every line. In weeks, not quarters."}
         </p>
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", position: "relative", zIndex: 1 }}>
           <MagneticButton as="a" href="/contact">
             {locale === "fr" ? "Livrez Plus Vite" : locale === "es" ? "Entregue Más Rápido" : "Ship Faster"}
           </MagneticButton>

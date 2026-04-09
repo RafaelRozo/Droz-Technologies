@@ -17,6 +17,8 @@ import {
   SplitReveal,
   BlurFade,
 } from "@/components/animations";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
 
@@ -81,10 +83,10 @@ function WorkCard({ number, title, body, delay = 0 }: WorkCardProps) {
   return (
     <TiltCard tiltDegree={4} glowOpacity={0.06} style={{ height: "100%" }}>
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 28, filter: "blur(4px)" }}
+        whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ type: "spring", stiffness: 100, damping: 12, delay }}
         style={{
           background: "#111",
           padding: "40px 32px",
@@ -164,7 +166,11 @@ interface StatBlockProps {
 
 function StatBlock({ target, suffix = "", label }: StatBlockProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -200,7 +206,7 @@ function StatBlock({ target, suffix = "", label }: StatBlockProps) {
       >
         {label}
       </span>
-    </div>
+    </motion.div>
   );
 }
 
@@ -428,37 +434,65 @@ export default function AboutClient() {
 
               {/* Right: origin story sentences */}
               <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-                <OriginSentence delay={0}>
-                  {locale === "fr"
-                    ? "L'entreprise a commencé dans les années 90, dans des aciéries vénézuéliennes. Pas de capital-risque. Pas d'incubateur. Juste des ingénieurs sur le plancher de l'usine, apprenant à diagnostiquer les défaillances d'équipements à la main."
-                    : locale === "es"
-                      ? "La empresa comenzó en los años 90, en acerías venezolanas. Sin capital de riesgo. Sin incubadoras. Solo ingenieros en el piso de la planta, aprendiendo a diagnosticar fallas de equipos con las manos."
-                      : "The company started in the 1990s, in Venezuelan steel mills. No venture capital. No incubators. Just engineers on the factory floor, learning to diagnose equipment failures by hand."}
-                </OriginSentence>
+                <motion.div
+                  initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <OriginSentence delay={0}>
+                    {locale === "fr"
+                      ? "L'entreprise a commencé dans les années 90, dans des aciéries vénézuéliennes. Pas de capital-risque. Pas d'incubateur. Juste des ingénieurs sur le plancher de l'usine, apprenant à diagnostiquer les défaillances d'équipements à la main."
+                      : locale === "es"
+                        ? "La empresa comenzó en los años 90, en acerías venezolanas. Sin capital de riesgo. Sin incubadoras. Solo ingenieros en el piso de la planta, aprendiendo a diagnosticar fallas de equipos con las manos."
+                        : "The company started in the 1990s, in Venezuelan steel mills. No venture capital. No incubators. Just engineers on the factory floor, learning to diagnose equipment failures by hand."}
+                  </OriginSentence>
+                </motion.div>
 
-                <OriginSentence delay={0.1}>
-                  {locale === "fr"
-                    ? "Nous avons aligné des rotors pour PDVSA. Nous avons équilibré des machines pour Holcim. Nous avons appris ce qu'un palier défaillant ressent — à 3h du matin, dans une chaleur de 40 degrés, avec une ligne de production arrêtée derrière vous."
-                    : locale === "es"
-                      ? "Alineamos rotores para PDVSA. Balanceamos máquinas para Holcim. Aprendimos lo que se siente un cojinete fallando — a las 3 de la mañana, con 40 grados de calor, con una línea de producción parada detrás de ti."
-                      : "We aligned rotors for PDVSA. We balanced machines for Holcim. We learned what a failing bearing feels like — at 3 AM, in 40-degree heat, with a production line stopped behind you."}
-                </OriginSentence>
+                <motion.div
+                  initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <OriginSentence delay={0.1}>
+                    {locale === "fr"
+                      ? "Nous avons aligné des rotors pour PDVSA. Nous avons équilibré des machines pour Holcim. Nous avons appris ce qu'un palier défaillant ressent — à 3h du matin, dans une chaleur de 40 degrés, avec une ligne de production arrêtée derrière vous."
+                      : locale === "es"
+                        ? "Alineamos rotores para PDVSA. Balanceamos máquinas para Holcim. Aprendimos lo que se siente un cojinete fallando — a las 3 de la mañana, con 40 grados de calor, con una línea de producción parada detrás de ti."
+                        : "We aligned rotors for PDVSA. We balanced machines for Holcim. We learned what a failing bearing feels like — at 3 AM, in 40-degree heat, with a production line stopped behind you."}
+                  </OriginSentence>
+                </motion.div>
 
-                <OriginSentence delay={0.2}>
-                  {locale === "fr"
-                    ? "Vingt ans plus tard, nous avons traversé la frontière vers le Canada — et nous avons amené ce que personne d'autre n'avait : vingt ans de connaissances de plancher d'usine, maintenant codifiées dans des logiciels, de l'IA et des systèmes automatisés."
-                    : locale === "es"
-                      ? "Veinte años después, cruzamos la frontera hacia Canadá — y trajimos lo que nadie más tenía: veinte años de conocimiento de planta industrial, ahora codificado en software, IA y sistemas automatizados."
-                      : "Twenty years later, we crossed into Canada — and we brought what nobody else had: twenty years of factory-floor knowledge, now codified into software, AI, and automated systems."}
-                </OriginSentence>
+                <motion.div
+                  initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <OriginSentence delay={0.2}>
+                    {locale === "fr"
+                      ? "Vingt ans plus tard, nous avons traversé la frontière vers le Canada — et nous avons amené ce que personne d'autre n'avait : vingt ans de connaissances de plancher d'usine, maintenant codifiées dans des logiciels, de l'IA et des systèmes automatisés."
+                      : locale === "es"
+                        ? "Veinte años después, cruzamos la frontera hacia Canadá — y trajimos lo que nadie más tenía: veinte años de conocimiento de planta industrial, ahora codificado en software, IA y sistemas automatizados."
+                        : "Twenty years later, we crossed into Canada — and we brought what nobody else had: twenty years of factory-floor knowledge, now codified into software, AI, and automated systems."}
+                  </OriginSentence>
+                </motion.div>
 
-                <OriginSentence delay={0.3}>
-                  {locale === "fr"
-                    ? "Aujourd'hui : cinq divisions. Six pays. Westinghouse, Unilever, le gouvernement du Canada. Les mêmes ingénieurs qui ont appris dans ces usines vénézuéliennes sont ceux qui se présenteront dans votre installation cette semaine."
-                    : locale === "es"
-                      ? "Hoy: cinco divisiones. Seis países. Westinghouse, Unilever, el gobierno de Canadá. Los mismos ingenieros que aprendieron en esas plantas venezolanas son los que se presentarán en tu instalación esta semana."
-                      : "Today: five divisions. Six countries. Westinghouse, Unilever, the Government of Canada. The same engineers who learned in those Venezuelan plants are the ones who will show up at your facility this week."}
-                </OriginSentence>
+                <motion.div
+                  initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
+                  whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <OriginSentence delay={0.3}>
+                    {locale === "fr"
+                      ? "Aujourd'hui : cinq divisions. Six pays. Westinghouse, Unilever, le gouvernement du Canada. Les mêmes ingénieurs qui ont appris dans ces usines vénézuéliennes sont ceux qui se présenteront dans votre installation cette semaine."
+                      : locale === "es"
+                        ? "Hoy: cinco divisiones. Seis países. Westinghouse, Unilever, el gobierno de Canadá. Los mismos ingenieros que aprendieron en esas plantas venezolanas son los que se presentarán en tu instalación esta semana."
+                        : "Today: five divisions. Six countries. Westinghouse, Unilever, the Government of Canada. The same engineers who learned in those Venezuelan plants are the ones who will show up at your facility this week."}
+                  </OriginSentence>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -472,7 +506,7 @@ export default function AboutClient() {
             borderBottom: "1px solid rgba(255,255,255,0.04)",
           }}
         >
-          <ScrollVelocityText baseVelocity={-0.55}>
+          <ScrollVelocityText baseVelocity={-0.2}>
             {locale === "fr"
               ? "Venezuela · Canada · 20+ ans · Le terrain avant tout · Cinq divisions · Un seul standard · Foi · Détermination · Précision"
               : locale === "es"
@@ -771,11 +805,11 @@ export default function AboutClient() {
               &ldquo;
             </motion.span>
 
-            <BlurFade delay={0.2} blur="10px" duration={0.7} as="div">
-            <motion.blockquote
-              initial={{ opacity: 0, y: 32 }}
-              animate={onlyWeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 32 }}
-              transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            <VerticalCutReveal
+              as="blockquote"
+              delay={0.1}
+              staggerDuration={0.04}
+              spring={{ stiffness: 80, damping: 12 }}
               style={{
                 fontFamily: "'Instrument Serif', Georgia, serif",
                 fontStyle: "italic",
@@ -786,11 +820,11 @@ export default function AboutClient() {
                 letterSpacing: "-0.025em",
                 margin: 0,
                 maxWidth: 960,
+                justifyContent: "flex-start",
               }}
             >
               {t.narrative.onlyWe}
-            </motion.blockquote>
-            </BlurFade>
+            </VerticalCutReveal>
 
             <motion.div
               initial={{ opacity: 0, scaleX: 0 }}
@@ -822,6 +856,8 @@ export default function AboutClient() {
             overflow: "hidden",
           }}
         >
+          <AnimatedGridBg />
+
           <div
             style={{
               position: "absolute",
@@ -852,12 +888,11 @@ export default function AboutClient() {
             {locale === "fr" ? "À vous de jouer" : locale === "es" ? "Su turno" : "Your move"}
           </p>
 
-          <BlurFade delay={0.15} blur="10px" duration={0.7} as="div" style={{ position: "relative", zIndex: 1 }}>
-          <TextReveal
+          <VerticalCutReveal
             as="h2"
-            mode="word"
-            stagger={0.07}
-            duration={0.7}
+            delay={0.15}
+            staggerDuration={0.04}
+            spring={{ stiffness: 80, damping: 12 }}
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
               fontStyle: "italic",
@@ -870,6 +905,7 @@ export default function AboutClient() {
               maxWidth: 640,
               position: "relative",
               zIndex: 1,
+              justifyContent: "center",
             }}
           >
             {locale === "fr"
@@ -877,8 +913,7 @@ export default function AboutClient() {
               : locale === "es"
                 ? "Hable con el ingeniero que conoce su sector"
                 : "Talk to the engineer who knows your industry"}
-          </TextReveal>
-          </BlurFade>
+          </VerticalCutReveal>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}

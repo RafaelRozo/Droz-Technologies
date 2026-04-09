@@ -18,6 +18,8 @@ import {
   ScrollProgressBar,
   BlurFade,
 } from "@/components/animations";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -130,7 +132,6 @@ function StatBlock({ target, suffix, prefix, label }: { target: number; suffix: 
         gap: 8,
         padding: "48px 24px",
         borderRight: "1px solid rgba(255,255,255,0.04)",
-        flex: 1,
       }}
     >
       <span
@@ -587,7 +588,7 @@ export default function SolutionsClient() {
             borderBottom: "1px solid rgba(255,255,255,0.04)",
           }}
         >
-          <ScrollVelocityText baseVelocity={-0.6}>
+          <ScrollVelocityText baseVelocity={-0.2}>
             {locale === "fr"
               ? "Analytique prédictive · Logiciels d'entreprise · IoT industriel · Intégration IA · Jumeaux numériques · Systèmes d'automatisation · En production. Mesuré. Prouvé."
               : locale === "es"
@@ -698,18 +699,39 @@ export default function SolutionsClient() {
               </div>
 
               {/* Right: division cards */}
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              <motion.div
+                style={{ display: "flex", flexDirection: "column", gap: 12 }}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-60px" }}
+                variants={{
+                  hidden: {},
+                  visible: { transition: { staggerChildren: 0.1 } },
+                }}
+              >
                 {divisions.map((d) => (
-                  <DivisionCard
+                  <motion.div
                     key={d.slug}
-                    name={d.name}
-                    slug={d.slug}
-                    painPoint={d.painPoint}
-                    solution={d.solution}
-                    cta={d.cta}
-                  />
+                    variants={{
+                      hidden: { opacity: 0, y: 28, filter: "blur(4px)" },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        filter: "blur(0px)",
+                        transition: { type: "spring", stiffness: 100, damping: 12 },
+                      },
+                    }}
+                  >
+                    <DivisionCard
+                      name={d.name}
+                      slug={d.slug}
+                      painPoint={d.painPoint}
+                      solution={d.solution}
+                      cta={d.cta}
+                    />
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -726,7 +748,7 @@ export default function SolutionsClient() {
             overflow: "hidden",
           }}
         >
-          <div
+          <motion.div
             style={{
               position: "relative",
               zIndex: 1,
@@ -734,17 +756,37 @@ export default function SolutionsClient() {
               margin: "0 auto",
               display: "flex",
             }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1 } },
+            }}
           >
             {STATS.map((s, i) => (
-              <StatBlock
+              <motion.div
                 key={i}
-                target={s.target}
-                suffix={s.suffix}
-                prefix={s.prefix}
-                label={s.label}
-              />
+                style={{ flex: 1 }}
+                variants={{
+                  hidden: { opacity: 0, y: 20, filter: "blur(6px)" },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    transition: { type: "spring", stiffness: 100, damping: 12 },
+                  },
+                }}
+              >
+                <StatBlock
+                  target={s.target}
+                  suffix={s.suffix}
+                  prefix={s.prefix}
+                  label={s.label}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </section>
 
         <SectionDivider style={{ margin: "0 10%" }} />
@@ -762,6 +804,8 @@ export default function SolutionsClient() {
             overflow: "hidden",
           }}
         >
+          <AnimatedGridBg gridSize={60} lineOpacity={0.025} sweepCount={2} sweepOpacity={0.035} />
+
           <div
             style={{
               position: "absolute",
@@ -792,12 +836,11 @@ export default function SolutionsClient() {
             {locale === "fr" ? "Votre problème, notre terrain" : locale === "es" ? "Su problema, nuestro terreno" : "Your problem, our terrain"}
           </p>
 
-          <BlurFade delay={0.15} blur="10px" duration={0.7} as="div" style={{ position: "relative", zIndex: 1 }}>
-          <TextReveal
+          <VerticalCutReveal
             as="h2"
-            mode="word"
-            stagger={0.07}
-            duration={0.7}
+            staggerDuration={0.07}
+            spring={{ stiffness: 100, damping: 12 }}
+            delay={0.15}
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
               fontStyle: "italic",
@@ -817,8 +860,7 @@ export default function SolutionsClient() {
               : locale === "es"
                 ? "Sin diapositivas. Sistemas que funcionan."
                 : "No slides. Running systems."}
-          </TextReveal>
-          </BlurFade>
+          </VerticalCutReveal>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}

@@ -16,6 +16,8 @@ import {
   ScrollProgressBar,
   BlurFade,
 } from "@/components/animations";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
 import PageHero from "@/components/shared/PageHero";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
@@ -133,6 +135,7 @@ function BenefitBlock({ stat }: { stat: BenefitStat }) {
         padding: "48px 24px",
         borderRight: "1px solid rgba(255,255,255,0.04)",
         flex: 1,
+        width: "100%",
       }}
     >
       <span
@@ -568,7 +571,7 @@ export default function CareersClient() {
             borderBottom: "1px solid rgba(255,255,255,0.04)",
           }}
         >
-          <ScrollVelocityText baseVelocity={-0.5}>
+          <ScrollVelocityText baseVelocity={-0.2}>
             {locale === "fr"
               ? "On se présente · On livre · On assume · On grandit · Le terrain avant tout · Pas de feuilles de route · Foi · Détermination · Précision"
               : locale === "es"
@@ -647,8 +650,7 @@ export default function CareersClient() {
               &ldquo;
             </span>
 
-            <BlurFade delay={0.2} blur="10px" duration={0.7} as="div">
-            <p
+            <VerticalCutReveal
               style={{
                 fontFamily: "'Instrument Serif', Georgia, serif",
                 fontStyle: "italic",
@@ -657,15 +659,16 @@ export default function CareersClient() {
                 color: "rgba(255,255,255,0.75)",
                 lineHeight: 1.6,
                 letterSpacing: "-0.01em",
+                justifyContent: "center",
               }}
+              delay={0.2}
             >
               {locale === "fr"
                 ? "Aucune autre entreprise sur terre ne combine 20 ans d'analyse des vibrations, des logiciels d'entreprise personnalisés, du conseil en IA, de la fabrication et de la construction sous un même toit. C'est pour ça que vous voudrez travailler ici."
                 : locale === "es"
                   ? "Ninguna otra empresa en la tierra combina 20 años de análisis de vibraciones, software empresarial personalizado, consultoría de IA, fabricación y construcción bajo un mismo techo. Por eso querrá trabajar aquí."
                   : t.narrative.onlyWe}
-            </p>
-            </BlurFade>
+            </VerticalCutReveal>
           </motion.div>
         </section>
 
@@ -691,7 +694,20 @@ export default function CareersClient() {
             }}
           >
             {BENEFIT_STATS.map((s, i) => (
-              <BenefitBlock key={i} stat={s} />
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16, filter: "blur(6px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{
+                  duration: 0.75,
+                  delay: i * 0.1,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                style={{ flex: 1, display: "flex" }}
+              >
+                <BenefitBlock stat={s} />
+              </motion.div>
             ))}
           </div>
         </section>
@@ -828,13 +844,18 @@ export default function CareersClient() {
               </div>
 
               {/* Right: accordion */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+                whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              >
                 <SmoothAccordion
                   items={accordionItems}
                   allowMultiple={false}
                   style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
                 />
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -854,6 +875,8 @@ export default function CareersClient() {
             overflow: "hidden",
           }}
         >
+          <AnimatedGridBg />
+
           <div
             style={{
               position: "absolute",
@@ -888,12 +911,8 @@ export default function CareersClient() {
                 : "Open door"}
           </p>
 
-          <BlurFade delay={0.15} blur="10px" duration={0.7} as="div" style={{ position: "relative", zIndex: 1 }}>
-          <TextReveal
+          <VerticalCutReveal
             as="h2"
-            mode="word"
-            stagger={0.07}
-            duration={0.7}
             style={{
               fontFamily: "'Instrument Serif', Georgia, serif",
               fontStyle: "italic",
@@ -906,15 +925,16 @@ export default function CareersClient() {
               maxWidth: 680,
               position: "relative",
               zIndex: 1,
+              justifyContent: "center",
             }}
+            delay={0.15}
           >
             {locale === "fr"
               ? "Vous ne voyez pas votre rôle ? Écrivez-nous quand même."
               : locale === "es"
                 ? "¿No ve su rol? Escríbanos de todas formas."
                 : "Don't see your role? Reach out anyway."}
-          </TextReveal>
-          </BlurFade>
+          </VerticalCutReveal>
 
           <motion.p
             initial={{ opacity: 0, y: 16 }}

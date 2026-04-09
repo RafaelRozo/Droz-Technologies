@@ -18,6 +18,8 @@ import {
   BlurFade,
 } from "@/components/animations";
 import LogoMarquee from "@/components/animations/LogoMarquee";
+import VerticalCutReveal from "@/components/animations/VerticalCutReveal";
+import AnimatedGridBg from "@/components/animations/AnimatedGridBg";
 
 const TurbineAssembly = dynamic(() => import("@/components/3d/TurbineAssembly"), { ssr: false });
 
@@ -306,8 +308,12 @@ function MetricBar({ metrics }: { metrics: Metric[] }) {
       }}
     >
       {metrics.map((m, i) => (
-        <div
+        <motion.div
           key={i}
+          initial={{ opacity: 0, scale: 0.85, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.8, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
           style={{
             padding: "40px 32px",
             borderLeft: i > 0 ? "1px solid rgba(255,255,255,0.06)" : "none",
@@ -340,7 +346,7 @@ function MetricBar({ metrics }: { metrics: Metric[] }) {
           >
             {m.label}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -853,12 +859,16 @@ export default function PMClient() {
           alignItems: "center",
           textAlign: "center",
           gap: 32,
+          position: "relative",
+          overflow: "hidden",
         }}
       >
-        <BlurFade delay={0.15} blur="10px" duration={0.7} as="div">
-        <TextReveal
+        <AnimatedGridBg />
+        <VerticalCutReveal
           as="h2"
-          mode="word"
+          delay={0.1}
+          staggerDuration={0.05}
+          spring={{ stiffness: 80, damping: 12 }}
           style={{
             fontFamily: "'Instrument Serif', Georgia, serif",
             fontStyle: "italic",
@@ -867,6 +877,9 @@ export default function PMClient() {
             fontWeight: 400,
             letterSpacing: "-0.02em",
             maxWidth: 640,
+            justifyContent: "center",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {locale === "fr"
@@ -874,8 +887,7 @@ export default function PMClient() {
             : locale === "es"
             ? "Su próxima falla ya está en los datos."
             : "Your next failure is already in the data."}
-        </TextReveal>
-        </BlurFade>
+        </VerticalCutReveal>
         <p
           style={{
             fontFamily: "'Outfit', sans-serif",

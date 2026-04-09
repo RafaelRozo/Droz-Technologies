@@ -17,6 +17,8 @@ import {
   ScrollVelocityText,
   SmoothAccordion,
   BlurFade,
+  VerticalCutReveal,
+  AnimatedGridBg,
 } from "@/components/animations";
 
 const NeuralBrain = dynamic(() => import("@/components/3d/NeuralBrain"), { ssr: false });
@@ -333,8 +335,12 @@ function MetricsRow({ locale }: { locale: string }) {
       }}
     >
       {stats.map((s, i) => (
-        <div
+        <motion.div
           key={i}
+          initial={{ opacity: 0, scale: 0.85, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
           style={{
             padding: "48px 24px",
             textAlign: "center",
@@ -367,7 +373,7 @@ function MetricsRow({ locale }: { locale: string }) {
           >
             {s.label}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -595,7 +601,11 @@ export default function AIClient() {
                 : "That demo will never survive your production environment. And two years from now, your AI pilot will still be a PowerPoint deck with a Gantt chart that says \"Phase 2: TBD.\""}
             </p>
           </motion.div>
-          <div>
+          <motion.div
+            initial={{ opacity: 0, filter: "blur(4px)", y: 20 }}
+            animate={problemInView ? { opacity: 1, filter: "blur(0px)", y: 0 } : { opacity: 0, filter: "blur(4px)", y: 20 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          >
             {[
               {
                 stat: "85%",
@@ -643,7 +653,7 @@ export default function AIClient() {
                 </div>
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -755,7 +765,16 @@ export default function AIClient() {
               ? "La mayoría de las consultoras de IA construyen modelos con datos limpios y esperan lo mejor. Tenemos divisiones que generan los datos industriales, construyen las plataformas de software, instrumentan los edificios y mantienen los equipos. Su modelo de IA obtiene un contexto que nadie más puede proporcionar."
               : "Most AI consultancies build models on clean data and hope for the best. We have divisions that generate the industrial data, build the software platforms, instrument the buildings, and maintain the equipment. Your AI model gets context nobody else can provide."}
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
+          <motion.div
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
+            }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}
+          >
             {[
               {
                 name: locale === "fr" ? "Maintenance Prédictive" : locale === "es" ? "Mantenimiento Predictivo" : "Predictive Maintenance",
@@ -777,12 +796,12 @@ export default function AIClient() {
                 desc: locale === "fr" ? "Instruments de précision qui produisent des données fiables et calibrées — pour que votre modèle n'apprenne pas du bruit." : locale === "es" ? "Instrumentos de precisión que producen datos confiables y calibrados — para que su modelo no aprenda del ruido." : "Precision instruments that produce reliable, calibrated data — so your model isn't learning from noise.",
                 href: "/divisions/industrial-manufacturing",
               },
-            ].map((d, i) => (
+            ].map((d) => (
               <motion.a key={d.name} href={d.href}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                viewport={{ once: true }}
+                variants={{
+                  hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+                  visible: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
+                }}
                 style={{
                   textDecoration: "none", padding: 24, borderRadius: 16,
                   background: "#111", border: "1px solid rgba(255,255,255,0.06)",
@@ -795,7 +814,7 @@ export default function AIClient() {
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>{d.desc}</p>
               </motion.a>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -1032,11 +1051,18 @@ export default function AIClient() {
             {locale === "fr" ? "Des Données Désordonnées à la Production en 90 Jours" : locale === "es" ? "De los Datos Desordenados a Producción en 90 Días" : "From Messy Data to Production in 90 Days"}
           </TextReveal>
         </div>
-        <SmoothAccordion
-          items={processItems}
-          allowMultiple={false}
-          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
-        />
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(4px)", y: 16 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <SmoothAccordion
+            items={processItems}
+            allowMultiple={false}
+            style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+          />
+        </motion.div>
       </section>
 
       <SectionDivider />
@@ -1053,6 +1079,8 @@ export default function AIClient() {
       {/* CTA */}
       <section
         style={{
+          position: "relative",
+          overflow: "hidden",
           padding: isMobile ? "48px 20px" : "120px 48px",
           display: "flex",
           flexDirection: "column",
@@ -1061,10 +1089,10 @@ export default function AIClient() {
           gap: 32,
         }}
       >
-        <BlurFade delay={0.15} blur="10px" duration={0.7} as="div">
-        <TextReveal
-          as="h2"
-          mode="word"
+        <AnimatedGridBg gridSize={60} lineOpacity={0.03} sweepOpacity={0.04} />
+        <VerticalCutReveal
+          staggerDuration={0.04}
+          delay={0.1}
           style={{
             fontFamily: "'Instrument Serif', Georgia, serif",
             fontStyle: "italic",
@@ -1073,6 +1101,10 @@ export default function AIClient() {
             fontWeight: 400,
             letterSpacing: "-0.02em",
             maxWidth: 640,
+            lineHeight: 1.2,
+            justifyContent: "center",
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {locale === "fr"
@@ -1080,8 +1112,7 @@ export default function AIClient() {
             : locale === "es"
             ? "No tiene un problema de datos. Tiene un problema de contexto. Tenemos 20 años de él."
             : "You don't have a data problem. You have a context problem. We have 20 years of it."}
-        </TextReveal>
-        </BlurFade>
+        </VerticalCutReveal>
         <p
           style={{
             fontFamily: "'Outfit', sans-serif",
@@ -1090,6 +1121,8 @@ export default function AIClient() {
             color: "rgba(255,255,255,0.4)",
             maxWidth: 440,
             lineHeight: 1.7,
+            position: "relative",
+            zIndex: 1,
           }}
         >
           {locale === "fr"
@@ -1098,7 +1131,7 @@ export default function AIClient() {
             ? "Auditaremos sus datos, identificaremos su oportunidad de IA con mayor ROI y le daremos un camino claro desde donde está hasta 200+ modelos en producción — en 90 días o menos."
             : "We'll audit your data, identify your highest-ROI AI opportunity, and give you a clear path from where you are to 200+ models in production — in 90 days or less."}
         </p>
-        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center" }}>
+        <div style={{ display: "flex", gap: 16, flexWrap: "wrap", justifyContent: "center", position: "relative", zIndex: 1 }}>
           <MagneticButton as="a" href="/contact">
             {locale === "fr" ? "Pensez Plus Grand" : locale === "es" ? "Piense en Grande" : "Think Bigger"}
           </MagneticButton>

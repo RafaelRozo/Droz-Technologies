@@ -65,11 +65,11 @@ export default function StaggerGrid({
       {children.map((child, i) => (
         <motion.div
           key={i}
-          initial={{ opacity: 0, y: 24, scale: 0.96 }}
+          initial={{ opacity: 0, y: 24, scale: 0.96, filter: "blur(4px)" }}
           animate={
             isInView
-              ? { opacity: 1, y: 0, scale: 1 }
-              : { opacity: 0, y: 24, scale: 0.96 }
+              ? { opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }
+              : { opacity: 0, y: 24, scale: 0.96, filter: "blur(4px)" }
           }
           transition={{
             duration,
