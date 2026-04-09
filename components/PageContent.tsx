@@ -1070,13 +1070,15 @@ export default function PageContent() {
                     <a href="/contact" aria-label={`Get started with ${div.name}`} style={{
                       padding: "10px 28px", borderRadius: 9999, fontSize: 14,
                       fontFamily: "'Outfit', sans-serif", fontWeight: 400,
-                      border: "1px solid rgba(255,255,255,0.15)", color: "#fff",
-                      textDecoration: "none", background: "transparent",
-                      transition: "border-color 0.3s ease",
+                      border: "1px solid rgba(255,255,255,0.12)", color: "#fff",
+                      textDecoration: "none", background: "rgba(255,255,255,0.04)",
+                      backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+                      boxShadow: "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)",
+                      transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
                       display: "inline-flex", alignItems: "center",
                     }}
-                      onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
-                      onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; e.currentTarget.style.background = "transparent"; }}
+                      onMouseEnter={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.25)"; el.style.background = "rgba(255,255,255,0.08)"; el.style.boxShadow = "0 6px 20px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15), 0 0 16px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(255,255,255,0.03)"; el.style.transform = "translateY(-1px)"; }}
+                      onMouseLeave={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.12)"; el.style.background = "rgba(255,255,255,0.04)"; el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)"; el.style.transform = "translateY(0)"; }}
                     >
                       Get Started
                     </a>
@@ -1284,13 +1286,15 @@ export default function PageContent() {
               style={{
                 padding: "14px 36px", borderRadius: 9999, fontSize: 14,
                 fontFamily: "'Outfit', sans-serif", fontWeight: 400,
-                border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.7)",
-                textDecoration: "none", background: "transparent",
-                transition: "border-color 0.3s ease, color 0.3s ease",
+                border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.7)",
+                textDecoration: "none", background: "rgba(255,255,255,0.04)",
+                backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)",
+                transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
                 display: "inline-flex", alignItems: "center",
               }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)"; e.currentTarget.style.color = "#fff"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)"; e.currentTarget.style.color = "rgba(255,255,255,0.7)"; }}
+              onMouseEnter={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.25)"; el.style.color = "#fff"; el.style.background = "rgba(255,255,255,0.08)"; el.style.boxShadow = "0 6px 20px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15), 0 0 16px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(255,255,255,0.03)"; el.style.transform = "translateY(-1px)"; }}
+              onMouseLeave={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.12)"; el.style.color = "rgba(255,255,255,0.7)"; el.style.background = "rgba(255,255,255,0.04)"; el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)"; el.style.transform = "translateY(0)"; }}
             >
               {n.finalCta.secondary}
             </a>
@@ -1363,13 +1367,18 @@ export default function PageContent() {
             <div style={{ display: "flex", justifyContent: "center", marginTop: 16 }}>
               <button type="submit" style={{
                 position: "relative", padding: "14px 44px", borderRadius: 9999, fontSize: 15,
-                fontFamily: "'Outfit', sans-serif", fontWeight: 500, background: "#fff", color: "#0a0a0a",
-                border: "none", cursor: "pointer", overflow: "hidden", transition: "transform 0.2s ease",
+                fontFamily: "'Outfit', sans-serif", fontWeight: 500,
+                background: "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
+                color: "#0a0a0a", border: "none", cursor: "pointer", overflow: "hidden",
+                boxShadow: "0 6px 20px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.1), inset 0 2px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.06), inset 0 -4px 8px rgba(0,0,0,0.04)",
+                transition: "transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease",
               }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.03)"; e.currentTarget.style.boxShadow = "0 4px 24px rgba(255,255,255,0.15)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; e.currentTarget.style.boxShadow = "none"; }}>
-                <span style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.4) 50%, transparent 60%)", animation: "shimmer 3s ease-in-out infinite", pointerEvents: "none" }} />
-                <span style={{ position: "relative" }}>{t.contact.form.send}</span>
+                onMouseEnter={(e) => { const el = e.currentTarget; el.style.transform = "scale(1.03) translateY(-1px)"; el.style.boxShadow = "0 10px 40px rgba(255,255,255,0.18), 0 4px 12px rgba(0,0,0,0.15), inset 0 2px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(0,0,0,0.06), inset 0 -4px 8px rgba(0,0,0,0.03)"; el.style.background = "linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%)"; }}
+                onMouseLeave={(e) => { const el = e.currentTarget; el.style.transform = "scale(1) translateY(0)"; el.style.boxShadow = "0 6px 20px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.1), inset 0 2px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.06), inset 0 -4px 8px rgba(0,0,0,0.04)"; el.style.background = "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)"; }}>
+                {/* Specular bubble highlight */}
+                <span style={{ position: "absolute", top: 0, left: "12%", right: "12%", height: "48%", background: "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 100%)", borderRadius: "9999px 9999px 50% 50%", pointerEvents: "none", filter: "blur(0.5px)" }} />
+                <span style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.45) 50%, transparent 60%)", animation: "shimmer 5s ease-in-out infinite", pointerEvents: "none" }} />
+                <span style={{ position: "relative", zIndex: 1 }}>{t.contact.form.send}</span>
               </button>
             </div>
           </motion.form>

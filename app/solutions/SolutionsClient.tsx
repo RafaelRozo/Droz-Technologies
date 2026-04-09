@@ -172,22 +172,31 @@ function DivisionCard({ name, slug, painPoint, solution, cta }: Division) {
       style={{
         display: "block",
         padding: "28px 32px",
-        background: "#0f0f0f",
+        background: "rgba(255,255,255,0.02)",
         border: "1px solid rgba(255,255,255,0.05)",
         borderRadius: 16,
         textDecoration: "none",
-        transition: "border-color 0.3s ease, background 0.3s ease",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(255,255,255,0.01)",
+        transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
         cursor: "pointer",
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.12)";
-        (e.currentTarget as HTMLAnchorElement).style.background = "#141414";
+        const el = e.currentTarget as HTMLAnchorElement;
+        el.style.borderColor = "rgba(255,255,255,0.12)";
+        el.style.background = "rgba(255,255,255,0.05)";
+        el.style.boxShadow = "0 8px 24px rgba(0,0,0,0.2), 0 0 12px rgba(255,255,255,0.03), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(255,255,255,0.02)";
+        el.style.transform = "translateY(-2px)";
         const arrow = e.currentTarget.querySelector('.division-card-arrow') as HTMLElement;
         if (arrow) { arrow.style.color = "rgba(255,255,255,0.6)"; arrow.style.transform = "rotate(-45deg) translate(2px, -2px)"; }
       }}
       onMouseLeave={(e) => {
-        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(255,255,255,0.05)";
-        (e.currentTarget as HTMLAnchorElement).style.background = "#0f0f0f";
+        const el = e.currentTarget as HTMLAnchorElement;
+        el.style.borderColor = "rgba(255,255,255,0.05)";
+        el.style.background = "rgba(255,255,255,0.02)";
+        el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.04), inset 0 -1px 0 rgba(255,255,255,0.01)";
+        el.style.transform = "";
         const arrow = e.currentTarget.querySelector('.division-card-arrow') as HTMLElement;
         if (arrow) { arrow.style.color = "rgba(255,255,255,0.2)"; arrow.style.transform = "rotate(-45deg)"; }
       }}

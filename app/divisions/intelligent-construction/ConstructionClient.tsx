@@ -735,11 +735,13 @@ export default function ConstructionClient() {
                 viewport={{ once: true }}
                 style={{
                   textDecoration: "none", padding: 24, borderRadius: 16,
-                  background: "#111", border: "1px solid rgba(255,255,255,0.06)",
-                  transition: "border-color 0.3s, transform 0.3s",
+                  background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)",
+                  backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(255,255,255,0.01)",
+                  transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
                 }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.06)"; e.currentTarget.style.transform = ""; }}
+                onMouseEnter={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.15)"; el.style.transform = "translateY(-2px)"; el.style.background = "rgba(255,255,255,0.06)"; el.style.boxShadow = "0 8px 24px rgba(0,0,0,0.2), 0 0 12px rgba(255,255,255,0.03), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)"; }}
+                onMouseLeave={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.06)"; el.style.transform = ""; el.style.background = "rgba(255,255,255,0.03)"; el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(255,255,255,0.01)"; }}
               >
                 <h4 style={{ fontFamily: "'Outfit', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff", marginBottom: 8 }}>{d.name}</h4>
                 <p style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>{d.desc}</p>

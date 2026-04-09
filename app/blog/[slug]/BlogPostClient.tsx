@@ -237,20 +237,26 @@ export default function BlogPostClient({
                     fontWeight: 400,
                     color: "rgba(255,255,255,0.35)",
                     textDecoration: "none",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.08)",
                     padding: "5px 14px",
                     borderRadius: 9999,
-                    transition: "color 0.2s ease, border-color 0.2s ease",
+                    background: "rgba(255,255,255,0.02)",
+                    boxShadow: "0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.04)",
+                    transition: "all 0.25s cubic-bezier(0.16,1,0.3,1)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#fff";
-                    e.currentTarget.style.borderColor =
-                      "rgba(255,255,255,0.3)";
+                    const el = e.currentTarget;
+                    el.style.color = "#fff";
+                    el.style.borderColor = "rgba(255,255,255,0.2)";
+                    el.style.background = "rgba(255,255,255,0.06)";
+                    el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(255,255,255,0.35)";
-                    e.currentTarget.style.borderColor =
-                      "rgba(255,255,255,0.1)";
+                    const el = e.currentTarget;
+                    el.style.color = "rgba(255,255,255,0.35)";
+                    el.style.borderColor = "rgba(255,255,255,0.08)";
+                    el.style.background = "rgba(255,255,255,0.02)";
+                    el.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.04)";
                   }}
                 >
                   X
@@ -266,20 +272,26 @@ export default function BlogPostClient({
                     fontWeight: 400,
                     color: "rgba(255,255,255,0.35)",
                     textDecoration: "none",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.08)",
                     padding: "5px 14px",
                     borderRadius: 9999,
-                    transition: "color 0.2s ease, border-color 0.2s ease",
+                    background: "rgba(255,255,255,0.02)",
+                    boxShadow: "0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.04)",
+                    transition: "all 0.25s cubic-bezier(0.16,1,0.3,1)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#fff";
-                    e.currentTarget.style.borderColor =
-                      "rgba(255,255,255,0.3)";
+                    const el = e.currentTarget;
+                    el.style.color = "#fff";
+                    el.style.borderColor = "rgba(255,255,255,0.2)";
+                    el.style.background = "rgba(255,255,255,0.06)";
+                    el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.08)";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "rgba(255,255,255,0.35)";
-                    e.currentTarget.style.borderColor =
-                      "rgba(255,255,255,0.1)";
+                    const el = e.currentTarget;
+                    el.style.color = "rgba(255,255,255,0.35)";
+                    el.style.borderColor = "rgba(255,255,255,0.08)";
+                    el.style.background = "rgba(255,255,255,0.02)";
+                    el.style.boxShadow = "0 2px 6px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.04)";
                   }}
                 >
                   LinkedIn
@@ -327,10 +339,12 @@ export default function BlogPostClient({
                   fontWeight: 300,
                   fontSize: 12,
                   color: "rgba(255,255,255,0.35)",
-                  border: "1px solid rgba(255,255,255,0.08)",
+                  border: "1px solid rgba(255,255,255,0.06)",
                   padding: "4px 12px",
                   borderRadius: 9999,
                   letterSpacing: "0.04em",
+                  background: "rgba(255,255,255,0.02)",
+                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.03)",
                 }}
               >
                 {tag}

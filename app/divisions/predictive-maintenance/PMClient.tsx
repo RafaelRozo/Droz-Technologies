@@ -916,16 +916,19 @@ export default function PMClient() {
               fontSize: 14,
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 400,
-              border: "1px solid rgba(255,255,255,0.18)",
+              border: "1px solid rgba(255,255,255,0.12)",
               color: "rgba(255,255,255,0.7)",
               textDecoration: "none",
-              background: "transparent",
-              transition: "border-color 0.3s ease, color 0.3s ease, background 0.3s ease",
+              background: "rgba(255,255,255,0.04)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)",
+              transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
               display: "inline-flex",
               alignItems: "center",
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)"; e.currentTarget.style.color = "#fff"; e.currentTarget.style.background = "rgba(255,255,255,0.05)"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)"; e.currentTarget.style.color = "rgba(255,255,255,0.7)"; e.currentTarget.style.background = "transparent"; }}
+            onMouseEnter={(e) => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.25)"; el.style.color = "#fff"; el.style.background = "rgba(255,255,255,0.08)"; el.style.boxShadow = "0 6px 20px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15), 0 0 16px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(255,255,255,0.03)"; el.style.transform = "translateY(-1px)"; }}
+            onMouseLeave={(e) => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.12)"; el.style.color = "rgba(255,255,255,0.7)"; el.style.background = "rgba(255,255,255,0.04)"; el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)"; el.style.transform = "translateY(0)"; }}
           >
             {locale === "fr" ? "Évaluation Gratuite" : locale === "es" ? "Evaluación Gratuita" : "Start Free Trial"}
           </a>
