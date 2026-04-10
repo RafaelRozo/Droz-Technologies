@@ -131,24 +131,6 @@ function sinePath(amp: number, freq: number, cy: number, w = 1000): string {
   return pts.join(" ");
 }
 
-function gearPath(cx: number, cy: number, innerR: number, outerR: number, teeth: number): string {
-  let d = "";
-  const step = (Math.PI * 2) / teeth;
-  for (let i = 0; i < teeth; i++) {
-    const a1 = i * step;
-    const a2 = a1 + step * 0.3;
-    const a3 = a1 + step * 0.5;
-    const a4 = a1 + step * 0.8;
-    const nextA = (i + 1) * step;
-    if (i === 0) d += `M${(cx + outerR * Math.cos(a1)).toFixed(1)},${(cy + outerR * Math.sin(a1)).toFixed(1)}`;
-    d += ` L${(cx + outerR * Math.cos(a2)).toFixed(1)},${(cy + outerR * Math.sin(a2)).toFixed(1)}`;
-    d += ` L${(cx + innerR * Math.cos(a3)).toFixed(1)},${(cy + innerR * Math.sin(a3)).toFixed(1)}`;
-    d += ` L${(cx + innerR * Math.cos(a4)).toFixed(1)},${(cy + innerR * Math.sin(a4)).toFixed(1)}`;
-    d += ` L${(cx + outerR * Math.cos(nextA)).toFixed(1)},${(cy + outerR * Math.sin(nextA)).toFixed(1)}`;
-  }
-  return d + " Z";
-}
-
 /* ─── Shared style constants ─── */
 const PILL: React.CSSProperties = {
   display: "inline-block", fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 500,
@@ -180,19 +162,6 @@ function SoftwareBg() {
   return <div style={{ position: "absolute", inset: 0, opacity: 0.025, backgroundImage: "radial-gradient(rgba(255,255,255,1) 1px, transparent 1px)", backgroundSize: "20px 20px" }} />;
 }
 
-function ConstructionBg() {
-  return <div style={{ position: "absolute", inset: 0, opacity: 0.02, backgroundImage: "repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,255,255,0.4) 20px, rgba(255,255,255,0.4) 21px)" }} />;
-}
-
-function ManufacturingBg() {
-  return (
-    <svg viewBox="0 0 400 400" style={{ position: "absolute", left: "-5%", top: "10%", width: 400, height: 400, opacity: 0.03 }}>
-      {[40, 80, 120, 160, 200].map(r => (
-        <circle key={r} cx="200" cy="200" r={r} fill="none" stroke="white" strokeWidth="0.5" />
-      ))}
-    </svg>
-  );
-}
 
 function AIBg() {
   return <div style={{ position: "absolute", top: "15%", right: "8%", width: 450, height: 450, background: "radial-gradient(circle, rgba(255,255,255,0.025) 0%, transparent 60%)", pointerEvents: "none" }} />;
@@ -261,76 +230,6 @@ function SoftwareCard() {
         ))}
         <span style={{ display: "inline-block", width: 8, height: 16, background: "rgba(255,255,255,0.4)", animation: "typing-cursor 1s step-end infinite" }} />
       </div>
-    </div>
-  );
-}
-
-function ConstructionCard() {
-  return (
-    <div style={{ position: "relative", zIndex: 3 }}>
-      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", marginBottom: 28 }}>
-        PROJECT BLUEPRINT
-      </div>
-      <svg viewBox="0 0 360 220" style={{ width: "100%", height: 220, opacity: 0.15 }}>
-        <motion.rect x="60" y="40" width="240" height="160" fill="none" stroke="white" strokeWidth="1"
-          initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-          transition={{ duration: 1.5 }} viewport={{ once: true }} />
-        {[80, 120, 160].map(y => (
-          <motion.line key={y} x1="60" y1={y} x2="300" y2={y} stroke="white" strokeWidth="0.5" strokeDasharray="4 4"
-            initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-            transition={{ duration: 1, delay: 0.5 }} viewport={{ once: true }} />
-        ))}
-        {[120, 180, 240].map(x => (
-          <motion.line key={x} x1={x} y1="40" x2={x} y2="200" stroke="white" strokeWidth="0.5"
-            initial={{ pathLength: 0 }} whileInView={{ pathLength: 1 }}
-            transition={{ duration: 1, delay: 0.7 }} viewport={{ once: true }} />
-        ))}
-        <line x1="40" y1="40" x2="40" y2="200" stroke="white" strokeWidth="0.5" />
-        <text x="30" y="125" fill="rgba(255,255,255,0.4)" fontSize="8" textAnchor="middle" transform="rotate(-90, 30, 125)">48m</text>
-      </svg>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 16 }}>
-        {[
-          { label: "Area", value: "12,400 m\u00B2" },
-          { label: "Floors", value: "8" },
-          { label: "Completion", value: "94%" },
-          { label: "LEED", value: "Gold" },
-        ].map(s => (
-          <div key={s.label} style={{ padding: "10px 12px", background: "rgba(255,255,255,0.02)", borderRadius: 8, border: "1px solid rgba(255,255,255,0.04)" }}>
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, color: "rgba(255,255,255,0.3)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{s.label}</div>
-            <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 16, fontWeight: 500, color: "#fff", marginTop: 4 }}>{s.value}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ManufacturingCard() {
-  return (
-    <div style={{ position: "relative", zIndex: 3 }}>
-      <div style={{ fontFamily: "'Outfit', sans-serif", fontSize: 10, fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.25)", marginBottom: 28 }}>
-        PRODUCTION LINE
-      </div>
-      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 160, position: "relative", marginBottom: 20 }}>
-        <svg viewBox="0 0 200 200" style={{ width: 160, height: 160, opacity: 0.12, animation: "gear-rotate 20s linear infinite" }}>
-          <path d={gearPath(100, 100, 50, 70, 12)} fill="none" stroke="white" strokeWidth="1" />
-          <circle cx="100" cy="100" r="20" fill="none" stroke="white" strokeWidth="1" />
-        </svg>
-        <svg viewBox="0 0 140 140" style={{ width: 100, height: 100, position: "absolute", right: "15%", top: "5%", opacity: 0.08, animation: "gear-rotate 15s linear infinite reverse" }}>
-          <path d={gearPath(70, 70, 30, 45, 10)} fill="none" stroke="white" strokeWidth="1" />
-          <circle cx="70" cy="70" r="12" fill="none" stroke="white" strokeWidth="1" />
-        </svg>
-      </div>
-      {[
-        { label: "Throughput", value: "2,400 units/hr" },
-        { label: "Precision", value: "\u00B10.001 mm" },
-        { label: "Uptime", value: "99.7%" },
-      ].map(m => (
-        <div key={m.label} style={{ display: "flex", justifyContent: "space-between", padding: "12px 0", borderBottom: "1px solid rgba(255,255,255,0.04)" }}>
-          <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 13, fontWeight: 300, color: "rgba(255,255,255,0.4)" }}>{m.label}</span>
-          <span style={{ fontFamily: "'Outfit', sans-serif", fontSize: 14, fontWeight: 500, color: "#fff" }}>{m.value}</span>
-        </div>
-      ))}
     </div>
   );
 }
@@ -405,9 +304,9 @@ function AICard() {
 }
 
 /* ─── Division component arrays ─── */
-const DIVISION_BGS = [EngineeringBg, SoftwareBg, ConstructionBg, ManufacturingBg, AIBg];
-const DIVISION_CARDS = [EngineeringCard, SoftwareCard, ConstructionCard, ManufacturingCard, AICard];
-const DIVISION_SLUGS = ["predictive-maintenance", "software-development", "intelligent-construction", "industrial-manufacturing", "ai-consulting"];
+const DIVISION_BGS = [EngineeringBg, SoftwareBg, AIBg];
+const DIVISION_CARDS = [EngineeringCard, SoftwareCard, AICard];
+const DIVISION_SLUGS = ["predictive-maintenance", "software-development", "ai-consulting"];
 
 /* ═══════════════════════════════════════════════════════════════════
    MAIN COMPONENT
@@ -423,8 +322,6 @@ export default function PageContent() {
   const subtitlePhrases = [
     "Predictive Maintenance",
     "Software Development",
-    "Intelligent Construction",
-    "Industrial Manufacturing",
     "AI Consulting",
   ];
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -529,7 +426,7 @@ export default function PageContent() {
               textTransform: "uppercase",
               marginTop: 16,
             }}>
-              Five divisions. One company.
+              Three divisions. One company.
             </p>
           </div>
 
@@ -545,13 +442,13 @@ export default function PageContent() {
             <Image src="/images/team.png" alt="Droz Technologies team" width={1200} height={896} sizes="(max-width: 768px) 100vw, 900px" priority style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.6s" }} />
           </motion.div>
 
-          {/* 5 Division thumbnails */}
+          {/* 3 Division thumbnails */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
             variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
-            style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(5, 1fr)", gap: 16 }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "repeat(2, 1fr)" : "repeat(3, 1fr)", gap: 16 }}
           >
             {divisions.map((div, i) => (
               <motion.a
@@ -1067,21 +964,9 @@ export default function PageContent() {
                     <MagneticButton as="a" href={`/divisions/${slug}`}>
                       {div.cta || "Explore Division"}
                     </MagneticButton>
-                    <a href="/contact" aria-label={`Get started with ${div.name}`} style={{
-                      padding: "10px 28px", borderRadius: 9999, fontSize: 14,
-                      fontFamily: "'Outfit', sans-serif", fontWeight: 400,
-                      border: "1px solid rgba(255,255,255,0.12)", color: "#fff",
-                      textDecoration: "none", background: "rgba(255,255,255,0.04)",
-                      backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-                      boxShadow: "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)",
-                      transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
-                      display: "inline-flex", alignItems: "center",
-                    }}
-                      onMouseEnter={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.25)"; el.style.background = "rgba(255,255,255,0.08)"; el.style.boxShadow = "0 6px 20px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15), 0 0 16px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(255,255,255,0.03)"; el.style.transform = "translateY(-1px)"; }}
-                      onMouseLeave={e => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.12)"; el.style.background = "rgba(255,255,255,0.04)"; el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)"; el.style.transform = "translateY(0)"; }}
-                    >
+                    <MagneticButton as="a" href="/contact" variant="glass" aria-label={`Get started with ${div.name}`}>
                       Get Started
-                    </a>
+                    </MagneticButton>
                   </div>
                 </motion.div>
 
@@ -1365,21 +1250,9 @@ export default function PageContent() {
               <FloatingInput label={t.contact.form.message} textarea name="message" />
             </motion.div>
             <div style={{ display: "flex", justifyContent: "center", marginTop: 16 }}>
-              <button type="submit" style={{
-                position: "relative", padding: "14px 44px", borderRadius: 9999, fontSize: 15,
-                fontFamily: "'Outfit', sans-serif", fontWeight: 500,
-                background: "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
-                color: "#0a0a0a", border: "none", cursor: "pointer", overflow: "hidden",
-                boxShadow: "0 6px 20px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.1), inset 0 2px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.06), inset 0 -4px 8px rgba(0,0,0,0.04)",
-                transition: "transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease",
-              }}
-                onMouseEnter={(e) => { const el = e.currentTarget; el.style.transform = "scale(1.03) translateY(-1px)"; el.style.boxShadow = "0 10px 40px rgba(255,255,255,0.18), 0 4px 12px rgba(0,0,0,0.15), inset 0 2px 0 rgba(255,255,255,1), inset 0 -1px 0 rgba(0,0,0,0.06), inset 0 -4px 8px rgba(0,0,0,0.03)"; el.style.background = "linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%)"; }}
-                onMouseLeave={(e) => { const el = e.currentTarget; el.style.transform = "scale(1) translateY(0)"; el.style.boxShadow = "0 6px 20px rgba(0,0,0,0.2), 0 2px 6px rgba(0,0,0,0.1), inset 0 2px 0 rgba(255,255,255,0.8), inset 0 -1px 0 rgba(0,0,0,0.06), inset 0 -4px 8px rgba(0,0,0,0.04)"; el.style.background = "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)"; }}>
-                {/* Specular bubble highlight */}
-                <span style={{ position: "absolute", top: 0, left: "12%", right: "12%", height: "48%", background: "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 100%)", borderRadius: "9999px 9999px 50% 50%", pointerEvents: "none", filter: "blur(0.5px)" }} />
-                <span style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.45) 50%, transparent 60%)", animation: "shimmer 5s ease-in-out infinite", pointerEvents: "none" }} />
-                <span style={{ position: "relative", zIndex: 1 }}>{t.contact.form.send}</span>
-              </button>
+              <MagneticButton type="submit">
+                {t.contact.form.send}
+              </MagneticButton>
             </div>
           </motion.form>
         </div>

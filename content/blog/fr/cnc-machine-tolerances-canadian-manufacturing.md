@@ -3,7 +3,7 @@ title: "Précision CNC : pourquoi ±0,001 mm est important dans la fabrication c
 slug: "cnc-machine-tolerances-canadian-manufacturing"
 date: "2026-04-05"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Fabrication industrielle"
 tags: ["précision CNC", "tolérances", "Canada", "aérospatiale", "dispositifs médicaux", "ISO 230-2", "Ontario", "fabrication industrielle"]
 locale: "fr"
@@ -126,7 +126,7 @@ Les ateliers canadiens n'ont pas besoin de chasser des tolérances plus serrées
 
 La précision est une stratégie d'affaires, pas une spécification de machine. Les ateliers ontariens qui gagnent des contrats gouvernementaux et aérospatiaux en 2026 sont ceux qui traitent leur laboratoire de métrologie comme un centre de profit, pas une dépense générale.
 
-Notre [équipe de fabrication industrielle](/divisions/industrial-manufacturing) aide les ateliers d'usinage canadiens à resserrer la capabilité de procédé, à mettre en œuvre des programmes de calibration ISO 230-2 et à se préparer aux audits AS9100 et ISO 13485.
+Notre [équipe de fabrication industrielle](/divisions/predictive-maintenance) aide les ateliers d'usinage canadiens à resserrer la capabilité de procédé, à mettre en œuvre des programmes de calibration ISO 230-2 et à se préparer aux audits AS9100 et ISO 13485.
 
 Pour un aperçu connexe de la façon dont le choix de capteurs affecte la surveillance de précision, lisez notre [guide de sélection de capteur de vibration](/blog/select-vibration-sensor).
 

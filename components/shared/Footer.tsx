@@ -20,7 +20,7 @@ export default function Footer() {
             Droz Technologies
           </p>
           <p aria-hidden="true" style={{ fontFamily: "'Outfit', sans-serif", fontSize: 11, fontWeight: 400, letterSpacing: "0.15em", textTransform: "uppercase", color: "rgba(255,255,255,0.28)", marginBottom: 16 }}>
-            5 Divisions, 1 Company.
+            3 Divisions, 1 Company.
           </p>
           <p style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 14, color: "rgba(255,255,255,0.4)", lineHeight: 1.6, maxWidth: 320 }}>
             {t.footer.tagline}
@@ -67,9 +67,7 @@ export default function Footer() {
             {[
               { name: t.divisionsGrid[0]?.name, href: "/divisions/predictive-maintenance" },
               { name: t.divisionsGrid[1]?.name, href: "/divisions/software-development" },
-              { name: t.divisionsGrid[2]?.name, href: "/divisions/intelligent-construction" },
-              { name: t.divisionsGrid[3]?.name, href: "/divisions/industrial-manufacturing" },
-              { name: t.divisionsGrid[4]?.name, href: "/divisions/ai-consulting" },
+              { name: t.divisionsGrid[2]?.name, href: "/divisions/ai-consulting" },
             ].map((div) => (
               <li key={div.name} style={{ marginBottom: 14 }}>
                 <a href={div.href} className="link-slide" style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 300, fontSize: 14, color: "rgba(255,255,255,0.5)", textDecoration: "none", padding: "4px 10px", marginLeft: -10, borderRadius: 8, transition: "all 0.25s ease" }}

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     default: "Industrial Technology & AI Solutions | Droz Technologies — Ontario",
     template: "%s | Droz Technologies",
   },
-  description: "Predictive maintenance, software, smart buildings, manufacturing & AI consulting. 5 divisions serving Ontario. Burlington, ON.",
+  description: "Predictive maintenance, custom software, and AI consulting. 3 divisions serving Ontario. Burlington, ON.",
   metadataBase: new URL(BASE_URL),
   icons: { icon: "/favicon.ico" },
   openGraph: {
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     url: BASE_URL,
     siteName: "Droz Technologies",
     title: "Industrial Technology & AI Solutions | Droz Technologies",
-    description: "5 world-class divisions: predictive maintenance, software, smart construction, manufacturing & AI. Burlington, Ontario.",
+    description: "3 world-class divisions: predictive maintenance, custom software, and AI consulting. Burlington, Ontario.",
     images: [{ url: "/images/team.png", width: 1200, height: 630, alt: "Droz Technologies team" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Droz Technologies — Industrial Technology & AI",
-    description: "5 divisions. Predictive maintenance, software, construction, manufacturing & AI consulting. Ontario, Canada.",
+    description: "3 divisions. Predictive maintenance, custom software, and AI consulting. Ontario, Canada.",
   },
   alternates: {
     canonical: BASE_URL,
@@ -66,7 +66,7 @@ const ORG_SCHEMA = {
   name: "Droz Technologies",
   url: BASE_URL,
   logo: `${BASE_URL}/favicon.ico`,
-  description: "Industrial technology company with 5 specialized divisions: predictive maintenance, software development, intelligent construction, industrial manufacturing, and AI consulting.",
+  description: "Industrial technology company with 3 specialized divisions: predictive maintenance, software development, and AI consulting.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Burlington",

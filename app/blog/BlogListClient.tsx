@@ -15,8 +15,6 @@ const FILTERS = [
   { label: "All", value: "all" },
   { label: "Predictive Maintenance", value: "predictive-maintenance" },
   { label: "Software", value: "software-development" },
-  { label: "Construction", value: "intelligent-construction" },
-  { label: "Manufacturing", value: "industrial-manufacturing" },
   { label: "AI", value: "ai-consulting" },
 ];
 
@@ -33,7 +31,7 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
     <main>
       <PageHero
         title="Insights"
-        subtitle="Technical expertise from five divisions"
+        subtitle="Technical expertise from three divisions"
         pill="Knowledge Base"
       />
 
@@ -70,6 +68,8 @@ export default function BlogListClient({ posts }: BlogListClientProps) {
                     background: active
                       ? "rgba(255,255,255,0.08)"
                       : "rgba(255,255,255,0.02)",
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
                     color: active ? "#fff" : "rgba(255,255,255,0.45)",
                     cursor: "pointer",
                     boxShadow: active

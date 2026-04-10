@@ -6,12 +6,12 @@ import BlogListClient from "./BlogListClient";
 export const metadata: Metadata = {
   title: "Insights | Droz Technologies",
   description:
-    "Technical expertise from five industrial divisions: predictive maintenance, software engineering, intelligent construction, industrial manufacturing, and AI consulting. Written by practitioners.",
+    "Technical expertise from three industrial divisions: predictive maintenance, software engineering, and AI consulting. Written by practitioners.",
   alternates: { canonical: "https://droztechnologies.com/blog" },
   openGraph: {
     title: "Insights | Droz Technologies",
     description:
-      "Field-tested knowledge from five industrial divisions. No hype — just engineering.",
+      "Field-tested knowledge from three industrial divisions. No hype — just engineering.",
     url: "https://droztechnologies.com/blog",
     type: "website",
   },

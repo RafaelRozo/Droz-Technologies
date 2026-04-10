@@ -3,7 +3,7 @@ title: "Precisión CNC: Por Qué ±0.001mm Importa en Manufactura"
 slug: "cnc-machine-tolerances-canadian-manufacturing"
 date: "2026-04-05"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Manufactura Industrial"
 tags: ["precisión CNC", "tolerancias", "aeroespacial", "dispositivos médicos", "ISO 230-2", "manufactura industrial"]
 locale: "es"
@@ -126,7 +126,7 @@ Los talleres no necesitan perseguir tolerancias más estrictas. Necesitan probar
 
 La precisión es una estrategia de negocio, no una especificación de máquina. Los talleres ganando contratos gubernamentales y aeroespaciales en 2026 son los que tratan su laboratorio de metrología como un centro de ganancia, no gasto general.
 
-Nuestro [equipo de manufactura industrial](/divisions/industrial-manufacturing) ayuda a talleres de mecanizado a ajustar la capacidad de proceso, implementar programas de calibración ISO 230-2 y prepararse para auditorías AS9100 e ISO 13485.
+Nuestro [equipo de manufactura industrial](/divisions/predictive-maintenance) ayuda a talleres de mecanizado a ajustar la capacidad de proceso, implementar programas de calibración ISO 230-2 y prepararse para auditorías AS9100 e ISO 13485.
 
 Para una mirada relacionada sobre cómo la selección de sensores afecta el monitoreo de precisión, lea nuestra [guía de selección de sensores de vibración](/blog/select-vibration-sensor).
 

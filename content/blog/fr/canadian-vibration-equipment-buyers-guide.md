@@ -4,8 +4,8 @@ slug: canadian-vibration-equipment-buyers-guide
 date: 2026-04-03
 description: "Comparez l'equipement de surveillance vibratoire canadien et importe. Cout total de possession, avantages ITAR-free et approvisionnement Achetez canadien. Consultation gratuite."
 author: Droz Technologies
-division: industrial-manufacturing
-category: Industrial Manufacturing
+division: predictive-maintenance
+category: Predictive Maintenance
 tags:
   - equipement de vibration
   - fabrication canadienne
@@ -204,4 +204,4 @@ Tous les manufacturiers canadiens ne sont pas egaux. Voici ce qu'il faut verifie
 
 Pour de l'aide a selectionner le bon type de capteur pour votre application specifique, consultez notre guide sur [comment selectionner un capteur de vibration pour votre application industrielle](/blog/select-vibration-sensor).
 
-En savoir plus sur notre [division de fabrication industrielle](/divisions/industrial-manufacturing) et les solutions de surveillance vibratoire que nous concevons et fabriquons en Ontario.
+En savoir plus sur notre [division de fabrication industrielle](/divisions/predictive-maintenance) et les solutions de surveillance vibratoire que nous concevons et fabriquons en Ontario.

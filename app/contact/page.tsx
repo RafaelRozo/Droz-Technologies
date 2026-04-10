@@ -5,7 +5,7 @@ import ContactClient from "./ContactClient";
 export const metadata: Metadata = {
   title: "Contact Droz Technologies | Burlington, Ontario",
   description:
-    "Reach our Burlington, ON team for predictive maintenance, software, smart building, manufacturing, or AI consulting. Response within 24 hours.",
+    "Reach our Burlington, ON team for predictive maintenance, custom software, or AI consulting. Response within 24 hours.",
   alternates: {
     canonical: "https://droztechnologies.com/contact",
   },

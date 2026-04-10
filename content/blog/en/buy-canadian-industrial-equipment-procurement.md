@@ -3,21 +3,21 @@ title: "Buy Canadian: Industrial Equipment Procurement Advantages in 2026"
 slug: "buy-canadian-industrial-equipment-procurement"
 date: "2026-04-06"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Guide"
 tags: ["buy Canadian", "industrial equipment", "procurement", "Ontario", "ITAR", "supply chain", "manufacturing"]
 locale: "en"
 description: "Why Canadian manufacturers are choosing domestically made vibration equipment, alignment systems, and instruments. Procurement advantages, ITAR-free, supply chain benefits."
 readingTime: 7
 featured: false
-image: "/images/divisions/industrial-manufacturing.png"
+image: "/images/divisions/predictive-maintenance.png"
 ---
 
 ## Why Buy Canadian Industrial Equipment?
 
 Canadian-made industrial equipment eliminates ITAR export restrictions, reduces supply chain risk, qualifies for federal procurement preferences, and provides same-country warranty service. Since 2022, Canadian manufacturers have faced 12-18 week lead times on imported vibration equipment and laser alignment systems — compared to 2-4 weeks from domestic manufacturers. The 2024-2025 trade disruptions increased this gap further. Buy-Canadian procurement saves 15-25% on total cost of ownership when you factor in shipping, duties, lead times, currency risk, and local support.
 
-Our [manufacturing division](/divisions/industrial-manufacturing) designs and builds vibration equipment in Burlington, Ontario. [Request a quote](/contact).
+Our [manufacturing division](/divisions/predictive-maintenance) designs and builds vibration equipment in Burlington, Ontario. [Request a quote](/contact).
 
 ## Five Economic Arguments
 
@@ -55,7 +55,7 @@ The purchase of equipment itself does not qualify for SR&ED. However, if you use
 
 ### Which Canadian manufacturers make vibration monitoring equipment?
 
-Droz Technologies (Burlington, Ontario) manufactures vibration analysers, laser alignment systems, and thermography instruments. We are one of the few Canadian companies that designs, manufactures, calibrates, and deploys our own equipment — [see our full product line](/divisions/industrial-manufacturing).
+Droz Technologies (Burlington, Ontario) manufactures vibration analysers, laser alignment systems, and thermography instruments. We are one of the few Canadian companies that designs, manufactures, calibrates, and deploys our own equipment — [see our full product line](/divisions/predictive-maintenance).
 
 ---
 

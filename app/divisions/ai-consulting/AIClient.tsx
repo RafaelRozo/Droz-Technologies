@@ -384,7 +384,7 @@ export default function AIClient() {
   const isMobile = useIsMobile();
   const { locale } = useLocale();
   const t = getTexts(locale);
-  const division = t.divisionsGrid[4];
+  const division = t.divisionsGrid[2];
 
   const problemRef = useRef<HTMLDivElement>(null);
   const problemInView = useInView(problemRef as React.RefObject<Element>, { once: true, margin: "-80px" });
@@ -773,7 +773,7 @@ export default function AIClient() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 16 }}
           >
             {[
               {
@@ -785,16 +785,6 @@ export default function AIClient() {
                 name: locale === "fr" ? "Développement Logiciel" : locale === "es" ? "Desarrollo de Software" : "Software Development",
                 desc: locale === "fr" ? "Les plateformes d'entreprise qui transmettent les prédictions de votre modèle aux personnes qui doivent agir dessus." : locale === "es" ? "Las plataformas empresariales que entregan las predicciones de su modelo a las personas que necesitan actuar sobre ellas." : "The enterprise platforms that serve your model's predictions to the people who need to act on them.",
                 href: "/divisions/software-development",
-              },
-              {
-                name: locale === "fr" ? "Construction Intelligente" : locale === "es" ? "Construcción Inteligente" : "Intelligent Construction",
-                desc: locale === "fr" ? "Réseaux IoT et de capteurs qui génèrent les données environnementales structurées que vos modèles consomment." : locale === "es" ? "Redes IoT y de sensores que generan los datos ambientales estructurados que consumen sus modelos." : "Building IoT and sensor networks that generate the structured environmental data your models consume.",
-                href: "/divisions/intelligent-construction",
-              },
-              {
-                name: locale === "fr" ? "Fabrication Industrielle" : locale === "es" ? "Manufactura Industrial" : "Industrial Manufacturing",
-                desc: locale === "fr" ? "Instruments de précision qui produisent des données fiables et calibrées — pour que votre modèle n'apprenne pas du bruit." : locale === "es" ? "Instrumentos de precisión que producen datos confiables y calibrados — para que su modelo no aprenda del ruido." : "Precision instruments that produce reliable, calibrated data — so your model isn't learning from noise.",
-                href: "/divisions/industrial-manufacturing",
               },
             ].map((d) => (
               <motion.a key={d.name} href={d.href}
@@ -1137,7 +1127,7 @@ export default function AIClient() {
           <MagneticButton as="a" href="/contact">
             {locale === "fr" ? "Pensez Plus Grand" : locale === "es" ? "Piense en Grande" : "Think Bigger"}
           </MagneticButton>
-          <MagneticButton as="a" href="/contact">
+          <MagneticButton as="a" href="/contact" variant="glass">
             {locale === "fr" ? "Essai Gratuit" : locale === "es" ? "Prueba Gratuita" : "Start Free Trial"}
           </MagneticButton>
         </div>

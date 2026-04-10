@@ -12,6 +12,7 @@ interface MagneticButtonProps {
   onClick?: () => void;
   href?: string;
   as?: "button" | "a";
+  variant?: "solid" | "glass";
   "aria-label"?: string;
   "aria-disabled"?: boolean;
   disabled?: boolean;
@@ -27,6 +28,7 @@ export default function MagneticButton({
   onClick,
   href,
   as = "button",
+  variant = "solid",
   "aria-label": ariaLabel,
   "aria-disabled": ariaDisabled,
   disabled,
@@ -92,61 +94,104 @@ export default function MagneticButton({
             borderRadius: 9999,
             fontSize: 14,
             fontFamily: "'Outfit', sans-serif",
-            fontWeight: 500,
-            background: hovered
-              ? "linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%)"
-              : "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
-            color: "#0a0a0a",
-            border: "none",
+            fontWeight: variant === "glass" ? 400 : 500,
             cursor: "pointer",
             textDecoration: "none",
             overflow: "hidden",
-            transition: "transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, outline 0.15s ease",
-            transform: hovered ? "scale(1.06) translateY(-1px)" : "scale(1) translateY(0)",
-            boxShadow: hovered
-              ? [
-                  "0 10px 40px rgba(255,255,255,0.18)",
-                  "0 4px 12px rgba(0,0,0,0.15)",
-                  "inset 0 2px 0 rgba(255,255,255,1)",
-                  "inset 0 -1px 0 rgba(0,0,0,0.06)",
-                  "inset 0 -4px 8px rgba(0,0,0,0.03)",
-                ].join(", ")
-              : [
-                  "0 6px 20px rgba(0,0,0,0.2)",
-                  "0 2px 6px rgba(0,0,0,0.1)",
-                  "inset 0 2px 0 rgba(255,255,255,0.8)",
-                  "inset 0 -1px 0 rgba(0,0,0,0.06)",
-                  "inset 0 -4px 8px rgba(0,0,0,0.04)",
-                ].join(", "),
+            ...(variant === "glass"
+              ? {
+                  background: hovered ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.04)",
+                  color: hovered ? "#fff" : "rgba(255,255,255,0.7)",
+                  border: `1px solid ${hovered ? "rgba(255,255,255,0.25)" : "rgba(255,255,255,0.12)"}`,
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                  transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
+                  transform: hovered ? "scale(1.04) translateY(-1px)" : "scale(1) translateY(0)",
+                  boxShadow: hovered
+                    ? [
+                        "0 6px 20px rgba(0,0,0,0.25)",
+                        "0 2px 6px rgba(0,0,0,0.15)",
+                        "0 0 16px rgba(255,255,255,0.06)",
+                        "inset 0 1px 0 rgba(255,255,255,0.15)",
+                        "inset 0 -1px 0 rgba(255,255,255,0.03)",
+                      ].join(", ")
+                    : [
+                        "0 4px 12px rgba(0,0,0,0.2)",
+                        "0 1px 3px rgba(0,0,0,0.1)",
+                        "inset 0 1px 0 rgba(255,255,255,0.1)",
+                        "inset 0 -1px 0 rgba(255,255,255,0.02)",
+                      ].join(", "),
+                }
+              : {
+                  background: hovered
+                    ? "linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%)"
+                    : "linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%)",
+                  color: "#0a0a0a",
+                  border: "none",
+                  transition: "transform 0.2s ease, box-shadow 0.3s ease, background 0.3s ease, outline 0.15s ease",
+                  transform: hovered ? "scale(1.06) translateY(-1px)" : "scale(1) translateY(0)",
+                  boxShadow: hovered
+                    ? [
+                        "0 10px 40px rgba(255,255,255,0.18)",
+                        "0 4px 12px rgba(0,0,0,0.15)",
+                        "inset 0 2px 0 rgba(255,255,255,1)",
+                        "inset 0 -1px 0 rgba(0,0,0,0.06)",
+                        "inset 0 -4px 8px rgba(0,0,0,0.03)",
+                      ].join(", ")
+                    : [
+                        "0 6px 20px rgba(0,0,0,0.2)",
+                        "0 2px 6px rgba(0,0,0,0.1)",
+                        "inset 0 2px 0 rgba(255,255,255,0.8)",
+                        "inset 0 -1px 0 rgba(0,0,0,0.06)",
+                        "inset 0 -4px 8px rgba(0,0,0,0.04)",
+                      ].join(", "),
+                }),
             ...style,
           }}
         >
-          {/* Specular bubble highlight */}
-          <span style={{
-            position: "absolute",
-            top: 0,
-            left: "12%",
-            right: "12%",
-            height: hovered ? "55%" : "48%",
-            background: hovered
-              ? "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)"
-              : "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 100%)",
-            borderRadius: "9999px 9999px 50% 50%",
-            pointerEvents: "none",
-            transition: "all 0.3s ease",
-            filter: "blur(0.5px)",
-          }} />
-          {/* Shimmer sweep */}
-          <span style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.45) 50%, transparent 60%)",
-            animation: "shimmer 5s ease-in-out infinite",
-            pointerEvents: "none",
-          }} />
+          {variant === "solid" && (
+            <>
+              {/* Specular bubble highlight */}
+              <span style={{
+                position: "absolute",
+                top: 0,
+                left: "12%",
+                right: "12%",
+                height: hovered ? "55%" : "48%",
+                background: hovered
+                  ? "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 100%)"
+                  : "linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0) 100%)",
+                borderRadius: "9999px 9999px 50% 50%",
+                pointerEvents: "none",
+                transition: "all 0.3s ease",
+                filter: "blur(0.5px)",
+              }} />
+              {/* Shimmer sweep */}
+              <span style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                background: "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.45) 50%, transparent 60%)",
+                animation: "shimmer 5s ease-in-out infinite",
+                pointerEvents: "none",
+              }} />
+            </>
+          )}
+          {variant === "glass" && (
+            /* Subtle edge glow on hover */
+            <span style={{
+              position: "absolute",
+              inset: 0,
+              borderRadius: 9999,
+              background: hovered
+                ? "linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 50%, rgba(255,255,255,0.02) 100%)"
+                : "transparent",
+              pointerEvents: "none",
+              transition: "background 0.3s ease",
+            }} />
+          )}
           <span style={{ position: "relative", zIndex: 1 }}>
             {children}
           </span>

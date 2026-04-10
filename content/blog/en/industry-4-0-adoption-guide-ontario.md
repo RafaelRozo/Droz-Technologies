@@ -10,7 +10,7 @@ locale: "en"
 description: "Industry 4.0 adoption guide for Ontario manufacturers in 2026. Five technology pillars, maturity framework, Ontario funding programmes, and implementation roadmap."
 readingTime: 9
 featured: true
-image: "/images/divisions/industrial-manufacturing.png"
+image: "/images/divisions/predictive-maintenance.png"
 ---
 
 ## What Is Industry 4.0 and Why Does It Matter for Ontario Manufacturers?
@@ -21,7 +21,7 @@ Industry 4.0 is the convergence of IoT sensors, AI analytics, cloud computing, a
 
 ## The Five Technology Pillars
 
-**1. IoT and Sensors.** The foundation. You cannot optimise what you cannot measure. Retrofit sensors on existing equipment capture vibration, temperature, pressure, flow, and energy data. Our [manufacturing division](/divisions/industrial-manufacturing) builds and deploys these sensors.
+**1. IoT and Sensors.** The foundation. You cannot optimise what you cannot measure. Retrofit sensors on existing equipment capture vibration, temperature, pressure, flow, and energy data. Our [manufacturing division](/divisions/predictive-maintenance) builds and deploys these sensors.
 
 **2. Connectivity and Data Infrastructure.** Sensors generate data. You need reliable networks (industrial Ethernet, 5G, LoRaWAN) and data platforms (time-series databases, data lakes) to capture and store it. Edge computing processes time-critical data locally; cloud handles analytics and long-term storage.
 

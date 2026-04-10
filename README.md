@@ -3,15 +3,13 @@
 ## Design Direction
 - Monochrome / dark theme
 - Framer-style scroll-triggered video backgrounds
-- 5 divisions, each with a full-viewport hero section
+- 3 divisions, each with a full-viewport hero section
 - Videos transition seamlessly (last frame of N = first frame of N+1)
 
 ## Divisions
 1. Predictive Maintenance → Video: Generator/turbine
 2. Software Development → Video: Generator morphs to Google Willow chip
-3. Intelligent Construction → Video: TBD
-4. Industrial Manufacturing → Video: TBD
-5. AI Consulting → Video: TBD
+3. AI Consulting → Video: TBD
 
 ## Tech Stack
 - Next.js 14 + TypeScript
@@ -23,9 +21,7 @@
 Place videos in `public/videos/`:
 - `division-1-pm.mp4`
 - `division-2-software.mp4`
-- `division-3-construction.mp4`
-- `division-4-manufacturing.mp4`
-- `division-5-ai.mp4` (optional — may combine with division 4)
+- `division-3-ai.mp4`
 
 ## Run Locally
 ```bash

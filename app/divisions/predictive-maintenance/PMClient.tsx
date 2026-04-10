@@ -695,7 +695,7 @@ export default function PMClient() {
               ? "La mayoría de los proveedores de MP le entregan un informe. Nosotros podemos construir el software personalizado que convierte sus datos de vibración en decisiones automatizadas, o desplegar modelos de IA que predicen fallas antes de que sus analistas detecten el patrón."
               : "Most PM providers hand you a report. We can build the custom software that turns your vibration data into automated decisions, or deploy AI models that predict failures before your analysts spot the pattern."}
           </p>
-          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}>
+          <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 16 }}>
             {[
               {
                 name: locale === "fr" ? "Développement Logiciel" : locale === "es" ? "Desarrollo de Software" : "Software Development",
@@ -705,24 +705,6 @@ export default function PMClient() {
                   ? "Paneles personalizados y plataformas empresariales que consumen sus datos de sensores en tiempo real."
                   : "Custom dashboards and enterprise platforms that consume your sensor data in real time.",
                 href: "/divisions/software-development",
-              },
-              {
-                name: locale === "fr" ? "Construction Intelligente" : locale === "es" ? "Construcción Inteligente" : "Intelligent Construction",
-                desc: locale === "fr"
-                  ? "Programmes de maintenance prédictive pour les systèmes de bâtiment — CVC, ascenseurs et infrastructure électrique."
-                  : locale === "es"
-                  ? "Programas de mantenimiento predictivo para sistemas de edificios — climatización, ascensores e infraestructura eléctrica."
-                  : "Predictive maintenance programs for building systems — HVAC, elevators, and electrical infrastructure.",
-                href: "/divisions/intelligent-construction",
-              },
-              {
-                name: locale === "fr" ? "Fabrication Industrielle" : locale === "es" ? "Manufactura Industrial" : "Industrial Manufacturing",
-                desc: locale === "fr"
-                  ? "Les instruments qui collectent les données de vibration et d'alignement sur lesquelles repose votre programme."
-                  : locale === "es"
-                  ? "Los instrumentos que recopilan los datos de vibración y alineación en los que se basa su programa."
-                  : "The instruments that collect the vibration and alignment data your program runs on.",
-                href: "/divisions/industrial-manufacturing",
               },
               {
                 name: locale === "fr" ? "Conseil en IA" : locale === "es" ? "Consultoría de IA" : "AI Consulting",
@@ -908,30 +890,9 @@ export default function PMClient() {
           <MagneticButton as="a" href="/contact">
             {locale === "fr" ? "Prédire l'Imprévisible" : locale === "es" ? "Prediga lo Impredecible" : "Predict the Unpredictable"}
           </MagneticButton>
-          <a
-            href="/contact"
-            style={{
-              padding: "14px 36px",
-              borderRadius: 9999,
-              fontSize: 14,
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 400,
-              border: "1px solid rgba(255,255,255,0.12)",
-              color: "rgba(255,255,255,0.7)",
-              textDecoration: "none",
-              background: "rgba(255,255,255,0.04)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)",
-              transition: "all 0.3s cubic-bezier(0.16,1,0.3,1)",
-              display: "inline-flex",
-              alignItems: "center",
-            }}
-            onMouseEnter={(e) => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.25)"; el.style.color = "#fff"; el.style.background = "rgba(255,255,255,0.08)"; el.style.boxShadow = "0 6px 20px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15), 0 0 16px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.15), inset 0 -1px 0 rgba(255,255,255,0.03)"; el.style.transform = "translateY(-1px)"; }}
-            onMouseLeave={(e) => { const el = e.currentTarget; el.style.borderColor = "rgba(255,255,255,0.12)"; el.style.color = "rgba(255,255,255,0.7)"; el.style.background = "rgba(255,255,255,0.04)"; el.style.boxShadow = "0 4px 12px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(255,255,255,0.02)"; el.style.transform = "translateY(0)"; }}
-          >
+          <MagneticButton as="a" href="/contact" variant="glass">
             {locale === "fr" ? "Évaluation Gratuite" : locale === "es" ? "Evaluación Gratuita" : "Start Free Trial"}
-          </a>
+          </MagneticButton>
         </div>
       </section>
     </main>

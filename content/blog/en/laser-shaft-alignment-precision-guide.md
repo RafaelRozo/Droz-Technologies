@@ -3,8 +3,8 @@ title: "Laser Shaft Alignment: Why Tolerances Matter More Than You Think"
 slug: "laser-shaft-alignment-precision-guide"
 date: "2026-04-05"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
-category: "Industrial Manufacturing"
+division: "predictive-maintenance"
+category: "Predictive Maintenance"
 tags: ["laser shaft alignment", "precision alignment", "Ontario manufacturing", "predictive maintenance", "bearing failure"]
 locale: "en"
 description: "Why laser shaft alignment matters for Ontario plants. Tolerances by RPM, signs your machines need alignment, and why dial indicators are obsolete."
@@ -99,7 +99,7 @@ This is the same discipline we apply in our broader predictive maintenance work.
 
 ## How Droz Helps
 
-Droz manufactures and services precision alignment and vibration equipment for Ontario industry. We bring calibrated laser systems on site, document every alignment to industry tolerance standards, and train your team so the discipline stays after we leave. Our [industrial manufacturing division](/divisions/industrial-manufacturing) builds the equipment and the know-how behind it.
+Droz manufactures and services precision alignment and vibration equipment for Ontario industry. We bring calibrated laser systems on site, document every alignment to industry tolerance standards, and train your team so the discipline stays after we leave. Our [industrial manufacturing division](/divisions/predictive-maintenance) builds the equipment and the know-how behind it.
 
 Alignment is not glamorous. It is also not optional. If the 50% failure statistic is even half true in your plant, the highest-return maintenance dollar you can spend this year is on a laser alignment program — not on more condition monitoring sensors watching machines fail slightly slower.
 

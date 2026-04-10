@@ -3,14 +3,14 @@ title: "Digital Twin for Manufacturing: Ontario Use Cases and Implementation (20
 slug: "digital-twin-manufacturing-ontario"
 date: "2026-04-06"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Guide"
 tags: ["digital twin", "manufacturing", "Ontario", "Industry 4.0", "IoT", "smart manufacturing"]
 locale: "en"
 description: "Digital twin use cases for Ontario manufacturing in 2026. Implementation phases, ROI data, and practical guide from engineers who build them."
 readingTime: 9
 featured: true
-image: "/images/divisions/industrial-manufacturing.png"
+image: "/images/divisions/predictive-maintenance.png"
 ---
 
 ## What Is a Digital Twin in Manufacturing?
@@ -45,7 +45,7 @@ A single production line digital twin costs CAD $80,000-$230,000 for initial imp
 
 ### Do I need to replace my existing equipment to implement a digital twin?
 
-No. Digital twins layer onto existing equipment through retrofit IoT sensors. Your machines do not need to be "smart" — we add the intelligence. Our [manufacturing division](/divisions/industrial-manufacturing) builds and calibrates the sensors.
+No. Digital twins layer onto existing equipment through retrofit IoT sensors. Your machines do not need to be "smart" — we add the intelligence. Our [manufacturing division](/divisions/predictive-maintenance) builds and calibrates the sensors.
 
 ### What data do I need to start?
 

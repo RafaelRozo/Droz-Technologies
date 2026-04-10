@@ -4,8 +4,8 @@ slug: select-vibration-sensor
 date: 2026-04-03
 description: "Elija el sensor de vibración correcto para su maquinaria industrial. Acelerómetros, sensores de velocidad, sondas de proximidad — especificaciones, aplicaciones y proveedores de Ontario."
 author: Droz Technologies
-division: industrial-manufacturing
-category: Industrial Manufacturing
+division: predictive-maintenance
+category: Predictive Maintenance
 tags:
   - equipo de vibración
   - acelerómetro
@@ -148,4 +148,4 @@ Tres reglas:
 
 Para una mirada más amplia a los sistemas de monitoreo de vibración fabricados en Canadá y comparaciones de costo total de propiedad, lea nuestra [guía de compra de equipo de vibración canadiense](/blog/canadian-vibration-equipment-buyers-guide).
 
-Conozca más sobre nuestra [división de manufactura industrial](/divisions/industrial-manufacturing) y la tecnología de sensores que fabricamos para la industria canadiense.
+Conozca más sobre nuestra [división de manufactura industrial](/divisions/predictive-maintenance) y la tecnología de sensores que fabricamos para la industria canadiense.

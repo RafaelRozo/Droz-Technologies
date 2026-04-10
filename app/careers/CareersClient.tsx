@@ -306,26 +306,6 @@ export default function CareersClient() {
     {
       title:
         locale === "fr"
-          ? "Gestionnaire de projet en construction"
-          : locale === "es"
-            ? "Gerente de proyecto en construcción"
-            : "Construction Project Manager",
-      department:
-        locale === "fr"
-          ? "Construction intelligente"
-          : locale === "es"
-            ? "Construcción inteligente"
-            : "Intelligent Construction",
-      content:
-        locale === "fr"
-          ? "Direction de projets de bâtiments intelligents avec intégration IoT. Vous coordonnerez des équipes multidisciplinaires, gérerez les parties prenantes et assurerez la livraison réussie de mises à niveau de construction pilotées par la technologie. Des bâtiments qui performent vraiment."
-          : locale === "es"
-            ? "Liderazgo de proyectos de edificios inteligentes con integración IoT. Usted coordinará equipos multidisciplinarios, gestionará partes interesadas y asegurará la entrega exitosa de actualizaciones de construcción impulsadas por tecnología. Edificios que realmente funcionan."
-            : "Leading smart building projects with IoT integration. You will coordinate multidisciplinary teams, manage stakeholders, and ensure the successful delivery of technology-driven construction upgrades. Buildings that actually perform.",
-    },
-    {
-      title:
-        locale === "fr"
           ? "Analyste en vibrations"
           : locale === "es"
             ? "Analista de vibraciones"
@@ -423,10 +403,10 @@ export default function CareersClient() {
             : "We Grow",
       body:
         locale === "fr"
-          ? "Chaque division est un nouvel ensemble de compétences. Formation croisée en ingénierie, logiciels, construction, fabrication et IA. Vous n'êtes jamais bloqué dans un seul couloir."
+          ? "Chaque division est un nouvel ensemble de compétences. Formation croisée en ingénierie, logiciels et IA. Vous n'êtes jamais bloqué dans un seul couloir."
           : locale === "es"
-            ? "Cada división es un nuevo conjunto de habilidades. Formación cruzada en ingeniería, software, construcción, fabricación e IA. Nunca estás atascado en un solo carril."
-            : "Every division is a new skill set. Cross-train across engineering, software, construction, manufacturing, and AI. You're never stuck in one lane.",
+            ? "Cada división es un nuevo conjunto de habilidades. Formación cruzada en ingeniería, software e IA. Nunca estás atascado en un solo carril."
+            : "Every division is a new skill set. Cross-train across engineering, software, and AI. You're never stuck in one lane.",
     },
   ];
 
@@ -664,9 +644,9 @@ export default function CareersClient() {
               delay={0.2}
             >
               {locale === "fr"
-                ? "Aucune autre entreprise sur terre ne combine 20 ans d'analyse des vibrations, des logiciels d'entreprise personnalisés, du conseil en IA, de la fabrication et de la construction sous un même toit. C'est pour ça que vous voudrez travailler ici."
+                ? "Aucune autre entreprise sur terre ne combine 20 ans d'analyse des vibrations, des logiciels d'entreprise personnalisés et du conseil en IA sous un même toit. C'est pour ça que vous voudrez travailler ici."
                 : locale === "es"
-                  ? "Ninguna otra empresa en la tierra combina 20 años de análisis de vibraciones, software empresarial personalizado, consultoría de IA, fabricación y construcción bajo un mismo techo. Por eso querrá trabajar aquí."
+                  ? "Ninguna otra empresa en la tierra combina 20 años de análisis de vibraciones, software empresarial personalizado y consultoría de IA bajo un mismo techo. Por eso querrá trabajar aquí."
                   : t.narrative.onlyWe}
             </VerticalCutReveal>
           </motion.div>

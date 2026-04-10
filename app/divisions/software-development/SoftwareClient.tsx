@@ -755,23 +755,13 @@ export default function SoftwareClient() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-60px" }}
-            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: 16 }}
+            style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(2, 1fr)", gap: 16 }}
           >
             {[
               {
                 name: locale === "fr" ? "Maintenance Prédictive" : locale === "es" ? "Mantenimiento Predictivo" : "Predictive Maintenance",
                 desc: locale === "fr" ? "Données de capteurs directement dans votre tableau de bord — sans exports CSV, sans ingestion manuelle." : locale === "es" ? "Datos de sensores fluyendo directamente a su panel — sin exportaciones CSV, sin ingestión manual." : "Sensor data flowing directly into your dashboard — no CSV exports, no manual ingestion.",
                 href: "/divisions/predictive-maintenance",
-              },
-              {
-                name: locale === "fr" ? "Construction Intelligente" : locale === "es" ? "Construcción Inteligente" : "Intelligent Construction",
-                desc: locale === "fr" ? "Systèmes IoT et BMS avec des API que votre plateforme peut lire et sur lesquelles elle peut agir." : locale === "es" ? "Sistemas IoT de edificios y BMS con APIs que su plataforma puede leer y sobre las que puede actuar." : "Building IoT and BMS systems with APIs your platform can read and act on.",
-                href: "/divisions/intelligent-construction",
-              },
-              {
-                name: locale === "fr" ? "Fabrication Industrielle" : locale === "es" ? "Manufactura Industrial" : "Industrial Manufacturing",
-                desc: locale === "fr" ? "API d'instruments et protocoles de données auxquels votre logiciel se connecte dès le premier jour." : locale === "es" ? "APIs de instrumentos y protocolos de datos a los que su software se conecta desde el primer día." : "Instrument APIs and data protocols your software connects to on day one.",
-                href: "/divisions/industrial-manufacturing",
               },
               {
                 name: locale === "fr" ? "Conseil en IA" : locale === "es" ? "Consultoría de IA" : "AI Consulting",
@@ -1103,7 +1093,7 @@ export default function SoftwareClient() {
           <MagneticButton as="a" href="/contact">
             {locale === "fr" ? "Livrez Plus Vite" : locale === "es" ? "Entregue Más Rápido" : "Ship Faster"}
           </MagneticButton>
-          <MagneticButton as="a" href="/contact">
+          <MagneticButton as="a" href="/contact" variant="glass">
             {locale === "fr" ? "Essai Gratuit" : locale === "es" ? "Prueba Gratuita" : "Start Free Trial"}
           </MagneticButton>
         </div>

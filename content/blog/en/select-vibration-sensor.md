@@ -4,8 +4,8 @@ slug: select-vibration-sensor
 date: 2026-04-03
 description: "Choose the right vibration sensor for your industrial machinery. Accelerometers, velocity sensors, proximity probes — specs, applications, and Ontario suppliers."
 author: Droz Technologies
-division: industrial-manufacturing
-category: Industrial Manufacturing
+division: predictive-maintenance
+category: Predictive Maintenance
 tags:
   - vibration sensor manufacturer Ontario
   - accelerometer
@@ -147,4 +147,4 @@ Three rules:
 
 For a broader look at Canadian-made vibration monitoring systems and total cost of ownership comparisons, read our [Canadian vibration equipment buyer's guide](/blog/canadian-vibration-equipment-buyers-guide).
 
-Learn more about our [industrial manufacturing division](/divisions/industrial-manufacturing) and the sensor technology we build for Canadian industry.
+Learn more about our [industrial manufacturing division](/divisions/predictive-maintenance) and the sensor technology we build for Canadian industry.

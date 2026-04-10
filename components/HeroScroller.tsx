@@ -5,31 +5,30 @@ import HeroTextPanel from "./HeroTextPanel";
 import { useLocale } from "@/lib/LocaleContext";
 import { getTexts } from "@/lib/i18n";
 
-const FRAME_COUNT = 240;
 const PLAYBACK_FPS = 50;
 const CATCHUP_FPS = 90; // faster when catching up after fast scroll
-const DIVISION_COUNT = 5;
-const SCROLL_HEIGHT_VH = 350; // tighter scroll zones
-const SECTION_VH = SCROLL_HEIGHT_VH / DIVISION_COUNT; // 70vh per section
+const DIVISION_COUNT = 3;
+const SCROLL_HEIGHT_VH = 250; // tighter scroll zones
 
-// Correct order based on actual frame content
-const TRANSITIONS = [
-  "pm-to-software",
-  "software-to-construction",
-  "manufacturing-to-ai",
-  "construction-to-manufacturing",
+// Per-transition config: frame count, file extension, zero-pad width
+const TRANSITIONS: { dir: string; frames: number; ext: "jpg" | "png"; pad: number }[] = [
+  { dir: "pm-to-software", frames: 240, ext: "jpg", pad: 4 },
+  { dir: "software-to-ai", frames: 161, ext: "png", pad: 3 },
 ];
 
-function getFramePath(dirName: string, frameNum: number): string {
-  const num = Math.max(1, Math.min(frameNum, FRAME_COUNT));
-  return `/frames/${dirName}/frame_${String(num).padStart(4, "0")}.jpg`;
+function getFramePath(transitionIndex: number, frameNum: number): string {
+  const t = TRANSITIONS[transitionIndex];
+  if (!t) return "";
+  const num = Math.max(1, Math.min(frameNum, t.frames));
+  return `/frames/${t.dir}/frame_${String(num).padStart(t.pad, "0")}.${t.ext}`;
 }
 
 function getPosterPath(divisionIndex: number): string {
   if (divisionIndex === 0) {
-    return getFramePath(TRANSITIONS[0], 1);
+    return getFramePath(0, 1);
   }
-  return getFramePath(TRANSITIONS[divisionIndex - 1], FRAME_COUNT);
+  const t = TRANSITIONS[divisionIndex - 1];
+  return getFramePath(divisionIndex - 1, t.frames);
 }
 
 export default function HeroScroller() {
@@ -98,9 +97,11 @@ export default function HeroScroller() {
     img.src = src;
   }, []);
 
-  const preloadTransition = useCallback((dirName: string) => {
-    for (let i = 1; i <= FRAME_COUNT; i++) {
-      const path = getFramePath(dirName, i);
+  const preloadTransition = useCallback((transitionIndex: number) => {
+    const t = TRANSITIONS[transitionIndex];
+    if (!t) return;
+    for (let i = 1; i <= t.frames; i++) {
+      const path = getFramePath(transitionIndex, i);
       if (!frameCache.current.has(path)) {
         const img = new Image();
         img.src = path;
@@ -112,13 +113,19 @@ export default function HeroScroller() {
   // Auto-play through frame sequence
   const playFrameSequence = useCallback(
     (
-      dirName: string,
+      transitionIndex: number,
       direction: "forward" | "reverse",
       fps: number,
       onComplete: () => void
     ) => {
-      const startFrame = direction === "forward" ? 1 : FRAME_COUNT;
-      const endFrame = direction === "forward" ? FRAME_COUNT : 1;
+      const t = TRANSITIONS[transitionIndex];
+      if (!t) {
+        onComplete();
+        return;
+      }
+      const totalFrames = t.frames;
+      const startFrame = direction === "forward" ? 1 : totalFrames;
+      const endFrame = direction === "forward" ? totalFrames : 1;
       const step = direction === "forward" ? 1 : -1;
       const frameDuration = 1000 / fps;
 
@@ -141,7 +148,7 @@ export default function HeroScroller() {
             currentFrame = endFrame;
           }
 
-          drawFrame(getFramePath(dirName, currentFrame));
+          drawFrame(getFramePath(transitionIndex, currentFrame));
 
           if (currentFrame === endFrame) {
             onComplete();
@@ -167,12 +174,10 @@ export default function HeroScroller() {
 
       if (toIndex < 0 || toIndex >= DIVISION_COUNT) return;
 
-      const dirName =
-        direction === "forward"
-          ? TRANSITIONS[fromIndex]
-          : TRANSITIONS[toIndex];
+      const transitionIndex =
+        direction === "forward" ? fromIndex : toIndex;
 
-      if (!dirName) return;
+      if (!TRANSITIONS[transitionIndex]) return;
 
       isTransitioningRef.current = true;
 
@@ -220,16 +225,16 @@ export default function HeroScroller() {
         fromPanel.style.pointerEvents = "none";
       }
 
-      playFrameSequence(dirName, direction, fps, () => {
+      playFrameSequence(transitionIndex, direction, fps, () => {
         activeIndexRef.current = toIndex;
         setActiveIndex(toIndex);
         isTransitioningRef.current = false;
 
         // Preload next
         if (direction === "forward" && toIndex < TRANSITIONS.length) {
-          preloadTransition(TRANSITIONS[toIndex]);
+          preloadTransition(toIndex);
         } else if (direction === "reverse" && toIndex > 0) {
-          preloadTransition(TRANSITIONS[toIndex - 1]);
+          preloadTransition(toIndex - 1);
         }
 
         // Check if we need to continue toward target
@@ -260,7 +265,7 @@ export default function HeroScroller() {
 
         // Preload what we'll need
         if (newTarget > activeIndexRef.current && newTarget - 1 < TRANSITIONS.length) {
-          preloadTransition(TRANSITIONS[newTarget - 1]);
+          preloadTransition(newTarget - 1);
         }
 
         // Start stepping if not already transitioning
@@ -297,12 +302,13 @@ export default function HeroScroller() {
       window.removeEventListener("scroll", onFirstScroll);
 
       // Preload first transition in batches to avoid flooding the network
+      const firstFrameCount = TRANSITIONS[0].frames;
       let batch = 0;
       const loadBatch = () => {
         const start = batch * 30 + 1;
-        const end = Math.min(start + 29, FRAME_COUNT);
+        const end = Math.min(start + 29, firstFrameCount);
         for (let i = start; i <= end; i++) {
-          const path = getFramePath(TRANSITIONS[0], i);
+          const path = getFramePath(0, i);
           if (!frameCache.current.has(path)) {
             const img = new window.Image();
             img.src = path;
@@ -310,7 +316,7 @@ export default function HeroScroller() {
           }
         }
         batch++;
-        if (start + 29 < FRAME_COUNT) {
+        if (start + 29 < firstFrameCount) {
           setTimeout(loadBatch, 100);
         }
       };

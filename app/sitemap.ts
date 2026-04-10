@@ -10,8 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/divisions/predictive-maintenance`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/divisions/software-development`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/divisions/intelligent-construction`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${base}/divisions/industrial-manufacturing`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/divisions/ai-consulting`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/solutions`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },

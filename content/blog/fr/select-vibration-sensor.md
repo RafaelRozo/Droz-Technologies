@@ -4,8 +4,8 @@ slug: select-vibration-sensor
 date: 2026-04-03
 description: "Choisissez le bon capteur de vibration pour votre machinerie industrielle. Accelerometres, capteurs de velocite, sondes de proximite — specifications, applications et fournisseurs en Ontario."
 author: Droz Technologies
-division: industrial-manufacturing
-category: Industrial Manufacturing
+division: predictive-maintenance
+category: Predictive Maintenance
 tags:
   - capteur de vibration
   - accelerometre
@@ -148,4 +148,4 @@ Trois regles :
 
 Pour un apercu plus large des systemes de surveillance vibratoire fabriques au Canada et des comparaisons de cout total de possession, consultez notre [guide d'achat d'equipement de vibration canadien](/blog/canadian-vibration-equipment-buyers-guide).
 
-En savoir plus sur notre [division de fabrication industrielle](/divisions/industrial-manufacturing) et la technologie de capteurs que nous fabriquons pour l'industrie canadienne.
+En savoir plus sur notre [division de fabrication industrielle](/divisions/predictive-maintenance) et la technologie de capteurs que nous fabriquons pour l'industrie canadienne.

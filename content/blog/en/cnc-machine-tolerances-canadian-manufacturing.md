@@ -3,8 +3,8 @@ title: "CNC Precision: Why ±0.001mm Matters in Canadian Manufacturing"
 slug: "cnc-machine-tolerances-canadian-manufacturing"
 date: "2026-04-05"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
-category: "Industrial Manufacturing"
+division: "predictive-maintenance"
+category: "Predictive Maintenance"
 tags: ["CNC precision", "tolerances", "Canada", "aerospace", "medical devices", "ISO 230-2", "Ontario", "industrial manufacturing"]
 locale: "en"
 description: "CNC precision tolerances in Canada — why ±0.001mm matters, how Ontario shops compete with imports, and the calibration standards that protect margins."
@@ -126,7 +126,7 @@ Canadian shops don't need to chase tighter tolerances. They need to prove the to
 
 Precision is a business strategy, not a machine spec. The Ontario shops winning government and aerospace contracts in 2026 are the ones that treat their metrology lab as a profit centre, not overhead.
 
-Our [industrial manufacturing team](/divisions/industrial-manufacturing) helps Canadian machine shops tighten process capability, implement ISO 230-2 calibration programs, and prepare for AS9100 and ISO 13485 audits.
+Our [industrial manufacturing team](/divisions/predictive-maintenance) helps Canadian machine shops tighten process capability, implement ISO 230-2 calibration programs, and prepare for AS9100 and ISO 13485 audits.
 
 For a related look at how sensor selection affects precision monitoring, read our [vibration sensor selection guide](/blog/select-vibration-sensor).
 

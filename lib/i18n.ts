@@ -67,16 +67,6 @@ const en: SiteText = {
         objectLabel: "GOOGLE WILLOW PROCESSOR",
       },
       {
-        title: ["Intelligent", "Construction"],
-        subtitle: "Smart building upgrades, modern fa\u00E7ade systems, and IoT instrumentation. We don\u2019t just build structures \u2014 we make them intelligent, measurable, and efficient.",
-        buttons: [{ label: "Explore Intelligent Construction", href: "/divisions/intelligent-construction" }, { label: "Talk to an Engineer", href: "/contact" }],
-      },
-      {
-        title: ["Industrial", "Manufacturing"],
-        subtitle: "We design and manufacture the vibration equipment, laser alignment systems, and thermography instruments we deploy in the field. Full chain, one company.",
-        buttons: [{ label: "Explore Industrial Manufacturing", href: "/divisions/industrial-manufacturing" }, { label: "Talk to an Engineer", href: "/contact" }],
-      },
-      {
         title: ["AI", "Consulting"],
         subtitle: "From proof-of-concept to production in 90 days. Computer vision, predictive models, NLP, and edge AI \u2014 deployed and monitored by our engineers. Measurable ROI from month one.",
         buttons: [{ label: "Explore AI Consulting", href: "/divisions/ai-consulting" }, { label: "Talk to an Engineer", href: "/contact" }],
@@ -86,24 +76,24 @@ const en: SiteText = {
   narrative: {
     brandHook: {
       title: "Droz",
-      subtitle: "Engineering, Software, Construction, Manufacturing & AI \u2014 Five divisions, one company.",
+      subtitle: "Engineering, Software & AI \u2014 Three divisions, one company.",
     },
     problem: {
       eyebrow: "Who We Are",
-      headline: "Five world-class divisions. Each one stands alone.",
-      body: "We diagnose equipment failures with 20 years of field experience. We build enterprise software for governments and Fortune 500s. We make buildings intelligent. We manufacture precision instruments in our own lab. We deploy AI that runs in production, not PowerPoint. Each division operates independently \u2014 and when a project needs more than one, we\u2019re the only company that can deliver the full picture.",
+      headline: "Three world-class divisions. Each one stands alone.",
+      body: "We diagnose equipment failures with 20 years of field experience. We build enterprise software for governments and Fortune 500s. We deploy AI that runs in production, not PowerPoint. Each division operates independently \u2014 and when a project needs more than one, we\u2019re the only company that can deliver the full picture.",
       costNumber: "20+",
-      costLabel: "years building across five industries",
+      costLabel: "years building across three industries",
     },
     agitation: {
       facts: [
         { number: "50+", text: "enterprise clients across six countries trust us with their most critical operations." },
         { number: "20+", text: "years of hands-on experience \u2014 we started in steel mills, not in an office." },
-        { number: "5", text: "specialized divisions, each with deep domain expertise. Work with one or work with all." },
+        { number: "3", text: "specialized divisions, each with deep domain expertise. Work with one or work with all." },
       ],
     },
     guide: {
-      headline: "One division or all five. Your call.",
+      headline: "One division or all three. Your call.",
     },
     plan: {
       steps: [
@@ -147,31 +137,29 @@ const en: SiteText = {
       primary: "Talk to an Engineer",
       secondary: "Start Free Trial",
     },
-    onlyWe: "Five divisions. Each one world-class on its own. Predictive maintenance with 20 years of field data. Software trusted by governments. Smart construction that pays for itself. Instruments we manufacture and calibrate ourselves. AI that runs in production from day one. Most clients start with one. Some end up using all five. Either way, you\u2019re working with the same team.",
+    onlyWe: "Three divisions. Each one world-class on its own. Predictive maintenance with 20 years of field data. Software trusted by governments. AI that runs in production from day one. Most clients start with one. Some end up using all three. Either way, you\u2019re working with the same team.",
   },
   stats: [
     { value: "20+", label: "Years on factory floors" },
     { value: "6", label: "Countries. Same standard." },
-    { value: "5", label: "Divisions. One company." },
+    { value: "3", label: "Divisions. One company." },
     { value: "50+", label: "Enterprise clients retained" },
   ],
   about: {
     heading: "The Story",
-    body: "We didn\u2019t start in a boardroom. We started in a steel mill in Venezuela, aligning rotors by hand. Twenty years, six countries, and five divisions later, we still show up on the factory floor before we open a laptop.",
+    body: "We didn\u2019t start in a boardroom. We started in a steel mill in Venezuela, aligning rotors by hand. Twenty years, six countries, and three divisions later, we still show up on the factory floor before we open a laptop.",
     mission: "Why We Exist",
     missionBody: "Because your equipment vendor can\u2019t write software. Your software vendor has never calibrated a vibration sensor. And your AI consultant has never been covered in machine oil. We have. That\u2019s why we built a company that does all of it.",
     values: "How We Work",
     valuesBody: "Catholic values, Latino grit, Canadian precision. We don\u2019t sell what we can\u2019t deliver. We don\u2019t promise what we haven\u2019t done. Every engagement starts with integrity and ends with measurable results.",
   },
   divisionsSection: {
-    heading: "Five Ways Forward",
-    subtitle: "One company. Five capabilities. The only team that connects sensors to software to strategy \u2014 because we built all of it.",
+    heading: "Three Ways Forward",
+    subtitle: "One company. Three capabilities. The only team that connects sensors to software to strategy \u2014 because we built all of it.",
   },
   divisionsGrid: [
     { name: "Predictive Maintenance", desc: "We\u2019ve been diagnosing equipment failures since before \u201Cpredictive maintenance\u201D was a buzzword. 20+ years of vibration analysis, laser alignment, thermography, and rotor balancing \u2014 for Westinghouse, Holcim, PDVSA, Unilever.", icon: "\u2699\uFE0F", painPoint: "Your best maintenance tech retires in 8 months. That knowledge has never been documented.", solution: "We capture it. Digitize it. Make it permanent.", cta: "Predict the Unpredictable", slug: "predictive-maintenance" },
     { name: "Software Development", desc: "Enterprise platforms, government contracts, AI-powered automation. Built by engineers who\u2019ve operated the systems they\u2019re coding for. Not outsourced. Not offshored. Ours.", icon: "\uD83D\uDCBB", painPoint: "Your last software project took 18 months and still doesn\u2019t integrate with your CMMS.", solution: "We build it. We deploy it. We stand behind it.", cta: "Ship Faster", slug: "software-development" },
-    { name: "Intelligent Construction", desc: "Smart building upgrades, modern fa\u00E7ade systems, IoT instrumentation. We don\u2019t build buildings. We make buildings intelligent.", icon: "\uD83C\uDFD7\uFE0F", painPoint: "Your building was designed in 2005. Energy costs have tripled.", solution: "We retrofit. We instrument. We optimize.", cta: "Build Smarter", slug: "intelligent-construction" },
-    { name: "Industrial Manufacturing", desc: "We manufacture the vibration equipment, laser alignment systems, and thermography instruments we use in the field. End-to-end quality control because we don\u2019t trust anyone else\u2019s tolerances.", icon: "\uD83E\uDD16", painPoint: "Your precision instruments were calibrated by a vendor who\u2019s never used them in the field.", solution: "We build it, calibrate it, and deploy it ourselves.", cta: "Scale Precision", slug: "industrial-manufacturing" },
     { name: "AI Consulting", desc: "From proof-of-concept to production in 90 days. Computer vision, predictive models, NLP, edge AI. Not slides \u2014 running systems monitored by our engineers.", icon: "\uD83E\uDDE0", painPoint: "Your AI pilot has been in \u201Cproof of concept\u201D for two years. Nobody can explain the ROI.", solution: "We deploy to production. We measure the ROI. We show you the dashboard.", cta: "Think Bigger", slug: "ai-consulting" },
   ],
   solutions: {
@@ -198,7 +186,7 @@ const en: SiteText = {
     form: { name: "Full Name", email: "Work Email", company: "Company", message: "What\u2019s the problem you\u2019re trying to solve?", send: "Send It" },
   },
   footer: {
-    tagline: "The only company that connects sensors to software to strategy. Catholic. Latino-owned. Canadian. Five divisions. One standard.",
+    tagline: "The only company that connects sensors to software to strategy. Catholic. Latino-owned. Canadian. Three divisions. One standard.",
     company: "Droz Technologies Inc.",
     location: "Burlington, Ontario, Canada",
     copyright: "\u00A9 2026 Droz Technologies Inc. All rights reserved.",
@@ -220,8 +208,6 @@ const fr: SiteText = {
     divisions: [
       { title: ["Votre usine", "tourne.", "Point."], subtitle: "On a pass\u00E9 20 ans sur des planchers d\u2019usine avant d\u2019\u00E9crire la moindre ligne de code. On sait \u00E0 quoi ressemble un roulement qui l\u00E2che \u00E0 3h du matin. Et on a bati le syst\u00E8me pour que \u00E7a n\u2019arrive plus.", buttons: [{ label: "Parler \u00E0 un ing\u00E9nieur", href: "/contact" }, { label: "Voir les r\u00E9sultats", href: "#proof" }] },
       { title: ["Du code", "qui tourne.", "Pas des slides."], subtitle: "Votre dernier fournisseur vous a livr\u00E9 une feuille de route. Nous, on livre du code en production. Des plateformes industrielles construites par des ing\u00E9nieurs qui ont op\u00E9r\u00E9 les syst\u00E8mes qu\u2019ils automatisent.", buttons: [{ label: "Parler \u00E0 un ing\u00E9nieur", href: "/contact" }, { label: "Voir la stack", href: "/divisions/software-development" }], objectLabel: "PROCESSEUR GOOGLE WILLOW" },
-      { title: ["Des b\u00E2timents", "qui pensent."], subtitle: "Chaque structure qu\u2019on touche est instrument\u00E9e, connect\u00E9e et optimis\u00E9e. Pas un discours sur les b\u00E2timents intelligents. Un b\u00E2timent qui performe \u2014 mesur\u00E9, v\u00E9rifi\u00E9, prouv\u00E9.", buttons: [{ label: "Parler \u00E0 un ing\u00E9nieur", href: "/contact" }, { label: "Voir les projets", href: "/divisions/intelligent-construction" }] },
-      { title: ["La pr\u00E9cision", "\u00E0 l\u2019\u00E9chelle."], subtitle: "On fabrique les \u00E9quipements qu\u2019on utilise. On calibre les instruments qu\u2019on vend. Personne d\u2019autre dans cette industrie ne contr\u00F4le la cha\u00EEne compl\u00E8te, de la conception au d\u00E9ploiement.", buttons: [{ label: "Parler \u00E0 un ing\u00E9nieur", href: "/contact" }, { label: "Nos \u00E9quipements", href: "/divisions/industrial-manufacturing" }] },
       { title: ["Une IA qui", "fonctionne", "vraiment."], subtitle: "Pas une d\u00E9mo. Pas un POC qui moisit en comit\u00E9. Des syst\u00E8mes d\u2019IA en production, surveill\u00E9s par nos ing\u00E9nieurs, avec un ROI mesurable d\u00E8s le premier mois.", buttons: [{ label: "Parler \u00E0 un ing\u00E9nieur", href: "/contact" }, { label: "Capacit\u00E9s", href: "/divisions/ai-consulting" }] },
     ],
   },
@@ -272,7 +258,7 @@ const fr: SiteText = {
         "Maintenance pr\u00E9dictive \u2014 on r\u00E8gle avant que \u00E7a casse",
         "Une plateforme, tous les actifs, mise \u00E0 jour en temps r\u00E9el",
         "Documentation d\u2019audit g\u00E9n\u00E9r\u00E9e automatiquement",
-        "Une seule entreprise. Cinq divisions. Toutes les comp\u00E9tences sous un seul toit.",
+        "Une seule entreprise. Trois divisions. Toutes les comp\u00E9tences sous un seul toit.",
       ],
     },
     testimonial: {
@@ -289,28 +275,26 @@ const fr: SiteText = {
       primary: "Parler \u00E0 un ing\u00E9nieur",
       secondary: "Essai gratuit",
     },
-    onlyWe: "Aucune autre entreprise au monde ne combine 20 ans d\u2019analyse vibratoire, des logiciels d\u2019entreprise sur mesure, du conseil en IA, de la fabrication et de la construction sous un seul toit. Votre fournisseur d\u2019\u00E9quipements ne peut pas construire votre logiciel. Votre fournisseur de logiciels n\u2019a jamais align\u00E9 un rotor. Nous, on fait les deux. C\u2019est pas un slogan. C\u2019est notre mardi.",
+    onlyWe: "Aucune autre entreprise au monde ne combine 20 ans d\u2019analyse vibratoire, des logiciels d\u2019entreprise sur mesure et du conseil en IA sous un seul toit. Votre fournisseur d\u2019\u00E9quipements ne peut pas construire votre logiciel. Votre fournisseur de logiciels n\u2019a jamais align\u00E9 un rotor. Nous, on fait les deux. C\u2019est pas un slogan. C\u2019est notre mardi.",
   },
   stats: [
     { value: "20+", label: "Ann\u00E9es sur les planchers d\u2019usine" },
     { value: "6", label: "Pays. Le m\u00EAme standard." },
-    { value: "5", label: "Divisions. Une seule entreprise." },
+    { value: "3", label: "Divisions. Une seule entreprise." },
     { value: "50+", label: "Clients grands comptes fid\u00E9lis\u00E9s" },
   ],
   about: {
     heading: "Notre histoire",
-    body: "On n\u2019a pas d\u00E9marr\u00E9 dans une salle de conseil. On a d\u00E9marr\u00E9 dans une ac\u00E9rie au Venezuela, \u00E0 aligner des rotors \u00E0 la main. Vingt ans, six pays et cinq divisions plus tard, on pose encore le pied sur le plancher d\u2019usine avant d\u2019ouvrir un laptop.",
+    body: "On n\u2019a pas d\u00E9marr\u00E9 dans une salle de conseil. On a d\u00E9marr\u00E9 dans une ac\u00E9rie au Venezuela, \u00E0 aligner des rotors \u00E0 la main. Vingt ans, six pays et trois divisions plus tard, on pose encore le pied sur le plancher d\u2019usine avant d\u2019ouvrir un laptop.",
     mission: "Pourquoi on existe",
     missionBody: "Parce que votre fournisseur d\u2019\u00E9quipements ne sait pas \u00E9crire du code. Votre fournisseur de logiciels n\u2019a jamais calibr\u00E9 un capteur de vibration. Et votre consultant en IA n\u2019a jamais eu de graisse de machine sur les mains. Nous, oui. C\u2019est pour \u00E7a qu\u2019on a construit une entreprise qui fait tout.",
     values: "Comment on travaille",
     valuesBody: "Valeurs catholiques, rigueur latino, pr\u00E9cision canadienne. On ne vend pas ce qu\u2019on ne peut pas livrer. On ne promet pas ce qu\u2019on n\u2019a pas fait. Chaque mandat commence par l\u2019int\u00E9grit\u00E9 et finit avec des r\u00E9sultats mesurables.",
   },
-  divisionsSection: { heading: "Cinq voies vers l\u2019avant", subtitle: "Une seule entreprise. Cinq capacit\u00E9s. La seule \u00E9quipe qui relie les capteurs au logiciel \u00E0 la strat\u00E9gie \u2014 parce qu\u2019on a tout construit." },
+  divisionsSection: { heading: "Trois voies vers l\u2019avant", subtitle: "Une seule entreprise. Trois capacit\u00E9s. La seule \u00E9quipe qui relie les capteurs au logiciel \u00E0 la strat\u00E9gie \u2014 parce qu\u2019on a tout construit." },
   divisionsGrid: [
     { name: "Maintenance pr\u00E9dictive", desc: "Alignement laser, \u00E9quilibrage de rotor, analyse vibratoire, thermographie. Plus de 20 ans au service de Westinghouse, Holcim, PDVSA, Unilever.", icon: "\u2699\uFE0F", painPoint: "Votre meilleur technicien de maintenance prend sa retraite dans 8 mois. Ce savoir n\u2019a jamais \u00E9t\u00E9 document\u00E9.", solution: "On le capture. On le num\u00E9rise. On le p\u00E9rennise.", cta: "Pr\u00E9dire l\u2019impr\u00E9visible", slug: "predictive-maintenance" },
     { name: "D\u00E9veloppement logiciel", desc: "Plateformes d\u2019entreprise, contrats gouvernementaux, automatisation par IA. Construits par des ing\u00E9nieurs qui ont op\u00E9r\u00E9 les syst\u00E8mes qu\u2019ils codent. Pas sous-trait\u00E9s. Pas d\u00E9localis\u00E9s. Les n\u00F4tres.", icon: "\uD83D\uDCBB", painPoint: "Votre dernier projet logiciel a pris 18 mois et ne s\u2019int\u00E8gre toujours pas \u00E0 votre CMMS.", solution: "On le construit. On le d\u00E9ploie. On l\u2019assume.", cta: "Livrer plus vite", slug: "software-development" },
-    { name: "Construction intelligente", desc: "Mises \u00E0 niveau de b\u00E2timents intelligents, syst\u00E8mes de fa\u00E7ades modernes, instrumentation IoT. On ne construit pas des b\u00E2timents. On les rend intelligents.", icon: "\uD83C\uDFD7\uFE0F", painPoint: "Votre b\u00E2timent a \u00E9t\u00E9 con\u00E7u en 2005. Les co\u00FBts \u00E9nerg\u00E9tiques ont tripl\u00E9.", solution: "On r\u00E9nove. On instrumente. On optimise.", cta: "Construire plus intelligent", slug: "intelligent-construction" },
-    { name: "Fabrication industrielle", desc: "On fabrique les \u00E9quipements de vibration, les syst\u00E8mes d\u2019alignement laser et les instruments thermographiques qu\u2019on utilise sur le terrain. Contr\u00F4le qualit\u00E9 de bout en bout.", icon: "\uD83E\uDD16", painPoint: "Vos instruments de pr\u00E9cision ont \u00E9t\u00E9 calibr\u00E9s par un fournisseur qui ne les a jamais utilis\u00E9s sur le terrain.", solution: "On les fabrique, on les calibre, et on les d\u00E9ploie nous-m\u00EAmes.", cta: "Passer \u00E0 l\u2019\u00E9chelle", slug: "industrial-manufacturing" },
     { name: "Consultation IA", desc: "De la preuve de concept \u00E0 la production en 90 jours. Vision par ordinateur, mod\u00E8les pr\u00E9dictifs, NLP, IA en p\u00E9riph\u00E9rie. Pas des slides \u2014 des syst\u00E8mes qui tournent, surveill\u00E9s par nos ing\u00E9nieurs.", icon: "\uD83E\uDDE0", painPoint: "Votre pilote IA est en \u00AB\u00A0preuve de concept\u00A0\u00BB depuis deux ans. Personne ne peut expliquer le ROI.", solution: "On d\u00E9ploie en production. On mesure le ROI. On vous montre le tableau de bord.", cta: "Voir plus grand", slug: "ai-consulting" },
   ],
   solutions: {
@@ -337,7 +321,7 @@ const fr: SiteText = {
     form: { name: "Nom complet", email: "Courriel professionnel", company: "Entreprise", message: "Quel est le probl\u00E8me \u00E0 r\u00E9soudre\u00A0?", send: "Envoyer" },
   },
   footer: {
-    tagline: "La seule entreprise qui relie les capteurs au logiciel \u00E0 la strat\u00E9gie. Catholique. Latino. Canadienne. Cinq divisions. Un seul standard.",
+    tagline: "La seule entreprise qui relie les capteurs au logiciel \u00E0 la strat\u00E9gie. Catholique. Latino. Canadienne. Trois divisions. Un seul standard.",
     company: "Droz Technologies Inc.",
     location: "Burlington, Ontario, Canada",
     copyright: "\u00A9 2026 Droz Technologies Inc. Tous droits r\u00E9serv\u00E9s.",
@@ -354,8 +338,6 @@ const es: SiteText = {
     divisions: [
       { title: ["Tu planta", "funciona.", "Punto."], subtitle: "Pasamos 20 a\u00F1os en pisos de f\u00E1brica antes de escribir una sola l\u00EDnea de c\u00F3digo. Sabemos c\u00F3mo suena un rodamiento que falla a las 3 de la ma\u00F1ana. Y construimos el sistema para que nunca m\u00E1s lo escuches.", buttons: [{ label: "Hablar con un ingeniero", href: "/contact" }, { label: "Ver resultados", href: "#proof" }] },
       { title: ["C\u00F3digo que", "corre.", "No slides."], subtitle: "Tu \u00FAltimo proveedor te dio una hoja de ruta. Nosotros entregamos c\u00F3digo en producci\u00F3n. Plataformas industriales construidas por ingenieros que han operado los sistemas que automatizan.", buttons: [{ label: "Hablar con un ingeniero", href: "/contact" }, { label: "Ver el stack", href: "/divisions/software-development" }], objectLabel: "PROCESADOR GOOGLE WILLOW" },
-      { title: ["Edificios", "que piensan."], subtitle: "Cada estructura que tocamos se instrumenta, conecta y optimiza. No es un discurso sobre edificios inteligentes. Es un edificio que rinde \u2014 medido, verificado, probado.", buttons: [{ label: "Hablar con un ingeniero", href: "/contact" }, { label: "Ver proyectos", href: "/divisions/intelligent-construction" }] },
-      { title: ["Precisi\u00F3n", "a escala."], subtitle: "Fabricamos el equipo que usamos. Calibramos los instrumentos que vendemos. Nadie m\u00E1s en esta industria controla la cadena completa, desde el dise\u00F1o hasta el despliegue.", buttons: [{ label: "Hablar con un ingeniero", href: "/contact" }, { label: "Nuestros equipos", href: "/divisions/industrial-manufacturing" }] },
       { title: ["IA que", "realmente", "funciona."], subtitle: "No una demo. No un POC que muere en comit\u00E9. Sistemas de IA en producci\u00F3n, monitoreados por nuestros ingenieros, con ROI medible desde el primer mes.", buttons: [{ label: "Hablar con un ingeniero", href: "/contact" }, { label: "Capacidades", href: "/divisions/ai-consulting" }] },
     ],
   },
@@ -406,7 +388,7 @@ const es: SiteText = {
         "Mantenimiento predictivo \u2014 se repara antes de que se rompa",
         "Una plataforma, todos los activos, actualizada en vivo",
         "Documentaci\u00F3n de auditor\u00EDa generada autom\u00E1ticamente",
-        "Una sola empresa. Cinco divisiones. Todas las capacidades bajo un mismo techo.",
+        "Una sola empresa. Tres divisiones. Todas las capacidades bajo un mismo techo.",
       ],
     },
     testimonial: {
@@ -423,28 +405,26 @@ const es: SiteText = {
       primary: "Hablar con un ingeniero",
       secondary: "Prueba gratuita",
     },
-    onlyWe: "Ninguna otra empresa en el mundo combina 20 a\u00F1os de an\u00E1lisis de vibraciones, software empresarial a medida, consultor\u00EDa en IA, manufactura y construcci\u00F3n bajo un mismo techo. Tu proveedor de equipos no puede construir tu software. Tu proveedor de software nunca ha alineado un rotor. Nosotros hacemos las dos cosas. Eso no es un eslogan. Es nuestro martes.",
+    onlyWe: "Ninguna otra empresa en el mundo combina 20 a\u00F1os de an\u00E1lisis de vibraciones, software empresarial a medida y consultor\u00EDa en IA bajo un mismo techo. Tu proveedor de equipos no puede construir tu software. Tu proveedor de software nunca ha alineado un rotor. Nosotros hacemos las dos cosas. Eso no es un eslogan. Es nuestro martes.",
   },
   stats: [
     { value: "20+", label: "A\u00F1os en pisos de f\u00E1brica" },
     { value: "6", label: "Pa\u00EDses. El mismo est\u00E1ndar." },
-    { value: "5", label: "Divisiones. Una sola empresa." },
+    { value: "3", label: "Divisiones. Una sola empresa." },
     { value: "50+", label: "Clientes enterprise retenidos" },
   ],
   about: {
     heading: "La historia",
-    body: "No empezamos en una sala de juntas. Empezamos en una acerer\u00EDa en Venezuela, alineando rotores a mano. Veinte a\u00F1os, seis pa\u00EDses y cinco divisiones despu\u00E9s, todav\u00EDa pisamos el piso de f\u00E1brica antes de abrir un laptop.",
+    body: "No empezamos en una sala de juntas. Empezamos en una acerer\u00EDa en Venezuela, alineando rotores a mano. Veinte a\u00F1os, seis pa\u00EDses y tres divisiones despu\u00E9s, todav\u00EDa pisamos el piso de f\u00E1brica antes de abrir un laptop.",
     mission: "Por qu\u00E9 existimos",
     missionBody: "Porque tu proveedor de equipos no sabe escribir c\u00F3digo. Tu proveedor de software nunca ha calibrado un sensor de vibraciones. Y tu consultor de IA nunca ha tenido aceite de m\u00E1quina en las manos. Nosotros s\u00ED. Por eso construimos una empresa que hace todo.",
     values: "C\u00F3mo trabajamos",
     valuesBody: "Valores cat\u00F3licos, garra latina, precisi\u00F3n canadiense. No vendemos lo que no podemos entregar. No prometemos lo que no hemos hecho. Cada compromiso empieza con integridad y termina con resultados medibles.",
   },
-  divisionsSection: { heading: "Cinco caminos al frente", subtitle: "Una sola empresa. Cinco capacidades. El \u00FAnico equipo que conecta sensores con software con estrategia \u2014 porque construimos todo eso." },
+  divisionsSection: { heading: "Tres caminos al frente", subtitle: "Una sola empresa. Tres capacidades. El \u00FAnico equipo que conecta sensores con software con estrategia \u2014 porque construimos todo eso." },
   divisionsGrid: [
     { name: "Mantenimiento predictivo", desc: "Alineaci\u00F3n l\u00E1ser, balanceo de rotores, an\u00E1lisis de vibraciones, termograf\u00EDa. M\u00E1s de 20 a\u00F1os al servicio de Westinghouse, Holcim, PDVSA, Unilever.", icon: "\u2699\uFE0F", painPoint: "Tu mejor t\u00E9cnico de mantenimiento se jubila en 8 meses. Ese conocimiento nunca se ha documentado.", solution: "Lo capturamos. Lo digitalizamos. Lo hacemos permanente.", cta: "Predecir lo impredecible", slug: "predictive-maintenance" },
     { name: "Desarrollo de software", desc: "Plataformas enterprise, contratos gubernamentales, automatizaci\u00F3n con IA. Construidos por ingenieros que han operado los sistemas que codifican. Sin outsourcing. Sin offshore. Nuestros.", icon: "\uD83D\uDCBB", painPoint: "Tu \u00FAltimo proyecto de software tom\u00F3 18 meses y todav\u00EDa no se integra con tu CMMS.", solution: "Lo construimos. Lo desplegamos. Lo respaldamos.", cta: "Entregar m\u00E1s r\u00E1pido", slug: "software-development" },
-    { name: "Construcci\u00F3n inteligente", desc: "Mejoras de edificios inteligentes, sistemas de fachadas modernas, instrumentaci\u00F3n IoT. No construimos edificios. Los hacemos inteligentes.", icon: "\uD83C\uDFD7\uFE0F", painPoint: "Tu edificio fue dise\u00F1ado en 2005. Los costos energ\u00E9ticos se han triplicado.", solution: "Remodelamos. Instrumentamos. Optimizamos.", cta: "Construir m\u00E1s inteligente", slug: "intelligent-construction" },
-    { name: "Manufactura industrial", desc: "Fabricamos los equipos de vibraci\u00F3n, sistemas de alineaci\u00F3n l\u00E1ser e instrumentos termogr\u00E1ficos que usamos en campo. Control de calidad de principio a fin.", icon: "\uD83E\uDD16", painPoint: "Tus instrumentos de precisi\u00F3n fueron calibrados por un proveedor que nunca los ha usado en campo.", solution: "Los fabricamos, los calibramos y los desplegamos nosotros mismos.", cta: "Escalar la precisi\u00F3n", slug: "industrial-manufacturing" },
     { name: "Consultor\u00EDa de IA", desc: "De prueba de concepto a producci\u00F3n en 90 d\u00EDas. Visi\u00F3n artificial, modelos predictivos, NLP, IA en el borde. No slides \u2014 sistemas corriendo, monitoreados por nuestros ingenieros.", icon: "\uD83E\uDDE0", painPoint: "Tu piloto de IA lleva dos a\u00F1os en \u2018prueba de concepto\u2019. Nadie puede explicar el ROI.", solution: "Desplegamos en producci\u00F3n. Medimos el ROI. Te mostramos el dashboard.", cta: "Pensar en grande", slug: "ai-consulting" },
   ],
   solutions: {
@@ -471,7 +451,7 @@ const es: SiteText = {
     form: { name: "Nombre completo", email: "Correo corporativo", company: "Empresa", message: "\u00BFCu\u00E1l es el problema que est\u00E1s tratando de resolver?", send: "Enviar" },
   },
   footer: {
-    tagline: "La \u00FAnica empresa que conecta sensores con software con estrategia. Cat\u00F3lica. Latino-fundada. Canadiense. Cinco divisiones. Un solo est\u00E1ndar.",
+    tagline: "La \u00FAnica empresa que conecta sensores con software con estrategia. Cat\u00F3lica. Latino-fundada. Canadiense. Tres divisiones. Un solo est\u00E1ndar.",
     company: "Droz Technologies Inc.",
     location: "Burlington, Ontario, Canad\u00E1",
     copyright: "\u00A9 2026 Droz Technologies Inc. Todos los derechos reservados.",

@@ -3,7 +3,7 @@ title: "Alineación Láser de Ejes: Por Qué las Tolerancias Importan Más de lo
 slug: "laser-shaft-alignment-precision-guide"
 date: "2026-04-05"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Manufactura Industrial"
 tags: ["alineación láser de ejes", "alineación de precisión", "manufactura industrial", "mantenimiento predictivo", "fallo de cojinetes"]
 locale: "es"
@@ -99,7 +99,7 @@ Esta es la misma disciplina que aplicamos en nuestro trabajo más amplio de mant
 
 ## Cómo ayuda Droz
 
-Droz fabrica y da servicio a equipos de alineación de precisión y vibración para la industria. Llevamos sistemas láser calibrados al sitio, documentamos cada alineación contra estándares de tolerancia de la industria, y entrenamos a su equipo para que la disciplina se quede después de que nos vayamos. Nuestra [división de manufactura industrial](/divisions/industrial-manufacturing) construye el equipo y el conocimiento detrás de él.
+Droz fabrica y da servicio a equipos de alineación de precisión y vibración para la industria. Llevamos sistemas láser calibrados al sitio, documentamos cada alineación contra estándares de tolerancia de la industria, y entrenamos a su equipo para que la disciplina se quede después de que nos vayamos. Nuestra [división de manufactura industrial](/divisions/predictive-maintenance) construye el equipo y el conocimiento detrás de él.
 
 La alineación no es glamorosa. Tampoco es opcional. Si la estadística del 50% de fallos es incluso medio cierta en su planta, el dólar de mantenimiento de mayor retorno que puede gastar este año es en un programa de alineación láser — no en más sensores de monitoreo de condición viendo fallar máquinas ligeramente más despacio.
 

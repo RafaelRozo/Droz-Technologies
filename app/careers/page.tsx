@@ -5,7 +5,7 @@ import CareersClient from "./CareersClient";
 export const metadata: Metadata = {
   title: "Careers at Droz Technologies | Ontario Tech Jobs",
   description:
-    "Join an industrial technology company in Burlington, ON. Engineering, software, AI & manufacturing roles across 5 divisions.",
+    "Join an industrial technology company in Burlington, ON. Engineering, software, and AI roles across 3 divisions.",
   alternates: {
     canonical: "https://droztechnologies.com/careers",
   },
@@ -46,12 +46,6 @@ const jobPostings = [
     description:
       "Build predictive models and deploy ML pipelines in production across computer vision, NLP, and time-series forecasting, bridging research and real industrial impact.",
     skills: ["Python", "Machine Learning", "Computer Vision", "NLP", "Time-Series Forecasting"],
-  },
-  {
-    title: "Construction Project Manager",
-    description:
-      "Lead smart building projects with IoT integration. Coordinate multidisciplinary teams, manage stakeholders, and deliver technology-driven construction upgrades.",
-    skills: ["Project Management", "IoT", "Smart Building", "Stakeholder Management"],
   },
   {
     title: "Vibration Analyst",

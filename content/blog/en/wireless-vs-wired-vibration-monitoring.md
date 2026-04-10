@@ -3,14 +3,14 @@ title: "Wireless vs Wired Vibration Monitoring: Decision Guide for Canadian Plan
 slug: "wireless-vs-wired-vibration-monitoring"
 date: "2026-04-06"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Comparison"
 tags: ["vibration monitoring", "wireless sensors", "wired sensors", "Canada", "Ontario", "condition monitoring"]
 locale: "en"
 description: "Wireless vs wired vibration monitoring compared for Canadian industrial plants. Battery life, sampling rates, cost, and reliability. Decision guide."
 readingTime: 6
 featured: false
-image: "/images/divisions/industrial-manufacturing.png"
+image: "/images/divisions/predictive-maintenance.png"
 ---
 
 ## Should I Use Wireless or Wired Vibration Sensors?
@@ -51,7 +51,7 @@ Use wired sensors for critical assets requiring continuous, high-frequency monit
 
 ## The Hybrid Approach
 
-Most Ontario plants we work with deploy a mix: 15-25 wired sensors on their most critical rotating assets (continuous protection) and 50-100 wireless sensors covering balance-of-plant equipment (scheduled condition monitoring). Our [manufacturing division](/divisions/industrial-manufacturing) builds both types.
+Most Ontario plants we work with deploy a mix: 15-25 wired sensors on their most critical rotating assets (continuous protection) and 50-100 wireless sensors covering balance-of-plant equipment (scheduled condition monitoring). Our [manufacturing division](/divisions/predictive-maintenance) builds both types.
 
 ## Frequently Asked Questions
 

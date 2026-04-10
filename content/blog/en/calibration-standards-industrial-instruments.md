@@ -3,14 +3,14 @@ title: "Calibration Standards for Industrial Instruments: ISO 17025 Guide (2026)
 slug: "calibration-standards-industrial-instruments"
 date: "2026-04-06"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Technical"
 tags: ["calibration", "ISO 17025", "instruments", "Ontario", "NRC", "traceability", "industrial"]
 locale: "en"
 description: "ISO 17025 calibration standards for industrial instruments. Intervals, traceability, NRC standards, and in-house vs outsourced. Ontario guide."
 readingTime: 6
 featured: false
-image: "/images/divisions/industrial-manufacturing.png"
+image: "/images/divisions/predictive-maintenance.png"
 ---
 
 ## What Calibration Standards Apply to Industrial Instruments in Ontario?

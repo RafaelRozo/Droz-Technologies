@@ -290,10 +290,10 @@ export default function AboutClient() {
 
   const splitAfter = [
     locale === "fr"
-      ? "Une entreprise qui fait les cinq — équipement, logiciel, IA, fabrication, construction"
+      ? "Une entreprise qui fait les trois — équipement, logiciel, IA"
       : locale === "es"
-        ? "Una empresa que hace los cinco — equipos, software, IA, fabricación, construcción"
-        : "One company that does all five — equipment, software, AI, manufacturing, construction",
+        ? "Una empresa que hace los tres — equipos, software, IA"
+        : "One company that does all three — equipment, software, AI",
     locale === "fr"
       ? "Des ingénieurs qui ont aligné des rotors et écrit le code qui les surveille"
       : locale === "es"

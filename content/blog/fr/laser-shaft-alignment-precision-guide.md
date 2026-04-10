@@ -3,7 +3,7 @@ title: "Alignement laser d'arbre : pourquoi les tolérances importent plus que v
 slug: "laser-shaft-alignment-precision-guide"
 date: "2026-04-05"
 author: "Droz Technologies"
-division: "industrial-manufacturing"
+division: "predictive-maintenance"
 category: "Fabrication industrielle"
 tags: ["alignement laser d'arbre", "alignement de précision", "fabrication Ontario", "maintenance prédictive", "défaillance de roulement"]
 locale: "fr"
@@ -99,7 +99,7 @@ C'est la même discipline que nous appliquons dans nos travaux plus larges de ma
 
 ## Comment Droz aide
 
-Droz fabrique et entretient des équipements de précision pour l'alignement et la vibration pour l'industrie ontarienne. Nous apportons des systèmes laser calibrés sur place, documentons chaque alignement selon les normes de tolérance de l'industrie et formons votre équipe afin que la discipline reste après notre départ. Notre [division de fabrication industrielle](/divisions/industrial-manufacturing) construit l'équipement et le savoir-faire qui le soutient.
+Droz fabrique et entretient des équipements de précision pour l'alignement et la vibration pour l'industrie ontarienne. Nous apportons des systèmes laser calibrés sur place, documentons chaque alignement selon les normes de tolérance de l'industrie et formons votre équipe afin que la discipline reste après notre départ. Notre [division de fabrication industrielle](/divisions/predictive-maintenance) construit l'équipement et le savoir-faire qui le soutient.
 
 L'alignement n'est pas glamour. Il n'est pas non plus optionnel. Si la statistique de 50 % de défaillances est ne serait-ce qu'à moitié vraie dans votre usine, le dollar de maintenance à plus haut rendement que vous pouvez dépenser cette année est un programme d'alignement laser — pas plus de capteurs de surveillance d'état observant des machines tomber en panne un peu plus lentement.
 

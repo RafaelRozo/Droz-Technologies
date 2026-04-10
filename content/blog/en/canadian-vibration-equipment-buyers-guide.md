@@ -4,8 +4,8 @@ slug: canadian-vibration-equipment-buyers-guide
 date: 2026-04-03
 description: "Compare Canadian vs imported vibration monitoring equipment. Total cost of ownership, ITAR-free advantages, and buy-Canadian procurement. Free consultation available."
 author: Droz Technologies
-division: industrial-manufacturing
-category: Industrial Manufacturing
+division: predictive-maintenance
+category: Predictive Maintenance
 tags:
   - vibration monitoring equipment Canada
   - Canadian manufacturing
@@ -201,4 +201,4 @@ Not all Canadian manufacturers are equal. Here's what to verify:
 
 For help selecting the right sensor type for your specific application, read our guide on [how to select a vibration sensor for your industrial application](/blog/select-vibration-sensor).
 
-Learn more about our [industrial manufacturing division](/divisions/industrial-manufacturing) and the vibration monitoring solutions we design and build in Ontario.
+Learn more about our [industrial manufacturing division](/divisions/predictive-maintenance) and the vibration monitoring solutions we design and build in Ontario.

@@ -3,7 +3,7 @@
 
 export default function HeroPoster() {
   return (
-    <div style={{ height: "350vh", position: "relative" }}>
+    <div style={{ height: "250vh", position: "relative" }}>
       <div
         style={{
           position: "sticky",
@@ -201,7 +201,7 @@ export default function HeroPoster() {
             zIndex: 10,
           }}
         >
-          {[0, 1, 2, 3, 4].map((i) => (
+          {[0, 1, 2].map((i) => (
             <div
               key={i}
               style={{

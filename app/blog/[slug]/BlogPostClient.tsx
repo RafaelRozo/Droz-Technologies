@@ -9,16 +9,12 @@ import BlogCard from "@/components/blog/BlogCard";
 const DIVISION_COLORS: Record<string, string> = {
   "predictive-maintenance": "#3B82A0",
   "software-development": "#6366A0",
-  "intelligent-construction": "#A08B3B",
-  "industrial-manufacturing": "#7C8B3B",
   "ai-consulting": "#A03B6E",
 };
 
 const DIVISION_LABELS: Record<string, string> = {
   "predictive-maintenance": "Predictive Maintenance",
   "software-development": "Software Development",
-  "intelligent-construction": "Intelligent Construction",
-  "industrial-manufacturing": "Industrial Manufacturing",
   "ai-consulting": "AI Consulting",
 };
 

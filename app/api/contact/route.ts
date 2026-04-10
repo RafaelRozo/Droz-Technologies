@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
 
             ${company ? `
             <p style="font-size: 16px; line-height: 1.7; color: #444; margin: 0 0 16px;">
-              We'll take a look at what ${company} needs and come prepared with relevant experience from our work across five specialized divisions.
+              We'll take a look at what ${company} needs and come prepared with relevant experience from our work across three specialized divisions.
             </p>` : ""}
 
             <div style="background: #f8f8f8; border-radius: 12px; padding: 24px; margin: 32px 0;">
@@ -112,8 +112,6 @@ export async function POST(req: NextRequest) {
             <div style="margin: 0 0 32px;">
               <a href="https://droztechnologies.com/divisions/predictive-maintenance" style="display: block; padding: 8px 0; color: #3B82A0; text-decoration: none; font-size: 15px;">→ Predictive Maintenance Services</a>
               <a href="https://droztechnologies.com/divisions/software-development" style="display: block; padding: 8px 0; color: #6366A0; text-decoration: none; font-size: 15px;">→ Software Development</a>
-              <a href="https://droztechnologies.com/divisions/intelligent-construction" style="display: block; padding: 8px 0; color: #A08B3B; text-decoration: none; font-size: 15px;">→ Smart Construction</a>
-              <a href="https://droztechnologies.com/divisions/industrial-manufacturing" style="display: block; padding: 8px 0; color: #7C8B3B; text-decoration: none; font-size: 15px;">→ Industrial Manufacturing</a>
               <a href="https://droztechnologies.com/divisions/ai-consulting" style="display: block; padding: 8px 0; color: #A03B6E; text-decoration: none; font-size: 15px;">→ AI Consulting</a>
             </div>
 
