@@ -1,0 +1,20 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/en/", "permanent": false },
+    { "source": "/software/:path*", "destination": "/en/software/:path*", "permanent": true },
+    { "source": "/engineering/:path*", "destination": "/en/engineering/:path*", "permanent": true },
+    { "source": "/industries/:path*", "destination": "/en/industries/:path*", "permanent": true },
+    { "source": "/products/:path*", "destination": "/en/products/:path*", "permanent": true },
+    { "source": "/standards/:path*", "destination": "/en/standards/:path*", "permanent": true },
+    { "source": "/insights/:path*", "destination": "/en/insights/:path*", "permanent": true },
+    { "source": "/case-studies/:path*", "destination": "/en/case-studies/:path*", "permanent": true },
+    { "source": "/careers/:path*", "destination": "/en/careers/:path*", "permanent": true },
+    { "source": "/contact", "destination": "/en/contact/", "permanent": true },
+    { "source": "/about", "destination": "/en/about/", "permanent": true },
+    { "source": "/capabilities-statement", "destination": "/en/capabilities-statement/", "permanent": true },
+    { "source": "/press", "destination": "/en/press/", "permanent": true },
+    { "source": "/legal/:path*", "destination": "/en/legal/:path*", "permanent": true }
+  ],
+  "cleanUrls": true,
+  "trailingSlash": true
+}

@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>预测性维护服务 — Droz Technologies</title>
+  <meta name="description" content="振动分析、热成像、超声波检测和激光对中——Droz 为旋转设备、蒸汽系统和关键工厂资产提供达到 ISO 10816 等级的预测性维护。">
+  <link rel="canonical" href="https://droz.tech/zh/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/predictive-maintenance/">
+  <meta property="og:title" content="预测性维护服务">
+  <meta property="og:description" content="振动分析、热成像、超声波检测和激光对中——Droz 为旋转设备、蒸汽系统和关键工厂资产提供达到 ISO 10816 等级的预测性维护。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/zh/engineering/predictive-maintenance/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://droz.tech/en/engineering/" },
+      { "@type": "ListItem", "position": 3, "name": "Predictive Maintenance", "item": "https://droz.tech/en/engineering/predictive-maintenance/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Predictive Maintenance Services",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "Predictive Maintenance",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "振动分析、热成像、超声波检测和激光对中——为旋转设备、蒸汽系统和关键工厂资产提供达到 ISO 10816 等级的预测性维护。"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/predictive-maintenance" data-locale="zh" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用程序开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering" class="is-active">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波检测</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油厂 · 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石化产品</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 · 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">采矿与金属</a>
+              <a href="/zh/industries/pulp-paper/">制浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/insights/" data-nav="insights">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/predictive-maintenance/">EN</a>
+        <a href="/fr/engineering/predictive-maintenance/">FR</a>
+        <a href="/es/engineering/predictive-maintenance/">ES</a>
+        <a href="/zh/engineering/predictive-maintenance/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/engineering/predictive-maintenance/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/engineering/predictive-maintenance/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/zh/">首页</a>
+  <span class="sep">/</span>
+  <a href="/zh/engineering/">工程</a>
+  <span class="sep">/</span>
+  <span class="here">预测性维护</span>
+</nav>
+
+<!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Practice 02 · Pillar A</div>
+      <h1>预测性维护——<em>经过现场验证，由 AI 加以放大。</em></h1>
+      <p class="lede">为财富 500 强运营商交付的二十年可靠性工程，覆盖旋转设备、蒸汽系统和关键工厂资产——如今由应用 AI 加以放大。</p>
+      <div class="cta">
+        <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+        <a href="/zh/capabilities-statement/" class="btn btn-ghost">下载能力说明 <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">支柱</div><div class="v">A · 现场实践</div></div>
+      <div><div class="k">专业领域</div><div class="v">振动 · 热成像 · 超声波 · 激光对中</div></div>
+      <div><div class="k">从业年限</div><div class="v">在北美与拉美 20+ 年</div></div>
+      <div><div class="k">标准</div><div class="v">ISO 10816 · CMVA · Vibration Institute</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero photo strip -->
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/engineer-turbine.png" alt="Droz 可靠性工程师在涡轮机现场作业" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<!-- ═══════════════════════ Detail layout (sections 1–7 · sidebar) ═══════════════════════ -->
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ Definition</small>
+          <div class="slash">预测故障，<br><em>排定干预。</em></div>
+        </div>
+        <p class="blurb">预测性维护是指在资产运行的同时测量其状态、识别故障模式的早期特征，并在非计划停机发生之前排定维修的实践。Droz 的预测性维护实践建立在四项诊断专业领域之上——振动分析、热成像、超声波检测和激光对中——由资深现场工程师执行，并对照<a href="/zh/about/">二十年的参考数据</a>建立索引。项目根据您的关键资产群界定范围，按您的工厂节奏校准，并集成到您现有的 <a href="/zh/software/it-infrastructure/">CMMS</a> 中，使建议落到工作发生之处。在适用之处，Droz 在现场项目之上叠加 <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的异常检测和故障预测</a>（见支柱 B 和 C），使运营模式随时间持续累积。结果是：从源头削减非计划停机、保持 OEM 公差，并使维护预算趋于收敛而非不断攀升。</p>
+      </div>
+
+      <!-- 2. Disciplines applied -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Disciplines</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">四项诊断实践，<em style="font-style:italic; color:var(--accent-2); font-weight:400;">一个项目。</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
+          <a href="/zh/engineering/disciplines/vibration-analysis/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 01</div>
+            <h3>振动<br>分析</h3>
+            <p>FFT 频谱分析和时域波形诊断识别电机、泵、压缩机、风机和齿轮箱上的轴承磨损、不平衡、不对中和松动。</p>
+            <div class="svc-tags">
+              <span class="tag">频谱</span><span class="tag">时域波形</span><span class="tag">包络</span><span class="tag">ISO 10816</span>
+            </div>
+          </a>
+          <a href="/zh/engineering/disciplines/thermography/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 02</div>
+            <h3>热成像</h3>
+            <p>运行负载下的红外成像筛查开关柜、MCC、变压器和机械传动链的热异常——对照基线进行比较采集。</p>
+            <div class="svc-tags">
+              <span class="tag">红外</span><span class="tag">开关柜</span><span class="tag">MCC</span><span class="tag">ASTM E1934</span>
+            </div>
+          </a>
+          <a href="/zh/engineering/disciplines/ultrasound/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 03</div>
+            <h3>超声波检测</h3>
+            <p>对润滑状态、气体/空气泄漏、电气局部放电和轴承故障前期状态的声学检测——在振动出现之前即被捕捉。</p>
+            <div class="svc-tags">
+              <span class="tag">润滑</span><span class="tag">泄漏</span><span class="tag">局部放电</span><span class="tag">早期</span>
+            </div>
+          </a>
+          <a href="/zh/engineering/disciplines/laser-alignment/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 04</div>
+            <h3>激光<br>对中</h3>
+            <p>将联轴旋转设备对中至 OEM 公差——减少密封失效、联轴器磨损和振动引发的停机。</p>
+            <div class="svc-tags">
+              <span class="tag">轴</span><span class="tag">联轴器</span><span class="tag">公差</span><span class="tag">精密</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Assets covered -->
+      <div style="margin-top:80px;">
+        <div class="assets-head">
+          <div>
+            <div class="eyebrow-mono">§ Assets we protect</div>
+            <h2>我们仪表化的设备，<br><em>横跨资产图谱。</em></h2>
+          </div>
+          <p class="lede">覆盖旋转设备、静态资产、电气与控制系统以及完整生产线——预测性维护实践覆盖整个工厂面。</p>
+        </div>
+        <div class="assets-grid">
+          <article class="asset-card">
+            <div class="badge">DZ-A · Rotating equipment</div>
+            <h4>主要资产</h4>
+            <p class="focus">重点——状态监测、对中、平衡。</p>
+            <ul class="asset-list">
+              <li><span class="item">电动机</span><span class="detail">低压 · 中压 · 高压</span></li>
+              <li><span class="item">泵</span><span class="detail">离心 · 工艺 · 冷却 · 输送</span></li>
+              <li><span class="item">压缩机</span><span class="detail">空气 · 气体 · 工艺</span></li>
+              <li><span class="item">汽轮机/涡轮机</span><span class="detail">蒸汽 · 燃气 · 液压</span></li>
+              <li><span class="item">齿轮箱</span><span class="detail">减速机 · 增速机</span></li>
+              <li><span class="item">风机与鼓风机</span><span class="detail">工业 · 暖通空调 · 工艺气</span></li>
+              <li><span class="item">输送机</span><span class="detail">皮带 · 螺旋 · 斗式提升机</span></li>
+              <li><span class="item">磨机与破碎机</span><span class="detail">研磨 · 球磨 · 锤式 · 颚式 · 圆锥式</span></li>
+            </ul>
+          </article>
+          <article class="asset-card">
+            <div class="badge">DZ-B · Static equipment</div>
+            <h4>关键资产</h4>
+            <p class="focus">重点——完整性、监测、可靠性。</p>
+            <ul class="asset-list">
+              <li><span class="item">换热器</span><span class="detail">管壳式 · 板式</span></li>
+              <li><span class="item">锅炉</span><span class="detail">电力 · 工艺</span></li>
+              <li><span class="item">反应器</span><span class="detail">工艺 · 催化</span></li>
+              <li><span class="item">储罐</span><span class="detail">常压 · 加压</span></li>
+              <li><span class="item">管道系统</span><span class="detail">工艺 · 公用 · 低温</span></li>
+              <li><span class="item">压力容器</span><span class="detail">ASME 认证</span></li>
+              <li><span class="item">冷却塔</span><span class="detail">引风 · 强制通风</span></li>
+            </ul>
+          </article>
+          <article class="asset-card">
+            <div class="badge">DZ-C · Electrical &amp; controls</div>
+            <h4>电力与控制系统</h4>
+            <p class="focus">重点——热成像、诊断、AI 洞察。</p>
+            <ul class="asset-list">
+              <li><span class="item">开关柜</span><span class="detail">低压 · 中压 · 高压</span></li>
+              <li><span class="item">电机控制中心</span><span class="detail">MCC 机柜</span></li>
+              <li><span class="item">变压器</span><span class="detail">配电 · 电力</span></li>
+              <li><span class="item">PLC</span><span class="detail">可编程逻辑控制器</span></li>
+              <li><span class="item">SCADA 系统</span><span class="detail">工厂监控</span></li>
+              <li><span class="item">工业仪表</span><span class="detail">传感器 · 变送器</span></li>
+            </ul>
+          </article>
+          <article class="asset-card">
+            <div class="badge">DZ-D · Production lines</div>
+            <h4>完整生产线与工艺装置</h4>
+            <p class="focus">重点——效率、正常运行时间、产量。</p>
+            <ul class="asset-list">
+              <li><span class="item">食品制造</span><span class="detail">连续与批次</span></li>
+              <li><span class="item">制药</span><span class="detail">GMP 受监管</span></li>
+              <li><span class="item">包装线</span><span class="detail">一次与二次</span></li>
+              <li><span class="item">汽车生产线</span><span class="detail">冲压 · 组装 · 喷漆</span></li>
+              <li><span class="item">制浆与造纸</span><span class="detail">工艺装置</span></li>
+              <li><span class="item">化工加工</span><span class="detail">连续反应器</span></li>
+              <li><span class="item">水泥生产</span><span class="detail">窑炉 · 研磨</span></li>
+              <li><span class="item">采矿作业</span><span class="detail">破碎 · 分选</span></li>
+            </ul>
+          </article>
+        </div>
+        <p style="margin-top:24px; font-size:14px; color:var(--graphite);">
+          每个资产族系都对应一个行业项目——<a href="/zh/industries/">查看所有行业</a>。
+        </p>
+      </div>
+
+      <!-- 4. Engagement model -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Engagement model</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">从传感器数据<em style="font-style:italic; color:var(--accent-2); font-weight:400;">到排定的维修。</em></h2>
+        <div class="steps">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">Collect</div>
+            <h5>机器数据</h5>
+            <p>现场仪表和无线传感器从您的关键资产流式传输状态数据。范围、传感器布点和采样节奏由首席可靠性工程师在启动走查中确定。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">Analyze</div>
+            <h5>模式识别</h5>
+            <p>工程实践与 <a href="/zh/software/ai-machine-learning/">AI 软件</a>对照二十年的参考数据解读信号模式——轴承特征、电机故障和齿轮箱谐波被匹配到已知故障模式。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">Detect</div>
+            <h5>异常检测</h5>
+            <p>在偏离健康基线扩散为故障模式之前即被标记。严重程度按关键性分级并路由。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">Predict</div>
+            <h5>故障预测</h5>
+            <p>模型估算剩余使用寿命并推荐最佳干预窗口，从而将生产损失降至最低。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">05</div>
+            <div class="ord">Automate</div>
+            <h5>决策路由</h5>
+            <p>工单、告警和操作人员建议被派发到您的 <a href="/zh/software/it-infrastructure/">CMMS</a>、电子邮件和聊天渠道——与维护计划形成闭环。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Predictive vs reactive -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Predictive vs reactive</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">运营模式切换<em style="font-style:italic; color:var(--accent-2); font-weight:400;">背后的数据。</em></h2>
+        <div class="ai-diff-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="ai-cell">
+            <div class="num">MODE · 01</div>
+            <h4>被动式维护</h4>
+            <ul>
+              <li>非计划停机占主导——先发生故障，然后产线停摆。</li>
+              <li>成本集中于紧急维修和损失的产量。</li>
+              <li>为应对未知故障而过度囤积备件库存。</li>
+              <li>运营模式：救火式，故障之间没有可累积的学习。</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">MODE · 02</div>
+            <h4>预测性维护（Droz 模式）</h4>
+            <ul>
+              <li>故障在其早期特征处即被标记——轴承、不对中、局部放电——在扩散之前。</li>
+              <li>干预排定在计划维护窗口内进行；避免产线停摆。</li>
+              <li>备件库存与预测需求匹配——资本成本下降。</li>
+              <li>运营模式：可持续累积的数据层——每检出一次故障都让下一次预测更精准。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Industries served</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">预测性维护<em style="font-style:italic; color:var(--accent-2); font-weight:400;">作为牵头合作的领域。</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/zh/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">发电</span></a>
+          <a href="/zh/industries/nuclear-power/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">核电</span></a>
+          <a href="/zh/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">炼油厂 · 石油与天然气</span></a>
+          <a href="/zh/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">石化产品</span></a>
+          <a href="/zh/industries/cement/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">水泥厂</span></a>
+          <a href="/zh/industries/pulp-paper/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">制浆与造纸</span></a>
+          <a href="/zh/industries/mining-metals/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">采矿与金属</span></a>
+          <a href="/zh/industries/automotive/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">汽车</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/zh/industries/">查看所有 16 个服务行业 &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Standards we apply</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">锚定于<em style="font-style:italic; color:var(--accent-2); font-weight:400;">您的审计方认可的标准。</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">CMVA</div>
+            <h3>Canadian Machinery<br>Vibration Association</h3>
+            <p>Droz 可靠性工程师持有 CMVA 认证；所有振动项目均遵循 CMVA 类别和报告协议。</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 10816</div>
+            <h3>机械振动<br>评价</h3>
+            <p>旋转机械振动的验收和严重程度阈值依据 ISO 10816 区域限值 A&ndash;D 进行评估。</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">Vibration Institute</div>
+            <h3>VI 类别<br>I&ndash;IV</h3>
+            <p>现场工程师持有横跨 Vibration Institute I&ndash;IV 类别的认证，这是振动分析师能力的全球基准。</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/zh/standards/associations/">协会与认证完整清单 &rarr;</a></p>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════ Sidebar ═══════════════════════ -->
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>相关能力</h6>
+        <ul>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据平台</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a></li>
+          <li><a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a></li>
+          <li><a href="/zh/engineering/disciplines/thermography/">热成像</a></li>
+          <li><a href="/zh/engineering/disciplines/ultrasound/">超声波检测</a></li>
+          <li><a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>我们遵循的标准</h6>
+        <ul>
+          <li><a href="/zh/standards/associations/">CMVA</a></li>
+          <li><a href="/zh/standards/associations/">ISO 10816</a></li>
+          <li><a href="/zh/standards/associations/">Vibration Institute（Cat I&ndash;IV）</a></li>
+          <li><a href="/zh/standards/associations/">ASTM E1934</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>以本支柱牵头的行业</h6>
+        <ul>
+          <li><a href="/zh/industries/refineries-oil-gas/">炼油厂 &middot; 石油与天然气</a></li>
+          <li><a href="/zh/industries/power-generation/">发电</a></li>
+          <li><a href="/zh/industries/petrochemicals/">石化产品</a></li>
+          <li><a href="/zh/industries/cement/">水泥厂</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>与合伙人沟通</h6>
+        <p>合作始于由资深合伙人主导的范围界定会谈。</p>
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="aside-er" data-form="engagement-request" style="gap:10px;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · engineering/predictive-maintenance">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="engineering/predictive-maintenance">
+          <input type="hidden" name="locale" value="zh">
+          <div class="honeypot" aria-hidden="true">
+            <label for="ce-url">Company URL</label>
+            <input type="text" name="botcheck" id="ce-url" tabindex="-1" autocomplete="off">
+          </div>
+          <a href="/zh/contact/#engagement-form" class="btn btn-light" style="text-align:center;">申请合作 &rarr;</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 9. Closing CTA band ═══════════════════════ -->
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Predictive maintenance</div>
+    <div class="stmt">不要再以百万为单位衡量停机。<em>开始将其排定在计划窗口之内。</em></div>
+    <div class="creds">
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用程序开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

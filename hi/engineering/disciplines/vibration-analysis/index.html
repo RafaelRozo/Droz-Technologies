@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>कंपन विश्लेषण &middot; विश्वसनीयता &mdash; Droz Technologies</title>
+  <meta name="description" content="घूर्णन उपकरण पर FFT वर्णक्रमीय विश्लेषण, टाइम-वेवफ़ॉर्म निदान और एनवेलप डिमॉड्यूलेशन — CMVA और Vibration-Institute प्रमाणित, ISO 10816-आधारित।">
+  <link rel="canonical" href="https://droz.tech/hi/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/disciplines/vibration-analysis/">
+  <meta property="og:title" content="कंपन विश्लेषण &middot; विश्वसनीयता">
+  <meta property="og:description" content="घूर्णन उपकरण पर FFT वर्णक्रमीय विश्लेषण, टाइम-वेवफ़ॉर्म निदान और एनवेलप डिमॉड्यूलेशन — CMVA और Vibration-Institute प्रमाणित।">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/hi/engineering/disciplines/vibration-analysis/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://droz.tech/#org","name":"Droz Technologies Inc.","url":"https://droz.tech/","logo":"https://droz.tech/assets/logos/droz-logo-metallic.png","foundingDate":"2004","address":{"@type":"PostalAddress","streetAddress":"4145 North Service Road","addressLocality":"Burlington","addressRegion":"ON","addressCountry":"CA"},"sameAs":["https://www.linkedin.com/company/droz-technologies/"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"contact@droz.tech"},{"@type":"ContactPoint","contactType":"procurement","email":"procurement@droz.tech"},{"@type":"ContactPoint","contactType":"press","email":"press@droz.tech"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"होम","item":"https://droz.tech/en/"},{"@type":"ListItem","position":2,"name":"इंजीनियरिंग","item":"https://droz.tech/en/engineering/"},{"@type":"ListItem","position":3,"name":"विषय-क्षेत्र","item":"https://droz.tech/en/engineering/"},{"@type":"ListItem","position":4,"name":"कंपन विश्लेषण","item":"https://droz.tech/en/engineering/disciplines/vibration-analysis/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"Vibration Analysis","provider":{"@id":"https://droz.tech/#org"},"serviceType":"Vibration Analysis","areaServed":["Canada","United States","Mexico"],"description":"घूर्णन उपकरण पर FFT वर्णक्रमीय विश्लेषण, टाइम-वेवफ़ॉर्म निदान और एनवेलप डिमॉड्यूलेशन — CMVA और Vibration-Institute प्रमाणित, ISO 10816-आधारित।","inLanguage":"hi"}
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/disciplines/vibration-analysis" data-locale="hi" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/hi/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/hi/software/" data-nav="software">सॉफ़्टवेयर</a>
+          <div class="megamenu" role="menu"><div class="group"><a href="/hi/software/">अवलोकन</a><a href="/hi/software/custom-software-development/">कस्टम सॉफ़्टवेयर डेवलपमेंट</a><a href="/hi/software/application-development/">एप्लिकेशन डेवलपमेंट</a><a href="/hi/software/ai-machine-learning/">AI और मशीन लर्निंग सिस्टम</a><a href="/hi/software/it-infrastructure/">आधुनिक IT अवसंरचना</a><a href="/hi/software/business-process-automation/">व्यावसायिक प्रक्रिया स्वचालन</a><a href="/hi/software/cloud-migration/">क्लाउड माइग्रेशन और आर्किटेक्चर</a></div></div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/engineering/" data-nav="engineering" class="is-active">इंजीनियरिंग</a>
+          <div class="megamenu" role="menu"><div class="group"><div class="group-title">स्तंभ</div><a href="/hi/engineering/">अवलोकन</a><a href="/hi/engineering/predictive-maintenance/">भविष्यसूचक रखरखाव सेवाएँ</a><a href="/hi/engineering/reliability-data-platform/">विश्वसनीयता डेटा और निगरानी</a><a href="/hi/engineering/ai-asset-intelligence/">AI-संचालित एसेट इंटेलिजेंस</a></div><div class="group"><div class="group-title">विषय-क्षेत्र</div><a href="/hi/engineering/disciplines/vibration-analysis/">कंपन विश्लेषण</a><a href="/hi/engineering/disciplines/thermography/">थर्मोग्राफी</a><a href="/hi/engineering/disciplines/ultrasound/">अल्ट्रासाउंड</a><a href="/hi/engineering/disciplines/laser-alignment/">लेज़र अलाइनमेंट</a></div></div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/industries/" data-nav="industries">उद्योग</a>
+          <div class="megamenu wide" role="menu"><div class="group"><div class="group-title">ऊर्जा</div><a href="/hi/industries/power-generation/">विद्युत उत्पादन</a><a href="/hi/industries/nuclear-power/">परमाणु ऊर्जा</a><a href="/hi/industries/refineries-oil-gas/">रिफाइनरी · तेल और गैस</a><a href="/hi/industries/energy-operators/">ऊर्जा संचालक</a></div><div class="group"><div class="group-title">सामग्री और विनिर्माण</div><a href="/hi/industries/automotive/">ऑटोमोटिव</a><a href="/hi/industries/general-manufacturing/">सामान्य विनिर्माण</a><a href="/hi/industries/petrochemicals/">पेट्रोरसायन</a><a href="/hi/industries/industrial-chemicals/">औद्योगिक रसायन</a><a href="/hi/industries/fertilizers-agrochemicals/">उर्वरक · कृषि रसायन</a><a href="/hi/industries/mining-metals/">खनन और धातु</a><a href="/hi/industries/pulp-paper/">पल्प और पेपर</a><a href="/hi/industries/cement/">सीमेंट संयंत्र</a></div><div class="group"><div class="group-title">उपभोक्ता और विनियमित</div><a href="/hi/industries/food-manufacturing/">खाद्य विनिर्माण</a><a href="/hi/industries/beverage/">पेय निर्माता</a><a href="/hi/industries/pharmaceutical/">फार्मास्युटिकल</a></div><div class="group"><div class="group-title">सार्वजनिक क्षेत्र</div><a href="/hi/industries/public-sector-goc/">सार्वजनिक क्षेत्र · GoC</a></div></div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/products/" data-nav="products">उत्पाद</a>
+          <div class="megamenu" role="menu"><div class="group"><a href="/hi/products/">पोर्टफ़ोलियो</a><a href="/hi/products/droz-legal/">Droz Legal</a><a href="/hi/products/samson-ai/">Samson AI</a><a href="/hi/products/rx-change/">RX Change</a><a href="/hi/products/visp/">VISP</a><a href="/hi/products/droz-predictive/">Droz Predictive</a><a href="/hi/products/droz-rental/">Droz Rental</a><a href="/hi/products/droz-investments/">Droz Investments</a><a href="/hi/products/after-life/">After Life</a></div></div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/standards/" data-nav="standards">मानक</a>
+          <div class="megamenu" role="menu"><div class="group"><a href="/hi/standards/">अवलोकन</a><a href="/hi/standards/associations/">संघ</a><a href="/hi/standards/technologies/">प्रौद्योगिकियाँ</a><a href="/hi/standards/cloud-ai-partners/">Cloud और AI पार्टनर</a></div></div>
+        </div>
+        <a href="/hi/insights/" data-nav="insights">अंतर्दृष्टि</a>
+        <a href="/hi/about/" data-nav="about">हमारे बारे में</a>
+        <a href="/hi/contact/" data-nav="contact">संपर्क</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/disciplines/vibration-analysis/">EN</a>
+        <a href="/fr/engineering/disciplines/vibration-analysis/">FR</a>
+        <a href="/es/engineering/disciplines/vibration-analysis/">ES</a>
+        <a href="/zh/engineering/disciplines/vibration-analysis/" lang="zh-Hans">中文</a>
+        <a href="/hi/engineering/disciplines/vibration-analysis/" lang="hi" class="on">हिं</a>
+      </div>
+      <a href="/hi/contact/#engagement-form" class="btn btn-primary">सहयोग का अनुरोध करें <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>यह पृष्ठ मशीन द्वारा अनूदित है। अंग्रेज़ी संस्करण ही प्रामाणिक है।</span>
+  <a href="/en/engineering/disciplines/vibration-analysis/">अंग्रेज़ी में देखें</a>
+  <button class="mt-notice-x" aria-label="बंद करें">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/hi/">होम</a>
+  <span class="sep">/</span>
+  <a href="/hi/engineering/">इंजीनियरिंग</a>
+  <span class="sep">/</span>
+  <a href="/hi/engineering/">विषय-क्षेत्र</a>
+  <span class="sep">/</span>
+  <span class="here">कंपन विश्लेषण</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ विषय-क्षेत्र · 01</div>
+      <h1>कंपन विश्लेषण &mdash; <em>सिग्नेचर, फिर शेड्यूल।</em></h1>
+      <p class="lede">घूर्णन उपकरण पर वर्णक्रमीय निदान। मोटर, पंप, कंप्रेसर, फैन और गियरबॉक्स पर सिग्नेचर विश्लेषण से बेयरिंग घिसाव, असंतुलन, मिसअलाइनमेंट और ढीलापन की पहचान &mdash; ISO 10816 ज़ोन सीमाओं और बीस वर्षों के संदर्भ डेटा के विरुद्ध संग्रहीत।</p>
+      <div class="cta">
+        <a href="/hi/contact/#engagement-form" class="btn btn-primary">सहयोग का अनुरोध करें <span style="opacity:.7">&rarr;</span></a>
+        <a href="/hi/engineering/predictive-maintenance/" class="btn btn-ghost">भविष्यसूचक रखरखाव देखें <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">विषय-क्षेत्र</div><div class="v">01 · कंपन विश्लेषण</div></div>
+      <div><div class="k">पद्धति</div><div class="v">FFT · टाइम-वेवफ़ॉर्म · एनवेलप</div></div>
+      <div><div class="k">प्रमाणन</div><div class="v">CMVA · Vibration Institute Cat I&ndash;IV</div></div>
+      <div><div class="k">मानक</div><div class="v">ISO 10816</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 1. Full-bleed hero photo banner ═══════════════════════ -->
+<section style="border-bottom:1px solid var(--rule);">
+  <figure style="margin:0; position:relative;">
+    <img src="/assets/field/vibration-analysis.png" alt="घूर्णन-उपकरण ट्रेन पर वर्णक्रमीय डेटा संग्रहीत करता कंपन विश्लेषक" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
+    <figcaption style="position:absolute; left:24px; bottom:18px; right:24px; display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.92); text-shadow:0 1px 2px rgba(0,0,0,0.6);">
+      <span>क्षेत्र सहयोग · DZ-ENG-2026 · घूर्णन उपकरण पर वर्णक्रमीय निदान</span>
+      <span>DZ · 01</span>
+    </figcaption>
+  </figure>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:980px;">
+
+    <!-- 2. What it detects -->
+    <div>
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ यह क्या पता लगाता है</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">वे विफलता सिग्नेचर जिन्हें हम पहचानते हैं।</h2>
+      <div class="ai-diff-grid" style="grid-template-columns:1fr; border-top:0; border-bottom:0;">
+        <div class="ai-cell" style="border-right:0; padding-right:0;">
+          <div class="num">DETECTS · 01</div>
+          <h4>बेयरिंग घिसाव, असंतुलन, मिसअलाइनमेंट, ढीलापन</h4>
+          <ul style="gap:10px;">
+            <li><strong>बेयरिंग घिसाव</strong> &mdash; इनर रेस, आउटर रेस, बॉल/रोलर, केज आवृत्तियाँ श्रव्य विफलता से पहले एनवेलप डिमॉड्यूलेशन के माध्यम से सतह पर लाई जाती हैं।</li>
+            <li><strong>असंतुलन</strong> &mdash; स्पेक्ट्रम में 1&times; रनिंग गति प्रमुख; डायनेमिक बैलेंसिंग के माध्यम से इन-सीटू सुधार योग्य।</li>
+            <li><strong>मिसअलाइनमेंट</strong> &mdash; विशिष्ट फेज़ व्यवहार के साथ 2&times; / 3&times; रनिंग-गति हार्मोनिक्स; <a href="/hi/engineering/disciplines/laser-alignment/">लेज़र-अलाइनमेंट</a> फ़ॉलो-अप द्वारा हल।</li>
+            <li><strong>ढीलापन, अनुनाद, गियर-मेश दोष</strong> &mdash; एकाधिक-हार्मोनिक पैटर्न, रनिंग गति पर साइडबैंड, और एसेट की सिग्नेचर लाइब्रेरी के विरुद्ध अनुक्रमित गियर-मेश आवृत्ति शिखर।</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Methodology -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ पद्धति</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">तीन विश्लेषणात्मक विधियाँ, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">एक निदान।</em></h2>
+      <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+        <article class="svc">
+          <div class="svc-num">METHOD · 01</div>
+          <h3>FFT<br>वर्णक्रमीय विश्लेषण</h3>
+          <p>एक्सेलेरोमीटर और वेलोसिटी सेंसर से टाइम-डोमेन सिग्नल पर लागू Fast Fourier Transform। विफलता मोड को स्थानीयकृत करने के लिए स्पेक्ट्रम को ज्ञात दोष आवृत्तियों के विरुद्ध अनुक्रमित किया जाता है &mdash; बेयरिंग ज्यामिति, रनिंग गति, गियर-मेश और विद्युतचुंबकीय।</p>
+          <div class="svc-tags"><span class="tag">FFT</span><span class="tag">स्पेक्ट्रम</span><span class="tag">दोष आवृत्तियाँ</span></div>
+        </article>
+        <article class="svc">
+          <div class="svc-num">METHOD · 02</div>
+          <h3>टाइम<br>वेवफ़ॉर्म</h3>
+          <p>कच्चे टाइम-डोमेन ट्रेस का प्रभाव, क्षणिक और आयाम मॉड्यूलेशन के लिए निरीक्षण जिसे स्पेक्ट्रम चिकना कर सकता है। उन्नत घिसाव मामलों में बेयरिंग प्रभाव और गंभीरता की पुष्टि के लिए उपयोग किया जाता है।</p>
+          <div class="svc-tags"><span class="tag">टाइम-वेवफ़ॉर्म</span><span class="tag">प्रभाव</span><span class="tag">क्षणिक</span></div>
+        </article>
+        <article class="svc">
+          <div class="svc-num">METHOD · 03</div>
+          <h3>एनवेलप<br>डिमॉड्यूलेशन</h3>
+          <p>उच्च-आवृत्ति वाहक सिग्नल को कम-ऊर्जा वाले बेयरिंग दोषों को सतह पर लाने के लिए डिमॉड्यूलेट किया जाता है जो अभी तक मानक स्पेक्ट्रम में नहीं दिखते। महत्वपूर्ण घूर्णन परिसंपत्तियों पर Droz की पूर्व-चेतावनी विधि।</p>
+          <div class="svc-tags"><span class="tag">एनवेलप</span><span class="tag">उच्च-आवृत्ति</span><span class="tag">पूर्व-चेतावनी</span></div>
+        </article>
+      </div>
+      <p style="margin-top:20px; font-size:14px;">पद्धति व्यापक <a href="/hi/engineering/predictive-maintenance/">भविष्यसूचक रखरखाव</a> सहयोग के तहत चलती है &rarr;</p>
+    </div>
+
+    <!-- 4. Standards applied -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ लागू मानक</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">उन मानकों से जुड़ा <em style="font-style:italic; color:var(--accent-2); font-weight:400;">जिन पर आपके ऑडिटर भरोसा करते हैं।</em></h2>
+      <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+        <article class="svc">
+          <div class="svc-num">ISO 10816</div>
+          <h3>यांत्रिक कंपन<br>मूल्यांकन</h3>
+          <p>घूर्णन-मशीनरी कंपन के लिए गंभीरता सीमाएँ ISO 10816 ज़ोन A&ndash;D के विरुद्ध मूल्यांकित। अलर्ट करने, शेड्यूल करने या बंद करने के निर्णय मानक से जुड़े होते हैं।</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">CMVA</div>
+          <h3>Canadian Machinery<br>Vibration Association</h3>
+          <p>Droz कंपन विश्लेषक CMVA प्रमाणन रखते हैं; कार्यक्रम डेटा संग्रह, विश्लेषण और रिपोर्टिंग के लिए CMVA श्रेणी प्रोटोकॉल का पालन करते हैं।</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">VI · Cat I&ndash;IV</h3>
+          <h3>Vibration Institute</h3>
+          <p>क्षेत्र इंजीनियर Vibration Institute श्रेणियों I&ndash;IV में प्रमाणित &mdash; कंपन-विश्लेषक योग्यता, रूट नियोजन और मूल-कारण विश्लेषण के लिए वैश्विक बेंचमार्क।</p>
+        </article>
+      </div>
+      <p style="margin-top:18px; font-size:14px;"><a href="/hi/standards/associations/">पूर्ण मानक सूची &rarr;</a></p>
+    </div>
+
+    <!-- 5. Asset types -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ एसेट प्रकार</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">घूर्णन-उपकरण <em style="font-style:italic; color:var(--accent-2); font-weight:400;">एसेट परिवार।</em></h2>
+      <div class="assets-grid" style="grid-template-columns:1fr;">
+        <article class="asset-card">
+          <div class="badge">DZ-A · घूर्णन उपकरण</div>
+          <h4>प्राथमिक परिसंपत्तियाँ</h4>
+          <p class="focus">फ़ोकस &mdash; स्थिति निगरानी, अलाइनमेंट, बैलेंसिंग।</p>
+          <ul class="asset-list">
+            <li><span class="item">इलेक्ट्रिक मोटर</span><span class="detail">निम्न · मध्यम · उच्च वोल्टेज</span></li>
+            <li><span class="item">पंप</span><span class="detail">सेंट्रीफ्यूगल · प्रोसेस · कूलिंग · ट्रांसफर</span></li>
+            <li><span class="item">कंप्रेसर</span><span class="detail">वायु · गैस · प्रोसेस</span></li>
+            <li><span class="item">टर्बाइन</span><span class="detail">स्टीम · गैस · हाइड्रॉलिक</span></li>
+            <li><span class="item">गियरबॉक्स</span><span class="detail">रिड्यूसर · इन्क्रीज़र</span></li>
+            <li><span class="item">फैन और ब्लोअर</span><span class="detail">औद्योगिक · HVAC · प्रोसेस एयर</span></li>
+            <li><span class="item">कन्वेयर</span><span class="detail">बेल्ट · स्क्रू · बकेट एलिवेटर</span></li>
+            <li><span class="item">मिल और क्रशर</span><span class="detail">ग्राइंडिंग · बॉल · हैमर · जॉ · कोन</span></li>
+          </ul>
+        </article>
+      </div>
+      <p style="margin-top:20px; font-size:14px;">प्रत्येक एसेट परिवार एक उद्योग कार्यक्रम से मैप होता है &mdash; <a href="/hi/industries/">सेवित उद्योग देखें</a>।</p>
+      <p style="margin-top:12px; font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--graphite-2); text-transform:uppercase;">
+        <a href="/hi/industries/refineries-oil-gas/">रिफाइनरी &middot; तेल और गैस &rarr;</a>
+        &nbsp;&nbsp;<a href="/hi/industries/power-generation/">विद्युत उत्पादन &rarr;</a>
+        &nbsp;&nbsp;<a href="/hi/industries/petrochemicals/">पेट्रोरसायन &rarr;</a>
+        &nbsp;&nbsp;<a href="/hi/industries/mining-metals/">खनन और धातु &rarr;</a>
+      </p>
+    </div>
+
+    <!-- 6. Reporting cadence -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ रिपोर्टिंग लय</div>
+      <p style="font-size:17px; line-height:1.7; color:var(--ink-2); max-width:64ch;">रूट एसेट क्रिटिकलिटी के अनुरूप कैलिब्रेट की गई लय पर चलाए जाते हैं &mdash; आमतौर पर उत्पादन-महत्वपूर्ण घूर्णन उपकरण पर मासिक, बैलेंस-ऑफ़-प्लांट पर त्रैमासिक। प्रत्येक रूट स्पेक्ट्रम, टाइम-वेवफ़ॉर्म, एनवेलप ट्रेस, गंभीरता ग्रेड और अनुशंसित कार्रवाई के साथ एक प्रति-एसेट रिपोर्ट तैयार करता है। गंभीरता उल्लंघन उसी दिन आपके <a href="/hi/software/it-infrastructure/">CMMS</a> और चैट चैनलों में भेजे जाते हैं; आवधिक रिपोर्ट <a href="/hi/engineering/reliability-data-platform/">कॉर्पोरेट विश्वसनीयता डैशबोर्ड</a> में रोल अप की जाती है।</p>
+    </div>
+
+    <!-- 7. Tools used -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ उपयोग किए गए टूल</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">इंस्ट्रूमेंटेशन जो हम <em style="font-style:italic; color:var(--accent-2); font-weight:400;">क्षेत्र में तैनात करते हैं।</em></h2>
+      <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+        <article class="svc">
+          <div class="svc-num">TOOL · 01</div>
+          <h3>Rockwell Automation</h3>
+          <p>Rockwell से औद्योगिक नियंत्रण और स्थिति-निगरानी इंस्ट्रूमेंटेशन, FactoryTalk डेटा बैकबोन के साथ युग्मित जहाँ संयंत्र पहले से Rockwell चलाता है।</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">TOOL · 02</div>
+          <h3>IRD Balancing</h3>
+          <p>असंतुलन निष्कर्षों के इन-सीटू सुधार के लिए IRD फ़ील्ड एनालाइज़र और डायनेमिक बैलेंसिंग उपकरण &mdash; शॉप तक कोई वापसी यात्रा नहीं।</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">TOOL · 03</div>
+          <h3>Pr&uuml;ftechnik</h3>
+          <p>स्थायी स्थापनाओं और रूट-आधारित कलेक्टरों के लिए Pr&uuml;ftechnik VibXpert और CMS स्थिति-निगरानी हार्डवेयर।</p>
+        </article>
+      </div>
+      <p style="margin-top:18px; font-size:14px;"><a href="/hi/standards/technologies/">पूर्ण प्रौद्योगिकी पार्टनर सूची &rarr;</a></p>
+    </div>
+
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ कंपन विश्लेषण</div>
+    <div class="stmt">वर्णक्रमीय सिग्नेचर झूठ नहीं बोलते। <em>बेयरिंग के विफल होने से पहले उन्हें पढ़ें।</em></div>
+    <div class="creds">
+      <a href="/hi/contact/#engagement-form" class="btn btn-primary">सहयोग का अनुरोध करें <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — एक औद्योगिक प्रौद्योगिकी फर्म जो एंटरप्राइज़ सॉफ़्टवेयर, विश्वसनीयता इंजीनियरिंग और अनुप्रयुक्त AI प्रदान करती है। बर्लिंगटन, ओंटारियो। 2004 में स्थापित।</p>
+        <div class="foot-stats"><span>EST. 2004</span><span>&middot;</span><span>5 Cities</span><span>&middot;</span><span>EN / FR / ES</span></div>
+      </div>
+      <div><h6>सॉफ़्टवेयर</h6><ul><li><a href="/hi/software/">अवलोकन</a></li><li><a href="/hi/software/custom-software-development/">कस्टम सॉफ़्टवेयर</a></li><li><a href="/hi/software/application-development/">एप्लिकेशन डेवलपमेंट</a></li><li><a href="/hi/software/ai-machine-learning/">AI और मशीन लर्निंग</a></li><li><a href="/hi/software/it-infrastructure/">IT अवसंरचना</a></li><li><a href="/hi/software/business-process-automation/">व्यावसायिक स्वचालन</a></li><li><a href="/hi/software/cloud-migration/">क्लाउड माइग्रेशन</a></li></ul></div>
+      <div><h6>इंजीनियरिंग</h6><ul><li><a href="/hi/engineering/">अवलोकन</a></li><li><a href="/hi/engineering/predictive-maintenance/">भविष्यसूचक रखरखाव</a></li><li><a href="/hi/engineering/reliability-data-platform/">विश्वसनीयता डेटा</a></li><li><a href="/hi/engineering/ai-asset-intelligence/">एसेट इंटेलिजेंस</a></li><li><a href="/hi/industries/">सेवित उद्योग</a></li><li><a href="/hi/standards/">मानक</a></li></ul></div>
+      <div><h6>फर्म</h6><ul><li><a href="/hi/about/">हमारे बारे में</a></li><li><a href="/hi/contact/">संपर्क</a></li><li><a href="/hi/contact/#procurement-form">खरीद</a></li><li><a href="/hi/press/">प्रेस</a></li><li><a href="/hi/careers/">करियर</a></li><li><a href="/hi/insights/">अंतर्दृष्टि</a></li><li><a href="/hi/capabilities-statement/">क्षमता विवरण</a></li></ul></div>
+      <div><h6>भाषा</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right"><a href="/hi/legal/privacy/">गोपनीयता</a><a href="/hi/legal/terms/">शर्तें</a><a href="/hi/legal/accessibility/">सुगम्यता</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

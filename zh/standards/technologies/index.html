@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>技术 — 标准与生态系统 — Droz</title>
+  <meta name="description" content="Rockwell Automation、FLIR、Panametrics、Baker Instrument、Easy-Laser、IRD、Krautkramer、Prüftechnik——Droz 现场团队所操作的诊断技术。">
+  <link rel="canonical" href="https://droz.tech/zh/standards/technologies/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/standards/technologies/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/standards/technologies/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/standards/technologies/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/standards/technologies/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/standards/technologies/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/standards/technologies/">
+  <meta property="og:title" content="技术 — 标准与生态系统">
+  <meta property="og:description" content="Rockwell Automation、FLIR、Panametrics、Baker Instrument、Easy-Laser、IRD、Krautkramer、Prüftechnik——Droz 现场团队所操作的诊断技术。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-standards.png">
+  <meta property="og:url" content="https://droz.tech/zh/standards/technologies/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement",       "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press",             "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Standards", "item": "https://droz.tech/en/standards/" },
+      { "@type": "ListItem", "position": 3, "name": "Technologies", "item": "https://droz.tech/en/standards/technologies/" }
+    ]
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="standards/technologies" data-locale="zh" data-active-nav="standards">
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油 · 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石油化工</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 · 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">矿业与金属</a>
+              <a href="/zh/industries/pulp-paper/">纸浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards" class="is-active">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/insights/" data-nav="insights">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/standards/technologies/">EN</a>
+        <a href="/fr/standards/technologies/">FR</a>
+        <a href="/es/standards/technologies/">ES</a>
+        <a href="/zh/standards/technologies/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/standards/technologies/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/standards/technologies/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<!-- ═══════════════════════ BREADCRUMBS ═══════════════════════ -->
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/zh/">首页</a>
+    <span class="sep">/</span>
+    <a href="/zh/standards/">标准</a>
+    <span class="sep">/</span>
+    <span class="here">技术</span>
+  </nav>
+</div>
+
+<!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ 组别 · 02 · 技术</div>
+      <h1>我们现场团队<em>操作的仪器。</em></h1>
+      <p class="lede">八大类诊断与工业技术——自动化控制、热成像、超声波、电机测试、激光对中、动平衡、NDT 和状态监测。该清单与一名 Droz 可靠性工程师带入工厂的装备，以及为我们软件供给数据的设备相对应。</p>
+      <div class="cta">
+        <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+        <a href="/zh/engineering/" class="btn btn-ghost">查看专业领域</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">组别</div><div class="v">第 02 / 03 组</div></div>
+      <div><div class="k">成员</div><div class="v">8</div></div>
+      <div><div class="k">业务</div><div class="v">预测性维护</div></div>
+      <div><div class="k">其他组别</div><div class="v">协会 · 云与 AI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MEMBERS AT A GLANCE (DARK NAVY) ═══════════════════════ -->
+<section class="standards">
+  <div class="standards-inner">
+    <div class="standards-head">
+      <div class="eyebrow-mono">§ 八大类别</div>
+      <h2>诊断与工业<em>技术。</em></h2>
+      <p>广泛用于工业检测、诊断、对中、平衡和可靠性计划的技术。点击任意卡片即可跳转至下方的详情区块。</p>
+    </div>
+
+    <div class="standards-group">
+      <div class="standards-cards">
+        <a class="stcard" href="#rockwell">
+          <div class="mark">Rockwell <em>Automation</em></div>
+          <div class="sub">PLC 与 SCADA</div>
+        </a>
+        <a class="stcard" href="#flir">
+          <div class="mark">FLIR Systems</div>
+          <div class="sub">热成像</div>
+        </a>
+        <a class="stcard" href="#panametrics">
+          <div class="mark">Panametrics</div>
+          <div class="sub">超声波</div>
+        </a>
+        <a class="stcard" href="#baker">
+          <div class="mark">Baker <em>Instrument</em></div>
+          <div class="sub">电机测试</div>
+        </a>
+        <a class="stcard" href="#easy-laser">
+          <div class="mark">Easy-Laser</div>
+          <div class="sub">激光对中</div>
+        </a>
+        <a class="stcard" href="#ird">
+          <div class="mark">IRD Balancing</div>
+          <div class="sub">动平衡</div>
+        </a>
+        <a class="stcard has-logo" href="#krautkramer">
+          <img class="logo" src="/assets/certifications/krautkramer.jpg" alt="Krautkramer logo">
+          <div class="sub">NDT 检测</div>
+        </a>
+        <a class="stcard" href="#prueftechnik">
+          <div class="mark">Prüftechnik</div>
+          <div class="sub">对中与状态</div>
+        </a>
+      </div>
+      <p class="standards-caption">广泛用于工业检测、诊断、对中、平衡和可靠性计划的技术。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MEMBER DETAIL BLOCKS ═══════════════════════ -->
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- Rockwell -->
+      <article id="rockwell" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 01</div>
+        <h2 style="margin: 16px 0 18px;">Rockwell Automation</h2>
+        <p>工业自动化硬件与软件——包括 Allen-Bradley PLC、ControlLogix / CompactLogix 控制器、FactoryTalk SCADA，以及在北美制造业广泛使用的 Rockwell 生态系统。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>Droz 与既有的 Rockwell 控制堆栈集成，用于数据提取、历史数据库对接，以及为可靠性仪表板供给数据的 OT 至云桥接。我们不担任控制系统的工程记录方；我们的工作处于 OT 层旁侧，并在变更受控的访问下从中读取数据。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务流程自动化</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a></li>
+          <li><a href="/zh/industries/general-manufacturing/">通用制造</a></li>
+          <li><a href="/zh/industries/automotive/">汽车</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- FLIR -->
+      <article id="flir" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 02</div>
+        <h2 style="margin: 16px 0 18px;">FLIR Systems</h2>
+        <p>工业热像仪及把辐射测量图像转化为状态评估的分析软件——北美电气和机械热成像计划中占主导地位的设备类别。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>Droz 的热成像勘测（电气开关柜、MCC、变压器、机械轴承、耐火材料、建筑围护结构）使用 FLIR 级辐射测量相机，并按与资产相适应的 CINDE 红外热成像认证级别执行。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/engineering/disciplines/thermography/">热成像</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a></li>
+          <li><a href="/zh/industries/power-generation/">发电</a></li>
+          <li><a href="/zh/industries/refineries-oil-gas/">炼油 · 石油与天然气</a></li>
+          <li><a href="/zh/industries/cement/">水泥厂</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Panametrics -->
+      <article id="panametrics" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 03</div>
+        <h2 style="margin: 16px 0 18px;">Panametrics</h2>
+        <p>超声波测量与检测设备——用于压力容器和管道完整性计划的测厚仪、流量计和超声波缺陷检测仪。现为 Baker Hughes 的一部分；Panametrics 品牌在该仪器产品线中得以延续。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>Droz 在炼油厂、石化和工艺装置中使用 Panametrics 级超声波测厚和流量仪器进行管道和容器勘测。记录会引用仪表类别和校准块的可追溯性。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/engineering/disciplines/ultrasound/">超声波</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a></li>
+          <li><a href="/zh/industries/refineries-oil-gas/">炼油 · 石油与天然气</a></li>
+          <li><a href="/zh/industries/petrochemicals/">石油化工</a></li>
+          <li><a href="/zh/industries/industrial-chemicals/">工业化学品</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Baker Instrument -->
+      <article id="baker" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 04</div>
+        <h2 style="margin: 16px 0 18px;">Baker Instrument</h2>
+        <p>静态和动态电机分析仪——浪涌测试、极化指数、兆欧表，以及 PdMA 式离线和在线电机诊断——用于表征定子绝缘、转子笼、气隙偏心和连接完整性。现为 Megger 的一部分；Baker 产品线得以延续。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>Droz 的电气电机测试合作使用 Baker 级仪器为关键电机建立基线并跟踪趋势；对于任何维修路线决策，发现项均交叉参照 EASA AR100 的期望。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a></li>
+          <li><a href="/zh/industries/general-manufacturing/">通用制造</a></li>
+          <li><a href="/zh/industries/mining-metals/">矿业与金属</a></li>
+          <li><a href="/zh/industries/pulp-paper/">纸浆与造纸</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Easy-Laser -->
+      <article id="easy-laser" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 05</div>
+        <h2 style="margin: 16px 0 18px;">Easy-Laser</h2>
+        <p>激光轴对中、几何测量和机械安装工具——这一源自瑞典的仪器系列广泛用于联接机器对中、软脚诊断和底板平面度。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>Droz 使用 Easy-Laser 级设备，为联轴器、皮带传动系和底板校正执行精密激光轴对中。对中前后报告记录残余偏移和角度偏差相对于公差的情况。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a></li>
+          <li><a href="/zh/industries/general-manufacturing/">通用制造</a></li>
+          <li><a href="/zh/industries/automotive/">汽车</a></li>
+          <li><a href="/zh/industries/food-manufacturing/">食品制造</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- IRD Balancing -->
+      <article id="ird" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 06</div>
+        <h2 style="margin: 16px 0 18px;">IRD Balancing</h2>
+        <p>动平衡仪器与方法论——在现场或平衡机上对转子、风机、鼓风机和泵进行单面、双面和多面平衡。该领域历史最悠久的名字之一。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>Droz 使用 IRD 级仪器，并依据与机器类别相适应的 ISO 1940 平衡品质等级，对关键旋转设备执行现场平衡。残余不平衡量连同所达到的平衡等级一并记录在案。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a></li>
+          <li><a href="/zh/industries/general-manufacturing/">通用制造</a></li>
+          <li><a href="/zh/industries/pulp-paper/">纸浆与造纸</a></li>
+          <li><a href="/zh/industries/cement/">水泥厂</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Krautkramer -->
+      <article id="krautkramer" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 07</div>
+        <h2 style="margin: 16px 0 18px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+          <img src="/assets/certifications/krautkramer.jpg" alt="Krautkramer logo" style="height:44px; width:auto;">
+          <span>Krautkramer</span>
+        </h2>
+        <p>超声波缺陷检测仪和 NDT 仪器——这一源自德国的 UT 设备系列广泛用于焊缝检测、铸件完整性和部件缺陷检测。现为 Baker Hughes Waygate Technologies 的一部分；Krautkramer 品牌在该仪器产品线中得以延续。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>Droz 的 NDT 合作使用 Krautkramer 级缺陷检测仪进行焊缝和铸件检测，按 CINDE 界定的 UT 认证级别执行，并在每份报告中记录校准块的可追溯性。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/engineering/disciplines/ultrasound/">超声波</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a></li>
+          <li><a href="/zh/industries/refineries-oil-gas/">炼油 · 石油与天然气</a></li>
+          <li><a href="/zh/industries/petrochemicals/">石油化工</a></li>
+          <li><a href="/zh/industries/nuclear-power/">核电</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Prüftechnik -->
+      <article id="prueftechnik" class="member-block">
+        <div class="eyebrow-mono">§ 成员 · 08</div>
+        <h2 style="margin: 16px 0 18px;">Prüftechnik</h2>
+        <p>激光对中和状态监测仪器——包括 OPTALIGN / ROTALIGN 轴对中系列和 VIBXPERT 振动分析仪。源自德国；现为 Fluke Reliability 的一部分。</p>
+        <h4 style="margin-top: 28px;">Droz 如何应用</h4>
+        <p>在工厂已经运行 Prüftechnik OPTALIGN / ROTALIGN 工具和 VIBXPERT 采集器之处，Droz 工程师可在这些工作流中原生作业，将数据无转换摩擦地导出至我们的可靠性平台，并支持现场团队对照相关的 ISO 10816 / 20816 烈度区段解读结果。</p>
+        <h4 style="margin-top: 28px;">体现之处</h4>
+        <ul>
+          <li><a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a></li>
+          <li><a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a></li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- Sticky right rail -->
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>相关能力</h6>
+        <ul>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a></li>
+          <li><a href="/zh/engineering/disciplines/thermography/">热成像</a></li>
+          <li><a href="/zh/engineering/disciplines/ultrasound/">超声波</a></li>
+          <li><a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>其他组别</h6>
+        <ul>
+          <li><a href="/zh/standards/associations/">组别 01 · 协会</a></li>
+          <li><a href="/zh/standards/cloud-ai-partners/">组别 03 · 云与 AI 合作伙伴</a></li>
+          <li><a href="/zh/standards/">标准概览</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>合作申请</h6>
+        <p>合作始于由资深合伙人主导的范围界定会谈。请提供基本信息；我们会转交给合适的团队。</p>
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-request" data-form="engagement-request" style="gap: 12px;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · standards/technologies">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="standards/technologies">
+          <input type="hidden" name="locale" value="zh">
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="et-name">您的姓名</label>
+            <input type="text" id="et-name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="et-email">电子邮箱</label>
+            <input type="email" id="et-email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="et-company">公司 / 组织</label>
+            <input type="text" id="et-company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="et-message">请简要描述合作需求</label>
+            <textarea id="et-message" name="message" rows="3" required></textarea>
+          </div>
+          <div class="field" style="flex-direction: row; align-items: flex-start; gap: 8px;">
+            <input type="checkbox" id="et-consent" name="consent" required style="margin-top:4px;">
+            <label for="et-consent" style="font-size: 11px; text-transform: none; letter-spacing: 0; color: rgba(255,255,255,0.78); font-family: var(--font-sans);">我同意 Droz 依据<a href="/zh/legal/privacy/" style="color:#9FC4E6; border-color:#9FC4E6;">隐私政策</a>存储此次提交的信息。</label>
+          </div>
+          <button type="submit" class="btn btn-light">申请合作 <span style="opacity:.7">→</span></button>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CLOSING BAND ═══════════════════════ -->
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ 披露</div>
+    <div class="stmt">Droz 在现场操作这些仪器系列；<em>在此纳入并不意味着经销商或 OEM 合作关系声明。</em></div>
+    <div class="creds"><a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LEGAL FOOTNOTE ═══════════════════════ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <p class="legal" style="color: var(--graphite-2); max-width: 80ch; font-size: 13px; line-height: 1.6;">
+      所有第三方徽标和商标均为其各自所有者的财产。除非另有明确说明，其出现并不意味着正式合作、认可或认证。
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 Cities</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务的行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

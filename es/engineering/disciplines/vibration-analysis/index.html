@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análisis de vibraciones &middot; Confiabilidad &mdash; Droz Technologies</title>
+  <meta name="description" content="Diagnóstico espectral en equipos rotativos. Desgaste de rodamientos, desbalanceo, desalineación y holgura identificados a partir del análisis de firmas en motores, bombas, compresores, ventiladores y cajas de engranajes — frente a los límites de zona de la ISO 10816 y veinte años de datos de referencia.">
+  <link rel="canonical" href="https://droz.tech/es/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/disciplines/vibration-analysis/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/disciplines/vibration-analysis/">
+  <meta property="og:title" content="Análisis de vibraciones &middot; Confiabilidad">
+  <meta property="og:description" content="Diagnóstico espectral en equipos rotativos. Desgaste de rodamientos, desbalanceo, desalineación y holgura identificados a partir del análisis de firmas — frente a los límites de zona de la ISO 10816.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/es/engineering/disciplines/vibration-analysis/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://droz.tech/#org","name":"Droz Technologies Inc.","url":"https://droz.tech/","logo":"https://droz.tech/assets/logos/droz-logo-metallic.png","foundingDate":"2004","address":{"@type":"PostalAddress","streetAddress":"4145 North Service Road","addressLocality":"Burlington","addressRegion":"ON","addressCountry":"CA"},"sameAs":["https://www.linkedin.com/company/droz-technologies/"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"contact@droz.tech"},{"@type":"ContactPoint","contactType":"procurement","email":"procurement@droz.tech"},{"@type":"ContactPoint","contactType":"press","email":"press@droz.tech"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://droz.tech/en/"},{"@type":"ListItem","position":2,"name":"Engineering","item":"https://droz.tech/en/engineering/"},{"@type":"ListItem","position":3,"name":"Disciplines","item":"https://droz.tech/en/engineering/"},{"@type":"ListItem","position":4,"name":"Vibration Analysis","item":"https://droz.tech/en/engineering/disciplines/vibration-analysis/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"Vibration Analysis","provider":{"@id":"https://droz.tech/#org"},"serviceType":"Vibration Analysis","areaServed":["Canada","United States","Mexico"],"description":"Diagnóstico espectral en equipos rotativos — desgaste de rodamientos, desbalanceo, desalineación y holgura identificados a partir del análisis de firmas.","inLanguage":"es"}
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/disciplines/vibration-analysis" data-locale="es" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/es/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega"><a href="/es/software/" data-nav="software">Software</a><div class="megamenu" role="menu"><div class="group"><a href="/es/software/">Visión general</a><a href="/es/software/custom-software-development/">Desarrollo de software a medida</a><a href="/es/software/application-development/">Desarrollo de aplicaciones</a><a href="/es/software/ai-machine-learning/">Sistemas de IA y aprendizaje automático</a><a href="/es/software/it-infrastructure/">Infraestructura de TI moderna</a><a href="/es/software/business-process-automation/">Automatización de procesos de negocio</a><a href="/es/software/cloud-migration/">Migración y arquitectura en la nube</a></div></div></div>
+        <div class="has-mega"><a href="/es/engineering/" data-nav="engineering" class="is-active">Ingeniería</a><div class="megamenu" role="menu"><div class="group"><div class="group-title">Pilares</div><a href="/es/engineering/">Visión general</a><a href="/es/engineering/predictive-maintenance/">Servicios de mantenimiento predictivo</a><a href="/es/engineering/reliability-data-platform/">Datos y monitoreo de confiabilidad</a><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos impulsada por IA</a></div><div class="group"><div class="group-title">Disciplinas</div><a href="/es/engineering/disciplines/vibration-analysis/">Análisis de vibraciones</a><a href="/es/engineering/disciplines/thermography/">Termografía</a><a href="/es/engineering/disciplines/ultrasound/">Ultrasonido</a><a href="/es/engineering/disciplines/laser-alignment/">Alineación láser</a></div></div></div>
+        <div class="has-mega"><a href="/es/industries/" data-nav="industries">Industrias</a><div class="megamenu wide" role="menu"><div class="group"><div class="group-title">Energía</div><a href="/es/industries/power-generation/">Generación de energía</a><a href="/es/industries/nuclear-power/">Energía nuclear</a><a href="/es/industries/refineries-oil-gas/">Refinerías · Petróleo y gas</a><a href="/es/industries/energy-operators/">Operadores de energía</a></div><div class="group"><div class="group-title">Materiales y manufactura</div><a href="/es/industries/automotive/">Automotriz</a><a href="/es/industries/general-manufacturing/">Manufactura general</a><a href="/es/industries/petrochemicals/">Petroquímicos</a><a href="/es/industries/industrial-chemicals/">Químicos industriales</a><a href="/es/industries/fertilizers-agrochemicals/">Fertilizantes · Agroquímicos</a><a href="/es/industries/mining-metals/">Minería y metales</a><a href="/es/industries/pulp-paper/">Pulpa y papel</a><a href="/es/industries/cement/">Plantas de cemento</a></div><div class="group"><div class="group-title">Consumo y sectores regulados</div><a href="/es/industries/food-manufacturing/">Manufactura de alimentos</a><a href="/es/industries/beverage/">Fabricantes de bebidas</a><a href="/es/industries/pharmaceutical/">Farmacéutica</a></div><div class="group"><div class="group-title">Sector público</div><a href="/es/industries/public-sector-goc/">Sector público · GoC</a></div></div></div>
+        <div class="has-mega"><a href="/es/products/" data-nav="products">Productos</a><div class="megamenu" role="menu"><div class="group"><a href="/es/products/">Portafolio</a><a href="/es/products/droz-legal/">Droz Legal</a><a href="/es/products/samson-ai/">Samson AI</a><a href="/es/products/rx-change/">RX Change</a><a href="/es/products/visp/">VISP</a><a href="/es/products/droz-predictive/">Droz Predictive</a><a href="/es/products/droz-rental/">Droz Rental</a><a href="/es/products/droz-investments/">Droz Investments</a><a href="/es/products/after-life/">After Life</a></div></div></div>
+        <div class="has-mega"><a href="/es/standards/" data-nav="standards">Normas</a><div class="megamenu" role="menu"><div class="group"><a href="/es/standards/">Visión general</a><a href="/es/standards/associations/">Asociaciones</a><a href="/es/standards/technologies/">Tecnologías</a><a href="/es/standards/cloud-ai-partners/">Socios de nube e IA</a></div></div></div>
+        <a href="/es/insights/" data-nav="insights">Perspectivas</a>
+        <a href="/es/about/" data-nav="about">Acerca de</a>
+        <a href="/es/contact/" data-nav="contact">Contacto</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/disciplines/vibration-analysis/">EN</a>
+        <a href="/fr/engineering/disciplines/vibration-analysis/">FR</a>
+        <a href="/es/engineering/disciplines/vibration-analysis/" class="on">ES</a>
+        <a href="/zh/engineering/disciplines/vibration-analysis/" lang="zh-Hans">中文</a>
+        <a href="/hi/engineering/disciplines/vibration-analysis/" lang="hi">हिं</a>
+      </div>
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Esta página fue traducida automáticamente. La versión en inglés es la autoritativa.</span>
+  <a href="/en/engineering/disciplines/vibration-analysis/">Ver en inglés</a>
+  <button class="mt-notice-x" aria-label="Cerrar">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/es/">Inicio</a>
+  <span class="sep">/</span>
+  <a href="/es/engineering/">Ingeniería</a>
+  <span class="sep">/</span>
+  <a href="/es/engineering/">Disciplinas</a>
+  <span class="sep">/</span>
+  <span class="here">Análisis de vibraciones</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Disciplina · 01</div>
+      <h1>Análisis de vibraciones &mdash; <em>la firma, luego el programa.</em></h1>
+      <p class="lede">Diagnóstico espectral en equipos rotativos. Desgaste de rodamientos, desbalanceo, desalineación y holgura identificados a partir del análisis de firmas en motores, bombas, compresores, ventiladores y cajas de engranajes &mdash; frente a los límites de zona de la ISO 10816 y veinte años de datos de referencia.</p>
+      <div class="cta">
+        <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+        <a href="/es/engineering/predictive-maintenance/" class="btn btn-ghost">Ver mantenimiento predictivo <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Disciplina</div><div class="v">01 · Análisis de vibraciones</div></div>
+      <div><div class="k">Metodología</div><div class="v">FFT · Forma de onda · Envolvente</div></div>
+      <div><div class="k">Certificaciones</div><div class="v">CMVA · Vibration Institute Cat. I&ndash;IV</div></div>
+      <div><div class="k">Normas</div><div class="v">ISO 10816</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 1. Full-bleed hero photo banner ═══════════════════════ -->
+<section style="border-bottom:1px solid var(--rule);">
+  <figure style="margin:0; position:relative;">
+    <img src="/assets/field/vibration-analysis.png" alt="Analista de vibraciones capturando datos espectrales en un tren de equipos rotativos" loading="lazy" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;">
+    <figcaption style="position:absolute; left:24px; bottom:18px; right:24px; display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:rgba(255,255,255,0.92); text-shadow:0 1px 2px rgba(0,0,0,0.6);">
+      <span>Colaboración en campo · DZ-ENG-2026 · Diagnóstico espectral en equipos rotativos</span>
+      <span>DZ · 01</span>
+    </figcaption>
+  </figure>
+</section>
+
+<section class="section">
+  <div class="wrap" style="max-width:980px;">
+
+    <!-- 2. What it detects -->
+    <div>
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ Lo que detecta</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Firmas de falla que identificamos.</h2>
+      <div class="ai-diff-grid" style="grid-template-columns:1fr; border-top:0; border-bottom:0;">
+        <div class="ai-cell" style="border-right:0; padding-right:0;">
+          <div class="num">DETECTA · 01</div>
+          <h4>Desgaste de rodamientos, desbalanceo, desalineación, holgura</h4>
+          <ul style="gap:10px;">
+            <li><strong>Desgaste de rodamientos</strong> &mdash; frecuencias de pista interior, pista exterior, bola/rodillo y jaula reveladas mediante demodulación de envolvente antes de la falla audible.</li>
+            <li><strong>Desbalanceo</strong> &mdash; 1&times; la velocidad de giro dominante en el espectro; corregible in-situ mediante balanceo dinámico.</li>
+            <li><strong>Desalineación</strong> &mdash; armónicos de 2&times; / 3&times; la velocidad de giro con comportamiento de fase característico; resueltos con un seguimiento de <a href="/es/engineering/disciplines/laser-alignment/">alineación láser</a>.</li>
+            <li><strong>Holgura, resonancia, defectos de engrane</strong> &mdash; patrones de múltiples armónicos, bandas laterales a la velocidad de giro y picos de frecuencia de engrane indexados frente a la biblioteca de firmas del activo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Methodology -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ Metodología</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Tres métodos analíticos, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">un diagnóstico.</em></h2>
+      <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+        <article class="svc">
+          <div class="svc-num">MÉTODO · 01</div>
+          <h3>Análisis<br>espectral FFT</h3>
+          <p>Transformada rápida de Fourier aplicada a señales en el dominio del tiempo de sensores de aceleración y velocidad. El espectro se indexa frente a frecuencias de falla conocidas &mdash; geometrías de rodamientos, velocidades de giro, engrane y electromagnéticas &mdash; para localizar el modo de falla.</p>
+          <div class="svc-tags"><span class="tag">FFT</span><span class="tag">Espectro</span><span class="tag">Frecuencias de falla</span></div>
+        </article>
+        <article class="svc">
+          <div class="svc-num">MÉTODO · 02</div>
+          <h3>Forma de onda<br>en el tiempo</h3>
+          <p>Traza en el dominio del tiempo en bruto inspeccionada en busca de impactos, transitorios y modulación de amplitud que el espectro puede suavizar. Se usa para confirmar impactos de rodamientos y severidad en casos de desgaste avanzado.</p>
+          <div class="svc-tags"><span class="tag">Forma de onda</span><span class="tag">Impactos</span><span class="tag">Transitorios</span></div>
+        </article>
+        <article class="svc">
+          <div class="svc-num">MÉTODO · 03</div>
+          <h3>Demodulación<br>de envolvente</h3>
+          <p>Señal portadora de alta frecuencia demodulada para revelar defectos de rodamientos de baja energía que aún no aparecen en el espectro estándar. El método de alerta temprana de Droz en activos rotativos críticos.</p>
+          <div class="svc-tags"><span class="tag">Envolvente</span><span class="tag">Alta frecuencia</span><span class="tag">Alerta temprana</span></div>
+        </article>
+      </div>
+      <p style="margin-top:20px; font-size:14px;">La metodología se ejecuta bajo la colaboración más amplia de <a href="/es/engineering/predictive-maintenance/">Mantenimiento predictivo</a> &rarr;</p>
+    </div>
+
+    <!-- 4. Standards applied -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ Normas aplicadas</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Ancladas a las normas <em style="font-style:italic; color:var(--accent-2); font-weight:400;">en las que confían sus auditores.</em></h2>
+      <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+        <article class="svc">
+          <div class="svc-num">ISO 10816</div>
+          <h3>Evaluación de<br>vibración mecánica</h3>
+          <p>Umbrales de severidad para la vibración de maquinaria rotativa evaluados frente a las zonas A&ndash;D de la ISO 10816. Las decisiones de alertar, programar o detener se anclan a la norma.</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">CMVA</div>
+          <h3>Canadian Machinery<br>Vibration Association</h3>
+          <p>Los analistas de vibraciones de Droz cuentan con certificación CMVA; los programas siguen los protocolos de categoría de la CMVA para recolección, análisis e informes de datos.</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">VI · Cat. I&ndash;IV</h3>
+          <h3>Vibration Institute</h3>
+          <p>Ingenieros de campo certificados en las Categorías I&ndash;IV del Vibration Institute &mdash; el referente mundial para la competencia del analista de vibraciones, la planificación de rutas y el análisis de causa raíz.</p>
+        </article>
+      </div>
+      <p style="margin-top:18px; font-size:14px;"><a href="/es/standards/associations/">Lista completa de normas &rarr;</a></p>
+    </div>
+
+    <!-- 5. Asset types -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ Tipos de activos</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">La familia de activos <em style="font-style:italic; color:var(--accent-2); font-weight:400;">de equipos rotativos.</em></h2>
+      <div class="assets-grid" style="grid-template-columns:1fr;">
+        <article class="asset-card">
+          <div class="badge">DZ-A · Equipos rotativos</div>
+          <h4>Activos primarios</h4>
+          <p class="focus">Enfoque &mdash; monitoreo de condición, alineación, balanceo.</p>
+          <ul class="asset-list">
+            <li><span class="item">Motores eléctricos</span><span class="detail">Baja · media · alta tensión</span></li>
+            <li><span class="item">Bombas</span><span class="detail">Centrífugas · de proceso · de enfriamiento · de transferencia</span></li>
+            <li><span class="item">Compresores</span><span class="detail">Aire · gas · proceso</span></li>
+            <li><span class="item">Turbinas</span><span class="detail">Vapor · gas · hidráulicas</span></li>
+            <li><span class="item">Cajas de engranajes</span><span class="detail">Reductores · multiplicadores</span></li>
+            <li><span class="item">Ventiladores y sopladores</span><span class="detail">Industriales · HVAC · aire de proceso</span></li>
+            <li><span class="item">Transportadores</span><span class="detail">De banda · de tornillo · elevador de cangilones</span></li>
+            <li><span class="item">Molinos y trituradoras</span><span class="detail">Molienda · de bolas · de martillos · de mandíbulas · de cono</span></li>
+          </ul>
+        </article>
+      </div>
+      <p style="margin-top:20px; font-size:14px;">Cada familia de activos se asigna a un programa por industria &mdash; <a href="/es/industries/">ver industrias atendidas</a>.</p>
+      <p style="margin-top:12px; font-family:var(--font-mono); font-size:12px; letter-spacing:0.08em; color:var(--graphite-2); text-transform:uppercase;">
+        <a href="/es/industries/refineries-oil-gas/">Refinerías &middot; Petróleo y gas &rarr;</a>
+        &nbsp;&nbsp;<a href="/es/industries/power-generation/">Generación de energía &rarr;</a>
+        &nbsp;&nbsp;<a href="/es/industries/petrochemicals/">Petroquímicos &rarr;</a>
+        &nbsp;&nbsp;<a href="/es/industries/mining-metals/">Minería y metales &rarr;</a>
+      </p>
+    </div>
+
+    <!-- 6. Reporting cadence -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ Cadencia de informes</div>
+      <p style="font-size:17px; line-height:1.7; color:var(--ink-2); max-width:64ch;">Las rutas se recorren con una cadencia calibrada a la criticidad del activo &mdash; por lo general mensual en equipos rotativos críticos de producción, trimestral en el balance de planta. Cada ruta produce un informe por activo con espectro, forma de onda en el tiempo, traza de envolvente, grado de severidad y acción recomendada. Las superaciones de severidad se despachan el mismo día a su <a href="/es/software/it-infrastructure/">CMMS</a> y canales de chat; el informe periódico se consolida en el <a href="/es/engineering/reliability-data-platform/">tablero de confiabilidad corporativo</a>.</p>
+    </div>
+
+    <!-- 7. Tools used -->
+    <div style="margin-top:64px;">
+      <div class="eyebrow-mono" style="margin-bottom:14px;">§ Herramientas utilizadas</div>
+      <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Instrumentación que desplegamos <em style="font-style:italic; color:var(--accent-2); font-weight:400;">en el campo.</em></h2>
+      <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+        <article class="svc">
+          <div class="svc-num">TOOL · 01</div>
+          <h3>Rockwell Automation</h3>
+          <p>Instrumentación de control industrial y monitoreo de condición de Rockwell, combinada con la columna vertebral de datos FactoryTalk donde la planta ya opera Rockwell.</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">TOOL · 02</div>
+          <h3>IRD Balancing</h3>
+          <p>Analizadores de campo IRD y equipos de balanceo dinámico para la corrección in-situ de hallazgos de desbalanceo &mdash; sin viaje de regreso al taller.</p>
+        </article>
+        <article class="svc">
+          <div class="svc-num">TOOL · 03</div>
+          <h3>Pr&uuml;ftechnik</h3>
+          <p>Hardware de monitoreo de condición VibXpert y CMS de Pr&uuml;ftechnik para instalaciones permanentes y colectores por ruta.</p>
+        </article>
+      </div>
+      <p style="margin-top:18px; font-size:14px;"><a href="/es/standards/technologies/">Lista completa de socios tecnológicos &rarr;</a></p>
+    </div>
+
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Análisis de vibraciones</div>
+    <div class="stmt">Las firmas espectrales no mienten. <em>Léalas antes de que falle el rodamiento.</em></div>
+    <div class="creds">
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — una empresa de tecnología industrial que ofrece software empresarial, ingeniería de confiabilidad e IA aplicada. Burlington, Ontario. Fundada en 2004.</p>
+        <div class="foot-stats"><span>EST. 2004</span><span>&middot;</span><span>5 Cities</span><span>&middot;</span><span>EN / FR / ES</span></div>
+      </div>
+      <div><h6>Software</h6><ul><li><a href="/es/software/">Visión general</a></li><li><a href="/es/software/custom-software-development/">Software a medida</a></li><li><a href="/es/software/application-development/">Desarrollo de aplicaciones</a></li><li><a href="/es/software/ai-machine-learning/">IA y aprendizaje automático</a></li><li><a href="/es/software/it-infrastructure/">Infraestructura de TI</a></li><li><a href="/es/software/business-process-automation/">Automatización de negocio</a></li><li><a href="/es/software/cloud-migration/">Migración a la nube</a></li></ul></div>
+      <div><h6>Ingeniería</h6><ul><li><a href="/es/engineering/">Visión general</a></li><li><a href="/es/engineering/predictive-maintenance/">Mantenimiento predictivo</a></li><li><a href="/es/engineering/reliability-data-platform/">Datos de confiabilidad</a></li><li><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos</a></li><li><a href="/es/industries/">Industrias atendidas</a></li><li><a href="/es/standards/">Normas</a></li></ul></div>
+      <div><h6>Empresa</h6><ul><li><a href="/es/about/">Acerca de</a></li><li><a href="/es/contact/">Contacto</a></li><li><a href="/es/contact/#procurement-form">Adquisiciones</a></li><li><a href="/es/press/">Prensa</a></li><li><a href="/es/careers/">Carreras</a></li><li><a href="/es/insights/">Perspectivas</a></li><li><a href="/es/capabilities-statement/">Declaración de capacidades</a></li></ul></div>
+      <div><h6>Idioma</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right"><a href="/es/legal/privacy/">Privacidad</a><a href="/es/legal/terms/">Términos</a><a href="/es/legal/accessibility/">Accesibilidad</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

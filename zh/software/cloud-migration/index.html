@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>云迁移与架构 — Droz Technologies</title>
+  <meta name="description" content="我们以精准、安全和成本纪律将企业系统迁移上云。登陆区、Terraform、身份、可观测性以及 FinOps 实践——全部作为单一负责的合作项目交付。">
+  <link rel="canonical" href="https://droz.tech/zh/software/cloud-migration/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/software/cloud-migration/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/software/cloud-migration/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/software/cloud-migration/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/software/cloud-migration/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/software/cloud-migration/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/software/cloud-migration/">
+  <meta property="og:title" content="云迁移与架构 — Droz Technologies">
+  <meta property="og:description" content="我们以精准、安全和成本纪律将企业系统迁移上云。登陆区、Terraform、身份、可观测性以及 FinOps 实践——全部作为单一负责的合作项目交付。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-software.png">
+  <meta property="og:url" content="https://droz.tech/zh/software/cloud-migration/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://droz.tech/en/software/" },
+      { "@type": "ListItem", "position": 3, "name": "Cloud Migration & Architecture", "item": "https://droz.tech/en/software/cloud-migration/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Cloud Migration & Architecture",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "Cloud Migration",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "我们以精准、安全和成本纪律将企业系统迁移上云。登陆区、Terraform、身份、可观测性以及 FinOps 实践——全部作为单一负责的合作项目交付。"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="software/cloud-migration" data-locale="zh" data-active-nav="software">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software" class="is-active">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用程序开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波检测</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油厂 · 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石化产品</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 · 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">采矿与金属</a>
+              <a href="/zh/industries/pulp-paper/">制浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/insights/" data-nav="insights">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/software/cloud-migration/">EN</a>
+        <a href="/fr/software/cloud-migration/">FR</a>
+        <a href="/es/software/cloud-migration/">ES</a>
+        <a href="/zh/software/cloud-migration/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/software/cloud-migration/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/software/cloud-migration/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter);">
+  <a href="/zh/">首页</a>
+  <span class="sep">/</span>
+  <a href="/zh/software/">软件</a>
+  <span class="sep">/</span>
+  <span class="here">云迁移与架构</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Software · 06 · Cloud</div>
+      <h1>不要只迁移。<em>重新构建架构。</em></h1>
+      <p class="lede">我们以精准、安全和成本纪律将企业系统迁移上云。登陆区、Terraform、身份、可观测性以及 FinOps 实践——全部作为单一负责的合作项目交付。</p>
+      <div class="cta">
+        <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+        <a href="/zh/standards/cloud-ai-partners/" class="btn btn-ghost">云与 AI 合作伙伴</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">服务</div><div class="v">第 06 / 共 06</div></div>
+      <div><div class="k">主力云</div><div class="v">Microsoft Azure</div></div>
+      <div><div class="k">同时支持</div><div class="v">AWS · Google Cloud</div></div>
+      <div><div class="k">态势</div><div class="v">Protected-B · SOC 2</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- Section 1 · Capabilities -->
+      <div class="eyebrow-mono" style="margin-bottom: 16px;">§ Capabilities</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">我们交付什么。</h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(2, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <div class="svc-num">01 · Landing Zones</div>
+          <h3>正确完成上云的<br>前 90 天</h3>
+          <p>Azure 登陆区（依据 CAF）或 AWS 多账户组织（依据 AWS Well-Architected）：以代码预置身份、网络、策略、日志和安全基线。</p>
+          <div class="svc-tags">
+            <span class="tag">CAF</span>
+            <span class="tag">Well-Architected</span>
+            <span class="tag">IaC</span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-num">02 · Migration &amp; Re-architecture</div>
+          <h3>重新托管。重新平台化。<br>重构架构。退役。</h3>
+          <p>逐工作负载的迁移计划：重新托管、重新平台化、重构架构或退役。试点、并行运行、切换、退役——每一步都有书面回滚方案。</p>
+          <div class="svc-tags">
+            <span class="tag">分波次</span>
+            <span class="tag">回滚</span>
+            <span class="tag">并行运行</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">03 · Terraform / IaC</div>
+          <h3>引导之后不再在<br>控制台中点击操作</h3>
+          <p>所有基础设施皆为代码。模块在私有注册表中版本化。漂移检测。GitHub Actions 中的 plan/apply 流水线。引导之后不再在控制台中点击操作。</p>
+          <div class="svc-tags">
+            <span class="tag">Terraform</span>
+            <span class="tag">漂移检测</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">04 · FinOps</div>
+          <h3>成本随工作负载增长，<br>而非随人员数量</h3>
+          <p>标签策略、分摊模型、预留容量计划以及每季度的指导评审。云成本随工作负载增长，而非随人员数量。</p>
+          <div class="svc-tags">
+            <span class="tag">标签</span>
+            <span class="tag">分摊</span>
+            <span class="tag">预留容量</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Section 2 · Engagement model -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Engagement</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">评估 → 架构 → <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">迁移</em> → 运营。</h2>
+
+      <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="step">
+          <div class="ord">01 · Assess</div>
+          <div class="ord-num">01</div>
+          <h5>评估</h5>
+          <p>为期二至四周的评估：工作负载清点、依赖映射、合规范围界定（Protected-B / SOC 2），以及每个工作负载的处置方案（重新托管、重新平台化、重构架构、退役）。产出：书面策略 + 量级估算。</p>
+        </div>
+        <div class="step">
+          <div class="ord">02 · Architect</div>
+          <div class="ord-num">02</div>
+          <h5>架构</h5>
+          <p>参考架构：登陆区、身份模型、网络拓扑、安全基线、可观测性技术栈、部署流水线以及灾难恢复计划。在任何迁移之前评审并签署。</p>
+        </div>
+        <div class="step">
+          <div class="ord">03 · Migrate</div>
+          <div class="ord-num">03</div>
+          <h5>迁移</h5>
+          <p>分波次执行。每个波次：试点、并行运行、切换、退役。从第 1 波次起即具备生产级可观测性。与高管发起人每季度进行指导。</p>
+        </div>
+        <div class="step">
+          <div class="ord">04 · Operate</div>
+          <div class="ord-num">04</div>
+          <h5>运营</h5>
+          <p>可选但常见：用于云运营的托管服务合同、月度 FinOps 报告、季度架构评审以及年度态势评审。</p>
+        </div>
+      </div>
+
+      <!-- Section 3 · Tools & technologies -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Stack</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">工具与技术。</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; border-top: 1px solid var(--rule); padding-top: 32px;">
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Cloud platforms</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Microsoft Azure（主力）、AWS、Google Cloud（在有需要时）。</p>
+          <div class="svc-tags">
+            <span class="tag">Microsoft Azure</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Google Cloud</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">IaC &amp; pipelines</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Terraform（主力）、Bicep（仅 Azure 且团队偏好时）、GitHub Actions、Azure DevOps Pipelines、Spacelift / Terraform Cloud。</p>
+          <div class="svc-tags">
+            <span class="tag">Terraform</span>
+            <span class="tag">Bicep</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Spacelift</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Identity &amp; security</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Microsoft Entra ID（Azure AD）、AWS IAM、KeyVault / Secrets Manager、Azure Policy、AWS SCP、Defender / GuardDuty、Sentinel / Security Hub。</p>
+          <div class="svc-tags">
+            <span class="tag">Entra ID</span>
+            <span class="tag">AWS IAM</span>
+            <span class="tag">KeyVault</span>
+            <span class="tag">Sentinel</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Observability</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Azure Monitor + Log Analytics、AWS CloudWatch、Grafana + Prometheus、OpenTelemetry、Datadog（当采购方已在使用时）。</p>
+          <div class="svc-tags">
+            <span class="tag">Azure Monitor</span>
+            <span class="tag">CloudWatch</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">OpenTelemetry</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13.5px; color: var(--graphite-2); margin-top: 24px; line-height: 1.6;">
+        交叉引用 — <a href="/zh/standards/cloud-ai-partners/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">云合作伙伴简介</a> · <a href="/zh/standards/technologies/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">完整技术清单</a> · <a href="/zh/industries/public-sector-goc/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Protected-B 合规态势</a> · <a href="/zh/software/custom-software-development/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">应用程序底层</a>。
+      </p>
+
+      <!-- Section 4 · Reference engagements -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Reference engagements</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">这些已<em style="font-style: italic; color: var(--accent-2); font-weight: 400;">落地之处。</em></h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <a href="/zh/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Reference 01</div>
+            <h3>为某 GoC 部门打造的<br>Protected-B 登陆区</h3>
+            <p>依据 GoC Protected-B 模式预置的 Azure 登陆区，配备专用 VNet 拓扑、密钥管理和 SIEM 接入。</p>
+            <div class="svc-tags"><span class="tag">仅供预览</span></div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/zh/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Reference 02</div>
+            <h3>多厂区迁移<br>与架构重构</h3>
+            <p>分两个波次将十二个工作负载从本地迁移至 Azure：先重新托管，第 2 波次重新平台化关键工作负载。</p>
+            <div class="svc-tags"><span class="tag">仅供预览</span></div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/zh/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Reference 03</div>
+            <h3>面向 400 万美元云支出的<br>FinOps 项目</h3>
+            <p>标签、分摊和预留容量策略，在 12 个月内将年化云支出降低了 28%。</p>
+            <div class="svc-tags"><span class="tag">仅供预览</span></div>
+          </a>
+        </article>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>相关能力</h6>
+        <ul>
+          <li><a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务流程自动化</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>我们遵循的标准</h6>
+        <ul>
+          <li><a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a></li>
+          <li><a href="/zh/standards/">标准概览</a></li>
+          <li><a href="/zh/standards/technologies/">技术</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>与合伙人沟通</h6>
+        <p>云合作始于为期 2–4 周的书面评估和每个工作负载的处置映射。</p>
+
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-form" data-form="engagement-request" style="gap: 12px; max-width: none;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · software/cloud-migration">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="software/cloud-migration">
+          <input type="hidden" name="locale" value="zh">
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="name" style="color: rgba(255,255,255,0.8);">姓名</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email" style="color: rgba(255,255,255,0.8);">电子邮箱</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="company" style="color: rgba(255,255,255,0.8);">公司</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="message" style="color: rgba(255,255,255,0.8);">简要描述</label>
+            <textarea id="message" name="message" required style="min-height: 80px;"></textarea>
+          </div>
+          <div class="field">
+            <label for="consent" style="display:flex; gap:8px; align-items:flex-start; text-transform:none; letter-spacing:0; font-family:var(--font-sans); font-size:12px; color:rgba(255,255,255,0.75);">
+              <input type="checkbox" id="consent" name="consent" required style="margin-top:2px;">
+              <span>我同意遵循<a href="/zh/legal/privacy/" style="color:#9FC4E6; border-bottom:1px solid rgba(159,196,230,.4);">隐私政策</a>。</span>
+            </label>
+          </div>
+          <div class="field">
+            <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITEKEY"></div>
+          </div>
+          <button type="submit" class="btn btn-light" style="width: 100%; justify-content: center;">申请合作 <span style="opacity:.7">→</span></button>
+          <a href="/zh/contact/#engagement-form" style="color: #9FC4E6; font-size: 12px; text-align: center; border: 0; margin-top: 4px;">或前往完整联系表单 →</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper-bone); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="div-header">
+      <div>
+        <small>§ Industries served</small>
+        <div class="slash">架构重构<em>落地之处。</em></div>
+      </div>
+      <p class="blurb">鉴于 Protected-B 交叉链接，公共部门 · GoC 位居榜首。完整的 17 个行业清单见<a href="/zh/industries/" style="color:var(--accent); border-bottom:1px solid var(--accent);">行业概览</a>。</p>
+    </div>
+
+    <div class="industries" style="margin-top: 48px;">
+      <a href="/zh/industries/public-sector-goc/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">01</span><span class="name">公共部门 · GoC</span></a>
+      <a href="/zh/industries/energy-operators/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">02</span><span class="name">能源运营商</span></a>
+      <a href="/zh/industries/refineries-oil-gas/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">03</span><span class="name">炼油厂 · 石油与天然气</span></a>
+      <a href="/zh/industries/pharmaceutical/" class="industry" style="text-decoration:none; border:0; border-bottom:1px solid var(--rule);"><span class="idx">04</span><span class="name">制药</span></a>
+      <a href="/zh/industries/general-manufacturing/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">05</span><span class="name">通用制造</span></a>
+      <a href="/zh/industries/nuclear-power/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">06</span><span class="name">核电</span></a>
+      <a href="/zh/industries/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); grid-column: span 2;"><span class="idx">→</span><span class="name">所有行业</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Engage Droz · Cloud</div>
+    <div class="stmt">直接迁移只是起点。<em>架构重构才是承诺所在。</em></div>
+    <div class="creds">
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 Cities</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用程序开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

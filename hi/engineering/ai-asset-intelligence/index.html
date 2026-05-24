@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-संचालित एसेट इंटेलिजेंस &mdash; Droz Technologies</title>
+  <meta name="description" content="विफलता-पूर्वानुमान मॉडल, असंगति का पता लगाना और स्वचालित अनुशंसाएँ — आपके औद्योगिक उपकरण समूह के अनुरूप ट्यून की गई उत्पादन-तैयार MLOps पाइपलाइन। डिजिटल-ट्विन सक्षम।">
+  <link rel="canonical" href="https://droz.tech/hi/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <meta property="og:title" content="AI-संचालित एसेट इंटेलिजेंस">
+  <meta property="og:description" content="विफलता-पूर्वानुमान मॉडल, असंगति का पता लगाना और स्वचालित अनुशंसाएँ — आपके औद्योगिक उपकरण समूह के अनुरूप ट्यून की गई उत्पादन-तैयार MLOps पाइपलाइन।">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/hi/engineering/ai-asset-intelligence/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "होम", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "इंजीनियरिंग", "item": "https://droz.tech/en/engineering/" },
+      { "@type": "ListItem", "position": 3, "name": "AI-संचालित एसेट इंटेलिजेंस", "item": "https://droz.tech/en/engineering/ai-asset-intelligence/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI-Driven Asset Intelligence",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "AI-Driven Asset Intelligence",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "विफलता-पूर्वानुमान मॉडल, असंगति का पता लगाना और स्वचालित अनुशंसाएँ — आपके औद्योगिक उपकरण समूह के अनुरूप ट्यून की गई उत्पादन-तैयार MLOps पाइपलाइन।",
+    "inLanguage": "hi"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/ai-asset-intelligence" data-locale="hi" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/hi/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/hi/software/" data-nav="software">सॉफ़्टवेयर</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/hi/software/">अवलोकन</a>
+              <a href="/hi/software/custom-software-development/">कस्टम सॉफ़्टवेयर डेवलपमेंट</a>
+              <a href="/hi/software/application-development/">एप्लिकेशन डेवलपमेंट</a>
+              <a href="/hi/software/ai-machine-learning/">AI और मशीन लर्निंग सिस्टम</a>
+              <a href="/hi/software/it-infrastructure/">आधुनिक IT अवसंरचना</a>
+              <a href="/hi/software/business-process-automation/">व्यावसायिक प्रक्रिया स्वचालन</a>
+              <a href="/hi/software/cloud-migration/">क्लाउड माइग्रेशन और आर्किटेक्चर</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/engineering/" data-nav="engineering" class="is-active">इंजीनियरिंग</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">स्तंभ</div>
+              <a href="/hi/engineering/">अवलोकन</a>
+              <a href="/hi/engineering/predictive-maintenance/">भविष्यसूचक रखरखाव सेवाएँ</a>
+              <a href="/hi/engineering/reliability-data-platform/">विश्वसनीयता डेटा और निगरानी</a>
+              <a href="/hi/engineering/ai-asset-intelligence/">AI-संचालित एसेट इंटेलिजेंस</a>
+            </div>
+            <div class="group">
+              <div class="group-title">विषय-क्षेत्र</div>
+              <a href="/hi/engineering/disciplines/vibration-analysis/">कंपन विश्लेषण</a>
+              <a href="/hi/engineering/disciplines/thermography/">थर्मोग्राफी</a>
+              <a href="/hi/engineering/disciplines/ultrasound/">अल्ट्रासाउंड</a>
+              <a href="/hi/engineering/disciplines/laser-alignment/">लेज़र अलाइनमेंट</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/industries/" data-nav="industries">उद्योग</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">ऊर्जा</div>
+              <a href="/hi/industries/power-generation/">विद्युत उत्पादन</a>
+              <a href="/hi/industries/nuclear-power/">परमाणु ऊर्जा</a>
+              <a href="/hi/industries/refineries-oil-gas/">रिफाइनरी · तेल और गैस</a>
+              <a href="/hi/industries/energy-operators/">ऊर्जा संचालक</a>
+            </div>
+            <div class="group">
+              <div class="group-title">सामग्री और विनिर्माण</div>
+              <a href="/hi/industries/automotive/">ऑटोमोटिव</a>
+              <a href="/hi/industries/general-manufacturing/">सामान्य विनिर्माण</a>
+              <a href="/hi/industries/petrochemicals/">पेट्रोरसायन</a>
+              <a href="/hi/industries/industrial-chemicals/">औद्योगिक रसायन</a>
+              <a href="/hi/industries/fertilizers-agrochemicals/">उर्वरक · कृषि रसायन</a>
+              <a href="/hi/industries/mining-metals/">खनन और धातु</a>
+              <a href="/hi/industries/pulp-paper/">पल्प और पेपर</a>
+              <a href="/hi/industries/cement/">सीमेंट संयंत्र</a>
+            </div>
+            <div class="group">
+              <div class="group-title">उपभोक्ता और विनियमित</div>
+              <a href="/hi/industries/food-manufacturing/">खाद्य विनिर्माण</a>
+              <a href="/hi/industries/beverage/">पेय निर्माता</a>
+              <a href="/hi/industries/pharmaceutical/">फार्मास्युटिकल</a>
+            </div>
+            <div class="group">
+              <div class="group-title">सार्वजनिक क्षेत्र</div>
+              <a href="/hi/industries/public-sector-goc/">सार्वजनिक क्षेत्र · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/products/" data-nav="products">उत्पाद</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/hi/products/">पोर्टफ़ोलियो</a>
+              <a href="/hi/products/droz-legal/">Droz Legal</a>
+              <a href="/hi/products/samson-ai/">Samson AI</a>
+              <a href="/hi/products/rx-change/">RX Change</a>
+              <a href="/hi/products/visp/">VISP</a>
+              <a href="/hi/products/droz-predictive/">Droz Predictive</a>
+              <a href="/hi/products/droz-rental/">Droz Rental</a>
+              <a href="/hi/products/droz-investments/">Droz Investments</a>
+              <a href="/hi/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/hi/standards/" data-nav="standards">मानक</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/hi/standards/">अवलोकन</a>
+              <a href="/hi/standards/associations/">संघ</a>
+              <a href="/hi/standards/technologies/">प्रौद्योगिकियाँ</a>
+              <a href="/hi/standards/cloud-ai-partners/">Cloud और AI पार्टनर</a>
+            </div>
+          </div>
+        </div>
+        <a href="/hi/insights/" data-nav="insights">अंतर्दृष्टि</a>
+        <a href="/hi/about/" data-nav="about">हमारे बारे में</a>
+        <a href="/hi/contact/" data-nav="contact">संपर्क</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/ai-asset-intelligence/">EN</a>
+        <a href="/fr/engineering/ai-asset-intelligence/">FR</a>
+        <a href="/es/engineering/ai-asset-intelligence/">ES</a>
+        <a href="/zh/engineering/ai-asset-intelligence/" lang="zh-Hans">中文</a>
+        <a href="/hi/engineering/ai-asset-intelligence/" lang="hi" class="on">हिं</a>
+      </div>
+      <a href="/hi/contact/#engagement-form" class="btn btn-primary">सहयोग का अनुरोध करें <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>यह पृष्ठ मशीन द्वारा अनूदित है। अंग्रेज़ी संस्करण ही प्रामाणिक है।</span>
+  <a href="/en/engineering/ai-asset-intelligence/">अंग्रेज़ी में देखें</a>
+  <button class="mt-notice-x" aria-label="बंद करें">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/hi/">होम</a>
+  <span class="sep">/</span>
+  <a href="/hi/engineering/">इंजीनियरिंग</a>
+  <span class="sep">/</span>
+  <span class="here">AI-संचालित एसेट इंटेलिजेंस</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ प्रैक्टिस 02 · स्तंभ C</div>
+      <h1>AI-संचालित एसेट इंटेलिजेंस &mdash; <em>वह परत जो बढ़ती जाती है।</em></h1>
+      <p class="lede">विफलता-पूर्वानुमान मॉडल, असंगति का पता लगाना और स्वचालित अनुशंसाएँ &mdash; आपके उपकरण समूह के अनुरूप ट्यून की गई उत्पादन-तैयार ML पाइपलाइन, जहाँ काम होता है वहाँ तैनात, और पहले दिन से MLOps में अवलोकित।</p>
+      <div class="cta">
+        <a href="/hi/contact/#engagement-form" class="btn btn-primary">सहयोग का अनुरोध करें <span style="opacity:.7">&rarr;</span></a>
+        <a href="/hi/software/ai-machine-learning/" class="btn btn-ghost">AI और ML सिस्टम देखें <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">स्तंभ</div><div class="v">C · इंटेलिजेंस</div></div>
+      <div><div class="k">मॉडल</div><div class="v">विफलता पूर्वानुमान · असंगति · अनुकूलन · ट्विन</div></div>
+      <div><div class="k">MLOps</div><div class="v">Azure ML · AWS SageMaker · Vertex AI</div></div>
+      <div><div class="k">सेतु</div><div class="v">सॉफ़्टवेयर · AI और मशीन लर्निंग सिस्टम</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/vibration-chart.png" alt="FFT वर्णक्रमीय सिग्नेचर चार्ट &mdash; वे सिग्नल जिन पर AI प्रशिक्षित होता है" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ परिभाषा</small>
+          <div class="slash">डेटा परत पर AI,<br><em>आपके उपकरण समूह के अनुरूप ट्यून किया गया।</em></div>
+        </div>
+        <p class="blurb">AI-संचालित एसेट इंटेलिजेंस Droz की विश्वसनीयता प्रैक्टिस का तीसरा स्तंभ है &mdash; वह परत जहाँ क्षेत्र कार्यक्रम (<a href="/hi/engineering/predictive-maintenance/">स्तंभ A</a>) और डेटा प्लेटफ़ॉर्म (<a href="/hi/engineering/reliability-data-platform/">स्तंभ B</a>) स्वचालित निर्णयों में बढ़ते जाते हैं। Droz आपके विशिष्ट उपकरण समूह के विरुद्ध विफलता-पूर्वानुमान मॉडल डिज़ाइन और प्रशिक्षित करता है &mdash; औद्योगिक डेटा में पुनः फ़िट किए गए हॉरिज़ॉन्टल मॉडल नहीं। असंगति का पता लगाना स्ट्रीम किए गए सिग्नल पर निरंतर चलता है; स्वचालित अनुशंसाएँ संचालक के मौजूदा चैनलों में अंतर्निहित साक्ष्य संलग्न के साथ उतरती हैं। मॉडल Azure ML, AWS SageMaker या Vertex AI पर उत्पादन-तैयार <a href="/hi/software/ai-machine-learning/">MLOps पाइपलाइन</a> के माध्यम से तैनात किए जाते हैं &mdash; संस्करणित, निगरानी की गई, और ड्रिफ़्ट के अनुरूप कैलिब्रेट की गई लय पर पुनः-प्रशिक्षित। जहाँ सहयोग इसे उचित ठहराता है, Droz संयंत्र का एक डिजिटल ट्विन भी बनाता है &mdash; एक सिमुलेशन सतह जो परिचालन को वास्तविक संयंत्र में निर्णय लेने से पहले उनका पूर्वाभ्यास करने देती है।</p>
+      </div>
+
+      <!-- 2. Capabilities (.ai-diff-grid) -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ क्षमताएँ</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">पाँच प्रथाएँ, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">एक इंटेलिजेंस स्टैक।</em></h2>
+        <div class="ai-diff-grid">
+          <div class="ai-cell">
+            <div class="num">AI · 01</div>
+            <h4>असंगति का पता लगाना</h4>
+            <ul>
+              <li>कंपन पैटर्न</li>
+              <li>तापमान विचलन</li>
+              <li>ऊर्जा खपत असंगतियाँ</li>
+              <li>सिग्नल-गुणवत्ता बहाव</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 02</div>
+            <h4>विफलता पूर्वानुमान</h4>
+            <ul>
+              <li>बेयरिंग विफलताएँ</li>
+              <li>मोटर क्षरण</li>
+              <li>पंप विफलताएँ</li>
+              <li>स्नेहन व्यवस्था अलर्ट</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 03</div>
+            <h4>अनुकूलन</h4>
+            <ul>
+              <li>उत्पादन प्रक्रियाएँ</li>
+              <li>ऊर्जा उपयोग</li>
+              <li>रखरखाव रणनीतियाँ</li>
+              <li>स्पेयर-पार्ट्स इन्वेंट्री</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 04</div>
+            <h4>स्वचालित अनुशंसाएँ</h4>
+            <ul>
+              <li>स्वचालित रिपोर्टिंग</li>
+              <li>स्मार्ट अलर्ट</li>
+              <li>AI-सहायता प्राप्त निर्णय-निर्माण</li>
+              <li>CMMS कार्य-आदेश प्रेषण</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 05</div>
+            <h4>Digital Twin</h4>
+            <ul>
+              <li>संयंत्र सिमुलेशन</li>
+              <li>विफलता-परिदृश्य मॉडलिंग</li>
+              <li>भविष्यसूचक परिचालन योजना</li>
+              <li>प्रति क्लाइंट अनुकूलित</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Model classes -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ मॉडल वर्ग</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">तीन मॉडल परिवार, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">एक निर्णय लूप।</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">MDL · 01</div>
+            <h3>विफलता-पूर्वानुमान<br>मॉडल</h3>
+            <p>प्रति एसेट परिवार लेबल की गई विफलता इतिहास पर प्रशिक्षित पर्यवेक्षित मॉडल &mdash; बेयरिंग, मोटर, पंप, गियरबॉक्स। आउटपुट: शेष-उपयोगी-जीवन अनुमान, विफलता-मोड संभावना, अनुशंसित हस्तक्षेप विंडो। ड्रिफ़्ट के अनुरूप कैलिब्रेट की गई लय पर पुनः-प्रशिक्षित।</p>
+            <div class="svc-tags"><span class="tag">पर्यवेक्षित</span><span class="tag">RUL</span><span class="tag">प्रति-एसेट परिवार</span><span class="tag">ड्रिफ़्ट-निगरानी</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 02</div>
+            <h3>असंगति-पता लगाने<br>वाले मॉडल</h3>
+            <p>स्ट्रीम किए गए सिग्नल (कंपन, तापमान, करंट, अल्ट्रासाउंड, ऊर्जा) पर निरंतर चलने वाले अपर्यवेक्षित मॉडल। आउटपुट: अंतर्निहित सिग्नल साक्ष्य संलग्न के साथ क्रिटिकलिटी द्वारा रूट की गई गंभीरता-श्रेणीबद्ध असंगतियाँ।</p>
+            <div class="svc-tags"><span class="tag">अपर्यवेक्षित</span><span class="tag">स्ट्रीमिंग</span><span class="tag">गंभीरता-श्रेणीबद्ध</span><span class="tag">साक्ष्य-संलग्न</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 03</div>
+            <h3>अनुशंसा<br>और अनुकूलन</h3>
+            <p>निर्णय मॉडल जो स्थिति सिग्नल, परिचालन संदर्भ और आर्थिक बाधाओं को संयोजित करके सर्वोत्तम अगली कार्रवाई की अनुशंसा करते हैं &mdash; हस्तक्षेप निर्धारित करें, परिचालन बिंदु समायोजित करें, स्पेयर पुनः-ऑर्डर करें।</p>
+            <div class="svc-tags"><span class="tag">निर्णय</span><span class="tag">बाधा-जागरूक</span><span class="tag">कार्रवाई-केंद्रित</span><span class="tag">संचालक-इन-लूप</span></div>
+          </article>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">वह MLOps और डेटा-विज्ञान सहयोग जो इन मॉडलों को बनाता और संचालित करता है &rarr; <a href="/hi/software/ai-machine-learning/">AI और मशीन लर्निंग सिस्टम</a></p>
+      </div>
+
+      <!-- 4. MLOps pipeline -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ MLOps</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">प्रशिक्षण सेट से <em style="font-style:italic; color:var(--accent-2); font-weight:400;">निगरानी किए गए पूर्वानुमान तक।</em></h2>
+        <div class="steps">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">क्यूरेट</div>
+            <h5>प्रशिक्षण सेट</h5>
+            <p>स्तंभ A से क्षेत्र इतिहास और स्तंभ B से एकीकृत डेटा परत को प्रति एसेट परिवार लेबल किए गए प्रशिक्षण सेट में क्यूरेट किया जाता है। किसी भी मॉडल के डेटा को छूने से पहले वर्ग असंतुलन, लीकेज और लेबल गुणवत्ता को संभाला जाता है।</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">प्रशिक्षण</div>
+            <h5>मॉडल वर्ग</h5>
+            <p>मॉडल वर्ग प्रति विफलता मोड चुना जाता है &mdash; सारणीबद्ध स्थिति इतिहास के लिए ग्रेडिएंट बूस्टिंग, वर्णक्रमीय सिग्नेचर के लिए डीप मॉडल, स्ट्रीमिंग असंगति के लिए आइसोलेशन-फ़ॉरेस्ट वैरिएंट। हाइपरपैरामीटर एक प्रबंधित स्वीप में ट्यून किए जाते हैं।</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">मान्य</div>
+            <h5>होल्डआउट और रीप्ले</h5>
+            <p>मॉडल होल्डआउट साइटों पर मान्य किए जाते हैं और संग्रहीत विफलताओं के विरुद्ध रीप्ले किए जाते हैं &mdash; मॉडल को प्रदान होने से पहले उस डेटा पर एक ज्ञात विफलता की भविष्यवाणी करनी होती है जिसे उसने कभी नहीं देखा।</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">तैनाती</div>
+            <h5>उत्पादन पाइपलाइन</h5>
+            <p><a href="/hi/standards/cloud-ai-partners/">Azure ML, AWS SageMaker या Vertex AI</a> के माध्यम से तैनात &mdash; लेटेंसी के आधार पर एंडपॉइंट, बैच या एज। ट्रेसेबिलिटी के लिए अनुमान को इनपुट स्नैपशॉट के साथ लॉग किया जाता है।</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">05</div>
+            <div class="ord">अवलोकन</div>
+            <h5>ड्रिफ़्ट और पुनः-प्रशिक्षण</h5>
+            <p>उत्पादन प्रदर्शन की निगरानी की जाती है &mdash; कॉन्सेप्ट ड्रिफ़्ट, डेटा ड्रिफ़्ट, पूर्वानुमान-वर्ग ड्रिफ़्ट। पुनः-प्रशिक्षण सीमा पर या निर्धारित समय पर ट्रिगर होता है; पिछला मॉडल नए मॉडल को मंज़ूरी मिलने तक शैडो में रखा जाता है।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Digital twin -->
+      <div style="margin-top:80px;">
+        <div class="div-header" style="padding-bottom:32px;">
+          <div>
+            <small>§ डिजिटल ट्विन</small>
+            <div class="slash">निर्णय का पूर्वाभ्यास करें<br><em>उसे लेने से पहले।</em></div>
+          </div>
+          <p class="blurb">एक Droz डिजिटल ट्विन किसी संयंत्र या प्रोसेस ट्रेन के लिए एक सिमुलेशन सतह है &mdash; एसेट समूह के अनुरूप कैलिब्रेट की गई, विश्वसनीयता डेटा परत द्वारा संचालित, और उन निर्णयों का पूर्वाभ्यास करने के लिए उपयोग की जाती है जिन्हें वास्तविक संयंत्र में लेना महँगा होता है। प्रति क्लाइंट निर्मित; एक हॉरिज़ॉन्टल उत्पाद नहीं।</p>
+        </div>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">TWIN · 01</div>
+            <h3>संयंत्र सिमुलेशन</h3>
+            <p>एसेट व्यवहार निर्णय द्वारा आवश्यक स्तर पर मॉडल किया जाता है &mdash; जहाँ निर्णय परिचालनात्मक हो वहाँ प्रथम-सिद्धांत भौतिकी, जहाँ निर्णय विश्वसनीयता संबंधी हो वहाँ डेटा-संचालित।</p>
+            <div class="svc-tags"><span class="tag">भौतिकी-आधारित</span><span class="tag">डेटा-संचालित</span><span class="tag">मिश्रित-निष्ठा</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 02</div>
+            <h3>विफलता-परिदृश्य<br>मॉडलिंग</h3>
+            <p>उत्पादन शेड्यूल, स्पेयर-पार्ट्स स्थिति और कॉर्पोरेट अपटाइम लक्ष्य के विरुद्ध &ldquo;यदि यह बेयरिंग शुक्रवार को विफल हो जाए तो क्या होगा&rdquo; चलाएँ। आउटपुट: एक श्रेणीबद्ध निर्णय वृक्ष, एक एकल उत्तर नहीं।</p>
+            <div class="svc-tags"><span class="tag">क्या-होगा-यदि</span><span class="tag">श्रेणीबद्ध निर्णय</span><span class="tag">उत्पादन-जागरूक</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 03</div>
+            <h3>परिचालन योजना</h3>
+            <p>वास्तविक संयंत्र को उनके लिए प्रतिबद्ध करने से पहले सिमुलेशन में पूँजी स्थगन, हस्तक्षेप-विंडो परिवर्तन और परिचालन-बिंदु बदलावों का परीक्षण करें।</p>
+            <div class="svc-tags"><span class="tag">पूँजी स्थगन</span><span class="tag">हस्तक्षेप विंडो</span><span class="tag">परिचालन-बिंदु</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ सेवित उद्योग</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">जहाँ AI एसेट इंटेलिजेंस <em style="font-style:italic; color:var(--accent-2); font-weight:400;">अग्रणी सहयोग है।</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/hi/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">रिफाइनरी · तेल और गैस</span></a>
+          <a href="/hi/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">विद्युत उत्पादन</span></a>
+          <a href="/hi/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">पेट्रोरसायन</span></a>
+          <a href="/hi/industries/nuclear-power/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">परमाणु ऊर्जा</span></a>
+          <a href="/hi/industries/energy-operators/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">ऊर्जा संचालक</span></a>
+          <a href="/hi/industries/mining-metals/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">खनन और धातु</span></a>
+          <a href="/hi/industries/cement/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">सीमेंट संयंत्र</span></a>
+          <a href="/hi/industries/automotive/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">ऑटोमोटिव</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/hi/industries/">सभी 16 सेवित उद्योग देखें &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ हम जो मानक लागू करते हैं</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">वे ढाँचे जिनसे मॉडल <em style="font-style:italic; color:var(--accent-2); font-weight:400;">जुड़े हैं।</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">SOC 2</div>
+            <h3>SOC 2 Type II</h3>
+            <p>ML पाइपलाइन और अनुमान एंडपॉइंट विश्वसनीयता डेटा प्लेटफ़ॉर्म के समान SOC 2 Type II ऑडिट किए गए नियंत्रण सेट के अंदर चलते हैं।</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 10816</div>
+            <h3>यांत्रिक कंपन<br>मूल्यांकन</h3>
+            <p>घूर्णन मशीनरी मॉडल के लिए असंगति सीमाएँ ISO 10816 ज़ोन सीमाओं से जुड़ी हैं &mdash; मॉडल मानक के सापेक्ष विचलन चिह्नित करते हैं, मनमानी बेसलाइन नहीं।</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">Cloud · AI</div>
+            <h3>Azure ML · SageMaker · Vertex AI</h3>
+            <p>पाइपलाइन क्लाइंट के मौजूदा क्लाउड पर तैनात &mdash; Azure, AWS या Google Cloud &mdash; Droz के प्रमाणित पार्टनर समझौतों के माध्यम से।</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/hi/standards/associations/">प्रमाणनों और संघों की पूर्ण सूची &rarr;</a> &nbsp;&middot;&nbsp; <a href="/hi/standards/cloud-ai-partners/">Cloud और AI पार्टनर &rarr;</a> &nbsp;&middot;&nbsp; <a href="/hi/software/ai-machine-learning/">अंतर्निहित AI प्रैक्टिस (LLM, RAG, मूल्यांकन) &rarr;</a></p>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>संबंधित क्षमताएँ</h6>
+        <ul>
+          <li><a href="/hi/engineering/predictive-maintenance/">भविष्यसूचक रखरखाव</a></li>
+          <li><a href="/hi/engineering/reliability-data-platform/">विश्वसनीयता डेटा प्लेटफ़ॉर्म</a></li>
+          <li><a href="/hi/software/ai-machine-learning/">AI और मशीन लर्निंग सिस्टम</a></li>
+          <li><a href="/hi/software/cloud-migration/">क्लाउड माइग्रेशन</a></li>
+          <li><a href="/hi/software/business-process-automation/">व्यावसायिक प्रक्रिया स्वचालन</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>हम जो मानक लागू करते हैं</h6>
+        <ul>
+          <li><a href="/hi/standards/associations/">SOC 2 Type II</a></li>
+          <li><a href="/hi/standards/associations/">ISO 10816</a></li>
+          <li><a href="/hi/standards/associations/">CMVA</a></li>
+          <li><a href="/hi/standards/cloud-ai-partners/">Azure / AWS / GCP पार्टनर</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>यह स्तंभ कहाँ अग्रणी है</h6>
+        <ul>
+          <li><a href="/hi/industries/refineries-oil-gas/">रिफाइनरी &middot; तेल और गैस</a></li>
+          <li><a href="/hi/industries/power-generation/">विद्युत उत्पादन</a></li>
+          <li><a href="/hi/industries/energy-operators/">ऊर्जा संचालक</a></li>
+          <li><a href="/hi/industries/mining-metals/">खनन और धातु</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>किसी पार्टनर से बात करें</h6>
+        <p>सहयोग की शुरुआत एक वरिष्ठ पार्टनर द्वारा संचालित स्कोपिंग बातचीत से होती है।</p>
+        <a href="/hi/contact/#engagement-form" class="btn btn-light" style="text-align:center; display:block;">सहयोग का अनुरोध करें &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ AI-संचालित एसेट इंटेलिजेंस</div>
+    <div class="stmt">जहाँ क्षेत्र प्रैक्टिस और डेटा परत मिलती हैं, <em>परिचालन मॉडल बढ़ता जाता है।</em></div>
+    <div class="creds">
+      <a href="/hi/contact/#engagement-form" class="btn btn-primary">सहयोग का अनुरोध करें <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — एक औद्योगिक प्रौद्योगिकी फर्म जो एंटरप्राइज़ सॉफ़्टवेयर, विश्वसनीयता इंजीनियरिंग और अनुप्रयुक्त AI प्रदान करती है। बर्लिंगटन, ओंटारियो। 2004 में स्थापित।</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>सॉफ़्टवेयर</h6>
+        <ul>
+          <li><a href="/hi/software/">अवलोकन</a></li>
+          <li><a href="/hi/software/custom-software-development/">कस्टम सॉफ़्टवेयर</a></li>
+          <li><a href="/hi/software/application-development/">एप्लिकेशन डेवलपमेंट</a></li>
+          <li><a href="/hi/software/ai-machine-learning/">AI और मशीन लर्निंग</a></li>
+          <li><a href="/hi/software/it-infrastructure/">IT अवसंरचना</a></li>
+          <li><a href="/hi/software/business-process-automation/">व्यावसायिक स्वचालन</a></li>
+          <li><a href="/hi/software/cloud-migration/">क्लाउड माइग्रेशन</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>इंजीनियरिंग</h6>
+        <ul>
+          <li><a href="/hi/engineering/">अवलोकन</a></li>
+          <li><a href="/hi/engineering/predictive-maintenance/">भविष्यसूचक रखरखाव</a></li>
+          <li><a href="/hi/engineering/reliability-data-platform/">विश्वसनीयता डेटा</a></li>
+          <li><a href="/hi/engineering/ai-asset-intelligence/">एसेट इंटेलिजेंस</a></li>
+          <li><a href="/hi/industries/">सेवित उद्योग</a></li>
+          <li><a href="/hi/standards/">मानक</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>फर्म</h6>
+        <ul>
+          <li><a href="/hi/about/">हमारे बारे में</a></li>
+          <li><a href="/hi/contact/">संपर्क</a></li>
+          <li><a href="/hi/contact/#procurement-form">खरीद</a></li>
+          <li><a href="/hi/press/">प्रेस</a></li>
+          <li><a href="/hi/careers/">करियर</a></li>
+          <li><a href="/hi/insights/">अंतर्दृष्टि</a></li>
+          <li><a href="/hi/capabilities-statement/">क्षमता विवरण</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>भाषा</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/hi/legal/privacy/">गोपनीयता</a>
+        <a href="/hi/legal/terms/">शर्तें</a>
+        <a href="/hi/legal/accessibility/">सुगम्यता</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

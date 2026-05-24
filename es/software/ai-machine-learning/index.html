@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sistemas de IA y aprendizaje automático — Droz Technologies</title>
+  <meta name="description" content="Diseñamos y desplegamos IA que llega a producción. Copilotos impulsados por LLM, modelos predictivos y pipelines de ML — seleccionados, construidos, evaluados, desplegados y monitoreados por un equipo senior que se responsabiliza del sistema durante su primer año de operación.">
+  <link rel="canonical" href="https://droz.tech/es/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/software/ai-machine-learning/">
+  <meta property="og:title" content="Sistemas de IA y aprendizaje automático — Droz Technologies">
+  <meta property="og:description" content="Diseñamos y desplegamos IA que llega a producción. Copilotos impulsados por LLM, modelos predictivos y pipelines de ML — seleccionados, construidos, evaluados, desplegados y monitoreados por un equipo senior que se responsabiliza del sistema durante su primer año de operación.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-software.png">
+  <meta property="og:url" content="https://droz.tech/es/software/ai-machine-learning/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://droz.tech/en/software/" },
+      { "@type": "ListItem", "position": 3, "name": "AI & Machine Learning Systems", "item": "https://droz.tech/en/software/ai-machine-learning/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI & Machine Learning Systems",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "AI & Machine Learning Systems",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "Diseñamos y desplegamos IA que llega a producción. Copilotos impulsados por LLM, modelos predictivos y pipelines de ML — seleccionados, construidos, evaluados, desplegados y monitoreados por un equipo senior que se responsabiliza del sistema durante su primer año de operación.",
+    "inLanguage": "es"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="software/ai-machine-learning" data-locale="es" data-active-nav="software">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/es/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/es/software/" data-nav="software" class="is-active">Software</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/es/software/">Visión general</a>
+              <a href="/es/software/custom-software-development/">Desarrollo de software a medida</a>
+              <a href="/es/software/application-development/">Desarrollo de aplicaciones</a>
+              <a href="/es/software/ai-machine-learning/">Sistemas de IA y aprendizaje automático</a>
+              <a href="/es/software/it-infrastructure/">Infraestructura de TI moderna</a>
+              <a href="/es/software/business-process-automation/">Automatización de procesos de negocio</a>
+              <a href="/es/software/cloud-migration/">Migración y arquitectura en la nube</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/es/engineering/" data-nav="engineering">Ingeniería</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">Pilares</div>
+              <a href="/es/engineering/">Visión general</a>
+              <a href="/es/engineering/predictive-maintenance/">Servicios de mantenimiento predictivo</a>
+              <a href="/es/engineering/reliability-data-platform/">Datos y monitoreo de confiabilidad</a>
+              <a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos impulsada por IA</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Disciplinas</div>
+              <a href="/es/engineering/disciplines/vibration-analysis/">Análisis de vibraciones</a>
+              <a href="/es/engineering/disciplines/thermography/">Termografía</a>
+              <a href="/es/engineering/disciplines/ultrasound/">Ultrasonido</a>
+              <a href="/es/engineering/disciplines/laser-alignment/">Alineación láser</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/es/industries/" data-nav="industries">Industrias</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">Energía</div>
+              <a href="/es/industries/power-generation/">Generación de energía</a>
+              <a href="/es/industries/nuclear-power/">Energía nuclear</a>
+              <a href="/es/industries/refineries-oil-gas/">Refinerías · Petróleo y gas</a>
+              <a href="/es/industries/energy-operators/">Operadores de energía</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Materiales y manufactura</div>
+              <a href="/es/industries/automotive/">Automotriz</a>
+              <a href="/es/industries/general-manufacturing/">Manufactura general</a>
+              <a href="/es/industries/petrochemicals/">Petroquímicos</a>
+              <a href="/es/industries/industrial-chemicals/">Químicos industriales</a>
+              <a href="/es/industries/fertilizers-agrochemicals/">Fertilizantes · Agroquímicos</a>
+              <a href="/es/industries/mining-metals/">Minería y metales</a>
+              <a href="/es/industries/pulp-paper/">Pulpa y papel</a>
+              <a href="/es/industries/cement/">Plantas de cemento</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Consumo y sectores regulados</div>
+              <a href="/es/industries/food-manufacturing/">Manufactura de alimentos</a>
+              <a href="/es/industries/beverage/">Fabricantes de bebidas</a>
+              <a href="/es/industries/pharmaceutical/">Farmacéutica</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Sector público</div>
+              <a href="/es/industries/public-sector-goc/">Sector público · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/es/products/" data-nav="products">Productos</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/es/products/">Portafolio</a>
+              <a href="/es/products/droz-legal/">Droz Legal</a>
+              <a href="/es/products/samson-ai/">Samson AI</a>
+              <a href="/es/products/rx-change/">RX Change</a>
+              <a href="/es/products/visp/">VISP</a>
+              <a href="/es/products/droz-predictive/">Droz Predictive</a>
+              <a href="/es/products/droz-rental/">Droz Rental</a>
+              <a href="/es/products/droz-investments/">Droz Investments</a>
+              <a href="/es/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/es/standards/" data-nav="standards">Normas</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/es/standards/">Visión general</a>
+              <a href="/es/standards/associations/">Asociaciones</a>
+              <a href="/es/standards/technologies/">Tecnologías</a>
+              <a href="/es/standards/cloud-ai-partners/">Socios de nube e IA</a>
+            </div>
+          </div>
+        </div>
+        <a href="/es/insights/" data-nav="insights">Perspectivas</a>
+        <a href="/es/about/" data-nav="about">Acerca de</a>
+        <a href="/es/contact/" data-nav="contact">Contacto</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/software/ai-machine-learning/">EN</a>
+        <a href="/fr/software/ai-machine-learning/">FR</a>
+        <a href="/es/software/ai-machine-learning/" class="on">ES</a>
+        <a href="/zh/software/ai-machine-learning/" lang="zh-Hans">中文</a>
+        <a href="/hi/software/ai-machine-learning/" lang="hi">हिं</a>
+      </div>
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Esta página fue traducida automáticamente. La versión en inglés es la autoritativa.</span>
+  <a href="/en/software/ai-machine-learning/">Ver en inglés</a>
+  <button class="mt-notice-x" aria-label="Cerrar">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter);">
+  <a href="/es/">Inicio</a>
+  <span class="sep">/</span>
+  <a href="/es/software/">Software</a>
+  <span class="sep">/</span>
+  <span class="here">Sistemas de IA y aprendizaje automático</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Software · 03 · Inteligencia · Insignia</div>
+      <h1>IA que <em>genera resultados</em> — no presentaciones.</h1>
+      <p class="lede">Diseñamos y desplegamos IA que llega a producción. Copilotos impulsados por LLM, modelos predictivos y pipelines de ML — seleccionados, construidos, evaluados, desplegados y monitoreados por un equipo senior que se responsabiliza del sistema durante su primer año de operación.</p>
+      <div class="cta">
+        <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">→</span></a>
+        <a href="/es/standards/cloud-ai-partners/" class="btn btn-ghost">Socios de nube e IA</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Servicio</div><div class="v">03 de 06 · Insignia</div></div>
+      <div><div class="k">Socios de modelos fundacionales</div><div class="v">Anthropic · OpenAI · Cohere</div></div>
+      <div><div class="k">Plataformas en la nube</div><div class="v">Azure AI Foundry · AWS Bedrock · Databricks</div></div>
+      <div><div class="k">Colaboración</div><div class="v">Liderada por socios principales</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <div class="layout-with-toc">
+        <aside class="toc" aria-label="En esta página">
+          <h6>En esta página</h6>
+          <ul>
+            <li><a href="#capabilities">Capacidades</a></li>
+            <li><a href="#discovery">Descubrimiento</a></li>
+            <li><a href="#approach">Enfoque</a></li>
+            <li><a href="#mlops">MLOps</a></li>
+            <li><a href="#integration">Integración</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <li><a href="#references">Referencias</a></li>
+            <li><a href="#industries">Industrias</a></li>
+            <li><a href="#engage">Colaborar</a></li>
+          </ul>
+        </aside>
+
+        <div class="layout-with-toc-main">
+
+          <!-- Section 1 · Capabilities (6 cards) -->
+          <div id="capabilities" class="eyebrow-mono" style="margin-bottom: 16px;">§ Capacidades</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Lo que construimos.</h2>
+
+          <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+            <article class="svc">
+              <div class="svc-num">01 · Copilotos LLM</div>
+              <h3>Asistentes ajustados<br>al dominio</h3>
+              <p>Asistentes ajustados al dominio para operadores de planta, equipos jurídicos, analistas e ingenieros de campo. Con generación aumentada por recuperación, citas de evidencia y un rastro de respuestas auditable.</p>
+              <div class="svc-tags">
+                <span class="tag">RAG</span>
+                <span class="tag">Uso de herramientas</span>
+                <span class="tag">Registro de auditoría</span>
+              </div>
+            </article>
+            <article class="svc">
+              <div class="svc-num">02 · Inteligencia predictiva</div>
+              <h3>Predicción de fallas<br>y detección de anomalías</h3>
+              <p>Predicción de fallas, detección de anomalías y modelos de pronóstico entrenados con datos operativos — firmas de vibración, telemetría, flujos de transacciones, historiales de reclamaciones.</p>
+              <div class="svc-tags">
+                <span class="tag">Series de tiempo</span>
+                <span class="tag">Gradient boosting</span>
+                <span class="tag">Detección de anomalías</span>
+              </div>
+            </article>
+            <article class="svc">
+              <div class="svc-num">03 · Pipelines de MLOps</div>
+              <h3>El andamiaje<br>que mantiene viva la IA</h3>
+              <p>Infraestructura de entrenamiento, evaluación, despliegue y monitoreo. Ejecuciones reproducibles, modelos registrados y reversiones. El andamiaje aburrido que mantiene la IA en producción durante años.</p>
+              <div class="svc-tags">
+                <span class="tag">Reproducible</span>
+                <span class="tag">Registro de modelos</span>
+                <span class="tag">Reversiones</span>
+              </div>
+            </article>
+            <article class="svc" style="border-top: 1px solid var(--rule);">
+              <div class="svc-num">04 · Integración de modelos fundacionales</div>
+              <h3>Cableado de producción<br>para Claude, GPT, Cohere</h3>
+              <p>Cableado de producción para Anthropic Claude, OpenAI, Cohere y Azure AI Foundry — con prompt caching, uso de herramientas, salidas estructuradas y políticas de respaldo.</p>
+              <div class="svc-tags">
+                <span class="tag">Claude</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">Prompt caching</span>
+              </div>
+            </article>
+            <article class="svc" style="border-top: 1px solid var(--rule);">
+              <div class="svc-num">05 · Desarrollo de modelos a medida</div>
+              <h3>Cuando los modelos fundacionales<br>no son la respuesta</h3>
+              <p>Cuando los modelos fundacionales no son la respuesta correcta: ML clásico, gradient boosting, aprendizaje profundo, series de tiempo y pilotos de aprendizaje por refuerzo — cuando se justifica.</p>
+              <div class="svc-tags">
+                <span class="tag">XGBoost</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">Pilotos de RL</span>
+              </div>
+            </article>
+            <article class="svc" style="border-top: 1px solid var(--rule);">
+              <div class="svc-num">06 · Evaluación y seguridad</div>
+              <h3>Evaluaciones, red-team,<br>cumplimiento de políticas</h3>
+              <p>Evaluaciones offline y online, conjuntos de referencia, bucles de revisión humana, red-teaming y cumplimiento de políticas — integrados en el pipeline de despliegue, no como una ocurrencia tardía.</p>
+              <div class="svc-tags">
+                <span class="tag">Conjuntos de referencia</span>
+                <span class="tag">Red-team</span>
+                <span class="tag">Revisión humana</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Section 2 · Discovery -->
+          <div id="discovery" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Descubrimiento</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">No empezamos por el modelo. <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">Empezamos por la decisión.</em></h2>
+
+          <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; border-top: 1px solid var(--rule); padding-top: 40px;">
+            <div>
+              <blockquote style="border-left: 2px solid var(--accent-2); padding: 6px 0 6px 24px; margin: 0; font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--ink); line-height: 1.4;">
+                Si no podemos escribir los criterios de cancelación, no podemos justificar la construcción.
+              </blockquote>
+            </div>
+            <div>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                Toda colaboración de IA en Droz comienza con un ejercicio de encuadre del problema de una a dos semanas. El objetivo es identificar la <em style="color: var(--accent-2);">decisión</em> que la IA cambiará — un plan de mantenimiento, un enrutamiento de triaje, una resolución de reclamaciones, una puntuación de adquisiciones — y el costo de equivocarse hoy en esa decisión.
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                A partir de ahí, trabajamos hacia atrás hasta los datos, la selección del modelo, la integración y el despliegue. La mayoría de las colaboraciones eliminan uno o dos comienzos en falso en esta fase: la carga de trabajo que "suena a LLM" es en realidad un motor de reglas estructurado; la tarea de predicción que "necesita aprendizaje profundo" en realidad quiere gradient boosting sobre mejores características.
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0;">
+                El resultado del descubrimiento es un resumen por escrito: la decisión, la línea base, los enfoques candidatos, los datos, el ROM aproximado y los criterios de cancelación. Firmable; revisable; auditable.
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 3 · Approach (.ai-diff-grid) -->
+          <div id="approach" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Enfoque</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Modelos fundacionales vs. a medida — <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">cuándo usar cada uno.</em></h2>
+
+          <div class="ai-diff-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="ai-cell">
+              <div class="num">A · Modelos fundacionales</div>
+              <h4>Claude, GPT, Cohere, Azure AI Foundry</h4>
+              <ul>
+                <li>La tarea es rica en lenguaje (redactar, resumir, clasificar texto libre, conversar).</li>
+                <li>Necesita lanzar en semanas, no en trimestres.</li>
+                <li>La flexibilidad de esquema importa más que el costo de latencia.</li>
+                <li>La generación aumentada por recuperación (RAG) le da al modelo el contexto del dominio que necesita.</li>
+              </ul>
+            </div>
+            <div class="ai-cell">
+              <div class="num">B · Modelos a medida</div>
+              <h4>Entrenados, propios, deterministas</h4>
+              <ul>
+                <li>La tarea es estructurada (pronóstico, puntuación, detección de anomalías, visión).</li>
+                <li>La latencia de inferencia debe ser inferior a 50 ms o el costo debe ser determinista.</li>
+                <li>Los datos de entrenamiento existen y son lo bastante grandes (por lo general más de 10 000 ejemplos etiquetados).</li>
+                <li>Necesita la propiedad total de los pesos del modelo y del pipeline de entrenamiento.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="padding: 24px; background: var(--paper-bone); border: 1px solid var(--rule); margin-top: 32px;">
+            <div class="svc-num" style="margin-bottom: 8px;">Híbrido · el caso común</div>
+            <p style="font-size: 15px; line-height: 1.65; color: var(--graphite); margin: 0;">El modelo fundacional orquesta el flujo de trabajo; los modelos a medida manejan las subtareas deterministas. Diseñamos ambas mitades y el contrato entre ellas.</p>
+          </div>
+
+          <!-- Section 4 · MLOps -->
+          <div id="mlops" class="eyebrow-mono" style="margin: 80px 0 16px;">§ MLOps</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Entrenamiento → Evaluación → <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">Despliegue</em> → Monitoreo.</h2>
+
+          <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="step">
+              <div class="ord">01 · Entrenamiento</div>
+              <div class="ord-num">01</div>
+              <h5>Entrenamiento</h5>
+              <p>Pipelines reproducibles en Databricks, SageMaker o Azure ML. Conjuntos de datos versionados, características registradas, experimentos rastreados. Cada modelo tiene un linaje.</p>
+            </div>
+            <div class="step">
+              <div class="ord">02 · Evaluación</div>
+              <div class="ord-num">02</div>
+              <h5>Evaluación</h5>
+              <p>Evaluaciones offline sobre un conjunto de referencia + pruebas reservadas; evaluaciones de seguridad / red-team; intervalos de confianza estadística en la métrica principal. No se promueve ningún modelo que no haya aprobado.</p>
+            </div>
+            <div class="step">
+              <div class="ord">03 · Despliegue</div>
+              <div class="ord-num">03</div>
+              <h5>Despliegue</h5>
+              <p>Lanzamientos canary. Ejecuciones en sombra. Blue-green para modelos en línea. Actualización por lotes para modelos de pronóstico. Cada despliegue es reversible con un solo clic.</p>
+            </div>
+            <div class="step">
+              <div class="ord">04 · Monitoreo</div>
+              <div class="ord-num">04</div>
+              <h5>Monitoreo</h5>
+              <p>Detección de desviaciones en entradas, salidas y decisiones posteriores. Tableros de calidad. Colas de revisión humana para predicciones de baja confianza. Alertas que despiertan a la guardia.</p>
+            </div>
+          </div>
+
+          <!-- Section 5 · Integration -->
+          <div id="integration" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Integración</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">El modelo es un servicio. <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">Conectamos el servicio a su negocio.</em></h2>
+
+          <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; border-top: 1px solid var(--rule); padding-top: 40px;">
+            <div>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                Un sistema de IA solo es útil cuando vive dentro del flujo de trabajo del operador. Integramos los modelos detrás de una API versionada, con registro estructurado, acceso basado en roles y un panel de evidencia que el operador puede auditar.
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                Del lado del LLM, entregamos contratos de uso de herramientas, esquemas de salida (Pydantic en el backend; Zod en el frontend), prompt caching y respaldos elegantes. Del lado del ML, entregamos predicciones por lotes a su data warehouse, inferencia en línea detrás de un API gateway y un feature store en el que el modelo confía.
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0;">
+                También construimos la superficie humana — el tablero, las alertas, los controles de anulación, la cola de revisión. El objetivo es el apoyo a la decisión, no el reemplazo de la decisión.
+              </p>
+            </div>
+            <div class="aside-block" style="padding: 24px; align-self: start;">
+              <h6>Vocabulario de integración</h6>
+              <ul>
+                <li>API versionada (REST + OpenAPI)</li>
+                <li>Contrato de uso de herramientas (LLM)</li>
+                <li>Esquemas de salida (Pydantic / Zod)</li>
+                <li>Política de prompt caching</li>
+                <li>Respaldos y circuit breakers</li>
+                <li>RBAC + registro de auditoría</li>
+                <li>Panel de evidencia para revisión del operador</li>
+                <li>Anulación y humano en el bucle</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section 6 · Stack -->
+          <div id="stack" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Stack</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Herramientas y tecnologías.</h2>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; border-top: 1px solid var(--rule); padding-top: 32px;">
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">Socios de modelos fundacionales</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Anthropic (Claude), OpenAI, Cohere, Azure AI Foundry, AWS Bedrock.</p>
+              <div class="svc-tags">
+                <span class="tag">Claude</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">Cohere</span>
+                <span class="tag">Azure AI Foundry</span>
+                <span class="tag">AWS Bedrock</span>
+              </div>
+            </div>
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">Plataformas de ML</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Databricks, Azure ML, SageMaker, Vertex AI.</p>
+              <div class="svc-tags">
+                <span class="tag">Databricks</span>
+                <span class="tag">Azure ML</span>
+                <span class="tag">SageMaker</span>
+                <span class="tag">Vertex AI</span>
+              </div>
+            </div>
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">Frameworks</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">PyTorch, scikit-learn, XGBoost, LightGBM, transformers, sentence-transformers, LangGraph (donde la orquestación lo justifica).</p>
+              <div class="svc-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">LightGBM</span>
+                <span class="tag">LangGraph</span>
+              </div>
+            </div>
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">Datos e infraestructura</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Snowflake, PostgreSQL + pgvector, Pinecone, Weaviate, Parquet, Apache Spark, Airflow, Kubeflow.</p>
+              <div class="svc-tags">
+                <span class="tag">Snowflake</span>
+                <span class="tag">pgvector</span>
+                <span class="tag">Pinecone</span>
+                <span class="tag">Airflow</span>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size: 13.5px; color: var(--graphite-2); margin-top: 24px; line-height: 1.6;">
+            Referencias cruzadas — <a href="/es/standards/cloud-ai-partners/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Perfiles completos de socios</a> · <a href="/es/standards/technologies/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Todas las tecnologías</a> · <a href="/es/software/cloud-migration/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Capa base en la nube</a>.
+          </p>
+
+          <!-- Section 7 · References -->
+          <div id="references" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Trabajo de referencia</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Dónde <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">funciona en producción.</em></h2>
+
+          <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+            <article class="svc">
+              <a href="/es/products/samson-ai/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+                <div class="svc-num">Copiloto de IA industrial</div>
+                <h3>Samson AI</h3>
+                <p>Copiloto LLM en producción para operadores de planta. Recuperación sobre manuales de equipos, órdenes de trabajo e historial de condición. Registro de auditoría obligatorio.</p>
+                <div class="svc-tags">
+                  <span class="tag">RAG</span>
+                  <span class="tag">Registro de auditoría</span>
+                </div>
+              </a>
+            </article>
+            <article class="svc">
+              <a href="/es/products/droz-predictive/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+                <div class="svc-num">Predicción de fallas a escala</div>
+                <h3>Droz Predictive</h3>
+                <p>Modelos de ML en producción que predicen fallas de rodamientos, motores y equipos rotativos a partir de firmas de vibración, térmicas y de ultrasonido.</p>
+                <div class="svc-tags">
+                  <span class="tag">Series de tiempo</span>
+                  <span class="tag">Enlace cruzado con ingeniería</span>
+                </div>
+              </a>
+            </article>
+            <article class="svc">
+              <a href="/es/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+                <div class="svc-num">Colaboración anonimizada</div>
+                <h3>Triaje del sector público</h3>
+                <p>Un asistente de triaje con patrón Protected-B para un regulador. RAG sobre documentos de política, humano en el bucle en cada recomendación.</p>
+                <div class="svc-tags">
+                  <span class="tag">Solo vista previa</span>
+                </div>
+              </a>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Capacidades relacionadas</h6>
+        <ul>
+          <li><a href="/es/software/custom-software-development/">Desarrollo de software a medida</a></li>
+          <li><a href="/es/software/application-development/">Desarrollo de aplicaciones</a></li>
+          <li><a href="/es/software/cloud-migration/">Migración y arquitectura en la nube</a></li>
+          <li><a href="/es/software/business-process-automation/">Automatización de procesos de negocio</a></li>
+          <li><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos impulsada por IA</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Normas que aplicamos</h6>
+        <ul>
+          <li><a href="/es/standards/cloud-ai-partners/">Socios de nube e IA</a></li>
+          <li><a href="/es/standards/">Visión general de normas</a></li>
+          <li><a href="/es/standards/technologies/">Tecnologías</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Hable con un socio</h6>
+        <p>Toda colaboración de IA comienza con un resumen del problema de una página, escrito junto a un socio principal.</p>
+
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-form" data-form="engagement-request" style="gap: 12px; max-width: none;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · software/ai-machine-learning">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="software/ai-machine-learning">
+          <input type="hidden" name="locale" value="es">
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="name" style="color: rgba(255,255,255,0.8);">Nombre</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email" style="color: rgba(255,255,255,0.8);">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="company" style="color: rgba(255,255,255,0.8);">Empresa</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="message" style="color: rgba(255,255,255,0.8);">Describa brevemente</label>
+            <textarea id="message" name="message" required style="min-height: 80px;"></textarea>
+          </div>
+          <div class="field">
+            <label for="consent" style="display:flex; gap:8px; align-items:flex-start; text-transform:none; letter-spacing:0; font-family:var(--font-sans); font-size:12px; color:rgba(255,255,255,0.75);">
+              <input type="checkbox" id="consent" name="consent" required style="margin-top:2px;">
+              <span>Doy mi consentimiento según la <a href="/es/legal/privacy/" style="color:#9FC4E6; border-bottom:1px solid rgba(159,196,230,.4);">Política de privacidad</a>.</span>
+            </label>
+          </div>
+          <div class="field">
+            <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITEKEY"></div>
+          </div>
+          <button type="submit" class="btn btn-light" style="width: 100%; justify-content: center;">Solicitar una colaboración <span style="opacity:.7">→</span></button>
+          <a href="/es/contact/#engagement-form" style="color: #9FC4E6; font-size: 12px; text-align: center; border: 0; margin-top: 4px;">O vaya al formulario de contacto completo →</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Section 8 · Industries -->
+<section id="industries" class="section" style="background: var(--paper-bone); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="div-header">
+      <div>
+        <small>§ Industrias atendidas</small>
+        <div class="slash">Donde aterriza <em>la IA.</em></div>
+      </div>
+      <p class="blurb">A continuación, seis sectores representativos. La lista completa de 17 vive en la <a href="/es/industries/" style="color:var(--accent); border-bottom:1px solid var(--accent);">visión general de industrias</a>.</p>
+    </div>
+
+    <div class="industries" style="margin-top: 48px;">
+      <a href="/es/industries/refineries-oil-gas/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">01</span><span class="name">Refinerías · Petróleo y gas</span></a>
+      <a href="/es/industries/energy-operators/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">02</span><span class="name">Operadores de energía</span></a>
+      <a href="/es/industries/nuclear-power/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">03</span><span class="name">Energía nuclear</span></a>
+      <a href="/es/industries/pharmaceutical/" class="industry" style="text-decoration:none; border:0; border-bottom:1px solid var(--rule);"><span class="idx">04</span><span class="name">Farmacéutica</span></a>
+      <a href="/es/industries/public-sector-goc/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">05</span><span class="name">Sector público · GoC</span></a>
+      <a href="/es/industries/general-manufacturing/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">06</span><span class="name">Manufactura general</span></a>
+      <a href="/es/industries/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); grid-column: span 2;"><span class="idx">→</span><span class="name">Todas las industrias</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Section 9 · CTA band -->
+<section id="engage" class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Colabore con Droz · Inteligencia</div>
+    <div class="stmt">¿IA que ya debería estar funcionando? <em>La diseñamos, la construimos, la evaluamos, la desplegamos y nos hacemos cargo de la rotación de guardia.</em></div>
+    <div class="creds">
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — una empresa de tecnología industrial que ofrece software empresarial, ingeniería de confiabilidad e IA aplicada. Burlington, Ontario. Fundada en 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 Cities</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Software</h6>
+        <ul>
+          <li><a href="/es/software/">Visión general</a></li>
+          <li><a href="/es/software/custom-software-development/">Software a medida</a></li>
+          <li><a href="/es/software/application-development/">Desarrollo de aplicaciones</a></li>
+          <li><a href="/es/software/ai-machine-learning/">IA y aprendizaje automático</a></li>
+          <li><a href="/es/software/it-infrastructure/">Infraestructura de TI</a></li>
+          <li><a href="/es/software/business-process-automation/">Automatización de negocio</a></li>
+          <li><a href="/es/software/cloud-migration/">Migración a la nube</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Ingeniería</h6>
+        <ul>
+          <li><a href="/es/engineering/">Visión general</a></li>
+          <li><a href="/es/engineering/predictive-maintenance/">Mantenimiento predictivo</a></li>
+          <li><a href="/es/engineering/reliability-data-platform/">Datos de confiabilidad</a></li>
+          <li><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos</a></li>
+          <li><a href="/es/industries/">Industrias atendidas</a></li>
+          <li><a href="/es/standards/">Normas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Empresa</h6>
+        <ul>
+          <li><a href="/es/about/">Acerca de</a></li>
+          <li><a href="/es/contact/">Contacto</a></li>
+          <li><a href="/es/contact/#procurement-form">Adquisiciones</a></li>
+          <li><a href="/es/press/">Prensa</a></li>
+          <li><a href="/es/careers/">Carreras</a></li>
+          <li><a href="/es/insights/">Perspectivas</a></li>
+          <li><a href="/es/capabilities-statement/">Declaración de capacidades</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Idioma</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/es/legal/privacy/">Privacidad</a>
+        <a href="/es/legal/terms/">Términos</a>
+        <a href="/es/legal/accessibility/">Accesibilidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

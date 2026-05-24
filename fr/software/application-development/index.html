@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Développement d'applications — Droz Technologies</title>
+  <meta name="description" content="Droz conçoit et livre des applications Web et mobiles de calibre production — React, Next.js, React Native, SwiftUI — sous la direction d'un partenaire principal et avec la pleine maîtrise du système dorsal.">
+  <link rel="canonical" href="https://droz.tech/fr/software/application-development/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/software/application-development/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/software/application-development/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/software/application-development/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/software/application-development/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/software/application-development/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/software/application-development/">
+  <meta property="og:title" content="Développement d'applications — Droz Technologies">
+  <meta property="og:description" content="Droz conçoit et livre des applications Web et mobiles de calibre production — React, Next.js, React Native, SwiftUI — sous la direction d'un partenaire principal et avec la pleine maîtrise du système dorsal.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-software.png">
+  <meta property="og:url" content="https://droz.tech/fr/software/application-development/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Logiciels", "item": "https://droz.tech/en/software/" },
+      { "@type": "ListItem", "position": 3, "name": "Développement d'applications", "item": "https://droz.tech/en/software/application-development/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Développement d'applications",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "Application Development",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "Droz conçoit et livre des applications Web et mobiles de calibre production — React, Next.js, React Native, SwiftUI — sous la direction d'un partenaire principal et avec la pleine maîtrise du système dorsal."
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="software/application-development" data-locale="fr" data-active-nav="software">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/fr/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/fr/software/" data-nav="software" class="is-active">Logiciels</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/software/">Aperçu</a>
+              <a href="/fr/software/custom-software-development/">Développement de logiciels sur mesure</a>
+              <a href="/fr/software/application-development/">Développement d'applications</a>
+              <a href="/fr/software/ai-machine-learning/">Systèmes d'IA et d'apprentissage machine</a>
+              <a href="/fr/software/it-infrastructure/">Infrastructure TI moderne</a>
+              <a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a>
+              <a href="/fr/software/cloud-migration/">Migration et architecture infonuagiques</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/engineering/" data-nav="engineering">Ingénierie</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">Piliers</div>
+              <a href="/fr/engineering/">Aperçu</a>
+              <a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a>
+              <a href="/fr/engineering/reliability-data-platform/">Données et surveillance de la fiabilité</a>
+              <a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs pilotée par l'IA</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Disciplines</div>
+              <a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a>
+              <a href="/fr/engineering/disciplines/thermography/">Thermographie</a>
+              <a href="/fr/engineering/disciplines/ultrasound/">Ultrasons</a>
+              <a href="/fr/engineering/disciplines/laser-alignment/">Alignement laser</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/industries/" data-nav="industries">Industries</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">Énergie</div>
+              <a href="/fr/industries/power-generation/">Production d'électricité</a>
+              <a href="/fr/industries/nuclear-power/">Énergie nucléaire</a>
+              <a href="/fr/industries/refineries-oil-gas/">Raffineries · Pétrole et gaz</a>
+              <a href="/fr/industries/energy-operators/">Exploitants énergétiques</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Matériaux et fabrication</div>
+              <a href="/fr/industries/automotive/">Automobile</a>
+              <a href="/fr/industries/general-manufacturing/">Fabrication générale</a>
+              <a href="/fr/industries/petrochemicals/">Pétrochimie</a>
+              <a href="/fr/industries/industrial-chemicals/">Produits chimiques industriels</a>
+              <a href="/fr/industries/fertilizers-agrochemicals/">Engrais · Produits agrochimiques</a>
+              <a href="/fr/industries/mining-metals/">Mines et métaux</a>
+              <a href="/fr/industries/pulp-paper/">Pâtes et papiers</a>
+              <a href="/fr/industries/cement/">Cimenteries</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Consommation et secteurs réglementés</div>
+              <a href="/fr/industries/food-manufacturing/">Fabrication alimentaire</a>
+              <a href="/fr/industries/beverage/">Fabricants de boissons</a>
+              <a href="/fr/industries/pharmaceutical/">Pharmaceutique</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Secteur public</div>
+              <a href="/fr/industries/public-sector-goc/">Secteur public · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/products/" data-nav="products">Produits</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/products/">Portefeuille</a>
+              <a href="/fr/products/droz-legal/">Droz Legal</a>
+              <a href="/fr/products/samson-ai/">Samson AI</a>
+              <a href="/fr/products/rx-change/">RX Change</a>
+              <a href="/fr/products/visp/">VISP</a>
+              <a href="/fr/products/droz-predictive/">Droz Predictive</a>
+              <a href="/fr/products/droz-rental/">Droz Rental</a>
+              <a href="/fr/products/droz-investments/">Droz Investments</a>
+              <a href="/fr/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/standards/" data-nav="standards">Normes</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/standards/">Aperçu</a>
+              <a href="/fr/standards/associations/">Associations</a>
+              <a href="/fr/standards/technologies/">Technologies</a>
+              <a href="/fr/standards/cloud-ai-partners/">Partenaires infonuagiques et IA</a>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/insights/" data-nav="insights">Perspectives</a>
+        <a href="/fr/about/" data-nav="about">À propos</a>
+        <a href="/fr/contact/" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/software/application-development/">EN</a>
+        <a href="/fr/software/application-development/" class="on">FR</a>
+        <a href="/es/software/application-development/">ES</a>
+        <a href="/zh/software/application-development/" lang="zh-Hans">中文</a>
+        <a href="/hi/software/application-development/" lang="hi">हिं</a>
+      </div>
+      <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Cette page a été traduite automatiquement. La version anglaise fait foi.</span>
+  <a href="/en/software/application-development/">Voir en anglais</a>
+  <button class="mt-notice-x" aria-label="Fermer">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter);">
+  <a href="/fr/">Accueil</a>
+  <span class="sep">/</span>
+  <a href="/fr/software/">Logiciels</a>
+  <span class="sep">/</span>
+  <span class="here">Développement d'applications</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Logiciels · 02 · Applications</div>
+      <h1>Des applications qui sont livrées — et qui <em>le restent.</em></h1>
+      <p class="lede">Des applications Web, iOS, Android et multiplateformes conçues et développées comme un seul produit cohérent. Nous assumons le système de conception, le code source, le pipeline de mise en production et la rotation de garde.</p>
+      <div class="cta">
+        <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+        <a href="/fr/products/" class="btn btn-ghost">Parcourir le portefeuille de produits</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Service</div><div class="v">02 sur 06</div></div>
+      <div><div class="k">Cibles</div><div class="v">Web · iOS · Android</div></div>
+      <div><div class="k">Collaboration</div><div class="v">Dirigée par un partenaire principal</div></div>
+      <div><div class="k">Lancés</div><div class="v">8 produits au portefeuille</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- Section 1 · What we build -->
+      <div class="eyebrow-mono" style="margin-bottom: 16px;">§ Capacités</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Ce que nous bâtissons.</h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(2, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <div class="svc-num">01 · Applications Web</div>
+          <h3>Rendu serveur et cache en périphérie,<br>accessibilité intégrée</h3>
+          <p>Des applications Next.js et React avec rendu côté serveur, mise en cache en périphérie et accessibilité intégrée. Les cibles WCAG 2.2 AA sont atteintes, sinon la construction échoue.</p>
+          <div class="svc-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">WCAG 2.2</span>
+            <span class="tag">Cache en périphérie</span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-num">02 · Applications mobiles</div>
+          <h3>Parité multiplateforme,<br>natif là où ça compte</h3>
+          <p>React Native pour la parité multiplateforme; SwiftUI et Kotlin là où la surface native l'exige. Notifications poussées, liens profonds, biométrie, hors-ligne d'abord lorsque la charge de travail l'exige.</p>
+          <div class="svc-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">SwiftUI</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">Hors-ligne d'abord</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">03 · Conception UI / UX</div>
+          <h3>Le studio qui écrit<br>le code de production</h3>
+          <p>Entretiens de découverte, cartographie des parcours, système de conception et prototypes haute fidélité. Le même studio écrit le code de production.</p>
+          <div class="svc-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Système de conception</span>
+            <span class="tag">Cartographie des parcours</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">04 · Multiplateforme et PWA</div>
+          <h3>Un seul produit,<br>trois surfaces</h3>
+          <p>Un seul produit, trois surfaces — application Web, application mobile, composant intégrable. Jetons de conception partagés, types partagés, une seule source de vérité.</p>
+          <div class="svc-tags">
+            <span class="tag">PWA</span>
+            <span class="tag">Jetons partagés</span>
+            <span class="tag">TypeScript</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Section 2 · Engagement model -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Collaboration</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Découverte → Conception → <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">Construction</em> → Transfert.</h2>
+
+      <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="step">
+          <div class="ord">01 · Découverte</div>
+          <div class="ord-num">01</div>
+          <h5>Découverte</h5>
+          <p>Un partenaire principal mène le lancement : entretiens avec les utilisateurs, cartographie des parties prenantes, registre d'hypothèses. Résultat : un sommaire de produit + une cartographie des parcours.</p>
+        </div>
+        <div class="step">
+          <div class="ord">02 · Conception</div>
+          <div class="ord-num">02</div>
+          <h5>Conception</h5>
+          <p>Architecture de l'information, maquettes filaires, système de conception et prototypes cliquables dans Figma. Révisés chaque semaine avec votre équipe; verrouillés avant le sprint 1.</p>
+        </div>
+        <div class="step">
+          <div class="ord">03 · Construction</div>
+          <div class="ord-num">03</div>
+          <h5>Construction</h5>
+          <p>Sprints de 2 semaines. Web en Next.js ou React; mobile en React Native ou SwiftUI. Le pipeline CI livre en préproduction à chaque fusion; les mises en production sont cadencées par un train de livraison.</p>
+        </div>
+        <div class="step">
+          <div class="ord">04 · Transfert</div>
+          <div class="ord-num">04</div>
+          <h5>Transfert</h5>
+          <p>Soumission à l'App Store / Play Store, transfert de l'hébergement Web, tableaux de bord de surveillance, guide de soutien et une stabilisation de 90 jours. Transition vers un contrat de service géré au 91e jour au besoin.</p>
+        </div>
+      </div>
+
+      <!-- Section 3 · Tools & technologies -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Pile technologique</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Outils et technologies.</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; border-top: 1px solid var(--rule); padding-top: 32px;">
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Web</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Next.js, React, TypeScript, TanStack Query, Tailwind ou CSS pur avec jetons de conception, Storybook.</p>
+          <div class="svc-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">TanStack Query</span>
+            <span class="tag">Storybook</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Mobile</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">React Native (multiplateforme principal), SwiftUI (lorsque le natif iOS est requis), Kotlin / Jetpack Compose (lorsque le natif Android est requis), Expo pour l'itération rapide.</p>
+          <div class="svc-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">SwiftUI</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Expo</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">État et données</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Zustand, Redux Toolkit Query, Apollo, GraphQL, REST, temps réel via Socket.io ou WebSockets.</p>
+          <div class="svc-tags">
+            <span class="tag">Zustand</span>
+            <span class="tag">Apollo</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">WebSockets</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Conception et AQ</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Figma, audits d'accessibilité (WCAG 2.2 AA), Playwright pour les tests E2E Web, Detox pour les tests E2E mobiles, Sentry pour les erreurs d'exécution.</p>
+          <div class="svc-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Detox</span>
+            <span class="tag">Sentry</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13.5px; color: var(--graphite-2); margin-top: 24px; line-height: 1.6;">
+        Renvois — <a href="/fr/standards/cloud-ai-partners/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Liste complète des partenaires</a> · <a href="/fr/standards/technologies/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Liste complète des technologies</a> · <a href="/fr/software/custom-software-development/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Les systèmes dorsaux mobiles recoupent les Logiciels sur mesure</a>.
+      </p>
+
+      <!-- Section 4 · Reference engagements -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Produits de référence</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Bâtis par le <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">développement d'applications</em> de Droz.</h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <a href="/fr/products/droz-predictive/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Mobile + Web</div>
+            <h3>Droz Predictive</h3>
+            <p>Les ingénieurs de terrain captent des relevés de vibration, thermiques et d'ultrasons; les gestionnaires voient les regroupements de KPI dans l'application Web.</p>
+            <div class="svc-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Next.js</span>
+            </div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/fr/products/samson-ai/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Application Web</div>
+            <h3>Samson AI</h3>
+            <p>Copilote d'IA industrielle pour les exploitants d'usine. Interface conversationnelle, panneau de preuves, journal d'audit.</p>
+            <div class="svc-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">Orchestration de LLM</span>
+            </div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/fr/products/visp/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">iOS + tableau de bord Web</div>
+            <h3>VISP / Tasker</h3>
+            <p>Place de marché de prestataires de services indépendants vérifiés. Application mobile axée sur iOS, console d'administration Web.</p>
+            <div class="svc-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">SwiftUI</span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Capacités connexes</h6>
+        <ul>
+          <li><a href="/fr/software/custom-software-development/">Développement de logiciels sur mesure</a></li>
+          <li><a href="/fr/software/ai-machine-learning/">Systèmes d'IA et d'apprentissage machine</a></li>
+          <li><a href="/fr/software/cloud-migration/">Migration et architecture infonuagiques</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Normes appliquées</h6>
+        <ul>
+          <li><a href="/fr/standards/">Aperçu des normes</a></li>
+          <li><a href="/fr/standards/cloud-ai-partners/">Partenaires infonuagiques et IA</a></li>
+          <li><a href="/fr/standards/technologies/">Technologies</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Parler à un partenaire</h6>
+        <p>Les collaborations débutent par une conversation de cadrage menée par un partenaire principal.</p>
+
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-form" data-form="engagement-request" style="gap: 12px; max-width: none;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · software/application-development">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="software/application-development">
+          <input type="hidden" name="locale" value="fr">
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="name" style="color: rgba(255,255,255,0.8);">Nom</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email" style="color: rgba(255,255,255,0.8);">Courriel</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="company" style="color: rgba(255,255,255,0.8);">Entreprise</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="message" style="color: rgba(255,255,255,0.8);">Décrivez brièvement</label>
+            <textarea id="message" name="message" required style="min-height: 80px;"></textarea>
+          </div>
+          <div class="field">
+            <label for="consent" style="display:flex; gap:8px; align-items:flex-start; text-transform:none; letter-spacing:0; font-family:var(--font-sans); font-size:12px; color:rgba(255,255,255,0.75);">
+              <input type="checkbox" id="consent" name="consent" required style="margin-top:2px;">
+              <span>Je consens conformément à la <a href="/fr/legal/privacy/" style="color:#9FC4E6; border-bottom:1px solid rgba(159,196,230,.4);">politique de confidentialité</a>.</span>
+            </label>
+          </div>
+          <div class="field">
+            <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITEKEY"></div>
+          </div>
+          <button type="submit" class="btn btn-light" style="width: 100%; justify-content: center;">Demander une collaboration <span style="opacity:.7">→</span></button>
+          <a href="/fr/contact/#engagement-form" style="color: #9FC4E6; font-size: 12px; text-align: center; border: 0; margin-top: 4px;">Ou accédez au formulaire de contact complet →</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Section 5 · Where this applies -->
+<section class="section" style="background: var(--paper-bone); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="div-header">
+      <div>
+        <small>§ Industries desservies</small>
+        <div class="slash">Où les applications <em>se déploient.</em></div>
+      </div>
+      <p class="blurb">Six secteurs représentatifs ci-dessous. La liste complète des 17 se trouve dans l'<a href="/fr/industries/" style="color:var(--accent); border-bottom:1px solid var(--accent);">aperçu des industries</a>.</p>
+    </div>
+
+    <div class="industries" style="margin-top: 48px;">
+      <a href="/fr/industries/energy-operators/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">01</span><span class="name">Exploitants énergétiques</span></a>
+      <a href="/fr/industries/refineries-oil-gas/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">02</span><span class="name">Raffineries · Pétrole et gaz</span></a>
+      <a href="/fr/industries/general-manufacturing/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">03</span><span class="name">Fabrication générale</span></a>
+      <a href="/fr/industries/automotive/" class="industry" style="text-decoration:none; border:0; border-bottom:1px solid var(--rule);"><span class="idx">04</span><span class="name">Automobile</span></a>
+      <a href="/fr/industries/pharmaceutical/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">05</span><span class="name">Pharmaceutique</span></a>
+      <a href="/fr/industries/public-sector-goc/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">06</span><span class="name">Secteur public · GoC</span></a>
+      <a href="/fr/industries/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); grid-column: span 2;"><span class="idx">→</span><span class="name">Toutes les industries</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Collaborez avec Droz · Applications</div>
+    <div class="stmt">Une application qui aurait dû être livrée le trimestre dernier ? <em>Nous la concevrons, la bâtirons et la livrerons.</em></div>
+    <div class="creds">
+      <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — une entreprise de technologie industrielle offrant des logiciels d'entreprise, de l'ingénierie de fiabilité et de l'IA appliquée. Burlington, Ontario. Fondée en 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 Cities</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Logiciels</h6>
+        <ul>
+          <li><a href="/fr/software/">Aperçu</a></li>
+          <li><a href="/fr/software/custom-software-development/">Logiciels sur mesure</a></li>
+          <li><a href="/fr/software/application-development/">Développement d'applications</a></li>
+          <li><a href="/fr/software/ai-machine-learning/">IA et apprentissage machine</a></li>
+          <li><a href="/fr/software/it-infrastructure/">Infrastructure TI</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation d'affaires</a></li>
+          <li><a href="/fr/software/cloud-migration/">Migration infonuagique</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Ingénierie</h6>
+        <ul>
+          <li><a href="/fr/engineering/">Aperçu</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Maintenance prédictive</a></li>
+          <li><a href="/fr/engineering/reliability-data-platform/">Données de fiabilité</a></li>
+          <li><a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs</a></li>
+          <li><a href="/fr/industries/">Industries desservies</a></li>
+          <li><a href="/fr/standards/">Normes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Cabinet</h6>
+        <ul>
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/contact/#procurement-form">Approvisionnement</a></li>
+          <li><a href="/fr/press/">Presse</a></li>
+          <li><a href="/fr/careers/">Carrières</a></li>
+          <li><a href="/fr/insights/">Perspectives</a></li>
+          <li><a href="/fr/capabilities-statement/">Énoncé des capacités</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Langue</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/fr/legal/privacy/">Confidentialité</a>
+        <a href="/fr/legal/terms/">Conditions</a>
+        <a href="/fr/legal/accessibility/">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

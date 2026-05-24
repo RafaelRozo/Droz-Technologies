@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>应用程序开发 — Droz Technologies</title>
+  <meta name="description" content="Web、iOS、Android 与跨平台应用程序，作为单一连贯的产品进行设计与工程化——由资深合伙人主导的团队拥有设计系统、代码库与发布流水线。">
+  <link rel="canonical" href="https://droz.tech/zh/software/application-development/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/software/application-development/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/software/application-development/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/software/application-development/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/software/application-development/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/software/application-development/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/software/application-development/">
+  <meta property="og:title" content="应用程序开发 — Droz Technologies">
+  <meta property="og:description" content="Web、iOS、Android 与跨平台应用程序，作为单一连贯的产品进行设计与工程化——由资深合伙人主导的团队拥有设计系统、代码库与发布流水线。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-software.png">
+  <meta property="og:url" content="https://droz.tech/zh/software/application-development/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://droz.tech/en/software/" },
+      { "@type": "ListItem", "position": 3, "name": "Application Development", "item": "https://droz.tech/en/software/application-development/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Application Development",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "Application Development",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "Web、iOS、Android 与跨平台应用程序，作为单一连贯的产品进行设计与工程化——由资深合伙人主导的团队拥有设计系统、代码库与发布流水线。"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="software/application-development" data-locale="zh" data-active-nav="software">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software" class="is-active">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用程序开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波检测</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油厂 · 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石化产品</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 · 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">采矿与金属</a>
+              <a href="/zh/industries/pulp-paper/">制浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/insights/" data-nav="insights">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/software/application-development/">EN</a>
+        <a href="/fr/software/application-development/">FR</a>
+        <a href="/es/software/application-development/">ES</a>
+        <a href="/zh/software/application-development/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/software/application-development/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/software/application-development/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter);">
+  <a href="/zh/">首页</a>
+  <span class="sep">/</span>
+  <a href="/zh/software/">软件</a>
+  <span class="sep">/</span>
+  <span class="here">应用程序开发</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Software · 02 · Applications</div>
+      <h1>能够发布——并<em>持续在线</em>的应用程序。</h1>
+      <p class="lede">Web、iOS、Android 和跨平台应用程序，作为单一连贯的产品进行设计与工程化。我们拥有设计系统、代码库、发布流水线和值班轮值。</p>
+      <div class="cta">
+        <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+        <a href="/zh/products/" class="btn btn-ghost">浏览产品组合</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">服务</div><div class="v">第 02 / 共 06</div></div>
+      <div><div class="k">目标平台</div><div class="v">Web · iOS · Android</div></div>
+      <div><div class="k">合作模式</div><div class="v">资深合伙人主导</div></div>
+      <div><div class="k">已发布</div><div class="v">产品组合中 8 款产品</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- Section 1 · What we build -->
+      <div class="eyebrow-mono" style="margin-bottom: 16px;">§ Capabilities</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">我们构建什么。</h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(2, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <div class="svc-num">01 · Web Applications</div>
+          <h3>SSR 与边缘缓存，<br>内置无障碍</h3>
+          <p>采用服务端渲染、边缘缓存并内置无障碍的 Next.js 和 React 应用程序。达到 WCAG 2.2 AA 目标，否则构建失败。</p>
+          <div class="svc-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">WCAG 2.2</span>
+            <span class="tag">边缘缓存</span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-num">02 · Mobile Applications</div>
+          <h3>跨平台一致性，<br>关键之处用原生</h3>
+          <p>采用 React Native 实现跨平台一致性；在原生界面有需要时采用 SwiftUI 和 Kotlin。在工作负载需要时提供推送、深度链接、生物识别和离线优先。</p>
+          <div class="svc-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">SwiftUI</span>
+            <span class="tag">Kotlin</span>
+            <span class="tag">离线优先</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">03 · UI / UX Design</div>
+          <h3>编写生产代码的<br>同一支设计团队</h3>
+          <p>探索访谈、旅程映射、设计系统和高保真原型。由编写生产代码的同一支团队完成。</p>
+          <div class="svc-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">设计系统</span>
+            <span class="tag">旅程映射</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">04 · Cross-platform &amp; PWA</div>
+          <h3>一个产品，<br>三个界面</h3>
+          <p>一个产品，三个界面——Web 应用、移动应用、可嵌入组件。共享设计令牌、共享类型、单一事实来源。</p>
+          <div class="svc-tags">
+            <span class="tag">PWA</span>
+            <span class="tag">共享令牌</span>
+            <span class="tag">TypeScript</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Section 2 · Engagement model -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Engagement</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">探索 → 设计 → <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">构建</em> → 交接。</h2>
+
+      <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="step">
+          <div class="ord">01 · Discovery</div>
+          <div class="ord-num">01</div>
+          <h5>探索</h5>
+          <p>资深合伙人主导启动：用户访谈、利益相关方梳理、假设记录。产出：产品简报 + 旅程图。</p>
+        </div>
+        <div class="step">
+          <div class="ord">02 · Design</div>
+          <div class="ord-num">02</div>
+          <h5>设计</h5>
+          <p>信息架构、线框图、设计系统以及 Figma 中的可点击原型。每周与您的团队评审；在第 1 个冲刺前锁定。</p>
+        </div>
+        <div class="step">
+          <div class="ord">03 · Build</div>
+          <div class="ord-num">03</div>
+          <h5>构建</h5>
+          <p>2 周冲刺。Web 采用 Next.js 或 React；移动端采用 React Native 或 SwiftUI。CI 流水线在每次合并时部署到预发布；生产发布按发布列车节奏门控。</p>
+        </div>
+        <div class="step">
+          <div class="ord">04 · Handover</div>
+          <div class="ord-num">04</div>
+          <h5>交接</h5>
+          <p>App Store / Play Store 提交、Web 托管交接、监控仪表盘、支持运行手册以及 90 天稳定期。如有需要，在第 91 天转为托管服务合同。</p>
+        </div>
+      </div>
+
+      <!-- Section 3 · Tools & technologies -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Stack</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">工具与技术。</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; border-top: 1px solid var(--rule); padding-top: 32px;">
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Web</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Next.js、React、TypeScript、TanStack Query、Tailwind 或带设计令牌的原生 CSS、Storybook。</p>
+          <div class="svc-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">React</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">TanStack Query</span>
+            <span class="tag">Storybook</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Mobile</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">React Native（主力跨平台）、SwiftUI（需要 iOS 原生时）、Kotlin / Jetpack Compose（需要 Android 原生时）、用于快速迭代的 Expo。</p>
+          <div class="svc-tags">
+            <span class="tag">React Native</span>
+            <span class="tag">SwiftUI</span>
+            <span class="tag">Jetpack Compose</span>
+            <span class="tag">Expo</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">State &amp; data</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Zustand、Redux Toolkit Query、Apollo、GraphQL、REST，通过 Socket.io 或 WebSockets 实现实时通信。</p>
+          <div class="svc-tags">
+            <span class="tag">Zustand</span>
+            <span class="tag">Apollo</span>
+            <span class="tag">GraphQL</span>
+            <span class="tag">WebSockets</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Design &amp; QA</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Figma、无障碍审计（WCAG 2.2 AA）、用于 Web E2E 的 Playwright、用于移动端 E2E 的 Detox、用于运行时错误的 Sentry。</p>
+          <div class="svc-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Playwright</span>
+            <span class="tag">Detox</span>
+            <span class="tag">Sentry</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13.5px; color: var(--graphite-2); margin-top: 24px; line-height: 1.6;">
+        交叉引用 — <a href="/zh/standards/cloud-ai-partners/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">完整合作伙伴清单</a> · <a href="/zh/standards/technologies/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">完整技术清单</a> · <a href="/zh/software/custom-software-development/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">移动端后端与定制软件相互重叠</a>。
+      </p>
+
+      <!-- Section 4 · Reference engagements -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Reference products</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">由 Droz <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">应用程序开发</em>打造。</h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <a href="/zh/products/droz-predictive/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Mobile + Web</div>
+            <h3>Droz Predictive</h3>
+            <p>现场工程师采集振动、热成像和超声波读数；管理者在 Web 应用中查看 KPI 汇总。</p>
+            <div class="svc-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">Next.js</span>
+            </div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/zh/products/samson-ai/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Web app</div>
+            <h3>Samson AI</h3>
+            <p>面向工厂操作人员的工业 AI 副驾。对话式界面、证据面板、审计日志。</p>
+            <div class="svc-tags">
+              <span class="tag">Next.js</span>
+              <span class="tag">LLM 编排</span>
+            </div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/zh/products/visp/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">iOS + Web dashboard</div>
+            <h3>VISP / Tasker</h3>
+            <p>经过验证的独立服务提供商市场。iOS 优先的移动应用程序，Web 管理控制台。</p>
+            <div class="svc-tags">
+              <span class="tag">React Native</span>
+              <span class="tag">SwiftUI</span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>相关能力</h6>
+        <ul>
+          <li><a href="/zh/software/custom-software-development/">定制软件开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移与架构</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务流程自动化</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>我们遵循的标准</h6>
+        <ul>
+          <li><a href="/zh/standards/">标准概览</a></li>
+          <li><a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a></li>
+          <li><a href="/zh/standards/technologies/">技术</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>与合伙人沟通</h6>
+        <p>合作始于由资深合伙人主导的范围界定会谈。</p>
+
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-form" data-form="engagement-request" style="gap: 12px; max-width: none;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · software/application-development">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="software/application-development">
+          <input type="hidden" name="locale" value="zh">
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="name" style="color: rgba(255,255,255,0.8);">姓名</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email" style="color: rgba(255,255,255,0.8);">电子邮箱</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="company" style="color: rgba(255,255,255,0.8);">公司</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="message" style="color: rgba(255,255,255,0.8);">简要描述</label>
+            <textarea id="message" name="message" required style="min-height: 80px;"></textarea>
+          </div>
+          <div class="field">
+            <label for="consent" style="display:flex; gap:8px; align-items:flex-start; text-transform:none; letter-spacing:0; font-family:var(--font-sans); font-size:12px; color:rgba(255,255,255,0.75);">
+              <input type="checkbox" id="consent" name="consent" required style="margin-top:2px;">
+              <span>我同意遵循<a href="/zh/legal/privacy/" style="color:#9FC4E6; border-bottom:1px solid rgba(159,196,230,.4);">隐私政策</a>。</span>
+            </label>
+          </div>
+          <div class="field">
+            <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITEKEY"></div>
+          </div>
+          <button type="submit" class="btn btn-light" style="width: 100%; justify-content: center;">申请合作 <span style="opacity:.7">→</span></button>
+          <a href="/zh/contact/#engagement-form" style="color: #9FC4E6; font-size: 12px; text-align: center; border: 0; margin-top: 4px;">或前往完整联系表单 →</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Section 5 · Where this applies -->
+<section class="section" style="background: var(--paper-bone); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="div-header">
+      <div>
+        <small>§ Industries served</small>
+        <div class="slash">应用程序<em>落地之处。</em></div>
+      </div>
+      <p class="blurb">下方列出六个代表性领域。完整的 17 个行业清单见<a href="/zh/industries/" style="color:var(--accent); border-bottom:1px solid var(--accent);">行业概览</a>。</p>
+    </div>
+
+    <div class="industries" style="margin-top: 48px;">
+      <a href="/zh/industries/energy-operators/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">01</span><span class="name">能源运营商</span></a>
+      <a href="/zh/industries/refineries-oil-gas/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">02</span><span class="name">炼油厂 · 石油与天然气</span></a>
+      <a href="/zh/industries/general-manufacturing/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">03</span><span class="name">通用制造</span></a>
+      <a href="/zh/industries/automotive/" class="industry" style="text-decoration:none; border:0; border-bottom:1px solid var(--rule);"><span class="idx">04</span><span class="name">汽车</span></a>
+      <a href="/zh/industries/pharmaceutical/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">05</span><span class="name">制药</span></a>
+      <a href="/zh/industries/public-sector-goc/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">06</span><span class="name">公共部门 · GoC</span></a>
+      <a href="/zh/industries/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); grid-column: span 2;"><span class="idx">→</span><span class="name">所有行业</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Engage Droz · Applications</div>
+    <div class="stmt">有一款本应在上个季度就发布的应用程序？<em>我们将设计它、构建它并发布它。</em></div>
+    <div class="creds">
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 Cities</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用程序开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

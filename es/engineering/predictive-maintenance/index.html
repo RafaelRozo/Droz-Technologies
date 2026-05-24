@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mantenimiento predictivo &middot; Confiabilidad &mdash; Droz Technologies</title>
+  <meta name="description" content="Dos décadas de ingeniería de confiabilidad entregadas en equipos rotativos, sistemas de vapor y activos críticos de planta para operadores Fortune 500 — ahora amplificadas por la IA aplicada.">
+  <link rel="canonical" href="https://droz.tech/es/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/predictive-maintenance/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/predictive-maintenance/">
+  <meta property="og:title" content="Mantenimiento predictivo &middot; Confiabilidad">
+  <meta property="og:description" content="Dos décadas de ingeniería de confiabilidad entregadas en equipos rotativos, sistemas de vapor y activos críticos de planta para operadores Fortune 500 — ahora amplificadas por la IA aplicada.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/es/engineering/predictive-maintenance/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://droz.tech/#org","name":"Droz Technologies Inc.","url":"https://droz.tech/","logo":"https://droz.tech/assets/logos/droz-logo-metallic.png","foundingDate":"2004","address":{"@type":"PostalAddress","streetAddress":"4145 North Service Road","addressLocality":"Burlington","addressRegion":"ON","addressCountry":"CA"},"sameAs":["https://www.linkedin.com/company/droz-technologies/"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"contact@droz.tech"},{"@type":"ContactPoint","contactType":"procurement","email":"procurement@droz.tech"},{"@type":"ContactPoint","contactType":"press","email":"press@droz.tech"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://droz.tech/en/"},{"@type":"ListItem","position":2,"name":"Engineering","item":"https://droz.tech/en/engineering/"},{"@type":"ListItem","position":3,"name":"Predictive Maintenance","item":"https://droz.tech/en/engineering/predictive-maintenance/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"Predictive Maintenance Services","provider":{"@id":"https://droz.tech/#org"},"serviceType":"Predictive Maintenance","areaServed":["Canada","United States","Mexico"],"description":"Dos décadas de ingeniería de confiabilidad en equipos rotativos, sistemas de vapor y activos críticos de planta — ahora amplificadas por la IA aplicada.","inLanguage":"es"}
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/predictive-maintenance" data-locale="es" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/es/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega"><a href="/es/software/" data-nav="software">Software</a><div class="megamenu" role="menu"><div class="group"><a href="/es/software/">Visión general</a><a href="/es/software/custom-software-development/">Desarrollo de software a medida</a><a href="/es/software/application-development/">Desarrollo de aplicaciones</a><a href="/es/software/ai-machine-learning/">Sistemas de IA y aprendizaje automático</a><a href="/es/software/it-infrastructure/">Infraestructura de TI moderna</a><a href="/es/software/business-process-automation/">Automatización de procesos de negocio</a><a href="/es/software/cloud-migration/">Migración y arquitectura en la nube</a></div></div></div>
+        <div class="has-mega"><a href="/es/engineering/" data-nav="engineering" class="is-active">Ingeniería</a><div class="megamenu" role="menu"><div class="group"><div class="group-title">Pilares</div><a href="/es/engineering/">Visión general</a><a href="/es/engineering/predictive-maintenance/">Servicios de mantenimiento predictivo</a><a href="/es/engineering/reliability-data-platform/">Datos y monitoreo de confiabilidad</a><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos impulsada por IA</a></div><div class="group"><div class="group-title">Disciplinas</div><a href="/es/engineering/disciplines/vibration-analysis/">Análisis de vibraciones</a><a href="/es/engineering/disciplines/thermography/">Termografía</a><a href="/es/engineering/disciplines/ultrasound/">Ultrasonido</a><a href="/es/engineering/disciplines/laser-alignment/">Alineación láser</a></div></div></div>
+        <div class="has-mega"><a href="/es/industries/" data-nav="industries">Industrias</a><div class="megamenu wide" role="menu"><div class="group"><div class="group-title">Energía</div><a href="/es/industries/power-generation/">Generación de energía</a><a href="/es/industries/nuclear-power/">Energía nuclear</a><a href="/es/industries/refineries-oil-gas/">Refinerías · Petróleo y gas</a><a href="/es/industries/energy-operators/">Operadores de energía</a></div><div class="group"><div class="group-title">Materiales y manufactura</div><a href="/es/industries/automotive/">Automotriz</a><a href="/es/industries/general-manufacturing/">Manufactura general</a><a href="/es/industries/petrochemicals/">Petroquímicos</a><a href="/es/industries/industrial-chemicals/">Químicos industriales</a><a href="/es/industries/fertilizers-agrochemicals/">Fertilizantes · Agroquímicos</a><a href="/es/industries/mining-metals/">Minería y metales</a><a href="/es/industries/pulp-paper/">Pulpa y papel</a><a href="/es/industries/cement/">Plantas de cemento</a></div><div class="group"><div class="group-title">Consumo y sectores regulados</div><a href="/es/industries/food-manufacturing/">Manufactura de alimentos</a><a href="/es/industries/beverage/">Fabricantes de bebidas</a><a href="/es/industries/pharmaceutical/">Farmacéutica</a></div><div class="group"><div class="group-title">Sector público</div><a href="/es/industries/public-sector-goc/">Sector público · GoC</a></div></div></div>
+        <div class="has-mega"><a href="/es/products/" data-nav="products">Productos</a><div class="megamenu" role="menu"><div class="group"><a href="/es/products/">Portafolio</a><a href="/es/products/droz-legal/">Droz Legal</a><a href="/es/products/samson-ai/">Samson AI</a><a href="/es/products/rx-change/">RX Change</a><a href="/es/products/visp/">VISP</a><a href="/es/products/droz-predictive/">Droz Predictive</a><a href="/es/products/droz-rental/">Droz Rental</a><a href="/es/products/droz-investments/">Droz Investments</a><a href="/es/products/after-life/">After Life</a></div></div></div>
+        <div class="has-mega"><a href="/es/standards/" data-nav="standards">Normas</a><div class="megamenu" role="menu"><div class="group"><a href="/es/standards/">Visión general</a><a href="/es/standards/associations/">Asociaciones</a><a href="/es/standards/technologies/">Tecnologías</a><a href="/es/standards/cloud-ai-partners/">Socios de nube e IA</a></div></div></div>
+        <a href="/es/insights/" data-nav="insights">Perspectivas</a>
+        <a href="/es/about/" data-nav="about">Acerca de</a>
+        <a href="/es/contact/" data-nav="contact">Contacto</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/predictive-maintenance/">EN</a>
+        <a href="/fr/engineering/predictive-maintenance/">FR</a>
+        <a href="/es/engineering/predictive-maintenance/" class="on">ES</a>
+        <a href="/zh/engineering/predictive-maintenance/" lang="zh-Hans">中文</a>
+        <a href="/hi/engineering/predictive-maintenance/" lang="hi">हिं</a>
+      </div>
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Esta página fue traducida automáticamente. La versión en inglés es la autoritativa.</span>
+  <a href="/en/engineering/predictive-maintenance/">Ver en inglés</a>
+  <button class="mt-notice-x" aria-label="Cerrar">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/es/">Inicio</a>
+  <span class="sep">/</span>
+  <a href="/es/engineering/">Ingeniería</a>
+  <span class="sep">/</span>
+  <span class="here">Mantenimiento predictivo</span>
+</nav>
+
+<!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Práctica 02 · Pilar A</div>
+      <h1>Mantenimiento predictivo &mdash; <em>probado en campo, amplificado por IA.</em></h1>
+      <p class="lede">Dos décadas de ingeniería de confiabilidad entregadas en equipos rotativos, sistemas de vapor y activos críticos de planta para operadores Fortune 500 &mdash; ahora amplificadas por la IA aplicada.</p>
+      <div class="cta">
+        <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+        <a href="/es/capabilities-statement/" class="btn btn-ghost">Descargar la declaración de capacidades <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Pilar</div><div class="v">A · Práctica de campo</div></div>
+      <div><div class="k">Disciplinas</div><div class="v">Vibraciones · Termografía · Ultrasonido · Alineación láser</div></div>
+      <div><div class="k">Trayectoria</div><div class="v">Más de 20 años en NA y LATAM</div></div>
+      <div><div class="k">Normas</div><div class="v">ISO 10816 · CMVA · Vibration Institute</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero photo strip -->
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/engineer-turbine.png" alt="Ingeniero de confiabilidad de Droz en una colaboración de campo en una turbina" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<!-- ═══════════════════════ Detail layout (sections 1–7 · sidebar) ═══════════════════════ -->
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ Definición</small>
+          <div class="slash">Predecir la falla,<br><em>programar la intervención.</em></div>
+        </div>
+        <p class="blurb">El mantenimiento predictivo es la práctica de medir la condición de un activo mientras está en funcionamiento, reconocer la firma temprana de un modo de falla y programar la reparación antes de que ocurra el tiempo de inactividad no planificado. La práctica de mantenimiento predictivo de Droz se basa en cuatro disciplinas de diagnóstico &mdash; análisis de vibraciones, termografía, ultrasonido y alineación láser &mdash; ejecutadas por ingenieros de campo senior e indexadas frente a <a href="/es/about/">veinte años de datos de referencia</a>. Los programas se delimitan a su población de activos críticos, se calibran a la cadencia de su planta y se integran en su <a href="/es/software/it-infrastructure/">CMMS</a> existente para que las recomendaciones lleguen donde ocurre el trabajo. Cuando corresponde, Droz superpone <a href="/es/engineering/ai-asset-intelligence/">detección de anomalías y predicción de fallas impulsadas por IA</a> sobre el programa de campo (véanse los pilares B y C) para que el modelo operativo se acumule con el tiempo. El resultado: tiempo de inactividad no planificado reducido en su origen, tolerancias OEM mantenidas y un presupuesto de mantenimiento que converge en lugar de escalar.</p>
+      </div>
+
+      <!-- 2. Disciplines applied -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Disciplinas</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">Cuatro prácticas de diagnóstico, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">un programa.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
+          <a href="/es/engineering/disciplines/vibration-analysis/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 01</div>
+            <h3>Análisis de<br>vibraciones</h3>
+            <p>El análisis espectral FFT y el diagnóstico de forma de onda en el tiempo identifican desgaste de rodamientos, desbalanceo, desalineación y holgura en motores, bombas, compresores, ventiladores y cajas de engranajes.</p>
+            <div class="svc-tags">
+              <span class="tag">Espectral</span><span class="tag">Forma de onda</span><span class="tag">Envolvente</span><span class="tag">ISO 10816</span>
+            </div>
+          </a>
+          <a href="/es/engineering/disciplines/thermography/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 02</div>
+            <h3>Termografía</h3>
+            <p>La imagen infrarroja bajo carga operativa inspecciona tableros de distribución, MCC, transformadores y trenes de transmisión mecánica en busca de anomalías térmicas &mdash; capturadas frente a una comparación con la línea base.</p>
+            <div class="svc-tags">
+              <span class="tag">Infrarrojo</span><span class="tag">Tableros</span><span class="tag">MCC</span><span class="tag">ASTM E1934</span>
+            </div>
+          </a>
+          <a href="/es/engineering/disciplines/ultrasound/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 03</div>
+            <h3>Ultrasonido</h3>
+            <p>Detección acústica del régimen de lubricación, fugas de gas/aire, descarga parcial eléctrica y regímenes previos a la falla de rodamientos &mdash; capturados antes del inicio de la vibración.</p>
+            <div class="svc-tags">
+              <span class="tag">Lubricación</span><span class="tag">Fugas</span><span class="tag">Descarga parcial</span><span class="tag">Etapa temprana</span>
+            </div>
+          </a>
+          <a href="/es/engineering/disciplines/laser-alignment/" class="svc" style="text-decoration:none; color:inherit; display:flex;">
+            <div class="svc-num">DZ · 04</div>
+            <h3>Alineación<br>láser</h3>
+            <p>Equipos rotativos acoplados alineados a la tolerancia OEM &mdash; reduciendo la falla de sellos, el desgaste de acoplamientos y el tiempo de inactividad inducido por la vibración.</p>
+            <div class="svc-tags">
+              <span class="tag">Eje</span><span class="tag">Acoplamiento</span><span class="tag">Tolerancia</span><span class="tag">Precisión</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3. Assets covered -->
+      <div style="margin-top:80px;">
+        <div class="assets-head">
+          <div>
+            <div class="eyebrow-mono">§ Activos que protegemos</div>
+            <h2>Equipos que instrumentamos,<br><em>en todo el mapa de activos.</em></h2>
+          </div>
+          <p class="lede">En equipos rotativos, activos estáticos, sistemas eléctricos y de control, y líneas de producción completas &mdash; la práctica de mantenimiento predictivo cubre toda la superficie de la planta.</p>
+        </div>
+        <div class="assets-grid">
+          <article class="asset-card">
+            <div class="badge">DZ-A · Equipos rotativos</div>
+            <h4>Activos primarios</h4>
+            <p class="focus">Enfoque &mdash; monitoreo de condición, alineación, balanceo.</p>
+            <ul class="asset-list">
+              <li><span class="item">Motores eléctricos</span><span class="detail">Baja · media · alta tensión</span></li>
+              <li><span class="item">Bombas</span><span class="detail">Centrífugas · de proceso · de enfriamiento · de transferencia</span></li>
+              <li><span class="item">Compresores</span><span class="detail">Aire · gas · proceso</span></li>
+              <li><span class="item">Turbinas</span><span class="detail">Vapor · gas · hidráulicas</span></li>
+              <li><span class="item">Cajas de engranajes</span><span class="detail">Reductores · multiplicadores</span></li>
+              <li><span class="item">Ventiladores y sopladores</span><span class="detail">Industriales · HVAC · aire de proceso</span></li>
+              <li><span class="item">Transportadores</span><span class="detail">De banda · de tornillo · elevador de cangilones</span></li>
+              <li><span class="item">Molinos y trituradoras</span><span class="detail">Molienda · de bolas · de martillos · de mandíbulas · de cono</span></li>
+            </ul>
+          </article>
+          <article class="asset-card">
+            <div class="badge">DZ-B · Equipos estáticos</div>
+            <h4>Activos críticos</h4>
+            <p class="focus">Enfoque &mdash; integridad, monitoreo, confiabilidad.</p>
+            <ul class="asset-list">
+              <li><span class="item">Intercambiadores de calor</span><span class="detail">De carcasa y tubos · de placas</span></li>
+              <li><span class="item">Calderas</span><span class="detail">De potencia · de proceso</span></li>
+              <li><span class="item">Reactores</span><span class="detail">De proceso · catalíticos</span></li>
+              <li><span class="item">Tanques de almacenamiento</span><span class="detail">Atmosféricos · presurizados</span></li>
+              <li><span class="item">Sistemas de tuberías</span><span class="detail">De proceso · de servicios · criogénicas</span></li>
+              <li><span class="item">Recipientes a presión</span><span class="detail">Con código ASME</span></li>
+              <li><span class="item">Torres de enfriamiento</span><span class="detail">De tiro inducido · de tiro forzado</span></li>
+            </ul>
+          </article>
+          <article class="asset-card">
+            <div class="badge">DZ-C · Eléctricos y de control</div>
+            <h4>Sistemas de potencia y control</h4>
+            <p class="focus">Enfoque &mdash; termografía, diagnóstico, perspectiva de IA.</p>
+            <ul class="asset-list">
+              <li><span class="item">Tableros de distribución</span><span class="detail">BT · MT · AT</span></li>
+              <li><span class="item">Centros de control de motores</span><span class="detail">Gabinetes MCC</span></li>
+              <li><span class="item">Transformadores</span><span class="detail">De distribución · de potencia</span></li>
+              <li><span class="item">PLC</span><span class="detail">Controladores lógicos programables</span></li>
+              <li><span class="item">Sistemas SCADA</span><span class="detail">Supervisión de planta</span></li>
+              <li><span class="item">Instrumentación industrial</span><span class="detail">Sensores · transmisores</span></li>
+            </ul>
+          </article>
+          <article class="asset-card">
+            <div class="badge">DZ-D · Líneas de producción</div>
+            <h4>Líneas completas y trenes de proceso</h4>
+            <p class="focus">Enfoque &mdash; eficiencia, disponibilidad, rendimiento.</p>
+            <ul class="asset-list">
+              <li><span class="item">Manufactura de alimentos</span><span class="detail">Continua y por lotes</span></li>
+              <li><span class="item">Farmacéuticos</span><span class="detail">Regulados por GMP</span></li>
+              <li><span class="item">Líneas de empaque</span><span class="detail">Primario y secundario</span></li>
+              <li><span class="item">Líneas automotrices</span><span class="detail">Estampado · ensamblaje · pintura</span></li>
+              <li><span class="item">Pulpa y papel</span><span class="detail">Trenes de proceso</span></li>
+              <li><span class="item">Procesamiento químico</span><span class="detail">Reactores continuos</span></li>
+              <li><span class="item">Producción de cemento</span><span class="detail">Horno · molienda</span></li>
+              <li><span class="item">Operaciones mineras</span><span class="detail">Conminución · separación</span></li>
+            </ul>
+          </article>
+        </div>
+        <p style="margin-top:24px; font-size:14px; color:var(--graphite);">
+          Cada familia de activos se asigna a un programa por industria &mdash; <a href="/es/industries/">ver todas las industrias</a>.
+        </p>
+      </div>
+
+      <!-- 4. Engagement model -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Modelo de colaboración</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">Desde los datos de sensores <em style="font-style:italic; color:var(--accent-2); font-weight:400;">hasta la reparación programada.</em></h2>
+        <div class="steps">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">Recolectar</div>
+            <h5>Datos de máquina</h5>
+            <p>La instrumentación en campo y los sensores inalámbricos transmiten datos de condición desde sus activos críticos. El ingeniero de confiabilidad líder define el alcance, la ubicación de sensores y la cadencia de muestreo en un recorrido de arranque.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">Analizar</div>
+            <h5>Reconocimiento de patrones</h5>
+            <p>La práctica de ingeniería y el <a href="/es/software/ai-machine-learning/">software de IA</a> interpretan los patrones de señal frente a veinte años de datos de referencia &mdash; las firmas de rodamientos, fallas de motores y armónicos de cajas de engranajes se asocian a modos de falla conocidos.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">Detectar</div>
+            <h5>Detección de anomalías</h5>
+            <p>Las desviaciones de las líneas base saludables se marcan antes de que se propaguen a modos de falla. La severidad se gradúa y se enruta por criticidad.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">Predecir</div>
+            <h5>Pronósticos de fallas</h5>
+            <p>Los modelos estiman la vida útil restante y recomiendan la ventana de intervención óptima para minimizar la pérdida de producción.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">05</div>
+            <div class="ord">Automatizar</div>
+            <h5>Enrutamiento de decisiones</h5>
+            <p>Las órdenes de trabajo, las alertas y las recomendaciones para el operador se despachan a su <a href="/es/software/it-infrastructure/">CMMS</a>, correo y canales de chat &mdash; cerrando el ciclo con la planeación de mantenimiento.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Predictive vs reactive -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Predictivo vs. reactivo</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Los datos detrás del <em style="font-style:italic; color:var(--accent-2); font-weight:400;">cambio de modelo operativo.</em></h2>
+        <div class="ai-diff-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="ai-cell">
+            <div class="num">MODO · 01</div>
+            <h4>Mantenimiento reactivo</h4>
+            <ul>
+              <li>El tiempo de inactividad no planificado domina &mdash; ocurre la falla y entonces se detiene la línea.</li>
+              <li>Los costos se concentran en reparaciones de emergencia y producción perdida.</li>
+              <li>El inventario de repuestos se sobreabastece para cubrirse ante fallas desconocidas.</li>
+              <li>Modelo operativo: apagar incendios, sin aprendizaje acumulativo entre fallas.</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">MODO · 02</div>
+            <h4>Mantenimiento predictivo (modelo Droz)</h4>
+            <ul>
+              <li>Las fallas se marcan en su firma temprana &mdash; rodamientos, desalineación, descarga parcial &mdash; antes de propagarse.</li>
+              <li>Las intervenciones se programan dentro de ventanas de mantenimiento planificado; se evita la detención de la línea.</li>
+              <li>El inventario de repuestos se ajusta a la demanda pronosticada &mdash; el costo de capital baja.</li>
+              <li>Modelo operativo: una capa de datos que se acumula &mdash; cada falla detectada afina la siguiente predicción.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Industrias atendidas</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">Donde el mantenimiento predictivo <em style="font-style:italic; color:var(--accent-2); font-weight:400;">es la colaboración principal.</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/es/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">Generación de energía</span></a>
+          <a href="/es/industries/nuclear-power/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">Energía nuclear</span></a>
+          <a href="/es/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">Refinerías · Petróleo y gas</span></a>
+          <a href="/es/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">Petroquímicos</span></a>
+          <a href="/es/industries/cement/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">Plantas de cemento</span></a>
+          <a href="/es/industries/pulp-paper/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">Pulpa y papel</span></a>
+          <a href="/es/industries/mining-metals/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">Minería y metales</span></a>
+          <a href="/es/industries/automotive/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">Automotriz</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/es/industries/">Ver las 16 industrias atendidas &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Normas que aplicamos</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Ancladas a las normas <em style="font-style:italic; color:var(--accent-2); font-weight:400;">que sus auditores reconocen.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">CMVA</div>
+            <h3>Canadian Machinery<br>Vibration Association</h3>
+            <p>Los ingenieros de confiabilidad de Droz cuentan con certificación CMVA; todos los programas de vibraciones siguen los protocolos de categoría e informes de la CMVA.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 10816</div>
+            <h3>Evaluación de<br>vibración mecánica</h3>
+            <p>Los umbrales de aceptación y severidad para la vibración de maquinaria rotativa se evalúan frente a los límites de zona A&ndash;D de la ISO 10816.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">Vibration Institute</div>
+            <h3>Categorías VI<br>I&ndash;IV</h3>
+            <p>Los ingenieros de campo están certificados en las Categorías I&ndash;IV del Vibration Institute, el referente mundial para la competencia de analistas de vibraciones.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/es/standards/associations/">Lista completa de asociaciones y certificaciones &rarr;</a></p>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════════════ Sidebar ═══════════════════════ -->
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Capacidades relacionadas</h6>
+        <ul>
+          <li><a href="/es/engineering/reliability-data-platform/">Plataforma de datos de confiabilidad</a></li>
+          <li><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos impulsada por IA</a></li>
+          <li><a href="/es/engineering/disciplines/vibration-analysis/">Análisis de vibraciones</a></li>
+          <li><a href="/es/engineering/disciplines/thermography/">Termografía</a></li>
+          <li><a href="/es/engineering/disciplines/ultrasound/">Ultrasonido</a></li>
+          <li><a href="/es/engineering/disciplines/laser-alignment/">Alineación láser</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Normas que aplicamos</h6>
+        <ul>
+          <li><a href="/es/standards/associations/">CMVA</a></li>
+          <li><a href="/es/standards/associations/">ISO 10816</a></li>
+          <li><a href="/es/standards/associations/">Vibration Institute (Cat. I&ndash;IV)</a></li>
+          <li><a href="/es/standards/associations/">ASTM E1934</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Industrias que lideran con este pilar</h6>
+        <ul>
+          <li><a href="/es/industries/refineries-oil-gas/">Refinerías &middot; Petróleo y gas</a></li>
+          <li><a href="/es/industries/power-generation/">Generación de energía</a></li>
+          <li><a href="/es/industries/petrochemicals/">Petroquímicos</a></li>
+          <li><a href="/es/industries/cement/">Plantas de cemento</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Hable con un socio</h6>
+        <p>Las colaboraciones comienzan con una conversación de alcance dirigida por un socio principal.</p>
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="aside-er" data-form="engagement-request" style="gap:10px;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · engineering/predictive-maintenance">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="engineering/predictive-maintenance">
+          <input type="hidden" name="locale" value="es">
+          <div class="honeypot" aria-hidden="true">
+            <label for="ce-url">Company URL</label>
+            <input type="text" name="botcheck" id="ce-url" tabindex="-1" autocomplete="off">
+          </div>
+          <a href="/es/contact/#engagement-form" class="btn btn-light" style="text-align:center;">Solicitar una colaboración &rarr;</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══════════════════════ 9. Closing CTA band ═══════════════════════ -->
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Mantenimiento predictivo</div>
+    <div class="stmt">Deje de medir el tiempo de inactividad en millones. <em>Empiece a programarlo dentro de ventanas planificadas.</em></div>
+    <div class="creds">
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — una empresa de tecnología industrial que ofrece software empresarial, ingeniería de confiabilidad e IA aplicada. Burlington, Ontario. Fundada en 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Software</h6>
+        <ul>
+          <li><a href="/es/software/">Visión general</a></li>
+          <li><a href="/es/software/custom-software-development/">Software a medida</a></li>
+          <li><a href="/es/software/application-development/">Desarrollo de aplicaciones</a></li>
+          <li><a href="/es/software/ai-machine-learning/">IA y aprendizaje automático</a></li>
+          <li><a href="/es/software/it-infrastructure/">Infraestructura de TI</a></li>
+          <li><a href="/es/software/business-process-automation/">Automatización de negocio</a></li>
+          <li><a href="/es/software/cloud-migration/">Migración a la nube</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Ingeniería</h6>
+        <ul>
+          <li><a href="/es/engineering/">Visión general</a></li>
+          <li><a href="/es/engineering/predictive-maintenance/">Mantenimiento predictivo</a></li>
+          <li><a href="/es/engineering/reliability-data-platform/">Datos de confiabilidad</a></li>
+          <li><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos</a></li>
+          <li><a href="/es/industries/">Industrias atendidas</a></li>
+          <li><a href="/es/standards/">Normas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Empresa</h6>
+        <ul>
+          <li><a href="/es/about/">Acerca de</a></li>
+          <li><a href="/es/contact/">Contacto</a></li>
+          <li><a href="/es/contact/#procurement-form">Adquisiciones</a></li>
+          <li><a href="/es/press/">Prensa</a></li>
+          <li><a href="/es/careers/">Carreras</a></li>
+          <li><a href="/es/insights/">Perspectivas</a></li>
+          <li><a href="/es/capabilities-statement/">Declaración de capacidades</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Idioma</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/es/legal/privacy/">Privacidad</a>
+        <a href="/es/legal/terms/">Términos</a>
+        <a href="/es/legal/accessibility/">Accesibilidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/                       /en/                       302
+/software/*             /en/software/:splat        301
+/engineering/*          /en/engineering/:splat     301
+/industries/*           /en/industries/:splat      301
+/products/*             /en/products/:splat        301
+/standards/*            /en/standards/:splat       301
+/insights/*             /en/insights/:splat        301
+/case-studies/*         /en/case-studies/:splat    301
+/careers/*              /en/careers/:splat         301
+/contact                /en/contact/               301
+/about                  /en/about/                 301
+/capabilities-statement /en/capabilities-statement/ 301
+/press                  /en/press/                 301
+/legal/*                /en/legal/:splat           301

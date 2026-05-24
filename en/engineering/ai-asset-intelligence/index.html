@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Driven Asset Intelligence &mdash; Droz Technologies</title>
+  <meta name="description" content="Failure-prediction models, anomaly detection, and automated recommendations — production-ready MLOps pipelines tuned to your industrial equipment population. Digital-twin capable.">
+  <link rel="canonical" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <meta property="og:title" content="AI-Driven Asset Intelligence">
+  <meta property="og:description" content="Failure-prediction models, anomaly detection, and automated recommendations — production-ready MLOps pipelines tuned to your industrial equipment population.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://droz.tech/en/engineering/" },
+      { "@type": "ListItem", "position": 3, "name": "AI-Driven Asset Intelligence", "item": "https://droz.tech/en/engineering/ai-asset-intelligence/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI-Driven Asset Intelligence",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "AI-Driven Asset Intelligence",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "Failure-prediction models, anomaly detection, and automated recommendations — production-ready MLOps pipelines tuned to your industrial equipment population."
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/ai-asset-intelligence" data-locale="en" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/en/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/en/software/" data-nav="software">Software</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/en/software/">Overview</a>
+              <a href="/en/software/custom-software-development/">Custom Software Development</a>
+              <a href="/en/software/application-development/">Application Development</a>
+              <a href="/en/software/ai-machine-learning/">AI &amp; Machine Learning Systems</a>
+              <a href="/en/software/it-infrastructure/">Modern IT Infrastructure</a>
+              <a href="/en/software/business-process-automation/">Business Process Automation</a>
+              <a href="/en/software/cloud-migration/">Cloud Migration &amp; Architecture</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/en/engineering/" data-nav="engineering" class="is-active">Engineering</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">Pillars</div>
+              <a href="/en/engineering/">Overview</a>
+              <a href="/en/engineering/predictive-maintenance/">Predictive Maintenance Services</a>
+              <a href="/en/engineering/reliability-data-platform/">Reliability Data &amp; Monitoring</a>
+              <a href="/en/engineering/ai-asset-intelligence/">AI-Driven Asset Intelligence</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Disciplines</div>
+              <a href="/en/engineering/disciplines/vibration-analysis/">Vibration Analysis</a>
+              <a href="/en/engineering/disciplines/thermography/">Thermography</a>
+              <a href="/en/engineering/disciplines/ultrasound/">Ultrasound</a>
+              <a href="/en/engineering/disciplines/laser-alignment/">Laser Alignment</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/en/industries/" data-nav="industries">Industries</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">Energy</div>
+              <a href="/en/industries/power-generation/">Power Generation</a>
+              <a href="/en/industries/nuclear-power/">Nuclear Power</a>
+              <a href="/en/industries/refineries-oil-gas/">Refineries · Oil &amp; Gas</a>
+              <a href="/en/industries/energy-operators/">Energy Operators</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Materials &amp; Manufacturing</div>
+              <a href="/en/industries/automotive/">Automotive</a>
+              <a href="/en/industries/general-manufacturing/">General Manufacturing</a>
+              <a href="/en/industries/petrochemicals/">Petrochemicals</a>
+              <a href="/en/industries/industrial-chemicals/">Industrial Chemicals</a>
+              <a href="/en/industries/fertilizers-agrochemicals/">Fertilizers · Agrochemicals</a>
+              <a href="/en/industries/mining-metals/">Mining &amp; Metals</a>
+              <a href="/en/industries/pulp-paper/">Pulp &amp; Paper</a>
+              <a href="/en/industries/cement/">Cement Plants</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Consumer &amp; Regulated</div>
+              <a href="/en/industries/food-manufacturing/">Food Manufacturing</a>
+              <a href="/en/industries/beverage/">Beverage Manufacturers</a>
+              <a href="/en/industries/pharmaceutical/">Pharmaceutical</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Public Sector</div>
+              <a href="/en/industries/public-sector-goc/">Public Sector · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/en/products/" data-nav="products">Products</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/en/products/">Portfolio</a>
+              <a href="/en/products/droz-legal/">Droz Legal</a>
+              <a href="/en/products/samson-ai/">Samson AI</a>
+              <a href="/en/products/rx-change/">RX Change</a>
+              <a href="/en/products/visp/">VISP</a>
+              <a href="/en/products/droz-predictive/">Droz Predictive</a>
+              <a href="/en/products/droz-rental/">Droz Rental</a>
+              <a href="/en/products/droz-investments/">Droz Investments</a>
+              <a href="/en/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/en/standards/" data-nav="standards">Standards</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/en/standards/">Overview</a>
+              <a href="/en/standards/associations/">Associations</a>
+              <a href="/en/standards/technologies/">Technologies</a>
+              <a href="/en/standards/cloud-ai-partners/">Cloud &amp; AI Partners</a>
+            </div>
+          </div>
+        </div>
+        <a href="/en/insights/" data-nav="insights">Insights</a>
+        <a href="/en/about/" data-nav="about">About</a>
+        <a href="/en/contact/" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/ai-asset-intelligence/" class="on">EN</a>
+        <a href="/fr/engineering/ai-asset-intelligence/">FR</a>
+        <a href="/es/engineering/ai-asset-intelligence/">ES</a>
+        <a href="/zh/engineering/ai-asset-intelligence/" lang="zh-Hans">中文</a>
+        <a href="/hi/engineering/ai-asset-intelligence/" lang="hi">हिं</a>
+      </div>
+      <a href="/en/contact/#engagement-form" class="btn btn-primary">Request engagement <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/en/">Home</a>
+  <span class="sep">/</span>
+  <a href="/en/engineering/">Engineering</a>
+  <span class="sep">/</span>
+  <span class="here">AI-Driven Asset Intelligence</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Practice 02 · Pillar C</div>
+      <h1>AI-Driven Asset Intelligence &mdash; <em>the layer that compounds.</em></h1>
+      <p class="lede">Failure-prediction models, anomaly detection, and automated recommendations &mdash; production-ready ML pipelines tuned to your equipment population, deployed where the work happens, and observed in MLOps from day one.</p>
+      <div class="cta">
+        <a href="/en/contact/#engagement-form" class="btn btn-primary">Request engagement <span style="opacity:.7">&rarr;</span></a>
+        <a href="/en/software/ai-machine-learning/" class="btn btn-ghost">See AI &amp; ML Systems <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Pillar</div><div class="v">C · Intelligence</div></div>
+      <div><div class="k">Models</div><div class="v">Failure prediction · anomaly · optimization · twin</div></div>
+      <div><div class="k">MLOps</div><div class="v">Azure ML · AWS SageMaker · Vertex AI</div></div>
+      <div><div class="k">Bridge to</div><div class="v">Software · AI &amp; Machine Learning Systems</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/vibration-chart.png" alt="FFT spectral signature chart &mdash; the signals AI is trained on" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ Definition</small>
+          <div class="slash">AI on the data layer,<br><em>tuned to your equipment population.</em></div>
+        </div>
+        <p class="blurb">AI-driven asset intelligence is the third pillar of Droz's reliability practice &mdash; the layer where the field program (<a href="/en/engineering/predictive-maintenance/">Pillar A</a>) and the data platform (<a href="/en/engineering/reliability-data-platform/">Pillar B</a>) compound into automated decisions. Droz designs and trains failure-prediction models against your specific equipment population &mdash; not horizontal models retrofitted to industrial data. Anomaly detection runs continuously on streamed signals; automated recommendations land in the operator's existing channels with the underlying evidence attached. Models are deployed through production-ready <a href="/en/software/ai-machine-learning/">MLOps pipelines</a> on Azure ML, AWS SageMaker, or Vertex AI &mdash; versioned, monitored, and re-trained on a cadence calibrated to drift. Where the engagement justifies it, Droz also builds a digital twin of the plant &mdash; a simulation surface that lets operations rehearse decisions before they are taken in the real plant.</p>
+      </div>
+
+      <!-- 2. Capabilities (.ai-diff-grid) -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Capabilities</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">Five practices, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">one intelligence stack.</em></h2>
+        <div class="ai-diff-grid">
+          <div class="ai-cell">
+            <div class="num">AI · 01</div>
+            <h4>Anomaly detection</h4>
+            <ul>
+              <li>Vibration patterns</li>
+              <li>Temperature deviations</li>
+              <li>Energy consumption anomalies</li>
+              <li>Signal-quality drift</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 02</div>
+            <h4>Failure prediction</h4>
+            <ul>
+              <li>Bearing failures</li>
+              <li>Motor degradation</li>
+              <li>Pump failures</li>
+              <li>Lubrication regime alerts</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 03</div>
+            <h4>Optimization</h4>
+            <ul>
+              <li>Production processes</li>
+              <li>Energy usage</li>
+              <li>Maintenance strategies</li>
+              <li>Spare-parts inventory</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 04</div>
+            <h4>Automated recommendations</h4>
+            <ul>
+              <li>Automated reporting</li>
+              <li>Smart alerts</li>
+              <li>AI-assisted decision-making</li>
+              <li>CMMS work-order dispatch</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 05</div>
+            <h4>Digital Twin</h4>
+            <ul>
+              <li>Plant simulation</li>
+              <li>Failure-scenario modeling</li>
+              <li>Predictive operational planning</li>
+              <li>Customized per client</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Model classes -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Model classes</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Three model families, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">one decision loop.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">MDL · 01</div>
+            <h3>Failure-prediction<br>models</h3>
+            <p>Supervised models trained on labeled failure history per asset family &mdash; bearings, motors, pumps, gearboxes. Outputs: remaining-useful-life estimate, failure-mode probability, recommended intervention window. Re-trained on a cadence calibrated to drift.</p>
+            <div class="svc-tags"><span class="tag">Supervised</span><span class="tag">RUL</span><span class="tag">Per-asset family</span><span class="tag">Drift-monitored</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 02</div>
+            <h3>Anomaly-detection<br>models</h3>
+            <p>Unsupervised models running continuously on streamed signals (vibration, temperature, current, ultrasound, energy). Outputs: severity-graded anomalies routed by criticality with the underlying signal evidence attached.</p>
+            <div class="svc-tags"><span class="tag">Unsupervised</span><span class="tag">Streaming</span><span class="tag">Severity-graded</span><span class="tag">Evidence-attached</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 03</div>
+            <h3>Recommendation<br>&amp; optimization</h3>
+            <p>Decision models that combine condition signals, operating context, and economic constraints to recommend the best next action &mdash; schedule the intervention, adjust the operating point, re-order the spare.</p>
+            <div class="svc-tags"><span class="tag">Decision</span><span class="tag">Constraint-aware</span><span class="tag">Action-oriented</span><span class="tag">Operator-in-loop</span></div>
+          </article>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">The MLOps and data-science engagement that builds and operates these models &rarr; <a href="/en/software/ai-machine-learning/">AI &amp; Machine Learning Systems</a></p>
+      </div>
+
+      <!-- 4. MLOps pipeline -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ MLOps</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">From training set <em style="font-style:italic; color:var(--accent-2); font-weight:400;">to monitored prediction.</em></h2>
+        <div class="steps">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">Curate</div>
+            <h5>Training set</h5>
+            <p>Field history from Pillar A and the unified data layer from Pillar B are curated into labeled training sets per asset family. Class imbalance, leakage, and label quality are handled before any model touches the data.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">Train</div>
+            <h5>Model class</h5>
+            <p>Model class is chosen per failure mode &mdash; gradient boosting for tabular condition history, deep models for spectral signatures, isolation-forest variants for streaming anomaly. Hyperparameters are tuned in a managed sweep.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">Validate</div>
+            <h5>Holdout &amp; replay</h5>
+            <p>Models are validated on holdout sites and replayed against archived failures &mdash; the model has to predict a known failure on data it has never seen before it ships.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">Deploy</div>
+            <h5>Production pipeline</h5>
+            <p>Deployed through <a href="/en/standards/cloud-ai-partners/">Azure ML, AWS SageMaker, or Vertex AI</a> &mdash; endpoint, batch, or edge depending on latency. Inference is logged with the input snapshot for traceability.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">05</div>
+            <div class="ord">Observe</div>
+            <h5>Drift &amp; re-train</h5>
+            <p>Production performance is monitored &mdash; concept drift, data drift, prediction-class drift. Re-training is triggered on threshold or on schedule; the previous model is held in shadow until the new model is greenlit.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Digital twin -->
+      <div style="margin-top:80px;">
+        <div class="div-header" style="padding-bottom:32px;">
+          <div>
+            <small>§ Digital twin</small>
+            <div class="slash">Rehearse the decision<br><em>before you take it.</em></div>
+          </div>
+          <p class="blurb">A Droz digital twin is a simulation surface for a plant or process train &mdash; calibrated to the asset population, fed by the reliability data layer, and used to rehearse decisions that are costly to take in the real plant. Built per client; not a horizontal product.</p>
+        </div>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">TWIN · 01</div>
+            <h3>Plant simulation</h3>
+            <p>Asset behavior modeled at the level required by the decision &mdash; first-principles physics where the decision is operational, data-driven where the decision is reliability.</p>
+            <div class="svc-tags"><span class="tag">Physics-based</span><span class="tag">Data-driven</span><span class="tag">Mixed-fidelity</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 02</div>
+            <h3>Failure-scenario<br>modeling</h3>
+            <p>Run &ldquo;what if this bearing fails on Friday&rdquo; against the production schedule, the spare-parts position, and the corporate uptime target. The output: a ranked decision tree, not a single answer.</p>
+            <div class="svc-tags"><span class="tag">What-if</span><span class="tag">Ranked decisions</span><span class="tag">Production-aware</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 03</div>
+            <h3>Operational planning</h3>
+            <p>Test capital deferrals, intervention-window changes, and operating-point shifts in simulation before committing the real plant to them.</p>
+            <div class="svc-tags"><span class="tag">Capital deferral</span><span class="tag">Intervention windows</span><span class="tag">Operating-point</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Industries served</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">Where AI asset intelligence <em style="font-style:italic; color:var(--accent-2); font-weight:400;">is the lead engagement.</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/en/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">Refineries · Oil &amp; gas</span></a>
+          <a href="/en/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">Power generation</span></a>
+          <a href="/en/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">Petrochemicals</span></a>
+          <a href="/en/industries/nuclear-power/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">Nuclear power</span></a>
+          <a href="/en/industries/energy-operators/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">Energy operators</span></a>
+          <a href="/en/industries/mining-metals/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">Mining &amp; metals</span></a>
+          <a href="/en/industries/cement/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">Cement plants</span></a>
+          <a href="/en/industries/automotive/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">Automotive</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/en/industries/">See all 16 industries served &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Standards we apply</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">The frames the models <em style="font-style:italic; color:var(--accent-2); font-weight:400;">are anchored to.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">SOC 2</div>
+            <h3>SOC 2 Type II</h3>
+            <p>ML pipelines and inference endpoints run inside the same SOC 2 Type II audited control set as the reliability data platform.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 10816</div>
+            <h3>Mechanical vibration<br>evaluation</h3>
+            <p>Anomaly thresholds for rotating machinery models are anchored to ISO 10816 zone limits &mdash; models flag deviations relative to the standard, not arbitrary baselines.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">Cloud · AI</div>
+            <h3>Azure ML · SageMaker · Vertex AI</h3>
+            <p>Pipelines deployed on the client's existing cloud &mdash; Azure, AWS, or Google Cloud &mdash; through Droz's certified partner agreements.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/en/standards/associations/">Full list of certifications and associations &rarr;</a> &nbsp;&middot;&nbsp; <a href="/en/standards/cloud-ai-partners/">Cloud &amp; AI partners &rarr;</a> &nbsp;&middot;&nbsp; <a href="/en/software/ai-machine-learning/">Underlying AI practice (LLMs, RAG, evaluation) &rarr;</a></p>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Related capabilities</h6>
+        <ul>
+          <li><a href="/en/engineering/predictive-maintenance/">Predictive Maintenance</a></li>
+          <li><a href="/en/engineering/reliability-data-platform/">Reliability Data Platform</a></li>
+          <li><a href="/en/software/ai-machine-learning/">AI &amp; Machine Learning Systems</a></li>
+          <li><a href="/en/software/cloud-migration/">Cloud Migration</a></li>
+          <li><a href="/en/software/business-process-automation/">Business Process Automation</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Standards we apply</h6>
+        <ul>
+          <li><a href="/en/standards/associations/">SOC 2 Type II</a></li>
+          <li><a href="/en/standards/associations/">ISO 10816</a></li>
+          <li><a href="/en/standards/associations/">CMVA</a></li>
+          <li><a href="/en/standards/cloud-ai-partners/">Azure / AWS / GCP partner</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Where this pillar leads</h6>
+        <ul>
+          <li><a href="/en/industries/refineries-oil-gas/">Refineries &middot; Oil &amp; Gas</a></li>
+          <li><a href="/en/industries/power-generation/">Power Generation</a></li>
+          <li><a href="/en/industries/energy-operators/">Energy Operators</a></li>
+          <li><a href="/en/industries/mining-metals/">Mining &amp; Metals</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Talk to a partner</h6>
+        <p>Engagements begin with a scoping conversation led by a senior partner.</p>
+        <a href="/en/contact/#engagement-form" class="btn btn-light" style="text-align:center; display:block;">Request engagement &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ AI-driven asset intelligence</div>
+    <div class="stmt">Where the field practice and the data layer meet, <em>the operating model compounds.</em></div>
+    <div class="creds">
+      <a href="/en/contact/#engagement-form" class="btn btn-primary">Request engagement <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — an industrial technology firm delivering enterprise software, reliability engineering, and applied AI. Burlington, Ontario. Established 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Software</h6>
+        <ul>
+          <li><a href="/en/software/">Overview</a></li>
+          <li><a href="/en/software/custom-software-development/">Custom Software</a></li>
+          <li><a href="/en/software/application-development/">Application Development</a></li>
+          <li><a href="/en/software/ai-machine-learning/">AI &amp; Machine Learning</a></li>
+          <li><a href="/en/software/it-infrastructure/">IT Infrastructure</a></li>
+          <li><a href="/en/software/business-process-automation/">Business Automation</a></li>
+          <li><a href="/en/software/cloud-migration/">Cloud Migration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Engineering</h6>
+        <ul>
+          <li><a href="/en/engineering/">Overview</a></li>
+          <li><a href="/en/engineering/predictive-maintenance/">Predictive Maintenance</a></li>
+          <li><a href="/en/engineering/reliability-data-platform/">Reliability Data</a></li>
+          <li><a href="/en/engineering/ai-asset-intelligence/">Asset Intelligence</a></li>
+          <li><a href="/en/industries/">Industries Served</a></li>
+          <li><a href="/en/standards/">Standards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Firm</h6>
+        <ul>
+          <li><a href="/en/about/">About</a></li>
+          <li><a href="/en/contact/">Contact</a></li>
+          <li><a href="/en/contact/#procurement-form">Procurement</a></li>
+          <li><a href="/en/press/">Press</a></li>
+          <li><a href="/en/careers/">Careers</a></li>
+          <li><a href="/en/insights/">Insights</a></li>
+          <li><a href="/en/capabilities-statement/">Capabilities Statement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Language</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/en/legal/privacy/">Privacy</a>
+        <a href="/en/legal/terms/">Terms</a>
+        <a href="/en/legal/accessibility/">Accessibility</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

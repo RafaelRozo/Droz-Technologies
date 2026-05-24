@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 与机器学习系统 — Droz Technologies</title>
+  <meta name="description" content="Droz 设计并部署能够投入生产的 AI——LLM 驱动的副驾、预测模型与 ML 流水线，由资深团队选型、构建、评估、部署并监测，并在运行第一年内对系统负责。">
+  <link rel="canonical" href="https://droz.tech/zh/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/software/ai-machine-learning/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/software/ai-machine-learning/">
+  <meta property="og:title" content="AI 与机器学习系统 — Droz Technologies">
+  <meta property="og:description" content="Droz 设计并部署能够投入生产的 AI——LLM 驱动的副驾、预测模型与 ML 流水线，由资深团队选型、构建、评估、部署并监测，并在运行第一年内对系统负责。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-software.png">
+  <meta property="og:url" content="https://droz.tech/zh/software/ai-machine-learning/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://droz.tech/en/software/" },
+      { "@type": "ListItem", "position": 3, "name": "AI & Machine Learning Systems", "item": "https://droz.tech/en/software/ai-machine-learning/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI & Machine Learning Systems",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "AI & Machine Learning",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "Droz 设计并部署能够投入生产的 AI——LLM 驱动的副驾、预测模型与 ML 流水线，由资深团队选型、构建、评估、部署并监测，并在运行第一年内对系统负责。"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="software/ai-machine-learning" data-locale="zh" data-active-nav="software">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software" class="is-active">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用程序开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波检测</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油厂 · 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石化产品</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 · 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">采矿与金属</a>
+              <a href="/zh/industries/pulp-paper/">制浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/insights/" data-nav="insights">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/software/ai-machine-learning/">EN</a>
+        <a href="/fr/software/ai-machine-learning/">FR</a>
+        <a href="/es/software/ai-machine-learning/">ES</a>
+        <a href="/zh/software/ai-machine-learning/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/software/ai-machine-learning/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/software/ai-machine-learning/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter);">
+  <a href="/zh/">首页</a>
+  <span class="sep">/</span>
+  <a href="/zh/software/">软件</a>
+  <span class="sep">/</span>
+  <span class="here">AI 与机器学习系统</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Software · 03 · Intelligence · Flagship</div>
+      <h1><em>驱动成果</em>的 AI——而非演示文稿。</h1>
+      <p class="lede">我们设计并部署能够投入生产的 AI。LLM 驱动的副驾、预测模型和 ML 流水线——由一支资深团队选型、构建、评估、部署并监测，并在运行第一年内对系统负责到底。</p>
+      <div class="cta">
+        <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+        <a href="/zh/standards/cloud-ai-partners/" class="btn btn-ghost">云与 AI 合作伙伴</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">服务</div><div class="v">第 03 / 共 06 · 旗舰</div></div>
+      <div><div class="k">基础模型合作伙伴</div><div class="v">Anthropic · OpenAI · Cohere</div></div>
+      <div><div class="k">云平台</div><div class="v">Azure AI Foundry · AWS Bedrock · Databricks</div></div>
+      <div><div class="k">合作模式</div><div class="v">资深合伙人主导</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <div class="layout-with-toc">
+        <aside class="toc" aria-label="On this page">
+          <h6>本页内容</h6>
+          <ul>
+            <li><a href="#capabilities">能力</a></li>
+            <li><a href="#discovery">探索</a></li>
+            <li><a href="#approach">方法</a></li>
+            <li><a href="#mlops">MLOps</a></li>
+            <li><a href="#integration">集成</a></li>
+            <li><a href="#stack">技术栈</a></li>
+            <li><a href="#references">参考案例</a></li>
+            <li><a href="#industries">行业</a></li>
+            <li><a href="#engage">合作</a></li>
+          </ul>
+        </aside>
+
+        <div class="layout-with-toc-main">
+
+          <!-- Section 1 · Capabilities (6 cards) -->
+          <div id="capabilities" class="eyebrow-mono" style="margin-bottom: 16px;">§ Capabilities</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">我们构建什么。</h2>
+
+          <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+            <article class="svc">
+              <div class="svc-num">01 · LLM Copilots</div>
+              <h3>领域调优的<br>助手</h3>
+              <p>面向工厂操作人员、法务团队、分析师和现场工程师的领域调优助手。检索增强、引用证据，并带有可审计的响应追踪。</p>
+              <div class="svc-tags">
+                <span class="tag">RAG</span>
+                <span class="tag">工具使用</span>
+                <span class="tag">审计追踪</span>
+              </div>
+            </article>
+            <article class="svc">
+              <div class="svc-num">02 · Predictive Intelligence</div>
+              <h3>故障预测<br>与异常检测</h3>
+              <p>基于运营数据训练的故障预测、异常检测和预测模型——振动特征、遥测数据、交易流、理赔历史。</p>
+              <div class="svc-tags">
+                <span class="tag">时间序列</span>
+                <span class="tag">梯度提升</span>
+                <span class="tag">异常检测</span>
+              </div>
+            </article>
+            <article class="svc">
+              <div class="svc-num">03 · MLOps Pipelines</div>
+              <h3>让 AI 持续存活的<br>支撑骨架</h3>
+              <p>训练、评估、部署和监测基础设施。可复现的运行、注册的模型以及回滚。这些枯燥的支撑骨架让 AI 在生产环境中存活多年。</p>
+              <div class="svc-tags">
+                <span class="tag">可复现</span>
+                <span class="tag">模型注册表</span>
+                <span class="tag">回滚</span>
+              </div>
+            </article>
+            <article class="svc" style="border-top: 1px solid var(--rule);">
+              <div class="svc-num">04 · Foundation Model Integration</div>
+              <h3>为 Claude、GPT、Cohere<br>进行生产级接入</h3>
+              <p>为 Anthropic Claude、OpenAI、Cohere 和 Azure AI Foundry 进行生产级接入——包含提示缓存、工具使用、结构化输出和回退策略。</p>
+              <div class="svc-tags">
+                <span class="tag">Claude</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">提示缓存</span>
+              </div>
+            </article>
+            <article class="svc" style="border-top: 1px solid var(--rule);">
+              <div class="svc-num">05 · Custom Model Development</div>
+              <h3>当基础模型<br>并非答案时</h3>
+              <p>当基础模型并非正确答案时：经典 ML、梯度提升、深度学习、时间序列，以及在有必要时的强化学习试点。</p>
+              <div class="svc-tags">
+                <span class="tag">XGBoost</span>
+                <span class="tag">PyTorch</span>
+                <span class="tag">RL 试点</span>
+              </div>
+            </article>
+            <article class="svc" style="border-top: 1px solid var(--rule);">
+              <div class="svc-num">06 · Evaluation &amp; Safety</div>
+              <h3>评测、红队、<br>策略合规</h3>
+              <p>离线与在线评测、黄金集、人工审查闭环、红队演练和策略合规——内建于部署流水线之中，而非事后补救。</p>
+              <div class="svc-tags">
+                <span class="tag">黄金集</span>
+                <span class="tag">红队</span>
+                <span class="tag">人工审查</span>
+              </div>
+            </article>
+          </div>
+
+          <!-- Section 2 · Discovery -->
+          <div id="discovery" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Discovery</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">我们不从模型开始。<em style="font-style: italic; color: var(--accent-2); font-weight: 400;">我们从决策开始。</em></h2>
+
+          <div style="display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; border-top: 1px solid var(--rule); padding-top: 40px;">
+            <div>
+              <blockquote style="border-left: 2px solid var(--accent-2); padding: 6px 0 6px 24px; margin: 0; font-family: var(--font-display); font-style: italic; font-size: 22px; color: var(--ink); line-height: 1.4;">
+                如果我们写不出终止标准，就无法论证这次构建的合理性。
+              </blockquote>
+            </div>
+            <div>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                Droz 的每个 AI 合作项目都始于为期一至两周的问题界定工作。目标是识别出 AI 将要改变的<em style="color: var(--accent-2);">决策</em>——一项维护计划、一次分诊路由、一次理赔裁定、一次采购评分——以及今天做错这一决策的代价。
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                由此，我们反向推导出数据、模型选型、集成和上线。大多数合作项目在这一阶段会避免一两次错误的开端：那个"听起来像 LLM"的工作负载其实是一个结构化规则引擎；那个"需要深度学习"的预测任务其实只需在更好的特征上做梯度提升。
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0;">
+                探索的产出是一份书面简报：决策、基线、候选方案、数据、大致量级估算以及终止标准。可签署；可审阅；可审计。
+              </p>
+            </div>
+          </div>
+
+          <!-- Section 3 · Approach (.ai-diff-grid) -->
+          <div id="approach" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Approach</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">基础模型 vs 定制模型——<em style="font-style: italic; color: var(--accent-2); font-weight: 400;">何时用哪种。</em></h2>
+
+          <div class="ai-diff-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <div class="ai-cell">
+              <div class="num">A · Foundation models</div>
+              <h4>Claude、GPT、Cohere、Azure AI Foundry</h4>
+              <ul>
+                <li>任务富含语言（起草、摘要、对自由文本分类、对话）。</li>
+                <li>您需要在数周内交付，而非数个季度。</li>
+                <li>模式灵活性比延迟成本更重要。</li>
+                <li>检索增强生成（RAG）为模型提供所需的领域上下文。</li>
+              </ul>
+            </div>
+            <div class="ai-cell">
+              <div class="num">B · Custom models</div>
+              <h4>经训练、自有、确定性</h4>
+              <ul>
+                <li>任务是结构化的（预测、评分、异常检测、视觉）。</li>
+                <li>推理延迟必须低于 50 毫秒，或成本必须具有确定性。</li>
+                <li>训练数据已存在且足够大（通常 1 万个以上标注样本）。</li>
+                <li>您需要完全拥有模型权重和训练流水线。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style="padding: 24px; background: var(--paper-bone); border: 1px solid var(--rule); margin-top: 32px;">
+            <div class="svc-num" style="margin-bottom: 8px;">Hybrid · the common case</div>
+            <p style="font-size: 15px; line-height: 1.65; color: var(--graphite); margin: 0;">基础模型编排工作流；定制模型处理确定性的子任务。我们同时设计两个部分以及二者之间的契约。</p>
+          </div>
+
+          <!-- Section 4 · MLOps -->
+          <div id="mlops" class="eyebrow-mono" style="margin: 80px 0 16px;">§ MLOps</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">训练 → 评估 → <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">部署</em> → 监测。</h2>
+
+          <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="step">
+              <div class="ord">01 · Training</div>
+              <div class="ord-num">01</div>
+              <h5>训练</h5>
+              <p>在 Databricks、SageMaker 或 Azure ML 中的可复现流水线。版本化的数据集、注册的特征、可追踪的实验。每个模型都有谱系。</p>
+            </div>
+            <div class="step">
+              <div class="ord">02 · Evaluation</div>
+              <div class="ord-num">02</div>
+              <h5>评估</h5>
+              <p>在黄金集上的离线评测 + 留出测试；安全 / 红队评测；核心指标的统计置信区间。未通过的模型不会被晋级。</p>
+            </div>
+            <div class="step">
+              <div class="ord">03 · Deployment</div>
+              <div class="ord-num">03</div>
+              <h5>部署</h5>
+              <p>金丝雀发布。影子运行。在线模型采用蓝绿部署。预测模型采用批量刷新。每次部署均可一键回退。</p>
+            </div>
+            <div class="step">
+              <div class="ord">04 · Monitoring</div>
+              <div class="ord-num">04</div>
+              <h5>监测</h5>
+              <p>对输入、输出和下游决策进行漂移检测。质量仪表盘。低置信度预测的人工审查队列。会唤醒值班人员的告警。</p>
+            </div>
+          </div>
+
+          <!-- Section 5 · Integration -->
+          <div id="integration" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Integration</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">模型是一项服务。<em style="font-style: italic; color: var(--accent-2); font-weight: 400;">我们将这项服务接入您的业务。</em></h2>
+
+          <div style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 64px; border-top: 1px solid var(--rule); padding-top: 40px;">
+            <div>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                只有当 AI 系统嵌入操作人员的工作流之中时，它才真正有用。我们将模型部署在版本化的 API 之后，配备结构化日志、基于角色的访问控制，以及操作人员可审计的证据面板。
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0 0 20px;">
+                在 LLM 一侧，我们交付工具使用契约、输出模式（后端用 Pydantic；前端用 Zod）、提示缓存以及优雅的回退。在 ML 一侧，我们将批量预测交付到您的数据仓库、将在线推理部署在 API 网关之后，并提供模型可信赖的特征存储。
+              </p>
+              <p style="font-size: 17px; line-height: 1.7; color: var(--graphite); margin: 0;">
+                我们还构建面向人的界面——仪表盘、告警、覆盖控制、审查队列。重点是决策支持，而非取代决策。
+              </p>
+            </div>
+            <div class="aside-block" style="padding: 24px; align-self: start;">
+              <h6>集成术语</h6>
+              <ul>
+                <li>版本化 API（REST + OpenAPI）</li>
+                <li>工具使用契约（LLM）</li>
+                <li>输出模式（Pydantic / Zod）</li>
+                <li>提示缓存策略</li>
+                <li>回退与熔断器</li>
+                <li>RBAC + 审计追踪</li>
+                <li>供操作人员审查的证据面板</li>
+                <li>覆盖控制与人在闭环</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Section 6 · Stack -->
+          <div id="stack" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Stack</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">工具与技术。</h2>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; border-top: 1px solid var(--rule); padding-top: 32px;">
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">Foundation model partners</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Anthropic（Claude）、OpenAI、Cohere、Azure AI Foundry、AWS Bedrock。</p>
+              <div class="svc-tags">
+                <span class="tag">Claude</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag">Cohere</span>
+                <span class="tag">Azure AI Foundry</span>
+                <span class="tag">AWS Bedrock</span>
+              </div>
+            </div>
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">ML platforms</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Databricks、Azure ML、SageMaker、Vertex AI。</p>
+              <div class="svc-tags">
+                <span class="tag">Databricks</span>
+                <span class="tag">Azure ML</span>
+                <span class="tag">SageMaker</span>
+                <span class="tag">Vertex AI</span>
+              </div>
+            </div>
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">Frameworks</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">PyTorch、scikit-learn、XGBoost、LightGBM、transformers、sentence-transformers、LangGraph（在编排有需要时）。</p>
+              <div class="svc-tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">XGBoost</span>
+                <span class="tag">LightGBM</span>
+                <span class="tag">LangGraph</span>
+              </div>
+            </div>
+            <div>
+              <div class="svc-num" style="margin-bottom: 14px;">Data &amp; infra</div>
+              <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Snowflake、PostgreSQL + pgvector、Pinecone、Weaviate、Parquet、Apache Spark、Airflow、Kubeflow。</p>
+              <div class="svc-tags">
+                <span class="tag">Snowflake</span>
+                <span class="tag">pgvector</span>
+                <span class="tag">Pinecone</span>
+                <span class="tag">Airflow</span>
+              </div>
+            </div>
+          </div>
+
+          <p style="font-size: 13.5px; color: var(--graphite-2); margin-top: 24px; line-height: 1.6;">
+            交叉引用 — <a href="/zh/standards/cloud-ai-partners/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">完整合作伙伴简介</a> · <a href="/zh/standards/technologies/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">完整技术清单</a> · <a href="/zh/software/cloud-migration/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">云底层</a>。
+          </p>
+
+          <!-- Section 7 · References -->
+          <div id="references" class="eyebrow-mono" style="margin: 80px 0 16px;">§ Reference work</div>
+          <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">这些<em style="font-style: italic; color: var(--accent-2); font-weight: 400;">在生产环境中运行之处。</em></h2>
+
+          <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+            <article class="svc">
+              <a href="/zh/products/samson-ai/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+                <div class="svc-num">Industrial AI copilot</div>
+                <h3>Samson AI</h3>
+                <p>面向工厂操作人员的生产级 LLM 副驾。在设备手册、工单和状态历史上进行检索。强制要求审计日志。</p>
+                <div class="svc-tags">
+                  <span class="tag">RAG</span>
+                  <span class="tag">审计日志</span>
+                </div>
+              </a>
+            </article>
+            <article class="svc">
+              <a href="/zh/products/droz-predictive/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+                <div class="svc-num">Failure prediction at scale</div>
+                <h3>Droz Predictive</h3>
+                <p>从振动、热成像和超声波特征预测轴承、电机和旋转设备故障的生产级 ML 模型。</p>
+                <div class="svc-tags">
+                  <span class="tag">时间序列</span>
+                  <span class="tag">工程交叉链接</span>
+                </div>
+              </a>
+            </article>
+            <article class="svc">
+              <a href="/zh/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+                <div class="svc-num">Anonymized engagement</div>
+                <h3>公共部门分诊</h3>
+                <p>为某监管机构打造的 Protected-B 模式分诊助手。在政策文件上进行 RAG，每条建议均有人在闭环。</p>
+                <div class="svc-tags">
+                  <span class="tag">仅供预览</span>
+                </div>
+              </a>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>相关能力</h6>
+        <ul>
+          <li><a href="/zh/software/custom-software-development/">定制软件开发</a></li>
+          <li><a href="/zh/software/application-development/">应用程序开发</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移与架构</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务流程自动化</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>我们遵循的标准</h6>
+        <ul>
+          <li><a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a></li>
+          <li><a href="/zh/standards/">标准概览</a></li>
+          <li><a href="/zh/standards/technologies/">技术</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>与合伙人沟通</h6>
+        <p>每个 AI 合作项目都始于一份一页式问题简报，由资深合伙人与您共同撰写。</p>
+
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-form" data-form="engagement-request" style="gap: 12px; max-width: none;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · software/ai-machine-learning">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="software/ai-machine-learning">
+          <input type="hidden" name="locale" value="zh">
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="name" style="color: rgba(255,255,255,0.8);">姓名</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email" style="color: rgba(255,255,255,0.8);">电子邮箱</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="company" style="color: rgba(255,255,255,0.8);">公司</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="message" style="color: rgba(255,255,255,0.8);">简要描述</label>
+            <textarea id="message" name="message" required style="min-height: 80px;"></textarea>
+          </div>
+          <div class="field">
+            <label for="consent" style="display:flex; gap:8px; align-items:flex-start; text-transform:none; letter-spacing:0; font-family:var(--font-sans); font-size:12px; color:rgba(255,255,255,0.75);">
+              <input type="checkbox" id="consent" name="consent" required style="margin-top:2px;">
+              <span>我同意遵循<a href="/zh/legal/privacy/" style="color:#9FC4E6; border-bottom:1px solid rgba(159,196,230,.4);">隐私政策</a>。</span>
+            </label>
+          </div>
+          <div class="field">
+            <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITEKEY"></div>
+          </div>
+          <button type="submit" class="btn btn-light" style="width: 100%; justify-content: center;">申请合作 <span style="opacity:.7">→</span></button>
+          <a href="/zh/contact/#engagement-form" style="color: #9FC4E6; font-size: 12px; text-align: center; border: 0; margin-top: 4px;">或前往完整联系表单 →</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- Section 8 · Industries -->
+<section id="industries" class="section" style="background: var(--paper-bone); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="div-header">
+      <div>
+        <small>§ Industries served</small>
+        <div class="slash">AI <em>落地之处。</em></div>
+      </div>
+      <p class="blurb">下方列出六个代表性领域。完整的 17 个行业清单见<a href="/zh/industries/" style="color:var(--accent); border-bottom:1px solid var(--accent);">行业概览</a>。</p>
+    </div>
+
+    <div class="industries" style="margin-top: 48px;">
+      <a href="/zh/industries/refineries-oil-gas/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">01</span><span class="name">炼油厂 · 石油与天然气</span></a>
+      <a href="/zh/industries/energy-operators/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">02</span><span class="name">能源运营商</span></a>
+      <a href="/zh/industries/nuclear-power/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">03</span><span class="name">核电</span></a>
+      <a href="/zh/industries/pharmaceutical/" class="industry" style="text-decoration:none; border:0; border-bottom:1px solid var(--rule);"><span class="idx">04</span><span class="name">制药</span></a>
+      <a href="/zh/industries/public-sector-goc/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">05</span><span class="name">公共部门 · GoC</span></a>
+      <a href="/zh/industries/general-manufacturing/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">06</span><span class="name">通用制造</span></a>
+      <a href="/zh/industries/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); grid-column: span 2;"><span class="idx">→</span><span class="name">所有行业</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Section 9 · CTA band -->
+<section id="engage" class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Engage Droz · Intelligence</div>
+    <div class="stmt">有应该早已运行起来的 AI？<em>我们设计它、构建它、评估它、部署它，并承担值班轮值。</em></div>
+    <div class="creds">
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 Cities</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用程序开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

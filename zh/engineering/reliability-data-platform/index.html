@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>可靠性数据与监测系统 &mdash; Droz Technologies</title>
+  <meta name="description" content="一个受治理的数据层，整合跨工厂的状态历史、工单和 KPI——与 CMMS、SCADA 和历史数据库集成。生产环境采用 SOC 2 Type II。">
+  <link rel="canonical" href="https://droz.tech/zh/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/reliability-data-platform/">
+  <meta property="og:title" content="可靠性数据与监测系统">
+  <meta property="og:description" content="一个受治理的数据层，整合跨工厂的状态历史、工单和 KPI——与 CMMS、SCADA 和历史数据库集成。生产环境采用 SOC 2 Type II。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/zh/engineering/reliability-data-platform/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://droz.tech/en/engineering/" },
+      { "@type": "ListItem", "position": 3, "name": "Reliability Data &amp; Monitoring", "item": "https://droz.tech/en/engineering/reliability-data-platform/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Reliability Data Platform",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "Reliability Data Platform",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "一个受治理的数据层，整合跨工厂的状态历史、工单和 KPI——与 CMMS、SCADA 和历史数据库集成。"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/reliability-data-platform" data-locale="zh" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用程序开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering" class="is-active">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波检测</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油厂 · 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石化产品</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 · 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">采矿与金属</a>
+              <a href="/zh/industries/pulp-paper/">制浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/insights/" data-nav="insights">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/reliability-data-platform/">EN</a>
+        <a href="/fr/engineering/reliability-data-platform/">FR</a>
+        <a href="/es/engineering/reliability-data-platform/">ES</a>
+        <a href="/zh/engineering/reliability-data-platform/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/engineering/reliability-data-platform/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/engineering/reliability-data-platform/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/zh/">首页</a>
+  <span class="sep">/</span>
+  <a href="/zh/engineering/">工程</a>
+  <span class="sep">/</span>
+  <span class="here">可靠性数据与监测</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Practice 02 · Pillar B</div>
+      <h1>可靠性数据与监测系统——<em>一个界面，所有工厂。</em></h1>
+      <p class="lede">一个将状态历史、工单和 KPI 整合到单一企业工程界面的共用数据层——可跨工厂访问、与您的 CMMS 集成，并已为 AI 准备就绪。</p>
+      <div class="cta">
+        <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+        <a href="/zh/engineering/ai-asset-intelligence/" class="btn btn-ghost">查看 AI 资产智能 <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">支柱</div><div class="v">B · 数据层</div></div>
+      <div><div class="k">可扩展至</div><div class="v">多工厂、全球企业</div></div>
+      <div><div class="k">集成</div><div class="v">CMMS · SCADA · 历史数据库 · ERP</div></div>
+      <div><div class="k">安全</div><div class="v">SOC 2 Type II · Protected-B 模式</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/refinery-night.png" alt="炼油厂夜间运营——大规模的企业可靠性界面" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ Definition</small>
+          <div class="slash">状态历史、工单、KPI——<br><em>统一于一个企业视角之下。</em></div>
+        </div>
+        <p class="blurb">大多数工厂都有数据。它们缺少的是一个统一、受治理的界面，使数据可在各站点之间进行比较并对企业工程负责。Droz 的可靠性数据平台将状态历史、工单活动、资产层级和 KPI 基线从您现有的系统——<a href="/zh/software/it-infrastructure/">CMMS</a>、SCADA、历史数据库、ERP——汇入一个具有清晰所有权、保留和谱系的归一化层。工厂团队继续在自己的工具中工作。企业工程则获得一块屏幕——跨站点的轴承故障趋势、被动损失最高的资产、按族系的 MTBF/MTTR——无需定制电子表格。该层是 <a href="/zh/engineering/ai-asset-intelligence/">支柱 C 的模型</a>赖以训练的基础，也是 <a href="/zh/engineering/predictive-maintenance/">支柱 A 的现场报告</a>的落脚界面。</p>
+      </div>
+
+      <!-- 2. Capabilities -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Capabilities</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">平台<em style="font-style:italic; color:var(--accent-2); font-weight:400;">实际交付什么。</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
+          <article class="svc">
+            <div class="svc-num">DZ · 01</div>
+            <h3>仪表盘<br>与报告</h3>
+            <p>面向工厂经理、企业工程和高管层的基于角色的仪表盘——KPI（MTBF、MTTR、OEE、被动损失百分比）、故障模式细分和资产关键性图谱。</p>
+            <div class="svc-tags"><span class="tag">KPI</span><span class="tag">资产关键性</span><span class="tag">高管视图</span><span class="tag">下钻</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">DZ · 02</div>
+            <h3>状态历史<br>与资产记录</h3>
+            <p>一个统一的资产层级，包含每个资产的完整状态历史——每一次振动读数、热成像勘测、对中校正和干预，均按日期和专业领域建立索引。</p>
+            <div class="svc-tags"><span class="tag">资产层级</span><span class="tag">勘测历史</span><span class="tag">专业领域标记</span><span class="tag">审计追踪</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">DZ · 03</div>
+            <h3>CMMS 集成</h3>
+            <p>接入您 CMMS（Maximo、SAP PM、Fiix、eMaint、Infor EAM）的双向连接器——读数流入，工单流出，无需手动重新录入。</p>
+            <div class="svc-tags"><span class="tag">Maximo</span><span class="tag">SAP PM</span><span class="tag">Fiix</span><span class="tag">双向同步</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">DZ · 04</div>
+            <h3>多工厂<br>扩展</h3>
+            <p>无需重新设计架构即可向平台添加一座工厂。资产分类法、KPI 定义和访问控制从企业层继承；站点特定的覆盖项是明确且可审计的。</p>
+            <div class="svc-tags"><span class="tag">多租户</span><span class="tag">继承</span><span class="tag">站点覆盖</span><span class="tag">联邦化</span></div>
+          </article>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">本平台所运行的集成模式与现代 IT 层——<a href="/zh/software/it-infrastructure/">IT 基础设施</a> &middot; <a href="/zh/software/cloud-migration/">云迁移与架构</a> &rarr;</p>
+      </div>
+
+      <!-- 3. Reporting cadence -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Reporting cadence</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">从现场读数<em style="font-style:italic; color:var(--accent-2); font-weight:400;">到高管报告。</em></h2>
+        <div class="steps" style="grid-template-columns:repeat(4,1fr);">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">Live</div>
+            <h5>实时流</h5>
+            <p>传感器读数和现场平板录入在数秒内进入平台；阈值突破时触发告警。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">Weekly</div>
+            <h5>工厂周会</h5>
+            <p>工厂团队回顾过去一周的异常，按严重程度分级，附带建议干预和 CMMS 工单链接。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">Monthly</div>
+            <h5>企业汇总</h5>
+            <p>企业工程收到月度跨工厂报告——被动损失最高的资产、MTBF/MTTR 趋势、干预 ROI。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">Quarterly</div>
+            <h5>高管评审</h5>
+            <p>高管层记分卡——正常运行时间、可靠性成本、资本递延——以一页式叙述和底层下钻一并交付。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Integration -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Integration</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">为您<em style="font-style:italic; color:var(--accent-2); font-weight:400;">现有的工厂</em>提供的连接器。</h2>
+        <div class="ai-diff-grid" style="grid-template-columns:repeat(3,1fr);">
+          <div class="ai-cell">
+            <div class="num">INT · 01</div>
+            <h4>CMMS 连接器</h4>
+            <ul>
+              <li>IBM Maximo &middot; SAP PM &middot; Infor EAM &middot; Fiix &middot; eMaint &middot; Asset Essentials &middot; Limble</li>
+              <li>双向：读数流入，工单流出</li>
+              <li>资产层级从作为记录系统的 CMMS 同步</li>
+              <li>每次写入的审计追踪</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">INT · 02</div>
+            <h4>工厂数据源</h4>
+            <ul>
+              <li>OSIsoft PI / AVEVA PI &middot; GE Proficy &middot; Wonderware Historian</li>
+              <li>Rockwell FactoryTalk &middot; Siemens PCS 7 &middot; Honeywell Experion</li>
+              <li>OPC UA &middot; MQTT &middot; 用于遗留网关的 Modbus</li>
+              <li>面向低连接性站点的边缘缓冲</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">INT · 03</div>
+            <h4>企业系统</h4>
+            <ul>
+              <li>SAP &middot; Oracle EBS &middot; Microsoft Dynamics</li>
+              <li>身份：Azure AD / Entra ID &middot; Okta SAML</li>
+              <li>报告：Power BI &middot; Tableau &middot; Looker &middot; Excel 导出</li>
+              <li>数据仓库：Snowflake &middot; Databricks &middot; Synapse</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">集成由 Droz 的 <a href="/zh/software/it-infrastructure/">IT 基础设施</a>和<a href="/zh/software/cloud-migration/">云架构</a>团队交付 &rarr;</p>
+      </div>
+
+      <!-- 5. Data governance, security & compliance -->
+      <div style="margin-top:80px;">
+        <div class="div-header" style="padding-bottom:32px;">
+          <div>
+            <small>§ Data governance &amp; security</small>
+            <div class="slash">工厂数据是敏感的。<br><em>请像对待敏感数据一样对待它。</em></div>
+          </div>
+          <p class="blurb">可靠性数据是运营性的、往往是机密的，并日益成为受监管的资产。Droz 的平台内建了治理、安全和合规——而非在部署后才加装。</p>
+        </div>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">GOV · 01</div>
+            <h3>所有权<br>与谱系</h3>
+            <p>每一项指标、每一块仪表盘、每一条告警都有所有者、定义以及可回溯至其源系统的谱系链。KPI 定义经过版本化；变更需签署确认。</p>
+            <div class="svc-tags"><span class="tag">数据字典</span><span class="tag">KPI 版本化</span><span class="tag">谱系</span><span class="tag">登记所有者</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">GOV · 02</div>
+            <h3>安全态势</h3>
+            <p>生产环境采用 <a href="/zh/legal/privacy/">SOC 2 Type II</a>。静态与传输中加密。带站点范围权限的基于角色的访问控制。审计日志按约定的保留期保存。可为公共部门工作负载提供与 <a href="/zh/industries/public-sector-goc/">Protected-B</a> 对齐的模式。</p>
+            <div class="svc-tags"><span class="tag">SOC 2 Type II</span><span class="tag">RBAC</span><span class="tag">加密</span><span class="tag">Protected-B</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">GOV · 03</div>
+            <h3>保留<br>与驻留</h3>
+            <p>数据驻留可按司法管辖区配置（加拿大、美国、欧盟、墨西哥）。保留策略按数据类别定义——原始信号、派生指标、工单记录——并按计划进行硬删除。</p>
+            <div class="svc-tags"><span class="tag">驻留</span><span class="tag">保留</span><span class="tag">硬删除</span><span class="tag">司法管辖</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Industries served</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">数据层<em style="font-style:italic; color:var(--accent-2); font-weight:400;">作为牵头合作的领域。</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/zh/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">炼油厂 · 石油与天然气</span></a>
+          <a href="/zh/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">发电</span></a>
+          <a href="/zh/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">石化产品</span></a>
+          <a href="/zh/industries/industrial-chemicals/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">工业化学品</span></a>
+          <a href="/zh/industries/pharmaceutical/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">制药</span></a>
+          <a href="/zh/industries/food-manufacturing/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">食品制造</span></a>
+          <a href="/zh/industries/pulp-paper/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">制浆与造纸</span></a>
+          <a href="/zh/industries/public-sector-goc/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">公共部门 · GoC</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/zh/industries/">查看所有 16 个服务行业 &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Standards we apply</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">本平台<em style="font-style:italic; color:var(--accent-2); font-weight:400;">围绕其构建的合规框架。</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">SOC 2</div>
+            <h3>SOC 2 Type II</h3>
+            <p>安全、可用性、处理完整性和保密性控制的运行有效性每年接受审计。</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 9001</div>
+            <h3>质量管理</h3>
+            <p>Droz 的交付流程与 ISO 9001 对齐；数据平台继承该 QMS 用于变更控制和事件响应。</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">GoC · Protected-B</div>
+            <h3>公共部门模式</h3>
+            <p>面向联邦政府部署的架构模式，与加拿大政府 Protected-B 要求对齐。</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/zh/standards/associations/">认证与协会完整清单 &rarr;</a> &nbsp;&middot;&nbsp; <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴（Azure、AWS、Databricks）&rarr;</a></p>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>相关能力</h6>
+        <ul>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">AI 资产智能</a></li>
+          <li><a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移与架构</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务流程自动化</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>我们遵循的标准</h6>
+        <ul>
+          <li><a href="/zh/standards/associations/">SOC 2 Type II</a></li>
+          <li><a href="/zh/standards/associations/">ISO 9001</a></li>
+          <li><a href="/zh/standards/associations/">Protected-B</a></li>
+          <li><a href="/zh/standards/cloud-ai-partners/">Azure Landing Zones</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>以本支柱牵头的行业</h6>
+        <ul>
+          <li><a href="/zh/industries/refineries-oil-gas/">炼油厂 &middot; 石油与天然气</a></li>
+          <li><a href="/zh/industries/petrochemicals/">石化产品</a></li>
+          <li><a href="/zh/industries/power-generation/">发电</a></li>
+          <li><a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>与合伙人沟通</h6>
+        <p>合作始于由资深合伙人主导的范围界定会谈。</p>
+        <a href="/zh/contact/#engagement-form" class="btn btn-light" style="text-align:center; display:block;">申请合作 &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Reliability data platform</div>
+    <div class="stmt">每座工厂都有数据。<em>少有工厂拥有让数据持续累积的界面。</em></div>
+    <div class="creds">
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用程序开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

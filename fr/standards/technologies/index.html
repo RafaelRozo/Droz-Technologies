@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technologies — Normes et écosystème — Droz</title>
+  <meta name="description" content="Rockwell Automation, FLIR, Panametrics, Baker Instrument, Easy-Laser, IRD, Krautkramer, Prüftechnik — les technologies de diagnostic que les équipes de terrain de Droz utilisent.">
+  <link rel="canonical" href="https://droz.tech/fr/standards/technologies/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/standards/technologies/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/standards/technologies/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/standards/technologies/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/standards/technologies/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/standards/technologies/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/standards/technologies/">
+  <meta property="og:title" content="Technologies — Normes et écosystème">
+  <meta property="og:description" content="Rockwell Automation, FLIR, Panametrics, Baker Instrument, Easy-Laser, IRD, Krautkramer, Prüftechnik — les technologies de diagnostic que les équipes de terrain de Droz utilisent.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-standards.png">
+  <meta property="og:url" content="https://droz.tech/fr/standards/technologies/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement",       "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press",             "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://droz.tech/fr/" },
+      { "@type": "ListItem", "position": 2, "name": "Normes", "item": "https://droz.tech/fr/standards/" },
+      { "@type": "ListItem", "position": 3, "name": "Technologies", "item": "https://droz.tech/fr/standards/technologies/" }
+    ]
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="standards/technologies" data-locale="fr" data-active-nav="standards">
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/fr/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+
+        <div class="has-mega">
+          <a href="/fr/software/" data-nav="software">Logiciels</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/software/">Aperçu</a>
+              <a href="/fr/software/custom-software-development/">Développement de logiciels sur mesure</a>
+              <a href="/fr/software/application-development/">Développement d'applications</a>
+              <a href="/fr/software/ai-machine-learning/">Systèmes d'IA et d'apprentissage automatique</a>
+              <a href="/fr/software/it-infrastructure/">Infrastructure TI moderne</a>
+              <a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a>
+              <a href="/fr/software/cloud-migration/">Migration et architecture infonuagiques</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/fr/engineering/" data-nav="engineering">Ingénierie</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">Piliers</div>
+              <a href="/fr/engineering/">Aperçu</a>
+              <a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a>
+              <a href="/fr/engineering/reliability-data-platform/">Données et surveillance de fiabilité</a>
+              <a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs pilotée par l'IA</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Disciplines</div>
+              <a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a>
+              <a href="/fr/engineering/disciplines/thermography/">Thermographie</a>
+              <a href="/fr/engineering/disciplines/ultrasound/">Ultrasons</a>
+              <a href="/fr/engineering/disciplines/laser-alignment/">Alignement au laser</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/fr/industries/" data-nav="industries">Industries</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">Énergie</div>
+              <a href="/fr/industries/power-generation/">Production d'électricité</a>
+              <a href="/fr/industries/nuclear-power/">Énergie nucléaire</a>
+              <a href="/fr/industries/refineries-oil-gas/">Raffineries · Pétrole et gaz</a>
+              <a href="/fr/industries/energy-operators/">Opérateurs énergétiques</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Matériaux et fabrication</div>
+              <a href="/fr/industries/automotive/">Automobile</a>
+              <a href="/fr/industries/general-manufacturing/">Fabrication générale</a>
+              <a href="/fr/industries/petrochemicals/">Pétrochimie</a>
+              <a href="/fr/industries/industrial-chemicals/">Produits chimiques industriels</a>
+              <a href="/fr/industries/fertilizers-agrochemicals/">Engrais · Produits agrochimiques</a>
+              <a href="/fr/industries/mining-metals/">Mines et métaux</a>
+              <a href="/fr/industries/pulp-paper/">Pâtes et papiers</a>
+              <a href="/fr/industries/cement/">Cimenteries</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Consommation et secteurs réglementés</div>
+              <a href="/fr/industries/food-manufacturing/">Fabrication alimentaire</a>
+              <a href="/fr/industries/beverage/">Fabricants de boissons</a>
+              <a href="/fr/industries/pharmaceutical/">Pharmaceutique</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Secteur public</div>
+              <a href="/fr/industries/public-sector-goc/">Secteur public · GoC</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/fr/products/" data-nav="products">Produits</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/products/">Portefeuille</a>
+              <a href="/fr/products/droz-legal/">Droz Legal</a>
+              <a href="/fr/products/samson-ai/">Samson AI</a>
+              <a href="/fr/products/rx-change/">RX Change</a>
+              <a href="/fr/products/visp/">VISP</a>
+              <a href="/fr/products/droz-predictive/">Droz Predictive</a>
+              <a href="/fr/products/droz-rental/">Droz Rental</a>
+              <a href="/fr/products/droz-investments/">Droz Investments</a>
+              <a href="/fr/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/fr/standards/" data-nav="standards" class="is-active">Normes</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/standards/">Aperçu</a>
+              <a href="/fr/standards/associations/">Associations</a>
+              <a href="/fr/standards/technologies/">Technologies</a>
+              <a href="/fr/standards/cloud-ai-partners/">Partenaires infonuagiques et IA</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="/fr/insights/" data-nav="insights">Perspectives</a>
+        <a href="/fr/about/" data-nav="about">À propos</a>
+        <a href="/fr/contact/" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/standards/technologies/">EN</a>
+        <a href="/fr/standards/technologies/" class="on">FR</a>
+        <a href="/es/standards/technologies/">ES</a>
+        <a href="/zh/standards/technologies/" lang="zh-Hans">中文</a>
+        <a href="/hi/standards/technologies/" lang="hi">हिं</a>
+      </div>
+      <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Cette page a été traduite automatiquement. La version anglaise fait foi.</span>
+  <a href="/en/standards/technologies/">Voir en anglais</a>
+  <button class="mt-notice-x" aria-label="Fermer">×</button>
+</div>
+
+<!-- ═══════════════════════ BREADCRUMBS ═══════════════════════ -->
+<div class="wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <a href="/fr/">Accueil</a>
+    <span class="sep">/</span>
+    <a href="/fr/standards/">Normes</a>
+    <span class="sep">/</span>
+    <span class="here">Technologies</span>
+  </nav>
+</div>
+
+<!-- ═══════════════════════ PAGE HERO ═══════════════════════ -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Groupe · 02 · Technologies</div>
+      <h1>Les instruments que nos <em>équipes de terrain utilisent.</em></h1>
+      <p class="lede">Huit familles de technologies de diagnostic et industrielles — commandes d'automatisation, thermographie, ultrasons, essais de moteurs, alignement au laser, équilibrage dynamique, END et surveillance d'état. La liste reflète ce qu'un ingénieur de fiabilité Droz apporte dans une usine et ce qui alimente nos logiciels.</p>
+      <div class="cta">
+        <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+        <a href="/fr/engineering/" class="btn btn-ghost">Voir les disciplines</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Groupe</div><div class="v">02 sur 03</div></div>
+      <div><div class="k">Membres</div><div class="v">8</div></div>
+      <div><div class="k">Pratique</div><div class="v">Maintenance prédictive</div></div>
+      <div><div class="k">Autres groupes</div><div class="v">Associations · Infonuagique et IA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MEMBERS AT A GLANCE (DARK NAVY) ═══════════════════════ -->
+<section class="standards">
+  <div class="standards-inner">
+    <div class="standards-head">
+      <div class="eyebrow-mono">§ Les huit familles</div>
+      <h2>Technologies de diagnostic et <em>industrielles.</em></h2>
+      <p>Technologies couramment utilisées dans l'inspection industrielle, le diagnostic, l'alignement, l'équilibrage et les programmes de fiabilité. Cliquez sur une carte pour accéder à son bloc de détail ci-dessous.</p>
+    </div>
+
+    <div class="standards-group">
+      <div class="standards-cards">
+        <a class="stcard" href="#rockwell">
+          <div class="mark">Rockwell <em>Automation</em></div>
+          <div class="sub">PLC et SCADA</div>
+        </a>
+        <a class="stcard" href="#flir">
+          <div class="mark">FLIR Systems</div>
+          <div class="sub">Thermographie</div>
+        </a>
+        <a class="stcard" href="#panametrics">
+          <div class="mark">Panametrics</div>
+          <div class="sub">Ultrasons</div>
+        </a>
+        <a class="stcard" href="#baker">
+          <div class="mark">Baker <em>Instrument</em></div>
+          <div class="sub">Essais de moteurs</div>
+        </a>
+        <a class="stcard" href="#easy-laser">
+          <div class="mark">Easy-Laser</div>
+          <div class="sub">Alignement au laser</div>
+        </a>
+        <a class="stcard" href="#ird">
+          <div class="mark">IRD Balancing</div>
+          <div class="sub">Équilibrage dynamique</div>
+        </a>
+        <a class="stcard has-logo" href="#krautkramer">
+          <img class="logo" src="/assets/certifications/krautkramer.jpg" alt="Logo Krautkramer">
+          <div class="sub">Inspection NDT</div>
+        </a>
+        <a class="stcard" href="#prueftechnik">
+          <div class="mark">Prüftechnik</div>
+          <div class="sub">Alignement et état</div>
+        </a>
+      </div>
+      <p class="standards-caption">Technologies couramment utilisées dans l'inspection industrielle, le diagnostic, l'alignement, l'équilibrage et les programmes de fiabilité.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ MEMBER DETAIL BLOCKS ═══════════════════════ -->
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- Rockwell -->
+      <article id="rockwell" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 01</div>
+        <h2 style="margin: 16px 0 18px;">Rockwell Automation</h2>
+        <p>Matériel et logiciels d'automatisation industrielle — y compris les automates Allen-Bradley, les contrôleurs ControlLogix / CompactLogix, FactoryTalk SCADA et l'écosystème Rockwell largement utilisé dans la fabrication nord-américaine.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Droz s'intègre aux piles de commande Rockwell existantes pour l'extraction de données, les raccords aux historiens et les ponts OT-vers-infonuagique qui alimentent les tableaux de bord de fiabilité. Nous n'effectuons pas l'ingénierie de référence des systèmes de commande; notre travail se situe à côté de la couche OT et la lit sous un accès à changements contrôlés.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/software/it-infrastructure/">Infrastructure TI moderne</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a></li>
+          <li><a href="/fr/engineering/reliability-data-platform/">Données et surveillance de fiabilité</a></li>
+          <li><a href="/fr/industries/general-manufacturing/">Fabrication générale</a></li>
+          <li><a href="/fr/industries/automotive/">Automobile</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- FLIR -->
+      <article id="flir" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 02</div>
+        <h2 style="margin: 16px 0 18px;">FLIR Systems</h2>
+        <p>Caméras d'imagerie thermique industrielle et logiciels d'analyse qui transforment les images radiométriques en évaluations d'état — la famille d'équipements dominante dans les programmes de thermographie électrique et mécanique nord-américains.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Les relevés de thermographie de Droz (appareillage de commutation électrique, MCC, transformateurs, roulements mécaniques, réfractaires, enveloppes de bâtiment) sont effectués avec des caméras radiométriques de classe FLIR au niveau de certification en thermographie infrarouge défini par la CINDE et adapté à l'actif.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/engineering/disciplines/thermography/">Thermographie</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a></li>
+          <li><a href="/fr/industries/power-generation/">Production d'électricité</a></li>
+          <li><a href="/fr/industries/refineries-oil-gas/">Raffineries · Pétrole et gaz</a></li>
+          <li><a href="/fr/industries/cement/">Cimenteries</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Panametrics -->
+      <article id="panametrics" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 03</div>
+        <h2 style="margin: 16px 0 18px;">Panametrics</h2>
+        <p>Équipements de mesure et d'inspection par ultrasons — jauges d'épaisseur, débitmètres et détecteurs de défauts par ultrasons utilisés dans les programmes d'intégrité des appareils sous pression et de la tuyauterie. Désormais partie de Baker Hughes; la marque Panametrics subsiste pour la gamme d'instruments.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Droz utilise des instruments d'épaisseur et de débit par ultrasons de classe Panametrics pour les relevés de tuyauterie et d'appareils dans les raffineries, la pétrochimie et les usines de procédés. Les dossiers citent la famille de jauges et la traçabilité du bloc d'étalonnage.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/engineering/disciplines/ultrasound/">Ultrasons</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a></li>
+          <li><a href="/fr/industries/refineries-oil-gas/">Raffineries · Pétrole et gaz</a></li>
+          <li><a href="/fr/industries/petrochemicals/">Pétrochimie</a></li>
+          <li><a href="/fr/industries/industrial-chemicals/">Produits chimiques industriels</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Baker Instrument -->
+      <article id="baker" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 04</div>
+        <h2 style="margin: 16px 0 18px;">Baker Instrument</h2>
+        <p>Analyseurs de moteurs statiques et dynamiques — essai de surtension, indice de polarisation, mégohmmètre et diagnostics de moteurs hors ligne et en ligne de type PdMA — utilisés pour caractériser l'isolation du stator, la cage du rotor, l'excentricité de l'entrefer et l'intégrité des connexions. Désormais partie de Megger; la gamme Baker subsiste.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Les mandats d'essais de moteurs électriques de Droz utilisent des instruments de classe Baker pour établir une référence et suivre les moteurs critiques; les constats croisent les attentes de l'EASA AR100 pour toute décision de réparation.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a></li>
+          <li><a href="/fr/industries/general-manufacturing/">Fabrication générale</a></li>
+          <li><a href="/fr/industries/mining-metals/">Mines et métaux</a></li>
+          <li><a href="/fr/industries/pulp-paper/">Pâtes et papiers</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Easy-Laser -->
+      <article id="easy-laser" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 05</div>
+        <h2 style="margin: 16px 0 18px;">Easy-Laser</h2>
+        <p>Outils d'alignement d'arbres au laser, de mesure géométrique et de mise en place de machines — la famille d'instruments d'origine suédoise largement utilisée pour l'alignement de machines accouplées, le diagnostic de patte molle et la planéité des plaques de base.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Droz effectue l'alignement de précision d'arbres au laser pour les accouplements, les chaînes entraînées par courroie et les corrections de plaques de base à l'aide d'équipements de classe Easy-Laser. Les rapports avant et après alignement consignent le décalage et l'angularité résiduels par rapport à la tolérance.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/engineering/disciplines/laser-alignment/">Alignement au laser</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a></li>
+          <li><a href="/fr/industries/general-manufacturing/">Fabrication générale</a></li>
+          <li><a href="/fr/industries/automotive/">Automobile</a></li>
+          <li><a href="/fr/industries/food-manufacturing/">Fabrication alimentaire</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- IRD Balancing -->
+      <article id="ird" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 06</div>
+        <h2 style="margin: 16px 0 18px;">IRD Balancing</h2>
+        <p>Instrumentation et méthodologie d'équilibrage dynamique — équilibrage à un plan, à deux plans et à plusieurs plans de rotors, de ventilateurs, de souffleurs et de pompes in situ ou sur une machine à équilibrer. L'un des noms les plus anciens de la discipline.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Droz effectue l'équilibrage sur le terrain des équipements rotatifs critiques à l'aide d'instrumentation de classe IRD et des grades de qualité d'équilibrage ISO 1940 adaptés à la classe de la machine. Le balourd résiduel est documenté avec le grade d'équilibrage atteint.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a></li>
+          <li><a href="/fr/industries/general-manufacturing/">Fabrication générale</a></li>
+          <li><a href="/fr/industries/pulp-paper/">Pâtes et papiers</a></li>
+          <li><a href="/fr/industries/cement/">Cimenteries</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Krautkramer -->
+      <article id="krautkramer" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 07</div>
+        <h2 style="margin: 16px 0 18px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;">
+          <img src="/assets/certifications/krautkramer.jpg" alt="Logo Krautkramer" style="height:44px; width:auto;">
+          <span>Krautkramer</span>
+        </h2>
+        <p>Détecteurs de défauts par ultrasons et instrumentation END — la famille d'équipements UT d'origine allemande largement utilisée pour l'inspection des soudures, l'intégrité des pièces moulées et la détection de défauts de composants. Désormais partie de Baker Hughes Waygate Technologies; la marque Krautkramer subsiste pour la gamme d'instruments.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Les mandats d'END de Droz utilisent des détecteurs de défauts de classe Krautkramer pour l'inspection des soudures et des pièces moulées, réalisée aux niveaux de certification UT définis par la CINDE, avec une traçabilité du bloc d'étalonnage documentée dans chaque rapport.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/engineering/disciplines/ultrasound/">Ultrasons</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a></li>
+          <li><a href="/fr/industries/refineries-oil-gas/">Raffineries · Pétrole et gaz</a></li>
+          <li><a href="/fr/industries/petrochemicals/">Pétrochimie</a></li>
+          <li><a href="/fr/industries/nuclear-power/">Énergie nucléaire</a></li>
+        </ul>
+        <hr style="margin: 48px 0;">
+      </article>
+
+      <!-- Prüftechnik -->
+      <article id="prueftechnik" class="member-block">
+        <div class="eyebrow-mono">§ Membre · 08</div>
+        <h2 style="margin: 16px 0 18px;">Prüftechnik</h2>
+        <p>Instruments d'alignement au laser et de surveillance d'état — y compris la famille d'alignement d'arbres OPTALIGN / ROTALIGN et les analyseurs de vibrations VIBXPERT. D'origine allemande; désormais partie de Fluke Reliability.</p>
+        <h4 style="margin-top: 28px;">Comment Droz l'applique</h4>
+        <p>Là où les usines utilisent déjà l'outillage Prüftechnik OPTALIGN / ROTALIGN et les collecteurs VIBXPERT, les ingénieurs de Droz travaillent nativement dans ces flux de travail, exportent les données vers notre plateforme de fiabilité sans friction de conversion et aident les équipes du site à interpréter les résultats par rapport aux bandes de sévérité ISO 10816 / 20816 pertinentes.</p>
+        <h4 style="margin-top: 28px;">Où cela intervient</h4>
+        <ul>
+          <li><a href="/fr/engineering/disciplines/laser-alignment/">Alignement au laser</a></li>
+          <li><a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a></li>
+          <li><a href="/fr/engineering/reliability-data-platform/">Données et surveillance de fiabilité</a></li>
+        </ul>
+      </article>
+
+    </div>
+
+    <!-- Sticky right rail -->
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Capacités connexes</h6>
+        <ul>
+          <li><a href="/fr/engineering/predictive-maintenance/">Maintenance prédictive</a></li>
+          <li><a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a></li>
+          <li><a href="/fr/engineering/disciplines/thermography/">Thermographie</a></li>
+          <li><a href="/fr/engineering/disciplines/ultrasound/">Ultrasons</a></li>
+          <li><a href="/fr/engineering/disciplines/laser-alignment/">Alignement au laser</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Autres groupes</h6>
+        <ul>
+          <li><a href="/fr/standards/associations/">Groupe 01 · Associations</a></li>
+          <li><a href="/fr/standards/cloud-ai-partners/">Groupe 03 · Partenaires infonuagiques et IA</a></li>
+          <li><a href="/fr/standards/">Aperçu des normes</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Demande de collaboration</h6>
+        <p>Les collaborations débutent par une conversation de cadrage menée par un partenaire principal. Envoyez l'essentiel; nous acheminons vers la bonne équipe.</p>
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-request" data-form="engagement-request" style="gap: 12px;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · standards/technologies">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="standards/technologies">
+          <input type="hidden" name="locale" value="fr">
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="et-name">Votre nom</label>
+            <input type="text" id="et-name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="et-email">Courriel</label>
+            <input type="email" id="et-email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="et-company">Entreprise / organisation</label>
+            <input type="text" id="et-company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="et-message">Décrivez brièvement la collaboration</label>
+            <textarea id="et-message" name="message" rows="3" required></textarea>
+          </div>
+          <div class="field" style="flex-direction: row; align-items: flex-start; gap: 8px;">
+            <input type="checkbox" id="et-consent" name="consent" required style="margin-top:4px;">
+            <label for="et-consent" style="font-size: 11px; text-transform: none; letter-spacing: 0; color: rgba(255,255,255,0.78); font-family: var(--font-sans);">Je consens à ce que Droz conserve cette soumission conformément à la <a href="/fr/legal/privacy/" style="color:#9FC4E6; border-color:#9FC4E6;">politique de confidentialité</a>.</label>
+          </div>
+          <button type="submit" class="btn btn-light">Demander une collaboration <span style="opacity:.7">→</span></button>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CLOSING BAND ═══════════════════════ -->
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Divulgation</div>
+    <div class="stmt">Droz utilise ces familles d'instruments sur le terrain; <em>leur inclusion ici n'est pas une revendication de partenariat de revendeur ou de fabricant.</em></div>
+    <div class="creds"><a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ LEGAL FOOTNOTE ═══════════════════════ -->
+<section class="section section--tight">
+  <div class="wrap">
+    <p class="legal" style="color: var(--graphite-2); max-width: 80ch; font-size: 13px; line-height: 1.6;">
+      Tous les logos et marques de commerce de tiers sont la propriété de leurs détenteurs respectifs. Leur inclusion n'implique aucun partenariat formel, aval ou certification, sauf indication contraire expresse.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — une entreprise de technologie industrielle offrant des logiciels d'entreprise, de l'ingénierie de fiabilité et de l'IA appliquée. Burlington, Ontario. Fondée en 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 villes</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Logiciels</h6>
+        <ul>
+          <li><a href="/fr/software/">Aperçu</a></li>
+          <li><a href="/fr/software/custom-software-development/">Logiciels sur mesure</a></li>
+          <li><a href="/fr/software/application-development/">Développement d'applications</a></li>
+          <li><a href="/fr/software/ai-machine-learning/">IA et apprentissage automatique</a></li>
+          <li><a href="/fr/software/it-infrastructure/">Infrastructure TI</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation des affaires</a></li>
+          <li><a href="/fr/software/cloud-migration/">Migration infonuagique</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Ingénierie</h6>
+        <ul>
+          <li><a href="/fr/engineering/">Aperçu</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Maintenance prédictive</a></li>
+          <li><a href="/fr/engineering/reliability-data-platform/">Données de fiabilité</a></li>
+          <li><a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs</a></li>
+          <li><a href="/fr/industries/">Industries servies</a></li>
+          <li><a href="/fr/standards/">Normes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Cabinet</h6>
+        <ul>
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/contact/#procurement-form">Approvisionnement</a></li>
+          <li><a href="/fr/press/">Presse</a></li>
+          <li><a href="/fr/careers/">Carrières</a></li>
+          <li><a href="/fr/insights/">Perspectives</a></li>
+          <li><a href="/fr/capabilities-statement/">Énoncé des capacités</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Langue</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/fr/legal/privacy/">Confidentialité</a>
+        <a href="/fr/legal/terms/">Conditions</a>
+        <a href="/fr/legal/accessibility/">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

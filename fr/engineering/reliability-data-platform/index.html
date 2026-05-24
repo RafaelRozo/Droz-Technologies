@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Système de données et de surveillance de la fiabilité &mdash; Droz Technologies</title>
+  <meta name="description" content="Une seule couche de données encadrée pour l'historique de condition, les bons de travail et les KPI d'une usine à l'autre — intégrée à CMMS, SCADA et historiens. SOC 2 Type II en production.">
+  <link rel="canonical" href="https://droz.tech/fr/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/reliability-data-platform/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/reliability-data-platform/">
+  <meta property="og:title" content="Système de données et de surveillance de la fiabilité">
+  <meta property="og:description" content="Une seule couche de données encadrée pour l'historique de condition, les bons de travail et les KPI d'une usine à l'autre — intégrée à CMMS, SCADA et historiens. SOC 2 Type II en production.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/fr/engineering/reliability-data-platform/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Ingénierie", "item": "https://droz.tech/en/engineering/" },
+      { "@type": "ListItem", "position": 3, "name": "Données et surveillance de la fiabilité", "item": "https://droz.tech/en/engineering/reliability-data-platform/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Reliability Data Platform",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "Reliability Data Platform",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "Une seule couche de données encadrée pour l'historique de condition, les bons de travail et les KPI d'une usine à l'autre — intégrée à CMMS, SCADA et historiens."
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/reliability-data-platform" data-locale="fr" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/fr/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/fr/software/" data-nav="software">Logiciels</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/software/">Aperçu</a>
+              <a href="/fr/software/custom-software-development/">Développement de logiciels sur mesure</a>
+              <a href="/fr/software/application-development/">Développement d'applications</a>
+              <a href="/fr/software/ai-machine-learning/">Systèmes d'IA et d'apprentissage machine</a>
+              <a href="/fr/software/it-infrastructure/">Infrastructure TI moderne</a>
+              <a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a>
+              <a href="/fr/software/cloud-migration/">Migration et architecture infonuagiques</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/engineering/" data-nav="engineering" class="is-active">Ingénierie</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">Piliers</div>
+              <a href="/fr/engineering/">Aperçu</a>
+              <a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a>
+              <a href="/fr/engineering/reliability-data-platform/">Données et surveillance de la fiabilité</a>
+              <a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs pilotée par l'IA</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Disciplines</div>
+              <a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a>
+              <a href="/fr/engineering/disciplines/thermography/">Thermographie</a>
+              <a href="/fr/engineering/disciplines/ultrasound/">Ultrasons</a>
+              <a href="/fr/engineering/disciplines/laser-alignment/">Alignement laser</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/industries/" data-nav="industries">Industries</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">Énergie</div>
+              <a href="/fr/industries/power-generation/">Production d'électricité</a>
+              <a href="/fr/industries/nuclear-power/">Énergie nucléaire</a>
+              <a href="/fr/industries/refineries-oil-gas/">Raffineries · Pétrole et gaz</a>
+              <a href="/fr/industries/energy-operators/">Exploitants énergétiques</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Matériaux et fabrication</div>
+              <a href="/fr/industries/automotive/">Automobile</a>
+              <a href="/fr/industries/general-manufacturing/">Fabrication générale</a>
+              <a href="/fr/industries/petrochemicals/">Pétrochimie</a>
+              <a href="/fr/industries/industrial-chemicals/">Produits chimiques industriels</a>
+              <a href="/fr/industries/fertilizers-agrochemicals/">Engrais · Produits agrochimiques</a>
+              <a href="/fr/industries/mining-metals/">Mines et métaux</a>
+              <a href="/fr/industries/pulp-paper/">Pâtes et papiers</a>
+              <a href="/fr/industries/cement/">Cimenteries</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Consommation et secteurs réglementés</div>
+              <a href="/fr/industries/food-manufacturing/">Fabrication alimentaire</a>
+              <a href="/fr/industries/beverage/">Fabricants de boissons</a>
+              <a href="/fr/industries/pharmaceutical/">Pharmaceutique</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Secteur public</div>
+              <a href="/fr/industries/public-sector-goc/">Secteur public · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/products/" data-nav="products">Produits</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/products/">Portefeuille</a>
+              <a href="/fr/products/droz-legal/">Droz Legal</a>
+              <a href="/fr/products/samson-ai/">Samson AI</a>
+              <a href="/fr/products/rx-change/">RX Change</a>
+              <a href="/fr/products/visp/">VISP</a>
+              <a href="/fr/products/droz-predictive/">Droz Predictive</a>
+              <a href="/fr/products/droz-rental/">Droz Rental</a>
+              <a href="/fr/products/droz-investments/">Droz Investments</a>
+              <a href="/fr/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/standards/" data-nav="standards">Normes</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/standards/">Aperçu</a>
+              <a href="/fr/standards/associations/">Associations</a>
+              <a href="/fr/standards/technologies/">Technologies</a>
+              <a href="/fr/standards/cloud-ai-partners/">Partenaires infonuagiques et IA</a>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/insights/" data-nav="insights">Perspectives</a>
+        <a href="/fr/about/" data-nav="about">À propos</a>
+        <a href="/fr/contact/" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/reliability-data-platform/">EN</a>
+        <a href="/fr/engineering/reliability-data-platform/" class="on">FR</a>
+        <a href="/es/engineering/reliability-data-platform/">ES</a>
+        <a href="/zh/engineering/reliability-data-platform/" lang="zh-Hans">中文</a>
+        <a href="/hi/engineering/reliability-data-platform/" lang="hi">हिं</a>
+      </div>
+      <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Cette page a été traduite automatiquement. La version anglaise fait foi.</span>
+  <a href="/en/engineering/reliability-data-platform/">Voir en anglais</a>
+  <button class="mt-notice-x" aria-label="Fermer">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/fr/">Accueil</a>
+  <span class="sep">/</span>
+  <a href="/fr/engineering/">Ingénierie</a>
+  <span class="sep">/</span>
+  <span class="here">Données et surveillance de la fiabilité</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Pratique 02 · Pilier B</div>
+      <h1>Système de données et de surveillance de la fiabilité &mdash; <em>une seule surface, chaque usine.</em></h1>
+      <p class="lede">Une couche de données commune qui consolide l'historique de condition, les bons de travail et les KPI en une seule surface d'ingénierie corporative &mdash; accessible d'une usine à l'autre, intégrée à votre CMMS et prête pour l'IA.</p>
+      <div class="cta">
+        <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">&rarr;</span></a>
+        <a href="/fr/engineering/ai-asset-intelligence/" class="btn btn-ghost">Voir l'intelligence des actifs par l'IA <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Pilier</div><div class="v">B · Couche de données</div></div>
+      <div><div class="k">Évolue jusqu'à</div><div class="v">Multi-usines, entreprise mondiale</div></div>
+      <div><div class="k">Intègre</div><div class="v">CMMS · SCADA · Historiens · ERP</div></div>
+      <div><div class="k">Sécurité</div><div class="v">SOC 2 Type II · Modèles Protected-B</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/refinery-night.png" alt="Opérations nocturnes de raffinerie &mdash; la surface de fiabilité corporative à grande échelle" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ Définition</small>
+          <div class="slash">Historique de condition, bons de travail, KPI &mdash;<br><em>sous une seule lentille corporative.</em></div>
+        </div>
+        <p class="blurb">La plupart des usines possèdent les données. Ce qui leur manque, c'est une surface unique et encadrée qui rend les données comparables d'un site à l'autre et imputables à l'ingénierie corporative. La plateforme de données de fiabilité de Droz tire l'historique de condition, l'activité des bons de travail, les hiérarchies d'actifs et les références de KPI de vos systèmes existants &mdash; <a href="/fr/software/it-infrastructure/">CMMS</a>, SCADA, historiens, ERP &mdash; en une seule couche normalisée avec propriété, conservation et lignée claires. Les équipes d'usine continuent de travailler dans leurs outils. L'ingénierie corporative obtient un seul écran &mdash; tendances de défaillances de roulements d'un site à l'autre, principaux actifs à perte réactive, MTBF/MTTR par famille &mdash; sans chiffriers sur mesure. La couche est la fondation sur laquelle <a href="/fr/engineering/ai-asset-intelligence/">les modèles du pilier C</a> s'entraînent, et la surface où <a href="/fr/engineering/predictive-maintenance/">les rapports de terrain du pilier A</a> aboutissent.</p>
+      </div>
+
+      <!-- 2. Capabilities -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Capacités</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">Ce que la plateforme <em style="font-style:italic; color:var(--accent-2); font-weight:400;">livre réellement.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
+          <article class="svc">
+            <div class="svc-num">DZ · 01</div>
+            <h3>Tableaux de bord<br>et reddition</h3>
+            <p>Tableaux de bord basés sur les rôles pour les gestionnaires d'usine, l'ingénierie corporative et la haute direction &mdash; KPI (MTBF, MTTR, OEE, % de perte réactive), ventilations des modes de défaillance et cartes de criticité des actifs.</p>
+            <div class="svc-tags"><span class="tag">KPI</span><span class="tag">Criticité des actifs</span><span class="tag">Vue dirigeants</span><span class="tag">Exploration</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">DZ · 02</div>
+            <h3>Historique de condition<br>et dossiers d'actifs</h3>
+            <p>Une hiérarchie d'actifs unifiée avec l'historique de condition complet par actif &mdash; chaque relevé de vibration, relevé de thermographie, correction d'alignement et intervention indexés par date et par discipline.</p>
+            <div class="svc-tags"><span class="tag">Hiérarchie d'actifs</span><span class="tag">Historique des relevés</span><span class="tag">Étiquetage par discipline</span><span class="tag">Journal d'audit</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">DZ · 03</div>
+            <h3>Intégration CMMS</h3>
+            <p>Connecteurs bidirectionnels vers votre CMMS (Maximo, SAP PM, Fiix, eMaint, Infor EAM) &mdash; les relevés entrent, les bons de travail sortent, sans ressaisie manuelle.</p>
+            <div class="svc-tags"><span class="tag">Maximo</span><span class="tag">SAP PM</span><span class="tag">Fiix</span><span class="tag">Synchro bidirectionnelle</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">DZ · 04</div>
+            <h3>Mise à l'échelle<br>multi-usines</h3>
+            <p>Ajoutez une usine à la plateforme sans la réarchitecturer. Les taxonomies d'actifs, les définitions de KPI et le contrôle d'accès sont hérités du niveau corporatif; les dérogations propres à un site sont explicites et auditables.</p>
+            <div class="svc-tags"><span class="tag">Multi-tenant</span><span class="tag">Héritage</span><span class="tag">Dérogations par site</span><span class="tag">Fédérée</span></div>
+          </article>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">Les modèles d'intégration et la couche TI moderne sur laquelle cette plateforme s'exécute &mdash; <a href="/fr/software/it-infrastructure/">infrastructure TI</a> &middot; <a href="/fr/software/cloud-migration/">migration et architecture infonuagiques</a> &rarr;</p>
+      </div>
+
+      <!-- 3. Reporting cadence -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Cadence de reddition</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">Du relevé de terrain <em style="font-style:italic; color:var(--accent-2); font-weight:400;">au rapport des dirigeants.</em></h2>
+        <div class="steps" style="grid-template-columns:repeat(4,1fr);">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">En direct</div>
+            <h5>Flux en temps réel</h5>
+            <p>Les relevés de capteurs et les saisies sur tablette de terrain aboutissent dans la plateforme en quelques secondes; les alertes se déclenchent lorsque les seuils sont franchis.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">Hebdomadaire</div>
+            <h5>Mêlée d'usine</h5>
+            <p>Les équipes d'usine examinent les anomalies de la semaine écoulée, graduées par sévérité, avec interventions recommandées et liens vers les bons de travail du CMMS.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">Mensuel</div>
+            <h5>Regroupement corporatif</h5>
+            <p>L'ingénierie corporative reçoit un rapport mensuel multi-usines &mdash; principaux actifs à perte réactive, tendances MTBF/MTTR, RCI des interventions.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">Trimestriel</div>
+            <h5>Revue des dirigeants</h5>
+            <p>Tableau de bord de la haute direction &mdash; disponibilité, coût de fiabilité, report de capital &mdash; livré avec un récit d'une page et l'exploration sous-jacente.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Integration -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Intégration</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Des connecteurs pour l'usine <em style="font-style:italic; color:var(--accent-2); font-weight:400;">que vous exploitez déjà.</em></h2>
+        <div class="ai-diff-grid" style="grid-template-columns:repeat(3,1fr);">
+          <div class="ai-cell">
+            <div class="num">INT · 01</div>
+            <h4>Connecteurs CMMS</h4>
+            <ul>
+              <li>IBM Maximo &middot; SAP PM &middot; Infor EAM &middot; Fiix &middot; eMaint &middot; Asset Essentials &middot; Limble</li>
+              <li>Bidirectionnel : relevés entrants, bons de travail sortants</li>
+              <li>Hiérarchie d'actifs synchronisée depuis le CMMS comme système de référence</li>
+              <li>Journal d'audit de chaque écriture</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">INT · 02</div>
+            <h4>Sources de données d'usine</h4>
+            <ul>
+              <li>OSIsoft PI / AVEVA PI &middot; GE Proficy &middot; Wonderware Historian</li>
+              <li>Rockwell FactoryTalk &middot; Siemens PCS 7 &middot; Honeywell Experion</li>
+              <li>OPC UA &middot; MQTT &middot; Modbus pour les passerelles héritées</li>
+              <li>Tampon en périphérie pour les sites à faible connectivité</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">INT · 03</div>
+            <h4>Systèmes corporatifs</h4>
+            <ul>
+              <li>SAP &middot; Oracle EBS &middot; Microsoft Dynamics</li>
+              <li>Identité : Azure AD / Entra ID &middot; Okta SAML</li>
+              <li>Reddition : Power BI &middot; Tableau &middot; Looker &middot; exportation Excel</li>
+              <li>Entrepôt de données : Snowflake &middot; Databricks &middot; Synapse</li>
+            </ul>
+          </div>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">L'intégration est livrée par les équipes <a href="/fr/software/it-infrastructure/">infrastructure TI</a> et <a href="/fr/software/cloud-migration/">architecture infonuagique</a> de Droz &rarr;</p>
+      </div>
+
+      <!-- 5. Data governance, security & compliance -->
+      <div style="margin-top:80px;">
+        <div class="div-header" style="padding-bottom:32px;">
+          <div>
+            <small>§ Gouvernance et sécurité des données</small>
+            <div class="slash">Les données d'usine sont sensibles.<br><em>Traitez-les comme telles.</em></div>
+          </div>
+          <p class="blurb">Les données de fiabilité sont opérationnelles, souvent confidentielles et de plus en plus un actif réglementé. La plateforme de Droz est livrée avec gouvernance, sécurité et conformité intégrées &mdash; et non greffées après le déploiement.</p>
+        </div>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">GOV · 01</div>
+            <h3>Propriété<br>et lignée</h3>
+            <p>Chaque métrique, chaque tableau de bord, chaque alerte a un propriétaire, une définition et une piste de lignée jusqu'à son système source. Les définitions de KPI sont versionnées; les changements exigent une approbation.</p>
+            <div class="svc-tags"><span class="tag">Dictionnaire de données</span><span class="tag">Versionnage des KPI</span><span class="tag">Lignée</span><span class="tag">Propriétaire de référence</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">GOV · 02</div>
+            <h3>Posture de sécurité</h3>
+            <p><a href="/fr/legal/privacy/">SOC 2 Type II</a> en production. Chiffrement au repos et en transit. Contrôle d'accès basé sur les rôles avec permissions par site. Journaux d'audit conservés selon la fenêtre de conservation convenue. Modèles alignés sur <a href="/fr/industries/public-sector-goc/">Protected-B</a> disponibles pour les charges du secteur public.</p>
+            <div class="svc-tags"><span class="tag">SOC 2 Type II</span><span class="tag">RBAC</span><span class="tag">Chiffrement</span><span class="tag">Protected-B</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">GOV · 03</div>
+            <h3>Conservation<br>et résidence</h3>
+            <p>Résidence des données configurable par juridiction (Canada, États-Unis, UE, Mexique). Politiques de conservation définies par classe de données &mdash; signaux bruts, métriques dérivées, dossiers de bons de travail &mdash; avec suppression définitive selon le calendrier.</p>
+            <div class="svc-tags"><span class="tag">Résidence</span><span class="tag">Conservation</span><span class="tag">Suppression définitive</span><span class="tag">Juridictionnelle</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Industries desservies</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">Là où la couche de données <em style="font-style:italic; color:var(--accent-2); font-weight:400;">est la collaboration phare.</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/fr/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">Raffineries · Pétrole et gaz</span></a>
+          <a href="/fr/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">Production d'électricité</span></a>
+          <a href="/fr/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">Pétrochimie</span></a>
+          <a href="/fr/industries/industrial-chemicals/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">Produits chimiques industriels</span></a>
+          <a href="/fr/industries/pharmaceutical/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">Pharmaceutique</span></a>
+          <a href="/fr/industries/food-manufacturing/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">Fabrication alimentaire</span></a>
+          <a href="/fr/industries/pulp-paper/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">Pâtes et papiers</span></a>
+          <a href="/fr/industries/public-sector-goc/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">Secteur public · GoC</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/fr/industries/">Voir les 16 industries desservies &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Normes appliquées</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Les cadres de conformité <em style="font-style:italic; color:var(--accent-2); font-weight:400;">autour desquels la plateforme a été bâtie.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">SOC 2</div>
+            <h3>SOC 2 Type II</h3>
+            <p>L'efficacité opérationnelle des contrôles de sécurité, de disponibilité, d'intégrité du traitement et de confidentialité est auditée annuellement.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 9001</div>
+            <h3>Gestion de la qualité</h3>
+            <p>Le processus de livraison de Droz est aligné sur ISO 9001; la plateforme de données hérite du SGQ pour le contrôle des changements et la réponse aux incidents.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">GoC · Protected-B</div>
+            <h3>Modèle du secteur public</h3>
+            <p>Modèles d'architecture alignés sur les exigences Protected-B du gouvernement du Canada pour les déploiements du gouvernement fédéral.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/fr/standards/associations/">Liste complète des certifications et associations &rarr;</a> &nbsp;&middot;&nbsp; <a href="/fr/standards/cloud-ai-partners/">Partenaires infonuagiques et IA (Azure, AWS, Databricks) &rarr;</a></p>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Capacités connexes</h6>
+        <ul>
+          <li><a href="/fr/engineering/predictive-maintenance/">Maintenance prédictive</a></li>
+          <li><a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs par l'IA</a></li>
+          <li><a href="/fr/software/it-infrastructure/">Infrastructure TI moderne</a></li>
+          <li><a href="/fr/software/cloud-migration/">Migration et architecture infonuagiques</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Normes appliquées</h6>
+        <ul>
+          <li><a href="/fr/standards/associations/">SOC 2 Type II</a></li>
+          <li><a href="/fr/standards/associations/">ISO 9001</a></li>
+          <li><a href="/fr/standards/associations/">Protected-B</a></li>
+          <li><a href="/fr/standards/cloud-ai-partners/">Zones d'atterrissage Azure</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Industries qui priorisent ce pilier</h6>
+        <ul>
+          <li><a href="/fr/industries/refineries-oil-gas/">Raffineries &middot; Pétrole et gaz</a></li>
+          <li><a href="/fr/industries/petrochemicals/">Pétrochimie</a></li>
+          <li><a href="/fr/industries/power-generation/">Production d'électricité</a></li>
+          <li><a href="/fr/industries/public-sector-goc/">Secteur public · GoC</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Parler à un partenaire</h6>
+        <p>Les collaborations débutent par une conversation de cadrage menée par un partenaire principal.</p>
+        <a href="/fr/contact/#engagement-form" class="btn btn-light" style="text-align:center; display:block;">Demander une collaboration &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Plateforme de données de fiabilité</div>
+    <div class="stmt">Chaque usine possède les données. <em>Peu possèdent la surface qui les fait fructifier.</em></div>
+    <div class="creds">
+      <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — une entreprise de technologie industrielle offrant des logiciels d'entreprise, de l'ingénierie de fiabilité et de l'IA appliquée. Burlington, Ontario. Fondée en 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Logiciels</h6>
+        <ul>
+          <li><a href="/fr/software/">Aperçu</a></li>
+          <li><a href="/fr/software/custom-software-development/">Logiciels sur mesure</a></li>
+          <li><a href="/fr/software/application-development/">Développement d'applications</a></li>
+          <li><a href="/fr/software/ai-machine-learning/">IA et apprentissage machine</a></li>
+          <li><a href="/fr/software/it-infrastructure/">Infrastructure TI</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation d'affaires</a></li>
+          <li><a href="/fr/software/cloud-migration/">Migration infonuagique</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Ingénierie</h6>
+        <ul>
+          <li><a href="/fr/engineering/">Aperçu</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Maintenance prédictive</a></li>
+          <li><a href="/fr/engineering/reliability-data-platform/">Données de fiabilité</a></li>
+          <li><a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs</a></li>
+          <li><a href="/fr/industries/">Industries desservies</a></li>
+          <li><a href="/fr/standards/">Normes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Cabinet</h6>
+        <ul>
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/contact/#procurement-form">Approvisionnement</a></li>
+          <li><a href="/fr/press/">Presse</a></li>
+          <li><a href="/fr/careers/">Carrières</a></li>
+          <li><a href="/fr/insights/">Perspectives</a></li>
+          <li><a href="/fr/capabilities-statement/">Énoncé des capacités</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Langue</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/fr/legal/privacy/">Confidentialité</a>
+        <a href="/fr/legal/terms/">Conditions</a>
+        <a href="/fr/legal/accessibility/">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

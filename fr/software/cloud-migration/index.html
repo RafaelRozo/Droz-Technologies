@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Migration et architecture infonuagiques — Droz Technologies</title>
+  <meta name="description" content="Droz livre la migration infonuagique comme une réarchitecture : zones d'atterrissage Azure, modèles multicomptes AWS, IaC Terraform et FinOps — capable Protected-B et SOC 2. Dirigé par un partenaire principal.">
+  <link rel="canonical" href="https://droz.tech/fr/software/cloud-migration/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/software/cloud-migration/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/software/cloud-migration/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/software/cloud-migration/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/software/cloud-migration/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/software/cloud-migration/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/software/cloud-migration/">
+  <meta property="og:title" content="Migration et architecture infonuagiques — Droz Technologies">
+  <meta property="og:description" content="Droz livre la migration infonuagique comme une réarchitecture : zones d'atterrissage Azure, modèles multicomptes AWS, IaC Terraform et FinOps — capable Protected-B et SOC 2. Dirigé par un partenaire principal.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-software.png">
+  <meta property="og:url" content="https://droz.tech/fr/software/cloud-migration/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Logiciels", "item": "https://droz.tech/en/software/" },
+      { "@type": "ListItem", "position": 3, "name": "Migration et architecture infonuagiques", "item": "https://droz.tech/en/software/cloud-migration/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Migration et architecture infonuagiques",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "Cloud Migration & Architecture",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "Droz livre la migration infonuagique comme une réarchitecture : zones d'atterrissage Azure, modèles multicomptes AWS, IaC Terraform et FinOps — capable Protected-B et SOC 2. Dirigé par un partenaire principal."
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="software/cloud-migration" data-locale="fr" data-active-nav="software">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/fr/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/fr/software/" data-nav="software" class="is-active">Logiciels</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/software/">Aperçu</a>
+              <a href="/fr/software/custom-software-development/">Développement de logiciels sur mesure</a>
+              <a href="/fr/software/application-development/">Développement d'applications</a>
+              <a href="/fr/software/ai-machine-learning/">Systèmes d'IA et d'apprentissage machine</a>
+              <a href="/fr/software/it-infrastructure/">Infrastructure TI moderne</a>
+              <a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a>
+              <a href="/fr/software/cloud-migration/">Migration et architecture infonuagiques</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/engineering/" data-nav="engineering">Ingénierie</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">Piliers</div>
+              <a href="/fr/engineering/">Aperçu</a>
+              <a href="/fr/engineering/predictive-maintenance/">Services de maintenance prédictive</a>
+              <a href="/fr/engineering/reliability-data-platform/">Données et surveillance de la fiabilité</a>
+              <a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs pilotée par l'IA</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Disciplines</div>
+              <a href="/fr/engineering/disciplines/vibration-analysis/">Analyse vibratoire</a>
+              <a href="/fr/engineering/disciplines/thermography/">Thermographie</a>
+              <a href="/fr/engineering/disciplines/ultrasound/">Ultrasons</a>
+              <a href="/fr/engineering/disciplines/laser-alignment/">Alignement laser</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/industries/" data-nav="industries">Industries</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">Énergie</div>
+              <a href="/fr/industries/power-generation/">Production d'électricité</a>
+              <a href="/fr/industries/nuclear-power/">Énergie nucléaire</a>
+              <a href="/fr/industries/refineries-oil-gas/">Raffineries · Pétrole et gaz</a>
+              <a href="/fr/industries/energy-operators/">Exploitants énergétiques</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Matériaux et fabrication</div>
+              <a href="/fr/industries/automotive/">Automobile</a>
+              <a href="/fr/industries/general-manufacturing/">Fabrication générale</a>
+              <a href="/fr/industries/petrochemicals/">Pétrochimie</a>
+              <a href="/fr/industries/industrial-chemicals/">Produits chimiques industriels</a>
+              <a href="/fr/industries/fertilizers-agrochemicals/">Engrais · Produits agrochimiques</a>
+              <a href="/fr/industries/mining-metals/">Mines et métaux</a>
+              <a href="/fr/industries/pulp-paper/">Pâtes et papiers</a>
+              <a href="/fr/industries/cement/">Cimenteries</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Consommation et secteurs réglementés</div>
+              <a href="/fr/industries/food-manufacturing/">Fabrication alimentaire</a>
+              <a href="/fr/industries/beverage/">Fabricants de boissons</a>
+              <a href="/fr/industries/pharmaceutical/">Pharmaceutique</a>
+            </div>
+            <div class="group">
+              <div class="group-title">Secteur public</div>
+              <a href="/fr/industries/public-sector-goc/">Secteur public · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/products/" data-nav="products">Produits</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/products/">Portefeuille</a>
+              <a href="/fr/products/droz-legal/">Droz Legal</a>
+              <a href="/fr/products/samson-ai/">Samson AI</a>
+              <a href="/fr/products/rx-change/">RX Change</a>
+              <a href="/fr/products/visp/">VISP</a>
+              <a href="/fr/products/droz-predictive/">Droz Predictive</a>
+              <a href="/fr/products/droz-rental/">Droz Rental</a>
+              <a href="/fr/products/droz-investments/">Droz Investments</a>
+              <a href="/fr/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/fr/standards/" data-nav="standards">Normes</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/fr/standards/">Aperçu</a>
+              <a href="/fr/standards/associations/">Associations</a>
+              <a href="/fr/standards/technologies/">Technologies</a>
+              <a href="/fr/standards/cloud-ai-partners/">Partenaires infonuagiques et IA</a>
+            </div>
+          </div>
+        </div>
+        <a href="/fr/insights/" data-nav="insights">Perspectives</a>
+        <a href="/fr/about/" data-nav="about">À propos</a>
+        <a href="/fr/contact/" data-nav="contact">Contact</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/software/cloud-migration/">EN</a>
+        <a href="/fr/software/cloud-migration/" class="on">FR</a>
+        <a href="/es/software/cloud-migration/">ES</a>
+        <a href="/zh/software/cloud-migration/" lang="zh-Hans">中文</a>
+        <a href="/hi/software/cloud-migration/" lang="hi">हिं</a>
+      </div>
+      <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Cette page a été traduite automatiquement. La version anglaise fait foi.</span>
+  <a href="/en/software/cloud-migration/">Voir en anglais</a>
+  <button class="mt-notice-x" aria-label="Fermer">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding-left:var(--gutter); padding-right:var(--gutter);">
+  <a href="/fr/">Accueil</a>
+  <span class="sep">/</span>
+  <a href="/fr/software/">Logiciels</a>
+  <span class="sep">/</span>
+  <span class="here">Migration et architecture infonuagiques</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Logiciels · 06 · Infonuagique</div>
+      <h1>Ne migrez pas. <em>Réarchitecturez.</em></h1>
+      <p class="lede">Nous déplaçons les systèmes d'entreprise vers l'infonuagique avec précision, sécurité et discipline des coûts. Zones d'atterrissage, Terraform, identité, observabilité et une pratique FinOps — le tout livré dans le cadre d'une seule collaboration imputable.</p>
+      <div class="cta">
+        <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+        <a href="/fr/standards/cloud-ai-partners/" class="btn btn-ghost">Partenaires infonuagiques et IA</a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Service</div><div class="v">06 sur 06</div></div>
+      <div><div class="k">Infonuagique principale</div><div class="v">Microsoft Azure</div></div>
+      <div><div class="k">Aussi pris en charge</div><div class="v">AWS · Google Cloud</div></div>
+      <div><div class="k">Posture</div><div class="v">Protected-B · SOC 2</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- Section 1 · Capabilities -->
+      <div class="eyebrow-mono" style="margin-bottom: 16px;">§ Capacités</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Ce que nous livrons.</h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(2, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <div class="svc-num">01 · Zones d'atterrissage</div>
+          <h3>Les 90 premiers jours<br>de l'infonuagique faits correctement</h3>
+          <p>Zones d'atterrissage Azure (selon le CAF) ou organisations multicomptes AWS (selon AWS Well-Architected) : identité, réseautique, politiques, journalisation et références de sécurité approvisionnées en tant que code.</p>
+          <div class="svc-tags">
+            <span class="tag">CAF</span>
+            <span class="tag">Well-Architected</span>
+            <span class="tag">IaC</span>
+          </div>
+        </article>
+
+        <article class="svc">
+          <div class="svc-num">02 · Migration et réarchitecture</div>
+          <h3>Réhéberger. Replateformer.<br>Réarchitecturer. Retirer.</h3>
+          <p>Des plans de migration charge par charge : réhéberger, replateformer, réarchitecturer ou retirer. Pilote, exécution en parallèle, basculement, déclassement — avec un retour en arrière documenté à chaque étape.</p>
+          <div class="svc-tags">
+            <span class="tag">Par vagues</span>
+            <span class="tag">Retour en arrière</span>
+            <span class="tag">Exécution en parallèle</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">03 · Terraform / IaC</div>
+          <h3>Rien de cliqué dans une<br>console après l'amorçage</h3>
+          <p>Toute l'infrastructure en tant que code. Modules versionnés dans un registre privé. Détection de dérive. Pipelines plan/apply dans GitHub Actions. Rien de cliqué dans une console après l'amorçage.</p>
+          <div class="svc-tags">
+            <span class="tag">Terraform</span>
+            <span class="tag">Détection de dérive</span>
+            <span class="tag">GitHub Actions</span>
+          </div>
+        </article>
+
+        <article class="svc" style="border-top: 1px solid var(--rule);">
+          <div class="svc-num">04 · FinOps</div>
+          <h3>Le coût croît avec la charge,<br>pas avec l'effectif</h3>
+          <p>Stratégie d'étiquetage, modèle de répartition, plan de capacité réservée et une revue de pilotage trimestrielle. Le coût infonuagique croît avec la charge de travail, pas avec l'effectif.</p>
+          <div class="svc-tags">
+            <span class="tag">Étiquetage</span>
+            <span class="tag">Répartition</span>
+            <span class="tag">Capacité réservée</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Section 2 · Engagement model -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Collaboration</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Évaluer → Architecturer → <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">Migrer</em> → Exploiter.</h2>
+
+      <div class="steps" style="grid-template-columns: repeat(4, 1fr);">
+        <div class="step">
+          <div class="ord">01 · Évaluer</div>
+          <div class="ord-num">01</div>
+          <h5>Évaluer</h5>
+          <p>Évaluation de deux à quatre semaines : inventaire des charges, carte des dépendances, cadrage de la conformité (Protected-B / SOC 2) et disposition par charge (réhéberger, replateformer, réarchitecturer, retirer). Résultat : une stratégie écrite + un ordre de grandeur.</p>
+        </div>
+        <div class="step">
+          <div class="ord">02 · Architecturer</div>
+          <div class="ord-num">02</div>
+          <h5>Architecturer</h5>
+          <p>Architecture de référence : zone d'atterrissage, modèle d'identité, topologie réseau, référence de sécurité, pile d'observabilité, pipeline de déploiement et plan de reprise après sinistre. Révisée et signée avant toute migration.</p>
+        </div>
+        <div class="step">
+          <div class="ord">03 · Migrer</div>
+          <div class="ord-num">03</div>
+          <h5>Migrer</h5>
+          <p>Exécution par vagues. Chaque vague : pilote, exécution en parallèle, basculement, déclassement. Observabilité de calibre production dès la vague 1. Pilotage trimestriel avec le commanditaire exécutif.</p>
+        </div>
+        <div class="step">
+          <div class="ord">04 · Exploiter</div>
+          <div class="ord-num">04</div>
+          <h5>Exploiter</h5>
+          <p>Optionnel mais courant : un contrat de service géré pour les opérations infonuagiques, une reddition FinOps mensuelle, une revue d'architecture trimestrielle et une revue annuelle de posture.</p>
+        </div>
+      </div>
+
+      <!-- Section 3 · Tools & technologies -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Pile technologique</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Outils et technologies.</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px 48px; border-top: 1px solid var(--rule); padding-top: 32px;">
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Plateformes infonuagiques</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Microsoft Azure (principale), AWS, Google Cloud (lorsque justifié).</p>
+          <div class="svc-tags">
+            <span class="tag">Microsoft Azure</span>
+            <span class="tag">AWS</span>
+            <span class="tag">Google Cloud</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">IaC et pipelines</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Terraform (principal), Bicep (lorsque Azure uniquement et que l'équipe le préfère), GitHub Actions, Azure DevOps Pipelines, Spacelift / Terraform Cloud.</p>
+          <div class="svc-tags">
+            <span class="tag">Terraform</span>
+            <span class="tag">Bicep</span>
+            <span class="tag">GitHub Actions</span>
+            <span class="tag">Spacelift</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Identité et sécurité</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Microsoft Entra ID (Azure AD), AWS IAM, KeyVault / Secrets Manager, Azure Policy, AWS SCP, Defender / GuardDuty, Sentinel / Security Hub.</p>
+          <div class="svc-tags">
+            <span class="tag">Entra ID</span>
+            <span class="tag">AWS IAM</span>
+            <span class="tag">KeyVault</span>
+            <span class="tag">Sentinel</span>
+          </div>
+        </div>
+        <div>
+          <div class="svc-num" style="margin-bottom: 14px;">Observabilité</div>
+          <p style="font-size: 14.5px; line-height: 1.7; color: var(--graphite); margin: 0 0 12px;">Azure Monitor + Log Analytics, AWS CloudWatch, Grafana + Prometheus, OpenTelemetry, Datadog (lorsque l'acheteur l'utilise déjà).</p>
+          <div class="svc-tags">
+            <span class="tag">Azure Monitor</span>
+            <span class="tag">CloudWatch</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">OpenTelemetry</span>
+          </div>
+        </div>
+      </div>
+
+      <p style="font-size: 13.5px; color: var(--graphite-2); margin-top: 24px; line-height: 1.6;">
+        Renvois — <a href="/fr/standards/cloud-ai-partners/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Profils des partenaires infonuagiques</a> · <a href="/fr/standards/technologies/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Technologies complètes</a> · <a href="/fr/industries/public-sector-goc/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Posture de conformité Protected-B</a> · <a href="/fr/software/custom-software-development/" style="color: var(--accent); border-bottom: 1px solid var(--accent);">Couche applicative sous-jacente</a>.
+      </p>
+
+      <!-- Section 4 · Reference engagements -->
+      <div class="eyebrow-mono" style="margin: 80px 0 16px;">§ Collaborations de référence</div>
+      <h2 style="font-family: var(--font-display); font-size: clamp(32px, 3.6vw, 48px); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; margin: 0 0 40px;">Où cela <em style="font-style: italic; color: var(--accent-2); font-weight: 400;">s'est déployé.</em></h2>
+
+      <div class="svc-grid" style="grid-template-columns: repeat(3, 1fr); border-bottom: 0;">
+        <article class="svc">
+          <a href="/fr/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Référence 01</div>
+            <h3>Zone d'atterrissage Protected-B<br>pour un ministère du GoC</h3>
+            <p>Zone d'atterrissage Azure approvisionnée selon les modèles Protected-B du GoC, avec topologie VNet dédiée, gestion des clés et ingestion SIEM.</p>
+            <div class="svc-tags"><span class="tag">Aperçu seulement</span></div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/fr/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Référence 02</div>
+            <h3>Réhébergement et réarchitecture<br>multi-usines</h3>
+            <p>Douze charges déplacées du sur-site vers Azure en deux vagues : réhéberger d'abord, replateformer les charges critiques à la vague 2.</p>
+            <div class="svc-tags"><span class="tag">Aperçu seulement</span></div>
+          </a>
+        </article>
+        <article class="svc">
+          <a href="/fr/case-studies/" style="text-decoration:none; color:inherit; border:0; display:flex; flex-direction:column; gap:18px; height:100%;">
+            <div class="svc-num">Référence 03</div>
+            <h3>Programme FinOps<br>pour une dépense infonuagique de 4 M$</h3>
+            <p>Stratégie d'étiquetage, de répartition et de capacité réservée ayant réduit la dépense infonuagique annualisée de 28 % sur 12 mois.</p>
+            <div class="svc-tags"><span class="tag">Aperçu seulement</span></div>
+          </a>
+        </article>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Capacités connexes</h6>
+        <ul>
+          <li><a href="/fr/software/it-infrastructure/">Infrastructure TI moderne</a></li>
+          <li><a href="/fr/software/custom-software-development/">Développement de logiciels sur mesure</a></li>
+          <li><a href="/fr/software/ai-machine-learning/">Systèmes d'IA et d'apprentissage machine</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation des processus d'affaires</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Normes appliquées</h6>
+        <ul>
+          <li><a href="/fr/standards/cloud-ai-partners/">Partenaires infonuagiques et IA</a></li>
+          <li><a href="/fr/standards/">Aperçu des normes</a></li>
+          <li><a href="/fr/standards/technologies/">Technologies</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Parler à un partenaire</h6>
+        <p>Les collaborations infonuagiques débutent par une évaluation écrite de 2 à 4 semaines et une carte de disposition par charge.</p>
+
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" id="engagement-form" data-form="engagement-request" style="gap: 12px; max-width: none;">
+          <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+          <input type="hidden" name="subject" value="Engagement request · software/cloud-migration">
+          <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=engagement-request">
+          <input type="hidden" name="from_name" value="Droz Technologies website">
+          <input type="hidden" name="to_email" value="contact@droz.tech">
+          <input type="hidden" name="page_source" value="software/cloud-migration">
+          <input type="hidden" name="locale" value="fr">
+
+          <div class="honeypot" aria-hidden="true">
+            <label for="company_url">Company URL</label>
+            <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field">
+            <label for="name" style="color: rgba(255,255,255,0.8);">Nom</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email" style="color: rgba(255,255,255,0.8);">Courriel</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="company" style="color: rgba(255,255,255,0.8);">Entreprise</label>
+            <input type="text" id="company" name="company" required>
+          </div>
+          <div class="field">
+            <label for="message" style="color: rgba(255,255,255,0.8);">Décrivez brièvement</label>
+            <textarea id="message" name="message" required style="min-height: 80px;"></textarea>
+          </div>
+          <div class="field">
+            <label for="consent" style="display:flex; gap:8px; align-items:flex-start; text-transform:none; letter-spacing:0; font-family:var(--font-sans); font-size:12px; color:rgba(255,255,255,0.75);">
+              <input type="checkbox" id="consent" name="consent" required style="margin-top:2px;">
+              <span>Je consens conformément à la <a href="/fr/legal/privacy/" style="color:#9FC4E6; border-bottom:1px solid rgba(159,196,230,.4);">politique de confidentialité</a>.</span>
+            </label>
+          </div>
+          <div class="field">
+            <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITEKEY"></div>
+          </div>
+          <button type="submit" class="btn btn-light" style="width: 100%; justify-content: center;">Demander une collaboration <span style="opacity:.7">→</span></button>
+          <a href="/fr/contact/#engagement-form" style="color: #9FC4E6; font-size: 12px; text-align: center; border: 0; margin-top: 4px;">Ou accédez au formulaire de contact complet →</a>
+        </form>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section" style="background: var(--paper-bone); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);">
+  <div class="wrap">
+    <div class="div-header">
+      <div>
+        <small>§ Industries desservies</small>
+        <div class="slash">Où la réarchitecture <em>se déploie.</em></div>
+      </div>
+      <p class="blurb">Secteur public · GoC est en tête de liste compte tenu du lien Protected-B. La liste complète des 17 se trouve dans l'<a href="/fr/industries/" style="color:var(--accent); border-bottom:1px solid var(--accent);">aperçu des industries</a>.</p>
+    </div>
+
+    <div class="industries" style="margin-top: 48px;">
+      <a href="/fr/industries/public-sector-goc/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">01</span><span class="name">Secteur public · GoC</span></a>
+      <a href="/fr/industries/energy-operators/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">02</span><span class="name">Exploitants énergétiques</span></a>
+      <a href="/fr/industries/refineries-oil-gas/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">03</span><span class="name">Raffineries · Pétrole et gaz</span></a>
+      <a href="/fr/industries/pharmaceutical/" class="industry" style="text-decoration:none; border:0; border-bottom:1px solid var(--rule);"><span class="idx">04</span><span class="name">Pharmaceutique</span></a>
+      <a href="/fr/industries/general-manufacturing/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">05</span><span class="name">Fabrication générale</span></a>
+      <a href="/fr/industries/nuclear-power/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule);"><span class="idx">06</span><span class="name">Énergie nucléaire</span></a>
+      <a href="/fr/industries/" class="industry" style="text-decoration:none; border:0; border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); grid-column: span 2;"><span class="idx">→</span><span class="name">Toutes les industries</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Collaborez avec Droz · Infonuagique</div>
+    <div class="stmt">Le réhébergement direct est un point de départ. <em>La réarchitecture est le contrat.</em></div>
+    <div class="creds">
+      <a href="/fr/contact/#engagement-form" class="btn btn-primary">Demander une collaboration <span style="opacity:.7">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — une entreprise de technologie industrielle offrant des logiciels d'entreprise, de l'ingénierie de fiabilité et de l'IA appliquée. Burlington, Ontario. Fondée en 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>·</span>
+          <span>5 Cities</span><span>·</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Logiciels</h6>
+        <ul>
+          <li><a href="/fr/software/">Aperçu</a></li>
+          <li><a href="/fr/software/custom-software-development/">Logiciels sur mesure</a></li>
+          <li><a href="/fr/software/application-development/">Développement d'applications</a></li>
+          <li><a href="/fr/software/ai-machine-learning/">IA et apprentissage machine</a></li>
+          <li><a href="/fr/software/it-infrastructure/">Infrastructure TI</a></li>
+          <li><a href="/fr/software/business-process-automation/">Automatisation d'affaires</a></li>
+          <li><a href="/fr/software/cloud-migration/">Migration infonuagique</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Ingénierie</h6>
+        <ul>
+          <li><a href="/fr/engineering/">Aperçu</a></li>
+          <li><a href="/fr/engineering/predictive-maintenance/">Maintenance prédictive</a></li>
+          <li><a href="/fr/engineering/reliability-data-platform/">Données de fiabilité</a></li>
+          <li><a href="/fr/engineering/ai-asset-intelligence/">Intelligence des actifs</a></li>
+          <li><a href="/fr/industries/">Industries desservies</a></li>
+          <li><a href="/fr/standards/">Normes</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Cabinet</h6>
+        <ul>
+          <li><a href="/fr/about/">À propos</a></li>
+          <li><a href="/fr/contact/">Contact</a></li>
+          <li><a href="/fr/contact/#procurement-form">Approvisionnement</a></li>
+          <li><a href="/fr/press/">Presse</a></li>
+          <li><a href="/fr/careers/">Carrières</a></li>
+          <li><a href="/fr/insights/">Perspectives</a></li>
+          <li><a href="/fr/capabilities-statement/">Énoncé des capacités</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Langue</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2004–2026 Droz Technologies Inc. · Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/fr/legal/privacy/">Confidentialité</a>
+        <a href="/fr/legal/terms/">Conditions</a>
+        <a href="/fr/legal/accessibility/">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

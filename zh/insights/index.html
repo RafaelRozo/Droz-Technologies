@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>洞察 — Droz Technologies</title>
+  <meta name="description" content="关于预测性维护、应用 AI、云和合规的从业者级文章——来自实际交付工作的工程与软件公司。">
+  <link rel="canonical" href="https://droz.tech/zh/insights/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/insights/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/insights/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/insights/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/insights/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/insights/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/insights/">
+  <meta property="og:title" content="洞察 — Droz Technologies">
+  <meta property="og:description" content="关于预测性维护、应用 AI、云和合规的从业者级文章——来自实际交付工作的工程与软件公司。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-default.png">
+  <meta property="og:url" content="https://droz.tech/zh/insights/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/droz-technologies/"
+    ],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement",       "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press",             "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home",     "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://droz.tech/en/insights/" }
+    ]
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="insights" data-locale="zh" data-active-nav="insights">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油 &middot; 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石油化工</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 &middot; 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">矿业与金属</a>
+              <a href="/zh/industries/pulp-paper/">纸浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 &middot; GoC</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+
+        <a href="/zh/insights/" data-nav="insights" class="is-active">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/insights/">EN</a>
+        <a href="/fr/insights/">FR</a>
+        <a href="/es/insights/">ES</a>
+        <a href="/zh/insights/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/insights/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/insights/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <a href="/zh/">首页</a>
+  <span class="sep">/</span>
+  <span class="here">洞察</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">&sect; 编辑 01 &middot; 洞察</div>
+      <h1>来自<em>工业智能</em>的现场笔记。</h1>
+      <p class="lede">这里的每一篇文章都根植于 Droz 已交付的工作&mdash;&mdash;打开了齿轮箱的振动案例、通过了合规审计的 AI 上线、没有破坏控制系统的云迁移。订阅后，下一篇就绪时我们便会发送给您。</p>
+      <div class="cta">
+        <a href="#subscribe" class="btn btn-primary">订阅 <span style="opacity:.7">&rarr;</span></a>
+        <a href="#latest" class="btn btn-ghost">浏览最新 <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">更新节奏</div><div class="v">就绪即发&mdash;&mdash;无配额</div></div>
+      <div><div class="k">作者</div><div class="v">Droz 合伙人与资深工程师</div></div>
+      <div><div class="k">语言</div><div class="v">EN（重点文章提供 FR / ES）</div></div>
+      <div><div class="k">主题</div><div class="v">5&mdash;&mdash;预测性维护、AI、云、合规、行业</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 1: Featured post — placeholder zero-state until the first post ships -->
+<section class="section">
+  <div class="section-inner">
+    <div class="div-header">
+      <div class="eyebrow-mono">&sect; 精选</div>
+      <h2>首篇精选正在筹备中。</h2>
+    </div>
+    <div class="industries-feature placeholder-card">
+      <div class="industries-feature-photo placeholder-photo" aria-hidden="true">
+        <span class="placeholder-mark">为首篇精选文章预留</span>
+      </div>
+      <div class="industries-feature-copy">
+        <div class="eyebrow-mono">&sect; 等待首篇文章</div>
+        <h3>一篇精选合作笔记将出现在此处。</h3>
+        <p class="lede">当首篇 Insights 文章发布时，编辑会将此占位内容替换为该文章的标题、一句话预览、主题标签、阅读时长，以及直达全文的链接。在此之前，此位置按设计保持安静&mdash;&mdash;我们只在有值得一说的内容时才发布。</p>
+        <ul class="meta-strip mono-meta">
+          <li>主题&mdash;&mdash;<em>待定</em></li>
+          <li>阅读时长&mdash;&mdash;<em>待定</em></li>
+          <li>发布时间&mdash;&mdash;<em>待定</em></li>
+        </ul>
+        <a href="#subscribe" class="btn btn-ghost">订阅以获得通知 <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 3 (positioned between featured and latest grid per plan): Topic filter chips -->
+<section class="section section-tight">
+  <div class="section-inner">
+    <div class="div-header">
+      <div class="eyebrow-mono">&sect; 主题</div>
+    </div>
+    <div class="chip-row" role="tablist" aria-label="Filter posts by topic">
+      <a href="#all"                          class="chip is-active" data-topic-filter="all"                    role="tab" aria-selected="true">全部</a>
+      <a href="#topic-predictive-maintenance" class="chip"           data-topic-filter="Predictive Maintenance" role="tab" aria-selected="false">预测性维护</a>
+      <a href="#topic-ai-ml"                  class="chip"           data-topic-filter="AI &amp; ML"            role="tab" aria-selected="false">AI 与 ML</a>
+      <a href="#topic-cloud"                  class="chip"           data-topic-filter="Cloud"                  role="tab" aria-selected="false">云</a>
+      <a href="#topic-compliance"             class="chip"           data-topic-filter="Compliance"             role="tab" aria-selected="false">合规</a>
+      <a href="#topic-industries"             class="chip"           data-topic-filter="Industries"             role="tab" aria-selected="false">行业</a>
+    </div>
+  </div>
+</section>
+
+<!-- Section 2: Latest posts grid — zero-state until first posts ship -->
+<section class="section" id="latest">
+  <div class="section-inner">
+    <div class="div-header">
+      <div class="eyebrow-mono">&sect; 最新</div>
+      <h2>筹备中的文章。</h2>
+    </div>
+
+    <div class="zero-state">
+      <p class="lede">首批文章将于第 7 阶段及以后发布。我们正在筹备开篇三篇&mdash;&mdash;一篇振动案例、一篇 AI 上线、一篇云迁移。订阅以便在它们上线的那一刻获得通知；我们承诺不会因任何其他原因给您发送邮件。</p>
+      <a href="#subscribe" class="btn btn-primary">订阅 Insights <span style="opacity:.7">&rarr;</span></a>
+    </div>
+
+    <!-- Placeholder grid — replaced by real cards as posts ship.
+         Cards mirror the final anatomy so the editor sees the rhythm. -->
+    <div class="svc-grid placeholder-grid" aria-hidden="true">
+      <article class="svc-card placeholder-card" data-topic="Predictive Maintenance">
+        <div class="placeholder-photo" aria-hidden="true"></div>
+        <div class="svc-card-meta mono-meta">
+          <span>2026 &middot; 待定</span>
+          <span>&middot;</span>
+          <span>待定 分钟</span>
+        </div>
+        <div class="chip chip-static">预测性维护</div>
+        <h3>首篇振动案例&mdash;&mdash;占位卡片。</h3>
+        <p>未来的一篇文章将出现在此位置：一句话预览，最多三行，以指向全文的箭头链接结尾。</p>
+        <span class="svc-readmore">阅读 &rarr;</span>
+      </article>
+      <article class="svc-card placeholder-card" data-topic="AI &amp; ML">
+        <div class="placeholder-photo" aria-hidden="true"></div>
+        <div class="svc-card-meta mono-meta">
+          <span>2026 &middot; 待定</span>
+          <span>&middot;</span>
+          <span>待定 分钟</span>
+        </div>
+        <div class="chip chip-static">AI 与 ML</div>
+        <h3>首篇 AI 上线笔记&mdash;&mdash;占位卡片。</h3>
+        <p>一篇应用 AI 速递将出现在此处：模型谱系、审计姿态、部署界面，以及来自现场的一张图表。</p>
+        <span class="svc-readmore">阅读 &rarr;</span>
+      </article>
+      <article class="svc-card placeholder-card" data-topic="Cloud">
+        <div class="placeholder-photo" aria-hidden="true"></div>
+        <div class="svc-card-meta mono-meta">
+          <span>2026 &middot; 待定</span>
+          <span>&middot;</span>
+          <span>待定 分钟</span>
+        </div>
+        <div class="chip chip-static">云</div>
+        <h3>首篇云迁移简报&mdash;&mdash;占位卡片。</h3>
+        <p>一篇运营侧的纪实将出现在此处：一次迁移如何在不扰动其下控制系统的情况下完成。</p>
+        <span class="svc-readmore">阅读 &rarr;</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Newsletter subscribe form -->
+<section class="section section-band" id="subscribe">
+  <div class="section-inner">
+    <div class="subscribe-split">
+      <div class="subscribe-copy">
+        <div class="eyebrow-mono">&sect; 订阅</div>
+        <h2>把下一篇送到您的收件箱。</h2>
+        <p class="lede">我们只在有值得一说的内容时才发布&mdash;&mdash;从不按时间表。请选择与您正在开展的工作相匹配的主题；我们只发送这些。</p>
+        <p class="field-help">无第三方跟踪器。不与营销系统共享。一键退订。</p>
+      </div>
+
+      <form class="form" action="https://api.web3forms.com/submit" method="POST" id="insights-subscribe-form" data-form="insights-subscribe">
+        <input type="hidden" name="access_key" value="PLACEHOLDER_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="Insights subscription &middot; droz.tech">
+        <input type="hidden" name="redirect" value="https://droz.tech/en/thank-you/?form=insights-subscribe">
+        <input type="hidden" name="from_name" value="Droz Technologies website">
+        <input type="hidden" name="to_email" value="insights@droz.tech">
+        <input type="hidden" name="page_source" value="insights">
+        <input type="hidden" name="campaign" value="insights-index">
+        <input type="hidden" name="locale" value="zh">
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="company_url">Company URL</label>
+          <input type="text" name="botcheck" id="company_url" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="field">
+          <label for="sub-email">电子邮箱</label>
+          <input type="email" id="sub-email" name="email" required autocomplete="email" placeholder="you@company.com">
+        </div>
+
+        <div class="field">
+          <label for="sub-name">您的姓名 <span class="field-help" aria-hidden="true">（选填）</span></label>
+          <input type="text" id="sub-name" name="name" autocomplete="name">
+        </div>
+
+        <fieldset class="field field-group">
+          <legend>感兴趣的主题 <span class="field-help" aria-hidden="true">（选填）</span></legend>
+          <label class="check"><input type="checkbox" name="topics" value="Predictive Maintenance"> 预测性维护</label>
+          <label class="check"><input type="checkbox" name="topics" value="AI &amp; ML"> AI 与 ML</label>
+          <label class="check"><input type="checkbox" name="topics" value="Cloud"> 云</label>
+          <label class="check"><input type="checkbox" name="topics" value="Compliance"> 合规</label>
+          <label class="check"><input type="checkbox" name="topics" value="Industries"> 行业</label>
+        </fieldset>
+
+        <div class="field">
+          <div class="cf-turnstile" data-sitekey="PLACEHOLDER_TURNSTILE_SITEKEY"></div>
+        </div>
+
+        <div class="submit-row">
+          <button type="submit" class="btn btn-primary">订阅 <span style="opacity:.7">&rarr;</span></button>
+          <span class="field-help">一个工作日内回复。</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Pagination footer -->
+<section class="section section-tight">
+  <div class="section-inner">
+    <div class="pagination-row">
+      <div class="eyebrow-mono">&sect; 归档 &middot; 第 1 / 1 页</div>
+      <div class="pagination-links">
+        <span class="page-link is-disabled" aria-disabled="true">&larr; 更新</span>
+        <span class="page-sep">/</span>
+        <span class="page-link is-disabled" aria-disabled="true">更早 &rarr;</span>
+      </div>
+    </div>
+    <p class="archive-note">在上方按主题浏览。当文章数量足够时，会出现完整归档。</p>
+  </div>
+</section>
+
+<!-- Section 6: Editorial workflow -->
+<section class="section section-band-soft">
+  <div class="section-inner">
+    <div class="div-header">
+      <div class="eyebrow-mono">&sect; 编辑流程</div>
+      <h2>一篇文章如何来到这里。</h2>
+      <p class="div-header-lede">Insights 是一面精心策划的墙，而非信息流。从一个想法到一篇已发布的文章之间有四个步骤&mdash;&mdash;公开进行，有据可查。</p>
+    </div>
+    <ol class="steps">
+      <li class="step">
+        <div class="step-num">01</div>
+        <h3>起草计划</h3>
+        <p>由工程师或合伙人提出主题并撰写页面计划&mdash;&mdash;受众、来源合作、章节、引用。草稿留在规划文件夹中，直至其连贯成形。</p>
+      </li>
+      <li class="step">
+        <div class="step-num">02</div>
+        <h3>计划审查</h3>
+        <p>由资深合伙人就准确性、来源出处和商业一致性审查计划。在涉及客户之处，会在派出撰写代理之前取得签署许可。</p>
+      </li>
+      <li class="step">
+        <div class="step-num">03</div>
+        <h3>撰写</h3>
+        <p>资深撰稿人将计划转化为页面。产出是一份单一的编辑文档，而非零散片段&mdash;&mdash;一切皆有来源，一切皆回溯至已交付的工作。</p>
+      </li>
+      <li class="step">
+        <div class="step-num">04</div>
+        <h3>索引更新</h3>
+        <p>编辑将新卡片添加至"最新"网格，并在适当时替换"精选"卡片。匹配主题的订阅者会在 24 小时内收到该文章。</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务的行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/case-studies/">案例研究</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

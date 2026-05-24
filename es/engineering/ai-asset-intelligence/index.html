@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inteligencia de activos impulsada por IA &mdash; Droz Technologies</title>
+  <meta name="description" content="Modelos de predicción de fallas, detección de anomalías y recomendaciones automatizadas — pipelines de ML listos para producción y ajustados a su población de equipos, desplegados donde ocurre el trabajo y observados con MLOps desde el primer día.">
+  <link rel="canonical" href="https://droz.tech/es/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <meta property="og:title" content="Inteligencia de activos impulsada por IA">
+  <meta property="og:description" content="Modelos de predicción de fallas, detección de anomalías y recomendaciones automatizadas — pipelines de ML listos para producción y ajustados a su población de equipos, desplegados donde ocurre el trabajo y observados con MLOps desde el primer día.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/es/engineering/ai-asset-intelligence/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","@id":"https://droz.tech/#org","name":"Droz Technologies Inc.","url":"https://droz.tech/","logo":"https://droz.tech/assets/logos/droz-logo-metallic.png","foundingDate":"2004","address":{"@type":"PostalAddress","streetAddress":"4145 North Service Road","addressLocality":"Burlington","addressRegion":"ON","addressCountry":"CA"},"sameAs":["https://www.linkedin.com/company/droz-technologies/"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer support","email":"contact@droz.tech"},{"@type":"ContactPoint","contactType":"procurement","email":"procurement@droz.tech"},{"@type":"ContactPoint","contactType":"press","email":"press@droz.tech"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://droz.tech/en/"},{"@type":"ListItem","position":2,"name":"Engineering","item":"https://droz.tech/en/engineering/"},{"@type":"ListItem","position":3,"name":"AI-Driven Asset Intelligence","item":"https://droz.tech/en/engineering/ai-asset-intelligence/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"AI-Driven Asset Intelligence Platform","provider":{"@id":"https://droz.tech/#org"},"serviceType":"AI-Driven Asset Intelligence","areaServed":["Canada","United States","Mexico"],"description":"Modelos de predicción de fallas, detección de anomalías y recomendaciones automatizadas — pipelines de ML listos para producción y ajustados a su población de equipos.","inLanguage":"es"}
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/ai-asset-intelligence" data-locale="es" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/es/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega"><a href="/es/software/" data-nav="software">Software</a><div class="megamenu" role="menu"><div class="group"><a href="/es/software/">Visión general</a><a href="/es/software/custom-software-development/">Desarrollo de software a medida</a><a href="/es/software/application-development/">Desarrollo de aplicaciones</a><a href="/es/software/ai-machine-learning/">Sistemas de IA y aprendizaje automático</a><a href="/es/software/it-infrastructure/">Infraestructura de TI moderna</a><a href="/es/software/business-process-automation/">Automatización de procesos de negocio</a><a href="/es/software/cloud-migration/">Migración y arquitectura en la nube</a></div></div></div>
+        <div class="has-mega"><a href="/es/engineering/" data-nav="engineering" class="is-active">Ingeniería</a><div class="megamenu" role="menu"><div class="group"><div class="group-title">Pilares</div><a href="/es/engineering/">Visión general</a><a href="/es/engineering/predictive-maintenance/">Servicios de mantenimiento predictivo</a><a href="/es/engineering/reliability-data-platform/">Datos y monitoreo de confiabilidad</a><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos impulsada por IA</a></div><div class="group"><div class="group-title">Disciplinas</div><a href="/es/engineering/disciplines/vibration-analysis/">Análisis de vibraciones</a><a href="/es/engineering/disciplines/thermography/">Termografía</a><a href="/es/engineering/disciplines/ultrasound/">Ultrasonido</a><a href="/es/engineering/disciplines/laser-alignment/">Alineación láser</a></div></div></div>
+        <div class="has-mega"><a href="/es/industries/" data-nav="industries">Industrias</a><div class="megamenu wide" role="menu"><div class="group"><div class="group-title">Energía</div><a href="/es/industries/power-generation/">Generación de energía</a><a href="/es/industries/nuclear-power/">Energía nuclear</a><a href="/es/industries/refineries-oil-gas/">Refinerías · Petróleo y gas</a><a href="/es/industries/energy-operators/">Operadores de energía</a></div><div class="group"><div class="group-title">Materiales y manufactura</div><a href="/es/industries/automotive/">Automotriz</a><a href="/es/industries/general-manufacturing/">Manufactura general</a><a href="/es/industries/petrochemicals/">Petroquímicos</a><a href="/es/industries/industrial-chemicals/">Químicos industriales</a><a href="/es/industries/fertilizers-agrochemicals/">Fertilizantes · Agroquímicos</a><a href="/es/industries/mining-metals/">Minería y metales</a><a href="/es/industries/pulp-paper/">Pulpa y papel</a><a href="/es/industries/cement/">Plantas de cemento</a></div><div class="group"><div class="group-title">Consumo y sectores regulados</div><a href="/es/industries/food-manufacturing/">Manufactura de alimentos</a><a href="/es/industries/beverage/">Fabricantes de bebidas</a><a href="/es/industries/pharmaceutical/">Farmacéutica</a></div><div class="group"><div class="group-title">Sector público</div><a href="/es/industries/public-sector-goc/">Sector público · GoC</a></div></div></div>
+        <div class="has-mega"><a href="/es/products/" data-nav="products">Productos</a><div class="megamenu" role="menu"><div class="group"><a href="/es/products/">Portafolio</a><a href="/es/products/droz-legal/">Droz Legal</a><a href="/es/products/samson-ai/">Samson AI</a><a href="/es/products/rx-change/">RX Change</a><a href="/es/products/visp/">VISP</a><a href="/es/products/droz-predictive/">Droz Predictive</a><a href="/es/products/droz-rental/">Droz Rental</a><a href="/es/products/droz-investments/">Droz Investments</a><a href="/es/products/after-life/">After Life</a></div></div></div>
+        <div class="has-mega"><a href="/es/standards/" data-nav="standards">Normas</a><div class="megamenu" role="menu"><div class="group"><a href="/es/standards/">Visión general</a><a href="/es/standards/associations/">Asociaciones</a><a href="/es/standards/technologies/">Tecnologías</a><a href="/es/standards/cloud-ai-partners/">Socios de nube e IA</a></div></div></div>
+        <a href="/es/insights/" data-nav="insights">Perspectivas</a>
+        <a href="/es/about/" data-nav="about">Acerca de</a>
+        <a href="/es/contact/" data-nav="contact">Contacto</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/ai-asset-intelligence/">EN</a>
+        <a href="/fr/engineering/ai-asset-intelligence/">FR</a>
+        <a href="/es/engineering/ai-asset-intelligence/" class="on">ES</a>
+        <a href="/zh/engineering/ai-asset-intelligence/" lang="zh-Hans">中文</a>
+        <a href="/hi/engineering/ai-asset-intelligence/" lang="hi">हिं</a>
+      </div>
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>Esta página fue traducida automáticamente. La versión en inglés es la autoritativa.</span>
+  <a href="/en/engineering/ai-asset-intelligence/">Ver en inglés</a>
+  <button class="mt-notice-x" aria-label="Cerrar">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/es/">Inicio</a>
+  <span class="sep">/</span>
+  <a href="/es/engineering/">Ingeniería</a>
+  <span class="sep">/</span>
+  <span class="here">Inteligencia de activos impulsada por IA</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Práctica 02 · Pilar C</div>
+      <h1>Inteligencia de activos impulsada por IA &mdash; <em>la capa que se acumula.</em></h1>
+      <p class="lede">Modelos de predicción de fallas, detección de anomalías y recomendaciones automatizadas &mdash; pipelines de ML listos para producción y ajustados a su población de equipos, desplegados donde ocurre el trabajo y observados con MLOps desde el primer día.</p>
+      <div class="cta">
+        <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+        <a href="/es/software/ai-machine-learning/" class="btn btn-ghost">Ver sistemas de IA y ML <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">Pilar</div><div class="v">C · Inteligencia</div></div>
+      <div><div class="k">Modelos</div><div class="v">Predicción de fallas · anomalías · optimización · gemelo</div></div>
+      <div><div class="k">MLOps</div><div class="v">Azure ML · AWS SageMaker · Vertex AI</div></div>
+      <div><div class="k">Puente con</div><div class="v">Software · Sistemas de IA y aprendizaje automático</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/vibration-chart.png" alt="Gráfico de firma espectral FFT &mdash; las señales con las que se entrena la IA" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ Definición</small>
+          <div class="slash">IA sobre la capa de datos,<br><em>ajustada a su población de equipos.</em></div>
+        </div>
+        <p class="blurb">La inteligencia de activos impulsada por IA es el tercer pilar de la práctica de confiabilidad de Droz &mdash; la capa donde el programa de campo (<a href="/es/engineering/predictive-maintenance/">Pilar A</a>) y la plataforma de datos (<a href="/es/engineering/reliability-data-platform/">Pilar B</a>) se acumulan en decisiones automatizadas. Droz diseña y entrena modelos de predicción de fallas frente a su población específica de equipos &mdash; no modelos horizontales adaptados a datos industriales. La detección de anomalías se ejecuta de forma continua sobre señales transmitidas; las recomendaciones automatizadas aterrizan en los canales existentes del operador con la evidencia subyacente adjunta. Los modelos se despliegan a través de <a href="/es/software/ai-machine-learning/">pipelines de MLOps</a> listos para producción en Azure ML, AWS SageMaker o Vertex AI &mdash; versionados, monitoreados y reentrenados con una cadencia calibrada a la deriva. Cuando la colaboración lo justifica, Droz también construye un gemelo digital de la planta &mdash; una superficie de simulación que permite a operaciones ensayar decisiones antes de tomarlas en la planta real.</p>
+      </div>
+
+      <!-- 2. Capabilities (.ai-diff-grid) -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Capacidades</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">Cinco prácticas, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">un stack de inteligencia.</em></h2>
+        <div class="ai-diff-grid">
+          <div class="ai-cell">
+            <div class="num">AI · 01</div>
+            <h4>Detección de anomalías</h4>
+            <ul>
+              <li>Patrones de vibración</li>
+              <li>Desviaciones de temperatura</li>
+              <li>Anomalías de consumo de energía</li>
+              <li>Deriva en la calidad de señal</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 02</div>
+            <h4>Predicción de fallas</h4>
+            <ul>
+              <li>Fallas de rodamientos</li>
+              <li>Degradación de motores</li>
+              <li>Fallas de bombas</li>
+              <li>Alertas de régimen de lubricación</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 03</div>
+            <h4>Optimización</h4>
+            <ul>
+              <li>Procesos de producción</li>
+              <li>Uso de energía</li>
+              <li>Estrategias de mantenimiento</li>
+              <li>Inventario de repuestos</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 04</div>
+            <h4>Recomendaciones automatizadas</h4>
+            <ul>
+              <li>Informes automatizados</li>
+              <li>Alertas inteligentes</li>
+              <li>Toma de decisiones asistida por IA</li>
+              <li>Despacho de órdenes de trabajo al CMMS</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 05</div>
+            <h4>Gemelo digital</h4>
+            <ul>
+              <li>Simulación de planta</li>
+              <li>Modelado de escenarios de falla</li>
+              <li>Planificación operativa predictiva</li>
+              <li>Personalizado por cliente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Model classes -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Clases de modelos</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Tres familias de modelos, <em style="font-style:italic; color:var(--accent-2); font-weight:400;">un bucle de decisión.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">MDL · 01</div>
+            <h3>Modelos de<br>predicción de fallas</h3>
+            <p>Modelos supervisados entrenados con historial de fallas etiquetado por familia de activos &mdash; rodamientos, motores, bombas, cajas de engranajes. Salidas: estimación de vida útil restante, probabilidad de modo de falla, ventana de intervención recomendada. Reentrenados con una cadencia calibrada a la deriva.</p>
+            <div class="svc-tags"><span class="tag">Supervisado</span><span class="tag">RUL</span><span class="tag">Por familia de activos</span><span class="tag">Deriva monitoreada</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 02</div>
+            <h3>Modelos de<br>detección de anomalías</h3>
+            <p>Modelos no supervisados que se ejecutan de forma continua sobre señales transmitidas (vibración, temperatura, corriente, ultrasonido, energía). Salidas: anomalías graduadas por severidad y enrutadas por criticidad con la evidencia de señal subyacente adjunta.</p>
+            <div class="svc-tags"><span class="tag">No supervisado</span><span class="tag">Streaming</span><span class="tag">Graduado por severidad</span><span class="tag">Con evidencia adjunta</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 03</div>
+            <h3>Recomendación<br>y optimización</h3>
+            <p>Modelos de decisión que combinan señales de condición, contexto operativo y restricciones económicas para recomendar la mejor acción siguiente &mdash; programar la intervención, ajustar el punto de operación, reordenar el repuesto.</p>
+            <div class="svc-tags"><span class="tag">Decisión</span><span class="tag">Consciente de restricciones</span><span class="tag">Orientado a la acción</span><span class="tag">Operador en el bucle</span></div>
+          </article>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">La colaboración de MLOps y ciencia de datos que construye y opera estos modelos &rarr; <a href="/es/software/ai-machine-learning/">Sistemas de IA y aprendizaje automático</a></p>
+      </div>
+
+      <!-- 4. MLOps pipeline -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ MLOps</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">Desde el conjunto de entrenamiento <em style="font-style:italic; color:var(--accent-2); font-weight:400;">hasta la predicción monitoreada.</em></h2>
+        <div class="steps">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">Curar</div>
+            <h5>Conjunto de entrenamiento</h5>
+            <p>El historial de campo del Pilar A y la capa de datos unificada del Pilar B se curan en conjuntos de entrenamiento etiquetados por familia de activos. El desbalance de clases, las fugas y la calidad de las etiquetas se manejan antes de que cualquier modelo toque los datos.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">Entrenar</div>
+            <h5>Clase de modelo</h5>
+            <p>La clase de modelo se elige por modo de falla &mdash; gradient boosting para historial de condición tabular, modelos profundos para firmas espectrales, variantes de isolation-forest para anomalías en streaming. Los hiperparámetros se ajustan en un barrido gestionado.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">Validar</div>
+            <h5>Holdout y replay</h5>
+            <p>Los modelos se validan en sitios reservados y se reproducen contra fallas archivadas &mdash; el modelo debe predecir una falla conocida sobre datos que nunca ha visto antes de lanzarse.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">Desplegar</div>
+            <h5>Pipeline de producción</h5>
+            <p>Desplegado a través de <a href="/es/standards/cloud-ai-partners/">Azure ML, AWS SageMaker o Vertex AI</a> &mdash; endpoint, por lotes o en el borde según la latencia. La inferencia se registra con la instantánea de entrada para trazabilidad.</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">05</div>
+            <div class="ord">Observar</div>
+            <h5>Deriva y reentrenamiento</h5>
+            <p>El rendimiento en producción se monitorea &mdash; deriva de concepto, deriva de datos, deriva de clase de predicción. El reentrenamiento se dispara por umbral o por calendario; el modelo anterior se mantiene en sombra hasta que el nuevo modelo recibe luz verde.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Digital twin -->
+      <div style="margin-top:80px;">
+        <div class="div-header" style="padding-bottom:32px;">
+          <div>
+            <small>§ Gemelo digital</small>
+            <div class="slash">Ensaye la decisión<br><em>antes de tomarla.</em></div>
+          </div>
+          <p class="blurb">Un gemelo digital de Droz es una superficie de simulación para una planta o un tren de proceso &mdash; calibrada a la población de activos, alimentada por la capa de datos de confiabilidad y usada para ensayar decisiones que son costosas de tomar en la planta real. Construido por cliente; no es un producto horizontal.</p>
+        </div>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">TWIN · 01</div>
+            <h3>Simulación de planta</h3>
+            <p>El comportamiento de los activos modelado al nivel que la decisión requiere &mdash; física de primeros principios donde la decisión es operativa, basada en datos donde la decisión es de confiabilidad.</p>
+            <div class="svc-tags"><span class="tag">Basado en física</span><span class="tag">Basado en datos</span><span class="tag">Fidelidad mixta</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 02</div>
+            <h3>Modelado de<br>escenarios de falla</h3>
+            <p>Ejecute &ldquo;qué pasa si este rodamiento falla el viernes&rdquo; contra el calendario de producción, la posición de repuestos y el objetivo corporativo de disponibilidad. La salida: un árbol de decisión clasificado, no una única respuesta.</p>
+            <div class="svc-tags"><span class="tag">Qué pasa si</span><span class="tag">Decisiones clasificadas</span><span class="tag">Consciente de la producción</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 03</div>
+            <h3>Planificación operativa</h3>
+            <p>Pruebe diferimientos de capital, cambios en las ventanas de intervención y desplazamientos del punto de operación en simulación antes de comprometer a ellos la planta real.</p>
+            <div class="svc-tags"><span class="tag">Diferimiento de capital</span><span class="tag">Ventanas de intervención</span><span class="tag">Punto de operación</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Industrias atendidas</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">Donde la inteligencia de activos con IA <em style="font-style:italic; color:var(--accent-2); font-weight:400;">es la colaboración principal.</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/es/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">Refinerías · Petróleo y gas</span></a>
+          <a href="/es/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">Generación de energía</span></a>
+          <a href="/es/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">Petroquímicos</span></a>
+          <a href="/es/industries/nuclear-power/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">Energía nuclear</span></a>
+          <a href="/es/industries/energy-operators/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">Operadores de energía</span></a>
+          <a href="/es/industries/mining-metals/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">Minería y metales</span></a>
+          <a href="/es/industries/cement/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">Plantas de cemento</span></a>
+          <a href="/es/industries/automotive/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">Automotriz</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/es/industries/">Ver las 16 industrias atendidas &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Normas que aplicamos</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">Los marcos a los que los modelos <em style="font-style:italic; color:var(--accent-2); font-weight:400;">están anclados.</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">SOC 2</div>
+            <h3>SOC 2 Type II</h3>
+            <p>Los pipelines de ML y los endpoints de inferencia se ejecutan dentro del mismo conjunto de controles auditado SOC 2 Type II que la plataforma de datos de confiabilidad.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 10816</div>
+            <h3>Evaluación de<br>vibración mecánica</h3>
+            <p>Los umbrales de anomalía para los modelos de maquinaria rotativa están anclados a los límites de zona de la ISO 10816 &mdash; los modelos marcan las desviaciones relativas a la norma, no a líneas base arbitrarias.</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">Cloud · AI</div>
+            <h3>Azure ML · SageMaker · Vertex AI</h3>
+            <p>Pipelines desplegados en la nube existente del cliente &mdash; Azure, AWS o Google Cloud &mdash; a través de los acuerdos de socios certificados de Droz.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/es/standards/associations/">Lista completa de certificaciones y asociaciones &rarr;</a> &nbsp;&middot;&nbsp; <a href="/es/standards/cloud-ai-partners/">Socios de nube e IA &rarr;</a> &nbsp;&middot;&nbsp; <a href="/es/software/ai-machine-learning/">Práctica de IA subyacente (LLM, RAG, evaluación) &rarr;</a></p>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>Capacidades relacionadas</h6>
+        <ul>
+          <li><a href="/es/engineering/predictive-maintenance/">Mantenimiento predictivo</a></li>
+          <li><a href="/es/engineering/reliability-data-platform/">Plataforma de datos de confiabilidad</a></li>
+          <li><a href="/es/software/ai-machine-learning/">Sistemas de IA y aprendizaje automático</a></li>
+          <li><a href="/es/software/cloud-migration/">Migración a la nube</a></li>
+          <li><a href="/es/software/business-process-automation/">Automatización de procesos de negocio</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Normas que aplicamos</h6>
+        <ul>
+          <li><a href="/es/standards/associations/">SOC 2 Type II</a></li>
+          <li><a href="/es/standards/associations/">ISO 10816</a></li>
+          <li><a href="/es/standards/associations/">CMVA</a></li>
+          <li><a href="/es/standards/cloud-ai-partners/">Socio Azure / AWS / GCP</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>Dónde lidera este pilar</h6>
+        <ul>
+          <li><a href="/es/industries/refineries-oil-gas/">Refinerías &middot; Petróleo y gas</a></li>
+          <li><a href="/es/industries/power-generation/">Generación de energía</a></li>
+          <li><a href="/es/industries/energy-operators/">Operadores de energía</a></li>
+          <li><a href="/es/industries/mining-metals/">Minería y metales</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>Hable con un socio</h6>
+        <p>Las colaboraciones comienzan con una conversación de alcance dirigida por un socio principal.</p>
+        <a href="/es/contact/#engagement-form" class="btn btn-light" style="text-align:center; display:block;">Solicitar una colaboración &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ Inteligencia de activos impulsada por IA</div>
+    <div class="stmt">Donde se encuentran la práctica de campo y la capa de datos, <em>el modelo operativo se acumula.</em></div>
+    <div class="creds">
+      <a href="/es/contact/#engagement-form" class="btn btn-primary">Solicitar una colaboración <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc. — una empresa de tecnología industrial que ofrece software empresarial, ingeniería de confiabilidad e IA aplicada. Burlington, Ontario. Fundada en 2004.</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>Software</h6>
+        <ul>
+          <li><a href="/es/software/">Visión general</a></li>
+          <li><a href="/es/software/custom-software-development/">Software a medida</a></li>
+          <li><a href="/es/software/application-development/">Desarrollo de aplicaciones</a></li>
+          <li><a href="/es/software/ai-machine-learning/">IA y aprendizaje automático</a></li>
+          <li><a href="/es/software/it-infrastructure/">Infraestructura de TI</a></li>
+          <li><a href="/es/software/business-process-automation/">Automatización de negocio</a></li>
+          <li><a href="/es/software/cloud-migration/">Migración a la nube</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Ingeniería</h6>
+        <ul>
+          <li><a href="/es/engineering/">Visión general</a></li>
+          <li><a href="/es/engineering/predictive-maintenance/">Mantenimiento predictivo</a></li>
+          <li><a href="/es/engineering/reliability-data-platform/">Datos de confiabilidad</a></li>
+          <li><a href="/es/engineering/ai-asset-intelligence/">Inteligencia de activos</a></li>
+          <li><a href="/es/industries/">Industrias atendidas</a></li>
+          <li><a href="/es/standards/">Normas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Empresa</h6>
+        <ul>
+          <li><a href="/es/about/">Acerca de</a></li>
+          <li><a href="/es/contact/">Contacto</a></li>
+          <li><a href="/es/contact/#procurement-form">Adquisiciones</a></li>
+          <li><a href="/es/press/">Prensa</a></li>
+          <li><a href="/es/careers/">Carreras</a></li>
+          <li><a href="/es/insights/">Perspectivas</a></li>
+          <li><a href="/es/capabilities-statement/">Declaración de capacidades</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>Idioma</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/es/legal/privacy/">Privacidad</a>
+        <a href="/es/legal/terms/">Términos</a>
+        <a href="/es/legal/accessibility/">Accesibilidad</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

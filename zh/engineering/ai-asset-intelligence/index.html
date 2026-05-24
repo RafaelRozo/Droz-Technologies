@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 驱动的资产智能 &mdash; Droz Technologies</title>
+  <meta name="description" content="故障预测模型、异常检测和自动化建议——针对您工业设备群调优的生产就绪 MLOps 流水线。具备数字孪生能力。">
+  <link rel="canonical" href="https://droz.tech/zh/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="en" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="fr-CA" href="https://droz.tech/fr/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="es" href="https://droz.tech/es/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://droz.tech/zh/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="hi" href="https://droz.tech/hi/engineering/ai-asset-intelligence/">
+  <link rel="alternate" hreflang="x-default" href="https://droz.tech/en/engineering/ai-asset-intelligence/">
+  <meta property="og:title" content="AI 驱动的资产智能">
+  <meta property="og:description" content="故障预测模型、异常检测和自动化建议——针对您工业设备群调优的生产就绪 MLOps 流水线。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://droz.tech/assets/og/og-engineering.png">
+  <meta property="og:url" content="https://droz.tech/zh/engineering/ai-asset-intelligence/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" as="font" type="font/ttf" href="/fonts/times.ttf" crossorigin>
+  <link rel="stylesheet" href="/colors_and_type.css">
+  <link rel="stylesheet" href="/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://droz.tech/#org",
+    "name": "Droz Technologies Inc.",
+    "url": "https://droz.tech/",
+    "logo": "https://droz.tech/assets/logos/droz-logo-metallic.png",
+    "foundingDate": "2004",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4145 North Service Road",
+      "addressLocality": "Burlington",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "sameAs": ["https://www.linkedin.com/company/droz-technologies/"],
+    "contactPoint": [
+      { "@type": "ContactPoint", "contactType": "customer support", "email": "contact@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "procurement", "email": "procurement@droz.tech" },
+      { "@type": "ContactPoint", "contactType": "press", "email": "press@droz.tech" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://droz.tech/en/" },
+      { "@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://droz.tech/en/engineering/" },
+      { "@type": "ListItem", "position": 3, "name": "AI-Driven Asset Intelligence", "item": "https://droz.tech/en/engineering/ai-asset-intelligence/" }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "AI-Driven Asset Intelligence",
+    "provider": { "@id": "https://droz.tech/#org" },
+    "serviceType": "AI-Driven Asset Intelligence",
+    "areaServed": ["Canada", "United States", "Mexico"],
+    "description": "故障预测模型、异常检测和自动化建议——针对您工业设备群调优的生产就绪 MLOps 流水线。"
+  }
+  </script>
+<script src="/analytics.js"></script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1532229697701487&ev=PageView&noscript=1" alt=""></noscript>
+</head>
+<body data-page="engineering/ai-asset-intelligence" data-locale="zh" data-active-nav="engineering">
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="/zh/" class="wordmark">Droz<span class="dot"></span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <div class="has-mega">
+          <a href="/zh/software/" data-nav="software">软件</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/software/">概览</a>
+              <a href="/zh/software/custom-software-development/">定制软件开发</a>
+              <a href="/zh/software/application-development/">应用程序开发</a>
+              <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a>
+              <a href="/zh/software/it-infrastructure/">现代 IT 基础设施</a>
+              <a href="/zh/software/business-process-automation/">业务流程自动化</a>
+              <a href="/zh/software/cloud-migration/">云迁移与架构</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/engineering/" data-nav="engineering" class="is-active">工程</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <div class="group-title">支柱</div>
+              <a href="/zh/engineering/">概览</a>
+              <a href="/zh/engineering/predictive-maintenance/">预测性维护服务</a>
+              <a href="/zh/engineering/reliability-data-platform/">可靠性数据与监测</a>
+              <a href="/zh/engineering/ai-asset-intelligence/">AI 驱动的资产智能</a>
+            </div>
+            <div class="group">
+              <div class="group-title">专业领域</div>
+              <a href="/zh/engineering/disciplines/vibration-analysis/">振动分析</a>
+              <a href="/zh/engineering/disciplines/thermography/">热成像</a>
+              <a href="/zh/engineering/disciplines/ultrasound/">超声波检测</a>
+              <a href="/zh/engineering/disciplines/laser-alignment/">激光对中</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/industries/" data-nav="industries">行业</a>
+          <div class="megamenu wide" role="menu">
+            <div class="group">
+              <div class="group-title">能源</div>
+              <a href="/zh/industries/power-generation/">发电</a>
+              <a href="/zh/industries/nuclear-power/">核电</a>
+              <a href="/zh/industries/refineries-oil-gas/">炼油厂 · 石油与天然气</a>
+              <a href="/zh/industries/energy-operators/">能源运营商</a>
+            </div>
+            <div class="group">
+              <div class="group-title">材料与制造</div>
+              <a href="/zh/industries/automotive/">汽车</a>
+              <a href="/zh/industries/general-manufacturing/">通用制造</a>
+              <a href="/zh/industries/petrochemicals/">石化产品</a>
+              <a href="/zh/industries/industrial-chemicals/">工业化学品</a>
+              <a href="/zh/industries/fertilizers-agrochemicals/">化肥 · 农用化学品</a>
+              <a href="/zh/industries/mining-metals/">采矿与金属</a>
+              <a href="/zh/industries/pulp-paper/">制浆与造纸</a>
+              <a href="/zh/industries/cement/">水泥厂</a>
+            </div>
+            <div class="group">
+              <div class="group-title">消费与受监管行业</div>
+              <a href="/zh/industries/food-manufacturing/">食品制造</a>
+              <a href="/zh/industries/beverage/">饮料制造商</a>
+              <a href="/zh/industries/pharmaceutical/">制药</a>
+            </div>
+            <div class="group">
+              <div class="group-title">公共部门</div>
+              <a href="/zh/industries/public-sector-goc/">公共部门 · GoC</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/products/" data-nav="products">产品</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/products/">产品组合</a>
+              <a href="/zh/products/droz-legal/">Droz Legal</a>
+              <a href="/zh/products/samson-ai/">Samson AI</a>
+              <a href="/zh/products/rx-change/">RX Change</a>
+              <a href="/zh/products/visp/">VISP</a>
+              <a href="/zh/products/droz-predictive/">Droz Predictive</a>
+              <a href="/zh/products/droz-rental/">Droz Rental</a>
+              <a href="/zh/products/droz-investments/">Droz Investments</a>
+              <a href="/zh/products/after-life/">After Life</a>
+            </div>
+          </div>
+        </div>
+        <div class="has-mega">
+          <a href="/zh/standards/" data-nav="standards">标准</a>
+          <div class="megamenu" role="menu">
+            <div class="group">
+              <a href="/zh/standards/">概览</a>
+              <a href="/zh/standards/associations/">协会</a>
+              <a href="/zh/standards/technologies/">技术</a>
+              <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴</a>
+            </div>
+          </div>
+        </div>
+        <a href="/zh/insights/" data-nav="insights">洞察</a>
+        <a href="/zh/about/" data-nav="about">关于我们</a>
+        <a href="/zh/contact/" data-nav="contact">联系我们</a>
+      </nav>
+    </div>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Language">
+        <a href="/en/engineering/ai-asset-intelligence/">EN</a>
+        <a href="/fr/engineering/ai-asset-intelligence/">FR</a>
+        <a href="/es/engineering/ai-asset-intelligence/">ES</a>
+        <a href="/zh/engineering/ai-asset-intelligence/" lang="zh-Hans" class="on">中文</a>
+        <a href="/hi/engineering/ai-asset-intelligence/" lang="hi">हिं</a>
+      </div>
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="mt-notice" role="note">
+  <span>本页面由机器翻译生成，以英文版本为准。</span>
+  <a href="/en/engineering/ai-asset-intelligence/">查看英文版</a>
+  <button class="mt-notice-x" aria-label="关闭">×</button>
+</div>
+
+<nav class="crumbs" aria-label="Breadcrumb" style="max-width:var(--max-w); margin:0 auto; padding:24px var(--gutter) 0;">
+  <a href="/zh/">首页</a>
+  <span class="sep">/</span>
+  <a href="/zh/engineering/">工程</a>
+  <span class="sep">/</span>
+  <span class="here">AI 驱动的资产智能</span>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="eyebrow-mono">§ Practice 02 · Pillar C</div>
+      <h1>AI 驱动的资产智能——<em>持续累积的那一层。</em></h1>
+      <p class="lede">故障预测模型、异常检测和自动化建议——针对您设备群调优的生产就绪 ML 流水线，部署于工作发生之处，并从第一天起即在 MLOps 中受到观测。</p>
+      <div class="cta">
+        <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+        <a href="/zh/software/ai-machine-learning/" class="btn btn-ghost">查看 AI 与 ML 系统 <span style="opacity:.7">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="page-hero-aside">
+      <div><div class="k">支柱</div><div class="v">C · 智能</div></div>
+      <div><div class="k">模型</div><div class="v">故障预测 · 异常 · 优化 · 孪生</div></div>
+      <div><div class="k">MLOps</div><div class="v">Azure ML · AWS SageMaker · Vertex AI</div></div>
+      <div><div class="k">桥接至</div><div class="v">软件 · AI 与机器学习系统</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--rule);">
+  <img src="/assets/field/vibration-chart.png" alt="FFT 频谱特征图——AI 训练所依据的信号" loading="lazy" style="width:100%; max-height:380px; object-fit:cover; display:block;">
+</section>
+
+<section class="section">
+  <div class="detail">
+    <div class="detail-main">
+
+      <!-- 1. Definition -->
+      <div class="div-header" style="padding-bottom:40px;">
+        <div>
+          <small>§ Definition</small>
+          <div class="slash">数据层之上的 AI，<br><em>针对您的设备群调优。</em></div>
+        </div>
+        <p class="blurb">AI 驱动的资产智能是 Droz 可靠性实践的第三大支柱——在这一层，现场项目（<a href="/zh/engineering/predictive-maintenance/">支柱 A</a>）和数据平台（<a href="/zh/engineering/reliability-data-platform/">支柱 B</a>）累积为自动化决策。Droz 针对您特定的设备群设计并训练故障预测模型——而非将横向通用模型生硬套用于工业数据。异常检测在流式信号上持续运行；自动化建议落到操作人员现有的渠道中，并附上底层证据。模型通过 Azure ML、AWS SageMaker 或 Vertex AI 上的生产就绪 <a href="/zh/software/ai-machine-learning/">MLOps 流水线</a>部署——经版本化、受监测，并按校准至漂移的节奏重新训练。在合作有此必要时，Droz 还会构建工厂的数字孪生——一个仿真界面，让运营在真实工厂中采取决策之前先行演练。</p>
+      </div>
+
+      <!-- 2. Capabilities (.ai-diff-grid) -->
+      <div style="margin-top:48px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Capabilities</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 32px;">五项实践，<em style="font-style:italic; color:var(--accent-2); font-weight:400;">一套智能技术栈。</em></h2>
+        <div class="ai-diff-grid">
+          <div class="ai-cell">
+            <div class="num">AI · 01</div>
+            <h4>异常检测</h4>
+            <ul>
+              <li>振动模式</li>
+              <li>温度偏差</li>
+              <li>能耗异常</li>
+              <li>信号质量漂移</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 02</div>
+            <h4>故障预测</h4>
+            <ul>
+              <li>轴承故障</li>
+              <li>电机劣化</li>
+              <li>泵故障</li>
+              <li>润滑状态告警</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 03</div>
+            <h4>优化</h4>
+            <ul>
+              <li>生产流程</li>
+              <li>能源使用</li>
+              <li>维护策略</li>
+              <li>备件库存</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 04</div>
+            <h4>自动化建议</h4>
+            <ul>
+              <li>自动化报告</li>
+              <li>智能告警</li>
+              <li>AI 辅助决策</li>
+              <li>CMMS 工单派发</li>
+            </ul>
+          </div>
+          <div class="ai-cell">
+            <div class="num">AI · 05</div>
+            <h4>数字孪生</h4>
+            <ul>
+              <li>工厂仿真</li>
+              <li>故障情景建模</li>
+              <li>预测性运营规划</li>
+              <li>按客户定制</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Model classes -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Model classes</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">三大模型族系，<em style="font-style:italic; color:var(--accent-2); font-weight:400;">一个决策闭环。</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">MDL · 01</div>
+            <h3>故障预测<br>模型</h3>
+            <p>在每个资产族系的标注故障历史上训练的监督模型——轴承、电机、泵、齿轮箱。输出：剩余使用寿命估算、故障模式概率、建议干预窗口。按校准至漂移的节奏重新训练。</p>
+            <div class="svc-tags"><span class="tag">监督</span><span class="tag">RUL</span><span class="tag">按资产族系</span><span class="tag">漂移监测</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 02</div>
+            <h3>异常检测<br>模型</h3>
+            <p>在流式信号（振动、温度、电流、超声波、能源）上持续运行的无监督模型。输出：按关键性路由的、按严重程度分级的异常，并附上底层信号证据。</p>
+            <div class="svc-tags"><span class="tag">无监督</span><span class="tag">流式</span><span class="tag">严重程度分级</span><span class="tag">附证据</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">MDL · 03</div>
+            <h3>建议<br>与优化</h3>
+            <p>结合状态信号、运行情境和经济约束以推荐最佳下一步行动的决策模型——排定干预、调整运行点、重新订购备件。</p>
+            <div class="svc-tags"><span class="tag">决策</span><span class="tag">约束感知</span><span class="tag">行动导向</span><span class="tag">操作人员在闭环</span></div>
+          </article>
+        </div>
+        <p style="margin-top:20px; font-size:14px;">构建并运营这些模型的 MLOps 与数据科学合作项目 &rarr; <a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a></p>
+      </div>
+
+      <!-- 4. MLOps pipeline -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ MLOps</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 8px;">从训练集<em style="font-style:italic; color:var(--accent-2); font-weight:400;">到受监测的预测。</em></h2>
+        <div class="steps">
+          <div class="step">
+            <div class="ord-num">01</div>
+            <div class="ord">Curate</div>
+            <h5>训练集</h5>
+            <p>来自支柱 A 的现场历史和来自支柱 B 的统一数据层，被整理为每个资产族系的标注训练集。在任何模型接触数据之前，先处理类别不平衡、泄漏和标签质量。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">02</div>
+            <div class="ord">Train</div>
+            <h5>模型类别</h5>
+            <p>模型类别按故障模式选择——表格状态历史用梯度提升、频谱特征用深度模型、流式异常用孤立森林变体。超参数在受管扫描中调优。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">03</div>
+            <div class="ord">Validate</div>
+            <h5>留出与重放</h5>
+            <p>模型在留出站点上进行验证，并对照归档故障进行重放——模型必须在从未见过的数据上预测出已知故障，方可上线。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">04</div>
+            <div class="ord">Deploy</div>
+            <h5>生产流水线</h5>
+            <p>通过 <a href="/zh/standards/cloud-ai-partners/">Azure ML、AWS SageMaker 或 Vertex AI</a> 部署——视延迟而定采用端点、批量或边缘。推理与输入快照一并记录以便追溯。</p>
+          </div>
+          <div class="step">
+            <div class="ord-num">05</div>
+            <div class="ord">Observe</div>
+            <h5>漂移与重训</h5>
+            <p>对生产性能进行监测——概念漂移、数据漂移、预测类别漂移。重新训练按阈值或按计划触发；在新模型获批之前，旧模型保持影子运行。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Digital twin -->
+      <div style="margin-top:80px;">
+        <div class="div-header" style="padding-bottom:32px;">
+          <div>
+            <small>§ Digital twin</small>
+            <div class="slash">在采取决策之前<br><em>先行演练。</em></div>
+          </div>
+          <p class="blurb">Droz 数字孪生是面向工厂或工艺装置的仿真界面——校准至资产群、由可靠性数据层供给，用于演练那些在真实工厂中采取代价高昂的决策。按客户构建；并非横向通用产品。</p>
+        </div>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">TWIN · 01</div>
+            <h3>工厂仿真</h3>
+            <p>按决策所需的层级对资产行为进行建模——决策属运营性时用第一性原理物理建模，决策属可靠性时用数据驱动建模。</p>
+            <div class="svc-tags"><span class="tag">基于物理</span><span class="tag">数据驱动</span><span class="tag">混合保真度</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 02</div>
+            <h3>故障情景<br>建模</h3>
+            <p>对照生产排程、备件状况和企业正常运行时间目标，运行&ldquo;如果这个轴承在周五失效会怎样&rdquo;。输出是一棵排序的决策树，而非单一答案。</p>
+            <div class="svc-tags"><span class="tag">假设分析</span><span class="tag">排序决策</span><span class="tag">生产感知</span></div>
+          </article>
+          <article class="svc">
+            <div class="svc-num">TWIN · 03</div>
+            <h3>运营规划</h3>
+            <p>在真实工厂承诺执行之前，于仿真中测试资本递延、干预窗口变更和运行点调整。</p>
+            <div class="svc-tags"><span class="tag">资本递延</span><span class="tag">干预窗口</span><span class="tag">运行点</span></div>
+          </article>
+        </div>
+      </div>
+
+      <!-- 6. Industries served -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Industries served</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 24px;">AI 资产智能<em style="font-style:italic; color:var(--accent-2); font-weight:400;">作为牵头合作的领域。</em></h2>
+        <div class="industries" style="grid-template-columns:repeat(4,1fr);">
+          <a href="/zh/industries/refineries-oil-gas/" class="industry" style="text-decoration:none;"><span class="idx">01</span><span class="name">炼油厂 · 石油与天然气</span></a>
+          <a href="/zh/industries/power-generation/" class="industry" style="text-decoration:none;"><span class="idx">02</span><span class="name">发电</span></a>
+          <a href="/zh/industries/petrochemicals/" class="industry" style="text-decoration:none;"><span class="idx">03</span><span class="name">石化产品</span></a>
+          <a href="/zh/industries/nuclear-power/" class="industry" style="text-decoration:none;"><span class="idx">04</span><span class="name">核电</span></a>
+          <a href="/zh/industries/energy-operators/" class="industry" style="text-decoration:none;"><span class="idx">05</span><span class="name">能源运营商</span></a>
+          <a href="/zh/industries/mining-metals/" class="industry" style="text-decoration:none;"><span class="idx">06</span><span class="name">采矿与金属</span></a>
+          <a href="/zh/industries/cement/" class="industry" style="text-decoration:none;"><span class="idx">07</span><span class="name">水泥厂</span></a>
+          <a href="/zh/industries/automotive/" class="industry" style="text-decoration:none;"><span class="idx">08</span><span class="name">汽车</span></a>
+        </div>
+        <p style="margin-top:20px; font-size:14px;"><a href="/zh/industries/">查看所有 16 个服务行业 &rarr;</a></p>
+      </div>
+
+      <!-- 7. Standards applied -->
+      <div style="margin-top:80px;">
+        <div class="eyebrow-mono" style="margin-bottom:14px;">§ Standards we apply</div>
+        <h2 style="font-family:var(--font-display); font-size:clamp(32px,3.6vw,44px); font-weight:500; line-height:1.05; letter-spacing:-0.02em; margin:0 0 28px;">模型<em style="font-style:italic; color:var(--accent-2); font-weight:400;">所锚定的框架。</em></h2>
+        <div class="svc-grid" style="grid-template-columns:repeat(3,1fr);">
+          <article class="svc">
+            <div class="svc-num">SOC 2</div>
+            <h3>SOC 2 Type II</h3>
+            <p>ML 流水线和推理端点运行于与可靠性数据平台相同的、经 SOC 2 Type II 审计的控制集之内。</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">ISO 10816</div>
+            <h3>机械振动<br>评价</h3>
+            <p>旋转机械模型的异常阈值锚定于 ISO 10816 区域限值——模型相对于标准而非任意基线标记偏差。</p>
+          </article>
+          <article class="svc">
+            <div class="svc-num">Cloud · AI</div>
+            <h3>Azure ML · SageMaker · Vertex AI</h3>
+            <p>流水线通过 Droz 的认证合作伙伴协议部署于客户现有的云上——Azure、AWS 或 Google Cloud。</p>
+          </article>
+        </div>
+        <p style="margin-top:18px; font-size:14px;"><a href="/zh/standards/associations/">认证与协会完整清单 &rarr;</a> &nbsp;&middot;&nbsp; <a href="/zh/standards/cloud-ai-partners/">云与 AI 合作伙伴 &rarr;</a> &nbsp;&middot;&nbsp; <a href="/zh/software/ai-machine-learning/">底层 AI 实践（LLM、RAG、评测）&rarr;</a></p>
+      </div>
+
+    </div>
+
+    <aside class="detail-aside">
+      <div class="aside-block">
+        <h6>相关能力</h6>
+        <ul>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据平台</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习系统</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务流程自动化</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>我们遵循的标准</h6>
+        <ul>
+          <li><a href="/zh/standards/associations/">SOC 2 Type II</a></li>
+          <li><a href="/zh/standards/associations/">ISO 10816</a></li>
+          <li><a href="/zh/standards/associations/">CMVA</a></li>
+          <li><a href="/zh/standards/cloud-ai-partners/">Azure / AWS / GCP 合作伙伴</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <h6>本支柱牵头之处</h6>
+        <ul>
+          <li><a href="/zh/industries/refineries-oil-gas/">炼油厂 &middot; 石油与天然气</a></li>
+          <li><a href="/zh/industries/power-generation/">发电</a></li>
+          <li><a href="/zh/industries/energy-operators/">能源运营商</a></li>
+          <li><a href="/zh/industries/mining-metals/">采矿与金属</a></li>
+        </ul>
+      </div>
+      <div class="aside-cta">
+        <h6>与合伙人沟通</h6>
+        <p>合作始于由资深合伙人主导的范围界定会谈。</p>
+        <a href="/zh/contact/#engagement-form" class="btn btn-light" style="text-align:center; display:block;">申请合作 &rarr;</a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="position-band">
+  <div class="position-band-inner">
+    <div class="label">§ AI-driven asset intelligence</div>
+    <div class="stmt">在现场实践与数据层交汇之处，<em>运营模式持续累积。</em></div>
+    <div class="creds">
+      <a href="/zh/contact/#engagement-form" class="btn btn-primary">申请合作 <span style="opacity:.7">&rarr;</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-wordmark">Droz<span class="dot"></span></div>
+        <p class="foot-p">Droz Technologies Inc.——一家工业技术公司，提供企业软件、可靠性工程和应用人工智能。安大略省伯灵顿。成立于 2004 年。</p>
+        <div class="foot-stats">
+          <span>EST. 2004</span><span>&middot;</span>
+          <span>5 Cities</span><span>&middot;</span>
+          <span>EN / FR / ES</span>
+        </div>
+      </div>
+      <div>
+        <h6>软件</h6>
+        <ul>
+          <li><a href="/zh/software/">概览</a></li>
+          <li><a href="/zh/software/custom-software-development/">定制软件</a></li>
+          <li><a href="/zh/software/application-development/">应用程序开发</a></li>
+          <li><a href="/zh/software/ai-machine-learning/">AI 与机器学习</a></li>
+          <li><a href="/zh/software/it-infrastructure/">IT 基础设施</a></li>
+          <li><a href="/zh/software/business-process-automation/">业务自动化</a></li>
+          <li><a href="/zh/software/cloud-migration/">云迁移</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>工程</h6>
+        <ul>
+          <li><a href="/zh/engineering/">概览</a></li>
+          <li><a href="/zh/engineering/predictive-maintenance/">预测性维护</a></li>
+          <li><a href="/zh/engineering/reliability-data-platform/">可靠性数据</a></li>
+          <li><a href="/zh/engineering/ai-asset-intelligence/">资产智能</a></li>
+          <li><a href="/zh/industries/">服务行业</a></li>
+          <li><a href="/zh/standards/">标准</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>公司</h6>
+        <ul>
+          <li><a href="/zh/about/">关于我们</a></li>
+          <li><a href="/zh/contact/">联系我们</a></li>
+          <li><a href="/zh/contact/#procurement-form">采购</a></li>
+          <li><a href="/zh/press/">媒体</a></li>
+          <li><a href="/zh/careers/">招聘</a></li>
+          <li><a href="/zh/insights/">洞察</a></li>
+          <li><a href="/zh/capabilities-statement/">能力说明</a></li>
+        </ul>
+      </div>
+      <div>
+        <h6>语言</h6>
+        <ul>
+          <li><a href="/en/">English</a></li>
+          <li><a href="/fr/">Français</a></li>
+          <li><a href="/es/">Español</a></li>
+          <li><a href="/zh/" lang="zh-Hans">中文</a></li>
+          <li><a href="/hi/" lang="hi">हिन्दी</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>&copy; 2004&ndash;2026 Droz Technologies Inc. &middot; Burlington, Ontario, Canada</div>
+      <div class="foot-bottom-right">
+        <a href="/zh/legal/privacy/">隐私</a>
+        <a href="/zh/legal/terms/">条款</a>
+        <a href="/zh/legal/accessibility/">无障碍</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" defer></script>
+<script src="/site.js" defer></script>
+</body>
+</html>

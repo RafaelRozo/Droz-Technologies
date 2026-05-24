@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /thank-you/
+Disallow: /404/
+Sitemap: https://droz.tech/sitemap.xml
