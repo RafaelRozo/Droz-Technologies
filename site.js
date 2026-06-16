@@ -84,13 +84,13 @@
           msg.className = ok ? 'form-success' : 'form-failure';
           msg.textContent = ok
             ? 'Thank you — your message reached the Droz team. We respond within one business day.'
-            : 'Sorry — the message could not be sent. Please email contact@droz.tech directly.';
+            : 'Sorry — the message could not be sent. Please email info@droztechnologies.com directly.';
           f.replaceWith(msg);
         })
         .catch(function () {
           var msg = document.createElement('div');
           msg.className = 'form-failure';
-          msg.textContent = 'Network error. Please email contact@droz.tech directly.';
+          msg.textContent = 'Network error. Please email info@droztechnologies.com directly.';
           f.replaceWith(msg);
         });
     });
